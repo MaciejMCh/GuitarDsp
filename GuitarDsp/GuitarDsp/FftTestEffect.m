@@ -56,10 +56,10 @@
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
     
     
-    if (_xD++ % 100 < 50) {
-        memcpy(outputBuffer, inputSample.amp, self.samplingSettings.packetByteSize);
-        return;
-    }
+//    if (_xD++ % 100 < 50) {
+//        memcpy(outputBuffer, inputSample.amp, self.samplingSettings.packetByteSize);
+//        return;
+//    }
     
     float *real = inputSample.amp;
     float *imaginary = malloc(self.samplingSettings.packetByteSize);
@@ -70,6 +70,15 @@
     vDSP_Length length = (long)floor(log2(self.samplingSettings.framesPerPacket));
     
     vDSP_fft_zip(self.fftSetup, &splitComplex, 1, length, FFT_FORWARD);
+    
+    for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
+        if (i < 50) {
+            continue;
+        }
+        splitComplex.realp[i] = 0;
+        splitComplex.imagp[i] = 0;
+    }
+    
     vDSP_fft_zip(self.fftSetup, &splitComplex, 1, length, FFT_INVERSE);
     
     for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {

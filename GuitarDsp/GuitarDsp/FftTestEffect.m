@@ -18,6 +18,8 @@
 @property (nonatomic, assign) FFTSetup fftSetup;
 @property (nonatomic, assign) float *displayData;
 
+@property (nonatomic, assign) int xD;
+
 @end
 
 @implementation FftTestEffect
@@ -53,52 +55,23 @@
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
     
-    int bufferSize = self.samplingSettings.framesPerPacket;
-    int numFrames = self.samplingSettings.framesPerPacket;
-    float ln = log2f(numFrames);
-    
-    //vDSP autocorrelation
-    
-    //convert real input to even-odd
-    vDSP_ctoz((COMPLEX*)inputSample.amp, 2, &A, 1, numFrames/2);
-    memset(inputSample.amp, 0, self.samplingSettings.packetByteSize);
-    //fft
-    vDSP_fft_zrip(self.fftSetup, &A, 1, ln, FFT_FORWARD);
-    
-    // Absolute square (equivalent to mag^2)
-    vDSP_zvmags(&A, 1, A.realp, 1, numFrames/2);
-    bzero(A.imagp, (numFrames/2) * sizeof(float));
-    
-    // Inverse FFT
-    vDSP_fft_zrip(self.fftSetup, &A, 1, ln, FFT_INVERSE);
-    
-    //convert complex split to real
-    vDSP_ztoc(&A, 1, (COMPLEX*)self.displayData, 2, numFrames/2);
-    
-    memcpy(outputBuffer, self.displayData, self.samplingSettings.packetByteSize);
-    
-    // Normalize
-    float scale = 1.f/self.displayData[0];
-    vDSP_vsmul(self. displayData, 1, &scale, self.displayData, 1, numFrames);
-    
-    // Naive peak-pick: find the first local maximum
-    int peakIndex = 0;
-    for (size_t ii=1; ii < numFrames-1; ++ii) {
-        if ((self.displayData[ii] > self.displayData[ii-1]) && (self.displayData[ii] > self.displayData[ii+1])) {
-            peakIndex = ii;
-            break;
-        }
+    if (_xD++ % 1000 < 500) {
+        memcpy(outputBuffer, inputSample.amp, self.samplingSettings.packetByteSize);
+        return;
     }
     
+    float *real = inputSample.amp;
+    float *imaginary = malloc(self.samplingSettings.packetByteSize);
+    DSPSplitComplex splitComplex;
+    splitComplex.realp = real;
+    splitComplex.imagp = imaginary;
     
-    // Calculate frequency
-//    float frequency = sampleRate / peakIndex + quadInterpolate(&self.displayData[peakIndex-1]);
-//    
-//    bufferSize = numFrames;
-//    
-//    for (int ii=0; ii<ioData->mNumberBuffers; ++ii) {
-//        bzero(ioData->mBuffers[ii].mData, ioData->mBuffers[ii].mDataByteSize);
-//    }
+    vDSP_Length length = (long)floor(log2(self.samplingSettings.framesPerPacket));
+    
+    vDSP_fft_zip(self.fftSetup, &splitComplex, 1, length, FFT_FORWARD);
+    vDSP_fft_zip(self.fftSetup, &splitComplex, 1, length, FFT_INVERSE);
+    
+    memcpy(outputBuffer, splitComplex.realp, self.samplingSettings.packetByteSize);
     
 }
 

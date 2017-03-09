@@ -78,6 +78,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2327A6A1E7182AC00587341 /* Effect */ = {
+			isa = PBXGroup;
+			children = (
+				C23C816A1E7178620050DCE9 /* MetronomeEffect.h */,
+				C23C816B1E7178620050DCE9 /* MetronomeEffect.m */,
+				C23C81631E7178620050DCE9 /* DelayEffect.h */,
+				C23C81641E7178620050DCE9 /* DelayEffect.m */,
+				C23C81681E7178620050DCE9 /* Effect.h */,
+			);
+			name = Effect;
+			sourceTree = "<group>";
+		};
+		C2327A6B1E7182BC00587341 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C23C816E1E7178620050DCE9 /* ProcessorStoryboard.storyboard */,
+				C23C816F1E7178620050DCE9 /* ProcessorViewController.h */,
+				C23C81701E7178620050DCE9 /* ProcessorViewController.m */,
+				C23C81651E7178620050DCE9 /* DelayStoryboard.storyboard */,
+				C23C81661E7178620050DCE9 /* DelayViewController.h */,
+				C23C81671E7178620050DCE9 /* DelayViewController.m */,
+				C23C81691E7178620050DCE9 /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		C2327A6C1E7182CC00587341 /* CoreModel */ = {
+			isa = PBXGroup;
+			children = (
+				C23C81711E7178620050DCE9 /* Sample.h */,
+				C23C81721E7178620050DCE9 /* SamplingSettings.h */,
+				C23C81731E7178620050DCE9 /* Timing.h */,
+			);
+			name = CoreModel;
+			sourceTree = "<group>";
+		};
+		C2327A6D1E7182D900587341 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C23C81741E7178620050DCE9 /* TimingCalc.h */,
+				C23C81751E7178620050DCE9 /* TimingCalc.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		C2327A6E1E7182E600587341 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C23C816C1E7178620050DCE9 /* Processor.h */,
+				C23C816D1E7178620050DCE9 /* Processor.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		C23C81421E7177EE0050DCE9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,25 +153,11 @@
 		C23C814D1E7177EE0050DCE9 /* GuitarDsp */ = {
 			isa = PBXGroup;
 			children = (
-				C23C81631E7178620050DCE9 /* DelayEffect.h */,
-				C23C81641E7178620050DCE9 /* DelayEffect.m */,
-				C23C81651E7178620050DCE9 /* DelayStoryboard.storyboard */,
-				C23C81661E7178620050DCE9 /* DelayViewController.h */,
-				C23C81671E7178620050DCE9 /* DelayViewController.m */,
-				C23C81681E7178620050DCE9 /* Effect.h */,
-				C23C81691E7178620050DCE9 /* Main.storyboard */,
-				C23C816A1E7178620050DCE9 /* MetronomeEffect.h */,
-				C23C816B1E7178620050DCE9 /* MetronomeEffect.m */,
-				C23C816C1E7178620050DCE9 /* Processor.h */,
-				C23C816D1E7178620050DCE9 /* Processor.m */,
-				C23C816E1E7178620050DCE9 /* ProcessorStoryboard.storyboard */,
-				C23C816F1E7178620050DCE9 /* ProcessorViewController.h */,
-				C23C81701E7178620050DCE9 /* ProcessorViewController.m */,
-				C23C81711E7178620050DCE9 /* Sample.h */,
-				C23C81721E7178620050DCE9 /* SamplingSettings.h */,
-				C23C81731E7178620050DCE9 /* Timing.h */,
-				C23C81741E7178620050DCE9 /* TimingCalc.h */,
-				C23C81751E7178620050DCE9 /* TimingCalc.m */,
+				C2327A6E1E7182E600587341 /* Core */,
+				C2327A6D1E7182D900587341 /* Utilities */,
+				C2327A6C1E7182CC00587341 /* CoreModel */,
+				C2327A6B1E7182BC00587341 /* UI */,
+				C2327A6A1E7182AC00587341 /* Effect */,
 				C23C814E1E7177EE0050DCE9 /* AppDelegate.h */,
 				C23C814F1E7177EE0050DCE9 /* AppDelegate.m */,
 				C23C81571E7177EE0050DCE9 /* Assets.xcassets */,

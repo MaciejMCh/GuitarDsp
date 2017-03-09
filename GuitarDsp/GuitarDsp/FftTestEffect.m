@@ -55,7 +55,8 @@
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
     
-    if (_xD++ % 1000 < 500) {
+    
+    if (_xD++ % 100 < 50) {
         memcpy(outputBuffer, inputSample.amp, self.samplingSettings.packetByteSize);
         return;
     }
@@ -70,6 +71,10 @@
     
     vDSP_fft_zip(self.fftSetup, &splitComplex, 1, length, FFT_FORWARD);
     vDSP_fft_zip(self.fftSetup, &splitComplex, 1, length, FFT_INVERSE);
+    
+    for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
+        splitComplex.realp[i] /= (float)self.samplingSettings.framesPerPacket;
+    }
     
     memcpy(outputBuffer, splitComplex.realp, self.samplingSettings.packetByteSize);
     

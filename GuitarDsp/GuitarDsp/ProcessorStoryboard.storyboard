@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="pA5-hX-ngA">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Processor View Controller-->
+        <scene sceneID="1nI-yN-Biz">
+            <objects>
+                <viewController id="pA5-hX-ngA" customClass="ProcessorViewController" sceneMemberID="viewController">
+                    <view key="view" id="qli-3O-KEm">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vQJ-2S-Gkd">
+                                <rect key="frame" x="3" y="278" width="46" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tempo" id="9Cz-US-RQs">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Czo-Gq-MJ9">
+                                <rect key="frame" x="63" y="275" width="100" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Jbl-PE-iel"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="0zR-2L-JtW">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="tempoChanged:" target="pA5-hX-ngA" id="fgA-su-q08"/>
+                                </connections>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QcR-lw-gXN">
+                                <rect key="frame" x="-1" y="-2" width="74" height="32"/>
+                                <buttonCell key="cell" type="push" title="Delay" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eEc-YI-PXa">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="3Fy-8M-5YI" kind="popover" popoverAnchorView="QcR-lw-gXN" popoverBehavior="t" preferredEdge="maxY" id="Yj6-qt-1Qd"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BVi-Tu-FxA">
+                                <rect key="frame" x="73" y="-2" width="110" height="32"/>
+                                <buttonCell key="cell" type="push" title="Metronome" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="O0l-xV-hdr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QcR-lw-gXN" secondAttribute="bottom" constant="5" id="BEU-N7-Rre"/>
+                            <constraint firstItem="vQJ-2S-Gkd" firstAttribute="leading" secondItem="qli-3O-KEm" secondAttribute="leading" constant="5" id="DOU-lD-oio"/>
+                            <constraint firstItem="QcR-lw-gXN" firstAttribute="leading" secondItem="qli-3O-KEm" secondAttribute="leading" constant="5" id="Fs8-Av-TpX"/>
+                            <constraint firstItem="Czo-Gq-MJ9" firstAttribute="leading" secondItem="vQJ-2S-Gkd" secondAttribute="trailing" constant="16" id="Gsd-sQ-7kZ"/>
+                            <constraint firstItem="BVi-Tu-FxA" firstAttribute="bottom" secondItem="QcR-lw-gXN" secondAttribute="bottom" id="Xbz-hJ-9EI"/>
+                            <constraint firstItem="Czo-Gq-MJ9" firstAttribute="baseline" secondItem="vQJ-2S-Gkd" secondAttribute="baseline" id="YFc-lW-cqn"/>
+                            <constraint firstItem="BVi-Tu-FxA" firstAttribute="leading" secondItem="QcR-lw-gXN" secondAttribute="trailing" constant="12" id="nX0-WB-P1a"/>
+                            <constraint firstItem="vQJ-2S-Gkd" firstAttribute="top" secondItem="qli-3O-KEm" secondAttribute="top" constant="5" id="pE3-xc-HzU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tempoTextField" destination="Czo-Gq-MJ9" id="Asq-Kc-hrW"/>
+                    </connections>
+                </viewController>
+                <customObject id="Ohh-ei-4Mg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117" y="96"/>
+        </scene>
+        <!--DelayStoryboard-->
+        <scene sceneID="H3e-1V-hGd">
+            <objects>
+                <controllerPlaceholder storyboardName="DelayStoryboard" id="3Fy-8M-5YI" sceneMemberID="viewController"/>
+                <customObject id="27w-Rz-oVy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="398"/>
+        </scene>
+    </scenes>
+</document>

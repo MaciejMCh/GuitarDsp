@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C23C81501E7177EE0050DCE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C814F1E7177EE0050DCE9 /* AppDelegate.m */; };
+		C23C81531E7177EE0050DCE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C81521E7177EE0050DCE9 /* main.m */; };
+		C23C81581E7177EE0050DCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23C81571E7177EE0050DCE9 /* Assets.xcassets */; };
+		C23C81761E7178620050DCE9 /* DelayEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C81641E7178620050DCE9 /* DelayEffect.m */; };
+		C23C81771E7178620050DCE9 /* DelayStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23C81651E7178620050DCE9 /* DelayStoryboard.storyboard */; };
+		C23C81781E7178620050DCE9 /* DelayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C81671E7178620050DCE9 /* DelayViewController.m */; };
+		C23C81791E7178620050DCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23C81691E7178620050DCE9 /* Main.storyboard */; };
+		C23C817A1E7178620050DCE9 /* MetronomeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C816B1E7178620050DCE9 /* MetronomeEffect.m */; };
+		C23C817B1E7178620050DCE9 /* Processor.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C816D1E7178620050DCE9 /* Processor.m */; };
+		C23C817C1E7178620050DCE9 /* ProcessorStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23C816E1E7178620050DCE9 /* ProcessorStoryboard.storyboard */; };
+		C23C817D1E7178620050DCE9 /* ProcessorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C81701E7178620050DCE9 /* ProcessorViewController.m */; };
+		C23C817E1E7178620050DCE9 /* TimingCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C81751E7178620050DCE9 /* TimingCalc.m */; };
+		C2F5877D1E71810A007DD777 /* EZAudioOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F5877C1E71810A007DD777 /* EZAudioOSX.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C2D961D01E71804A008870B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C23C814B1E7177EE0050DCE9 /* GuitarDsp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarDsp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C23C814E1E7177EE0050DCE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C23C814F1E7177EE0050DCE9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C23C81521E7177EE0050DCE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C23C81571E7177EE0050DCE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C23C815C1E7177EE0050DCE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C23C81631E7178620050DCE9 /* DelayEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelayEffect.h; sourceTree = "<group>"; };
+		C23C81641E7178620050DCE9 /* DelayEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelayEffect.m; sourceTree = "<group>"; };
+		C23C81651E7178620050DCE9 /* DelayStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DelayStoryboard.storyboard; sourceTree = "<group>"; };
+		C23C81661E7178620050DCE9 /* DelayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelayViewController.h; sourceTree = "<group>"; };
+		C23C81671E7178620050DCE9 /* DelayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelayViewController.m; sourceTree = "<group>"; };
+		C23C81681E7178620050DCE9 /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect.h; sourceTree = "<group>"; };
+		C23C81691E7178620050DCE9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C23C816A1E7178620050DCE9 /* MetronomeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetronomeEffect.h; sourceTree = "<group>"; };
+		C23C816B1E7178620050DCE9 /* MetronomeEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetronomeEffect.m; sourceTree = "<group>"; };
+		C23C816C1E7178620050DCE9 /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processor.h; sourceTree = "<group>"; };
+		C23C816D1E7178620050DCE9 /* Processor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Processor.m; sourceTree = "<group>"; };
+		C23C816E1E7178620050DCE9 /* ProcessorStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProcessorStoryboard.storyboard; sourceTree = "<group>"; };
+		C23C816F1E7178620050DCE9 /* ProcessorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessorViewController.h; sourceTree = "<group>"; };
+		C23C81701E7178620050DCE9 /* ProcessorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessorViewController.m; sourceTree = "<group>"; };
+		C23C81711E7178620050DCE9 /* Sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample.h; sourceTree = "<group>"; };
+		C23C81721E7178620050DCE9 /* SamplingSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplingSettings.h; sourceTree = "<group>"; };
+		C23C81731E7178620050DCE9 /* Timing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timing.h; sourceTree = "<group>"; };
+		C23C81741E7178620050DCE9 /* TimingCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingCalc.h; sourceTree = "<group>"; };
+		C23C81751E7178620050DCE9 /* TimingCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingCalc.m; sourceTree = "<group>"; };
+		C2D961C61E71804A008870B4 /* dd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dd.h; sourceTree = "<group>"; };
+		C2D961C71E71804A008870B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2F5877C1E71810A007DD777 /* EZAudioOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EZAudioOSX.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-fqviswmbvyvdyxbfngkuxnzymtkh/Build/Products/Debug/EZAudioOSX.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C23C81481E7177EE0050DCE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2F5877D1E71810A007DD777 /* EZAudioOSX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C23C81421E7177EE0050DCE9 = {
+			isa = PBXGroup;
+			children = (
+				C23C814D1E7177EE0050DCE9 /* GuitarDsp */,
+				C2D961C51E71804A008870B4 /* dd */,
+				C23C814C1E7177EE0050DCE9 /* Products */,
+				C2D961931E717BA8008870B4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C23C814C1E7177EE0050DCE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C23C814B1E7177EE0050DCE9 /* GuitarDsp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C23C814D1E7177EE0050DCE9 /* GuitarDsp */ = {
+			isa = PBXGroup;
+			children = (
+				C23C81631E7178620050DCE9 /* DelayEffect.h */,
+				C23C81641E7178620050DCE9 /* DelayEffect.m */,
+				C23C81651E7178620050DCE9 /* DelayStoryboard.storyboard */,
+				C23C81661E7178620050DCE9 /* DelayViewController.h */,
+				C23C81671E7178620050DCE9 /* DelayViewController.m */,
+				C23C81681E7178620050DCE9 /* Effect.h */,
+				C23C81691E7178620050DCE9 /* Main.storyboard */,
+				C23C816A1E7178620050DCE9 /* MetronomeEffect.h */,
+				C23C816B1E7178620050DCE9 /* MetronomeEffect.m */,
+				C23C816C1E7178620050DCE9 /* Processor.h */,
+				C23C816D1E7178620050DCE9 /* Processor.m */,
+				C23C816E1E7178620050DCE9 /* ProcessorStoryboard.storyboard */,
+				C23C816F1E7178620050DCE9 /* ProcessorViewController.h */,
+				C23C81701E7178620050DCE9 /* ProcessorViewController.m */,
+				C23C81711E7178620050DCE9 /* Sample.h */,
+				C23C81721E7178620050DCE9 /* SamplingSettings.h */,
+				C23C81731E7178620050DCE9 /* Timing.h */,
+				C23C81741E7178620050DCE9 /* TimingCalc.h */,
+				C23C81751E7178620050DCE9 /* TimingCalc.m */,
+				C23C814E1E7177EE0050DCE9 /* AppDelegate.h */,
+				C23C814F1E7177EE0050DCE9 /* AppDelegate.m */,
+				C23C81571E7177EE0050DCE9 /* Assets.xcassets */,
+				C23C815C1E7177EE0050DCE9 /* Info.plist */,
+				C23C81511E7177EE0050DCE9 /* Supporting Files */,
+			);
+			path = GuitarDsp;
+			sourceTree = "<group>";
+		};
+		C23C81511E7177EE0050DCE9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C23C81521E7177EE0050DCE9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C2D961931E717BA8008870B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2F5877C1E71810A007DD777 /* EZAudioOSX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2D961C51E71804A008870B4 /* dd */ = {
+			isa = PBXGroup;
+			children = (
+				C2D961C61E71804A008870B4 /* dd.h */,
+				C2D961C71E71804A008870B4 /* Info.plist */,
+			);
+			path = dd;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C23C814A1E7177EE0050DCE9 /* GuitarDsp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C23C815F1E7177EE0050DCE9 /* Build configuration list for PBXNativeTarget "GuitarDsp" */;
+			buildPhases = (
+				C23C81471E7177EE0050DCE9 /* Sources */,
+				C23C81481E7177EE0050DCE9 /* Frameworks */,
+				C23C81491E7177EE0050DCE9 /* Resources */,
+				C2D961D01E71804A008870B4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuitarDsp;
+			productName = GuitarDsp;
+			productReference = C23C814B1E7177EE0050DCE9 /* GuitarDsp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C23C81431E7177EE0050DCE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				TargetAttributes = {
+					C23C814A1E7177EE0050DCE9 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 76RXF4V6NR;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C23C81461E7177EE0050DCE9 /* Build configuration list for PBXProject "GuitarDsp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C23C81421E7177EE0050DCE9;
+			productRefGroup = C23C814C1E7177EE0050DCE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C23C814A1E7177EE0050DCE9 /* GuitarDsp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C23C81491E7177EE0050DCE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C23C81791E7178620050DCE9 /* Main.storyboard in Resources */,
+				C23C81581E7177EE0050DCE9 /* Assets.xcassets in Resources */,
+				C23C817C1E7178620050DCE9 /* ProcessorStoryboard.storyboard in Resources */,
+				C23C81771E7178620050DCE9 /* DelayStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C23C81471E7177EE0050DCE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C23C81531E7177EE0050DCE9 /* main.m in Sources */,
+				C23C81501E7177EE0050DCE9 /* AppDelegate.m in Sources */,
+				C23C817E1E7178620050DCE9 /* TimingCalc.m in Sources */,
+				C23C817A1E7178620050DCE9 /* MetronomeEffect.m in Sources */,
+				C23C81781E7178620050DCE9 /* DelayViewController.m in Sources */,
+				C23C817D1E7178620050DCE9 /* ProcessorViewController.m in Sources */,
+				C23C817B1E7178620050DCE9 /* Processor.m in Sources */,
+				C23C81761E7178620050DCE9 /* DelayEffect.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C23C815D1E7177EE0050DCE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C23C815E1E7177EE0050DCE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C23C81601E7177EE0050DCE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 76RXF4V6NR;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
+				INFOPLIST_FILE = GuitarDsp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.GuitarDsp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C23C81611E7177EE0050DCE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 76RXF4V6NR;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
+				INFOPLIST_FILE = GuitarDsp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.GuitarDsp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C23C81461E7177EE0050DCE9 /* Build configuration list for PBXProject "GuitarDsp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C23C815D1E7177EE0050DCE9 /* Debug */,
+				C23C815E1E7177EE0050DCE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C23C815F1E7177EE0050DCE9 /* Build configuration list for PBXNativeTarget "GuitarDsp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C23C81601E7177EE0050DCE9 /* Debug */,
+				C23C81611E7177EE0050DCE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C23C81431E7177EE0050DCE9 /* Project object */;
+}

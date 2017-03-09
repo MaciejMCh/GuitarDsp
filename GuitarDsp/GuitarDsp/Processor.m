@@ -11,6 +11,8 @@
 #import "Effect.h"
 #import <EZAudio/EZAudio.h>
 
+// Temporary
+#import "FftTestEffect.h"
 
 @interface Processor ()
 
@@ -53,8 +55,9 @@
 
 - (void)setupEffects {
     self.effects = [NSMutableArray new];
-    [self.effects addObject:self.delayEffect];
+//    [self.effects addObject:self.delayEffect];
 //    [self.effects addObject:self.metronomeEffect];
+    [self.effects addObject:[[FftTestEffect alloc] initWithSamplingSettings:self.samplingSettings]];
 }
 
 - (void)setupDelay {
@@ -85,7 +88,7 @@
 #pragma mark - Interface
 
 - (void)processBuffer:(float *)buffer {
-    memcpy(self.outputBuffer, buffer, self.samplingSettings.packetByteSize);
+//    memcpy(self.outputBuffer, buffer, self.samplingSettings.packetByteSize);
     
     struct Sample inputSample;
     inputSample.amp = malloc(self.samplingSettings.packetByteSize);
@@ -94,8 +97,6 @@
     for (id<Effect> effect in self.effects) {
         [effect processSample:inputSample intoBuffer:self.outputBuffer];
     }
-    
-//    [self.delayEffect processSample:inputSample intoBuffer:self.outputBuffer];
 }
 
 #pragma mark -

@@ -62,10 +62,10 @@
     float nOver2 = maxFrames/2;
     self.k = 0;
     
-//    DSPSplitComplex A;
+    //    DSPSplitComplex A;
     A.realp = (float*)malloc(nOver2 * sizeof(float));
     A.imagp = (float*)malloc(nOver2 * sizeof(float));
-//    self.A = A;
+    //    self.A = A;
     
     FFTSetup fftSetup = vDSP_create_fftsetup(log2n, FFT_RADIX2);
     self.fftSetup = fftSetup;
@@ -75,7 +75,7 @@
     
     
     
-    signalLength = 15;
+    signalLength = self.samplingSettings.framesPerPacket;
     filterLength = 3;
     overlapLength = filterLength - 1;
     resultLength = signalLength + overlapLength;
@@ -95,28 +95,27 @@
 
 - (void)setupFilter {
     bzero(filter, sizeof(float) * filterLength);
-    filter[0] = 1;
+    filter[0] = 2;
     filter[1] = 1;
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
-    float *input = malloc(sizeof(float) * 1000);
-    for (int i = 0; i < 1000; i ++) {
-        input[i] = i + 1;
-    }
     
-    memcpy(signal + filterLength - 1, input, sizeof(float) * signalLength);
+    memcpy(signal + filterLength - 1, inputSample.amp, sizeof(float) * signalLength);
     vDSP_conv(signal, 1, filter + filterLength - 1, -1,
               result, 1, resultLength, filterLength);
     
     memcpy(output, result, sizeof(float) * signalLength);
+    
     for (int i = 0; i < overlapLength; i++) {
         output[i] += overlap[i];
     }
     
+    
     memcpy(overlap, result + resultLength - overlapLength, sizeof(float) * overlapLength);
     
-    [self printResult];
+    memcpy(outputBuffer, output, self.samplingSettings.packetByteSize);
+    //    [self printResult];
 }
 
 - (void)printResult {

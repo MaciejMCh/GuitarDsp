@@ -11,6 +11,16 @@
 
 @interface FftTestEffect () {
     DSPSplitComplex A;
+    
+    float *signal;
+    float *filter;
+    float *result;
+    float *overlap;
+    
+    int signalLength;
+    int filterLength;
+    int resultLength;
+    int overlapLength;
 }
 
 @property (nonatomic, assign) struct SamplingSettings samplingSettings;
@@ -58,78 +68,66 @@
     
     FFTSetup fftSetup = vDSP_create_fftsetup(log2n, FFT_RADIX2);
     self.fftSetup = fftSetup;
+    
+    
+    
+    
+    
+    
+    signalLength = 15;
+    filterLength = 3;
+    overlapLength = filterLength - 1;
+    resultLength = signalLength + overlapLength;
+    
+    signal = malloc(sizeof(float) * resultLength);
+    bzero(signal, sizeof(float) * filterLength - 1);
+    
+    filter = malloc(sizeof(float) * filterLength);
+    [self setupFilter];
+    
+    result = malloc(sizeof(float) * resultLength);
+    overlap = malloc(sizeof(float) * overlapLength);
+}
+
+- (void)setupFilter {
+    bzero(filter, sizeof(float) * filterLength);
+    filter[0] = 1;
+    filter[1] = 1;
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
-    float *input = malloc(sizeof(float) * 10);
-    for (int i = 0; i < 10; i ++) {
+    float *input = malloc(sizeof(float) * 1000);
+    for (int i = 0; i < 1000; i ++) {
         input[i] = i + 1;
     }
     
+    memcpy(signal + filterLength - 1, input, sizeof(float) * signalLength);
+    vDSP_conv(signal, 1, filter + filterLength - 1, -1,
+              result, 1, resultLength, filterLength);
+    memcpy(overlap, result + resultLength - overlapLength, sizeof(float) * overlapLength);
     
-    
-    const vDSP_Stride
-    SignalStride = 1,
-    FilterStride = 1,
-    ResultStride = 1;
-    
-    vDSP_Length
-    FilterLength = 3,
-    SignalLength = 5,
-    ResultLength = SignalLength + FilterLength - 1;
-    
-    
-    float *Signal, *Filter, *Result;
-    
-    Signal = malloc(ResultLength * SignalStride * sizeof *Signal);
-    Filter = malloc(FilterLength * FilterStride * sizeof *Filter);
-    Result = malloc(ResultLength * ResultStride * sizeof *Result);
-    
-    bzero(Signal, SignalStride * sizeof *Signal);
-    memcpy(&Signal[FilterLength - 1], input, sizeof(float) * SignalLength);
-    
-    for (int i = 0; i < FilterLength; i++) {
-        Filter[i*FilterStride] = 0.0;
-    }
-    Filter[0*FilterStride] = 1.0;
-    Filter[1*FilterStride] = 1.0;
-    
-    
-//    [self convSignal:Signal signalLength:SignalLength filter:Filter filterLength:FilterLength output:Result];
-    vDSP_conv(Signal, SignalStride, Filter + FilterLength - 1, -1,
-              Result, ResultStride, ResultLength, FilterLength);
-    
-    
-    NSMutableString *signalString = [@"S: " mutableCopy];
-    for (int i = 0; i < ResultLength; i++) {
-        [signalString appendString:[NSString stringWithFormat:@"%.1f ", Signal[i]]];
-    }
-    NSMutableString *filterString = [@"F: " mutableCopy];
-    for (int i = 0; i < FilterLength; i++) {
-        [filterString appendString:[NSString stringWithFormat:@"%.1f ", Filter[i]]];
-    }
-    NSMutableString *resultString = [@"R: " mutableCopy];
-    for (int i = 0; i < ResultLength; i++) {
-        [resultString appendString:[NSString stringWithFormat:@"%.1f ", Result[i]]];
-    }
-    
-    NSLog(@"\n%@\n%@\n%@\n", signalString, filterString, resultString);
+    [self printResult];
 }
 
-- (void)convSignal:(float *)signal signalLength:(int)signalLength
-            filter:(float *)filter filterLength:(int)filterLength
-            output:(float *)output {
-    int resultLength = signalLength + filterLength - 1;
-    
-    bzero(output, sizeof(float) * resultLength);
-    
-    for (int i = 0; i < signalLength; i++) {
-        for (int j = 0; j < filterLength; j++) {
-            output[i + j] += signal[i] * filter[j];
-        }
+- (void)printResult {
+    NSMutableString *signalString = [@"S: " mutableCopy];
+    for (int i = 0; i < resultLength; i++) {
+        [signalString appendString:[NSString stringWithFormat:@"%.1f ", signal[i]]];
+    }
+    NSMutableString *filterString = [@"F: " mutableCopy];
+    for (int i = 0; i < filterLength; i++) {
+        [filterString appendString:[NSString stringWithFormat:@"%.1f ", filter[i]]];
+    }
+    NSMutableString *resultString = [@"R: " mutableCopy];
+    for (int i = 0; i < resultLength; i++) {
+        [resultString appendString:[NSString stringWithFormat:@"%.1f ", result[i]]];
+    }
+    NSMutableString *overlapString = [@"O: " mutableCopy];
+    for (int i = 0; i < overlapLength; i++) {
+        [overlapString appendString:[NSString stringWithFormat:@"%.1f ", overlap[i]]];
     }
     
+    NSLog(@"\n%@\n%@\n%@\n%@\n", signalString, filterString, resultString, overlapString);
 }
 
 @end
-

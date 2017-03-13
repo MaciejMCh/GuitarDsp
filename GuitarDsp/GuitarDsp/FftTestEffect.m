@@ -10,32 +10,12 @@
 #import <Accelerate/Accelerate.h>
 
 @interface FftTestEffect () {
-    DSPSplitComplex A;
-    
-    float *signal;
-    float *filter;
-    float *result;
-    float *overlap;
-    float *output;
-    
-    int signalLength;
-    int filterLength;
-    int resultLength;
-    int overlapLength;
+    int frameSize;
+    int fftSize;
+    float *windowBuffer;
 }
 
 @property (nonatomic, assign) struct SamplingSettings samplingSettings;
-//@property (nonatomic, assign) DSPSplitComplex A;
-@property (nonatomic, assign) FFTSetup fftSetup;
-@property (nonatomic, assign) float *displayData;
-
-@property (nonatomic, assign) int xD;
-
-@property (nonatomic, assign) int k;
-
-
-@property (nonatomic, assign) float *circularBuffer;
-//@property (nonatomic, assign) int circularBufferSize;
 
 @end
 
@@ -49,100 +29,28 @@
 }
 
 - (void)setupFft {
-    float sampleRate = self.samplingSettings.frequency;
-    float bufferSize = self.samplingSettings.framesPerPacket;
-    int peakIndex = 0;
-    float frequency = 0.f;
-    uint32_t maxFrames = self.samplingSettings.framesPerPacket;
-    self.displayData = (float*)malloc(maxFrames*sizeof(float));
-    bzero(self.displayData, maxFrames*sizeof(float));
-    int log2n = log2f(maxFrames);
-    int n = 1 << log2n;
-    assert(n == maxFrames);
-    float nOver2 = maxFrames/2;
-    self.k = 0;
+    frameSize = self.samplingSettings.framesPerPacket;
+    fftSize = frameSize * 2;
     
-    //    DSPSplitComplex A;
-    A.realp = (float*)malloc(nOver2 * sizeof(float));
-    A.imagp = (float*)malloc(nOver2 * sizeof(float));
-    //    self.A = A;
-    
-    FFTSetup fftSetup = vDSP_create_fftsetup(log2n, FFT_RADIX2);
-    self.fftSetup = fftSetup;
-    
-    
-    
-    
-    
-    
-    signalLength = self.samplingSettings.framesPerPacket;
-    filterLength = 3;
-    overlapLength = filterLength - 1;
-    resultLength = signalLength + overlapLength;
-    
-    signal = malloc(sizeof(float) * resultLength);
-    bzero(signal, sizeof(float) * filterLength - 1);
-    
-    filter = malloc(sizeof(float) * filterLength);
-    [self setupFilter];
-    
-    overlap = malloc(sizeof(float) * overlapLength);
-    bzero(overlap, sizeof(float) * overlapLength);
-    
-    result = malloc(sizeof(float) * resultLength);
-    output = malloc(sizeof(float) * signalLength);
-}
-
-- (void)setupFilter {
-    bzero(filter, sizeof(float) * filterLength);
-    filter[0] = 1;
-    filter[1] = 1;
+    windowBuffer = malloc(sizeof(float) * frameSize);
+    vDSP_hann_window(windowBuffer, frameSize, 0);
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
-    memcpy(outputBuffer, inputSample.amp, self.samplingSettings.packetByteSize);
-    return;
     
-    memcpy(signal + filterLength - 1, inputSample.amp, sizeof(float) * signalLength);
-    vDSP_conv(signal, 1, filter + filterLength - 1, -1,
-              result, 1, resultLength, filterLength);
-    
-    memcpy(output, result, sizeof(float) * signalLength);
-    
-    for (int i = 0; i < overlapLength; i++) {
-        output[i] += overlap[i];
+    float *windowedFrameBuffer = malloc(sizeof(float) * frameSize);
+    for (int i = 0; i < frameSize; i++) {
+        windowedFrameBuffer[i] = inputSample.amp[i] * windowBuffer[i];
     }
     
+    float *shiftedFrameBuffer = malloc(sizeof(float) * fftSize);
+    bzero(shiftedFrameBuffer, sizeof(float) * fftSize);
+    memcpy(shiftedFrameBuffer + ((fftSize - frameSize) / 2), windowedFrameBuffer, sizeof(float) * frameSize);
     
-    memcpy(overlap, result + resultLength - overlapLength, sizeof(float) * overlapLength);
     
-    memcpy(outputBuffer, output, self.samplingSettings.packetByteSize);
-    //    [self printResult];
-}
-
-- (void)printResult {
-    NSMutableString *signalString = [@"S: " mutableCopy];
-    for (int i = 0; i < resultLength; i++) {
-        [signalString appendString:[NSString stringWithFormat:@"%.1f ", signal[i]]];
-    }
-    NSMutableString *filterString = [@"F: " mutableCopy];
-    for (int i = 0; i < filterLength; i++) {
-        [filterString appendString:[NSString stringWithFormat:@"%.1f ", filter[i]]];
-    }
-    NSMutableString *resultString = [@"R: " mutableCopy];
-    for (int i = 0; i < resultLength; i++) {
-        [resultString appendString:[NSString stringWithFormat:@"%.1f ", result[i]]];
-    }
-    NSMutableString *outputString = [@"O: " mutableCopy];
-    for (int i = 0; i < signalLength; i++) {
-        [outputString appendString:[NSString stringWithFormat:@"%.1f ", output[i]]];
-    }
-    NSMutableString *overlapString = [@"L: " mutableCopy];
-    for (int i = 0; i < overlapLength; i++) {
-        [overlapString appendString:[NSString stringWithFormat:@"%.1f ", overlap[i]]];
-    }
+    memcpy(outputBuffer, windowedFrameBuffer, self.samplingSettings.packetByteSize);
     
-    NSLog(@"\n%@\n%@\n%@\n%@\n%@\n", signalString, filterString, resultString, outputString, overlapString);
+    NSLog(@"");
 }
 
 @end

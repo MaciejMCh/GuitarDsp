@@ -69,13 +69,15 @@
     self.buffer1View.length = self.length;
     self.buffer2View.length = self.length;
     
-    [self.buffer0View setNeedsDisplay:YES];
-    [self.buffer1View setNeedsDisplay:YES];
-    [self.buffer2View setNeedsDisplay:YES];
-    
-//    if (self.buffer2) {
-//        NSLog(@"1:%f 2:%f 3:%f ", self.buffer0[0], self.buffer1[0], self.buffer2[0]);
-//    }
+    if (self.toggle) {
+        [self.buffer0View setNeedsDisplay:YES];
+        [self.buffer1View setNeedsDisplay:YES];
+        [self.buffer2View setNeedsDisplay:YES];
+    }
+}
+
+- (IBAction)toggleButton:(id)sender {
+    self.toggle = !self.toggle;
 }
 
 @end

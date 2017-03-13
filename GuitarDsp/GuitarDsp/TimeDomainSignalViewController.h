@@ -29,6 +29,8 @@
 @property (nonatomic, assign) float *buffer2;
 @property (nonatomic, assign) int length;
 
+@property (nonatomic, assign) BOOL toggle;
+
 - (void)newBuffer:(float *)newBuffer;
 
 @end

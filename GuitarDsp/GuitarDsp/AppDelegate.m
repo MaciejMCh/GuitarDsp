@@ -75,14 +75,10 @@
         for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
             sineBuffer[i] = sinf((float)(ampIndex ++) / 10.0) * 0.01;
         }
-//        float *newBuffer = malloc(self.samplingSettings.packetByteSize);
-//        memcpy(newBuffer, sineBuffer, self.samplingSettings.packetByteSize);
         [self.processor processBuffer:sineBuffer];
-        if (ampIndex < 1000) {
-            [Sta tic].timeDomainSignalViewController.length = size;
-            [[Sta tic].timeDomainSignalViewController newBuffer:self.processor.outputBuffer];
-        }
-        memcpy(buffer, self.processor.outputBuffer, self.samplingSettings.packetByteSize);
+        [Sta tic].timeDomainSignalViewController.length = size;
+        [[Sta tic].timeDomainSignalViewController newBuffer:self.processor.outputBuffer];
+        //        memcpy(buffer, self.processor.outputBuffer, self.samplingSettings.packetByteSize);
     }];
     
     /**

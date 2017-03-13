@@ -95,11 +95,13 @@
 
 - (void)setupFilter {
     bzero(filter, sizeof(float) * filterLength);
-    filter[0] = 2;
+    filter[0] = 1;
     filter[1] = 1;
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
+    memcpy(outputBuffer, inputSample.amp, self.samplingSettings.packetByteSize);
+    return;
     
     memcpy(signal + filterLength - 1, inputSample.amp, sizeof(float) * signalLength);
     vDSP_conv(signal, 1, filter + filterLength - 1, -1,

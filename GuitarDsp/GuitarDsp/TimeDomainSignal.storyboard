@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="27v-qK-ufI">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Time Domain Signal View Controller-->
+        <scene sceneID="qkp-qk-khK">
+            <objects>
+                <viewController id="27v-qK-ufI" customClass="TimeDomainSignalViewController" sceneMemberID="viewController">
+                    <view key="view" id="efX-dp-ngs">
+                        <rect key="frame" x="0.0" y="0.0" width="619" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSX-Au-nLK" customClass="TimeDomainSignalView">
+                                <rect key="frame" x="10" y="178" width="127" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hb-oq-vgh" customClass="TimeDomainSignalView">
+                                <rect key="frame" x="264" y="178" width="127" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aE0-Ow-iOF" customClass="TimeDomainSignalView">
+                                <rect key="frame" x="137" y="178" width="127" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="buffer0View" destination="2hb-oq-vgh" id="rRD-fr-cc7"/>
+                        <outlet property="buffer1View" destination="aE0-Ow-iOF" id="rhE-St-C6t"/>
+                        <outlet property="buffer2View" destination="mSX-Au-nLK" id="kdD-0I-xDc"/>
+                    </connections>
+                </viewController>
+                <customObject id="dVP-Ow-qq6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.5" y="141"/>
+        </scene>
+    </scenes>
+</document>

@@ -27,8 +27,11 @@
 #import "AppDelegate.h"
 #import "Processor.h"
 #import "SamplingSettings.h"
+#import "TimeDomainSignalViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () {
+    long ampIndex;
+}
 
 @property (nonatomic, strong) Processor *processor;
 @property (nonatomic, assign) struct SamplingSettings samplingSettings;
@@ -43,6 +46,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
+    ampIndex = 0;
     struct SamplingSettings samplingSettings;
     samplingSettings.frequency = [EZMicrophone sharedMicrophone].audioStreamBasicDescription.mSampleRate;
     samplingSettings.framesPerPacket = [EZMicrophone sharedMicrophone].framesPerPacket;
@@ -64,8 +68,20 @@
     //
     [[EZMicrophone sharedMicrophone] setOutput:[EZOutput sharedOutput]];
     
+    
+    float *sineBuffer = malloc(self.samplingSettings.packetByteSize);
+    
     [[EZMicrophone sharedMicrophone] setDsp:^(float *buffer, int size) {
-        [self.processor processBuffer:buffer];
+        for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
+            sineBuffer[i] = sinf((float)(ampIndex ++) / 10.0) * 0.01;
+        }
+//        float *newBuffer = malloc(self.samplingSettings.packetByteSize);
+//        memcpy(newBuffer, sineBuffer, self.samplingSettings.packetByteSize);
+        [self.processor processBuffer:sineBuffer];
+        if (ampIndex < 1000) {
+            [Sta tic].timeDomainSignalViewController.length = size;
+            [[Sta tic].timeDomainSignalViewController newBuffer:self.processor.outputBuffer];
+        }
         memcpy(buffer, self.processor.outputBuffer, self.samplingSettings.packetByteSize);
     }];
     

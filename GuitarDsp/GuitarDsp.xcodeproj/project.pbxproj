@@ -21,6 +21,8 @@
 		C23C817C1E7178620050DCE9 /* ProcessorStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23C816E1E7178620050DCE9 /* ProcessorStoryboard.storyboard */; };
 		C23C817D1E7178620050DCE9 /* ProcessorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C81701E7178620050DCE9 /* ProcessorViewController.m */; };
 		C23C817E1E7178620050DCE9 /* TimingCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C81751E7178620050DCE9 /* TimingCalc.m */; };
+		C2A7C7A31E76D1890076EF78 /* TimeDomainSignal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A7C7A21E76D1890076EF78 /* TimeDomainSignal.storyboard */; };
+		C2A7C7A61E76D19E0076EF78 /* TimeDomainSignalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C7A51E76D19E0076EF78 /* TimeDomainSignalViewController.m */; };
 		C2F5877D1E71810A007DD777 /* EZAudioOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F5877C1E71810A007DD777 /* EZAudioOSX.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,9 @@
 		C23C81731E7178620050DCE9 /* Timing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timing.h; sourceTree = "<group>"; };
 		C23C81741E7178620050DCE9 /* TimingCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingCalc.h; sourceTree = "<group>"; };
 		C23C81751E7178620050DCE9 /* TimingCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingCalc.m; sourceTree = "<group>"; };
+		C2A7C7A21E76D1890076EF78 /* TimeDomainSignal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimeDomainSignal.storyboard; sourceTree = "<group>"; };
+		C2A7C7A41E76D19E0076EF78 /* TimeDomainSignalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeDomainSignalViewController.h; sourceTree = "<group>"; };
+		C2A7C7A51E76D19E0076EF78 /* TimeDomainSignalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeDomainSignalViewController.m; sourceTree = "<group>"; };
 		C2D961C61E71804A008870B4 /* dd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dd.h; sourceTree = "<group>"; };
 		C2D961C71E71804A008870B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2F5877C1E71810A007DD777 /* EZAudioOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EZAudioOSX.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-fqviswmbvyvdyxbfngkuxnzymtkh/Build/Products/Debug/EZAudioOSX.framework"; sourceTree = "<group>"; };
@@ -108,6 +113,9 @@
 				C23C81661E7178620050DCE9 /* DelayViewController.h */,
 				C23C81671E7178620050DCE9 /* DelayViewController.m */,
 				C23C81691E7178620050DCE9 /* Main.storyboard */,
+				C2A7C7A21E76D1890076EF78 /* TimeDomainSignal.storyboard */,
+				C2A7C7A41E76D19E0076EF78 /* TimeDomainSignalViewController.h */,
+				C2A7C7A51E76D19E0076EF78 /* TimeDomainSignalViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 			files = (
 				C23C81791E7178620050DCE9 /* Main.storyboard in Resources */,
 				C23C81581E7177EE0050DCE9 /* Assets.xcassets in Resources */,
+				C2A7C7A31E76D1890076EF78 /* TimeDomainSignal.storyboard in Resources */,
 				C23C817C1E7178620050DCE9 /* ProcessorStoryboard.storyboard in Resources */,
 				C23C81771E7178620050DCE9 /* DelayStoryboard.storyboard in Resources */,
 			);
@@ -280,6 +289,7 @@
 				C23C817A1E7178620050DCE9 /* MetronomeEffect.m in Sources */,
 				C23C81781E7178620050DCE9 /* DelayViewController.m in Sources */,
 				C23C817D1E7178620050DCE9 /* ProcessorViewController.m in Sources */,
+				C2A7C7A61E76D19E0076EF78 /* TimeDomainSignalViewController.m in Sources */,
 				C23C817B1E7178620050DCE9 /* Processor.m in Sources */,
 				C23C81761E7178620050DCE9 /* DelayEffect.m in Sources */,
 				C2327A711E718A9200587341 /* FftTestEffect.m in Sources */,

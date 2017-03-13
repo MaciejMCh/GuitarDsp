@@ -34,12 +34,7 @@
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
-    
-//    if (self.xD++ % 10 > 500) {
-//        memcpy(outputBuffer, inputSample.amp, self.samplingSettings.packetByteSize);
-//    } else {
-        smbPitchShift(0.5, 128, 128, 32, self.samplingSettings.frequency, inputSample.amp, outputBuffer);
-//    }
+    smbPitchShift(0.5, 128, 1024, 32, self.samplingSettings.frequency, inputSample.amp, outputBuffer);
     
     memcpy(previousFrame, inputSample.amp, self.samplingSettings.packetByteSize);
 }

@@ -72,13 +72,13 @@
     float *sineBuffer = malloc(self.samplingSettings.packetByteSize);
     
     [[EZMicrophone sharedMicrophone] setDsp:^(float *buffer, int size) {
-        for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-            sineBuffer[i] = sinf((float)(ampIndex ++) / 10.0) * 0.01;
-        }
-        [self.processor processBuffer:sineBuffer];
+//        for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
+//            sineBuffer[i] = sinf((float)(ampIndex ++) / 10.0) * 0.01;
+//        }
+        [self.processor processBuffer:buffer];
         [Sta tic].timeDomainSignalViewController.length = size;
         [[Sta tic].timeDomainSignalViewController newBuffer:self.processor.outputBuffer];
-        //        memcpy(buffer, self.processor.outputBuffer, self.samplingSettings.packetByteSize);
+        memcpy(buffer, self.processor.outputBuffer, self.samplingSettings.packetByteSize);
     }];
     
     /**

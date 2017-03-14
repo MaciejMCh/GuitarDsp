@@ -11,9 +11,6 @@
 #import "Effect.h"
 #import <EZAudio/EZAudio.h>
 
-// Temporary
-#import "FftTestEffect.h"
-
 @interface Processor ()
 
 @property (nonatomic, strong) NSMutableArray *effects;
@@ -32,6 +29,7 @@
     [self setupBuffers];
     [self setupDelay];
     [self setupMetronome];
+    [self setupPhaseVocoder];
     [self setupEffects];
     return self;
 }
@@ -57,7 +55,7 @@
     self.effects = [NSMutableArray new];
 //    [self.effects addObject:self.delayEffect];
 //    [self.effects addObject:self.metronomeEffect];
-    [self.effects addObject:[[FftTestEffect alloc] initWithSamplingSettings:self.samplingSettings]];
+    [self.effects addObject:self.phaseVocoderEffect];
 }
 
 - (void)setupDelay {
@@ -74,6 +72,10 @@
 
 - (void)setupMetronome {
     self.metronomeEffect = [[MetronomeEffect alloc] initWithSamplingSettings:self.samplingSettings tempo:self.tempo];
+}
+
+- (void)setupPhaseVocoder {
+    self.phaseVocoderEffect = [[PhaseVocoderEffect alloc] initWithSamplingSettings:self.samplingSettings];
 }
 
 - (void)setupBuffers {

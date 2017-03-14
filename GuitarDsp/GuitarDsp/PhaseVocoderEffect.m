@@ -6,31 +6,34 @@
 //
 //
 
-#import "FftTestEffect.h"
+#import "PhaseVocoderEffect.h"
 #import "PhaseVocoder.h"
 
-@interface FftTestEffect ()
+@interface PhaseVocoderEffect ()
 
 @property (nonatomic, assign) struct SamplingSettings samplingSettings;
 @property (nonatomic, strong) PhaseVocoder *phaseVocoder;
 
 @end
 
-@implementation FftTestEffect
+@implementation PhaseVocoderEffect
 
 - (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings {
     self = [super init];
     self.samplingSettings = samplingSettings;
     self.phaseVocoder = [PhaseVocoder new];
+    self.shift = 0.5;
+    self.fftLength = 1024;
+    self.overlapLength = 32;
     return self;
 }
 
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
-    [self.phaseVocoder smbPitchShift:0.5
+    [self.phaseVocoder smbPitchShift:self.shift
                    numSampsToProcess:self.samplingSettings.framesPerPacket
-                        fftFrameSize:1024
-                               osamp:32
+                        fftFrameSize:self.fftLength
+                               osamp:self.overlapLength
                           sampleRate:self.samplingSettings.framesPerPacket
                               indata:inputSample.amp
                              outdata:outputBuffer];

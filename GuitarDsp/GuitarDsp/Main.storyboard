@@ -677,10 +677,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--TimeDomainSignal-->
+        <!--ProcessorStoryboard-->
         <scene sceneID="rAM-Ta-Xg7">
             <objects>
-                <controllerPlaceholder storyboardName="TimeDomainSignal" id="Duw-RV-Z0d" sceneMemberID="viewController"/>
+                <controllerPlaceholder storyboardName="ProcessorStoryboard" id="Duw-RV-Z0d" sceneMemberID="viewController"/>
                 <customObject id="d1J-Wf-UbI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="553"/>

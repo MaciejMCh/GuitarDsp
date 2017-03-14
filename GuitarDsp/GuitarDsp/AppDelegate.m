@@ -76,8 +76,8 @@
 //            sineBuffer[i] = sinf((float)(ampIndex ++) / 10.0) * 0.01;
 //        }
         [self.processor processBuffer:buffer];
-        [Sta tic].timeDomainSignalViewController.length = size;
-        [[Sta tic].timeDomainSignalViewController newBuffer:self.processor.outputBuffer];
+//        [Sta tic].timeDomainSignalViewController.length = size;
+//        [[Sta tic].timeDomainSignalViewController newBuffer:self.processor.outputBuffer];
         memcpy(buffer, self.processor.outputBuffer, self.samplingSettings.packetByteSize);
     }];
     

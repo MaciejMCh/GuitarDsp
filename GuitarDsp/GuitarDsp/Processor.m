@@ -88,8 +88,6 @@
 #pragma mark - Interface
 
 - (void)processBuffer:(float *)buffer {
-//    memcpy(self.outputBuffer, buffer, self.samplingSettings.packetByteSize);
-    
     struct Sample inputSample;
     inputSample.amp = malloc(self.samplingSettings.packetByteSize);
     memcpy(inputSample.amp, buffer, self.samplingSettings.packetByteSize);
@@ -97,6 +95,8 @@
     for (id<Effect> effect in self.effects) {
         [effect processSample:inputSample intoBuffer:self.outputBuffer];
     }
+    
+    free(inputSample.amp);
 }
 
 #pragma mark -

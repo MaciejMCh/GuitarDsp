@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C2327A711E718A9200587341 /* FftTestEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C2327A701E718A9200587341 /* FftTestEffect.m */; };
 		C2327A731E718D7700587341 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2327A721E718D7700587341 /* Accelerate.framework */; };
+		C23887531E776AB20083CD24 /* PhaseVocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C23887521E776AB20083CD24 /* PhaseVocoder.m */; };
 		C23C81501E7177EE0050DCE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C814F1E7177EE0050DCE9 /* AppDelegate.m */; };
 		C23C81531E7177EE0050DCE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C81521E7177EE0050DCE9 /* main.m */; };
 		C23C81581E7177EE0050DCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23C81571E7177EE0050DCE9 /* Assets.xcassets */; };
@@ -43,6 +44,8 @@
 		C2327A6F1E718A9200587341 /* FftTestEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FftTestEffect.h; sourceTree = "<group>"; };
 		C2327A701E718A9200587341 /* FftTestEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FftTestEffect.m; sourceTree = "<group>"; };
 		C2327A721E718D7700587341 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		C23887511E776AB20083CD24 /* PhaseVocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhaseVocoder.h; sourceTree = "<group>"; };
+		C23887521E776AB20083CD24 /* PhaseVocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhaseVocoder.m; sourceTree = "<group>"; };
 		C23C814B1E7177EE0050DCE9 /* GuitarDsp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarDsp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23C814E1E7177EE0050DCE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C23C814F1E7177EE0050DCE9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				C23C81681E7178620050DCE9 /* Effect.h */,
 				C2327A6F1E718A9200587341 /* FftTestEffect.h */,
 				C2327A701E718A9200587341 /* FftTestEffect.m */,
+				C23887511E776AB20083CD24 /* PhaseVocoder.h */,
+				C23887521E776AB20083CD24 /* PhaseVocoder.m */,
 			);
 			name = Effect;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				C23C817B1E7178620050DCE9 /* Processor.m in Sources */,
 				C23C81761E7178620050DCE9 /* DelayEffect.m in Sources */,
 				C2327A711E718A9200587341 /* FftTestEffect.m in Sources */,
+				C23887531E776AB20083CD24 /* PhaseVocoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

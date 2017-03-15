@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "EffectNodesFactory.h"
 
 @interface BoardViewController : NSViewController
+
++ (BoardViewController *)withEffectNodesFactory:(EffectNodesFactory *)effectNodesFactory;
 
 @end

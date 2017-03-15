@@ -28,7 +28,7 @@
 		C24363021E79EB63008543EC /* SlidersStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24363011E79EB63008543EC /* SlidersStack.storyboard */; };
 		C2A7C7A31E76D1890076EF78 /* TimeDomainSignal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A7C7A21E76D1890076EF78 /* TimeDomainSignal.storyboard */; };
 		C2A7C7A61E76D19E0076EF78 /* TimeDomainSignalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C7A51E76D19E0076EF78 /* TimeDomainSignalViewController.m */; };
-		C2E96DBE1E7975290026E7F0 /* BoardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E96DBD1E7975290026E7F0 /* BoardViewController.storyboard */; };
+		C2E96DBE1E7975290026E7F0 /* Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E96DBD1E7975290026E7F0 /* Board.storyboard */; };
 		C2E96DC11E7975470026E7F0 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E96DC01E7975470026E7F0 /* BoardViewController.m */; };
 		C2F5877D1E71810A007DD777 /* EZAudioOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F5877C1E71810A007DD777 /* EZAudioOSX.framework */; };
 		C2FD96661E797636006E8F53 /* BoardUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FD96651E797636006E8F53 /* BoardUI.framework */; };
@@ -94,7 +94,7 @@
 		C2A7C7A51E76D19E0076EF78 /* TimeDomainSignalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeDomainSignalViewController.m; sourceTree = "<group>"; };
 		C2D961C61E71804A008870B4 /* dd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dd.h; sourceTree = "<group>"; };
 		C2D961C71E71804A008870B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2E96DBD1E7975290026E7F0 /* BoardViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BoardViewController.storyboard; sourceTree = "<group>"; };
+		C2E96DBD1E7975290026E7F0 /* Board.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Board.storyboard; sourceTree = "<group>"; };
 		C2E96DBF1E7975470026E7F0 /* BoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
 		C2E96DC01E7975470026E7F0 /* BoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewController.m; sourceTree = "<group>"; };
 		C2F5877C1E71810A007DD777 /* EZAudioOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EZAudioOSX.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-fqviswmbvyvdyxbfngkuxnzymtkh/Build/Products/Debug/EZAudioOSX.framework"; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				C23887541E7770FE0083CD24 /* PhaseVocoderStoryboard.storyboard */,
 				C23887561E7771100083CD24 /* PhaseVocoderViewController.h */,
 				C23887571E7771100083CD24 /* PhaseVocoderViewController.m */,
-				C2E96DBD1E7975290026E7F0 /* BoardViewController.storyboard */,
+				C2E96DBD1E7975290026E7F0 /* Board.storyboard */,
 				C2E96DBF1E7975470026E7F0 /* BoardViewController.h */,
 				C2E96DC01E7975470026E7F0 /* BoardViewController.m */,
 				C2FD96671E79784D006E8F53 /* AddEffect.storyboard */,
@@ -338,7 +338,7 @@
 				C2FD96681E79784D006E8F53 /* AddEffect.storyboard in Resources */,
 				C24363021E79EB63008543EC /* SlidersStack.storyboard in Resources */,
 				C23C817C1E7178620050DCE9 /* ProcessorStoryboard.storyboard in Resources */,
-				C2E96DBE1E7975290026E7F0 /* BoardViewController.storyboard in Resources */,
+				C2E96DBE1E7975290026E7F0 /* Board.storyboard in Resources */,
 				C23C81771E7178620050DCE9 /* DelayStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

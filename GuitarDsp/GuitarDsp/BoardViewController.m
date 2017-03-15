@@ -15,11 +15,18 @@
 
 @interface BoardViewController ()
 
+@property (nonatomic, strong) EffectNodesFactory *effectNodesFactory;
 @property (nonatomic, weak) IBOutlet GridView *gridView;
 
 @end
 
 @implementation BoardViewController
+
++ (BoardViewController *)withEffectNodesFactory:(EffectNodesFactory *)effectNodesFactory {
+    BoardViewController *me = [[NSStoryboard storyboardWithName:@"Board" bundle:nil] instantiateInitialController];
+    me.effectNodesFactory = effectNodesFactory;
+    return me;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,7 +59,7 @@
 }
 
 - (void)navigateToAddEffectScreen:(GridEntity *)fromBlankEntity {
-    AddEffectViewController *addEffectViewController = [[NSStoryboard storyboardWithName:@"AddEffect" bundle:nil] instantiateInitialController];
+    AddEffectViewController *addEffectViewController = [AddEffectViewController withEffectNodesFactory:self.effectNodesFactory];
     
     __weak typeof(self) wSelf = self;
     __weak GridEntity *wBlank = fromBlankEntity;

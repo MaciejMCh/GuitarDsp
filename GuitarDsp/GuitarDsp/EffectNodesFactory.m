@@ -7,15 +7,26 @@
 //
 
 #import "EffectNodesFactory.h"
-#import "DelayEffect.h"
+
+@interface EffectNodesFactory ()
+
+@property (nonatomic, weak) id<EffectsFactory> effectsFactory;
+
+@end
 
 @implementation EffectNodesFactory
 
-+ (NSArray<GridEntity *> *)all {
+- (instancetype)initWithEffectsFactory:(id<EffectsFactory>)effectsFactory {
+    self = [super init];
+    self.effectsFactory = effectsFactory;
+    return self;
+}
+
+- (NSArray<GridEntity *> *)all {
     return @[[self delay], [self phaseVocoder]];
 }
 
-+ (GridEntity *)delay {
+- (GridEntity * _Nonnull)delay {
     NSView *view = [NSView new];
     view.wantsLayer = YES;
     view.layer.borderColor = [NSColor blackColor].CGColor;
@@ -25,11 +36,11 @@
     [view addSubview:textField];
     GridEntity *entity = [GridEntity new];
     entity.view = view;
-    entity.model = [DelayEffect new];
+    entity.model = [self.effectsFactory newDelayEffect];
     return entity;
 }
 
-+ (GridEntity *)phaseVocoder {
+- (GridEntity * _Nonnull)phaseVocoder {
     NSView *view = [NSView new];
     view.wantsLayer = YES;
     view.layer.borderColor = [NSColor blackColor].CGColor;
@@ -39,6 +50,7 @@
     [view addSubview:textField];
     GridEntity *entity = [GridEntity new];
     entity.view = view;
+    entity.model = [self.effectsFactory newPhaseVocoderEffect];
     return entity;
 }
 

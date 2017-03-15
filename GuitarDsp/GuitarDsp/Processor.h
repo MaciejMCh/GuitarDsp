@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "SamplingSettings.h"
+#import "EffectNodesFactory.h"
 
 // Temporary
 #import "PhaseVocoderEffect.h"
 #import "DelayEffect.h"
 #import "MetronomeEffect.h"
 
-@interface Processor : NSObject
+@interface Processor : NSObject <EffectsFactory>
 
 @property (nonatomic, strong) DelayEffect *delayEffect;
 @property (nonatomic, strong) MetronomeEffect *metronomeEffect;

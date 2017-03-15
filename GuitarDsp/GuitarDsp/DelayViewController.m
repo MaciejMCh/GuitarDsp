@@ -42,7 +42,7 @@
 
 - (void)updateViews {
     self.echoesCountTextField.stringValue = [NSString stringWithFormat:@"%d", self.delayEffect.echoesCount];
-    self.tactPartTextField.stringValue = [NSString stringWithFormat:@"%d", self.delayEffect.timing.tactPart];
+    self.tactPartTextField.stringValue = [NSString stringWithFormat:@"%lu", (unsigned long)self.delayEffect.timing.tactPart];
     self.fadingFunctionATextField.stringValue = [NSString stringWithFormat:@"%f", self.delayEffect.fadingFunctionA];
     self.fadingFunctionBTextField.stringValue = [NSString stringWithFormat:@"%f", self.delayEffect.fadingFunctionB];
 }

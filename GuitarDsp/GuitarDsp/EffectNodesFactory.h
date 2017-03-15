@@ -8,12 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import <BoardUI/BoardUI.h>
+#import "DelayEffect.h"
+#import "PhaseVocoderEffect.h"
+
+@protocol EffectsFactory <NSObject>
+
+- (DelayEffect * _Nonnull)newDelayEffect;
+- (PhaseVocoderEffect * _Nonnull)newPhaseVocoderEffect;
+
+@end
 
 @interface EffectNodesFactory : NSObject
 
-+ (NSArray<GridEntity *> * _Nonnull)all;
+- (instancetype _Nonnull)initWithEffectsFactory:(id<EffectsFactory> _Nonnull)effectsFactory;
 
-+ (GridEntity * _Nonnull)delay;
-+ (GridEntity * _Nonnull)phaseVocoder;
+- (NSArray<GridEntity *> * _Nonnull)all;
+
+- (GridEntity * _Nonnull)delay;
+- (GridEntity * _Nonnull)phaseVocoder;
 
 @end

@@ -18,7 +18,7 @@
 - (void)updateViews {
     self.shiftTextField.stringValue = [NSString stringWithFormat:@"%f", self.phaseVocoderEffect.shift];
     self.fftLengthTextField.stringValue = [NSString stringWithFormat:@"%d", self.phaseVocoderEffect.fftLength];
-    self.overlapLengthTextField.stringValue = [NSString stringWithFormat:@"%f", self.phaseVocoderEffect.overlapLength];
+    self.overlapLengthTextField.stringValue = [NSString stringWithFormat:@"%d", self.phaseVocoderEffect.overlapLength];
 }
 
 - (IBAction)shiftTextFieldAction:(NSTextField *)sender {

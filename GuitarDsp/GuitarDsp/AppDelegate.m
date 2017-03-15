@@ -28,6 +28,7 @@
 #import "Processor.h"
 #import "SamplingSettings.h"
 #import "TimeDomainSignalViewController.h"
+#import "BoardViewController.h"
 
 @interface AppDelegate () {
     long ampIndex;
@@ -85,6 +86,9 @@
      Start the output
      */
     [[EZOutput sharedOutput] startPlayback];
+    
+    BoardViewController *boardViewController = [BoardViewController withEffectNodesFactory:[[EffectNodesFactory alloc] initWithEffectsFactory:self.processor]];
+    [NSApplication sharedApplication].windows.firstObject.contentViewController = boardViewController;
 }
 
 //------------------------------------------------------------------------------

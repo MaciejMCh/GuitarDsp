@@ -113,4 +113,23 @@
     }
 }
 
+#pragma mark -
+#pragma mark - EffectsFactory
+
+- (PhaseVocoderEffect *)newPhaseVocoderEffect {
+    return [[PhaseVocoderEffect alloc] initWithSamplingSettings:self.samplingSettings];
+}
+
+- (DelayEffect *)newDelayEffect {
+    struct Timing delayTiming;
+    delayTiming.tactPart = Half;
+    delayTiming.tempo = self.tempo;
+    
+    return [[DelayEffect alloc] initWithFadingFunctionA:0.2
+                                        fadingFunctionB:0.2
+                                            echoesCount:2
+                                       samplingSettings:self.samplingSettings
+                                                 timing:delayTiming];
+}
+
 @end

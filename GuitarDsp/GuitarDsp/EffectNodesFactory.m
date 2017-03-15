@@ -7,6 +7,7 @@
 //
 
 #import "EffectNodesFactory.h"
+#import "DelayEffect.h"
 
 @implementation EffectNodesFactory
 
@@ -24,6 +25,7 @@
     [view addSubview:textField];
     GridEntity *entity = [GridEntity new];
     entity.view = view;
+    entity.model = [DelayEffect new];
     return entity;
 }
 

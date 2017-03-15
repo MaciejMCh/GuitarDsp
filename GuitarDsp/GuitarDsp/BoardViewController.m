@@ -9,6 +9,9 @@
 #import "BoardViewController.h"
 #import <BoardUI/BoardUI.h>
 #import "AddEffectViewController.h"
+#import "DelayEffect.h"
+#import "SlidersFactory.h"
+#import "SlidersStackViewController.h"
 
 @interface BoardViewController ()
 
@@ -55,10 +58,20 @@
     [addEffectViewController setCompletion:^(GridEntity *newEffectEntity) {
         [wSelf.gridView replaceEntity:wBlank withEntity:newEffectEntity];
         [wSelf dismissViewController:wAddEffectViewController];
+        [wSelf setupNewEntityAction:newEffectEntity];
     }];
     
     [self presentViewControllerAsModalWindow:addEffectViewController];
-//    [self transitionFromViewController:self toViewController:addEffectViewController options:NSViewControllerTransitionCrossfade completionHandler:nil];
+}
+
+- (void)setupNewEntityAction:(GridEntity *)gridEntity {
+    if ([gridEntity.model isKindOfClass:[DelayEffect class]]) {
+        __weak DelayEffect *wDelayEffect = gridEntity.model;
+        [gridEntity setAction:^{
+            SlidersStackViewController *controller = [SlidersStackViewController withSliders:[SlidersFactory delaySliders:wDelayEffect]];
+            [self presentViewControllerAsModalWindow:controller];
+        }];
+    }
 }
 
 @end

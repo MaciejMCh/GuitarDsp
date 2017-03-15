@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="kEs-Rd-dL1">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sliders-->
+        <scene sceneID="rRT-ZF-PGs">
+            <objects>
+                <viewController title="Sliders" id="kEs-Rd-dL1" customClass="SlidersStackViewController" sceneMemberID="viewController">
+                    <view key="view" id="bVM-ZW-PCL" customClass="SlidersStackView">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                    <connections>
+                        <outlet property="slidersView" destination="bVM-ZW-PCL" id="ed8-xJ-7bw"/>
+                    </connections>
+                </viewController>
+                <customObject id="5UO-A8-NAP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-99" y="188"/>
+        </scene>
+    </scenes>
+</document>

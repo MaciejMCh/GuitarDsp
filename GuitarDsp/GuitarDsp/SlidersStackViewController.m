@@ -21,4 +21,9 @@
     return me;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.frame = [NSScreen mainScreen].frame;
+}
+
 @end

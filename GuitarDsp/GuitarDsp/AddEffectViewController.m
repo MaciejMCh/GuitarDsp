@@ -27,6 +27,7 @@
         }];
         [self.gridView addEntity:entity];
     }
+    self.view.frame = [NSScreen mainScreen].frame;
 }
 
 - (void)didSelectEntity:(GridEntity *)entity {

@@ -28,6 +28,8 @@
     [self.gridView setBlankGridFactory:^GridEntity * _Nonnull{
         return [wSelf blankEntity];
     }];
+    
+    self.view.frame = [NSScreen mainScreen].frame;
 }
 
 - (GridEntity *)blankEntity {

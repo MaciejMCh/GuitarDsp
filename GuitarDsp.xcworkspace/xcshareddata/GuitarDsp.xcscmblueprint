@@ -5,11 +5,13 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "59C7C9FA5F3953E2EEB12CCCEBABED38294BB22F" : 9223372036854775807,
+    "AC0FC30F30FBD81E21C79EB57B2096BB1F6D1FAD" : 9223372036854775807,
     "9D6FF97A89F512CD81EAE1A971A1D2EB03E03F7C" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4EE16248-9E75-4847-9032-34B3207BE696",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "59C7C9FA5F3953E2EEB12CCCEBABED38294BB22F" : "GuitarDsp\/",
+    "AC0FC30F30FBD81E21C79EB57B2096BB1F6D1FAD" : "GuitarDsp\/BoardInterface\/",
     "9D6FF97A89F512CD81EAE1A971A1D2EB03E03F7C" : "GuitarDsp\/EZAudio\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "GuitarDsp",
@@ -25,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MaciejMCh\/EZAudio.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9D6FF97A89F512CD81EAE1A971A1D2EB03E03F7C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MaciejMCh\/BoardInterface.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AC0FC30F30FBD81E21C79EB57B2096BB1F6D1FAD"
     }
   ]
 }

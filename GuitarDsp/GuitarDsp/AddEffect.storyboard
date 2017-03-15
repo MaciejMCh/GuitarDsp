@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="KQJ-1C-ej2">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Effect View Controller-->
+        <scene sceneID="7Ef-8p-1b3">
+            <objects>
+                <viewController id="KQJ-1C-ej2" customClass="AddEffectViewController" sceneMemberID="viewController">
+                    <view key="view" id="uvJ-IP-0yr" customClass="GridView">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                    <connections>
+                        <outlet property="gridView" destination="uvJ-IP-0yr" id="K8T-hN-tEi"/>
+                    </connections>
+                </viewController>
+                <customObject id="kdw-fT-4Va" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="-100"/>
+        </scene>
+    </scenes>
+</document>

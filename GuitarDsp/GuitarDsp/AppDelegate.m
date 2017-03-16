@@ -29,10 +29,9 @@
 #import "SamplingSettings.h"
 #import "TimeDomainSignalViewController.h"
 #import "BoardViewController.h"
+#import "Board.h"
 
-@interface AppDelegate () {
-    long ampIndex;
-}
+@interface AppDelegate ()
 
 @property (nonatomic, strong) Processor *processor;
 @property (nonatomic, assign) struct SamplingSettings samplingSettings;
@@ -47,7 +46,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
-    ampIndex = 0;
     struct SamplingSettings samplingSettings;
     samplingSettings.frequency = [EZMicrophone sharedMicrophone].audioStreamBasicDescription.mSampleRate;
     samplingSettings.framesPerPacket = [EZMicrophone sharedMicrophone].framesPerPacket;
@@ -69,16 +67,8 @@
     //
     [[EZMicrophone sharedMicrophone] setOutput:[EZOutput sharedOutput]];
     
-    
-    float *sineBuffer = malloc(self.samplingSettings.packetByteSize);
-    
     [[EZMicrophone sharedMicrophone] setDsp:^(float *buffer, int size) {
-//        for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-//            sineBuffer[i] = sinf((float)(ampIndex ++) / 10.0) * 0.01;
-//        }
         [self.processor processBuffer:buffer];
-//        [Sta tic].timeDomainSignalViewController.length = size;
-//        [[Sta tic].timeDomainSignalViewController newBuffer:self.processor.outputBuffer];
         memcpy(buffer, self.processor.outputBuffer, self.samplingSettings.packetByteSize);
     }];
     
@@ -87,7 +77,14 @@
      */
     [[EZOutput sharedOutput] startPlayback];
     
+    Board *board = [Board new];
+    self.processor.activeBoard = board;
+    
     BoardViewController *boardViewController = [BoardViewController withEffectNodesFactory:[[EffectNodesFactory alloc] initWithEffectsFactory:self.processor]];
+    __weak Board *wBoard = board;
+    [boardViewController setUpdateEffects:^(NSArray<id<Effect>> *effects) {
+        wBoard.effects = effects;
+    }];
     [NSApplication sharedApplication].windows.firstObject.contentViewController = boardViewController;
 }
 

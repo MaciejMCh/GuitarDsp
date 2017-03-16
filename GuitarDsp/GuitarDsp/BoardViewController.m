@@ -9,7 +9,6 @@
 #import "BoardViewController.h"
 #import <BoardUI/BoardUI.h>
 #import "AddEffectViewController.h"
-#import "DelayEffect.h"
 #import "SlidersFactory.h"
 #import "SlidersStackViewController.h"
 
@@ -35,8 +34,21 @@
     [self.gridView setBlankGridFactory:^GridEntity * _Nonnull{
         return [wSelf blankEntity];
     }];
+    [self.gridView setGridUpdated:^{
+        [wSelf effectsUpdated];
+    }];
     
     self.view.frame = [NSScreen mainScreen].frame;
+}
+
+- (void)effectsUpdated {
+    NSMutableArray<id<Effect>> *effects = [NSMutableArray new];
+    for (GridEntity *entity in self.gridView.entities) {
+        if ([entity.model conformsToProtocol:@protocol(Effect)]) {
+            [effects addObject:entity.model];
+        }
+    }
+    self.updateEffects(effects);
 }
 
 - (GridEntity *)blankEntity {

@@ -30,6 +30,7 @@
 		C2A7C7A61E76D19E0076EF78 /* TimeDomainSignalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C7A51E76D19E0076EF78 /* TimeDomainSignalViewController.m */; };
 		C2E96DBE1E7975290026E7F0 /* Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E96DBD1E7975290026E7F0 /* Board.storyboard */; };
 		C2E96DC11E7975470026E7F0 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E96DC01E7975470026E7F0 /* BoardViewController.m */; };
+		C2F2ADB41E7A097400C604D0 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F2ADB31E7A097400C604D0 /* Board.m */; };
 		C2F5877D1E71810A007DD777 /* EZAudioOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F5877C1E71810A007DD777 /* EZAudioOSX.framework */; };
 		C2FD96661E797636006E8F53 /* BoardUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FD96651E797636006E8F53 /* BoardUI.framework */; };
 		C2FD96681E79784D006E8F53 /* AddEffect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2FD96671E79784D006E8F53 /* AddEffect.storyboard */; };
@@ -97,6 +98,8 @@
 		C2E96DBD1E7975290026E7F0 /* Board.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Board.storyboard; sourceTree = "<group>"; };
 		C2E96DBF1E7975470026E7F0 /* BoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
 		C2E96DC01E7975470026E7F0 /* BoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewController.m; sourceTree = "<group>"; };
+		C2F2ADB21E7A097400C604D0 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		C2F2ADB31E7A097400C604D0 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
 		C2F5877C1E71810A007DD777 /* EZAudioOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EZAudioOSX.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-fqviswmbvyvdyxbfngkuxnzymtkh/Build/Products/Debug/EZAudioOSX.framework"; sourceTree = "<group>"; };
 		C2FD96651E797636006E8F53 /* BoardUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BoardUI.framework; path = ../BoardInterface/build/Debug/BoardUI.framework; sourceTree = "<group>"; };
 		C2FD96671E79784D006E8F53 /* AddEffect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddEffect.storyboard; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 			children = (
 				C23C816C1E7178620050DCE9 /* Processor.h */,
 				C23C816D1E7178620050DCE9 /* Processor.m */,
+				C2F2ADB21E7A097400C604D0 /* Board.h */,
+				C2F2ADB31E7A097400C604D0 /* Board.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				C23C81501E7177EE0050DCE9 /* AppDelegate.m in Sources */,
 				C23C817E1E7178620050DCE9 /* TimingCalc.m in Sources */,
 				C23C817A1E7178620050DCE9 /* MetronomeEffect.m in Sources */,
+				C2F2ADB41E7A097400C604D0 /* Board.m in Sources */,
 				C23C81781E7178620050DCE9 /* DelayViewController.m in Sources */,
 				C23C817D1E7178620050DCE9 /* ProcessorViewController.m in Sources */,
 				C2A7C7A61E76D19E0076EF78 /* TimeDomainSignalViewController.m in Sources */,

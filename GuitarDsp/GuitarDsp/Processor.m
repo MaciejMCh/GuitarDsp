@@ -13,8 +13,6 @@
 
 @interface Processor ()
 
-@property (nonatomic, strong) NSMutableArray *effects;
-
 @end
 
 @implementation Processor
@@ -27,10 +25,7 @@
     self.samplingSettings = samplingSettings;
     _tempo = tempo;
     [self setupBuffers];
-    [self setupDelay];
     [self setupMetronome];
-    [self setupPhaseVocoder];
-    [self setupEffects];
     return self;
 }
 
@@ -51,31 +46,9 @@
 #pragma mark -
 #pragma mark - Setup
 
-- (void)setupEffects {
-    self.effects = [NSMutableArray new];
-//    [self.effects addObject:self.delayEffect];
-//    [self.effects addObject:self.metronomeEffect];
-    [self.effects addObject:self.phaseVocoderEffect];
-}
-
-- (void)setupDelay {
-    struct Timing delayTiming;
-    delayTiming.tactPart = Half;
-    delayTiming.tempo = self.tempo;
-    
-    self.delayEffect = [[DelayEffect alloc] initWithFadingFunctionA:0.2
-                                                    fadingFunctionB:0.2
-                                                        echoesCount:2
-                                                   samplingSettings:self.samplingSettings
-                                                             timing:delayTiming];
-}
 
 - (void)setupMetronome {
     self.metronomeEffect = [[MetronomeEffect alloc] initWithSamplingSettings:self.samplingSettings tempo:self.tempo];
-}
-
-- (void)setupPhaseVocoder {
-    self.phaseVocoderEffect = [[PhaseVocoderEffect alloc] initWithSamplingSettings:self.samplingSettings];
 }
 
 - (void)setupBuffers {
@@ -90,15 +63,17 @@
 #pragma mark - Interface
 
 - (void)processBuffer:(float *)buffer {
+    memcpy(self.outputBuffer, buffer, self.samplingSettings.packetByteSize);
+    
     struct Sample inputSample;
     inputSample.amp = malloc(self.samplingSettings.packetByteSize);
     memcpy(inputSample.amp, buffer, self.samplingSettings.packetByteSize);
     
-    for (id<Effect> effect in self.effects) {
+    for (id<Effect> effect in self.activeBoard.effects) {
         [effect processSample:inputSample intoBuffer:self.outputBuffer];
+        memcpy(inputSample.amp, self.outputBuffer, self.samplingSettings.packetByteSize);
     }
     
-    free(inputSample.amp);
 }
 
 #pragma mark -
@@ -106,7 +81,7 @@
 
 - (void)setTempo:(float)tempo {
     _tempo = tempo;
-    for (id effect in self.effects) {
+    for (id effect in self.activeBoard.effects) {
         if ([effect conformsToProtocol:@protocol(TempoUser)]) {
             [((id<TempoUser>)effect) updateTempo:self.tempo];
         }

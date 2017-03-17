@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <BoardUI/BoardUI.h>
 #import "DelayEffect.h"
+#import "PhaseVocoderEffect.h"
 
 @interface SlidersFactory : NSObject
 
 + (NSArray<Slider *> *)delaySliders:(DelayEffect *)delayEffect;
++ (NSArray<Slider *> *)phaseVocoderSliders:(PhaseVocoderEffect *)phaseVocoderEffect;
 
 @end

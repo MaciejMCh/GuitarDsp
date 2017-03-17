@@ -110,4 +110,25 @@
     return slider;
 }
 
+#pragma mark - 
+#pragma mark - PhaseVocoder
+
++ (NSArray<Slider *> *)phaseVocoderSliders:(PhaseVocoderEffect *)phaseVocoderEffect {
+    __weak PhaseVocoderEffect * wPhaseVocoderEffect = phaseVocoderEffect;
+    
+    Slider *shiftsSlider = [[Slider alloc] initWithName:@"shift" values:@[@0.25, @0.5, @1, @2, @4] selectedIndex:2 valueUpdate:^(Slider *slider) {
+        wPhaseVocoderEffect.shift = [slider.selectedValue floatValue];
+    }];
+    
+    NSMutableArray<NSString *> *semitoneValuesArray = [NSMutableArray new];
+    for (int i = -24; i <= 24; i++) {
+        [semitoneValuesArray addObject:[NSString stringWithFormat:@"%d", i]];
+    }
+    Slider *semitonesSlider = [[Slider alloc] initWithName:@"semitone" values:semitoneValuesArray selectedIndex:24 valueUpdate:^(Slider *slider) {
+        wPhaseVocoderEffect.shift = 1.0 + ((float)[slider.selectedValue integerValue] / (float)12);
+    }];
+    
+    return @[shiftsSlider, semitonesSlider];
+}
+
 @end

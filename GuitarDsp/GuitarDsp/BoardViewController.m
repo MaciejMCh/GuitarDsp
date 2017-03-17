@@ -98,6 +98,18 @@
             [wSelf presentViewControllerAsModalWindow:controller];
         }];
     }
+    
+    if ([gridEntity.model isKindOfClass:[PhaseVocoderEffect class]]) {
+        __weak PhaseVocoderEffect *wPhaseVocoderEffectEffect = gridEntity.model;
+        [gridEntity setAction:^{
+            SlidersStackViewController *controller = [SlidersStackViewController withSliders:[SlidersFactory phaseVocoderSliders:wPhaseVocoderEffectEffect]];
+            __weak SlidersStackViewController *wController = controller;
+            [controller setDismiss:^{
+                [wSelf dismissViewController:wController];
+            }];
+            [wSelf presentViewControllerAsModalWindow:controller];
+        }];
+    }
 }
 
 @end

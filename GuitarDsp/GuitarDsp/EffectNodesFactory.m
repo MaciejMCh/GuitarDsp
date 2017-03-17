@@ -7,6 +7,7 @@
 //
 
 #import "EffectNodesFactory.h"
+#import "EffectView.h"
 
 @interface EffectNodesFactory ()
 
@@ -26,30 +27,25 @@
     return @[[self delay], [self phaseVocoder]];
 }
 
+- (NSView *)effectGridEntityView:(NSString *)effectName {
+    EffectView *effectView = [EffectView instance];
+    effectView.wantsLayer = YES;
+    effectView.layer.borderColor = [NSColor blackColor].CGColor;
+    effectView.layer.borderWidth = 2.0;
+    effectView.nameTextField.stringValue = effectName;
+    return effectView;
+}
+
 - (GridEntity * _Nonnull)delay {
-    NSView *view = [NSView new];
-    view.wantsLayer = YES;
-    view.layer.borderColor = [NSColor blackColor].CGColor;
-    view.layer.borderWidth = 2.0;
-    NSTextField *textField = [[NSTextField alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    textField.stringValue = @"delay";
-    [view addSubview:textField];
     GridEntity *entity = [GridEntity new];
-    entity.view = view;
+    entity.view = [self effectGridEntityView:@"delay"];
     entity.model = [self.effectsFactory newDelayEffect];
     return entity;
 }
 
 - (GridEntity * _Nonnull)phaseVocoder {
-    NSView *view = [NSView new];
-    view.wantsLayer = YES;
-    view.layer.borderColor = [NSColor blackColor].CGColor;
-    view.layer.borderWidth = 2.0;
-    NSTextField *textField = [[NSTextField alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    textField.stringValue = @"phase vocoder";
-    [view addSubview:textField];
     GridEntity *entity = [GridEntity new];
-    entity.view = view;
+    entity.view = [self effectGridEntityView:@"phase vocoder"];
     entity.model = [self.effectsFactory newPhaseVocoderEffect];
     return entity;
 }

@@ -71,9 +71,8 @@
     
     for (id<Effect> effect in self.activeBoard.effects) {
         [effect processSample:inputSample intoBuffer:self.outputBuffer];
-        memcpy(inputSample.amp, self.outputBuffer, self.samplingSettings.packetByteSize);
+//        memcpy(inputSample.amp, self.outputBuffer, self.samplingSettings.packetByteSize);
     }
-    
 }
 
 #pragma mark -

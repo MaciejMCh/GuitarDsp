@@ -86,6 +86,9 @@
         wBoard.effects = effects;
     }];
     [NSApplication sharedApplication].windows.firstObject.contentViewController = boardViewController;
+    
+    CGAssociateMouseAndMouseCursorPosition(false);
+    CGDisplayHideCursor(kCGNullDirectDisplay);
 }
 
 //------------------------------------------------------------------------------

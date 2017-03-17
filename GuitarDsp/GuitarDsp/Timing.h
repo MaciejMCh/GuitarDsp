@@ -12,6 +12,8 @@ typedef NS_ENUM(NSUInteger, TactPart) {
     Whole = 1,
     Half = 2,
     Quater = 4,
+    Eights = 8,
+    Sixteenth = 16
 };
 
 struct Timing {

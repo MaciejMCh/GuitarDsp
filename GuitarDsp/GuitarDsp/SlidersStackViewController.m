@@ -21,9 +21,15 @@
     return me;
 }
 
+- (void)setDismiss:(void (^)(void))dismiss {
+    _dismiss = dismiss;
+    self.slidersView.dismiss = _dismiss;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.frame = [NSScreen mainScreen].frame;
+    self.slidersView.dismiss = self.dismiss;
 }
 
 @end

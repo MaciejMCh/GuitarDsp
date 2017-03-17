@@ -12,6 +12,7 @@
 @interface SlidersStackViewController : NSViewController
 
 @property (nonatomic, weak) IBOutlet SlidersStackView *slidersView;
+@property (nonatomic, copy) void (^dismiss)(void);
 
 + (SlidersStackViewController *)withSliders:(NSArray<Slider *> *)sliders;
 

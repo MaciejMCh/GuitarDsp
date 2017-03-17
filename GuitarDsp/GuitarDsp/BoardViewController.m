@@ -86,11 +86,16 @@
 }
 
 - (void)setupNewEntityAction:(GridEntity *)gridEntity {
+    __weak typeof(self) wSelf = self;
     if ([gridEntity.model isKindOfClass:[DelayEffect class]]) {
         __weak DelayEffect *wDelayEffect = gridEntity.model;
         [gridEntity setAction:^{
             SlidersStackViewController *controller = [SlidersStackViewController withSliders:[SlidersFactory delaySliders:wDelayEffect]];
-            [self presentViewControllerAsModalWindow:controller];
+            __weak SlidersStackViewController *wController = controller;
+            [controller setDismiss:^{
+                [wSelf dismissViewController:wController];
+            }];
+            [wSelf presentViewControllerAsModalWindow:controller];
         }];
     }
 }

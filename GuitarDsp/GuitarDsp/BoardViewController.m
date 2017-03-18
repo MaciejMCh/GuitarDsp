@@ -110,6 +110,18 @@
             [wSelf presentViewControllerAsModalWindow:controller];
         }];
     }
+    
+    if ([gridEntity.model isKindOfClass:[HarmonizerEffect class]]) {
+        __weak HarmonizerEffect *wHarmonizerEffectEffect = gridEntity.model;
+        [gridEntity setAction:^{
+            SlidersStackViewController *controller = [SlidersStackViewController withSliders:[SlidersFactory harmonizerSliders:wHarmonizerEffectEffect]];
+            __weak SlidersStackViewController *wController = controller;
+            [controller setDismiss:^{
+                [wSelf dismissViewController:wController];
+            }];
+            [wSelf presentViewControllerAsModalWindow:controller];
+        }];
+    }
 }
 
 @end

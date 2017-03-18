@@ -30,11 +30,14 @@
 #import "TimeDomainSignalViewController.h"
 #import "BoardViewController.h"
 #import "Board.h"
+#import "ReverbEffect.h"
+#import "TimeDomainSignalViewController.h"
 
 @interface AppDelegate ()
 
 @property (nonatomic, strong) Processor *processor;
 @property (nonatomic, assign) struct SamplingSettings samplingSettings;
+@property (nonatomic, assign) int index;
 
 @end
 
@@ -46,6 +49,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
+    self.index = 0;
     struct SamplingSettings samplingSettings;
     samplingSettings.frequency = [EZMicrophone sharedMicrophone].audioStreamBasicDescription.mSampleRate;
     samplingSettings.framesPerPacket = [EZMicrophone sharedMicrophone].framesPerPacket;
@@ -67,7 +71,14 @@
     //
     [[EZMicrophone sharedMicrophone] setOutput:[EZOutput sharedOutput]];
     
+    
+    float *sineWaveBuffer = malloc(self.samplingSettings.packetByteSize);
     [[EZMicrophone sharedMicrophone] setDsp:^(float *buffer, int size) {
+        for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
+            sineWaveBuffer[i] = sinf((float)self.index * 0.1);
+        }
+        [Sta tic].timeDomainSignalViewController.buffer0 = sineWaveBuffer;
+        [Sta tic].timeDomainSignalViewController.length = self.samplingSettings.framesPerPacket;
         [self.processor processBuffer:buffer];
         memcpy(buffer, self.processor.outputBuffer, self.samplingSettings.packetByteSize);
     }];
@@ -79,7 +90,6 @@
     
     Board *board = [Board new];
     self.processor.activeBoard = board;
-    
     BoardViewController *boardViewController = [BoardViewController withEffectNodesFactory:[[EffectNodesFactory alloc] initWithEffectsFactory:self.processor]];
     __weak Board *wBoard = board;
     [boardViewController setUpdateEffects:^(NSArray<id<Effect>> *effects) {
@@ -89,6 +99,13 @@
     
     CGAssociateMouseAndMouseCursorPosition(false);
     CGDisplayHideCursor(kCGNullDirectDisplay);
+    
+    struct Timing timing;
+    timing.tempo = 100;
+    timing.tactPart = Whole;
+    
+    ReverbEffect *reverbEffect = [[ReverbEffect alloc] initWithSamplingSettings:self.samplingSettings];
+    board.effects = @[reverbEffect];
 }
 
 //------------------------------------------------------------------------------

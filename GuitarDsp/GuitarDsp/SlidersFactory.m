@@ -113,11 +113,9 @@
 #pragma mark - 
 #pragma mark - PhaseVocoder
 
-+ (NSArray<Slider *> *)phaseVocoderSliders:(PhaseVocoderEffect *)phaseVocoderEffect {
-    __weak PhaseVocoderEffect * wPhaseVocoderEffect = phaseVocoderEffect;
-    
++ (NSArray<Slider *> *)phaseVocoderSlidersWithShiftSetter:(void (^)(float newValue))shiftSetter {
     Slider *shiftsSlider = [[Slider alloc] initWithName:@"shift" values:@[@0.25, @0.5, @1, @2, @4] selectedIndex:2 valueUpdate:^(Slider *slider) {
-        wPhaseVocoderEffect.shift = [slider.selectedValue floatValue];
+        shiftSetter([slider.selectedValue floatValue]);
     }];
     
     NSMutableArray<NSString *> *semitoneValuesArray = [NSMutableArray new];
@@ -125,10 +123,43 @@
         [semitoneValuesArray addObject:[NSString stringWithFormat:@"%d", i]];
     }
     Slider *semitonesSlider = [[Slider alloc] initWithName:@"semitone" values:semitoneValuesArray selectedIndex:24 valueUpdate:^(Slider *slider) {
-        wPhaseVocoderEffect.shift = 1.0 + ((float)[slider.selectedValue integerValue] / (float)12);
+        shiftSetter(1.0 + ((float)[slider.selectedValue integerValue] / (float)12));
     }];
     
     return @[shiftsSlider, semitonesSlider];
+}
+
++ (NSArray<Slider *> *)phaseVocoderSliders:(PhaseVocoderEffect *)phaseVocoderEffect {
+    __weak PhaseVocoderEffect * wPhaseVocoderEffect = phaseVocoderEffect;
+    return [self phaseVocoderSlidersWithShiftSetter:^(float newValue) {
+        wPhaseVocoderEffect.shift = newValue;
+    }];
+}
+
+#pragma mark -
+#pragma mark - Harmonizer
+
++ (NSArray<Slider *> *)harmonizerSliders:(HarmonizerEffect *)harmonizerEffect {
+    __weak HarmonizerEffect * wHarmonizerEffect = harmonizerEffect;
+    
+    NSMutableArray *values = [NSMutableArray new];
+    float value = 0.0;
+    int currentValueIndex = 0;
+    while (value < 1.0) {
+        [values addObject:[NSNumber numberWithFloat:value]];
+        value += 0.01;
+        
+        if (!currentValueIndex && harmonizerEffect.volume < value) {
+            currentValueIndex = values.count;
+        }
+    }
+    Slider *volumeSlider = [[Slider alloc] initWithName:@"volume" values:values selectedIndex:currentValueIndex valueUpdate:^(Slider *slider) {
+        wHarmonizerEffect.volume = [slider.selectedValue floatValue];
+    }];
+    
+    return [[self phaseVocoderSlidersWithShiftSetter:^(float newValue) {
+        wHarmonizerEffect.shift = newValue;
+    }] arrayByAddingObject:volumeSlider];
 }
 
 @end

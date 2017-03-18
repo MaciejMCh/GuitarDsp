@@ -63,7 +63,7 @@
 #pragma mark - Interface
 
 - (void)processBuffer:(float *)buffer {
-    memcpy(self.outputBuffer, buffer, self.samplingSettings.packetByteSize);
+//    memcpy(self.outputBuffer, buffer, self.samplingSettings.packetByteSize);
     
     struct Sample inputSample;
     inputSample.amp = malloc(self.samplingSettings.packetByteSize);
@@ -104,6 +104,10 @@
                                             echoesCount:2
                                        samplingSettings:self.samplingSettings
                                                  timing:delayTiming];
+}
+
+- (HarmonizerEffect *)newHarmonizer {
+    return [[HarmonizerEffect alloc] initWithSamplingSettings:self.samplingSettings];
 }
 
 @end

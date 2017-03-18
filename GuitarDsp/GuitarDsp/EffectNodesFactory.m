@@ -24,7 +24,7 @@
 }
 
 - (NSArray<GridEntity *> *)all {
-    return @[[self delay], [self phaseVocoder]];
+    return @[[self delay], [self phaseVocoder], [self harmonizer]];
 }
 
 - (NSView *)effectGridEntityView:(NSString *)effectName {
@@ -47,6 +47,13 @@
     GridEntity *entity = [GridEntity new];
     entity.view = [self effectGridEntityView:@"phase vocoder"];
     entity.model = [self.effectsFactory newPhaseVocoderEffect];
+    return entity;
+}
+
+- (GridEntity *)harmonizer {
+    GridEntity *entity = [GridEntity new];
+    entity.view = [self effectGridEntityView:@"harmonizer"];
+    entity.model = [self.effectsFactory newHarmonizer];
     return entity;
 }
 

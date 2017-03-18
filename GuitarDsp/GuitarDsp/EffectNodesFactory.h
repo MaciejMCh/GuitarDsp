@@ -10,11 +10,13 @@
 #import <BoardUI/BoardUI.h>
 #import "DelayEffect.h"
 #import "PhaseVocoderEffect.h"
+#import "HarmonizerEffect.h"
 
 @protocol EffectsFactory <NSObject>
 
 - (DelayEffect * _Nonnull)newDelayEffect;
 - (PhaseVocoderEffect * _Nonnull)newPhaseVocoderEffect;
+- (HarmonizerEffect * _Nonnull)newHarmonizer;
 
 @end
 
@@ -26,5 +28,6 @@
 
 - (GridEntity * _Nonnull)delay;
 - (GridEntity * _Nonnull)phaseVocoder;
+- (GridEntity * _Nonnull)harmonizer;
 
 @end

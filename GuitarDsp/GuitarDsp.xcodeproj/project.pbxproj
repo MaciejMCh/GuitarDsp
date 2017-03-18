@@ -26,8 +26,10 @@
 		C23C817E1E7178620050DCE9 /* TimingCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C81751E7178620050DCE9 /* TimingCalc.m */; };
 		C24362FE1E79E174008543EC /* SlidersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C24362FD1E79E174008543EC /* SlidersFactory.m */; };
 		C24363021E79EB63008543EC /* SlidersStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24363011E79EB63008543EC /* SlidersStack.storyboard */; };
+		C26E89E51E7CB49B00501964 /* ReverbEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C26E89E41E7CB49B00501964 /* ReverbEffect.m */; };
 		C288DC101E7C670200089241 /* Effect.xib in Resources */ = {isa = PBXBuildFile; fileRef = C288DC0F1E7C670200089241 /* Effect.xib */; };
 		C288DC131E7C671300089241 /* EffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = C288DC121E7C671300089241 /* EffectView.m */; };
+		C288DC161E7C757000089241 /* HarmonizerEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C288DC151E7C757000089241 /* HarmonizerEffect.m */; };
 		C2A7C7A31E76D1890076EF78 /* TimeDomainSignal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A7C7A21E76D1890076EF78 /* TimeDomainSignal.storyboard */; };
 		C2A7C7A61E76D19E0076EF78 /* TimeDomainSignalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7C7A51E76D19E0076EF78 /* TimeDomainSignalViewController.m */; };
 		C2E96DBE1E7975290026E7F0 /* Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E96DBD1E7975290026E7F0 /* Board.storyboard */; };
@@ -91,9 +93,13 @@
 		C24362FC1E79E174008543EC /* SlidersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidersFactory.h; sourceTree = "<group>"; };
 		C24362FD1E79E174008543EC /* SlidersFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidersFactory.m; sourceTree = "<group>"; };
 		C24363011E79EB63008543EC /* SlidersStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlidersStack.storyboard; sourceTree = "<group>"; };
+		C26E89E31E7CB49B00501964 /* ReverbEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReverbEffect.h; sourceTree = "<group>"; };
+		C26E89E41E7CB49B00501964 /* ReverbEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReverbEffect.m; sourceTree = "<group>"; };
 		C288DC0F1E7C670200089241 /* Effect.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Effect.xib; sourceTree = "<group>"; };
 		C288DC111E7C671300089241 /* EffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectView.h; sourceTree = "<group>"; };
 		C288DC121E7C671300089241 /* EffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectView.m; sourceTree = "<group>"; };
+		C288DC141E7C757000089241 /* HarmonizerEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HarmonizerEffect.h; sourceTree = "<group>"; };
+		C288DC151E7C757000089241 /* HarmonizerEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HarmonizerEffect.m; sourceTree = "<group>"; };
 		C2A7C7A21E76D1890076EF78 /* TimeDomainSignal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimeDomainSignal.storyboard; sourceTree = "<group>"; };
 		C2A7C7A41E76D19E0076EF78 /* TimeDomainSignalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeDomainSignalViewController.h; sourceTree = "<group>"; };
 		C2A7C7A51E76D19E0076EF78 /* TimeDomainSignalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeDomainSignalViewController.m; sourceTree = "<group>"; };
@@ -141,6 +147,10 @@
 				C2327A701E718A9200587341 /* PhaseVocoderEffect.m */,
 				C23887511E776AB20083CD24 /* PhaseVocoder.h */,
 				C23887521E776AB20083CD24 /* PhaseVocoder.m */,
+				C288DC141E7C757000089241 /* HarmonizerEffect.h */,
+				C288DC151E7C757000089241 /* HarmonizerEffect.m */,
+				C26E89E31E7CB49B00501964 /* ReverbEffect.h */,
+				C26E89E41E7CB49B00501964 /* ReverbEffect.m */,
 			);
 			name = Effect;
 			sourceTree = "<group>";
@@ -361,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C288DC131E7C671300089241 /* EffectView.m in Sources */,
+				C26E89E51E7CB49B00501964 /* ReverbEffect.m in Sources */,
 				C23C81531E7177EE0050DCE9 /* main.m in Sources */,
 				C23887581E7771100083CD24 /* PhaseVocoderViewController.m in Sources */,
 				C2FD96761E799F66006E8F53 /* SlidersStackViewController.m in Sources */,
@@ -377,6 +388,7 @@
 				C2E96DC11E7975470026E7F0 /* BoardViewController.m in Sources */,
 				C2FD96711E7978F7006E8F53 /* EffectNodesFactory.m in Sources */,
 				C2327A711E718A9200587341 /* PhaseVocoderEffect.m in Sources */,
+				C288DC161E7C757000089241 /* HarmonizerEffect.m in Sources */,
 				C23887531E776AB20083CD24 /* PhaseVocoder.m in Sources */,
 				C2FD966C1E79785F006E8F53 /* AddEffectViewController.m in Sources */,
 			);

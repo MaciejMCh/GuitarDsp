@@ -30,6 +30,9 @@
 		C26B315D1E7FF2D000F0583A /* LooperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26B315C1E7FF2D000F0583A /* LooperViewController.m */; };
 		C26B31611E7FF2EE00F0583A /* LooperEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C26B31601E7FF2EE00F0583A /* LooperEffect.m */; };
 		C26E89E51E7CB49B00501964 /* ReverbEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C26E89E41E7CB49B00501964 /* ReverbEffect.m */; };
+		C26F8C6D1E817B1E00C74103 /* RawAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C26F8C6C1E817B1E00C74103 /* RawAudioPlayer.m */; };
+		C26F8C721E818A7A00C74103 /* snare.raw in Resources */ = {isa = PBXBuildFile; fileRef = C26F8C711E818A7A00C74103 /* snare.raw */; };
+		C26F8C741E818F5D00C74103 /* hihat.raw in Resources */ = {isa = PBXBuildFile; fileRef = C26F8C731E818F5D00C74103 /* hihat.raw */; };
 		C288DC101E7C670200089241 /* Effect.xib in Resources */ = {isa = PBXBuildFile; fileRef = C288DC0F1E7C670200089241 /* Effect.xib */; };
 		C288DC131E7C671300089241 /* EffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = C288DC121E7C671300089241 /* EffectView.m */; };
 		C288DC161E7C757000089241 /* HarmonizerEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C288DC151E7C757000089241 /* HarmonizerEffect.m */; };
@@ -103,6 +106,10 @@
 		C26B31601E7FF2EE00F0583A /* LooperEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LooperEffect.m; sourceTree = "<group>"; };
 		C26E89E31E7CB49B00501964 /* ReverbEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReverbEffect.h; sourceTree = "<group>"; };
 		C26E89E41E7CB49B00501964 /* ReverbEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReverbEffect.m; sourceTree = "<group>"; };
+		C26F8C6B1E817B1E00C74103 /* RawAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawAudioPlayer.h; sourceTree = "<group>"; };
+		C26F8C6C1E817B1E00C74103 /* RawAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawAudioPlayer.m; sourceTree = "<group>"; };
+		C26F8C711E818A7A00C74103 /* snare.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = snare.raw; sourceTree = "<group>"; };
+		C26F8C731E818F5D00C74103 /* hihat.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = hihat.raw; sourceTree = "<group>"; };
 		C288DC0F1E7C670200089241 /* Effect.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Effect.xib; sourceTree = "<group>"; };
 		C288DC111E7C671300089241 /* EffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectView.h; sourceTree = "<group>"; };
 		C288DC121E7C671300089241 /* EffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectView.m; sourceTree = "<group>"; };
@@ -219,6 +226,8 @@
 			children = (
 				C23C81741E7178620050DCE9 /* TimingCalc.h */,
 				C23C81751E7178620050DCE9 /* TimingCalc.m */,
+				C26F8C6B1E817B1E00C74103 /* RawAudioPlayer.h */,
+				C26F8C6C1E817B1E00C74103 /* RawAudioPlayer.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -261,9 +270,9 @@
 				C2327A6C1E7182CC00587341 /* CoreModel */,
 				C2327A6B1E7182BC00587341 /* UI */,
 				C2327A6A1E7182AC00587341 /* Effect */,
+				C26F8C6E1E817B5E00C74103 /* Resources */,
 				C23C814E1E7177EE0050DCE9 /* AppDelegate.h */,
 				C23C814F1E7177EE0050DCE9 /* AppDelegate.m */,
-				C23C81571E7177EE0050DCE9 /* Assets.xcassets */,
 				C23C815C1E7177EE0050DCE9 /* Info.plist */,
 				C23C81511E7177EE0050DCE9 /* Supporting Files */,
 			);
@@ -276,6 +285,16 @@
 				C23C81521E7177EE0050DCE9 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C26F8C6E1E817B5E00C74103 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C26F8C731E818F5D00C74103 /* hihat.raw */,
+				C26F8C711E818A7A00C74103 /* snare.raw */,
+				C23C81571E7177EE0050DCE9 /* Assets.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		C2D961931E717BA8008870B4 /* Frameworks */ = {
@@ -371,8 +390,10 @@
 				C2A7C7A31E76D1890076EF78 /* TimeDomainSignal.storyboard in Resources */,
 				C2FD96681E79784D006E8F53 /* AddEffect.storyboard in Resources */,
 				C24363021E79EB63008543EC /* SlidersStack.storyboard in Resources */,
+				C26F8C741E818F5D00C74103 /* hihat.raw in Resources */,
 				C23C817C1E7178620050DCE9 /* ProcessorStoryboard.storyboard in Resources */,
 				C2E96DBE1E7975290026E7F0 /* Board.storyboard in Resources */,
+				C26F8C721E818A7A00C74103 /* snare.raw in Resources */,
 				C23C81771E7178620050DCE9 /* DelayStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +415,7 @@
 				C23C817E1E7178620050DCE9 /* TimingCalc.m in Sources */,
 				C23C817A1E7178620050DCE9 /* MetronomeEffect.m in Sources */,
 				C2F2ADB41E7A097400C604D0 /* Board.m in Sources */,
+				C26F8C6D1E817B1E00C74103 /* RawAudioPlayer.m in Sources */,
 				C23C81781E7178620050DCE9 /* DelayViewController.m in Sources */,
 				C23C817D1E7178620050DCE9 /* ProcessorViewController.m in Sources */,
 				C2A7C7A61E76D19E0076EF78 /* TimeDomainSignalViewController.m in Sources */,

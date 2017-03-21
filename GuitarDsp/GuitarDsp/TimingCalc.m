@@ -11,7 +11,7 @@
 @implementation TimingCalc
 
 + (int)sampleTime:(struct Timing)timing settings:(struct SamplingSettings)settings {
-    return floor(settings.frequency / settings.framesPerPacket / timing.tactPart * 60 / timing.tempo);
+    return floor(settings.frequency / settings.framesPerPacket / timing.tactPart * 60 / timing.tempo * 4);
 }
 
 @end

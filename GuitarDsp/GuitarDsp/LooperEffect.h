@@ -25,8 +25,9 @@ struct LooperBank {
 @interface LooperEffect : NSObject <Effect>
 
 @property (nonatomic, assign) struct LooperBank *looperBanks;
+@property (nonatomic, assign) BOOL playMetronome;
 
-- (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings BanksCount:(int)banksCount;
+- (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings banksCount:(int)banksCount tempo:(float)tempo tactsCount:(int)tactsCount;
 - (void)record:(struct LooperBank *)looperBank;
 - (void)finishRecording;
 

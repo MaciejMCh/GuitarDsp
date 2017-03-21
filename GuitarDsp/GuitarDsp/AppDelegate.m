@@ -109,7 +109,10 @@
 //    board.effects = @[reverbEffect];
     
     
-    LooperEffect *looperEffect = [[LooperEffect alloc] initWithSamplingSettings:self.samplingSettings BanksCount:4];
+    LooperEffect *looperEffect = [[LooperEffect alloc] initWithSamplingSettings:self.samplingSettings
+                                                                     banksCount:4
+                                                                          tempo:timing.tempo
+                                                                     tactsCount:4];
     board.effects = @[looperEffect];
     [NSApplication sharedApplication].windows.firstObject.contentViewController = [LooperViewController withLooperEffect:looperEffect];
 }

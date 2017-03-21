@@ -25,7 +25,7 @@
     self.samplingSettings = samplingSettings;
     _tempo = tempo;
     [self setupBuffers];
-    [self setupMetronome];
+//    [self setupMetronome];
     return self;
 }
 
@@ -71,7 +71,6 @@
     
     for (id<Effect> effect in self.activeBoard.effects) {
         [effect processSample:inputSample intoBuffer:self.outputBuffer];
-//        memcpy(inputSample.amp, self.outputBuffer, self.samplingSettings.packetByteSize);
     }
 }
 

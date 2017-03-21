@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZwZ-mL-TVY">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Looper View Controller-->
+        <scene sceneID="vBG-iG-JGt">
+            <objects>
+                <viewController id="ZwZ-mL-TVY" customClass="LooperViewController" sceneMemberID="viewController">
+                    <view key="view" id="Tsl-I6-zoO">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="pAX-Ez-Kua">
+                                <rect key="frame" x="0.0" y="0.0" width="113" height="300"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="TD5-BS-8AH">
+                                        <connections>
+                                            <action selector="toggleAction:" target="ZwZ-mL-TVY" id="UiU-Qa-Kef"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                    <clickGestureRecognizer delaysSecondaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="HVQ-oI-QhC">
+                                        <buttonMask key="buttonMask" secondary="YES"/>
+                                        <connections>
+                                            <action selector="recordAction:" target="ZwZ-mL-TVY" id="IRx-Le-eFM"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hej-vl-4Bc">
+                                <rect key="frame" x="113" y="0.0" width="112" height="300"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="EGq-L8-3TW">
+                                        <connections>
+                                            <action selector="toggleAction:" target="ZwZ-mL-TVY" id="A56-bi-vfj"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                    <clickGestureRecognizer delaysSecondaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="Dix-wi-cu4">
+                                        <buttonMask key="buttonMask" secondary="YES"/>
+                                        <connections>
+                                            <action selector="recordAction:" target="ZwZ-mL-TVY" id="viR-6N-R2a"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="REi-jx-72p">
+                                <rect key="frame" x="225" y="0.0" width="113" height="300"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="3VQ-Ka-ZiT">
+                                        <connections>
+                                            <action selector="toggleAction:" target="ZwZ-mL-TVY" id="dMR-J3-FRJ"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                    <clickGestureRecognizer delaysSecondaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="zxa-3P-Bxa">
+                                        <buttonMask key="buttonMask" secondary="YES"/>
+                                        <connections>
+                                            <action selector="recordAction:" target="ZwZ-mL-TVY" id="jz5-Gl-kMM"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="4Ai-lE-pGc">
+                                <rect key="frame" x="338" y="0.0" width="112" height="300"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="82J-GK-Hc5">
+                                        <connections>
+                                            <action selector="toggleAction:" target="ZwZ-mL-TVY" id="adI-C9-jeY"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                    <clickGestureRecognizer delaysSecondaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="geY-Yv-Pl2">
+                                        <buttonMask key="buttonMask" secondary="YES"/>
+                                        <connections>
+                                            <action selector="recordAction:" target="ZwZ-mL-TVY" id="NuU-1l-933"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qFd-TH-LNf">
+                                <rect key="frame" x="0.0" y="278" width="200" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Wbe-bC-GK8"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="CWe-re-qOj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Hej-vl-4Bc" firstAttribute="leading" secondItem="pAX-Ez-Kua" secondAttribute="trailing" id="0Ad-GQ-44s"/>
+                            <constraint firstItem="Hej-vl-4Bc" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" id="3JF-84-0QB"/>
+                            <constraint firstAttribute="trailing" secondItem="4Ai-lE-pGc" secondAttribute="trailing" id="3KX-NT-Z6j"/>
+                            <constraint firstItem="Hej-vl-4Bc" firstAttribute="leading" secondItem="pAX-Ez-Kua" secondAttribute="trailing" id="Abn-1n-h27"/>
+                            <constraint firstItem="qFd-TH-LNf" firstAttribute="leading" secondItem="Tsl-I6-zoO" secondAttribute="leading" id="AdR-ta-Xnz"/>
+                            <constraint firstItem="qFd-TH-LNf" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" id="AhU-PJ-s96"/>
+                            <constraint firstAttribute="bottom" secondItem="REi-jx-72p" secondAttribute="bottom" id="EfI-RM-6Br"/>
+                            <constraint firstAttribute="bottom" secondItem="Hej-vl-4Bc" secondAttribute="bottom" id="Kfc-CR-OTo"/>
+                            <constraint firstItem="REi-jx-72p" firstAttribute="leading" secondItem="Hej-vl-4Bc" secondAttribute="trailing" id="LGL-VA-xRg"/>
+                            <constraint firstAttribute="bottom" secondItem="pAX-Ez-Kua" secondAttribute="bottom" id="ROh-yw-FvN"/>
+                            <constraint firstItem="4Ai-lE-pGc" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" id="Z7l-y3-Ksc"/>
+                            <constraint firstItem="REi-jx-72p" firstAttribute="leading" secondItem="Hej-vl-4Bc" secondAttribute="trailing" id="Zdi-yg-Ias"/>
+                            <constraint firstItem="pAX-Ez-Kua" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" id="awd-OC-8zk"/>
+                            <constraint firstItem="REi-jx-72p" firstAttribute="width" secondItem="4Ai-lE-pGc" secondAttribute="width" id="ctY-9K-TnF"/>
+                            <constraint firstItem="4Ai-lE-pGc" firstAttribute="leading" secondItem="REi-jx-72p" secondAttribute="trailing" id="eDb-WI-UlD"/>
+                            <constraint firstAttribute="bottom" secondItem="4Ai-lE-pGc" secondAttribute="bottom" id="ilj-pj-atF"/>
+                            <constraint firstItem="Hej-vl-4Bc" firstAttribute="width" secondItem="REi-jx-72p" secondAttribute="width" id="kmk-tl-B7e"/>
+                            <constraint firstItem="pAX-Ez-Kua" firstAttribute="width" secondItem="Hej-vl-4Bc" secondAttribute="width" id="mdL-xq-BK8"/>
+                            <constraint firstItem="pAX-Ez-Kua" firstAttribute="leading" secondItem="Tsl-I6-zoO" secondAttribute="leading" id="o1f-bk-5TV"/>
+                            <constraint firstItem="4Ai-lE-pGc" firstAttribute="leading" secondItem="REi-jx-72p" secondAttribute="trailing" id="sl2-xM-rEt"/>
+                            <constraint firstItem="REi-jx-72p" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" id="zcu-l5-csm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bankView1" destination="pAX-Ez-Kua" id="MEw-Bc-hmf"/>
+                        <outlet property="bankView2" destination="Hej-vl-4Bc" id="bwk-j3-7z2"/>
+                        <outlet property="bankView3" destination="REi-jx-72p" id="O36-ux-Frc"/>
+                        <outlet property="bankView4" destination="4Ai-lE-pGc" id="PoR-BX-VPo"/>
+                    </connections>
+                </viewController>
+                <customObject id="8hr-k5-rMu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40" y="203"/>
+        </scene>
+    </scenes>
+</document>

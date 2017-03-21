@@ -26,6 +26,9 @@
 		C23C817E1E7178620050DCE9 /* TimingCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C81751E7178620050DCE9 /* TimingCalc.m */; };
 		C24362FE1E79E174008543EC /* SlidersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C24362FD1E79E174008543EC /* SlidersFactory.m */; };
 		C24363021E79EB63008543EC /* SlidersStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24363011E79EB63008543EC /* SlidersStack.storyboard */; };
+		C26B315A1E7FF2B900F0583A /* Looper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26B31591E7FF2B900F0583A /* Looper.storyboard */; };
+		C26B315D1E7FF2D000F0583A /* LooperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26B315C1E7FF2D000F0583A /* LooperViewController.m */; };
+		C26B31611E7FF2EE00F0583A /* LooperEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C26B31601E7FF2EE00F0583A /* LooperEffect.m */; };
 		C26E89E51E7CB49B00501964 /* ReverbEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C26E89E41E7CB49B00501964 /* ReverbEffect.m */; };
 		C288DC101E7C670200089241 /* Effect.xib in Resources */ = {isa = PBXBuildFile; fileRef = C288DC0F1E7C670200089241 /* Effect.xib */; };
 		C288DC131E7C671300089241 /* EffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = C288DC121E7C671300089241 /* EffectView.m */; };
@@ -93,6 +96,11 @@
 		C24362FC1E79E174008543EC /* SlidersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidersFactory.h; sourceTree = "<group>"; };
 		C24362FD1E79E174008543EC /* SlidersFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidersFactory.m; sourceTree = "<group>"; };
 		C24363011E79EB63008543EC /* SlidersStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlidersStack.storyboard; sourceTree = "<group>"; };
+		C26B31591E7FF2B900F0583A /* Looper.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Looper.storyboard; sourceTree = "<group>"; };
+		C26B315B1E7FF2D000F0583A /* LooperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LooperViewController.h; sourceTree = "<group>"; };
+		C26B315C1E7FF2D000F0583A /* LooperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LooperViewController.m; sourceTree = "<group>"; };
+		C26B315F1E7FF2EE00F0583A /* LooperEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LooperEffect.h; sourceTree = "<group>"; };
+		C26B31601E7FF2EE00F0583A /* LooperEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LooperEffect.m; sourceTree = "<group>"; };
 		C26E89E31E7CB49B00501964 /* ReverbEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReverbEffect.h; sourceTree = "<group>"; };
 		C26E89E41E7CB49B00501964 /* ReverbEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReverbEffect.m; sourceTree = "<group>"; };
 		C288DC0F1E7C670200089241 /* Effect.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Effect.xib; sourceTree = "<group>"; };
@@ -151,6 +159,8 @@
 				C288DC151E7C757000089241 /* HarmonizerEffect.m */,
 				C26E89E31E7CB49B00501964 /* ReverbEffect.h */,
 				C26E89E41E7CB49B00501964 /* ReverbEffect.m */,
+				C26B315F1E7FF2EE00F0583A /* LooperEffect.h */,
+				C26B31601E7FF2EE00F0583A /* LooperEffect.m */,
 			);
 			name = Effect;
 			sourceTree = "<group>";
@@ -159,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				C23C816E1E7178620050DCE9 /* ProcessorStoryboard.storyboard */,
+				C26B31591E7FF2B900F0583A /* Looper.storyboard */,
 				C23C816F1E7178620050DCE9 /* ProcessorViewController.h */,
 				C23C81701E7178620050DCE9 /* ProcessorViewController.m */,
 				C23C81651E7178620050DCE9 /* DelayStoryboard.storyboard */,
@@ -187,6 +198,8 @@
 				C288DC0F1E7C670200089241 /* Effect.xib */,
 				C288DC111E7C671300089241 /* EffectView.h */,
 				C288DC121E7C671300089241 /* EffectView.m */,
+				C26B315B1E7FF2D000F0583A /* LooperViewController.h */,
+				C26B315C1E7FF2D000F0583A /* LooperViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -350,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C26B315A1E7FF2B900F0583A /* Looper.storyboard in Resources */,
 				C288DC101E7C670200089241 /* Effect.xib in Resources */,
 				C23C81791E7178620050DCE9 /* Main.storyboard in Resources */,
 				C23C81581E7177EE0050DCE9 /* Assets.xcassets in Resources */,
@@ -371,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C288DC131E7C671300089241 /* EffectView.m in Sources */,
+				C26B31611E7FF2EE00F0583A /* LooperEffect.m in Sources */,
 				C26E89E51E7CB49B00501964 /* ReverbEffect.m in Sources */,
 				C23C81531E7177EE0050DCE9 /* main.m in Sources */,
 				C23887581E7771100083CD24 /* PhaseVocoderViewController.m in Sources */,
@@ -387,6 +402,7 @@
 				C23C81761E7178620050DCE9 /* DelayEffect.m in Sources */,
 				C2E96DC11E7975470026E7F0 /* BoardViewController.m in Sources */,
 				C2FD96711E7978F7006E8F53 /* EffectNodesFactory.m in Sources */,
+				C26B315D1E7FF2D000F0583A /* LooperViewController.m in Sources */,
 				C2327A711E718A9200587341 /* PhaseVocoderEffect.m in Sources */,
 				C288DC161E7C757000089241 /* HarmonizerEffect.m in Sources */,
 				C23887531E776AB20083CD24 /* PhaseVocoder.m in Sources */,

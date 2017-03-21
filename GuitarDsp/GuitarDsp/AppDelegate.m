@@ -32,6 +32,7 @@
 #import "Board.h"
 #import "ReverbEffect.h"
 #import "TimeDomainSignalViewController.h"
+#import "LooperViewController.h"
 
 @interface AppDelegate ()
 
@@ -77,8 +78,8 @@
         for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
             sineWaveBuffer[i] = sinf((float)self.index * 0.1);
         }
-        [Sta tic].timeDomainSignalViewController.buffer0 = sineWaveBuffer;
-        [Sta tic].timeDomainSignalViewController.length = self.samplingSettings.framesPerPacket;
+//        [Sta tic].timeDomainSignalViewController.buffer0 = sineWaveBuffer;
+//        [Sta tic].timeDomainSignalViewController.length = self.samplingSettings.framesPerPacket;
         [self.processor processBuffer:buffer];
         memcpy(buffer, self.processor.outputBuffer, self.samplingSettings.packetByteSize);
     }];
@@ -95,17 +96,22 @@
     [boardViewController setUpdateEffects:^(NSArray<id<Effect>> *effects) {
         wBoard.effects = effects;
     }];
-    [NSApplication sharedApplication].windows.firstObject.contentViewController = boardViewController;
+//    [NSApplication sharedApplication].windows.firstObject.contentViewController = boardViewController;
     
-    CGAssociateMouseAndMouseCursorPosition(false);
-    CGDisplayHideCursor(kCGNullDirectDisplay);
+//    CGAssociateMouseAndMouseCursorPosition(false);
+//    CGDisplayHideCursor(kCGNullDirectDisplay);
     
     struct Timing timing;
     timing.tempo = 100;
     timing.tactPart = Whole;
     
     ReverbEffect *reverbEffect = [[ReverbEffect alloc] initWithSamplingSettings:self.samplingSettings];
-    board.effects = @[reverbEffect];
+//    board.effects = @[reverbEffect];
+    
+    
+    LooperEffect *looperEffect = [[LooperEffect alloc] initWithSamplingSettings:self.samplingSettings BanksCount:4];
+    board.effects = @[looperEffect];
+    [NSApplication sharedApplication].windows.firstObject.contentViewController = [LooperViewController withLooperEffect:looperEffect];
 }
 
 //------------------------------------------------------------------------------

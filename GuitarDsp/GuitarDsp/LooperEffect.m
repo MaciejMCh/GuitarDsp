@@ -61,13 +61,19 @@
 
 - (void)finishRecording {
     if (self.recordingBank) {
-        memcpy(self.recordingBank->packetsBuffer, recordingBuffer, sizeof(float *) * self.bankLengthInPackets);
+        for (int i = 0; i < self.bankLengthInPackets; i++) {
+            memcpy(self.recordingBank->packetsBuffer[i], recordingBuffer[i], self.samplingSettings.packetByteSize);
+        }
         self.recordingBank->state = On;
         self.recordingBank = nil;
     }
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
+    if (self.recordingBank) {
+        memcpy(recordingBuffer[self.currentPacketPointer], inputSample.amp, self.samplingSettings.packetByteSize);
+    }
+    
     float *output = malloc(self.samplingSettings.packetByteSize);
     memcpy(output, inputSample.amp, self.samplingSettings.packetByteSize);
     
@@ -78,10 +84,6 @@
                 output[j] += looperBank.packetsBuffer[self.currentPacketPointer][j];
             }
         }
-    }
-    
-    if (self.recordingBank) {
-        memcpy(recordingBuffer[self.currentPacketPointer], inputSample.amp, self.samplingSettings.packetByteSize);
     }
     
     self.currentPacketPointer = (self.currentPacketPointer + 1) % self.bankLengthInPackets;

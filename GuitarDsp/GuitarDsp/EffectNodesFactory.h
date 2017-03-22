@@ -11,12 +11,14 @@
 #import "DelayEffect.h"
 #import "PhaseVocoderEffect.h"
 #import "HarmonizerEffect.h"
+#import "LooperEffect.h"
 
 @protocol EffectsFactory <NSObject>
 
 - (DelayEffect * _Nonnull)newDelayEffect;
 - (PhaseVocoderEffect * _Nonnull)newPhaseVocoderEffect;
-- (HarmonizerEffect * _Nonnull)newHarmonizer;
+- (HarmonizerEffect * _Nonnull)newHarmonizerEffect;
+- (LooperEffect * _Nonnull)newLooperEffect;
 
 @end
 
@@ -29,5 +31,6 @@
 - (GridEntity * _Nonnull)delay;
 - (GridEntity * _Nonnull)phaseVocoder;
 - (GridEntity * _Nonnull)harmonizer;
+- (GridEntity * _Nonnull)looper;
 
 @end

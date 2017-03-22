@@ -34,6 +34,16 @@
     }
     [self updateViews];
     [self animateLoopTimer];
+    
+    self.view.frame = [NSScreen mainScreen].frame;
+    CGAssociateMouseAndMouseCursorPosition(true);
+    CGDisplayShowCursor(kCGNullDirectDisplay);
+}
+
+- (void)viewDidDisappear {
+    [super viewDidDisappear];
+    CGAssociateMouseAndMouseCursorPosition(false);
+    CGDisplayHideCursor(kCGNullDirectDisplay);
 }
 
 - (void)setLooperEffect:(LooperEffect *)looperEffect {

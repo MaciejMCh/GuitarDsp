@@ -17,7 +17,7 @@
 @property (nonatomic, assign, readwrite) struct Timing timing;
 
 @property (nonatomic, assign) int delaySampleTime;
-@property (nonatomic, assign) struct Sample *samplesRingBuffer;
+@property (nonatomic, assign) float **packetsRingBuffer;
 @property (nonatomic, assign) int ringBufferSize;
 
 @property (nonatomic, copy) void (^configuration)(void);
@@ -50,28 +50,27 @@
 }
 
 - (void)setupBuffers {
-    self.samplesRingBuffer = malloc(sizeof(struct Sample) * self.ringBufferSize);
+    self.packetsRingBuffer = malloc(sizeof(float *) * self.ringBufferSize);
     for (int i = 0; i < self.ringBufferSize; i++) {
-        struct Sample sample;
-        sample.amp = malloc(self.samplingSettings.packetByteSize);
+        self.packetsRingBuffer[i] = malloc(self.samplingSettings.packetByteSize);
         for (int j = 0; j < self.samplingSettings.framesPerPacket; j++) {
-            sample.amp[j] = 0;
+            self.packetsRingBuffer[i][j] = 0;
         }
-        self.samplesRingBuffer[i] = sample;
     }
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
-    free(self.samplesRingBuffer[self.ringBufferSize - 1].amp);
-    memcpy(&self.samplesRingBuffer[1], &self.samplesRingBuffer[0], sizeof(struct Sample) * (self.ringBufferSize - 1));
-    memcpy(self.samplesRingBuffer, &inputSample, sizeof(struct Sample));
+    for (int i = self.ringBufferSize - 1; i >= 1; i--) {
+        memcpy(self.packetsRingBuffer[i], self.packetsRingBuffer[i - 1], self.samplingSettings.packetByteSize);
+    }
+    memcpy(self.packetsRingBuffer[0], inputSample.amp, self.samplingSettings.packetByteSize);
     
     float *finalBuffer = malloc(self.samplingSettings.packetByteSize);
     for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-        finalBuffer[i] = self.samplesRingBuffer[0].amp[i];
+        finalBuffer[i] = self.packetsRingBuffer[0][i];
         float fadeFactor = self.fadingFunctionA;
         for (int j = 1; j < (self.echoesCount + 1); j++) {
-            finalBuffer[i] += self.samplesRingBuffer[j * self.delaySampleTime].amp[i] * fadeFactor;
+            finalBuffer[i] += self.packetsRingBuffer[j * self.delaySampleTime][i] * fadeFactor;
             fadeFactor *= self.fadingFunctionB;
         }
     }
@@ -125,9 +124,9 @@
 
 - (void)freeBuffers {
     for (int i = 0; i < self.ringBufferSize; i++) {
-        free(self.samplesRingBuffer[i].amp);
+        free(self.packetsRingBuffer[i]);
     }
-    free(self.samplesRingBuffer);
+    free(self.packetsRingBuffer);
 }
 
 @end

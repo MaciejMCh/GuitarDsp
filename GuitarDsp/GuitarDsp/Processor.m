@@ -63,7 +63,7 @@
 #pragma mark - Interface
 
 - (void)processBuffer:(float *)buffer {
-//    memcpy(self.outputBuffer, buffer, self.samplingSettings.packetByteSize);
+    memcpy(self.outputBuffer, buffer, self.samplingSettings.packetByteSize);
     
     struct Sample inputSample;
     inputSample.amp = malloc(self.samplingSettings.packetByteSize);
@@ -73,6 +73,8 @@
         [effect processSample:inputSample intoBuffer:self.outputBuffer];
         memcpy(inputSample.amp, self.outputBuffer, self.samplingSettings.packetByteSize);
     }
+    
+    free(inputSample.amp);
 }
 
 #pragma mark -
@@ -90,6 +92,10 @@
 #pragma mark -
 #pragma mark - EffectsFactory
 
+- (LooperEffect *)newLooperEffect {
+    return [[LooperEffect alloc] initWithSamplingSettings:self.samplingSettings banksCount:4 tempo:140 tactsCount:2];
+}
+
 - (PhaseVocoderEffect *)newPhaseVocoderEffect {
     return [[PhaseVocoderEffect alloc] initWithSamplingSettings:self.samplingSettings];
 }
@@ -106,7 +112,7 @@
                                                  timing:delayTiming];
 }
 
-- (HarmonizerEffect *)newHarmonizer {
+- (HarmonizerEffect *)newHarmonizerEffect {
     return [[HarmonizerEffect alloc] initWithSamplingSettings:self.samplingSettings];
 }
 

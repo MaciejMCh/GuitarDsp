@@ -11,6 +11,7 @@
 #import "AddEffectViewController.h"
 #import "SlidersFactory.h"
 #import "SlidersStackViewController.h"
+#import "LooperViewController.h"
 
 @interface BoardViewController ()
 
@@ -122,6 +123,16 @@
             [wSelf presentViewControllerAsModalWindow:controller];
         }];
     }
+    
+    if ([gridEntity.model isKindOfClass:[LooperEffect class]]) {
+        __weak LooperEffect *wLooperEffectEffect = gridEntity.model;
+        [gridEntity setAction:^{
+            LooperViewController *controller = [LooperViewController withLooperEffect:wLooperEffectEffect];
+            [wSelf presentViewControllerAsModalWindow:controller];
+        }];
+    }
+    
+    
 }
 
 @end

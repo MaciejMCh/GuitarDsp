@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="pAX-Ez-Kua">
-                                <rect key="frame" x="0.0" y="0.0" width="113" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="113" height="150"/>
                                 <gestureRecognizers>
                                     <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="TD5-BS-8AH">
                                         <connections>
@@ -31,7 +31,7 @@
                                 </gestureRecognizers>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hej-vl-4Bc">
-                                <rect key="frame" x="113" y="0.0" width="112" height="300"/>
+                                <rect key="frame" x="113" y="0.0" width="112" height="150"/>
                                 <gestureRecognizers>
                                     <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="EGq-L8-3TW">
                                         <connections>
@@ -47,7 +47,7 @@
                                 </gestureRecognizers>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="REi-jx-72p">
-                                <rect key="frame" x="225" y="0.0" width="113" height="300"/>
+                                <rect key="frame" x="225" y="0.0" width="113" height="150"/>
                                 <gestureRecognizers>
                                     <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="3VQ-Ka-ZiT">
                                         <connections>
@@ -63,7 +63,7 @@
                                 </gestureRecognizers>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="4Ai-lE-pGc">
-                                <rect key="frame" x="338" y="0.0" width="112" height="300"/>
+                                <rect key="frame" x="338" y="0.0" width="112" height="150"/>
                                 <gestureRecognizers>
                                     <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="82J-GK-Hc5">
                                         <connections>
@@ -78,40 +78,105 @@
                                     </clickGestureRecognizer>
                                 </gestureRecognizers>
                             </customView>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qFd-TH-LNf">
-                                <rect key="frame" x="0.0" y="278" width="200" height="22"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="DAe-xz-li6">
+                                <rect key="frame" x="10" y="170" width="430" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Wbe-bC-GK8"/>
+                                    <constraint firstAttribute="height" constant="100" id="Ceh-oQ-f8g"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="CWe-re-qOj">
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Y7M-ga-pcw">
+                                <rect key="frame" x="3" y="278" width="37" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tacts" id="mqy-RX-ztY">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JBF-aR-qe5">
+                                <rect key="frame" x="48" y="275" width="50" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="qtC-GT-tBd"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="xu0-9R-c2K">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="7uZ-hP-jAh"/>
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="tactsCountTextFieldAction:" target="ZwZ-mL-TVY" id="d54-kl-Dge"/>
+                                </connections>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="udV-Ll-yqx">
+                                <rect key="frame" x="339" y="267" width="112" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="kbT-OP-0l2"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="70W-Ja-obV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="metronomeButtonAction:" target="ZwZ-mL-TVY" id="pxC-ho-JvC"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N0S-Ax-oYt">
+                                <rect key="frame" x="146" y="278" width="46" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tempo" id="eaB-jI-Wza">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uf2-M3-FYn">
+                                <rect key="frame" x="200" y="275" width="50" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="FbN-Xe-j3n"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Gfq-Vi-1ZJ">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Z4s-RD-NRj"/>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="tempoTextFieldAction:" target="ZwZ-mL-TVY" id="m9O-op-D3U"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Hej-vl-4Bc" firstAttribute="leading" secondItem="pAX-Ez-Kua" secondAttribute="trailing" id="0Ad-GQ-44s"/>
-                            <constraint firstItem="Hej-vl-4Bc" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" id="3JF-84-0QB"/>
+                            <constraint firstItem="N0S-Ax-oYt" firstAttribute="leading" secondItem="JBF-aR-qe5" secondAttribute="trailing" constant="50" id="1SJ-Ux-fS8"/>
                             <constraint firstAttribute="trailing" secondItem="4Ai-lE-pGc" secondAttribute="trailing" id="3KX-NT-Z6j"/>
+                            <constraint firstItem="N0S-Ax-oYt" firstAttribute="baseline" secondItem="Y7M-ga-pcw" secondAttribute="baseline" id="3Ua-4W-20j"/>
+                            <constraint firstAttribute="trailing" secondItem="DAe-xz-li6" secondAttribute="trailing" constant="10" id="6aR-5t-I3w"/>
+                            <constraint firstItem="DAe-xz-li6" firstAttribute="leading" secondItem="Tsl-I6-zoO" secondAttribute="leading" constant="10" id="80P-Ev-bjr"/>
+                            <constraint firstAttribute="trailing" secondItem="udV-Ll-yqx" secondAttribute="trailing" constant="5" id="9CN-9y-mZY"/>
                             <constraint firstItem="Hej-vl-4Bc" firstAttribute="leading" secondItem="pAX-Ez-Kua" secondAttribute="trailing" id="Abn-1n-h27"/>
-                            <constraint firstItem="qFd-TH-LNf" firstAttribute="leading" secondItem="Tsl-I6-zoO" secondAttribute="leading" id="AdR-ta-Xnz"/>
-                            <constraint firstItem="qFd-TH-LNf" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" id="AhU-PJ-s96"/>
+                            <constraint firstItem="4Ai-lE-pGc" firstAttribute="top" secondItem="pAX-Ez-Kua" secondAttribute="top" id="CUL-P3-M4K"/>
+                            <constraint firstItem="Uf2-M3-FYn" firstAttribute="baseline" secondItem="N0S-Ax-oYt" secondAttribute="baseline" id="Cck-g9-Z1W"/>
+                            <constraint firstItem="JBF-aR-qe5" firstAttribute="baseline" secondItem="Y7M-ga-pcw" secondAttribute="baseline" id="DT5-6n-wje"/>
                             <constraint firstAttribute="bottom" secondItem="REi-jx-72p" secondAttribute="bottom" id="EfI-RM-6Br"/>
                             <constraint firstAttribute="bottom" secondItem="Hej-vl-4Bc" secondAttribute="bottom" id="Kfc-CR-OTo"/>
                             <constraint firstItem="REi-jx-72p" firstAttribute="leading" secondItem="Hej-vl-4Bc" secondAttribute="trailing" id="LGL-VA-xRg"/>
+                            <constraint firstItem="REi-jx-72p" firstAttribute="top" secondItem="pAX-Ez-Kua" secondAttribute="top" id="Oa2-Lu-5N1"/>
+                            <constraint firstItem="udV-Ll-yqx" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" constant="5" id="PqS-mI-ndz"/>
+                            <constraint firstItem="Hej-vl-4Bc" firstAttribute="top" secondItem="pAX-Ez-Kua" secondAttribute="top" id="R8C-vx-HkI"/>
                             <constraint firstAttribute="bottom" secondItem="pAX-Ez-Kua" secondAttribute="bottom" id="ROh-yw-FvN"/>
-                            <constraint firstItem="4Ai-lE-pGc" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" id="Z7l-y3-Ksc"/>
+                            <constraint firstItem="Uf2-M3-FYn" firstAttribute="leading" secondItem="N0S-Ax-oYt" secondAttribute="trailing" constant="10" id="RWr-rB-8IK"/>
+                            <constraint firstItem="JBF-aR-qe5" firstAttribute="leading" secondItem="Y7M-ga-pcw" secondAttribute="trailing" constant="10" id="Rqy-5h-KvI"/>
+                            <constraint firstItem="Y7M-ga-pcw" firstAttribute="leading" secondItem="Tsl-I6-zoO" secondAttribute="leading" constant="5" id="XhT-00-ncx"/>
                             <constraint firstItem="REi-jx-72p" firstAttribute="leading" secondItem="Hej-vl-4Bc" secondAttribute="trailing" id="Zdi-yg-Ias"/>
-                            <constraint firstItem="pAX-Ez-Kua" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" id="awd-OC-8zk"/>
+                            <constraint firstItem="pAX-Ez-Kua" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" constant="150" id="awd-OC-8zk"/>
                             <constraint firstItem="REi-jx-72p" firstAttribute="width" secondItem="4Ai-lE-pGc" secondAttribute="width" id="ctY-9K-TnF"/>
                             <constraint firstItem="4Ai-lE-pGc" firstAttribute="leading" secondItem="REi-jx-72p" secondAttribute="trailing" id="eDb-WI-UlD"/>
                             <constraint firstAttribute="bottom" secondItem="4Ai-lE-pGc" secondAttribute="bottom" id="ilj-pj-atF"/>
                             <constraint firstItem="Hej-vl-4Bc" firstAttribute="width" secondItem="REi-jx-72p" secondAttribute="width" id="kmk-tl-B7e"/>
                             <constraint firstItem="pAX-Ez-Kua" firstAttribute="width" secondItem="Hej-vl-4Bc" secondAttribute="width" id="mdL-xq-BK8"/>
                             <constraint firstItem="pAX-Ez-Kua" firstAttribute="leading" secondItem="Tsl-I6-zoO" secondAttribute="leading" id="o1f-bk-5TV"/>
+                            <constraint firstItem="Y7M-ga-pcw" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" constant="5" id="pmZ-E1-pqM"/>
                             <constraint firstItem="4Ai-lE-pGc" firstAttribute="leading" secondItem="REi-jx-72p" secondAttribute="trailing" id="sl2-xM-rEt"/>
-                            <constraint firstItem="REi-jx-72p" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" id="zcu-l5-csm"/>
+                            <constraint firstItem="DAe-xz-li6" firstAttribute="top" secondItem="Tsl-I6-zoO" secondAttribute="top" constant="30" id="xgB-gS-wSG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -119,6 +184,10 @@
                         <outlet property="bankView2" destination="Hej-vl-4Bc" id="bwk-j3-7z2"/>
                         <outlet property="bankView3" destination="REi-jx-72p" id="O36-ux-Frc"/>
                         <outlet property="bankView4" destination="4Ai-lE-pGc" id="PoR-BX-VPo"/>
+                        <outlet property="loopProgressView" destination="DAe-xz-li6" id="zdx-Cs-b8x"/>
+                        <outlet property="metronomeButton" destination="udV-Ll-yqx" id="Dnv-fs-yR8"/>
+                        <outlet property="tacsCountTextField" destination="JBF-aR-qe5" id="syL-ez-jSe"/>
+                        <outlet property="tempoTextField" destination="Uf2-M3-FYn" id="OYY-Xl-3hK"/>
                     </connections>
                 </viewController>
                 <customObject id="8hr-k5-rMu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

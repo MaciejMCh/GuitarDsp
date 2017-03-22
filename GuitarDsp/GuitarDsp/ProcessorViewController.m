@@ -25,12 +25,6 @@
     [self updateViews];
 }
 
-//- (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
-//    if ([segue.destinationController isKindOfClass:[DelayViewController class]]) {
-//        ((DelayViewController *)segue.destinationController).delayEffect = self.processor.delayEffect;
-//    }
-//}
-
 - (IBAction)tempoChanged:(NSTextField *)textField {
     self.processor.tempo = [textField.stringValue floatValue];
     [self updateViews];

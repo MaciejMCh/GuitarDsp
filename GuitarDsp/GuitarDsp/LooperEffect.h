@@ -26,9 +26,15 @@ struct LooperBank {
 
 @property (nonatomic, assign) struct LooperBank *looperBanks;
 @property (nonatomic, assign) BOOL playMetronome;
+@property (nonatomic, assign, readonly) int tactsCount;
+@property (nonatomic, assign, readonly) float tempo;
+@property (nonatomic, assign, readonly) float durationInSeconds;
+@property (nonatomic, copy) void (^loopDidBegin)(float durationInSeconds);
 
 - (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings banksCount:(int)banksCount tempo:(float)tempo tactsCount:(int)tactsCount;
 - (void)record:(struct LooperBank *)looperBank;
 - (void)finishRecording;
+- (void)updateTactsCount:(int)tactsCount;
+- (void)updateTempo:(float)tempo;
 
 @end

@@ -15,7 +15,7 @@
 }
 
 @property (nonatomic, assign) float tempo;
-@property (nonatomic, assign) int tactsCount;
+@property (nonatomic, assign, readwrite) int tactsCount;
 @property (nonatomic, assign) int bankLengthInPackets;
 @property (nonatomic, assign) int currentPacketPointer;
 @property (nonatomic, assign) int tactSizeInPackets;
@@ -25,6 +25,8 @@
 @property (nonatomic, assign) struct LooperBank *recordingBank;
 @property (nonatomic, strong) RawAudioPlayer *tactAudioPlayer;
 @property (nonatomic, strong) RawAudioPlayer *quaterTactAudioPlayer;
+@property (nonatomic, assign, readwrite) float durationInSeconds;
+@property (nonatomic, copy) void (^configuration)(void);
 
 @end
 
@@ -56,6 +58,8 @@
     self.tactSizeInPackets = [TimingCalc sampleTime:timing settings:self.samplingSettings];
     self.quaterTactSizeInPackets = self.tactSizeInPackets / 4;
     self.bankLengthInPackets = self.tactSizeInPackets * self.tactsCount;
+    self.durationInSeconds = self.bankLengthInPackets / (self.samplingSettings.frequency / self.samplingSettings.framesPerPacket);
+    self.currentPacketPointer = 0;
 }
 
 - (void)setupBuffers {
@@ -76,6 +80,22 @@
     }
 }
 
+- (void)freeBuffers {
+    for (int i = 0; i < self.bankLengthInPackets; i ++) {
+        free(recordingBuffer[i]);
+    }
+    free(recordingBuffer);
+    
+    for (int i = 0; i < self.banksCount; i++) {
+        for (int j = 0; j < self.bankLengthInPackets; j++) {
+            free(self.looperBanks[i].packetsBuffer[j]);
+        }
+        free(self.looperBanks[i].packetsBuffer);
+    }
+    
+    free(self.looperBanks);
+}
+
 - (void)record:(struct LooperBank *)looperBank {
     looperBank->state = Record;
     self.recordingBank = looperBank;
@@ -83,20 +103,43 @@
 
 - (void)finishRecording {
     if (self.recordingBank) {
-        for (int i = 0; i < self.bankLengthInPackets; i++) {
-            memcpy(self.recordingBank->packetsBuffer[i], recordingBuffer[i], self.samplingSettings.packetByteSize);
-        }
         self.recordingBank->state = On;
         self.recordingBank = nil;
     }
 }
 
+- (void)copyRecordToBank {
+    if (self.recordingBank) {
+        for (int i = 0; i < self.bankLengthInPackets; i++) {
+            memcpy(self.recordingBank->packetsBuffer[i], recordingBuffer[i], self.samplingSettings.packetByteSize);
+        }
+    }
+}
+
+- (void)updateTactsCount:(int)tactsCount {
+    __weak typeof(self) wSelf = self;
+    [self setConfiguration:^{
+        [wSelf freeBuffers];
+        wSelf.tactsCount = tactsCount;
+        [wSelf calculateTimings];
+        [wSelf setupBuffers];
+    }];
+}
+
+- (void)updateTempo:(float)tempo {
+    __weak typeof(self) wSelf = self;
+    [self setConfiguration:^{
+        [wSelf freeBuffers];
+        wSelf.tempo = tempo;
+        [wSelf calculateTimings];
+        [wSelf setupBuffers];
+    }];
+}
+
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
     
     // Record
-    if (self.recordingBank) {
-        memcpy(recordingBuffer[self.currentPacketPointer], inputSample.amp, self.samplingSettings.packetByteSize);
-    }
+    memcpy(recordingBuffer[self.currentPacketPointer], inputSample.amp, self.samplingSettings.packetByteSize);
     
     // Mix current
     float *output = malloc(self.samplingSettings.packetByteSize);
@@ -123,19 +166,47 @@
         if (self.tactAudioPlayer.status == Playing) {
             float *metronomeBuffer = [self.tactAudioPlayer next];
             for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-                output[i] += metronomeBuffer[i];
+                output[i] += metronomeBuffer[i] * 0.1;
             }
         }
         if (self.quaterTactAudioPlayer.status == Playing) {
             float *metronomeBuffer = [self.quaterTactAudioPlayer next];
             for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-                output[i] += metronomeBuffer[i];
+                output[i] += metronomeBuffer[i] * 0.1;
             }
         }
     }
     
+    // Begin loop callback
+    [self callLoopDidBegin];
+    
+    // Increment packet pointer
     self.currentPacketPointer = (self.currentPacketPointer + 1) % self.bankLengthInPackets;
+    
+    // Finish processing
     memcpy(outputBuffer, output, self.samplingSettings.packetByteSize);
+    
+    // Save recorded
+    if (self.currentPacketPointer == self.bankLengthInPackets - 1) {
+        [self copyRecordToBank];
+    }
+    
+    // Apply configuration
+    if (self.configuration) {
+        self.configuration();
+        self.configuration = nil;
+        [self callLoopDidBegin];
+    }
+}
+
+- (void)callLoopDidBegin {
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if (self.currentPacketPointer == 0) {
+            if (self.loopDidBegin) {
+                self.loopDidBegin(self.durationInSeconds);
+            }
+        }
+    });
 }
 
 @end

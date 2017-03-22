@@ -72,14 +72,7 @@
     //
     [[EZMicrophone sharedMicrophone] setOutput:[EZOutput sharedOutput]];
     
-    
-    float *sineWaveBuffer = malloc(self.samplingSettings.packetByteSize);
     [[EZMicrophone sharedMicrophone] setDsp:^(float *buffer, int size) {
-        for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-            sineWaveBuffer[i] = sinf((float)self.index * 0.1);
-        }
-//        [Sta tic].timeDomainSignalViewController.buffer0 = sineWaveBuffer;
-//        [Sta tic].timeDomainSignalViewController.length = self.samplingSettings.framesPerPacket;
         [self.processor processBuffer:buffer];
         memcpy(buffer, self.processor.outputBuffer, self.samplingSettings.packetByteSize);
     }];
@@ -96,10 +89,10 @@
     [boardViewController setUpdateEffects:^(NSArray<id<Effect>> *effects) {
         wBoard.effects = effects;
     }];
-//    [NSApplication sharedApplication].windows.firstObject.contentViewController = boardViewController;
+    [NSApplication sharedApplication].windows.firstObject.contentViewController = boardViewController;
     
-//    CGAssociateMouseAndMouseCursorPosition(false);
-//    CGDisplayHideCursor(kCGNullDirectDisplay);
+    CGAssociateMouseAndMouseCursorPosition(false);
+    CGDisplayHideCursor(kCGNullDirectDisplay);
     
     struct Timing timing;
     timing.tempo = 100;
@@ -112,9 +105,10 @@
     LooperEffect *looperEffect = [[LooperEffect alloc] initWithSamplingSettings:self.samplingSettings
                                                                      banksCount:4
                                                                           tempo:timing.tempo
-                                                                     tactsCount:4];
-    board.effects = @[looperEffect];
-    [NSApplication sharedApplication].windows.firstObject.contentViewController = [LooperViewController withLooperEffect:looperEffect];
+                                                                     tactsCount:1];
+//    board.effects = @[looperEffect];
+//    [NSApplication sharedApplication].windows.firstObject.contentViewController = [LooperViewController withLooperEffect:looperEffect];
+    [NSApplication sharedApplication].windows.firstObject.contentViewController = boardViewController;
 }
 
 //------------------------------------------------------------------------------

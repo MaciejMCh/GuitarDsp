@@ -7,6 +7,16 @@
 //
 
 #import "LooperViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
+@interface LooperViewController ()
+
+@property (nonatomic, weak) IBOutlet NSView *loopProgressView;
+@property (nonatomic, weak) IBOutlet NSTextField *tacsCountTextField;
+@property (nonatomic, weak) IBOutlet NSTextField *tempoTextField;
+@property (nonatomic, weak) IBOutlet NSButton *metronomeButton;
+
+@end
 
 @implementation LooperViewController
 
@@ -22,6 +32,48 @@
         bankView.wantsLayer = YES;
         bankView.layer.borderWidth = 5;
     }
+    [self updateViews];
+    [self animateLoopTimer];
+}
+
+- (void)setLooperEffect:(LooperEffect *)looperEffect {
+    _looperEffect = looperEffect;
+    [looperEffect setLoopDidBegin:^(float duration) {
+        [self animateLoopTimer];
+        [self updateViews];
+    }];
+}
+
+- (void)animateLoopTimer {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform"];
+        scale.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+        scale.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.0000001, 1, 1)];
+        scale.duration = self.looperEffect.durationInSeconds;
+        self.loopProgressView.wantsLayer = YES;
+        self.loopProgressView.layer.backgroundColor = [NSColor orangeColor].CGColor;
+        [self.loopProgressView.layer addAnimation:scale forKey:@"xD"];
+    });
+}
+
+- (void)updateLooperSettingsViews {
+    self.tacsCountTextField.stringValue = [NSString stringWithFormat:@"%d", self.looperEffect.tactsCount];
+    self.tempoTextField.stringValue = [NSString stringWithFormat:@"%.1f", self.looperEffect.tempo];
+    self.metronomeButton.title = self.looperEffect.playMetronome ? @"met is on" : @"met is off";
+}
+
+- (IBAction)metronomeButtonAction:(NSButton *)button {
+    self.looperEffect.playMetronome = !self.looperEffect.playMetronome;
+    [self updateViews];
+}
+
+- (IBAction)tactsCountTextFieldAction:(NSTextField *)textField {
+    [self.looperEffect updateTactsCount:[textField.stringValue intValue]];
+    [self updateViews];
+}
+
+- (IBAction)tempoTextFieldAction:(NSTextField *)textField {
+    [self.looperEffect updateTempo:[textField.stringValue floatValue]];
     [self updateViews];
 }
 
@@ -89,6 +141,7 @@
         }
         view.layer.borderColor = [bankColor colorWithAlphaComponent:0.5].CGColor;
     }
+    [self updateLooperSettingsViews];
 }
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic, assign, readwrite) struct SamplingSettings samplingSettings;
 @property (nonatomic, assign) int ampsBufferLengthInPackets;
 @property (nonatomic, assign) float * ampsBuffer;
-
+@property (nonatomic, assign) unsigned long int packetsTime;
 @property (nonatomic, strong) NSMutableString *stringxD;
 
 @end
@@ -30,6 +30,7 @@
     [self calculateTiming];
     [self setupBuffers];
     self.stringxD = [NSMutableString new];
+    
     return self;
 }
 
@@ -43,47 +44,37 @@
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
+    float *inverted = malloc(self.samplingSettings.packetByteSize);
+    for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
+        memcpy(inverted + i, inputSample.amp + (self.samplingSettings.framesPerPacket - i - 1), sizeof(float));
+    }
+    memcpy(self.ampsBuffer + self.samplingSettings.framesPerPacket,
+           self.ampsBuffer,
+           self.samplingSettings.packetByteSize * (self.ampsBufferLengthInPackets - 1));
     
-//    float *inverseInput = malloc(self.samplingSettings.packetByteSize);
-//    for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-//        inverseInput[i] = inputSample.amp[self.samplingSettings.framesPerPacket - i - 1];
-//    }
-//    memcpy(inputSample.amp, inverseInput, self.samplingSettings.packetByteSize);
+    memcpy(self.ampsBuffer, inverted, self.samplingSettings.packetByteSize);
+    
+    float *invertedDelayed = malloc(self.samplingSettings.packetByteSize);
+    memcpy(invertedDelayed,
+           self.ampsBuffer + 10000,
+           self.samplingSettings.packetByteSize);
     
     
-    [self.stringxD appendFormat: @"%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f ", inputSample.amp[0], inputSample.amp[10], inputSample.amp[20], inputSample.amp[30], inputSample.amp[40], inputSample.amp[50], inputSample.amp[60], inputSample.amp[70], inputSample.amp[80], inputSample.amp[90], inputSample.amp[100], inputSample.amp[110], inputSample.amp[120]];
+    float *reinverted = malloc(self.samplingSettings.packetByteSize);
+    for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
+        memcpy(reinverted + i, invertedDelayed + (self.samplingSettings.framesPerPacket - i - 1), sizeof(float));
+    }
     
-//    float *reverseInputSample = malloc(self.samplingSettings.packetByteSize);
-//    for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-//        reverseInputSample[i] = inputSample.amp[self.samplingSettings.framesPerPacket - i - 1];
-//    }
-//    memcpy(self.ampsBuffer + self.samplingSettings.packetByteSize,
-//           self.ampsBuffer,
-//           self.samplingSettings.packetByteSize * (self.ampsBufferLengthInPackets - 1));
-//    
-//    memcpy(self.ampsBuffer, reverseInputSample, self.samplingSettings.packetByteSize);
-//    
-////    float *finalBuffer = malloc(self.samplingSettings.packetByteSize);
-////    for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-////        finalBuffer[i] = self.samplesRingBuffer[0].amp[i];
-////        float fadeFactor = self.fadingFunctionA;
-////        for (int j = 1; j < (self.echoesCount + 1); j++) {
-////            finalBuffer[i] += self.samplesRingBuffer[j * self.delaySampleTime].amp[i] * fadeFactor;
-////        }
-////    }
-//    
-//    float *reverseOutputSample = malloc(self.samplingSettings.packetByteSize);
-//    for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-//        reverseOutputSample[i] = self.ampsBuffer[(self.samplingSettings.framesPerPacket * 4) + i - 0 + (0)];
-//    }
-//    
-//    
-//    memcpy(outputBuffer, reverseOutputSample, self.samplingSettings.packetByteSize);
+    memcpy(outputBuffer,
+           reinverted,
+           self.samplingSettings.packetByteSize);
     
-//    memcpy(outputBuffer, inputSample.amp, self.samplingSettings.packetByteSize);
     
-//    free(finalBuffer);
     
+    NSMutableString *log = [NSMutableString new];
+    for (int i = 0; i < self.samplingSettings.framesPerPacket * 3; i++) {
+        [log appendString:[NSString stringWithFormat:@"%f\n", self.ampsBuffer[i]]];
+    }
 }
 
 

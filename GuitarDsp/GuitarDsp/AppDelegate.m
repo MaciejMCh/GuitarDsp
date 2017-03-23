@@ -91,15 +91,16 @@
     }];
     [NSApplication sharedApplication].windows.firstObject.contentViewController = boardViewController;
     
-    CGAssociateMouseAndMouseCursorPosition(false);
-    CGDisplayHideCursor(kCGNullDirectDisplay);
+//    CGAssociateMouseAndMouseCursorPosition(false);
+//    CGDisplayHideCursor(kCGNullDirectDisplay);
     
     struct Timing timing;
     timing.tempo = 100;
     timing.tactPart = Whole;
     
     ReverbEffect *reverbEffect = [[ReverbEffect alloc] initWithSamplingSettings:self.samplingSettings];
-//    board.effects = @[reverbEffect];
+//    board.effects = @[[[PhaseVocoderEffect alloc] initWithSamplingSettings:self.samplingSettings]];
+    board.effects = @[reverbEffect];
     
     
     LooperEffect *looperEffect = [[LooperEffect alloc] initWithSamplingSettings:self.samplingSettings

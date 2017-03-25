@@ -26,9 +26,12 @@
 		C23C817E1E7178620050DCE9 /* TimingCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = C23C81751E7178620050DCE9 /* TimingCalc.m */; };
 		C24362FE1E79E174008543EC /* SlidersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C24362FD1E79E174008543EC /* SlidersFactory.m */; };
 		C24363021E79EB63008543EC /* SlidersStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24363011E79EB63008543EC /* SlidersStack.storyboard */; };
+		C2547CAE1E868A310014EF38 /* Comb.m in Sources */ = {isa = PBXBuildFile; fileRef = C2547CAD1E868A310014EF38 /* Comb.m */; };
+		C2547CB21E868BAB0014EF38 /* Revmodel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2547CB11E868BAB0014EF38 /* Revmodel.m */; };
 		C26B315A1E7FF2B900F0583A /* Looper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26B31591E7FF2B900F0583A /* Looper.storyboard */; };
 		C26B315D1E7FF2D000F0583A /* LooperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26B315C1E7FF2D000F0583A /* LooperViewController.m */; };
 		C26B31611E7FF2EE00F0583A /* LooperEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C26B31601E7FF2EE00F0583A /* LooperEffect.m */; };
+		C26B4B2A1E85A92B00428400 /* Allpass.m in Sources */ = {isa = PBXBuildFile; fileRef = C26B4B291E85A92B00428400 /* Allpass.m */; };
 		C26E89E51E7CB49B00501964 /* ReverbEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C26E89E41E7CB49B00501964 /* ReverbEffect.m */; };
 		C26F8C6D1E817B1E00C74103 /* RawAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C26F8C6C1E817B1E00C74103 /* RawAudioPlayer.m */; };
 		C26F8C721E818A7A00C74103 /* snare.raw in Resources */ = {isa = PBXBuildFile; fileRef = C26F8C711E818A7A00C74103 /* snare.raw */; };
@@ -99,11 +102,19 @@
 		C24362FC1E79E174008543EC /* SlidersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidersFactory.h; sourceTree = "<group>"; };
 		C24362FD1E79E174008543EC /* SlidersFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidersFactory.m; sourceTree = "<group>"; };
 		C24363011E79EB63008543EC /* SlidersStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlidersStack.storyboard; sourceTree = "<group>"; };
+		C2547CAC1E868A310014EF38 /* Comb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comb.h; sourceTree = "<group>"; };
+		C2547CAD1E868A310014EF38 /* Comb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comb.m; sourceTree = "<group>"; };
+		C2547CAF1E868B8A0014EF38 /* tuning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tuning.h; sourceTree = "<group>"; };
+		C2547CB01E868BAB0014EF38 /* Revmodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Revmodel.h; sourceTree = "<group>"; };
+		C2547CB11E868BAB0014EF38 /* Revmodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Revmodel.m; sourceTree = "<group>"; };
 		C26B31591E7FF2B900F0583A /* Looper.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Looper.storyboard; sourceTree = "<group>"; };
 		C26B315B1E7FF2D000F0583A /* LooperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LooperViewController.h; sourceTree = "<group>"; };
 		C26B315C1E7FF2D000F0583A /* LooperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LooperViewController.m; sourceTree = "<group>"; };
 		C26B315F1E7FF2EE00F0583A /* LooperEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LooperEffect.h; sourceTree = "<group>"; };
 		C26B31601E7FF2EE00F0583A /* LooperEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LooperEffect.m; sourceTree = "<group>"; };
+		C26B4B241E85A8A400428400 /* denormals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = denormals.h; sourceTree = "<group>"; };
+		C26B4B281E85A92B00428400 /* Allpass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Allpass.h; sourceTree = "<group>"; };
+		C26B4B291E85A92B00428400 /* Allpass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Allpass.m; sourceTree = "<group>"; };
 		C26E89E31E7CB49B00501964 /* ReverbEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReverbEffect.h; sourceTree = "<group>"; };
 		C26E89E41E7CB49B00501964 /* ReverbEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReverbEffect.m; sourceTree = "<group>"; };
 		C26F8C6B1E817B1E00C74103 /* RawAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawAudioPlayer.h; sourceTree = "<group>"; };
@@ -153,6 +164,7 @@
 		C2327A6A1E7182AC00587341 /* Effect */ = {
 			isa = PBXGroup;
 			children = (
+				C26B4B231E85A76800428400 /* Reverb */,
 				C23C816A1E7178620050DCE9 /* MetronomeEffect.h */,
 				C23C816B1E7178620050DCE9 /* MetronomeEffect.m */,
 				C23C81631E7178620050DCE9 /* DelayEffect.h */,
@@ -287,6 +299,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C26B4B231E85A76800428400 /* Reverb */ = {
+			isa = PBXGroup;
+			children = (
+				C26B4B241E85A8A400428400 /* denormals.h */,
+				C26B4B281E85A92B00428400 /* Allpass.h */,
+				C26B4B291E85A92B00428400 /* Allpass.m */,
+				C2547CAC1E868A310014EF38 /* Comb.h */,
+				C2547CAD1E868A310014EF38 /* Comb.m */,
+				C2547CAF1E868B8A0014EF38 /* tuning.h */,
+				C2547CB01E868BAB0014EF38 /* Revmodel.h */,
+				C2547CB11E868BAB0014EF38 /* Revmodel.m */,
+			);
+			name = Reverb;
+			sourceTree = "<group>";
+		};
 		C26F8C6E1E817B5E00C74103 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,14 +432,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2547CAE1E868A310014EF38 /* Comb.m in Sources */,
 				C288DC131E7C671300089241 /* EffectView.m in Sources */,
 				C26B31611E7FF2EE00F0583A /* LooperEffect.m in Sources */,
 				C26E89E51E7CB49B00501964 /* ReverbEffect.m in Sources */,
 				C23C81531E7177EE0050DCE9 /* main.m in Sources */,
 				C23887581E7771100083CD24 /* PhaseVocoderViewController.m in Sources */,
 				C2FD96761E799F66006E8F53 /* SlidersStackViewController.m in Sources */,
+				C26B4B2A1E85A92B00428400 /* Allpass.m in Sources */,
 				C23C81501E7177EE0050DCE9 /* AppDelegate.m in Sources */,
 				C23C817E1E7178620050DCE9 /* TimingCalc.m in Sources */,
+				C2547CB21E868BAB0014EF38 /* Revmodel.m in Sources */,
 				C23C817A1E7178620050DCE9 /* MetronomeEffect.m in Sources */,
 				C2F2ADB41E7A097400C604D0 /* Board.m in Sources */,
 				C26F8C6D1E817B1E00C74103 /* RawAudioPlayer.m in Sources */,

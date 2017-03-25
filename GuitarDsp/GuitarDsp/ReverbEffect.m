@@ -44,37 +44,14 @@
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
-    float *inverted = malloc(self.samplingSettings.packetByteSize);
-    for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-        memcpy(inverted + i, inputSample.amp + (self.samplingSettings.framesPerPacket - i - 1), sizeof(float));
-    }
-    memcpy(self.ampsBuffer + self.samplingSettings.framesPerPacket,
-           self.ampsBuffer,
+    memcpy(self.ampsBuffer,
+           self.ampsBuffer + self.samplingSettings.framesPerPacket,
            self.samplingSettings.packetByteSize * (self.ampsBufferLengthInPackets - 1));
     
-    memcpy(self.ampsBuffer, inverted, self.samplingSettings.packetByteSize);
-    
-    float *invertedDelayed = malloc(self.samplingSettings.packetByteSize);
-    memcpy(invertedDelayed,
-           self.ampsBuffer + 10000,
-           self.samplingSettings.packetByteSize);
+    memcpy(self.ampsBuffer + self.samplingSettings.framesPerPacket * (self.ampsBufferLengthInPackets - 2), inputSample.amp, self.samplingSettings.packetByteSize);
     
     
-    float *reinverted = malloc(self.samplingSettings.packetByteSize);
-    for (int i = 0; i < self.samplingSettings.framesPerPacket; i++) {
-        memcpy(reinverted + i, invertedDelayed + (self.samplingSettings.framesPerPacket - i - 1), sizeof(float));
-    }
-    
-    memcpy(outputBuffer,
-           reinverted,
-           self.samplingSettings.packetByteSize);
-    
-    
-    
-    NSMutableString *log = [NSMutableString new];
-    for (int i = 0; i < self.samplingSettings.framesPerPacket * 3; i++) {
-        [log appendString:[NSString stringWithFormat:@"%f\n", self.ampsBuffer[i]]];
-    }
+    memcpy(outputBuffer, self.ampsBuffer + 100, self.samplingSettings.packetByteSize);
 }
 
 

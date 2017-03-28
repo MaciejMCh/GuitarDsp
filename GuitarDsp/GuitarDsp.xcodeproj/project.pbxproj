@@ -50,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C28CAED11E8B234E001BADFE /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		C2DF19B61E8AA65500106AE8 /* Allpass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Allpass.h; sourceTree = "<group>"; };
 		C2DF19B71E8AA65500106AE8 /* Allpass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Allpass.m; sourceTree = "<group>"; };
 		C2DF19B81E8AA65500106AE8 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
@@ -191,6 +192,7 @@
 		C2EB06511E8AA44B0010D1B3 = {
 			isa = PBXGroup;
 			children = (
+				C28CAED11E8B234E001BADFE /* module.modulemap */,
 				C2EB065D1E8AA44B0010D1B3 /* GuitarDsp */,
 				C2EB065C1E8AA44B0010D1B3 /* Products */,
 				C2DF1A061E8AA83B00106AE8 /* Frameworks */,

@@ -5,6 +5,9 @@
       location = "group:GuitarDsp/GuitarDsp.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Bow/Bow.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:GuitarDspBoardUI/GuitarDspBoardUI.xcodeproj">
    </FileRef>
    <FileRef

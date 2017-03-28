@@ -16,6 +16,7 @@
 		C26DED721E8AFCB400E61B7C /* EffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26DED711E8AFCB400E61B7C /* EffectViewController.swift */; };
 		C26DED741E8B055E00E61B7C /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26DED731E8B055E00E61B7C /* SliderViewController.swift */; };
 		C26DED761E8B062B00E61B7C /* SliderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26DED751E8B062B00E61B7C /* SliderViewController.storyboard */; };
+		C28CAED01E8B2098001BADFE /* GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */; };
 		C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		C26DED711E8AFCB400E61B7C /* EffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectViewController.swift; sourceTree = "<group>"; };
 		C26DED731E8B055E00E61B7C /* SliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		C26DED751E8B062B00E61B7C /* SliderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SliderViewController.storyboard; sourceTree = "<group>"; };
+		C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarDsp.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-fqviswmbvyvdyxbfngkuxnzymtkh/Build/Products/Debug/GuitarDsp.framework"; sourceTree = "<group>"; };
 		C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDetectingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C28CAED01E8B2098001BADFE /* GuitarDsp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +53,7 @@
 			children = (
 				C26DED5B1E8AF81400E61B7C /* Bow */,
 				C26DED5A1E8AF81400E61B7C /* Products */,
+				C28CAECE1E8B2098001BADFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +81,14 @@
 				C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */,
 			);
 			path = Bow;
+			sourceTree = "<group>";
+		};
+		C28CAECE1E8B2098001BADFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -259,6 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;

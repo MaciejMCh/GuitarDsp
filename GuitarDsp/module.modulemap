@@ -1,0 +1,4 @@
+module GuitarDsp [system] {
+    header "GuitarDsp/GuitarDsp.h"
+    export *
+}

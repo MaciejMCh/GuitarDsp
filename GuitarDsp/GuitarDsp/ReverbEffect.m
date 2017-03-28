@@ -87,6 +87,10 @@
     //        //        inr[i] = sin(i * 0.01);
     //    }
     
+    bzero(self.b, self.samplingSettings.packetByteSize);
+    bzero(self.bb, self.samplingSettings.packetByteSize);
+    bzero(self.bbb, self.samplingSettings.packetByteSize);
+    
     [self.rev processmix:inputSample.amp
                   inputR:self.bb
                  outputL:self.b

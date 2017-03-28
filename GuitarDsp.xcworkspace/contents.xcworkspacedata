@@ -2,7 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:GuitarDsp/GuitarDsp.xcodeproj">
+      location = "group:GuitarDsp/GuitarDsp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:GuitarDspBoardUI/GuitarDspBoardUI.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:EZAudio/EZAudio.xcodeproj">

@@ -34,11 +34,4 @@
     self.tempoTextField.stringValue = [NSString stringWithFormat:@"%.1f", self.processor.tempo];
 }
 
-- (Processor *)processor {
-    if (!_processor) {
-        _processor = [Processor shared];
-    }
-    return _processor;
-}
-
 @end

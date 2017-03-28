@@ -7,8 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <GuitarDsp/GuitarDsp.h>
 #import "EffectNodesFactory.h"
-#import "Effect.h"
 
 @interface BoardViewController : NSViewController
 

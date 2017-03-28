@@ -8,11 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <BoardUI/BoardUI.h>
-#import "DelayEffect.h"
-#import "PhaseVocoderEffect.h"
-#import "HarmonizerEffect.h"
-#import "LooperEffect.h"
-#import "ReverbEffect.h"
+#import <GuitarDsp/GuitarDsp.h>
 
 @protocol EffectsFactory <NSObject>
 
@@ -23,6 +19,7 @@
 - (ReverbEffect * _Nonnull)newReverbEffect;
 
 @end
+
 
 @interface EffectNodesFactory : NSObject
 
@@ -35,5 +32,10 @@
 - (GridEntity * _Nonnull)harmonizer;
 - (GridEntity * _Nonnull)looper;
 - (GridEntity * _Nonnull)reverb;
+
+@end
+
+
+@interface Processor (EffectNodesFactory) <EffectsFactory>
 
 @end

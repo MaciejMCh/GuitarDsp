@@ -72,3 +72,39 @@
 }
 
 @end
+
+
+@implementation Processor (EffectNodesFactory)
+
+#pragma mark -
+#pragma mark - EffectsFactory
+
+- (ReverbEffect *)newReverbEffect {
+    return [[ReverbEffect alloc] initWithSamplingSettings:self.samplingSettings];
+}
+
+- (LooperEffect *)newLooperEffect {
+    return [[LooperEffect alloc] initWithSamplingSettings:self.samplingSettings banksCount:4 tempo:140 tactsCount:2];
+}
+
+- (PhaseVocoderEffect *)newPhaseVocoderEffect {
+    return [[PhaseVocoderEffect alloc] initWithSamplingSettings:self.samplingSettings];
+}
+
+- (DelayEffect *)newDelayEffect {
+    struct Timing delayTiming;
+    delayTiming.tactPart = Half;
+    delayTiming.tempo = self.tempo;
+    
+    return [[DelayEffect alloc] initWithFadingFunctionA:0.2
+                                        fadingFunctionB:0.2
+                                            echoesCount:2
+                                       samplingSettings:self.samplingSettings
+                                                 timing:delayTiming];
+}
+
+- (HarmonizerEffect *)newHarmonizerEffect {
+    return [[HarmonizerEffect alloc] initWithSamplingSettings:self.samplingSettings];
+}
+
+@end

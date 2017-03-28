@@ -29,20 +29,6 @@
     return self;
 }
 
-+ (Processor *)shared {
-    static Processor *_shared = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        struct SamplingSettings samplingSettings;
-        samplingSettings.frequency = [EZMicrophone sharedMicrophone].audioStreamBasicDescription.mSampleRate;
-        samplingSettings.framesPerPacket = [EZMicrophone sharedMicrophone].framesPerPacket;
-        samplingSettings.packetByteSize = sizeof(float) * samplingSettings.framesPerPacket;
-        _shared = [[Processor alloc] initWithSamplingSettings:samplingSettings tempo:135];
-    });
-    return _shared;
-}
-
-
 #pragma mark -
 #pragma mark - Setup
 
@@ -87,37 +73,6 @@
             [((id<TempoUser>)effect) updateTempo:self.tempo];
         }
     }
-}
-
-#pragma mark -
-#pragma mark - EffectsFactory
-
-- (ReverbEffect *)newReverbEffect {
-    return [[ReverbEffect alloc] initWithSamplingSettings:self.samplingSettings];
-}
-
-- (LooperEffect *)newLooperEffect {
-    return [[LooperEffect alloc] initWithSamplingSettings:self.samplingSettings banksCount:4 tempo:140 tactsCount:2];
-}
-
-- (PhaseVocoderEffect *)newPhaseVocoderEffect {
-    return [[PhaseVocoderEffect alloc] initWithSamplingSettings:self.samplingSettings];
-}
-
-- (DelayEffect *)newDelayEffect {
-    struct Timing delayTiming;
-    delayTiming.tactPart = Half;
-    delayTiming.tempo = self.tempo;
-    
-    return [[DelayEffect alloc] initWithFadingFunctionA:0.2
-                                        fadingFunctionB:0.2
-                                            echoesCount:2
-                                       samplingSettings:self.samplingSettings
-                                                 timing:delayTiming];
-}
-
-- (HarmonizerEffect *)newHarmonizerEffect {
-    return [[HarmonizerEffect alloc] initWithSamplingSettings:self.samplingSettings];
 }
 
 @end

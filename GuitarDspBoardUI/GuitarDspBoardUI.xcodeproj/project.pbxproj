@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C2327A731E718D7700587341 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2327A721E718D7700587341 /* Accelerate.framework */; };
+		C2DF1A051E8AA73D00106AE8 /* GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DF1A041E8AA73D00106AE8 /* GuitarDsp.framework */; };
+		C2EB060E1E8AA2F50010D1B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2EB060B1E8AA2F50010D1B3 /* Assets.xcassets */; };
+		C2EB06131E8AA3220010D1B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB06121E8AA3220010D1B3 /* AppDelegate.m */; };
+		C2EB06151E8AA3350010D1B3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2EB06141E8AA3350010D1B3 /* Info.plist */; };
+		C2EB06271E8AA3670010D1B3 /* AddEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB06181E8AA3670010D1B3 /* AddEffectViewController.m */; };
+		C2EB06281E8AA3670010D1B3 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB061A1E8AA3670010D1B3 /* BoardViewController.m */; };
+		C2EB06291E8AA3670010D1B3 /* DelayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB061C1E8AA3670010D1B3 /* DelayViewController.m */; };
+		C2EB062A1E8AA3670010D1B3 /* LooperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB061E1E8AA3670010D1B3 /* LooperViewController.m */; };
+		C2EB062B1E8AA3670010D1B3 /* PhaseVocoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB06201E8AA3670010D1B3 /* PhaseVocoderViewController.m */; };
+		C2EB062C1E8AA3670010D1B3 /* ProcessorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB06221E8AA3670010D1B3 /* ProcessorViewController.m */; };
+		C2EB062D1E8AA3670010D1B3 /* SlidersStackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB06241E8AA3670010D1B3 /* SlidersStackViewController.m */; };
+		C2EB062E1E8AA3670010D1B3 /* TimeDomainSignalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB06261E8AA3670010D1B3 /* TimeDomainSignalViewController.m */; };
+		C2EB063A1E8AA3860010D1B3 /* AddEffect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EB06301E8AA3860010D1B3 /* AddEffect.storyboard */; };
+		C2EB063B1E8AA3860010D1B3 /* Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EB06311E8AA3860010D1B3 /* Board.storyboard */; };
+		C2EB063C1E8AA3860010D1B3 /* DelayStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EB06321E8AA3860010D1B3 /* DelayStoryboard.storyboard */; };
+		C2EB063D1E8AA3860010D1B3 /* Effect.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EB06331E8AA3860010D1B3 /* Effect.xib */; };
+		C2EB063E1E8AA3860010D1B3 /* Looper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EB06341E8AA3860010D1B3 /* Looper.storyboard */; };
+		C2EB063F1E8AA3860010D1B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EB06351E8AA3860010D1B3 /* Main.storyboard */; };
+		C2EB06401E8AA3860010D1B3 /* PhaseVocoderStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EB06361E8AA3860010D1B3 /* PhaseVocoderStoryboard.storyboard */; };
+		C2EB06411E8AA3860010D1B3 /* ProcessorStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EB06371E8AA3860010D1B3 /* ProcessorStoryboard.storyboard */; };
+		C2EB06421E8AA3860010D1B3 /* SlidersStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EB06381E8AA3860010D1B3 /* SlidersStack.storyboard */; };
+		C2EB06431E8AA3860010D1B3 /* TimeDomainSignal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EB06391E8AA3860010D1B3 /* TimeDomainSignal.storyboard */; };
+		C2EB06451E8AA3960010D1B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB06441E8AA3960010D1B3 /* main.m */; };
+		C2EB064B1E8AA3AE0010D1B3 /* EffectNodesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB06481E8AA3AE0010D1B3 /* EffectNodesFactory.m */; };
+		C2EB064C1E8AA3AE0010D1B3 /* SlidersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB064A1E8AA3AE0010D1B3 /* SlidersFactory.m */; };
+		C2EB06501E8AA3BF0010D1B3 /* EffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB064F1E8AA3BF0010D1B3 /* EffectView.m */; };
+		C2FD96661E797636006E8F53 /* BoardUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FD96651E797636006E8F53 /* BoardUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C2D961D01E71804A008870B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C2327A721E718D7700587341 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		C23C814B1E7177EE0050DCE9 /* GuitarDspBoardUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarDspBoardUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2DF1A041E8AA73D00106AE8 /* GuitarDsp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarDsp.framework; path = ../GuitarDsp/build/Debug/GuitarDsp.framework; sourceTree = "<group>"; };
+		C2EB060B1E8AA2F50010D1B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = GuitarDspBoardUI/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		C2EB06111E8AA3220010D1B3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = GuitarDspBoardUI/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		C2EB06121E8AA3220010D1B3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = GuitarDspBoardUI/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		C2EB06141E8AA3350010D1B3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GuitarDspBoardUI/Info.plist; sourceTree = SOURCE_ROOT; };
+		C2EB06171E8AA3670010D1B3 /* AddEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddEffectViewController.h; path = GuitarDspBoardUI/AddEffectViewController.h; sourceTree = SOURCE_ROOT; };
+		C2EB06181E8AA3670010D1B3 /* AddEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddEffectViewController.m; path = GuitarDspBoardUI/AddEffectViewController.m; sourceTree = SOURCE_ROOT; };
+		C2EB06191E8AA3670010D1B3 /* BoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardViewController.h; path = GuitarDspBoardUI/BoardViewController.h; sourceTree = SOURCE_ROOT; };
+		C2EB061A1E8AA3670010D1B3 /* BoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardViewController.m; path = GuitarDspBoardUI/BoardViewController.m; sourceTree = SOURCE_ROOT; };
+		C2EB061B1E8AA3670010D1B3 /* DelayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DelayViewController.h; path = GuitarDspBoardUI/DelayViewController.h; sourceTree = SOURCE_ROOT; };
+		C2EB061C1E8AA3670010D1B3 /* DelayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DelayViewController.m; path = GuitarDspBoardUI/DelayViewController.m; sourceTree = SOURCE_ROOT; };
+		C2EB061D1E8AA3670010D1B3 /* LooperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LooperViewController.h; path = GuitarDspBoardUI/LooperViewController.h; sourceTree = SOURCE_ROOT; };
+		C2EB061E1E8AA3670010D1B3 /* LooperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LooperViewController.m; path = GuitarDspBoardUI/LooperViewController.m; sourceTree = SOURCE_ROOT; };
+		C2EB061F1E8AA3670010D1B3 /* PhaseVocoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhaseVocoderViewController.h; path = GuitarDspBoardUI/PhaseVocoderViewController.h; sourceTree = SOURCE_ROOT; };
+		C2EB06201E8AA3670010D1B3 /* PhaseVocoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhaseVocoderViewController.m; path = GuitarDspBoardUI/PhaseVocoderViewController.m; sourceTree = SOURCE_ROOT; };
+		C2EB06211E8AA3670010D1B3 /* ProcessorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProcessorViewController.h; path = GuitarDspBoardUI/ProcessorViewController.h; sourceTree = SOURCE_ROOT; };
+		C2EB06221E8AA3670010D1B3 /* ProcessorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProcessorViewController.m; path = GuitarDspBoardUI/ProcessorViewController.m; sourceTree = SOURCE_ROOT; };
+		C2EB06231E8AA3670010D1B3 /* SlidersStackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlidersStackViewController.h; path = GuitarDspBoardUI/SlidersStackViewController.h; sourceTree = SOURCE_ROOT; };
+		C2EB06241E8AA3670010D1B3 /* SlidersStackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlidersStackViewController.m; path = GuitarDspBoardUI/SlidersStackViewController.m; sourceTree = SOURCE_ROOT; };
+		C2EB06251E8AA3670010D1B3 /* TimeDomainSignalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeDomainSignalViewController.h; path = GuitarDspBoardUI/TimeDomainSignalViewController.h; sourceTree = SOURCE_ROOT; };
+		C2EB06261E8AA3670010D1B3 /* TimeDomainSignalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeDomainSignalViewController.m; path = GuitarDspBoardUI/TimeDomainSignalViewController.m; sourceTree = SOURCE_ROOT; };
+		C2EB06301E8AA3860010D1B3 /* AddEffect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddEffect.storyboard; path = GuitarDspBoardUI/AddEffect.storyboard; sourceTree = SOURCE_ROOT; };
+		C2EB06311E8AA3860010D1B3 /* Board.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Board.storyboard; path = GuitarDspBoardUI/Board.storyboard; sourceTree = SOURCE_ROOT; };
+		C2EB06321E8AA3860010D1B3 /* DelayStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = DelayStoryboard.storyboard; path = GuitarDspBoardUI/DelayStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
+		C2EB06331E8AA3860010D1B3 /* Effect.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Effect.xib; path = GuitarDspBoardUI/Effect.xib; sourceTree = SOURCE_ROOT; };
+		C2EB06341E8AA3860010D1B3 /* Looper.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Looper.storyboard; path = GuitarDspBoardUI/Looper.storyboard; sourceTree = SOURCE_ROOT; };
+		C2EB06351E8AA3860010D1B3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = GuitarDspBoardUI/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		C2EB06361E8AA3860010D1B3 /* PhaseVocoderStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PhaseVocoderStoryboard.storyboard; path = GuitarDspBoardUI/PhaseVocoderStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
+		C2EB06371E8AA3860010D1B3 /* ProcessorStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProcessorStoryboard.storyboard; path = GuitarDspBoardUI/ProcessorStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
+		C2EB06381E8AA3860010D1B3 /* SlidersStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SlidersStack.storyboard; path = GuitarDspBoardUI/SlidersStack.storyboard; sourceTree = SOURCE_ROOT; };
+		C2EB06391E8AA3860010D1B3 /* TimeDomainSignal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TimeDomainSignal.storyboard; path = GuitarDspBoardUI/TimeDomainSignal.storyboard; sourceTree = SOURCE_ROOT; };
+		C2EB06441E8AA3960010D1B3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = GuitarDspBoardUI/main.m; sourceTree = SOURCE_ROOT; };
+		C2EB06471E8AA3AE0010D1B3 /* EffectNodesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EffectNodesFactory.h; path = GuitarDspBoardUI/EffectNodesFactory.h; sourceTree = SOURCE_ROOT; };
+		C2EB06481E8AA3AE0010D1B3 /* EffectNodesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EffectNodesFactory.m; path = GuitarDspBoardUI/EffectNodesFactory.m; sourceTree = SOURCE_ROOT; };
+		C2EB06491E8AA3AE0010D1B3 /* SlidersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlidersFactory.h; path = GuitarDspBoardUI/SlidersFactory.h; sourceTree = SOURCE_ROOT; };
+		C2EB064A1E8AA3AE0010D1B3 /* SlidersFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlidersFactory.m; path = GuitarDspBoardUI/SlidersFactory.m; sourceTree = SOURCE_ROOT; };
+		C2EB064E1E8AA3BF0010D1B3 /* EffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EffectView.h; path = GuitarDspBoardUI/EffectView.h; sourceTree = SOURCE_ROOT; };
+		C2EB064F1E8AA3BF0010D1B3 /* EffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EffectView.m; path = GuitarDspBoardUI/EffectView.m; sourceTree = SOURCE_ROOT; };
+		C2F5877C1E71810A007DD777 /* EZAudioOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EZAudioOSX.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-fqviswmbvyvdyxbfngkuxnzymtkh/Build/Products/Debug/EZAudioOSX.framework"; sourceTree = "<group>"; };
+		C2FD96651E797636006E8F53 /* BoardUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BoardUI.framework; path = ../BoardInterface/build/Debug/BoardUI.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C23C81481E7177EE0050DCE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2DF1A051E8AA73D00106AE8 /* GuitarDsp.framework in Frameworks */,
+				C2FD96661E797636006E8F53 /* BoardUI.framework in Frameworks */,
+				C2327A731E718D7700587341 /* Accelerate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C23C81421E7177EE0050DCE9 = {
+			isa = PBXGroup;
+			children = (
+				C23C814D1E7177EE0050DCE9 /* GuitarDspBoardUI */,
+				C23C814C1E7177EE0050DCE9 /* Products */,
+				C2D961931E717BA8008870B4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C23C814C1E7177EE0050DCE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C23C814B1E7177EE0050DCE9 /* GuitarDspBoardUI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C23C814D1E7177EE0050DCE9 /* GuitarDspBoardUI */ = {
+			isa = PBXGroup;
+			children = (
+				C2EB064D1E8AA3B40010D1B3 /* Views */,
+				C2EB06461E8AA39C0010D1B3 /* Utilities */,
+				C2EB062F1E8AA3690010D1B3 /* Storyboards */,
+				C2EB06161E8AA34F0010D1B3 /* Controllers */,
+				C26F8C6E1E817B5E00C74103 /* Resources */,
+				C2EB06111E8AA3220010D1B3 /* AppDelegate.h */,
+				C2EB06121E8AA3220010D1B3 /* AppDelegate.m */,
+				C2EB06141E8AA3350010D1B3 /* Info.plist */,
+				C23C81511E7177EE0050DCE9 /* Supporting Files */,
+			);
+			name = GuitarDspBoardUI;
+			path = GuitarDsp;
+			sourceTree = "<group>";
+		};
+		C23C81511E7177EE0050DCE9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C2EB06441E8AA3960010D1B3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C26F8C6E1E817B5E00C74103 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C2EB060B1E8AA2F50010D1B3 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C2D961931E717BA8008870B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2DF1A041E8AA73D00106AE8 /* GuitarDsp.framework */,
+				C2FD96651E797636006E8F53 /* BoardUI.framework */,
+				C2327A721E718D7700587341 /* Accelerate.framework */,
+				C2F5877C1E71810A007DD777 /* EZAudioOSX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2EB06161E8AA34F0010D1B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2EB06171E8AA3670010D1B3 /* AddEffectViewController.h */,
+				C2EB06181E8AA3670010D1B3 /* AddEffectViewController.m */,
+				C2EB06191E8AA3670010D1B3 /* BoardViewController.h */,
+				C2EB061A1E8AA3670010D1B3 /* BoardViewController.m */,
+				C2EB061B1E8AA3670010D1B3 /* DelayViewController.h */,
+				C2EB061C1E8AA3670010D1B3 /* DelayViewController.m */,
+				C2EB061D1E8AA3670010D1B3 /* LooperViewController.h */,
+				C2EB061E1E8AA3670010D1B3 /* LooperViewController.m */,
+				C2EB061F1E8AA3670010D1B3 /* PhaseVocoderViewController.h */,
+				C2EB06201E8AA3670010D1B3 /* PhaseVocoderViewController.m */,
+				C2EB06211E8AA3670010D1B3 /* ProcessorViewController.h */,
+				C2EB06221E8AA3670010D1B3 /* ProcessorViewController.m */,
+				C2EB06231E8AA3670010D1B3 /* SlidersStackViewController.h */,
+				C2EB06241E8AA3670010D1B3 /* SlidersStackViewController.m */,
+				C2EB06251E8AA3670010D1B3 /* TimeDomainSignalViewController.h */,
+				C2EB06261E8AA3670010D1B3 /* TimeDomainSignalViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C2EB062F1E8AA3690010D1B3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C2EB06301E8AA3860010D1B3 /* AddEffect.storyboard */,
+				C2EB06311E8AA3860010D1B3 /* Board.storyboard */,
+				C2EB06321E8AA3860010D1B3 /* DelayStoryboard.storyboard */,
+				C2EB06331E8AA3860010D1B3 /* Effect.xib */,
+				C2EB06341E8AA3860010D1B3 /* Looper.storyboard */,
+				C2EB06351E8AA3860010D1B3 /* Main.storyboard */,
+				C2EB06361E8AA3860010D1B3 /* PhaseVocoderStoryboard.storyboard */,
+				C2EB06371E8AA3860010D1B3 /* ProcessorStoryboard.storyboard */,
+				C2EB06381E8AA3860010D1B3 /* SlidersStack.storyboard */,
+				C2EB06391E8AA3860010D1B3 /* TimeDomainSignal.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C2EB06461E8AA39C0010D1B3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C2EB06471E8AA3AE0010D1B3 /* EffectNodesFactory.h */,
+				C2EB06481E8AA3AE0010D1B3 /* EffectNodesFactory.m */,
+				C2EB06491E8AA3AE0010D1B3 /* SlidersFactory.h */,
+				C2EB064A1E8AA3AE0010D1B3 /* SlidersFactory.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		C2EB064D1E8AA3B40010D1B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2EB064E1E8AA3BF0010D1B3 /* EffectView.h */,
+				C2EB064F1E8AA3BF0010D1B3 /* EffectView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C23C814A1E7177EE0050DCE9 /* GuitarDspBoardUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C23C815F1E7177EE0050DCE9 /* Build configuration list for PBXNativeTarget "GuitarDspBoardUI" */;
+			buildPhases = (
+				C23C81471E7177EE0050DCE9 /* Sources */,
+				C23C81481E7177EE0050DCE9 /* Frameworks */,
+				C23C81491E7177EE0050DCE9 /* Resources */,
+				C2D961D01E71804A008870B4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuitarDspBoardUI;
+			productName = GuitarDsp;
+			productReference = C23C814B1E7177EE0050DCE9 /* GuitarDspBoardUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C23C81431E7177EE0050DCE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				TargetAttributes = {
+					C23C814A1E7177EE0050DCE9 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 76RXF4V6NR;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C23C81461E7177EE0050DCE9 /* Build configuration list for PBXProject "GuitarDspBoardUI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C23C81421E7177EE0050DCE9;
+			productRefGroup = C23C814C1E7177EE0050DCE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C23C814A1E7177EE0050DCE9 /* GuitarDspBoardUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C23C81491E7177EE0050DCE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2EB063C1E8AA3860010D1B3 /* DelayStoryboard.storyboard in Resources */,
+				C2EB060E1E8AA2F50010D1B3 /* Assets.xcassets in Resources */,
+				C2EB06401E8AA3860010D1B3 /* PhaseVocoderStoryboard.storyboard in Resources */,
+				C2EB06431E8AA3860010D1B3 /* TimeDomainSignal.storyboard in Resources */,
+				C2EB063D1E8AA3860010D1B3 /* Effect.xib in Resources */,
+				C2EB063F1E8AA3860010D1B3 /* Main.storyboard in Resources */,
+				C2EB063A1E8AA3860010D1B3 /* AddEffect.storyboard in Resources */,
+				C2EB06151E8AA3350010D1B3 /* Info.plist in Resources */,
+				C2EB063E1E8AA3860010D1B3 /* Looper.storyboard in Resources */,
+				C2EB06411E8AA3860010D1B3 /* ProcessorStoryboard.storyboard in Resources */,
+				C2EB06421E8AA3860010D1B3 /* SlidersStack.storyboard in Resources */,
+				C2EB063B1E8AA3860010D1B3 /* Board.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C23C81471E7177EE0050DCE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2EB06451E8AA3960010D1B3 /* main.m in Sources */,
+				C2EB062D1E8AA3670010D1B3 /* SlidersStackViewController.m in Sources */,
+				C2EB06501E8AA3BF0010D1B3 /* EffectView.m in Sources */,
+				C2EB062B1E8AA3670010D1B3 /* PhaseVocoderViewController.m in Sources */,
+				C2EB064B1E8AA3AE0010D1B3 /* EffectNodesFactory.m in Sources */,
+				C2EB062A1E8AA3670010D1B3 /* LooperViewController.m in Sources */,
+				C2EB064C1E8AA3AE0010D1B3 /* SlidersFactory.m in Sources */,
+				C2EB062C1E8AA3670010D1B3 /* ProcessorViewController.m in Sources */,
+				C2EB06271E8AA3670010D1B3 /* AddEffectViewController.m in Sources */,
+				C2EB062E1E8AA3670010D1B3 /* TimeDomainSignalViewController.m in Sources */,
+				C2EB06131E8AA3220010D1B3 /* AppDelegate.m in Sources */,
+				C2EB06291E8AA3670010D1B3 /* DelayViewController.m in Sources */,
+				C2EB06281E8AA3670010D1B3 /* BoardViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C23C815D1E7177EE0050DCE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C23C815E1E7177EE0050DCE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C23C81601E7177EE0050DCE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 76RXF4V6NR;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
+				INFOPLIST_FILE = GuitarDspBoardUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.GuitarDsp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C23C81611E7177EE0050DCE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 76RXF4V6NR;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
+				INFOPLIST_FILE = GuitarDspBoardUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.GuitarDsp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C23C81461E7177EE0050DCE9 /* Build configuration list for PBXProject "GuitarDspBoardUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C23C815D1E7177EE0050DCE9 /* Debug */,
+				C23C815E1E7177EE0050DCE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C23C815F1E7177EE0050DCE9 /* Build configuration list for PBXNativeTarget "GuitarDspBoardUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C23C81601E7177EE0050DCE9 /* Debug */,
+				C23C81611E7177EE0050DCE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C23C81431E7177EE0050DCE9 /* Project object */;
+}

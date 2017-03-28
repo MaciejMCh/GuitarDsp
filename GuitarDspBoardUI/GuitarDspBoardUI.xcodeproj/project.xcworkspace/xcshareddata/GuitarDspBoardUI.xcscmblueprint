@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "59C7C9FA5F3953E2EEB12CCCEBABED38294BB22F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "59C7C9FA5F3953E2EEB12CCCEBABED38294BB22F" : 9223372036854775807,
+    "AC0FC30F30FBD81E21C79EB57B2096BB1F6D1FAD" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4C691D84-3354-43E0-8B1F-A07A40BE5935",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "59C7C9FA5F3953E2EEB12CCCEBABED38294BB22F" : "GuitarDsp\/",
+    "AC0FC30F30FBD81E21C79EB57B2096BB1F6D1FAD" : "GuitarDsp\/BoardInterface\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GuitarDspBoardUI",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GuitarDspBoardUI\/GuitarDspBoardUI.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MaciejMCh\/GuitarDsp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "59C7C9FA5F3953E2EEB12CCCEBABED38294BB22F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MaciejMCh\/BoardInterface.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AC0FC30F30FBD81E21C79EB57B2096BB1F6D1FAD"
+    }
+  ]
+}

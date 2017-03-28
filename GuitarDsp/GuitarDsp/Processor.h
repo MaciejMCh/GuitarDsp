@@ -8,21 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "SamplingSettings.h"
-#import "EffectNodesFactory.h"
 #import "Board.h"
 
 // Temporary
 #import "MetronomeEffect.h"
 
-@interface Processor : NSObject <EffectsFactory>
+@interface Processor : NSObject
 
 @property (nonatomic, strong) Board *activeBoard;
 @property (nonatomic, strong) MetronomeEffect *metronomeEffect;
 @property (nonatomic, assign) float *outputBuffer;
 @property (nonatomic, assign) struct SamplingSettings samplingSettings;
 @property (nonatomic, assign) float tempo;
-
-+ (Processor *)shared;
 
 - (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings tempo:(float)tempo;
 

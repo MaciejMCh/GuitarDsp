@@ -40,9 +40,3 @@ extension SliderViewController {
         let mainColor: NSColor
     }
 }
-
-extension SliderViewController {
-    static func make() -> SliderViewController {
-        return NSStoryboard(name: "SliderViewController", bundle: nil).instantiateInitialController() as! SliderViewController
-    }
-}

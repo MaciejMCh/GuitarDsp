@@ -11,11 +11,13 @@
 #import "DelayEffect.h"
 #import "PhaseVocoderEffect.h"
 #import "HarmonizerEffect.h"
+#import "ReverbEffect.h"
 
 @interface SlidersFactory : NSObject
 
 + (NSArray<Slider *> *)delaySliders:(DelayEffect *)delayEffect;
 + (NSArray<Slider *> *)phaseVocoderSliders:(PhaseVocoderEffect *)phaseVocoderEffect;
 + (NSArray<Slider *> *)harmonizerSliders:(HarmonizerEffect *)harmonizerEffect;
++ (NSArray<Slider *> *)reverbSliders:(ReverbEffect *)reverbEffect;
 
 @end

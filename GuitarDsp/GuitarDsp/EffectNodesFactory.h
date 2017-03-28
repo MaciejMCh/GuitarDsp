@@ -12,6 +12,7 @@
 #import "PhaseVocoderEffect.h"
 #import "HarmonizerEffect.h"
 #import "LooperEffect.h"
+#import "ReverbEffect.h"
 
 @protocol EffectsFactory <NSObject>
 
@@ -19,6 +20,7 @@
 - (PhaseVocoderEffect * _Nonnull)newPhaseVocoderEffect;
 - (HarmonizerEffect * _Nonnull)newHarmonizerEffect;
 - (LooperEffect * _Nonnull)newLooperEffect;
+- (ReverbEffect * _Nonnull)newReverbEffect;
 
 @end
 
@@ -32,5 +34,6 @@
 - (GridEntity * _Nonnull)phaseVocoder;
 - (GridEntity * _Nonnull)harmonizer;
 - (GridEntity * _Nonnull)looper;
+- (GridEntity * _Nonnull)reverb;
 
 @end

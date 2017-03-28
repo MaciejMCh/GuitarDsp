@@ -9,7 +9,6 @@
 #import "ReverbEffect.h"
 #import "Sample.h"
 #import "TimingCalc.h"
-#import "Revmodel.h"
 
 @interface ReverbEffect ()
 
@@ -22,7 +21,6 @@
 @property (nonatomic, assign) float *b;
 @property (nonatomic, assign) float *bb;
 @property (nonatomic, assign) float *bbb;
-@property (nonatomic, strong) Revmodel *rev;
 @property (nonatomic, strong) NSMutableData *data;
 
 @end

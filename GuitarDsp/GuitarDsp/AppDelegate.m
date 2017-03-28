@@ -100,7 +100,7 @@
     
     ReverbEffect *reverbEffect = [[ReverbEffect alloc] initWithSamplingSettings:self.samplingSettings];
 //    board.effects = @[[[PhaseVocoderEffect alloc] initWithSamplingSettings:self.samplingSettings]];
-    board.effects = @[reverbEffect];
+//    board.effects = @[reverbEffect];
     
     
     LooperEffect *looperEffect = [[LooperEffect alloc] initWithSamplingSettings:self.samplingSettings

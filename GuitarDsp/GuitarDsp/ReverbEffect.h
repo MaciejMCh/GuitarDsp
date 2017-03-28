@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "Effect.h"
 #import "SamplingSettings.h"
+#import "Revmodel.h"
 
 @interface ReverbEffect : NSObject <Effect>
 
+@property (nonatomic, strong) Revmodel *rev;
+
 - (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings;
 
-- (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer;
 
 @end

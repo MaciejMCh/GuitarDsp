@@ -132,6 +132,17 @@
         }];
     }
     
+    if ([gridEntity.model isKindOfClass:[ReverbEffect class]]) {
+        __weak ReverbEffect *wReverbEffect = gridEntity.model;
+        [gridEntity setAction:^{
+            SlidersStackViewController *controller = [SlidersStackViewController withSliders:[SlidersFactory reverbSliders:wReverbEffect]];
+            __weak SlidersStackViewController *wController = controller;
+            [controller setDismiss:^{
+                [wSelf dismissViewController:wController];
+            }];
+            [wSelf presentViewControllerAsModalWindow:controller];
+        }];
+    }
     
 }
 

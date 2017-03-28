@@ -10,7 +10,7 @@
 
 @implementation SlidersFactory
 
-#pragma mark - 
+#pragma mark -
 #pragma mark - Common
 
 + (Slider *)tactPartSlider:(TactPart)currentTactPart sliderName:(NSString *)sliderName valueUpdate:(void (^)(Slider *slider))valueUpdate {
@@ -19,6 +19,27 @@
                                  values:values
                           selectedIndex:[values indexOfObject:@(currentTactPart)]
                             valueUpdate:valueUpdate];
+}
+
++ (Slider *)linearWithName:(NSString *)name valueUpdate:(void (^)(Slider *slider))valueUpdate valuesFrom:(float)startValue to:(float)endValue step:(float)step current:(float)currentValue {
+    NSMutableArray<NSString *> *values = [NSMutableArray new];
+    
+    float leastDistance = endValue - startValue;
+    int leastDistanceIndex = 0;
+    float iValue = startValue;
+    while (iValue < endValue) {
+        [values addObject:[NSString stringWithFormat:@"%f", iValue]];
+        
+        if (fabsf(iValue - currentValue) < leastDistance) {
+            leastDistance = fabsf(iValue - currentValue);
+            leastDistanceIndex += 1;
+        }
+        
+        iValue += step;
+    }
+    leastDistanceIndex -= 1;
+    
+    return [[Slider alloc] initWithName:name values:values selectedIndex:leastDistanceIndex valueUpdate:valueUpdate];
 }
 
 #pragma mark -
@@ -110,7 +131,7 @@
     return slider;
 }
 
-#pragma mark - 
+#pragma mark -
 #pragma mark - PhaseVocoder
 
 + (NSArray<Slider *> *)phaseVocoderSlidersWithShiftSetter:(void (^)(float newValue))shiftSetter {
@@ -160,6 +181,35 @@
     return [[self phaseVocoderSlidersWithShiftSetter:^(float newValue) {
         wHarmonizerEffect.shift = newValue;
     }] arrayByAddingObject:volumeSlider];
+}
+
+#pragma mark -
+#pragma mark - Reverb
+
++ (NSArray<Slider *> *)reverbSliders:(ReverbEffect *)reverbEffect {
+    __weak ReverbEffect *wReverbEffect = reverbEffect;
+    
+    Slider *damp = [self linearWithName:@"damp" valueUpdate:^(Slider *slider) {
+        [wReverbEffect.rev setdamp:[slider.selectedValue floatValue]];
+    } valuesFrom:0 to:1 step:0.01 current:reverbEffect.rev.getdamp];
+    
+    Slider *roomsize = [self linearWithName:@"room size" valueUpdate:^(Slider *slider) {
+        [wReverbEffect.rev setroomsize:[slider.selectedValue floatValue]];
+    } valuesFrom:0 to:1 step:0.01 current:reverbEffect.rev.getroomsize];
+    
+    Slider *dry = [self linearWithName:@"dry" valueUpdate:^(Slider *slider) {
+        [wReverbEffect.rev setdry:[slider.selectedValue floatValue]];
+    } valuesFrom:0 to:1 step:0.01 current:reverbEffect.rev.getdry];
+    
+    Slider *wet = [self linearWithName:@"wet" valueUpdate:^(Slider *slider) {
+        [wReverbEffect.rev setwet:[slider.selectedValue floatValue]];
+    } valuesFrom:0 to:1 step:0.01 current:reverbEffect.rev.getwet];
+    
+    Slider *width = [self linearWithName:@"width" valueUpdate:^(Slider *slider) {
+        [wReverbEffect.rev setwidth:[slider.selectedValue floatValue]];
+    } valuesFrom:0 to:1 step:0.01 current:reverbEffect.rev.getwidth];
+    
+    return @[damp, roomsize, dry, wet, width];
 }
 
 @end

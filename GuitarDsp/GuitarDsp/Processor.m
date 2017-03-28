@@ -92,6 +92,10 @@
 #pragma mark -
 #pragma mark - EffectsFactory
 
+- (ReverbEffect *)newReverbEffect {
+    return [[ReverbEffect alloc] initWithSamplingSettings:self.samplingSettings];
+}
+
 - (LooperEffect *)newLooperEffect {
     return [[LooperEffect alloc] initWithSamplingSettings:self.samplingSettings banksCount:4 tempo:140 tactsCount:2];
 }

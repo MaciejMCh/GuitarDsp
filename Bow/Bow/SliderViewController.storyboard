@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5z1-lm-huN">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Slider View Controller-->
+        <scene sceneID="oSc-Hk-SmS">
+            <objects>
+                <viewController id="5z1-lm-huN" customClass="SliderViewController" customModule="Bow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="N2K-CH-rxd">
+                        <rect key="frame" x="0.0" y="0.0" width="275" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JJI-kJ-d8d">
+                                <rect key="frame" x="3" y="5" width="86" height="19"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="room size" id="U6k-XI-fLi">
+                                    <font key="font" size="15" name="Courier-Bold"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="8Su-9N-sdD">
+                                <rect key="frame" x="5" y="30" width="20" height="270"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="tX0-yM-0Ni">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="s3V-Vw-jnk"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="536-Fg-7QZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="tX0-yM-0Ni" secondAttribute="trailing" id="9yj-6s-SY9"/>
+                                    <constraint firstAttribute="bottom" secondItem="tX0-yM-0Ni" secondAttribute="bottom" id="JKv-8s-dEi"/>
+                                    <constraint firstItem="tX0-yM-0Ni" firstAttribute="leading" secondItem="8Su-9N-sdD" secondAttribute="leading" id="pcy-ER-wJZ"/>
+                                </constraints>
+                            </customView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="qM0-LI-KtW">
+                                <rect key="frame" x="15" y="65" width="78" height="30"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Slider Tag" id="VU6-Sl-O7q"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tQR-Vb-si0">
+                                <rect key="frame" x="23" y="71" width="72" height="19"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0.35" id="VvW-TF-K4p">
+                                    <font key="font" size="15" name="Courier-Bold"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="tZN-Yw-Ou4" customClass="ScrollDetectingView" customModule="Bow" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="275" height="300"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tZN-Yw-Ou4" secondAttribute="bottom" id="1te-qC-gNs"/>
+                            <constraint firstItem="tQR-Vb-si0" firstAttribute="leading" secondItem="qM0-LI-KtW" secondAttribute="leading" constant="10" id="7Fm-B6-R4A"/>
+                            <constraint firstItem="8Su-9N-sdD" firstAttribute="leading" secondItem="N2K-CH-rxd" secondAttribute="leading" constant="5" id="AKi-OE-utK"/>
+                            <constraint firstAttribute="bottom" secondItem="8Su-9N-sdD" secondAttribute="bottom" constant="30" id="CNF-Cc-ofR"/>
+                            <constraint firstItem="qM0-LI-KtW" firstAttribute="leading" secondItem="tX0-yM-0Ni" secondAttribute="centerX" id="RLb-LN-CXi"/>
+                            <constraint firstItem="tQR-Vb-si0" firstAttribute="trailing" secondItem="qM0-LI-KtW" secondAttribute="trailing" id="TP7-Oi-Tn8"/>
+                            <constraint firstItem="tZN-Yw-Ou4" firstAttribute="top" secondItem="N2K-CH-rxd" secondAttribute="top" id="ZA2-ep-IXw"/>
+                            <constraint firstAttribute="trailing" secondItem="tZN-Yw-Ou4" secondAttribute="trailing" id="a4Z-Ld-dsh"/>
+                            <constraint firstItem="tZN-Yw-Ou4" firstAttribute="leading" secondItem="N2K-CH-rxd" secondAttribute="leading" id="k09-de-C4t"/>
+                            <constraint firstItem="8Su-9N-sdD" firstAttribute="top" secondItem="N2K-CH-rxd" secondAttribute="top" id="nxh-Vb-vie"/>
+                            <constraint firstItem="tQR-Vb-si0" firstAttribute="centerY" secondItem="qM0-LI-KtW" secondAttribute="centerY" id="ufy-Hn-vcv"/>
+                            <constraint firstItem="JJI-kJ-d8d" firstAttribute="leading" secondItem="N2K-CH-rxd" secondAttribute="leading" constant="5" id="wgd-Ff-ZdU"/>
+                            <constraint firstAttribute="bottom" secondItem="JJI-kJ-d8d" secondAttribute="bottom" constant="5" id="xmd-Qc-ijH"/>
+                            <constraint firstItem="qM0-LI-KtW" firstAttribute="centerY" secondItem="tX0-yM-0Ni" secondAttribute="top" id="yrr-d1-SRL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollDetectingView" destination="tZN-Yw-Ou4" id="3iJ-SZ-Qzp"/>
+                        <outlet property="sliderFillView" destination="tX0-yM-0Ni" id="uup-O6-QGU"/>
+                        <outlet property="sliderSpaceView" destination="8Su-9N-sdD" id="A2N-LA-B4O"/>
+                    </connections>
+                </viewController>
+                <customObject id="gwO-Hs-LVa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-59.5" y="42"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Slider Tag" width="78" height="30"/>
+    </resources>
+</document>

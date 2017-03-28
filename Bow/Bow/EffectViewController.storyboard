@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="zXR-81-3fX">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <scenes>
+        <!--Effect View Controller-->
+        <scene sceneID="Uin-5X-QSZ">
+            <objects>
+                <viewController id="zXR-81-3fX" customClass="EffectViewController" customModule="Bow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="pp5-Sl-mz2">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="Ll4-Tf-5UM">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B5s-7m-A2H">
+                                        <rect key="frame" x="8" y="270" width="95" height="31"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Reverb" id="tuE-pX-LzA">
+                                            <font key="font" size="25" name="Courier-Bold"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdy-Zm-hmx">
+                                        <rect key="frame" x="10" y="0.0" width="440" height="265"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sdy-Zm-hmx" secondAttribute="bottom" id="ROk-hZ-oy4"/>
+                                    <constraint firstItem="B5s-7m-A2H" firstAttribute="leading" secondItem="Ll4-Tf-5UM" secondAttribute="leading" constant="10" id="SXD-Og-7aN"/>
+                                    <constraint firstAttribute="trailing" secondItem="sdy-Zm-hmx" secondAttribute="trailing" id="T2G-K0-ghs"/>
+                                    <constraint firstItem="sdy-Zm-hmx" firstAttribute="top" secondItem="Ll4-Tf-5UM" secondAttribute="top" constant="35" id="aTT-DC-jr2"/>
+                                    <constraint firstItem="B5s-7m-A2H" firstAttribute="top" secondItem="Ll4-Tf-5UM" secondAttribute="top" constant="-1" id="dFX-uG-uwS"/>
+                                    <constraint firstItem="sdy-Zm-hmx" firstAttribute="leading" secondItem="Ll4-Tf-5UM" secondAttribute="leading" constant="10" id="la6-iY-MMG"/>
+                                </constraints>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Ll4-Tf-5UM" secondAttribute="bottom" id="BfR-1J-4He"/>
+                            <constraint firstItem="Ll4-Tf-5UM" firstAttribute="leading" secondItem="pp5-Sl-mz2" secondAttribute="leading" id="Das-4E-gOt"/>
+                            <constraint firstItem="Ll4-Tf-5UM" firstAttribute="top" secondItem="pp5-Sl-mz2" secondAttribute="top" id="fKb-Ng-XN5"/>
+                            <constraint firstAttribute="trailing" secondItem="Ll4-Tf-5UM" secondAttribute="trailing" id="sue-2A-Zu8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="Ll4-Tf-5UM" id="YkU-0v-vie"/>
+                        <outlet property="slidersStackView" destination="sdy-Zm-hmx" id="x56-3a-VSK"/>
+                    </connections>
+                </viewController>
+                <customObject id="moA-iF-xKz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-118" y="176"/>
+        </scene>
+    </scenes>
+</document>

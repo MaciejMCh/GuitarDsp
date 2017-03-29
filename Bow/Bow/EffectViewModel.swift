@@ -9,10 +9,15 @@
 import Foundation
 import GuitarDsp
 
+extension Float {
+    static var goldenRatio: Float {
+        return 1.61803398875
+    }
+}
 
 struct EffectViewModel {
     let effect: Effect
-    static let viewHeight: CGFloat = 100
+    static let viewHeight: CGFloat = 210
     
     func name() -> String {
         switch effect {
@@ -34,5 +39,5 @@ struct EffectViewModel {
 }
 
 struct SliderViewModel {
-    let sliderWidth: CGFloat = 100
+    let sliderWidth: CGFloat = EffectViewModel.viewHeight / CGFloat(Float.goldenRatio)
 }

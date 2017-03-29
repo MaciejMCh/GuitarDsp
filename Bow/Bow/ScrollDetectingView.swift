@@ -37,6 +37,12 @@ class ScrollDetectingView: NSView {
     override func touchesMoved(with event: NSEvent) {
         switch state {
         case .scrolling(let lastPoint):
+            let frameRelativeToWindow = convert(bounds, to: nil)
+            let frameRelativeToScreen = window!.convertToScreen(frameRelativeToWindow)
+            if !frameRelativeToScreen.contains(NSEvent.mouseLocation()) {
+                state = .inactive
+                return
+            }
             let newPoint = touchingPoint(touches: Array(event.touches(matching: .touching, in: self)))
             reportScroll?(newPoint - lastPoint)
             state = .scrolling(lastPoint: newPoint)

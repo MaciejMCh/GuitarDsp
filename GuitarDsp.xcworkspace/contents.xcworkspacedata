@@ -16,4 +16,7 @@
    <FileRef
       location = "group:BoardInterface/BoardInterface.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Bow/Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

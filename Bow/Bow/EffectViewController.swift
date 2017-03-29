@@ -28,6 +28,10 @@ class EffectViewController: NSViewController {
     func setupSliders() {
         let sliderViewController = SliderViewController.make()
         sliderViewController.configuration = SliderViewController.Configuration(mainColor: NSColor(calibratedRed: 74.0 / 255.0, green: 144.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0))
+        sliderViewController.setup(valueType: .continous(range: 0.2..<0.8, step: 0.01), currentValue: 0.3)
+        sliderViewController.valueChange.subscribe { event in
+            print(event)
+        }
         slidersStackView.addView(sliderViewController.view, in: .leading)
     }
 }

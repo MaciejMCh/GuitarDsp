@@ -16,12 +16,17 @@
 		C26DED721E8AFCB400E61B7C /* EffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26DED711E8AFCB400E61B7C /* EffectViewController.swift */; };
 		C26DED741E8B055E00E61B7C /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26DED731E8B055E00E61B7C /* SliderViewController.swift */; };
 		C26DED761E8B062B00E61B7C /* SliderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26DED751E8B062B00E61B7C /* SliderViewController.storyboard */; };
+		C2767E971E8B2CD400779B69 /* ReactiveEffectsSliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2767E961E8B2CD400779B69 /* ReactiveEffectsSliders.swift */; };
 		C28CAED01E8B2098001BADFE /* GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */; };
 		C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CAED21E8B252F001BADFE /* Wireframe.swift */; };
 		C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */; };
+		EA8440FA42193D631AA470DF /* Pods_Bow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53B2E43B69D6A3905FCDA9F /* Pods_Bow.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47D8574E16B39F754B2CD36E /* Pods-Bow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bow/Pods-Bow.debug.xcconfig"; sourceTree = "<group>"; };
+		B53B2E43B69D6A3905FCDA9F /* Pods_Bow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B87F52A07F0B92B612638F7D /* Pods-Bow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bow.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bow/Pods-Bow.release.xcconfig"; sourceTree = "<group>"; };
 		C26DED591E8AF81400E61B7C /* Bow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26DED5C1E8AF81400E61B7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C26DED601E8AF81400E61B7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,6 +38,7 @@
 		C26DED711E8AFCB400E61B7C /* EffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectViewController.swift; sourceTree = "<group>"; };
 		C26DED731E8B055E00E61B7C /* SliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		C26DED751E8B062B00E61B7C /* SliderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SliderViewController.storyboard; sourceTree = "<group>"; };
+		C2767E961E8B2CD400779B69 /* ReactiveEffectsSliders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveEffectsSliders.swift; sourceTree = "<group>"; };
 		C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarDsp.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-fqviswmbvyvdyxbfngkuxnzymtkh/Build/Products/Debug/GuitarDsp.framework"; sourceTree = "<group>"; };
 		C28CAED21E8B252F001BADFE /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDetectingView.swift; sourceTree = "<group>"; };
@@ -44,18 +50,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				C28CAED01E8B2098001BADFE /* GuitarDsp.framework in Frameworks */,
+				EA8440FA42193D631AA470DF /* Pods_Bow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4484ECE5330BF03BE62C6F3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				47D8574E16B39F754B2CD36E /* Pods-Bow.debug.xcconfig */,
+				B87F52A07F0B92B612638F7D /* Pods-Bow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C26DED501E8AF81400E61B7C = {
 			isa = PBXGroup;
 			children = (
 				C26DED5B1E8AF81400E61B7C /* Bow */,
 				C26DED5A1E8AF81400E61B7C /* Products */,
 				C28CAECE1E8B2098001BADFE /* Frameworks */,
+				4484ECE5330BF03BE62C6F3A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				C26DED5C1E8AF81400E61B7C /* AppDelegate.swift */,
+				C2767E961E8B2CD400779B69 /* ReactiveEffectsSliders.swift */,
 				C26DED6B1E8AF83A00E61B7C /* BoardViewController.storyboard */,
 				C26DED601E8AF81400E61B7C /* Assets.xcassets */,
 				C26DED621E8AF81400E61B7C /* Main.storyboard */,
@@ -90,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */,
+				B53B2E43B69D6A3905FCDA9F /* Pods_Bow.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C26DED681E8AF81400E61B7C /* Build configuration list for PBXNativeTarget "Bow" */;
 			buildPhases = (
+				8F010285DA67446914909645 /* [CP] Check Pods Manifest.lock */,
 				C26DED551E8AF81400E61B7C /* Sources */,
 				C26DED561E8AF81400E61B7C /* Frameworks */,
 				C26DED571E8AF81400E61B7C /* Resources */,
+				43D607A23AC129A0FD7B90AF /* [CP] Embed Pods Frameworks */,
+				EFEAB19EBD32F55F693E09DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,6 +186,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		43D607A23AC129A0FD7B90AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bow/Pods-Bow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F010285DA67446914909645 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EFEAB19EBD32F55F693E09DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bow/Pods-Bow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C26DED551E8AF81400E61B7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -173,6 +243,7 @@
 				C26DED5D1E8AF81400E61B7C /* AppDelegate.swift in Sources */,
 				C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */,
 				C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */,
+				C2767E971E8B2CD400779B69 /* ReactiveEffectsSliders.swift in Sources */,
 				C26DED6E1E8AF84900E61B7C /* BoardViewController.swift in Sources */,
 				C26DED741E8B055E00E61B7C /* SliderViewController.swift in Sources */,
 			);
@@ -286,6 +357,7 @@
 		};
 		C26DED691E8AF81400E61B7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47D8574E16B39F754B2CD36E /* Pods-Bow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -300,6 +372,7 @@
 		};
 		C26DED6A1E8AF81400E61B7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B87F52A07F0B92B612638F7D /* Pods-Bow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

@@ -11,7 +11,7 @@ import Cocoa
 
 class ScrollDetectingView: NSView {
     private var state: State = .inactive
-    var reportScroll: ((CGPoint, CGPoint) -> Void)?
+    var reportScroll: ((CGPoint) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +22,7 @@ class ScrollDetectingView: NSView {
     override func touchesBegan(with event: NSEvent) {
         let onTouches = Array(event.touches(matching: .touching, in: self))
         if (onTouches.count == 2) {
-            state = .scrolling(onPoint: touchingPoint(touches: onTouches))
+            state = .scrolling(lastPoint: touchingPoint(touches: onTouches))
         }
     }
     
@@ -36,7 +36,10 @@ class ScrollDetectingView: NSView {
     
     override func touchesMoved(with event: NSEvent) {
         switch state {
-        case .scrolling(let onPoint): reportScroll?(onPoint, touchingPoint(touches: Array(event.touches(matching: .touching, in: self))))
+        case .scrolling(let lastPoint):
+            let newPoint = touchingPoint(touches: Array(event.touches(matching: .touching, in: self)))
+            reportScroll?(newPoint - lastPoint)
+            state = .scrolling(lastPoint: newPoint)
         default: break
         }
     }
@@ -49,13 +52,17 @@ class ScrollDetectingView: NSView {
 extension ScrollDetectingView {
     enum State {
         case inactive
-        case scrolling(onPoint: CGPoint)
+        case scrolling(lastPoint: CGPoint)
     }
 }
 
 extension CGPoint {
     static func +(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
         return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+    }
+    
+    static func -(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+        return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
     }
     
     func scaledBy(scalar: Float) -> CGPoint {

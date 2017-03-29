@@ -74,9 +74,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressBarHeightConstraint" destination="s3V-Vw-jnk" id="GeC-xJ-AAH"/>
                         <outlet property="scrollDetectingView" destination="tZN-Yw-Ou4" id="3iJ-SZ-Qzp"/>
                         <outlet property="sliderFillView" destination="tX0-yM-0Ni" id="uup-O6-QGU"/>
                         <outlet property="sliderSpaceView" destination="8Su-9N-sdD" id="A2N-LA-B4O"/>
+                        <outlet property="valueLabel" destination="tQR-Vb-si0" id="Q5g-Kc-TvP"/>
                     </connections>
                 </viewController>
                 <customObject id="gwO-Hs-LVa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

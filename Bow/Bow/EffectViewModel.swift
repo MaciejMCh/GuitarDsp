@@ -23,6 +23,7 @@ struct EffectViewModel {
         switch effect {
         case is ReverbEffect: return "reverb"
         case is HarmonizerEffect: return "harmonizer"
+        case is PhaseVocoderEffect: return "phase vocoder"
         default:
             assert(false)
             return ""
@@ -31,8 +32,9 @@ struct EffectViewModel {
     
     func color() -> NSColor {
         switch effect {
-        case is ReverbEffect: return NSColor(calibratedRed: 225.0 / 255.0, green: 226.0 / 255.0, blue: 74.0 / 255.0, alpha: 1.0)
+        case is ReverbEffect: return NSColor(calibratedRed: 119.0 / 255.0, green: 74.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0)
         case is HarmonizerEffect: return NSColor(calibratedRed: 74.0 / 255.0, green: 226.0 / 255.0, blue: 221.0 / 255.0, alpha: 1.0)
+        case is PhaseVocoderEffect: return NSColor(calibratedRed: 226.0 / 255.0, green: 224.0 / 255.0, blue: 74.0 / 255.0, alpha: 1.0)
         default:
             assert(false)
             return .clear

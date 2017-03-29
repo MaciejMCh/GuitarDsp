@@ -46,6 +46,12 @@ struct SlidersFactory {
         return result
     }
     
+    func phaseVocoder(phaseVocoder: PhaseVocoderEffect) -> [SliderViewController] {
+        return phaseShift(color: EffectViewModel(effect: phaseVocoder).color()) {
+            phaseVocoder.shift = $0
+        }
+    }
+    
     private func phaseShift(color: NSColor, setter: @escaping (Float) -> Void) -> [SliderViewController] {
         let shift = make(color: color, name: "shift", valueType: .discrete(values: [0.25, 0.5, 1.0, 2.0, 4.0]), initialValue: 1.0, update: setter)
         let semitone = make(color: color, name: "semitone", valueType: .continous(range: -12.0..<12.0, step: 1.0), initialValue: 0.0) {

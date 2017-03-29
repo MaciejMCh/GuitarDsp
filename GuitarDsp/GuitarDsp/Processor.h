@@ -21,7 +21,7 @@
 @property (nonatomic, assign) struct SamplingSettings samplingSettings;
 @property (nonatomic, assign) float tempo;
 
-- (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings tempo:(float)tempo;
+- (instancetype _Nonnull)initWithSamplingSettings:(struct SamplingSettings)samplingSettings tempo:(float)tempo;
 
 - (void)processBuffer:(float *)buffer;
 

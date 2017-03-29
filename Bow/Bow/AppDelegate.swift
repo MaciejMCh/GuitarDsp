@@ -21,9 +21,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AudioInterface.shared().use(processor)
         let board = Board()
         board.effects = [
-            ReverbEffect(samplingSettings: AudioInterface.shared().samplingSettings),
-            HarmonizerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+//            ReverbEffect(samplingSettings: AudioInterface.shared().samplingSettings),
+//            HarmonizerEffect(samplingSettings: AudioInterface.shared().samplingSettings),
+            PhaseVocoderEffect(samplingSettings: AudioInterface.shared().samplingSettings)
         ]
+        processor.activeBoard = board
         let boardViewController = BoardViewController.make()
         boardViewController.board = board
         return boardViewController

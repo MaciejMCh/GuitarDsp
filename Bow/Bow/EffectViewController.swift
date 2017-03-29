@@ -52,6 +52,9 @@ class EffectViewController: NSViewController {
         if let harmonizerEffect = effect as? HarmonizerEffect {
             return SlidersFactory().harmonizer(harmonizer: harmonizerEffect)
         }
+        if let phaseVocoderEffect = effect as? PhaseVocoderEffect {
+            return SlidersFactory().phaseVocoder(phaseVocoder: phaseVocoderEffect)
+        }
         assert(false)
         return []
     }

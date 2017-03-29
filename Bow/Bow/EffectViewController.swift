@@ -49,7 +49,9 @@ class EffectViewController: NSViewController {
         if let reverbEffect = effect as? ReverbEffect {
             return SlidersFactory().reverb(effect: reverbEffect)
         }
-        
+        if let harmonizerEffect = effect as? HarmonizerEffect {
+            return SlidersFactory().harmonizer(harmonizer: harmonizerEffect)
+        }
         assert(false)
         return []
     }

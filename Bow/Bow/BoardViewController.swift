@@ -11,6 +11,8 @@ import Cocoa
 import GuitarDsp
 
 class BoardViewController: NSViewController {
+    @IBOutlet weak var gridView: GridView!
+    
     var board: Board!
     
     override func viewDidLoad() {
@@ -30,13 +32,47 @@ class BoardViewController: NSViewController {
     }
     
     func insertViewInSocket(viewToInsert: NSView, index: Int) {
-        view.addSubview(viewToInsert)
+        gridView.addView(view: viewToInsert)
         var frame = viewToInsert.frame
         frame.origin.x = CGFloat(index) * CGFloat(300)
         frame.origin.y = 100
         frame.size.height = EffectViewModel.viewHeight
         viewToInsert.frame = frame
     }
+}
+
+class GridView: NSView {
+    private var views: [NSView] = []
+    
+    override func resizeSubviews(withOldSize oldSize: NSSize) {
+        let padding = CGFloat(10)
+        
+        var previousFrame: NSRect?
+        for view in views {
+            var currentFrame = view.frame
+            if let previousFrame = previousFrame {
+                if previousFrame.maxX + currentFrame.width + (padding * 2) > frame.width {
+                    currentFrame.origin.x = padding
+                    currentFrame.origin.y = previousFrame.maxY + padding
+                } else {
+                    currentFrame.origin.x = previousFrame.maxX + padding
+                    currentFrame.origin.y = previousFrame.origin.y
+                }
+            } else {
+                currentFrame.origin.x = padding
+                currentFrame.origin.y = padding
+            }
+            
+            view.frame = currentFrame
+            previousFrame = view.frame
+        }
+    }
+    
+    func addView(view: NSView) {
+        views.append(view)
+        addSubview(view)
+    }
+    
 }
 
 class PatternImageView: NSView {

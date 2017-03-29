@@ -11,12 +11,26 @@
             <objects>
                 <viewController id="wSh-cw-HqC" customClass="BoardViewController" customModule="Bow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="dog-Ps-xJR" customClass="PatternImageView" customModule="Bow" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eK5-Ry-BWx" customClass="GridView" customModule="Bow" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="eK5-Ry-BWx" firstAttribute="leading" secondItem="dog-Ps-xJR" secondAttribute="leading" id="5FQ-J8-KkR"/>
+                            <constraint firstAttribute="trailing" secondItem="eK5-Ry-BWx" secondAttribute="trailing" id="LED-PZ-ejY"/>
+                            <constraint firstAttribute="bottom" secondItem="eK5-Ry-BWx" secondAttribute="bottom" id="wYs-fa-hL6"/>
+                            <constraint firstItem="eK5-Ry-BWx" firstAttribute="top" secondItem="dog-Ps-xJR" secondAttribute="top" id="xJO-TB-yUq"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="patternImage" value="Carbon Pattern"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="gridView" destination="eK5-Ry-BWx" id="aJh-Nv-IIT"/>
+                    </connections>
                 </viewController>
                 <customObject id="Z17-az-bmK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

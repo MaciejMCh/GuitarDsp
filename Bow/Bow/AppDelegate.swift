@@ -20,7 +20,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let processor = Processor(samplingSettings: AudioInterface.shared().samplingSettings, tempo: 120)
         AudioInterface.shared().use(processor)
         let board = Board()
-        board.effects = [ReverbEffect(samplingSettings: AudioInterface.shared().samplingSettings)]
+        board.effects = [
+            ReverbEffect(samplingSettings: AudioInterface.shared().samplingSettings),
+            HarmonizerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+        ]
         let boardViewController = BoardViewController.make()
         boardViewController.board = board
         return boardViewController

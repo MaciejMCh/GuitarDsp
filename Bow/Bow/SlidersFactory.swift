@@ -32,6 +32,28 @@ struct SlidersFactory {
         return [roomSize, damp, dry, wet, width]
     }
     
+    func harmonizer(harmonizer: HarmonizerEffect) -> [SliderViewController] {
+        let color = EffectViewModel(effect: harmonizer).color()
+        
+        var result = phaseShift(color: color) {
+            harmonizer.shift = $0
+        }
+        let volume = make(color: color, name: "volume", valueType: .continous(range: 0.0..<1.5, step: 0.01), initialValue: 1.0) {
+            harmonizer.volume = $0
+        }
+        
+        result.append(volume)
+        return result
+    }
+    
+    private func phaseShift(color: NSColor, setter: @escaping (Float) -> Void) -> [SliderViewController] {
+        let shift = make(color: color, name: "shift", valueType: .discrete(values: [0.25, 0.5, 1.0, 2.0, 4.0]), initialValue: 1.0, update: setter)
+        let semitone = make(color: color, name: "semitone", valueType: .continous(range: -12.0..<12.0, step: 1.0), initialValue: 0.0) {
+            setter(1.0 + ($0 / 12.0))
+        }
+        return [shift, semitone]
+    }
+    
     private func make(color: NSColor, name: String, valueType: SliderViewController.ValueType, initialValue: Float, update: @escaping (Float) -> Void) -> SliderViewController {
         let sliderViewController = SliderViewController.make()
         sliderViewController.configuration = SliderViewController.Configuration(mainColor: color, valueName: name)

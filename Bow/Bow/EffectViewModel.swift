@@ -12,6 +12,7 @@ import GuitarDsp
 
 struct EffectViewModel {
     let effect: Effect
+    static let viewHeight: CGFloat = 100
     
     func name() -> String {
         switch effect {
@@ -30,4 +31,8 @@ struct EffectViewModel {
             return .clear
         }
     }
+}
+
+struct SliderViewModel {
+    let sliderWidth: CGFloat = 100
 }

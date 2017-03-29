@@ -34,6 +34,7 @@ class BoardViewController: NSViewController {
         var frame = viewToInsert.frame
         frame.origin.x = CGFloat(index) * CGFloat(300)
         frame.origin.y = 100
+        frame.size.height = EffectViewModel.viewHeight
         viewToInsert.frame = frame
     }
 }

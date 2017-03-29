@@ -31,11 +31,26 @@ class EffectViewController: NSViewController {
     }
     
     func setupSliders() {
-        if let reverbEffect = effect as? ReverbEffect {
-            for sliderViewController in SlidersFactory().reverb(effect: reverbEffect) {
-                addChildViewController(sliderViewController)
-                slidersStackView.addView(sliderViewController.view, in: .leading)
-            }
+        let sliders = sliderViewControllers(effect: effect)
+        for sliderViewController in sliders {
+            addChildViewController(sliderViewController)
+            slidersStackView.addView(sliderViewController.view, in: .leading)
+            var frame = sliderViewController.view.frame
+            frame.size.width = SliderViewModel().sliderWidth
+            sliderViewController.view.frame = frame
         }
+        
+        var frame = view.frame
+        frame.size.width = CGFloat(sliders.count) * SliderViewModel().sliderWidth
+        view.frame = frame
+    }
+    
+    func sliderViewControllers(effect: Effect) -> [SliderViewController] {
+        if let reverbEffect = effect as? ReverbEffect {
+            return SlidersFactory().reverb(effect: reverbEffect)
+        }
+        
+        assert(false)
+        return []
     }
 }

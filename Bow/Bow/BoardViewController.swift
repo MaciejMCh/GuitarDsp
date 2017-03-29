@@ -53,14 +53,14 @@ class GridView: NSView {
             if let previousFrame = previousFrame {
                 if previousFrame.maxX + currentFrame.width + (padding * 2) > frame.width {
                     currentFrame.origin.x = padding
-                    currentFrame.origin.y = previousFrame.maxY + padding
+                    currentFrame.origin.y = previousFrame.origin.y - previousFrame.height - padding
                 } else {
                     currentFrame.origin.x = previousFrame.maxX + padding
                     currentFrame.origin.y = previousFrame.origin.y
                 }
             } else {
                 currentFrame.origin.x = padding
-                currentFrame.origin.y = padding
+                currentFrame.origin.y = frame.height - currentFrame.height - padding
             }
             
             view.frame = currentFrame

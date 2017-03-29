@@ -48,6 +48,11 @@ class SliderViewController: NSViewController {
         updateViews()
     }
     
+    override func viewDidLayout() {
+        super.viewDidLayout()
+        updateViews()
+    }
+    
     private func setupAppearence() {
         sliderSpaceView.wantsLayer = true
         sliderSpaceView.layer!.backgroundColor = NSColor.black.withAlphaComponent(0.4).cgColor

@@ -44,6 +44,11 @@ class BoardViewController: NSViewController {
 class GridView: NSView {
     private var views: [NSView] = []
     
+    override func layout() {
+        super.layout()
+        resizeSubviews(withOldSize: bounds.size)
+    }
+    
     override func resizeSubviews(withOldSize oldSize: NSSize) {
         let padding = CGFloat(10)
         

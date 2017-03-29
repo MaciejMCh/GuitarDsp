@@ -17,6 +17,7 @@ class SliderViewController: NSViewController {
     @IBOutlet weak var sliderSpaceView: NSView!
     @IBOutlet weak var sliderFillView: NSView!
     @IBOutlet weak var valueLabel: NSTextField!
+    @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var progressBarHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollDetectingView: ScrollDetectingView!
     
@@ -33,11 +34,12 @@ class SliderViewController: NSViewController {
         super.viewDidLoad()
         setupAppearence()
         
-        scrollDetectingView.reportScroll = {(change: CGPoint) in
-            self.continousIndex = self.continousIndex + Float(change.y)
-            self.updateValue()
-            self.updateViews()
-            self.scrollDidUpdate?()
+        scrollDetectingView.reportScroll = {[weak self] (change: CGPoint) in
+            guard let wSelf = self else {return}
+            wSelf.continousIndex = wSelf.continousIndex + Float(change.y)
+            wSelf.updateValue()
+            wSelf.updateViews()
+            wSelf.scrollDidUpdate?()
         }
     }
     
@@ -54,6 +56,8 @@ class SliderViewController: NSViewController {
         
         sliderFillView.wantsLayer = true
         sliderFillView.layer?.backgroundColor = configuration.mainColor.cgColor
+        
+        nameLabel.stringValue = configuration.valueName
     }
     
     lazy var valueChange: Observable<Float> = {
@@ -94,6 +98,7 @@ class SliderViewController: NSViewController {
 extension SliderViewController {
     struct Configuration {
         let mainColor: NSColor
+        let valueName: String
     }
 }
 

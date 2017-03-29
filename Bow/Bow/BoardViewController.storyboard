@@ -13,15 +13,6 @@
                     <view key="view" id="dog-Ps-xJR" customClass="PatternImageView" customModule="Bow" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Cp-Dc-CtU">
-                                <rect key="frame" x="20" y="85" width="235" height="210"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <connections>
-                                    <segue destination="qLU-7N-vDS" kind="embed" id="b6B-a9-mzJ"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="patternImage" value="Carbon Pattern"/>
                         </userDefinedRuntimeAttributes>
@@ -30,14 +21,6 @@
                 <customObject id="Z17-az-bmK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="90" y="127"/>
-        </scene>
-        <!--EffectViewController-->
-        <scene sceneID="cBo-js-mIK">
-            <objects>
-                <controllerPlaceholder storyboardName="EffectViewController" id="qLU-7N-vDS" sceneMemberID="viewController"/>
-                <customObject id="U7q-y0-A2A" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="91" y="440"/>
         </scene>
     </scenes>
     <resources>

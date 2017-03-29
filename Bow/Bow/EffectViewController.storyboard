@@ -49,6 +49,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="Ll4-Tf-5UM" id="YkU-0v-vie"/>
+                        <outlet property="nameLabel" destination="B5s-7m-A2H" id="PGa-d7-T1U"/>
                         <outlet property="slidersStackView" destination="sdy-Zm-hmx" id="x56-3a-VSK"/>
                     </connections>
                 </viewController>

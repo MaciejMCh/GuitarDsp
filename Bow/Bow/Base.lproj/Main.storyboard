@@ -669,21 +669,10 @@
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
-                    <connections>
-                        <segue destination="LZ6-Zw-VCg" kind="relationship" relationship="window.shadowedContentViewController" id="6Ye-WT-K1h"/>
-                    </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
-        </scene>
-        <!--BoardViewController-->
-        <scene sceneID="az7-HC-ows">
-            <objects>
-                <controllerPlaceholder storyboardName="BoardViewController" id="LZ6-Zw-VCg" sceneMemberID="viewController"/>
-                <customObject id="x9U-J2-Fbn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="75" y="538"/>
         </scene>
     </scenes>
 </document>

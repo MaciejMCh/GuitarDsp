@@ -8,10 +8,13 @@
 
 import Foundation
 import Cocoa
+import GuitarDsp
 
 class EffectViewController: NSViewController {
     @IBOutlet weak var backgroundView: NSView!
     @IBOutlet weak var slidersStackView: NSStackView!
+    @IBOutlet weak var nameLabel: NSTextField!
+    var effect: Effect!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,18 +23,19 @@ class EffectViewController: NSViewController {
     }
     
     func setupAppearence() {
+        nameLabel.stringValue = EffectViewModel(effect: effect).name()
+        
         view.wantsLayer = true
         view.layer!.cornerRadius = 10
         backgroundView.layer!.backgroundColor = NSColor.white.withAlphaComponent(0.2).cgColor
     }
     
     func setupSliders() {
-        let sliderViewController = SliderViewController.make()
-        sliderViewController.configuration = SliderViewController.Configuration(mainColor: NSColor(calibratedRed: 74.0 / 255.0, green: 144.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0))
-        sliderViewController.setup(valueType: .continous(range: 0.2..<0.8, step: 0.01), currentValue: 0.3)
-        sliderViewController.valueChange.subscribe { event in
-            print(event)
+        if let reverbEffect = effect as? ReverbEffect {
+            for sliderViewController in SlidersFactory().reverb(effect: reverbEffect) {
+                addChildViewController(sliderViewController)
+                slidersStackView.addView(sliderViewController.view, in: .leading)
+            }
         }
-        slidersStackView.addView(sliderViewController.view, in: .leading)
     }
 }

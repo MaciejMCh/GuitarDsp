@@ -22,3 +22,4 @@ extension StoryboardInstance where Self: NSViewController {
 // MARK: Concrete
 extension SliderViewController: StoryboardInstance {static var storyboardName: String {return "SliderViewController"}}
 extension EffectViewController: StoryboardInstance {static var storyboardName: String {return "EffectViewController"}}
+extension BoardViewController: StoryboardInstance {static var storyboardName: String {return "BoardViewController"}}

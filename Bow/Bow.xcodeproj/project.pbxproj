@@ -16,9 +16,10 @@
 		C26DED721E8AFCB400E61B7C /* EffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26DED711E8AFCB400E61B7C /* EffectViewController.swift */; };
 		C26DED741E8B055E00E61B7C /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26DED731E8B055E00E61B7C /* SliderViewController.swift */; };
 		C26DED761E8B062B00E61B7C /* SliderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26DED751E8B062B00E61B7C /* SliderViewController.storyboard */; };
-		C2767E971E8B2CD400779B69 /* ReactiveEffectsSliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2767E961E8B2CD400779B69 /* ReactiveEffectsSliders.swift */; };
 		C28CAED01E8B2098001BADFE /* GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */; };
 		C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CAED21E8B252F001BADFE /* Wireframe.swift */; };
+		C2ADB8721E8C4031001B0EF3 /* SlidersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB8711E8C4031001B0EF3 /* SlidersFactory.swift */; };
+		C2ADB8741E8C47E1001B0EF3 /* EffectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB8731E8C47E1001B0EF3 /* EffectViewModel.swift */; };
 		C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */; };
 		EA8440FA42193D631AA470DF /* Pods_Bow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53B2E43B69D6A3905FCDA9F /* Pods_Bow.framework */; };
 /* End PBXBuildFile section */
@@ -38,9 +39,10 @@
 		C26DED711E8AFCB400E61B7C /* EffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectViewController.swift; sourceTree = "<group>"; };
 		C26DED731E8B055E00E61B7C /* SliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		C26DED751E8B062B00E61B7C /* SliderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SliderViewController.storyboard; sourceTree = "<group>"; };
-		C2767E961E8B2CD400779B69 /* ReactiveEffectsSliders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveEffectsSliders.swift; sourceTree = "<group>"; };
 		C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarDsp.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-fqviswmbvyvdyxbfngkuxnzymtkh/Build/Products/Debug/GuitarDsp.framework"; sourceTree = "<group>"; };
 		C28CAED21E8B252F001BADFE /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		C2ADB8711E8C4031001B0EF3 /* SlidersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidersFactory.swift; sourceTree = "<group>"; };
+		C2ADB8731E8C47E1001B0EF3 /* EffectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectViewModel.swift; sourceTree = "<group>"; };
 		C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDetectingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				C26DED5C1E8AF81400E61B7C /* AppDelegate.swift */,
-				C2767E961E8B2CD400779B69 /* ReactiveEffectsSliders.swift */,
 				C26DED6B1E8AF83A00E61B7C /* BoardViewController.storyboard */,
 				C26DED601E8AF81400E61B7C /* Assets.xcassets */,
 				C26DED621E8AF81400E61B7C /* Main.storyboard */,
@@ -100,6 +101,8 @@
 				C26DED751E8B062B00E61B7C /* SliderViewController.storyboard */,
 				C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */,
 				C28CAED21E8B252F001BADFE /* Wireframe.swift */,
+				C2ADB8711E8C4031001B0EF3 /* SlidersFactory.swift */,
+				C2ADB8731E8C47E1001B0EF3 /* EffectViewModel.swift */,
 			);
 			path = Bow;
 			sourceTree = "<group>";
@@ -243,7 +246,8 @@
 				C26DED5D1E8AF81400E61B7C /* AppDelegate.swift in Sources */,
 				C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */,
 				C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */,
-				C2767E971E8B2CD400779B69 /* ReactiveEffectsSliders.swift in Sources */,
+				C2ADB8721E8C4031001B0EF3 /* SlidersFactory.swift in Sources */,
+				C2ADB8741E8C47E1001B0EF3 /* EffectViewModel.swift in Sources */,
 				C26DED6E1E8AF84900E61B7C /* BoardViewController.swift in Sources */,
 				C26DED741E8B055E00E61B7C /* SliderViewController.swift in Sources */,
 			);

@@ -74,6 +74,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nameLabel" destination="JJI-kJ-d8d" id="dIA-9t-JN3"/>
                         <outlet property="progressBarHeightConstraint" destination="s3V-Vw-jnk" id="GeC-xJ-AAH"/>
                         <outlet property="scrollDetectingView" destination="tZN-Yw-Ou4" id="3iJ-SZ-Qzp"/>
                         <outlet property="sliderFillView" destination="tX0-yM-0Ni" id="uup-O6-QGU"/>

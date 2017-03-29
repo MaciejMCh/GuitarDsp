@@ -8,9 +8,34 @@
 
 import Foundation
 import Cocoa
+import GuitarDsp
 
 class BoardViewController: NSViewController {
+    var board: Board!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addEffectControllers()
+    }
+    
+    func addEffectControllers() {
+        var i = 0
+        for effect in board.effects {
+            let effectController = EffectViewController.make()
+            effectController.effect = effect
+            addChildViewController(effectController)
+            insertViewInSocket(viewToInsert: effectController.view, index: i)
+            i += 1
+        }
+    }
+    
+    func insertViewInSocket(viewToInsert: NSView, index: Int) {
+        view.addSubview(viewToInsert)
+        var frame = viewToInsert.frame
+        frame.origin.x = CGFloat(index) * CGFloat(300)
+        frame.origin.y = 100
+        viewToInsert.frame = frame
+    }
 }
 
 class PatternImageView: NSView {

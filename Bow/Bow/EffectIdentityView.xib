@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe" customClass="EffectIdentityView" customModule="Bow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="158" height="17"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wub-XA-U5l">
+                    <rect key="frame" x="-2" y="0.0" width="162" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="9ZL-8d-2tG">
+                        <font key="font" size="13" name="Courier"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Wub-XA-U5l" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="2fb-eo-7RE"/>
+                <constraint firstAttribute="trailing" secondItem="Wub-XA-U5l" secondAttribute="trailing" id="evH-6Q-dEg"/>
+                <constraint firstAttribute="bottom" secondItem="Wub-XA-U5l" secondAttribute="bottom" id="mBL-1G-7tv"/>
+                <constraint firstItem="Wub-XA-U5l" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="zgT-lb-CT3"/>
+            </constraints>
+            <connections>
+                <outlet property="nameLabel" destination="Wub-XA-U5l" id="SGv-tY-eg4"/>
+            </connections>
+            <point key="canvasLocation" x="-22" y="166.5"/>
+        </customView>
+    </objects>
+</document>

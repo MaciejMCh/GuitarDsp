@@ -16,6 +16,22 @@
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="eK5-Ry-BWx" customClass="GridView" customModule="Bow" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
+                                <subviews>
+                                    <containerView translatesAutoresizingMaskIntoConstraints="NO" id="FC4-Tm-Z8B">
+                                        <rect key="frame" x="800" y="0.0" width="200" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="NKD-0v-RvD"/>
+                                            <constraint firstAttribute="width" constant="200" id="ORH-gA-Wow"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="gBx-Rp-jZt" kind="embed" id="zRN-JT-J3b"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FC4-Tm-Z8B" secondAttribute="trailing" id="MkD-Au-R1d"/>
+                                    <constraint firstAttribute="bottom" secondItem="FC4-Tm-Z8B" secondAttribute="bottom" id="caT-Fa-MRX"/>
+                                </constraints>
                             </customView>
                         </subviews>
                         <constraints>
@@ -35,6 +51,14 @@
                 <customObject id="Z17-az-bmK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="90" y="127"/>
+        </scene>
+        <!--EffectsOrderViewController-->
+        <scene sceneID="GFh-pe-DPz">
+            <objects>
+                <controllerPlaceholder storyboardName="EffectsOrderViewController" id="gBx-Rp-jZt" sceneMemberID="viewController"/>
+                <customObject id="Dkp-Ge-e5y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="90" y="562"/>
         </scene>
     </scenes>
     <resources>

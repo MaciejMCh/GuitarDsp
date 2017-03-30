@@ -20,6 +20,12 @@ class BoardViewController: NSViewController {
         addEffectControllers()
     }
     
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if let effetcsOrderViewController = segue.destinationController as? EffectsOrderViewController {
+            effetcsOrderViewController.setupWithEffects(effects: board.effects)
+        }
+    }
+    
     func addEffectControllers() {
         var i = 0
         for effect in board.effects {

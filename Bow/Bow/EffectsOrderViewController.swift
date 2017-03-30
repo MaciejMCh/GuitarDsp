@@ -8,29 +8,43 @@
 
 import Foundation
 import Cocoa
+import GuitarDsp
 
 class EffectsOrderViewController: NSViewController {
     @IBOutlet weak var reorderStackView: ReorderStackView!
+    var setupOnLoad: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mock()
+        setupOnLoad?()
     }
     
-    func mock() {
-        for i in 1..<5 {
-            let t = NSTextField()
-            t.isEditable = false
-            t.stringValue = "xd \(i)"
-            reorderStackView.addView(t)
+    func setupWithEffects(effects: [Effect]) {
+        setupOnLoad = { [weak self] in
+            for effect in effects {
+                let effectView = EffectIdentityView.make()!
+                effectView.effect = effect
+                self?.reorderStackView.addView(effectView)
+            }
         }
     }
 }
 
+class EffectIdentityView: NSView {
+    @IBOutlet weak var nameLabel: NSTextField!
+    
+    var effect: Effect! {
+        didSet {
+            updateSubviews()
+        }
+    }
+    
+    func updateSubviews() {
+        nameLabel.stringValue = EffectViewModel(effect: effect).name()
+    }
+}
 
 class ReorderStackView: NSStackView {
-    
-    private var draggingState: DraggingState = .none
     
     func addView(_ view: NSView) {
         addView(view, in: .top)
@@ -50,7 +64,6 @@ class ReorderStackView: NSStackView {
     }
     
     func beginDragging(view: NSView) {
-        draggingState = .dragging(view: view)
         lastIndex = views.index(of: view)
     }
     
@@ -71,11 +84,4 @@ class ReorderStackView: NSStackView {
     }
     
     var lastIndex: Int?
-}
-
-extension ReorderStackView {
-    enum DraggingState {
-        case none
-        case dragging(view: NSView)
-    }
 }

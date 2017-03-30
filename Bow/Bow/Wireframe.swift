@@ -9,18 +9,32 @@
 import Foundation
 import Cocoa
 
-protocol StoryboardInstance {
-    static var storyboardName: String {get}
+protocol InterfaceBuilderInstance {
+    static var interfaceFileName: String {get}
 }
 
-extension StoryboardInstance where Self: NSViewController {
+extension InterfaceBuilderInstance where Self: NSViewController {
     static func make() -> Self {
-        return NSStoryboard(name: Self.storyboardName, bundle: nil).instantiateInitialController() as! Self
+        return NSStoryboard(name: Self.interfaceFileName, bundle: nil).instantiateInitialController() as! Self
+    }
+}
+
+extension InterfaceBuilderInstance where Self: NSView {
+    static func make() -> Self! {
+        var nibContents = NSArray()
+        Bundle(for: Self.self).loadNibNamed(Self.interfaceFileName, owner: nil, topLevelObjects: &nibContents)
+        for content in nibContents {
+            if let me = content as? Self {
+                return me
+            }
+        }
+        return nil
     }
 }
 
 // MARK: Concrete
-extension SliderViewController: StoryboardInstance {static var storyboardName: String {return "SliderViewController"}}
-extension EffectViewController: StoryboardInstance {static var storyboardName: String {return "EffectViewController"}}
-extension BoardViewController: StoryboardInstance {static var storyboardName: String {return "BoardViewController"}}
-extension EffectsOrderViewController: StoryboardInstance {static var storyboardName: String {return "EffectsOrderViewController"}}
+extension SliderViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "SliderViewController"}}
+extension EffectViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "EffectViewController"}}
+extension BoardViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "BoardViewController"}}
+extension EffectsOrderViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "EffectsOrderViewController"}}
+extension EffectIdentityView: InterfaceBuilderInstance {static var interfaceFileName: String {return "EffectIdentityView"}}

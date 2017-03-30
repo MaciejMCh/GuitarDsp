@@ -17,7 +17,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func initialController() -> NSViewController {
-        return EffectsOrderViewController.make()
         let processor = Processor(samplingSettings: AudioInterface.shared().samplingSettings, tempo: 120)
         AudioInterface.shared().use(processor)
         let board = Board()

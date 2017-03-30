@@ -21,6 +21,7 @@ class EffectsOrderViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupOnLoad?()
+        reorderStackView.structureChanged = structureChanged
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
@@ -99,6 +100,7 @@ class EffectIdentityView: NSView {
 }
 
 class ReorderStackView: NSStackView {
+    var structureChanged: (() -> ())?
     
     func addView(_ view: NSView) {
         addView(view, in: .top)
@@ -130,6 +132,7 @@ class ReorderStackView: NSStackView {
                 if index != lastIndex {
                     removeView(view)
                     insertView(view, at: index + (index < lastIndex! ? 1 : -1), in: .top)
+                    structureChanged?()
                 }
                 lastIndex = index
                 return

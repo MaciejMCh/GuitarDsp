@@ -38,11 +38,23 @@ class BoardViewController: NSViewController {
     
     private func effectsStructureUpdated(effects: [Effect]) {
         board.effects = effects
+        clearEffectControllers()
+        addEffectControllers()
         layoutEffectOrderView()
     }
     
     private func layoutEffectOrderView() {
         orderViewHeightConstraint.constant = CGFloat(board.effects.count) * EffectsOrderViewModel().rowHeight + EffectsOrderViewModel().addButtonheight
+    }
+    
+    func clearEffectControllers() {
+        let children = childViewControllers
+        for child in children {
+            if let effectChild = child as? EffectViewController {
+                effectChild.removeFromParentViewController()
+            }
+        }
+        gridView.clear()
     }
     
     func addEffectControllers() {
@@ -101,6 +113,13 @@ class GridView: NSView {
     func addView(view: NSView) {
         views.append(view)
         addSubview(view)
+    }
+    
+    func clear() {
+        for view in views {
+            view.removeFromSuperview()
+        }
+        views = []
     }
     
 }

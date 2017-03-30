@@ -46,6 +46,7 @@
                     </view>
                     <connections>
                         <outlet property="gridView" destination="eK5-Ry-BWx" id="aJh-Nv-IIT"/>
+                        <outlet property="orderViewHeightConstraint" destination="NKD-0v-RvD" id="Fyk-Ee-SD7"/>
                     </connections>
                 </viewController>
                 <customObject id="Z17-az-bmK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

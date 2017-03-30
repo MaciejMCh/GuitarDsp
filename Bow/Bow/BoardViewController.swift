@@ -12,18 +12,37 @@ import GuitarDsp
 
 class BoardViewController: NSViewController {
     @IBOutlet weak var gridView: GridView!
+    @IBOutlet weak var orderViewHeightConstraint: NSLayoutConstraint!
     
     var board: Board!
+    var effectsFactory: EffectsFacory!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addEffectControllers()
+        layoutEffectOrderView()
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let effetcsOrderViewController = segue.destinationController as? EffectsOrderViewController {
+            effetcsOrderViewController.effectsFactory = effectsFactory
             effetcsOrderViewController.setupWithEffects(effects: board.effects)
+            effetcsOrderViewController.structureChange.subscribe { [weak self] event in
+                switch event {
+                case .next(let effects): self?.effectsStructureUpdated(effects: effects)
+                default: break
+                }
+            }
         }
+    }
+    
+    private func effectsStructureUpdated(effects: [Effect]) {
+        board.effects = effects
+        layoutEffectOrderView()
+    }
+    
+    private func layoutEffectOrderView() {
+        orderViewHeightConstraint.constant = CGFloat(board.effects.count) * EffectsOrderViewModel().rowHeight + EffectsOrderViewModel().addButtonheight
     }
     
     func addEffectControllers() {

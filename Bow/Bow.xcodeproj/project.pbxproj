@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C260662D1E8D768700FD381D /* EffectIdentityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C260662C1E8D768700FD381D /* EffectIdentityView.xib */; };
+		C260662F1E8D9C1800FD381D /* EffectsFacory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260662E1E8D9C1800FD381D /* EffectsFacory.swift */; };
+		C26066311E8D9DF100FD381D /* EffectsFactoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26066301E8D9DF100FD381D /* EffectsFactoryViewController.storyboard */; };
+		C26066331E8D9F7100FD381D /* EffectsFactoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26066321E8D9F7100FD381D /* EffectsFactoryViewController.swift */; };
 		C26AFDD81E8C7F8C00C72E63 /* EffectsOrderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26AFDD71E8C7F8C00C72E63 /* EffectsOrderViewController.storyboard */; };
 		C26AFDDA1E8C7FA000C72E63 /* EffectsOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26AFDD91E8C7FA000C72E63 /* EffectsOrderViewController.swift */; };
 		C26DED5D1E8AF81400E61B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26DED5C1E8AF81400E61B7C /* AppDelegate.swift */; };
@@ -32,6 +35,9 @@
 		B53B2E43B69D6A3905FCDA9F /* Pods_Bow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87F52A07F0B92B612638F7D /* Pods-Bow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bow.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bow/Pods-Bow.release.xcconfig"; sourceTree = "<group>"; };
 		C260662C1E8D768700FD381D /* EffectIdentityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EffectIdentityView.xib; sourceTree = "<group>"; };
+		C260662E1E8D9C1800FD381D /* EffectsFacory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsFacory.swift; sourceTree = "<group>"; };
+		C26066301E8D9DF100FD381D /* EffectsFactoryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EffectsFactoryViewController.storyboard; sourceTree = "<group>"; };
+		C26066321E8D9F7100FD381D /* EffectsFactoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsFactoryViewController.swift; sourceTree = "<group>"; };
 		C26AFDD71E8C7F8C00C72E63 /* EffectsOrderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EffectsOrderViewController.storyboard; sourceTree = "<group>"; };
 		C26AFDD91E8C7FA000C72E63 /* EffectsOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsOrderViewController.swift; sourceTree = "<group>"; };
 		C26DED591E8AF81400E61B7C /* Bow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +118,9 @@
 				C26AFDD71E8C7F8C00C72E63 /* EffectsOrderViewController.storyboard */,
 				C26AFDD91E8C7FA000C72E63 /* EffectsOrderViewController.swift */,
 				C260662C1E8D768700FD381D /* EffectIdentityView.xib */,
+				C260662E1E8D9C1800FD381D /* EffectsFacory.swift */,
+				C26066301E8D9DF100FD381D /* EffectsFactoryViewController.storyboard */,
+				C26066321E8D9F7100FD381D /* EffectsFactoryViewController.swift */,
 			);
 			path = Bow;
 			sourceTree = "<group>";
@@ -193,6 +202,7 @@
 				C26DED761E8B062B00E61B7C /* SliderViewController.storyboard in Resources */,
 				C26DED6C1E8AF83A00E61B7C /* BoardViewController.storyboard in Resources */,
 				C26DED701E8AFCA200E61B7C /* EffectViewController.storyboard in Resources */,
+				C26066311E8D9DF100FD381D /* EffectsFactoryViewController.storyboard in Resources */,
 				C26DED641E8AF81400E61B7C /* Main.storyboard in Resources */,
 				C260662D1E8D768700FD381D /* EffectIdentityView.xib in Resources */,
 			);
@@ -256,9 +266,11 @@
 				C26DED721E8AFCB400E61B7C /* EffectViewController.swift in Sources */,
 				C26AFDDA1E8C7FA000C72E63 /* EffectsOrderViewController.swift in Sources */,
 				C26DED5D1E8AF81400E61B7C /* AppDelegate.swift in Sources */,
+				C26066331E8D9F7100FD381D /* EffectsFactoryViewController.swift in Sources */,
 				C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */,
 				C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */,
 				C2ADB8721E8C4031001B0EF3 /* SlidersFactory.swift in Sources */,
+				C260662F1E8D9C1800FD381D /* EffectsFacory.swift in Sources */,
 				C2ADB8741E8C47E1001B0EF3 /* EffectViewModel.swift in Sources */,
 				C26DED6E1E8AF84900E61B7C /* BoardViewController.swift in Sources */,
 				C26DED741E8B055E00E61B7C /* SliderViewController.swift in Sources */,

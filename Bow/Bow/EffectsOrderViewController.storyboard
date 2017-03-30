@@ -15,16 +15,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fillEqually" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-qK-h4A" customClass="ReorderStackView" customModule="Bow" customModuleProvider="target">
+                            <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="Ur3-D1-9S7">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                            </visualEffectView>
+                            <button wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dMG-g6-uea">
+                                <rect key="frame" x="-6" y="253" width="462" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0Cb-ea-42h"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="AUJ-sq-k9B">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name="Courier-Bold"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="l0P-xD-lNv" kind="popover" popoverAnchorView="dMG-g6-uea" popoverBehavior="t" preferredEdge="maxY" id="P0Q-QO-jBH"/>
+                                </connections>
+                            </button>
+                            <stackView wantsLayer="YES" distribution="fillEqually" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-qK-h4A" customClass="ReorderStackView" customModule="Bow" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="255"/>
+                                <backgroundFilters>
+                                    <ciFilter name="CIGaussianBlur">
+                                        <configuration>
+                                            <null key="inputImage"/>
+                                            <real key="inputRadius" value="10"/>
+                                        </configuration>
+                                    </ciFilter>
+                                </backgroundFilters>
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="GHc-qK-h4A" firstAttribute="top" secondItem="lCd-Vc-6pt" secondAttribute="top" id="BSZ-Qy-f4J"/>
+                            <constraint firstItem="Ur3-D1-9S7" firstAttribute="top" secondItem="lCd-Vc-6pt" secondAttribute="top" id="6V1-oJ-gwf"/>
+                            <constraint firstItem="GHc-qK-h4A" firstAttribute="top" secondItem="dMG-g6-uea" secondAttribute="bottom" constant="5" id="9rE-EE-A2U"/>
+                            <constraint firstAttribute="trailing" secondItem="dMG-g6-uea" secondAttribute="trailing" id="JL3-mM-nQF"/>
+                            <constraint firstAttribute="bottom" secondItem="Ur3-D1-9S7" secondAttribute="bottom" id="Pf2-nH-Fas"/>
+                            <constraint firstItem="Ur3-D1-9S7" firstAttribute="leading" secondItem="lCd-Vc-6pt" secondAttribute="leading" id="RYZ-XM-07b"/>
                             <constraint firstAttribute="trailing" secondItem="GHc-qK-h4A" secondAttribute="trailing" id="UwS-vF-Nz7"/>
                             <constraint firstItem="GHc-qK-h4A" firstAttribute="leading" secondItem="lCd-Vc-6pt" secondAttribute="leading" id="WSu-P6-Jgc"/>
+                            <constraint firstItem="dMG-g6-uea" firstAttribute="top" secondItem="lCd-Vc-6pt" secondAttribute="top" id="ZmH-r3-zYf"/>
+                            <constraint firstAttribute="trailing" secondItem="Ur3-D1-9S7" secondAttribute="trailing" id="Zxr-PW-Uys"/>
+                            <constraint firstItem="dMG-g6-uea" firstAttribute="leading" secondItem="lCd-Vc-6pt" secondAttribute="leading" id="gZ7-wN-hZR"/>
                             <constraint firstAttribute="bottom" secondItem="GHc-qK-h4A" secondAttribute="bottom" id="yzx-bQ-11h"/>
                         </constraints>
+                        <backgroundFilters>
+                            <ciFilter name="CIGaussianBlur">
+                                <configuration>
+                                    <null key="inputImage"/>
+                                    <real key="inputRadius" value="10"/>
+                                </configuration>
+                            </ciFilter>
+                        </backgroundFilters>
                     </view>
                     <connections>
                         <outlet property="reorderStackView" destination="GHc-qK-h4A" id="h6W-vd-yrs"/>
@@ -33,6 +72,14 @@
                 <customObject id="stM-rn-6re" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-127" y="144"/>
+        </scene>
+        <!--EffectsFactoryViewController-->
+        <scene sceneID="buP-gL-NKC">
+            <objects>
+                <controllerPlaceholder storyboardName="EffectsFactoryViewController" id="l0P-xD-lNv" sceneMemberID="viewController"/>
+                <customObject id="QuH-SQ-KpG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127" y="417"/>
         </scene>
     </scenes>
 </document>

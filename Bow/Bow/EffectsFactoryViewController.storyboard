@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="YvG-v1-ykW">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <scenes>
+        <!--Effects Facory View Controller-->
+        <scene sceneID="NvH-yJ-tbI">
+            <objects>
+                <viewController id="YvG-v1-ykW" customClass="EffectsFacoryViewController" customModule="Bow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="6XG-Or-vVK">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YSV-co-DSY">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="YSV-co-DSY" firstAttribute="leading" secondItem="6XG-Or-vVK" secondAttribute="leading" id="8oZ-MU-rKZ"/>
+                            <constraint firstAttribute="trailing" secondItem="YSV-co-DSY" secondAttribute="trailing" id="NuJ-Qu-DkW"/>
+                            <constraint firstItem="YSV-co-DSY" firstAttribute="top" secondItem="6XG-Or-vVK" secondAttribute="top" id="WzI-y3-FZx"/>
+                            <constraint firstAttribute="bottom" secondItem="YSV-co-DSY" secondAttribute="bottom" id="rMW-Te-o7f"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="YSV-co-DSY" id="KwF-1Y-zcD"/>
+                    </connections>
+                </viewController>
+                <customObject id="jy5-l0-2az" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-88" y="155"/>
+        </scene>
+    </scenes>
+</document>

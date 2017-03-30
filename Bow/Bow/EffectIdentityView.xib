@@ -10,28 +10,43 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe" customClass="EffectIdentityView" customModule="Bow" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="158" height="17"/>
+            <rect key="frame" x="0.0" y="0.0" width="221" height="85"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wub-XA-U5l">
-                    <rect key="frame" x="-2" y="0.0" width="162" height="17"/>
+                    <rect key="frame" x="18" y="33" width="50" height="19"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="9ZL-8d-2tG">
-                        <font key="font" size="13" name="Courier"/>
+                        <font key="font" size="15" name="Courier-Bold"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8kF-iR-Mgq">
+                    <rect key="frame" x="171" y="23" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="U3j-LO-11N"/>
+                        <constraint firstAttribute="width" constant="40" id="X9m-Aj-iiF"/>
+                    </constraints>
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="Remove" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="pBz-9Z-qEv">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="Wub-XA-U5l" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="2fb-eo-7RE"/>
-                <constraint firstAttribute="trailing" secondItem="Wub-XA-U5l" secondAttribute="trailing" id="evH-6Q-dEg"/>
-                <constraint firstAttribute="bottom" secondItem="Wub-XA-U5l" secondAttribute="bottom" id="mBL-1G-7tv"/>
-                <constraint firstItem="Wub-XA-U5l" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="zgT-lb-CT3"/>
+                <constraint firstItem="Wub-XA-U5l" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="Uno-lG-bhu"/>
+                <constraint firstItem="Wub-XA-U5l" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="VhG-2E-Wqp"/>
+                <constraint firstAttribute="trailing" secondItem="8kF-iR-Mgq" secondAttribute="trailing" constant="10" id="k9h-ft-2SY"/>
+                <constraint firstItem="8kF-iR-Mgq" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="vDx-VG-kdV"/>
             </constraints>
             <connections>
                 <outlet property="nameLabel" destination="Wub-XA-U5l" id="SGv-tY-eg4"/>
+                <outlet property="removeButton" destination="8kF-iR-Mgq" id="xLl-It-Ere"/>
             </connections>
-            <point key="canvasLocation" x="-22" y="166.5"/>
+            <point key="canvasLocation" x="9.5" y="200.5"/>
         </customView>
     </objects>
+    <resources>
+        <image name="Remove" width="19" height="20"/>
+    </resources>
 </document>

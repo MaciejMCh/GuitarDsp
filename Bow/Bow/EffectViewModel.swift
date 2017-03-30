@@ -45,3 +45,12 @@ struct EffectViewModel {
 struct SliderViewModel {
     let sliderWidth: CGFloat = EffectViewModel.viewHeight / CGFloat(Float.goldenRatio)
 }
+
+struct EffectsOrderViewModel {
+    let rowHeight: CGFloat = 50.0
+    let addButtonheight: CGFloat = 45.0
+}
+
+struct EffectsFactoryViewModel {
+    let tileSize: CGFloat = 130.0
+}

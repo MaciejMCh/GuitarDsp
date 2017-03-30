@@ -1,0 +1,7 @@
+[submodule "BoardInterface"]
+	path = BoardInterface
+	url = https://github.com/MaciejMCh/BoardInterface.git
+
+[submodule "EZAudio"]
+	path = EZAudio
+	url = https://github.com/MaciejMCh/EZAudio.git

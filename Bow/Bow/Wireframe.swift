@@ -23,3 +23,4 @@ extension StoryboardInstance where Self: NSViewController {
 extension SliderViewController: StoryboardInstance {static var storyboardName: String {return "SliderViewController"}}
 extension EffectViewController: StoryboardInstance {static var storyboardName: String {return "EffectViewController"}}
 extension BoardViewController: StoryboardInstance {static var storyboardName: String {return "BoardViewController"}}
+extension EffectsOrderViewController: StoryboardInstance {static var storyboardName: String {return "EffectsOrderViewController"}}

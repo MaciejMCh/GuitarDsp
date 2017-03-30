@@ -17,12 +17,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func initialController() -> NSViewController {
+        return EffectsOrderViewController.make()
         let processor = Processor(samplingSettings: AudioInterface.shared().samplingSettings, tempo: 120)
         AudioInterface.shared().use(processor)
         let board = Board()
         board.effects = [
-//            ReverbEffect(samplingSettings: AudioInterface.shared().samplingSettings),
-//            HarmonizerEffect(samplingSettings: AudioInterface.shared().samplingSettings),
+            ReverbEffect(samplingSettings: AudioInterface.shared().samplingSettings),
+            HarmonizerEffect(samplingSettings: AudioInterface.shared().samplingSettings),
             PhaseVocoderEffect(samplingSettings: AudioInterface.shared().samplingSettings)
         ]
         processor.activeBoard = board

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="ujP-Ol-WNk">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <scenes>
+        <!--Effects Order View Controller-->
+        <scene sceneID="vYj-Ep-COA">
+            <objects>
+                <viewController id="ujP-Ol-WNk" customClass="EffectsOrderViewController" customModule="Bow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="lCd-Vc-6pt">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-qK-h4A" customClass="ReorderStackView" customModule="Bow" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="GHc-qK-h4A" firstAttribute="top" secondItem="lCd-Vc-6pt" secondAttribute="top" id="BSZ-Qy-f4J"/>
+                            <constraint firstAttribute="trailing" secondItem="GHc-qK-h4A" secondAttribute="trailing" id="UwS-vF-Nz7"/>
+                            <constraint firstItem="GHc-qK-h4A" firstAttribute="leading" secondItem="lCd-Vc-6pt" secondAttribute="leading" id="WSu-P6-Jgc"/>
+                            <constraint firstAttribute="bottom" secondItem="GHc-qK-h4A" secondAttribute="bottom" id="yzx-bQ-11h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="reorderStackView" destination="GHc-qK-h4A" id="h6W-vd-yrs"/>
+                    </connections>
+                </viewController>
+                <customObject id="stM-rn-6re" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127" y="144"/>
+        </scene>
+    </scenes>
+</document>

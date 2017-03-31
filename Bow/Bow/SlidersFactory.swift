@@ -35,10 +35,10 @@ struct SlidersFactory {
     func harmonizer(harmonizer: HarmonizerEffect) -> [SliderViewController] {
         let color = EffectViewModel(effect: harmonizer).color()
         
-        var result = phaseShift(color: color) {
+        var result = phaseShift(color: color, initialValue: harmonizer.shift) {
             harmonizer.shift = $0
         }
-        let volume = make(color: color, name: "volume", valueType: .continous(range: 0.0..<1.5, step: 0.01), initialValue: 1.0) {
+        let volume = make(color: color, name: "volume", valueType: .continous(range: 0.0..<1.5, step: 0.01), initialValue: harmonizer.volume) {
             harmonizer.volume = $0
         }
         
@@ -47,7 +47,7 @@ struct SlidersFactory {
     }
     
     func phaseVocoder(phaseVocoder: PhaseVocoderEffect) -> [SliderViewController] {
-        return phaseShift(color: EffectViewModel(effect: phaseVocoder).color()) {
+        return phaseShift(color: EffectViewModel(effect: phaseVocoder).color(), initialValue: phaseVocoder.shift) {
             phaseVocoder.shift = $0
         }
     }
@@ -55,16 +55,16 @@ struct SlidersFactory {
     func delay(delay: DelayEffect) -> [SliderViewController] {
         let color = EffectViewModel(effect: delay).color()
         
-        let echoesCount = make(color: color, name: "echoes count", valueType: .continous(range: 1.0..<10.0, step: 1.0), initialValue: 3.0) {
+        let echoesCount = make(color: color, name: "echoes count", valueType: .continous(range: 1.0..<10.0, step: 1.0), initialValue: Float(delay.echoesCount)) {
             delay.updateEchoesCount(Int32($0))
         }
-        let tactPart = make(color: color, name: "tact part", valueType: .discrete(values: [1.0, 2.0, 4.0, 8.0, 16.0]), initialValue: 2.0) {
+        let tactPart = make(color: color, name: "tact part", valueType: .discrete(values: [1.0, 2.0, 4.0, 8.0, 16.0]), initialValue: Float(delay.timing.tactPart.rawValue)) {
             delay.updateTact(TactPart(rawValue: UInt($0))!)
         }
-        let functionA = make(color: color, name: "fading(a)", valueType: .continous(range: 0.0..<1.0, step: 0.01), initialValue: 0.2) {
+        let functionA = make(color: color, name: "fading(a)", valueType: .continous(range: 0.0..<1.0, step: 0.01), initialValue: delay.fadingFunctionA) {
             delay.fadingFunctionA = $0
         }
-        let functionB = make(color: color, name: "fading(b)", valueType: .continous(range: 0.0..<1.0, step: 0.01), initialValue: 0.2) {
+        let functionB = make(color: color, name: "fading(b)", valueType: .continous(range: 0.0..<1.0, step: 0.01), initialValue: delay.fadingFunctionB) {
             delay.fadingFunctionB = $0
         }
         
@@ -74,16 +74,18 @@ struct SlidersFactory {
     func amp(amp: AmpEffect) -> [SliderViewController] {
         let color = EffectViewModel(effect: amp).color()
         
-        let linear = make(color: color, name: "linear", valueType: .continous(range: 0.0..<10.0, step: 0.05), initialValue: 1.0) {
+        let linear = make(color: color, name: "linear", valueType: .continous(range: 0.0..<10.0, step: 0.05), initialValue: amp.gain) {
             amp.gain = $0
         }
         
         return [linear]
     }
     
-    private func phaseShift(color: NSColor, setter: @escaping (Float) -> Void) -> [SliderViewController] {
-        let shift = make(color: color, name: "shift", valueType: .discrete(values: [0.25, 0.5, 1.0, 2.0, 4.0]), initialValue: 1.0, update: setter)
-        let semitone = make(color: color, name: "semitone", valueType: .continous(range: -12.0..<12.0, step: 1.0), initialValue: 0.0) {
+    private func phaseShift(color: NSColor, initialValue: Float, setter: @escaping (Float) -> Void) -> [SliderViewController] {
+        let shift = make(color: color, name: "shift", valueType: .discrete(values: [0.25, 0.5, 1.0, 2.0, 4.0]), initialValue: initialValue, update: setter)
+        
+        let initialSemitones = (initialValue - 1.0) * (1.0 / 12.0)
+        let semitone = make(color: color, name: "semitone", valueType: .continous(range: -12.0..<12.0, step: 1.0), initialValue: initialSemitones) {
             setter(1.0 + ($0 / 12.0))
         }
         return [shift, semitone]

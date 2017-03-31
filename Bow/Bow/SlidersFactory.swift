@@ -82,11 +82,16 @@ struct SlidersFactory {
     }
     
     private func phaseShift(color: NSColor, initialValue: Float, setter: @escaping (Float) -> Void) -> [SliderViewController] {
-        let shift = make(color: color, name: "shift", valueType: .discrete(values: [0.25, 0.5, 1.0, 2.0, 4.0]), initialValue: initialValue, update: setter)
+        let shiftToSemitones = { (shift: Float) -> Float in
+            return log2(shift) * 12.0
+        }
+        let semitonesToShift = { (semitones: Float) -> Float in
+            return pow(2, semitones / 12.0)
+        }
         
-        let initialSemitones = (initialValue - 1.0) * (1.0 / 12.0)
-        let semitone = make(color: color, name: "semitone", valueType: .continous(range: -12.0..<12.0, step: 1.0), initialValue: initialSemitones) {
-            setter(1.0 + ($0 / 12.0))
+        let shift = make(color: color, name: "shift", valueType: .discrete(values: [0.25, 0.5, 1.0, 2.0, 4.0]), initialValue: initialValue, update: setter)
+        let semitone = make(color: color, name: "semitone", valueType: .continous(range: -12.0..<12.0, step: 1.0), initialValue: shiftToSemitones(initialValue)) {
+            setter(shiftToSemitones($0))
         }
         return [shift, semitone]
     }

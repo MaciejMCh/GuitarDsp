@@ -91,7 +91,7 @@ struct SlidersFactory {
         
         let shift = make(color: color, name: "shift", valueType: .discrete(values: [0.25, 0.5, 1.0, 2.0, 4.0]), initialValue: initialValue, update: setter)
         let semitone = make(color: color, name: "semitone", valueType: .continous(range: -12.0..<12.0, step: 1.0), initialValue: shiftToSemitones(initialValue)) {
-            setter(shiftToSemitones($0))
+            setter(semitonesToShift($0))
         }
         return [shift, semitone]
     }

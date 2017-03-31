@@ -94,7 +94,7 @@ class SliderViewController: NSViewController {
     
     private func updateViews() {
         valueLabel?.stringValue = String(format: "%.2f", currentValue)
-        let progress = Float(valueType.indexOfValue(value: currentValue)) / Float(valueType.valuesCount())
+        let progress = Float(valueType.indexOfValue(value: currentValue)) / Float(valueType.valuesCount() - 1)
         progressBarHeightConstraint?.constant = CGFloat(progress) * sliderSpaceView.frame.height
     }
     
@@ -128,7 +128,7 @@ extension SliderViewController.ValueType {
         case .discrete(let values):
             var i = 0
             for valueElement in values {
-                if valueElement > value {
+                if valueElement >= value {
                     return i
                 }
                 i += 1

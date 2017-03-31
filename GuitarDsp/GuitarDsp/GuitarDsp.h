@@ -24,3 +24,4 @@ FOUNDATION_EXPORT const unsigned char GuitarDspVersionString[];
 #import "MetronomeEffect.h"
 #import "PhaseVocoderEffect.h"
 #import "ReverbEffect.h"
+#import "AmpEffect.h"

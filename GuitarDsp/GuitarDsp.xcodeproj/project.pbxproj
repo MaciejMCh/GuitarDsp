@@ -47,6 +47,8 @@
 		C2DF1A0B1E8AAC8500106AE8 /* AudioInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF1A091E8AAC8500106AE8 /* AudioInterface.h */; };
 		C2DF1A0C1E8AAC8500106AE8 /* AudioInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DF1A0A1E8AAC8500106AE8 /* AudioInterface.m */; };
 		C2EB06601E8AA44B0010D1B3 /* GuitarDsp.h in Headers */ = {isa = PBXBuildFile; fileRef = C2EB065E1E8AA44B0010D1B3 /* GuitarDsp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2EFDE5C1E8DDA750063F2D7 /* AmpEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C2EFDE5A1E8DDA750063F2D7 /* AmpEffect.h */; };
+		C2EFDE5D1E8DDA750063F2D7 /* AmpEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EFDE5B1E8DDA750063F2D7 /* AmpEffect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,8 @@
 		C2EB065B1E8AA44B0010D1B3 /* GuitarDsp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GuitarDsp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2EB065E1E8AA44B0010D1B3 /* GuitarDsp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuitarDsp.h; sourceTree = "<group>"; };
 		C2EB065F1E8AA44B0010D1B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2EFDE5A1E8DDA750063F2D7 /* AmpEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmpEffect.h; sourceTree = "<group>"; };
+		C2EFDE5B1E8DDA750063F2D7 /* AmpEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmpEffect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				C2DF19CA1E8AA65500106AE8 /* PhaseVocoderEffect.m */,
 				C2DF19CF1E8AA65500106AE8 /* ReverbEffect.h */,
 				C2DF19D01E8AA65500106AE8 /* ReverbEffect.m */,
+				C2EFDE5A1E8DDA750063F2D7 /* AmpEffect.h */,
+				C2EFDE5B1E8DDA750063F2D7 /* AmpEffect.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 				C2DF19FD1E8AA65500106AE8 /* tuning.h in Headers */,
 				C2DF19DE1E8AA65500106AE8 /* Comb.h in Headers */,
 				C2DF1A0B1E8AAC8500106AE8 /* AudioInterface.h in Headers */,
+				C2EFDE5C1E8DDA750063F2D7 /* AmpEffect.h in Headers */,
 				C2DF19E21E8AA65500106AE8 /* denormals.h in Headers */,
 				C2DF19FB1E8AA65500106AE8 /* TimingCalc.h in Headers */,
 				C2DF19ED1E8AA65500106AE8 /* PhaseVocoderEffect.h in Headers */,
@@ -332,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2DF19E11E8AA65500106AE8 /* DelayEffect.m in Sources */,
+				C2EFDE5D1E8DDA750063F2D7 /* AmpEffect.m in Sources */,
 				C2DF19E81E8AA65500106AE8 /* LooperEffect.m in Sources */,
 				C2DF19F61E8AA65500106AE8 /* Revmodel.m in Sources */,
 				C2DF19DF1E8AA65500106AE8 /* Comb.m in Sources */,

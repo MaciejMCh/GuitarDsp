@@ -55,6 +55,12 @@ class EffectViewController: NSViewController {
         if let phaseVocoderEffect = effect as? PhaseVocoderEffect {
             return SlidersFactory().phaseVocoder(phaseVocoder: phaseVocoderEffect)
         }
+        if let delayEffect = effect as? DelayEffect {
+            return SlidersFactory().delay(delay: delayEffect)
+        }
+        if let ampEffect = effect as? AmpEffect {
+            return SlidersFactory().amp(amp: ampEffect)
+        }
         assert(false)
         return []
     }

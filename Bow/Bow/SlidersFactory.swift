@@ -52,6 +52,35 @@ struct SlidersFactory {
         }
     }
     
+    func delay(delay: DelayEffect) -> [SliderViewController] {
+        let color = EffectViewModel(effect: delay).color()
+        
+        let echoesCount = make(color: color, name: "echoes count", valueType: .continous(range: 1.0..<10.0, step: 1.0), initialValue: 3.0) {
+            delay.updateEchoesCount(Int32($0))
+        }
+        let tactPart = make(color: color, name: "tact part", valueType: .discrete(values: [1.0, 2.0, 4.0, 8.0, 16.0]), initialValue: 2.0) {
+            delay.updateTact(TactPart(rawValue: UInt($0))!)
+        }
+        let functionA = make(color: color, name: "fading(a)", valueType: .continous(range: 0.0..<1.0, step: 0.01), initialValue: 0.2) {
+            delay.fadingFunctionA = $0
+        }
+        let functionB = make(color: color, name: "fading(b)", valueType: .continous(range: 0.0..<1.0, step: 0.01), initialValue: 0.2) {
+            delay.fadingFunctionB = $0
+        }
+        
+        return [echoesCount, functionA, tactPart, functionB]
+    }
+    
+    func amp(amp: AmpEffect) -> [SliderViewController] {
+        let color = EffectViewModel(effect: amp).color()
+        
+        let linear = make(color: color, name: "linear", valueType: .continous(range: 0.0..<10.0, step: 0.05), initialValue: 1.0) {
+            amp.gain = $0
+        }
+        
+        return [linear]
+    }
+    
     private func phaseShift(color: NSColor, setter: @escaping (Float) -> Void) -> [SliderViewController] {
         let shift = make(color: color, name: "shift", valueType: .discrete(values: [0.25, 0.5, 1.0, 2.0, 4.0]), initialValue: 1.0, update: setter)
         let semitone = make(color: color, name: "semitone", valueType: .continous(range: -12.0..<12.0, step: 1.0), initialValue: 0.0) {

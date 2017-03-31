@@ -21,11 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let processor = Processor(samplingSettings: samplingSettings, tempo: 120)
         AudioInterface.shared().use(processor)
         let board = Board()
-        board.effects = [
-            ReverbEffect(samplingSettings: samplingSettings),
-            HarmonizerEffect(samplingSettings: samplingSettings),
-            PhaseVocoderEffect(samplingSettings: samplingSettings)
-        ]
+        board.effects = []
         processor.activeBoard = board
         let boardViewController = BoardViewController.make()
         boardViewController.board = board
@@ -33,7 +29,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return [
                 ReverbEffect(samplingSettings: samplingSettings),
                 HarmonizerEffect(samplingSettings: samplingSettings),
-                PhaseVocoderEffect(samplingSettings: samplingSettings)
+                PhaseVocoderEffect(samplingSettings: samplingSettings),
+                DelayEffect(fadingFunctionA: 0.2,
+                            fadingFunctionB: 0.2,
+                            echoesCount: 3,
+                            samplingSettings: samplingSettings,
+                            timing: Timing(tactPart: .Half, tempo: 140)),
+                AmpEffect(samplingSettings: samplingSettings)
             ]
         }
         return boardViewController

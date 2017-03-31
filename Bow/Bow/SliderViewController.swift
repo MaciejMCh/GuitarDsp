@@ -117,7 +117,7 @@ extension SliderViewController {
 extension SliderViewController.ValueType {
     func valuesCount() -> Int {
         switch self {
-        case .continous(let range, let step): return Int((range.upperBound - range.lowerBound) / step)
+        case .continous(let range, let step): return Int((range.upperBound - range.lowerBound) / step) + 1
         case .discrete(let values): return values.count
         }
     }

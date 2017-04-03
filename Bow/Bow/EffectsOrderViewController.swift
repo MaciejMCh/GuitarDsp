@@ -15,12 +15,14 @@ class EffectsOrderViewController: NSViewController {
     @IBOutlet weak var reorderStackView: ReorderStackView!
     private var setupOnLoad: (() -> ())?
     private var structureChanged: (() -> ())?
+    private var didLoad = false
     
     var effectsFactory: EffectsFacory!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupOnLoad?()
+        didLoad = true
         reorderStackView.structureChanged = structureChanged
     }
     
@@ -34,12 +36,21 @@ class EffectsOrderViewController: NSViewController {
     }
     
     func setupWithEffects(effects: [Effect]) {
-        setupOnLoad = { [weak self] in
+        let setup = { [weak self] in
             guard let wSelf = self else {return}
+            for view in wSelf.reorderStackView.views {
+                wSelf.reorderStackView.removeView(view)
+            }
             for effect in effects {
                 let effectView = wSelf.makeEffectView(effect: effect)
                 wSelf.reorderStackView.addView(effectView)
             }
+        }
+        
+        if didLoad {
+            setup()
+        } else {
+            setupOnLoad = setup
         }
     }
     

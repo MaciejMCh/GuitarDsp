@@ -17,6 +17,27 @@ class BoardViewController: NSViewController {
     var board: Board!
     var effectsFactory: EffectsFacory!
     
+    var effectsOrderViewController: EffectsOrderViewController!
+    
+    func changeBoard(board: Board) {
+        self.board = board
+        clearEffectControllers()
+        addEffectControllers()
+        setupOrderChangeViewController()
+        layoutEffectOrderView()
+    }
+    
+    func setupOrderChangeViewController() {
+        effectsOrderViewController.effectsFactory = effectsFactory
+        effectsOrderViewController.setupWithEffects(effects: board.effects)
+        effectsOrderViewController.structureChange.subscribe { [weak self] event in
+            switch event {
+            case .next(let effects): self?.effectsStructureUpdated(effects: effects)
+            default: break
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addEffectControllers()
@@ -25,14 +46,8 @@ class BoardViewController: NSViewController {
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let effetcsOrderViewController = segue.destinationController as? EffectsOrderViewController {
-            effetcsOrderViewController.effectsFactory = effectsFactory
-            effetcsOrderViewController.setupWithEffects(effects: board.effects)
-            effetcsOrderViewController.structureChange.subscribe { [weak self] event in
-                switch event {
-                case .next(let effects): self?.effectsStructureUpdated(effects: effects)
-                default: break
-                }
-            }
+            self.effectsOrderViewController = effetcsOrderViewController
+            setupOrderChangeViewController()
         }
     }
     

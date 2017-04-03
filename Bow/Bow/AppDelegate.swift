@@ -27,9 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         NSApplication.shared().windows.first!.contentViewController = initialController()
         
-        let samplingSettings = AudioInterface.shared().samplingSettings
         let board = Board()
-//        board.effects = [AmpEffect(samplingSettings: samplingSettings)]
         board.effects = allEffects()
         let storage = BoardsStorage(effectsFactory: EffectsFacory(samplingSettings: AudioInterface.shared().samplingSettings, all: allEffects))
         storage.save(board: board, name: "hehe")
@@ -70,7 +68,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let boardsStorage = BoardsStorage(effectsFactory: EffectsFacory(samplingSettings: AudioInterface.shared().samplingSettings, all: allEffects))
             let searchViewController = SearchViewController.make()
             searchViewController.searchForBoards(storage: boardsStorage) { [weak boardTopController] in
-                boardTopController?.board = $0
+                boardTopController?.changeBoard(board: $0)
             }
             NSApplication.shared().windows.first!.contentViewController?.presentViewControllerAsModalWindow(searchViewController)
         }

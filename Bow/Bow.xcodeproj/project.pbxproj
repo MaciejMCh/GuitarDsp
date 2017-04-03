@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C203174F1E928852008ACFCB /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C203174E1E928852008ACFCB /* SearchViewController.storyboard */; };
+		C20317511E9288DA008ACFCB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20317501E9288DA008ACFCB /* SearchViewController.swift */; };
 		C260662D1E8D768700FD381D /* EffectIdentityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C260662C1E8D768700FD381D /* EffectIdentityView.xib */; };
 		C260662F1E8D9C1800FD381D /* EffectsFacory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260662E1E8D9C1800FD381D /* EffectsFacory.swift */; };
 		C26066311E8D9DF100FD381D /* EffectsFactoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26066301E8D9DF100FD381D /* EffectsFactoryViewController.storyboard */; };
@@ -24,6 +26,7 @@
 		C26DED761E8B062B00E61B7C /* SliderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26DED751E8B062B00E61B7C /* SliderViewController.storyboard */; };
 		C28CAED01E8B2098001BADFE /* GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */; };
 		C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CAED21E8B252F001BADFE /* Wireframe.swift */; };
+		C29953B51E8E9BE900CDF481 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29953B41E8E9BE900CDF481 /* Storage.swift */; };
 		C2ADB8721E8C4031001B0EF3 /* SlidersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB8711E8C4031001B0EF3 /* SlidersFactory.swift */; };
 		C2ADB8741E8C47E1001B0EF3 /* EffectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB8731E8C47E1001B0EF3 /* EffectViewModel.swift */; };
 		C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */; };
@@ -34,6 +37,8 @@
 		47D8574E16B39F754B2CD36E /* Pods-Bow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bow/Pods-Bow.debug.xcconfig"; sourceTree = "<group>"; };
 		B53B2E43B69D6A3905FCDA9F /* Pods_Bow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87F52A07F0B92B612638F7D /* Pods-Bow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bow.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bow/Pods-Bow.release.xcconfig"; sourceTree = "<group>"; };
+		C203174E1E928852008ACFCB /* SearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
+		C20317501E9288DA008ACFCB /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C260662C1E8D768700FD381D /* EffectIdentityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EffectIdentityView.xib; sourceTree = "<group>"; };
 		C260662E1E8D9C1800FD381D /* EffectsFacory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsFacory.swift; sourceTree = "<group>"; };
 		C26066301E8D9DF100FD381D /* EffectsFactoryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EffectsFactoryViewController.storyboard; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 		C26DED751E8B062B00E61B7C /* SliderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SliderViewController.storyboard; sourceTree = "<group>"; };
 		C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarDsp.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-fqviswmbvyvdyxbfngkuxnzymtkh/Build/Products/Debug/GuitarDsp.framework"; sourceTree = "<group>"; };
 		C28CAED21E8B252F001BADFE /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		C29953B41E8E9BE900CDF481 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		C2ADB8711E8C4031001B0EF3 /* SlidersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidersFactory.swift; sourceTree = "<group>"; };
 		C2ADB8731E8C47E1001B0EF3 /* EffectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectViewModel.swift; sourceTree = "<group>"; };
 		C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDetectingView.swift; sourceTree = "<group>"; };
@@ -121,6 +127,9 @@
 				C260662E1E8D9C1800FD381D /* EffectsFacory.swift */,
 				C26066301E8D9DF100FD381D /* EffectsFactoryViewController.storyboard */,
 				C26066321E8D9F7100FD381D /* EffectsFactoryViewController.swift */,
+				C29953B41E8E9BE900CDF481 /* Storage.swift */,
+				C203174E1E928852008ACFCB /* SearchViewController.storyboard */,
+				C20317501E9288DA008ACFCB /* SearchViewController.swift */,
 			);
 			path = Bow;
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 				C26DED761E8B062B00E61B7C /* SliderViewController.storyboard in Resources */,
 				C26DED6C1E8AF83A00E61B7C /* BoardViewController.storyboard in Resources */,
 				C26DED701E8AFCA200E61B7C /* EffectViewController.storyboard in Resources */,
+				C203174F1E928852008ACFCB /* SearchViewController.storyboard in Resources */,
 				C26066311E8D9DF100FD381D /* EffectsFactoryViewController.storyboard in Resources */,
 				C26DED641E8AF81400E61B7C /* Main.storyboard in Resources */,
 				C260662D1E8D768700FD381D /* EffectIdentityView.xib in Resources */,
@@ -268,8 +278,10 @@
 				C26DED5D1E8AF81400E61B7C /* AppDelegate.swift in Sources */,
 				C26066331E8D9F7100FD381D /* EffectsFactoryViewController.swift in Sources */,
 				C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */,
+				C29953B51E8E9BE900CDF481 /* Storage.swift in Sources */,
 				C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */,
 				C2ADB8721E8C4031001B0EF3 /* SlidersFactory.swift in Sources */,
+				C20317511E9288DA008ACFCB /* SearchViewController.swift in Sources */,
 				C260662F1E8D9C1800FD381D /* EffectsFacory.swift in Sources */,
 				C2ADB8741E8C47E1001B0EF3 /* EffectViewModel.swift in Sources */,
 				C26DED6E1E8AF84900E61B7C /* BoardViewController.swift in Sources */,

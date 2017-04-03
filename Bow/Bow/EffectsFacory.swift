@@ -10,5 +10,11 @@ import Foundation
 import GuitarDsp
 
 struct EffectsFacory {
+    let samplingSettings: SamplingSettings
+    
     let all: () -> [Effect]
+    
+    func makeAmp() -> AmpEffect {
+        return AmpEffect(samplingSettings: samplingSettings)
+    }
 }

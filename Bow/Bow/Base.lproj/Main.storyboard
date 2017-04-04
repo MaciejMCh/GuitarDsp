@@ -9,7 +9,7 @@
         <scene sceneID="JPo-4y-FX3">
             <objects>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
-                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6" customClass="BowMenu" customModule="Bow" customModuleProvider="target">
                         <items>
                             <menuItem title="Bow" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -81,11 +81,6 @@
                                                     </menuItem>
                                                 </items>
                                             </menu>
-                                        </menuItem>
-                                        <menuItem title="Open Board" keyEquivalent="b" id="H8g-So-L7f">
-                                            <connections>
-                                                <action selector="openBoardAction:" target="Voe-Tx-rLC" id="hAl-KG-oxV"/>
-                                            </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
                                         <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
@@ -654,6 +649,10 @@
                                 </menu>
                             </menuItem>
                         </items>
+                        <connections>
+                            <outlet property="openMenuItem" destination="IAo-SY-fd9" id="GrO-I7-ak5"/>
+                            <outlet property="saveMenuItem" destination="pxx-59-PXV" id="9av-cf-xoi"/>
+                        </connections>
                     </menu>
                     <connections>
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>

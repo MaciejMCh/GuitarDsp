@@ -25,12 +25,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        setupFileSystem()
+        EffectPrototype.effectsFactory = EffectsFacory(samplingSettings: AudioInterface.shared().samplingSettings)
         NSApplication.shared().windows.first!.contentViewController = initialController()
-        
-        let board = Board()
-        board.effects = allEffects()
-        let storage = BoardsStorage(effectsFactory: EffectsFacory(samplingSettings: AudioInterface.shared().samplingSettings, all: allEffects))
-        storage.save(board: board, name: "hehe")
     }
     
     func initialController() -> NSViewController {
@@ -41,20 +38,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         board.effects = []
         processor.activeBoard = board
         let boardViewController = BoardViewController.make()
-        boardViewController.board = board
-        boardViewController.effectsFactory = EffectsFacory(samplingSettings: samplingSettings) {
-            return [
-                ReverbEffect(samplingSettings: samplingSettings),
-                HarmonizerEffect(samplingSettings: samplingSettings),
-                PhaseVocoderEffect(samplingSettings: samplingSettings),
-                DelayEffect(fadingFunctionA: 0.2,
-                            fadingFunctionB: 0.2,
-                            echoesCount: 3,
-                            samplingSettings: samplingSettings,
-                            timing: Timing(tactPart: .Half, tempo: 140)),
-                AmpEffect(samplingSettings: samplingSettings)
-            ]
-        }
+        let boardPrototype = BoardPrototype(board: board)
+        boardViewController.board = Storable<BoardPrototype>(origin: .orphan, jsonRepresentable: boardPrototype)
+        boardViewController.effectsFactory = EffectsFacory(samplingSettings: samplingSettings)
         return boardViewController
     }
     
@@ -62,15 +48,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
-    @IBAction func openBoardAction(_ sender: Any) {
-        let topController = NSApplication.shared().windows.first!.contentViewController
-        if let boardTopController = topController as? BoardViewController {
-            let boardsStorage = BoardsStorage(effectsFactory: EffectsFacory(samplingSettings: AudioInterface.shared().samplingSettings, all: allEffects))
-            let searchViewController = SearchViewController.make()
-            searchViewController.searchForBoards(storage: boardsStorage) { [weak boardTopController] in
-                boardTopController?.changeBoard(board: $0)
-            }
-            NSApplication.shared().windows.first!.contentViewController?.presentViewControllerAsModalWindow(searchViewController)
+    func setupFileSystem() {
+        for path in [BoardPrototype.typeName, EffectPrototype.typeName].map({Storage(typeName: $0).storagePath}) {
+            try! FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
         }
+    }
+}
+
+class BowMenu: NSMenu {
+    @IBOutlet weak var saveMenuItem: NSMenuItem!
+    @IBOutlet weak var openMenuItem: NSMenuItem!
+}
+
+extension NSViewController {
+    var bowMenu: BowMenu? {
+        return NSApplication.shared().menu as? BowMenu
     }
 }

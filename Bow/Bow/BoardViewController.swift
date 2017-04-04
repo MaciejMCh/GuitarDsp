@@ -14,12 +14,12 @@ class BoardViewController: NSViewController {
     @IBOutlet weak var gridView: GridView!
     @IBOutlet weak var orderViewHeightConstraint: NSLayoutConstraint!
     
-    var board: Board!
+    var board: Storable<BoardPrototype>!
     var effectsFactory: EffectsFacory!
     
     var effectsOrderViewController: EffectsOrderViewController!
     
-    func changeBoard(board: Board) {
+    func changeBoard(board: Storable<BoardPrototype>) {
         self.board = board
         clearEffectControllers()
         addEffectControllers()
@@ -29,7 +29,7 @@ class BoardViewController: NSViewController {
     
     func setupOrderChangeViewController() {
         effectsOrderViewController.effectsFactory = effectsFactory
-        effectsOrderViewController.setupWithEffects(effects: board.effects)
+        effectsOrderViewController.setupWithEffects(effects: board.jsonRepresentable.effectPrototypes)
         effectsOrderViewController.structureChange.subscribe { [weak self] event in
             switch event {
             case .next(let effects): self?.effectsStructureUpdated(effects: effects)
@@ -42,6 +42,11 @@ class BoardViewController: NSViewController {
         super.viewDidLoad()
         addEffectControllers()
         layoutEffectOrderView()
+        
+        bowMenu?.saveMenuItem.target = self
+        bowMenu?.saveMenuItem.action = #selector(saveAction)
+        bowMenu?.openMenuItem.target = self
+        bowMenu?.openMenuItem.action = #selector(openAction)
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
@@ -51,15 +56,35 @@ class BoardViewController: NSViewController {
         }
     }
     
-    private func effectsStructureUpdated(effects: [Effect]) {
-        board.effects = effects
+    func saveAction() {
+        switch board.origin {
+        case .orphan: presentViewControllerAsModalWindow(TagPickerController.withCompletion(completion: { [weak self] (tag) in
+            guard let wSelf = self else {return}
+            let newBoard = Storable<BoardPrototype>(origin: .selfMade(identity: Storage.Identity(id: tag)), jsonRepresentable: wSelf.board.jsonRepresentable)
+            newBoard.update()
+            wSelf.board = newBoard
+        }))
+        default: board.update()
+        }
+    }
+    
+    func openAction() {
+        let searchViewController = SearchViewController.make()
+        searchViewController.searchForBoards { [weak self] in
+            self?.changeBoard(board: $0)
+        }
+        presentViewControllerAsModalWindow(searchViewController)
+    }
+    
+    private func effectsStructureUpdated(effects: [EffectPrototype]) {
+        board.jsonRepresentable.effectPrototypes = effects
         clearEffectControllers()
         addEffectControllers()
         layoutEffectOrderView()
     }
     
     private func layoutEffectOrderView() {
-        orderViewHeightConstraint.constant = CGFloat(board.effects.count) * EffectsOrderViewModel().rowHeight + EffectsOrderViewModel().addButtonheight
+        orderViewHeightConstraint.constant = CGFloat(board.jsonRepresentable.effectPrototypes.count) * EffectsOrderViewModel().rowHeight + EffectsOrderViewModel().addButtonheight
     }
     
     func clearEffectControllers() {
@@ -74,9 +99,9 @@ class BoardViewController: NSViewController {
     
     func addEffectControllers() {
         var i = 0
-        for effect in board.effects {
+        for effectPrototype in board.jsonRepresentable.effectPrototypes {
             let effectController = EffectViewController.make()
-            effectController.effect = effect
+            effectController.effectPrototype = effectPrototype
             addChildViewController(effectController)
             insertViewInSocket(viewToInsert: effectController.view, index: i)
             i += 1
@@ -90,73 +115,5 @@ class BoardViewController: NSViewController {
         frame.origin.y = 100
         frame.size.height = EffectViewModel.viewHeight
         viewToInsert.frame = frame
-    }
-}
-
-class GridView: NSView {
-    private var views: [NSView] = []
-    
-    override func layout() {
-        super.layout()
-        resizeSubviews(withOldSize: bounds.size)
-    }
-    
-    override func resizeSubviews(withOldSize oldSize: NSSize) {
-        let padding = CGFloat(10)
-        
-        var previousFrame: NSRect?
-        for view in views {
-            var currentFrame = view.frame
-            if let previousFrame = previousFrame {
-                if previousFrame.maxX + currentFrame.width + (padding * 2) > frame.width {
-                    currentFrame.origin.x = padding
-                    currentFrame.origin.y = previousFrame.origin.y - previousFrame.height - padding
-                } else {
-                    currentFrame.origin.x = previousFrame.maxX + padding
-                    currentFrame.origin.y = previousFrame.origin.y
-                }
-            } else {
-                currentFrame.origin.x = padding
-                currentFrame.origin.y = frame.height - currentFrame.height - padding
-            }
-            
-            view.frame = currentFrame
-            previousFrame = view.frame
-        }
-    }
-    
-    func addView(view: NSView) {
-        views.append(view)
-        addSubview(view)
-    }
-    
-    func clear() {
-        for view in views {
-            view.removeFromSuperview()
-        }
-        views = []
-    }
-    
-}
-
-class PatternImageView: NSView {
-    @IBInspectable var patternImage: NSImage?
-    
-    lazy var patternColor: NSColor = {
-        if let patternImage = self.patternImage {
-            return NSColor(patternImage: patternImage)
-        } else {
-            return NSColor.red
-        }
-    }()
-    
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-        let context = NSGraphicsContext.current()!
-        context.saveGraphicsState()
-        context.patternPhase = NSPoint(x: 0, y: dirtyRect.height)
-        patternColor.set()
-        NSRectFill(dirtyRect)
-        context.restoreGraphicsState()
     }
 }

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		C203174F1E928852008ACFCB /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C203174E1E928852008ACFCB /* SearchViewController.storyboard */; };
 		C20317511E9288DA008ACFCB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20317501E9288DA008ACFCB /* SearchViewController.swift */; };
+		C24751C11E9426F000718BDF /* StorableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24751C01E9426F000718BDF /* StorableModel.swift */; };
+		C24751C31E94270B00718BDF /* Prototypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24751C21E94270B00718BDF /* Prototypes.swift */; };
+		C24751C51E942CB000718BDF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24751C41E942CB000718BDF /* GridView.swift */; };
+		C24751C71E942CD100718BDF /* PatternImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24751C61E942CD100718BDF /* PatternImageView.swift */; };
+		C24751C91E942E1500718BDF /* TagPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24751C81E942E1500718BDF /* TagPickerController.swift */; };
+		C24751CB1E942EE100718BDF /* TagPickerController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24751CA1E942EE100718BDF /* TagPickerController.storyboard */; };
 		C260662D1E8D768700FD381D /* EffectIdentityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C260662C1E8D768700FD381D /* EffectIdentityView.xib */; };
 		C260662F1E8D9C1800FD381D /* EffectsFacory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260662E1E8D9C1800FD381D /* EffectsFacory.swift */; };
 		C26066311E8D9DF100FD381D /* EffectsFactoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26066301E8D9DF100FD381D /* EffectsFactoryViewController.storyboard */; };
@@ -39,6 +45,12 @@
 		B87F52A07F0B92B612638F7D /* Pods-Bow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bow.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bow/Pods-Bow.release.xcconfig"; sourceTree = "<group>"; };
 		C203174E1E928852008ACFCB /* SearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		C20317501E9288DA008ACFCB /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C24751C01E9426F000718BDF /* StorableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorableModel.swift; sourceTree = "<group>"; };
+		C24751C21E94270B00718BDF /* Prototypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prototypes.swift; sourceTree = "<group>"; };
+		C24751C41E942CB000718BDF /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		C24751C61E942CD100718BDF /* PatternImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternImageView.swift; sourceTree = "<group>"; };
+		C24751C81E942E1500718BDF /* TagPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagPickerController.swift; sourceTree = "<group>"; };
+		C24751CA1E942EE100718BDF /* TagPickerController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TagPickerController.storyboard; sourceTree = "<group>"; };
 		C260662C1E8D768700FD381D /* EffectIdentityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EffectIdentityView.xib; sourceTree = "<group>"; };
 		C260662E1E8D9C1800FD381D /* EffectsFacory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsFacory.swift; sourceTree = "<group>"; };
 		C26066301E8D9DF100FD381D /* EffectsFactoryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EffectsFactoryViewController.storyboard; sourceTree = "<group>"; };
@@ -108,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				C26DED5C1E8AF81400E61B7C /* AppDelegate.swift */,
+				C24751C21E94270B00718BDF /* Prototypes.swift */,
 				C26DED6B1E8AF83A00E61B7C /* BoardViewController.storyboard */,
 				C26DED601E8AF81400E61B7C /* Assets.xcassets */,
 				C26DED621E8AF81400E61B7C /* Main.storyboard */,
@@ -130,6 +143,11 @@
 				C29953B41E8E9BE900CDF481 /* Storage.swift */,
 				C203174E1E928852008ACFCB /* SearchViewController.storyboard */,
 				C20317501E9288DA008ACFCB /* SearchViewController.swift */,
+				C24751C01E9426F000718BDF /* StorableModel.swift */,
+				C24751C41E942CB000718BDF /* GridView.swift */,
+				C24751C61E942CD100718BDF /* PatternImageView.swift */,
+				C24751C81E942E1500718BDF /* TagPickerController.swift */,
+				C24751CA1E942EE100718BDF /* TagPickerController.storyboard */,
 			);
 			path = Bow;
 			sourceTree = "<group>";
@@ -207,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C26DED611E8AF81400E61B7C /* Assets.xcassets in Resources */,
+				C24751CB1E942EE100718BDF /* TagPickerController.storyboard in Resources */,
 				C26AFDD81E8C7F8C00C72E63 /* EffectsOrderViewController.storyboard in Resources */,
 				C26DED761E8B062B00E61B7C /* SliderViewController.storyboard in Resources */,
 				C26DED6C1E8AF83A00E61B7C /* BoardViewController.storyboard in Resources */,
@@ -279,8 +298,13 @@
 				C26066331E8D9F7100FD381D /* EffectsFactoryViewController.swift in Sources */,
 				C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */,
 				C29953B51E8E9BE900CDF481 /* Storage.swift in Sources */,
+				C24751C91E942E1500718BDF /* TagPickerController.swift in Sources */,
 				C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */,
+				C24751C11E9426F000718BDF /* StorableModel.swift in Sources */,
 				C2ADB8721E8C4031001B0EF3 /* SlidersFactory.swift in Sources */,
+				C24751C71E942CD100718BDF /* PatternImageView.swift in Sources */,
+				C24751C31E94270B00718BDF /* Prototypes.swift in Sources */,
+				C24751C51E942CB000718BDF /* GridView.swift in Sources */,
 				C20317511E9288DA008ACFCB /* SearchViewController.swift in Sources */,
 				C260662F1E8D9C1800FD381D /* EffectsFacory.swift in Sources */,
 				C2ADB8741E8C47E1001B0EF3 /* EffectViewModel.swift in Sources */,

@@ -10,9 +10,7 @@ import Foundation
 import GuitarDsp
 
 struct SlidersFactory {
-    func reverb(effect: ReverbEffect) -> [SliderViewController] {
-        let color = EffectViewModel(effect: effect).color()
-        
+    func reverb(effect: ReverbEffect, color: NSColor) -> [SliderViewController] {
         let roomSize = make(color: color, name: "room size", valueType: .continous(range: 0.1..<0.9, step: 0.01), initialValue: effect.rev.getroomsize()) {
             effect.rev.setroomsize($0)
         }
@@ -32,9 +30,7 @@ struct SlidersFactory {
         return [roomSize, damp, dry, wet, width]
     }
     
-    func harmonizer(harmonizer: HarmonizerEffect) -> [SliderViewController] {
-        let color = EffectViewModel(effect: harmonizer).color()
-        
+    func harmonizer(harmonizer: HarmonizerEffect, color: NSColor) -> [SliderViewController] {
         var result = phaseShift(color: color, initialValue: harmonizer.shift) {
             harmonizer.shift = $0
         }
@@ -46,15 +42,13 @@ struct SlidersFactory {
         return result
     }
     
-    func phaseVocoder(phaseVocoder: PhaseVocoderEffect) -> [SliderViewController] {
-        return phaseShift(color: EffectViewModel(effect: phaseVocoder).color(), initialValue: phaseVocoder.shift) {
+    func phaseVocoder(phaseVocoder: PhaseVocoderEffect, color: NSColor) -> [SliderViewController] {
+        return phaseShift(color: color, initialValue: phaseVocoder.shift) {
             phaseVocoder.shift = $0
         }
     }
     
-    func delay(delay: DelayEffect) -> [SliderViewController] {
-        let color = EffectViewModel(effect: delay).color()
-        
+    func delay(delay: DelayEffect, color: NSColor) -> [SliderViewController] {
         let echoesCount = make(color: color, name: "echoes count", valueType: .continous(range: 1.0..<10.0, step: 1.0), initialValue: Float(delay.echoesCount)) {
             delay.updateEchoesCount(Int32($0))
         }
@@ -71,9 +65,7 @@ struct SlidersFactory {
         return [echoesCount, functionA, tactPart, functionB]
     }
     
-    func amp(amp: AmpEffect) -> [SliderViewController] {
-        let color = EffectViewModel(effect: amp).color()
-        
+    func amp(amp: AmpEffect, color: NSColor) -> [SliderViewController] {
         let linear = make(color: color, name: "linear", valueType: .continous(range: 0.0..<10.0, step: 0.05), initialValue: amp.gain) {
             amp.gain = $0
         }

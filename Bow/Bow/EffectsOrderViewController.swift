@@ -35,7 +35,7 @@ class EffectsOrderViewController: NSViewController {
         }
     }
     
-    func setupWithEffects(effects: [Effect]) {
+    func setupWithEffects(effects: [EffectPrototype]) {
         let setup = { [weak self] in
             guard let wSelf = self else {return}
             for view in wSelf.reorderStackView.views {
@@ -54,7 +54,7 @@ class EffectsOrderViewController: NSViewController {
         }
     }
     
-    func makeEffectView(effect: Effect) -> EffectIdentityView {
+    func makeEffectView(effect: EffectPrototype) -> EffectIdentityView {
         let effectView = EffectIdentityView.make()!
         effectView.effect = effect
         effectView.removeButton.target = self
@@ -62,7 +62,7 @@ class EffectsOrderViewController: NSViewController {
         return effectView
     }
     
-    func addEffect(effect: Effect) {
+    func addEffect(effect: EffectPrototype) {
         let effectView = makeEffectView(effect: effect)
         reorderStackView.addView(effectView)
         structureChanged?()
@@ -73,7 +73,7 @@ class EffectsOrderViewController: NSViewController {
         structureChanged?()
     }
     
-    lazy var structureChange: Observable<[Effect]> = {
+    lazy var structureChange: Observable<[EffectPrototype]> = {
         return Observable.create { [weak self] observer in
             let cancel = Disposables.create {
                 
@@ -87,7 +87,7 @@ class EffectsOrderViewController: NSViewController {
         }
     }()
     
-    private func effects() -> [Effect] {
+    private func effects() -> [EffectPrototype] {
         return (reorderStackView.views as! [EffectIdentityView]).map{$0.effect}
     }
     
@@ -97,7 +97,7 @@ class EffectIdentityView: NSView {
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var removeButton: NSButton!
     
-    var effect: Effect! {
+    var effect: EffectPrototype! {
         didSet {
             updateSubviews()
         }

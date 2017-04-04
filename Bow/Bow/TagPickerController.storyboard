@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="TPD-ap-5AQ">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tag Picker Controller-->
+        <scene sceneID="a5h-Dy-3Yb">
+            <objects>
+                <viewController storyboardIdentifier="TagPickerController" id="TPD-ap-5AQ" customClass="TagPickerController" customModule="Bow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" misplaced="YES" id="RPT-vk-zAz">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXx-L8-K9c">
+                                <rect key="frame" x="170" y="125" width="96" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="duV-Dr-zwF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="pickerFieldActionWithTextField:" target="TPD-ap-5AQ" id="CAc-55-7Bs"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XXx-L8-K9c" secondAttribute="trailing" id="D4t-h1-hRP"/>
+                            <constraint firstAttribute="bottom" secondItem="XXx-L8-K9c" secondAttribute="bottom" id="DnJ-Ge-rSH"/>
+                            <constraint firstItem="XXx-L8-K9c" firstAttribute="leading" secondItem="RPT-vk-zAz" secondAttribute="leading" id="dIQ-bi-fR6"/>
+                            <constraint firstItem="XXx-L8-K9c" firstAttribute="top" secondItem="RPT-vk-zAz" secondAttribute="top" id="g9R-oC-CAf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="ycR-bM-OEb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-123" y="224"/>
+        </scene>
+    </scenes>
+</document>

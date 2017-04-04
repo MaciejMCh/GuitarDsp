@@ -77,17 +77,16 @@ extension SearchViewController {
 }
 
 extension SearchViewController {
-    func searchForBoards(storage: BoardsStorage, action: @escaping (Board) -> ()) {
-        let index = storage.index()
+    func searchForBoards(action: @escaping (Storable<BoardPrototype>) -> ()) {
+        let all = BoardPrototype.all().map{$0.id}
         configuration = Configuration(search: { (query: String) -> [String] in
             switch query {
-            case "": return index
-            default: return index.filter{$0.contains(query)}
+            case "": return all
+            default: return all.filter{$0.contains(query)}
             }
         }, action: { (selected: String) in
-            if let board = storage.load(name: selected) {
-                action(board)
-            }
+            guard let boardPrototype = BoardPrototype.load(identity: Storage.Identity(id: selected)) else {return}
+            action(Storable(origin: .selfMade(identity: Storage.Identity(id: selected)), jsonRepresentable: boardPrototype))
         })
     }
 }

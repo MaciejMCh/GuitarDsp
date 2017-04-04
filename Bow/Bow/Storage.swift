@@ -13,159 +13,90 @@ import JSONCodable
 typealias JsonObject = [String: Any]
 typealias JsonArray = [JsonObject]
 
-struct BoardsStorage {
-    private let effectsFactory: EffectsFacory
-    private let storageDirectory = NSHomeDirectory() + "/Documents/GuitarDsp/Boards"
-    
-    init(effectsFactory: EffectsFacory) {
-        self.effectsFactory = effectsFactory
-        setupFileSystem()
+protocol JsonObjectRepresentable {
+    static var typeName: String {get}
+    init?(jsonObject: JsonObject)
+    func json() -> JsonObject
+}
+
+struct Storage {
+    let typeName: String
+    var storagePath: String {
+        return "\(NSHomeDirectory())/Documents/GuitarDsp/\(typeName)"
     }
     
-    private func setupFileSystem() {
-        if !FileManager.default.fileExists(atPath: storageDirectory) {
-            try! FileManager.default.createDirectory(atPath: storageDirectory, withIntermediateDirectories: true, attributes: nil)
-        }
+    private func filePath(identity: Identity) -> String {
+        return "\(storagePath)/\(identity.id)"
     }
     
-    func save(board: Board, name: String) {
-        var effectsJsonArray: JsonArray = []
-        for effect in board.effects {
-            effectsJsonArray.append(["type": effect.type(), "configuration": effect.configuration()])
-        }
-        let boardJsonObject = ["effects": effectsJsonArray] as [String : Any]
-        NSKeyedArchiver.archiveRootObject(boardJsonObject, toFile: boardFilePath(name: name))
+    func save(json: JsonObject, identity: Identity) {
+        NSKeyedArchiver.archiveRootObject(json, toFile: filePath(identity: identity))
     }
     
-    func load(name: String) -> Board? {
-        guard let boardJsonObject = NSKeyedUnarchiver.unarchiveObject(withFile: boardFilePath(name: name)) as? JsonObject else {return nil}
-        return try? load(json: boardJsonObject)
-    }
-    
-    func index() -> [String] {
-        return try! FileManager.default.contentsOfDirectory(atPath: storageDirectory).map{$0.components(separatedBy: ".").first!}
-    }
-    
-    private func boardFilePath(name: String) -> String {
-        return storageDirectory + "/\(name).board"
-    }
-    
-    private func load(json: JsonObject) throws -> Board {
-        var effects: [Effect] = []
-        let effectsJsonArray = json["effects"] as! JsonArray
-        for effectJsonObject in effectsJsonArray {
-            var effect: Effect!
-            let type = effectJsonObject["type"] as! String
-            switch type {
-            case "amp": effect = effectsFactory.all().first()! as AmpEffect
-            case "reverb": effect = effectsFactory.all().first()! as ReverbEffect
-            case "harmonizer": effect = effectsFactory.all().first()! as HarmonizerEffect
-            case "phase_vocoder": effect = effectsFactory.all().first()! as PhaseVocoderEffect
-            case "delay": effect = effectsFactory.all().first()! as DelayEffect
-            default:
-                assert(false, type)
-            }
-            try effect.configure(json: effectJsonObject["configuration"] as! JsonObject)
-            effects.append(effect)
-        }
-        
-        let board = Board()
-        board.effects = effects
-        return board
-        
-    }
-    
-    private func boardJsonObject(board: Board) -> JsonObject {
-        var effectsJsonArray: JsonArray = []
-        for effect in board.effects {
-            effectsJsonArray.append(["type": effect.type(), "configuration": effect.configuration()])
-        }
-        return ["type": "board", "effects": effectsJsonArray]
+    func load(identity: Identity) -> JsonObject? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: filePath(identity: identity)) as? JsonObject
     }
 }
 
-extension Effect {
-    func configuration() -> JsonObject {
-        if let ampEffect = self as? AmpEffect {
-            return ["gain": ampEffect.gain]
-        }
-        if let reverbEffect = self as? ReverbEffect {
-            return [
-                "roomsize": reverbEffect.rev.getroomsize(),
-                "damp": reverbEffect.rev.getdamp(),
-                "wet": reverbEffect.rev.getwet(),
-                "dry": reverbEffect.rev.getdry(),
-                "width": reverbEffect.rev.getwidth()
-            ]
-        }
-        if let harmonizerEffect = self as? HarmonizerEffect {
-            return [
-                "shift": harmonizerEffect.shift,
-                "volume": harmonizerEffect.volume
-            ]
-        }
-        if let phaseVocoderEffect = self as? PhaseVocoderEffect {
-            return [
-                "shift": phaseVocoderEffect.shift
-            ]
-        }
-        if let delayEffect = self as? DelayEffect {
-            return [
-                "echoes_count": delayEffect.echoesCount,
-                "tact_part": delayEffect.timing.tactPart.rawValue,
-                "fa": delayEffect.fadingFunctionA,
-                "fb": delayEffect.fadingFunctionB,
-            ]
-        }
-        assert(false, "\(self)")
+extension Storage {
+    struct Identity {
+        let id: String
     }
+}
+
+protocol BasicStorable {
+    func make() -> JsonObjectRepresentable?
+    func update()
+}
+
+enum StorableOrigin {
+    case selfMade(identity: Storage.Identity)
+    case child(parent: BasicStorable)
+    case orphan
+}
+
+struct Storable<T: JsonObjectRepresentable>: BasicStorable {
+    let origin: StorableOrigin
+    var jsonRepresentable: T
     
-    func type() -> String {
-        switch self {
-        case is AmpEffect: return "amp"
-        case is ReverbEffect: return "reverb"
-        case is HarmonizerEffect: return "harmonizer"
-        case is PhaseVocoderEffect: return "phase_vocoder"
-        case is DelayEffect: return "delay"
-        default: assert(false, "\(self)")
+    func update() {
+        switch origin {
+        case .selfMade(let identity): Storage(typeName: T.typeName).save(json: jsonRepresentable.json(), identity: identity)
+        case .child(let parent): parent.update()
+        case .orphan: break
         }
     }
     
-    func configure(json: JsonObject) throws {
-        let decoder = JSONDecoder(object: json)
-        
-        if let ampEffect = self as? AmpEffect {
-            ampEffect.gain = try decoder.decode("gain")
-        } else if let reverb = self as? ReverbEffect {
-            reverb.rev.setroomsize(try decoder.decode("roomsize"))
-            reverb.rev.setdamp(try decoder.decode("damp"))
-            reverb.rev.setdry(try decoder.decode("dry"))
-            reverb.rev.setwet(try decoder.decode("wet"))
-            reverb.rev.setwidth(try decoder.decode("width"))
-        } else if let harmonizerEffect = self as? HarmonizerEffect {
-            harmonizerEffect.shift = try decoder.decode("shift")
-            harmonizerEffect.volume = try decoder.decode("volume")
-        } else if let phaseVocoderEffect = self as? PhaseVocoderEffect {
-            phaseVocoderEffect.shift = try decoder.decode("shift")
-        } else if let delayEffect = self as? DelayEffect {
-            let tactPart = TactPart(rawValue: json["tact_part"] as! UInt)
-            delayEffect.updateTact(tactPart!)
-            delayEffect.updateEchoesCount(json["echoes_count"] as! Int32)
-            delayEffect.fadingFunctionA = try decoder.decode("fa")
-            delayEffect.fadingFunctionB = try decoder.decode("fb")
+    func make() -> JsonObjectRepresentable? {
+        switch origin {
+        case .selfMade(let identity):
+            guard let json = Storage(typeName: T.typeName).load(identity: identity) else {return nil}
+            return T.init(jsonObject: json)
+        default: return nil
+        }
+    }
+    
+    func makeConcrete() -> T? {
+        return make() as? T
+    }
+}
+
+extension JsonObjectRepresentable {
+    static func all() -> [Storage.Identity] {
+        let objectsNames: [String]
+        do {
+            objectsNames = try FileManager.default.contentsOfDirectory(atPath: Storage(typeName: typeName).storagePath)
+        } catch (_) {
+            objectsNames = []
+        }
+        return objectsNames.filter{!$0.hasPrefix(".")}.map{Storage.Identity(id: $0)}
+    }
+    
+    static func load(identity: Storage.Identity) -> Self? {
+        if let json = Storage(typeName: typeName).load(identity: identity), let model = Self.init(jsonObject: json) {
+            return model
         } else {
-            assert(false, "\(self)")
+            return nil
         }
-    }
-}
-
-extension Array {
-    func first<T>() -> T? {
-        for element in self {
-            if let firstElement = element as? T {
-                return firstElement
-            }
-        }
-        return nil
     }
 }

@@ -13,13 +13,13 @@ import GuitarDsp
 class EffectsFacoryViewController: NSViewController {
     var effectsFactory: EffectsFacory! {
         didSet {
-            allEffects = effectsFactory.all()
+            allEffects = effectsFactory.all().map{EffectPrototype(effect: $0)}
         }
     }
-    private var allEffects: [Effect]!
+    private var allEffects: [EffectPrototype]!
     @IBOutlet var stackView: NSStackView!
     
-    var addEffectCallback: ((Effect) -> Void)?
+    var addEffectCallback: ((EffectPrototype) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()

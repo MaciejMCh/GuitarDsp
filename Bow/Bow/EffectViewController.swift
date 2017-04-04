@@ -14,7 +14,7 @@ class EffectViewController: NSViewController {
     @IBOutlet weak var backgroundView: NSView!
     @IBOutlet weak var slidersStackView: NSStackView!
     @IBOutlet weak var nameLabel: NSTextField!
-    var effect: Effect!
+    var effectPrototype: EffectPrototype!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class EffectViewController: NSViewController {
     }
     
     func setupAppearence() {
-        nameLabel.stringValue = EffectViewModel(effect: effect).name()
+        nameLabel.stringValue = EffectViewModel(effect: effectPrototype).name()
         
         view.wantsLayer = true
         view.layer!.cornerRadius = 10
@@ -31,7 +31,7 @@ class EffectViewController: NSViewController {
     }
     
     func setupSliders() {
-        let sliders = sliderViewControllers(effect: effect)
+        let sliders = sliderViewControllers(effect: effectPrototype.effect)
         for sliderViewController in sliders {
             addChildViewController(sliderViewController)
             slidersStackView.addView(sliderViewController.view, in: .leading)
@@ -46,20 +46,21 @@ class EffectViewController: NSViewController {
     }
     
     func sliderViewControllers(effect: Effect) -> [SliderViewController] {
+        let color = EffectViewModel(effect: effectPrototype).color()
         if let reverbEffect = effect as? ReverbEffect {
-            return SlidersFactory().reverb(effect: reverbEffect)
+            return SlidersFactory().reverb(effect: reverbEffect, color: color)
         }
         if let harmonizerEffect = effect as? HarmonizerEffect {
-            return SlidersFactory().harmonizer(harmonizer: harmonizerEffect)
+            return SlidersFactory().harmonizer(harmonizer: harmonizerEffect, color: color)
         }
         if let phaseVocoderEffect = effect as? PhaseVocoderEffect {
-            return SlidersFactory().phaseVocoder(phaseVocoder: phaseVocoderEffect)
+            return SlidersFactory().phaseVocoder(phaseVocoder: phaseVocoderEffect, color: color)
         }
         if let delayEffect = effect as? DelayEffect {
-            return SlidersFactory().delay(delay: delayEffect)
+            return SlidersFactory().delay(delay: delayEffect, color: color)
         }
         if let ampEffect = effect as? AmpEffect {
-            return SlidersFactory().amp(amp: ampEffect)
+            return SlidersFactory().amp(amp: ampEffect, color: color)
         }
         assert(false)
         return []

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="BTC-zM-tsg">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Looper Effect View Controller-->
+        <scene sceneID="wEU-sB-Wcj">
+            <objects>
+                <viewController storyboardIdentifier="LooperEffectViewController" id="BTC-zM-tsg" customClass="LooperEffectViewController" customModule="Bow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Yri-eS-l6k">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="250"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="DBz-WZ-tew">
+                                <rect key="frame" x="342" y="22" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="B3D-Mu-Phj"/>
+                                    <constraint firstAttribute="height" constant="36" id="geo-mo-f2j"/>
+                                </constraints>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="ys9-su-ECU">
+                                        <connections>
+                                            <action selector="buttonActionWithGesture:" target="BTC-zM-tsg" id="Srq-gU-AVe"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="WL2-oA-ttV">
+                                <rect key="frame" x="293" y="22" width="36" height="36"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="ifb-0T-eKA">
+                                        <connections>
+                                            <action selector="buttonActionWithGesture:" target="BTC-zM-tsg" id="TGE-8b-hV5"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="syp-Sr-BHB">
+                                <rect key="frame" x="244" y="22" width="36" height="36"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="aYZ-kD-Vku">
+                                        <connections>
+                                            <action selector="buttonActionWithGesture:" target="BTC-zM-tsg" id="D7P-ch-hgB"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Ant-U2-16f">
+                                <rect key="frame" x="195" y="22" width="36" height="36"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="4Ta-KG-95e">
+                                        <connections>
+                                            <action selector="buttonActionWithGesture:" target="BTC-zM-tsg" id="OMJ-Eu-K7C"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="hmd-RT-hkL">
+                                <rect key="frame" x="146" y="22" width="36" height="36"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="3I0-0w-JlY">
+                                        <connections>
+                                            <action selector="buttonActionWithGesture:" target="BTC-zM-tsg" id="aum-sJ-jvG"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="rtN-HX-1IK">
+                                <rect key="frame" x="342" y="80" width="36" height="148"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="HNd-FS-tCl">
+                                        <connections>
+                                            <action selector="barActionWithGesture:" target="BTC-zM-tsg" id="FcV-XU-yZe"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="EcE-kH-afQ">
+                                <rect key="frame" x="293" y="80" width="36" height="148"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="xty-HN-y2A">
+                                        <connections>
+                                            <action selector="barActionWithGesture:" target="BTC-zM-tsg" id="1x5-BL-TtZ"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="afl-fD-u7Y">
+                                <rect key="frame" x="244" y="80" width="36" height="148"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="gsS-H4-dKf">
+                                        <connections>
+                                            <action selector="barActionWithGesture:" target="BTC-zM-tsg" id="X3s-K2-U0K"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="6e7-DK-Dvt">
+                                <rect key="frame" x="195" y="80" width="36" height="148"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="5LW-gk-UDK">
+                                        <connections>
+                                            <action selector="barActionWithGesture:" target="BTC-zM-tsg" id="JIu-K6-4zR"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="SSw-sv-qNX">
+                                <rect key="frame" x="146" y="80" width="36" height="148"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="Hd1-gp-zsC">
+                                        <connections>
+                                            <action selector="barActionWithGesture:" target="BTC-zM-tsg" id="oZ3-JQ-N98"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Awm-z4-Pis" customClass="TapView" customModule="Bow" customModuleProvider="target">
+                                <rect key="frame" x="22" y="156" width="102" height="72"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Wv1-p4-LWZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="72"/>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Wv1-p4-LWZ" secondAttribute="bottom" id="AU4-xH-qf2"/>
+                                    <constraint firstItem="Wv1-p4-LWZ" firstAttribute="top" secondItem="Awm-z4-Pis" secondAttribute="top" id="SyW-ED-bfH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wv1-p4-LWZ" secondAttribute="trailing" id="WuB-cQ-Lop"/>
+                                    <constraint firstAttribute="height" constant="72" id="iFS-Ve-A9Z"/>
+                                    <constraint firstItem="Wv1-p4-LWZ" firstAttribute="leading" secondItem="Awm-z4-Pis" secondAttribute="leading" id="jGL-qm-Wct"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="SSw-sv-qNX" firstAttribute="leading" secondItem="hmd-RT-hkL" secondAttribute="leading" id="0U7-11-tMZ"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="hmd-RT-hkL" secondAttribute="top" id="28k-yd-aW8"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="syp-Sr-BHB" secondAttribute="top" id="4nH-FP-ai5"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="width" secondItem="Ant-U2-16f" secondAttribute="width" id="5qF-tx-nZN"/>
+                            <constraint firstItem="afl-fD-u7Y" firstAttribute="trailing" secondItem="syp-Sr-BHB" secondAttribute="trailing" id="7mk-4A-MNz"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="height" secondItem="syp-Sr-BHB" secondAttribute="height" id="7uC-3M-8Gp"/>
+                            <constraint firstItem="6e7-DK-Dvt" firstAttribute="leading" secondItem="Ant-U2-16f" secondAttribute="leading" id="7y0-wD-tRr"/>
+                            <constraint firstItem="WL2-oA-ttV" firstAttribute="leading" secondItem="syp-Sr-BHB" secondAttribute="trailing" constant="13" id="8XU-R2-gOt"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="leading" secondItem="WL2-oA-ttV" secondAttribute="trailing" constant="13" id="Byg-7n-Rf1"/>
+                            <constraint firstItem="rtN-HX-1IK" firstAttribute="leading" secondItem="DBz-WZ-tew" secondAttribute="leading" id="C2f-kZ-yJQ"/>
+                            <constraint firstItem="syp-Sr-BHB" firstAttribute="top" secondItem="afl-fD-u7Y" secondAttribute="bottom" constant="22" id="ECZ-St-rlf"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="width" secondItem="hmd-RT-hkL" secondAttribute="width" id="Eqj-hV-GGO"/>
+                            <constraint firstItem="hmd-RT-hkL" firstAttribute="top" secondItem="SSw-sv-qNX" secondAttribute="bottom" constant="22" id="F1X-0f-1C4"/>
+                            <constraint firstItem="SSw-sv-qNX" firstAttribute="leading" secondItem="Awm-z4-Pis" secondAttribute="trailing" constant="22" id="IXX-PL-bjW"/>
+                            <constraint firstItem="afl-fD-u7Y" firstAttribute="leading" secondItem="syp-Sr-BHB" secondAttribute="leading" id="Kad-Oc-P7Y"/>
+                            <constraint firstItem="EcE-kH-afQ" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="L7P-dn-3e5"/>
+                            <constraint firstItem="rtN-HX-1IK" firstAttribute="trailing" secondItem="DBz-WZ-tew" secondAttribute="trailing" id="Lrm-bQ-3rM"/>
+                            <constraint firstItem="SSw-sv-qNX" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="OWx-bf-Cx2"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="Ant-U2-16f" secondAttribute="top" id="PWo-rF-6eC"/>
+                            <constraint firstItem="Ant-U2-16f" firstAttribute="top" secondItem="6e7-DK-Dvt" secondAttribute="bottom" constant="22" id="TBx-EX-z8W"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="height" secondItem="hmd-RT-hkL" secondAttribute="height" id="TfP-Yt-Tae"/>
+                            <constraint firstItem="EcE-kH-afQ" firstAttribute="trailing" secondItem="WL2-oA-ttV" secondAttribute="trailing" id="WDH-FI-1uW"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="height" secondItem="WL2-oA-ttV" secondAttribute="height" id="WoR-23-now"/>
+                            <constraint firstItem="afl-fD-u7Y" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="ZVy-eg-PSW"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="width" secondItem="syp-Sr-BHB" secondAttribute="width" id="beU-Rj-qwH"/>
+                            <constraint firstItem="syp-Sr-BHB" firstAttribute="leading" secondItem="Ant-U2-16f" secondAttribute="trailing" constant="13" id="cAn-rK-8eX"/>
+                            <constraint firstItem="6e7-DK-Dvt" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="eaR-Ha-O8h"/>
+                            <constraint firstItem="rtN-HX-1IK" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="f9F-BQ-0hn"/>
+                            <constraint firstAttribute="trailing" secondItem="DBz-WZ-tew" secondAttribute="trailing" constant="22" id="fnh-NA-NGh"/>
+                            <constraint firstItem="EcE-kH-afQ" firstAttribute="leading" secondItem="WL2-oA-ttV" secondAttribute="leading" id="kac-Xi-CNR"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="rtN-HX-1IK" secondAttribute="bottom" constant="22" id="oHy-zM-bRh"/>
+                            <constraint firstAttribute="bottom" secondItem="DBz-WZ-tew" secondAttribute="bottom" constant="22" id="oj2-ez-7eE"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="height" secondItem="Ant-U2-16f" secondAttribute="height" id="qRr-ml-jaM"/>
+                            <constraint firstItem="Awm-z4-Pis" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="qUd-7C-8Ik"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="width" secondItem="WL2-oA-ttV" secondAttribute="width" id="rfs-xu-UIn"/>
+                            <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="WL2-oA-ttV" secondAttribute="top" id="w8i-zy-5Pl"/>
+                            <constraint firstItem="SSw-sv-qNX" firstAttribute="trailing" secondItem="hmd-RT-hkL" secondAttribute="trailing" id="w8p-A5-d6u"/>
+                            <constraint firstItem="Ant-U2-16f" firstAttribute="leading" secondItem="hmd-RT-hkL" secondAttribute="trailing" constant="13" id="y7K-RZ-M8p"/>
+                            <constraint firstItem="WL2-oA-ttV" firstAttribute="top" secondItem="EcE-kH-afQ" secondAttribute="bottom" constant="22" id="yxD-LF-e7R"/>
+                            <constraint firstItem="6e7-DK-Dvt" firstAttribute="trailing" secondItem="Ant-U2-16f" secondAttribute="trailing" id="z26-tk-JbC"/>
+                            <constraint firstItem="Awm-z4-Pis" firstAttribute="leading" secondItem="Yri-eS-l6k" secondAttribute="leading" constant="22" id="z2d-aR-1iP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barView0" destination="SSw-sv-qNX" id="gpe-nJ-HzE"/>
+                        <outlet property="barView1" destination="6e7-DK-Dvt" id="4bs-Po-gUs"/>
+                        <outlet property="barView2" destination="afl-fD-u7Y" id="qZ5-4d-6rM"/>
+                        <outlet property="barView3" destination="EcE-kH-afQ" id="Fh2-8Y-Wkb"/>
+                        <outlet property="barView4" destination="rtN-HX-1IK" id="esW-DW-oxE"/>
+                        <outlet property="buttonView0" destination="hmd-RT-hkL" id="ehy-sR-l9r"/>
+                        <outlet property="buttonView1" destination="Ant-U2-16f" id="2Tw-qO-Xa1"/>
+                        <outlet property="buttonView2" destination="syp-Sr-BHB" id="jYF-GT-N6v"/>
+                        <outlet property="buttonView3" destination="WL2-oA-ttV" id="qvU-4B-049"/>
+                        <outlet property="buttonView4" destination="DBz-WZ-tew" id="Dur-BE-Ozs"/>
+                        <outlet property="tempoAnimationView" destination="Wv1-p4-LWZ" id="IR8-0b-vMg"/>
+                        <outlet property="tempoTapView" destination="Awm-z4-Pis" id="YXl-5C-CGF"/>
+                    </connections>
+                </viewController>
+                <customObject id="rqX-Xh-8I6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57" y="213"/>
+        </scene>
+    </scenes>
+</document>

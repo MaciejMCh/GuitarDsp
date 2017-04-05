@@ -31,17 +31,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func initialController() -> NSViewController {
+        let looperViewController = LooperEffectViewController.make()
+        looperViewController.looperEffect = EffectsFacory(samplingSettings: AudioInterface.shared().samplingSettings).makeLooper()
         let samplingSettings = AudioInterface.shared().samplingSettings
         let processor = Processor(samplingSettings: samplingSettings, tempo: 120)
         AudioInterface.shared().use(processor)
         let board = Board()
-        board.effects = []
+        board.effects = [looperViewController.looperEffect]
         processor.activeBoard = board
-        let boardViewController = BoardViewController.make()
-        let boardPrototype = BoardPrototype(board: board)
-        boardViewController.board = Storable<BoardPrototype>(origin: .orphan, jsonRepresentable: boardPrototype)
-        boardViewController.effectsFactory = EffectsFacory(samplingSettings: samplingSettings)
-        return boardViewController
+        return looperViewController
+        
+//        let samplingSettings = AudioInterface.shared().samplingSettings
+//        let processor = Processor(samplingSettings: samplingSettings, tempo: 120)
+//        AudioInterface.shared().use(processor)
+//        let board = Board()
+//        board.effects = []
+//        processor.activeBoard = board
+//        let boardViewController = BoardViewController.make()
+//        let boardPrototype = BoardPrototype(board: board)
+//        boardViewController.board = Storable<BoardPrototype>(origin: .orphan, jsonRepresentable: boardPrototype)
+//        boardViewController.effectsFactory = EffectsFacory(samplingSettings: samplingSettings)
+//        return boardViewController
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -200,10 +200,11 @@
 }
 
 - (void)callLoopDidBegin {
+    __weak typeof(self) wSelf = self;
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         if (self.currentPacketPointer == 0) {
             if (self.loopDidBegin) {
-                self.loopDidBegin(self.durationInSeconds);
+                self.loopDidBegin(wSelf);
             }
         }
     });

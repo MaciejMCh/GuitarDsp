@@ -1,15 +1,18 @@
 PODS:
+  - HexColors (5.0.1)
   - JSONCodable (3.0.1)
   - RxSwift (3.3.1)
 
 DEPENDENCIES:
+  - HexColors
   - JSONCodable
   - RxSwift
 
 SPEC CHECKSUMS:
+  HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
   RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
 
-PODFILE CHECKSUM: e6b68a64d47776834c24bad3c08244fc168e1961
+PODFILE CHECKSUM: f7e720f63ecdfb7d6b830f38663169c59009d426
 
 COCOAPODS: 1.2.0

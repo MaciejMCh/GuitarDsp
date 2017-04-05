@@ -35,4 +35,8 @@ struct EffectsFacory {
     func makeReverb() -> ReverbEffect {
         return ReverbEffect(samplingSettings: samplingSettings)
     }
+    
+    func makeLooper() -> LooperEffect {
+        return LooperEffect(samplingSettings: samplingSettings, banksCount: 5, tempo: 120, tactsCount: 2)
+    }
 }

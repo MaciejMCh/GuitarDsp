@@ -6,5 +6,6 @@ target 'Bow' do
   use_frameworks!
   pod 'RxSwift'
   pod 'JSONCodable'
+  pod 'HexColors'
 
 end

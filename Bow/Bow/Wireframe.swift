@@ -40,3 +40,4 @@ extension EffectsOrderViewController: InterfaceBuilderInstance {static var inter
 extension EffectIdentityView: InterfaceBuilderInstance {static var interfaceFileName: String {return "EffectIdentityView"}}
 extension SearchViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "SearchViewController"}}
 extension TagPickerController: InterfaceBuilderInstance {static var interfaceFileName: String {return "TagPickerController"}}
+extension LooperEffectViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "LooperViewController"}}

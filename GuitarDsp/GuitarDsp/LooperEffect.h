@@ -29,7 +29,7 @@ struct LooperBank {
 @property (nonatomic, assign, readonly) int tactsCount;
 @property (nonatomic, assign, readonly) float tempo;
 @property (nonatomic, assign, readonly) float durationInSeconds;
-@property (nonatomic, copy) void (^loopDidBegin)(float durationInSeconds);
+@property (nonatomic, copy) void (^loopDidBegin)(LooperEffect * _Nonnull looperEffect);
 
 - (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings banksCount:(int)banksCount tempo:(float)tempo tactsCount:(int)tactsCount;
 - (void)record:(struct LooperBank *)looperBank;

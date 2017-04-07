@@ -119,7 +119,7 @@
                                 </gestureRecognizers>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Awm-z4-Pis" customClass="TapView" customModule="Bow" customModuleProvider="target">
-                                <rect key="frame" x="22" y="156" width="102" height="72"/>
+                                <rect key="frame" x="22" y="131" width="102" height="72"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Wv1-p4-LWZ">
                                         <rect key="frame" x="0.0" y="0.0" width="102" height="72"/>
@@ -133,18 +133,85 @@
                                     <constraint firstItem="Wv1-p4-LWZ" firstAttribute="leading" secondItem="Awm-z4-Pis" secondAttribute="leading" id="jGL-qm-Wct"/>
                                 </constraints>
                             </customView>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RJM-qC-uty">
+                                <rect key="frame" x="46" y="72" width="54" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5Oo-BF-DwV"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="16" id="5eU-XG-L6n">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="6Pn-yW-Z7r"/>
+                                    <font key="font" size="20" name="Courier-Bold"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="tactsCountTextFieldActionWithSender:" target="BTC-zM-tsg" id="wIA-BM-t3b"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fw1-cU-xfw">
+                                <rect key="frame" x="53" y="94" width="41" height="15"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="tacts" id="Sl7-Gs-t2O">
+                                    <font key="font" size="12" name="Courier"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eRe-qS-0OG">
+                                <rect key="frame" x="98" y="70" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="0ex-Lt-u6P"/>
+                                    <constraint firstAttribute="height" constant="30" id="Jfq-dM-KbT"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" title="&gt;" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="4HZ-hX-cYj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="incrementTactsCountWithSender:" target="BTC-zM-tsg" id="kUL-4Y-M5d"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4UL-ba-oyW">
+                                <rect key="frame" x="18" y="70" width="30" height="30"/>
+                                <buttonCell key="cell" type="bevel" title="&lt;" bezelStyle="rounded" alignment="right" imageScaling="proportionallyDown" inset="2" id="6AA-fc-uj6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="decrementTactsCountWithSender:" target="BTC-zM-tsg" id="c4O-29-orq"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N9h-d6-55m">
+                                <rect key="frame" x="41" y="203" width="65" height="25"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="G8b-OK-CCJ">
+                                    <font key="font" size="20" name="Courier"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="7ST-Xc-bhf">
+                                <rect key="frame" x="30" y="20" width="87" height="18"/>
+                                <buttonCell key="cell" type="check" title="metronome" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="FNU-5r-B4u">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" size="12" name="Courier"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="SSw-sv-qNX" firstAttribute="leading" secondItem="hmd-RT-hkL" secondAttribute="leading" id="0U7-11-tMZ"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="hmd-RT-hkL" secondAttribute="top" id="28k-yd-aW8"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="syp-Sr-BHB" secondAttribute="top" id="4nH-FP-ai5"/>
+                            <constraint firstItem="fw1-cU-xfw" firstAttribute="centerX" secondItem="RJM-qC-uty" secondAttribute="centerX" id="54w-rT-KnV"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="width" secondItem="Ant-U2-16f" secondAttribute="width" id="5qF-tx-nZN"/>
+                            <constraint firstItem="RJM-qC-uty" firstAttribute="centerX" secondItem="Wv1-p4-LWZ" secondAttribute="centerX" id="62R-Ai-k7Z"/>
                             <constraint firstItem="afl-fD-u7Y" firstAttribute="trailing" secondItem="syp-Sr-BHB" secondAttribute="trailing" id="7mk-4A-MNz"/>
+                            <constraint firstItem="RJM-qC-uty" firstAttribute="top" secondItem="fw1-cU-xfw" secondAttribute="bottom" constant="-3" id="7n8-LG-Ril"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="height" secondItem="syp-Sr-BHB" secondAttribute="height" id="7uC-3M-8Gp"/>
                             <constraint firstItem="6e7-DK-Dvt" firstAttribute="leading" secondItem="Ant-U2-16f" secondAttribute="leading" id="7y0-wD-tRr"/>
                             <constraint firstItem="WL2-oA-ttV" firstAttribute="leading" secondItem="syp-Sr-BHB" secondAttribute="trailing" constant="13" id="8XU-R2-gOt"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="leading" secondItem="WL2-oA-ttV" secondAttribute="trailing" constant="13" id="Byg-7n-Rf1"/>
                             <constraint firstItem="rtN-HX-1IK" firstAttribute="leading" secondItem="DBz-WZ-tew" secondAttribute="leading" id="C2f-kZ-yJQ"/>
+                            <constraint firstItem="fw1-cU-xfw" firstAttribute="top" secondItem="Wv1-p4-LWZ" secondAttribute="bottom" constant="22" id="D2h-XT-xCA"/>
+                            <constraint firstItem="eRe-qS-0OG" firstAttribute="centerY" secondItem="RJM-qC-uty" secondAttribute="centerY" id="DQM-H9-0g1"/>
                             <constraint firstItem="syp-Sr-BHB" firstAttribute="top" secondItem="afl-fD-u7Y" secondAttribute="bottom" constant="22" id="ECZ-St-rlf"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="width" secondItem="hmd-RT-hkL" secondAttribute="width" id="Eqj-hV-GGO"/>
                             <constraint firstItem="hmd-RT-hkL" firstAttribute="top" secondItem="SSw-sv-qNX" secondAttribute="bottom" constant="22" id="F1X-0f-1C4"/>
@@ -152,23 +219,32 @@
                             <constraint firstItem="afl-fD-u7Y" firstAttribute="leading" secondItem="syp-Sr-BHB" secondAttribute="leading" id="Kad-Oc-P7Y"/>
                             <constraint firstItem="EcE-kH-afQ" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="L7P-dn-3e5"/>
                             <constraint firstItem="rtN-HX-1IK" firstAttribute="trailing" secondItem="DBz-WZ-tew" secondAttribute="trailing" id="Lrm-bQ-3rM"/>
+                            <constraint firstItem="4UL-ba-oyW" firstAttribute="bottom" secondItem="eRe-qS-0OG" secondAttribute="bottom" id="ODI-Ax-0xq"/>
                             <constraint firstItem="SSw-sv-qNX" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="OWx-bf-Cx2"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="Ant-U2-16f" secondAttribute="top" id="PWo-rF-6eC"/>
+                            <constraint firstItem="eRe-qS-0OG" firstAttribute="leading" secondItem="RJM-qC-uty" secondAttribute="trailing" id="SNE-8h-IrX"/>
+                            <constraint firstItem="N9h-d6-55m" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="T2Y-AQ-ncW"/>
                             <constraint firstItem="Ant-U2-16f" firstAttribute="top" secondItem="6e7-DK-Dvt" secondAttribute="bottom" constant="22" id="TBx-EX-z8W"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="height" secondItem="hmd-RT-hkL" secondAttribute="height" id="TfP-Yt-Tae"/>
                             <constraint firstItem="EcE-kH-afQ" firstAttribute="trailing" secondItem="WL2-oA-ttV" secondAttribute="trailing" id="WDH-FI-1uW"/>
+                            <constraint firstItem="7ST-Xc-bhf" firstAttribute="centerX" secondItem="Wv1-p4-LWZ" secondAttribute="centerX" id="Wau-aa-cnw"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="height" secondItem="WL2-oA-ttV" secondAttribute="height" id="WoR-23-now"/>
+                            <constraint firstItem="N9h-d6-55m" firstAttribute="centerX" secondItem="Wv1-p4-LWZ" secondAttribute="centerX" id="ZOF-7d-s6T"/>
                             <constraint firstItem="afl-fD-u7Y" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="ZVy-eg-PSW"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="width" secondItem="syp-Sr-BHB" secondAttribute="width" id="beU-Rj-qwH"/>
                             <constraint firstItem="syp-Sr-BHB" firstAttribute="leading" secondItem="Ant-U2-16f" secondAttribute="trailing" constant="13" id="cAn-rK-8eX"/>
+                            <constraint firstItem="7ST-Xc-bhf" firstAttribute="bottom" secondItem="hmd-RT-hkL" secondAttribute="bottom" id="dPs-6K-YWf"/>
                             <constraint firstItem="6e7-DK-Dvt" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="eaR-Ha-O8h"/>
                             <constraint firstItem="rtN-HX-1IK" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="f9F-BQ-0hn"/>
                             <constraint firstAttribute="trailing" secondItem="DBz-WZ-tew" secondAttribute="trailing" constant="22" id="fnh-NA-NGh"/>
+                            <constraint firstItem="RJM-qC-uty" firstAttribute="leading" secondItem="4UL-ba-oyW" secondAttribute="trailing" id="gxy-Dw-EBC"/>
+                            <constraint firstItem="4UL-ba-oyW" firstAttribute="top" secondItem="eRe-qS-0OG" secondAttribute="top" id="hrk-V0-JgK"/>
                             <constraint firstItem="EcE-kH-afQ" firstAttribute="leading" secondItem="WL2-oA-ttV" secondAttribute="leading" id="kac-Xi-CNR"/>
+                            <constraint firstItem="4UL-ba-oyW" firstAttribute="width" secondItem="eRe-qS-0OG" secondAttribute="width" id="ljN-Cp-421"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="rtN-HX-1IK" secondAttribute="bottom" constant="22" id="oHy-zM-bRh"/>
                             <constraint firstAttribute="bottom" secondItem="DBz-WZ-tew" secondAttribute="bottom" constant="22" id="oj2-ez-7eE"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="height" secondItem="Ant-U2-16f" secondAttribute="height" id="qRr-ml-jaM"/>
-                            <constraint firstItem="Awm-z4-Pis" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="qUd-7C-8Ik"/>
+                            <constraint firstItem="Wv1-p4-LWZ" firstAttribute="top" secondItem="N9h-d6-55m" secondAttribute="bottom" id="rdG-MF-e6J"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="width" secondItem="WL2-oA-ttV" secondAttribute="width" id="rfs-xu-UIn"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="WL2-oA-ttV" secondAttribute="top" id="w8i-zy-5Pl"/>
                             <constraint firstItem="SSw-sv-qNX" firstAttribute="trailing" secondItem="hmd-RT-hkL" secondAttribute="trailing" id="w8p-A5-d6u"/>
@@ -189,8 +265,11 @@
                         <outlet property="buttonView2" destination="syp-Sr-BHB" id="jYF-GT-N6v"/>
                         <outlet property="buttonView3" destination="WL2-oA-ttV" id="qvU-4B-049"/>
                         <outlet property="buttonView4" destination="DBz-WZ-tew" id="Dur-BE-Ozs"/>
+                        <outlet property="tactsCountLabel" destination="RJM-qC-uty" id="mY1-WH-EQX"/>
                         <outlet property="tempoAnimationView" destination="Wv1-p4-LWZ" id="IR8-0b-vMg"/>
+                        <outlet property="tempoLabel" destination="N9h-d6-55m" id="Yv4-u1-WPz"/>
                         <outlet property="tempoTapView" destination="Awm-z4-Pis" id="YXl-5C-CGF"/>
+                        <outlet property="toggleMetronomeButton" destination="7ST-Xc-bhf" id="t2k-sj-Ceb"/>
                     </connections>
                 </viewController>
                 <customObject id="rqX-Xh-8I6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

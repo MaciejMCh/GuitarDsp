@@ -29,7 +29,7 @@ struct RawAudio {
     
     self.samplingSettings = samplingSettings;
     
-    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"raw"]];
+    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle bundleForClass:[RawAudioPlayer class]] pathForResource:name ofType:@"raw"]];
     int dataLength = data.length / sizeof(float);
     int zeroPaddingCount = self.samplingSettings.framesPerPacket - (dataLength % self.samplingSettings.framesPerPacket);
     struct RawAudio rawAudio;

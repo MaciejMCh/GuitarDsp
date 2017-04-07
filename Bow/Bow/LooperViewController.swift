@@ -28,6 +28,9 @@ class LooperEffectViewController: NSViewController {
     
     @IBOutlet weak var tempoTapView: TapView!
     @IBOutlet weak var tempoAnimationView: NSView!
+    @IBOutlet weak var tactsCountLabel: NSTextField!
+    @IBOutlet weak var tempoLabel: NSTextField!
+    @IBOutlet weak var toggleMetronomeButton: NSButton!
     
     var loopViews: [LoopView] = []
     
@@ -67,7 +70,7 @@ class LooperEffectViewController: NSViewController {
         
         let tapsCount = 6
         var taps: [Double] = Array(repeating: 0, count: tapsCount)
-        tempoTapView.tap = { [weak looperEffect] in
+        tempoTapView.tap = { [weak self] in
             taps.remove(at: 0)
             taps.append(NSDate().timeIntervalSince1970)
             var intervals: [Double] = []
@@ -79,7 +82,8 @@ class LooperEffectViewController: NSViewController {
             let maxError = errors.map{abs($0)}.max()!
             if maxError < 0.05 {
                 let tempo = (60 / average)
-                looperEffect?.updateTempo(Float(tempo))
+                self?.looperEffect.updateTempo(Float(tempo))
+                self?.updateLoopViewsAterWhile()
             }
         }
     }
@@ -100,6 +104,10 @@ class LooperEffectViewController: NSViewController {
     }
     
     func updateLoopViews() {
+        tactsCountLabel.stringValue = String(looperEffect.tactsCount)
+        tempoLabel.stringValue = String(format: "%.1f", looperEffect.tempo)
+        toggleMetronomeButton.state = looperEffect.playMetronome ? 1 : 0
+        
         var i = 0
         for loopView in loopViews {
             let barColor: NSColor
@@ -141,6 +149,31 @@ class LooperEffectViewController: NSViewController {
         case .Off: bank.pointee.state = .On
         }
         updateLoopViews()
+    }
+    
+    @IBAction func toggleMetronomeAction(button: NSButton) {
+        looperEffect.playMetronome = !looperEffect.playMetronome
+        updateLoopViews()
+    }
+    
+    let maxTactsCount = 32
+    @IBAction func incrementTactsCount(sender: NSButton) {
+        looperEffect.updateTactsCount(min(looperEffect.tactsCount + 1, Int32(maxTactsCount)))
+        updateLoopViewsAterWhile()
+    }
+    @IBAction func decrementTactsCount(sender: NSButton) {
+        looperEffect.updateTactsCount(max(looperEffect.tactsCount - 1, 1))
+        updateLoopViewsAterWhile()
+    }
+    @IBAction func tactsCountTextFieldAction(sender: NSTextField) {
+        looperEffect.updateTactsCount(Int32(min(max(1, Int(sender.stringValue)!), maxTactsCount)))
+        updateLoopViewsAterWhile()
+    }
+    
+    func updateLoopViewsAterWhile() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.updateLoopViews()
+        }
     }
 }
 

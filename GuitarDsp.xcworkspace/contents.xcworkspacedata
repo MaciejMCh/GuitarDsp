@@ -8,6 +8,9 @@
       location = "group:Bow/Bow.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:EffectCreator/EffectCreator.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:GuitarDspBoardUI/GuitarDspBoardUI.xcodeproj">
    </FileRef>
    <FileRef

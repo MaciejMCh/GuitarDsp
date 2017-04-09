@@ -194,6 +194,9 @@
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                     <font key="font" size="12" name="Courier"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="toggleMetronomeActionWithButton:" target="BTC-zM-tsg" id="nf1-w4-NrC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

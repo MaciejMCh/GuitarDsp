@@ -14,22 +14,30 @@ class BoardViewController: NSViewController {
     @IBOutlet weak var gridView: GridView!
     @IBOutlet weak var orderViewHeightConstraint: NSLayoutConstraint!
     
-    var board: Storable<BoardPrototype>!
-    var effectsFactory: EffectsFacory!
+    private var setup: Setup!
+    
+    var boardPrototype: BoardPrototype {
+        return setup.board.jsonRepresentable
+    }
     
     var effectsOrderViewController: EffectsOrderViewController!
     
+    func setup(setup: Setup) {
+        self.setup = setup
+    }
+    
     func changeBoard(board: Storable<BoardPrototype>) {
-        self.board = board
+        setup.board = board
         clearEffectControllers()
         addEffectControllers()
         setupOrderChangeViewController()
         layoutEffectOrderView()
+        setup.prototypeChanged(setup.board.jsonRepresentable)
     }
     
     func setupOrderChangeViewController() {
-        effectsOrderViewController.effectsFactory = effectsFactory
-        effectsOrderViewController.setupWithEffects(effects: board.jsonRepresentable.effectPrototypes)
+        effectsOrderViewController.effectsFactory = setup.effectsFactory
+        effectsOrderViewController.setupWithEffects(effects: setup.board.jsonRepresentable.effectPrototypes)
         effectsOrderViewController.structureChange.subscribe { [weak self] event in
             switch event {
             case .next(let effects): self?.effectsStructureUpdated(effects: effects)
@@ -43,6 +51,8 @@ class BoardViewController: NSViewController {
         addEffectControllers()
         layoutEffectOrderView()
         
+        bowMenu?.newMenuItem.target = self
+        bowMenu?.newMenuItem.action = #selector(newAction)
         bowMenu?.saveMenuItem.target = self
         bowMenu?.saveMenuItem.action = #selector(saveAction)
         bowMenu?.openMenuItem.target = self
@@ -56,15 +66,19 @@ class BoardViewController: NSViewController {
         }
     }
     
+    func newAction() {
+        changeBoard(board: Storable(origin: .orphan, jsonRepresentable: BoardPrototype(board: Board())))
+    }
+    
     func saveAction() {
-        switch board.origin {
+        switch setup.board.origin {
         case .orphan: presentViewControllerAsModalWindow(TagPickerController.withCompletion(completion: { [weak self] (tag) in
             guard let wSelf = self else {return}
-            let newBoard = Storable<BoardPrototype>(origin: .selfMade(identity: Storage.Identity(id: tag)), jsonRepresentable: wSelf.board.jsonRepresentable)
+            let newBoard = Storable<BoardPrototype>(origin: .selfMade(identity: Storage.Identity(id: tag)), jsonRepresentable: wSelf.setup.board.jsonRepresentable)
             newBoard.update()
-            wSelf.board = newBoard
+            wSelf.setup.board = newBoard
         }))
-        default: board.update()
+        default: setup.board.update()
         }
     }
     
@@ -77,14 +91,15 @@ class BoardViewController: NSViewController {
     }
     
     private func effectsStructureUpdated(effects: [EffectPrototype]) {
-        board.jsonRepresentable.effectPrototypes = effects
+        setup.board.jsonRepresentable.effectPrototypes = effects
         clearEffectControllers()
         addEffectControllers()
         layoutEffectOrderView()
+        setup.prototypeChanged(BoardPrototype(effectPrototypes: effects))
     }
     
     private func layoutEffectOrderView() {
-        orderViewHeightConstraint.constant = CGFloat(board.jsonRepresentable.effectPrototypes.count) * EffectsOrderViewModel().rowHeight + EffectsOrderViewModel().addButtonheight
+        orderViewHeightConstraint.constant = CGFloat(setup.board.jsonRepresentable.effectPrototypes.count) * EffectsOrderViewModel().rowHeight + EffectsOrderViewModel().addButtonheight
     }
     
     func clearEffectControllers() {
@@ -99,7 +114,7 @@ class BoardViewController: NSViewController {
     
     func addEffectControllers() {
         var i = 0
-        for effectPrototype in board.jsonRepresentable.effectPrototypes {
+        for effectPrototype in setup.board.jsonRepresentable.effectPrototypes {
             let effectController = EffectViewController.make()
             effectController.effectPrototype = effectPrototype
             addChildViewController(effectController)
@@ -115,5 +130,13 @@ class BoardViewController: NSViewController {
         frame.origin.y = 100
         frame.size.height = EffectViewModel.viewHeight
         viewToInsert.frame = frame
+    }
+}
+
+extension BoardViewController {
+    struct Setup {
+        var board: Storable<BoardPrototype>
+        let effectsFactory: EffectsFacory
+        let prototypeChanged: (BoardPrototype) -> Void
     }
 }

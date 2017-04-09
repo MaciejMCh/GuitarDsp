@@ -32,6 +32,8 @@
 		C26DED741E8B055E00E61B7C /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26DED731E8B055E00E61B7C /* SliderViewController.swift */; };
 		C26DED761E8B062B00E61B7C /* SliderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26DED751E8B062B00E61B7C /* SliderViewController.storyboard */; };
 		C28234FC1E94DC1C00990E9C /* LooperViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28234FB1E94DC1C00990E9C /* LooperViewController.storyboard */; };
+		C28ABBE91E97C2CE0050D955 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28ABBE81E97C2CE0050D955 /* SetupViewController.swift */; };
+		C28ABBEB1E97C2E70050D955 /* SetupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28ABBEA1E97C2E70050D955 /* SetupViewController.storyboard */; };
 		C28CAED01E8B2098001BADFE /* GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */; };
 		C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CAED21E8B252F001BADFE /* Wireframe.swift */; };
 		C29953B51E8E9BE900CDF481 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29953B41E8E9BE900CDF481 /* Storage.swift */; };
@@ -72,6 +74,8 @@
 		C26DED731E8B055E00E61B7C /* SliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		C26DED751E8B062B00E61B7C /* SliderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SliderViewController.storyboard; sourceTree = "<group>"; };
 		C28234FB1E94DC1C00990E9C /* LooperViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LooperViewController.storyboard; sourceTree = "<group>"; };
+		C28ABBE81E97C2CE0050D955 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		C28ABBEA1E97C2E70050D955 /* SetupViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SetupViewController.storyboard; sourceTree = "<group>"; };
 		C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarDsp.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-fqviswmbvyvdyxbfngkuxnzymtkh/Build/Products/Debug/GuitarDsp.framework"; sourceTree = "<group>"; };
 		C28CAED21E8B252F001BADFE /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		C29953B41E8E9BE900CDF481 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				C24751CA1E942EE100718BDF /* TagPickerController.storyboard */,
 				C28234FB1E94DC1C00990E9C /* LooperViewController.storyboard */,
 				C24415F51E953BB700F2DEAB /* LooperViewController.swift */,
+				C28ABBE81E97C2CE0050D955 /* SetupViewController.swift */,
+				C28ABBEA1E97C2E70050D955 /* SetupViewController.storyboard */,
 			);
 			path = Bow;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 				C203174F1E928852008ACFCB /* SearchViewController.storyboard in Resources */,
 				C26066311E8D9DF100FD381D /* EffectsFactoryViewController.storyboard in Resources */,
 				C26DED641E8AF81400E61B7C /* Main.storyboard in Resources */,
+				C28ABBEB1E97C2E70050D955 /* SetupViewController.storyboard in Resources */,
 				C28234FC1E94DC1C00990E9C /* LooperViewController.storyboard in Resources */,
 				C260662D1E8D768700FD381D /* EffectIdentityView.xib in Resources */,
 			);
@@ -303,6 +310,7 @@
 				C26AFDDA1E8C7FA000C72E63 /* EffectsOrderViewController.swift in Sources */,
 				C26DED5D1E8AF81400E61B7C /* AppDelegate.swift in Sources */,
 				C26066331E8D9F7100FD381D /* EffectsFactoryViewController.swift in Sources */,
+				C28ABBE91E97C2CE0050D955 /* SetupViewController.swift in Sources */,
 				C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */,
 				C29953B51E8E9BE900CDF481 /* Storage.swift in Sources */,
 				C24751C91E942E1500718BDF /* TagPickerController.swift in Sources */,

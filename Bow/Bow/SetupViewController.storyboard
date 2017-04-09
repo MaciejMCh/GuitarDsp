@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="poO-sP-cDw">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Setup View Controller-->
+        <scene sceneID="oDg-7R-wrL">
+            <objects>
+                <viewController id="poO-sP-cDw" customClass="SetupViewController" customModule="Bow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="HZh-hf-c9s">
+                        <rect key="frame" x="0.0" y="0.0" width="866" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <splitView arrangesAllSubviews="NO" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RpQ-im-o8I">
+                                <rect key="frame" x="0.0" y="0.0" width="866" height="300"/>
+                                <subviews>
+                                    <customView id="P6x-mB-Rob">
+                                        <rect key="frame" x="0.0" y="0.0" width="531" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="rmA-rG-x9X">
+                                                <rect key="frame" x="0.0" y="0.0" width="531" height="300"/>
+                                                <connections>
+                                                    <segue destination="Phm-rV-18e" kind="embed" id="qI0-by-6Ox"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="rmA-rG-x9X" firstAttribute="leading" secondItem="P6x-mB-Rob" secondAttribute="leading" id="AJb-ly-9Ex"/>
+                                            <constraint firstAttribute="trailing" secondItem="rmA-rG-x9X" secondAttribute="trailing" id="MiM-wa-C8o"/>
+                                            <constraint firstItem="rmA-rG-x9X" firstAttribute="top" secondItem="P6x-mB-Rob" secondAttribute="top" id="Su1-rd-OlH"/>
+                                            <constraint firstAttribute="bottom" secondItem="rmA-rG-x9X" secondAttribute="bottom" id="t3n-ar-df5"/>
+                                        </constraints>
+                                    </customView>
+                                    <customView id="9BX-jX-wUl">
+                                        <rect key="frame" x="540" y="0.0" width="326" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Cwm-ER-znc">
+                                                <rect key="frame" x="0.0" y="50" width="400" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="BVO-R2-95n"/>
+                                                    <constraint firstAttribute="width" constant="400" id="xir-ct-kW6"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="fcE-LZ-tLE" kind="embed" id="a9V-wq-kih"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Cwm-ER-znc" firstAttribute="leading" secondItem="9BX-jX-wUl" secondAttribute="leading" id="Mc1-ao-kDw"/>
+                                            <constraint firstItem="Cwm-ER-znc" firstAttribute="top" secondItem="9BX-jX-wUl" secondAttribute="top" id="xAc-9v-KUQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cwm-ER-znc" secondAttribute="trailing" id="za1-59-cwG"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
+                                <holdingPriorities>
+                                    <real value="250"/>
+                                    <real value="250"/>
+                                </holdingPriorities>
+                            </splitView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="RpQ-im-o8I" secondAttribute="bottom" id="ZkN-KE-ji5"/>
+                            <constraint firstAttribute="trailing" secondItem="RpQ-im-o8I" secondAttribute="trailing" id="jRe-5a-SCD"/>
+                            <constraint firstItem="RpQ-im-o8I" firstAttribute="leading" secondItem="HZh-hf-c9s" secondAttribute="leading" id="lHK-fm-5QX"/>
+                            <constraint firstItem="RpQ-im-o8I" firstAttribute="top" secondItem="HZh-hf-c9s" secondAttribute="top" id="sAU-2A-m8l"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="kTO-E2-K4w" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31" y="274"/>
+        </scene>
+        <!--BoardViewController-->
+        <scene sceneID="aJC-DM-auC">
+            <objects>
+                <controllerPlaceholder storyboardName="BoardViewController" id="Phm-rV-18e" sceneMemberID="viewController"/>
+                <customObject id="ymQ-WW-r3u" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-61" y="596"/>
+        </scene>
+        <!--LooperViewController-->
+        <scene sceneID="m1l-0B-uJF">
+            <objects>
+                <controllerPlaceholder storyboardName="LooperViewController" id="fcE-LZ-tLE" sceneMemberID="viewController"/>
+                <customObject id="o3c-cl-G7x" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124" y="596"/>
+        </scene>
+    </scenes>
+</document>

@@ -31,27 +31,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func initialController() -> NSViewController {
-        let looperViewController = LooperEffectViewController.make()
-        looperViewController.looperEffect = EffectsFacory(samplingSettings: AudioInterface.shared().samplingSettings).makeLooper()
         let samplingSettings = AudioInterface.shared().samplingSettings
         let processor = Processor(samplingSettings: samplingSettings, tempo: 120)
         AudioInterface.shared().use(processor)
-        let board = Board()
-        board.effects = [looperViewController.looperEffect]
-        processor.activeBoard = board
-        return looperViewController
+        let effectsFactory = EffectsFacory(samplingSettings: samplingSettings)
+        let looperEffect = effectsFactory.makeLooper()
         
-//        let samplingSettings = AudioInterface.shared().samplingSettings
-//        let processor = Processor(samplingSettings: samplingSettings, tempo: 120)
-//        AudioInterface.shared().use(processor)
-//        let board = Board()
-//        board.effects = []
-//        processor.activeBoard = board
-//        let boardViewController = BoardViewController.make()
-//        let boardPrototype = BoardPrototype(board: board)
-//        boardViewController.board = Storable<BoardPrototype>(origin: .orphan, jsonRepresentable: boardPrototype)
-//        boardViewController.effectsFactory = EffectsFacory(samplingSettings: samplingSettings)
-//        return boardViewController
+        let setupViewController = SetupViewController.make()
+        setupViewController.setup(setup: SetupViewController.Setup(looperEffect: looperEffect, effectsFactory: effectsFactory) {
+            processor.activeBoard = $0
+        })
+        
+        return setupViewController
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -66,6 +57,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 class BowMenu: NSMenu {
+    @IBOutlet weak var newMenuItem: NSMenuItem!
     @IBOutlet weak var saveMenuItem: NSMenuItem!
     @IBOutlet weak var openMenuItem: NSMenuItem!
 }

@@ -13,7 +13,17 @@ struct BoardPrototype {
     var effectPrototypes: [EffectPrototype]
     
     init(board: Board) {
-        effectPrototypes = []
+        effectPrototypes = board.effects.map{EffectPrototype(effect: $0)}
+    }
+    
+    init(effectPrototypes: [EffectPrototype]) {
+        self.effectPrototypes = effectPrototypes
+    }
+    
+    func makeBoard() -> Board {
+        let board = Board()
+        board.effects = effectPrototypes.map{$0.effect}
+        return board
     }
 }
 
@@ -37,5 +47,15 @@ struct EffectPrototype {
         self.effect = effect
         kind = EffectPrototype.kind(effect: effect)
         configuration = EffectPrototype.configuration(effect: effect)
+    }
+}
+
+extension Board {
+    static func +(lhs: Board, rhs: Effect) -> Board {
+        let board = Board()
+        var effects = lhs.effects
+        effects?.append(rhs)
+        board.effects = effects
+        return board
     }
 }

@@ -650,6 +650,7 @@
                             </menuItem>
                         </items>
                         <connections>
+                            <outlet property="newMenuItem" destination="Was-JA-tGl" id="s3H-Ew-aIF"/>
                             <outlet property="openMenuItem" destination="IAo-SY-fd9" id="GrO-I7-ak5"/>
                             <outlet property="saveMenuItem" destination="pxx-59-PXV" id="9av-cf-xoi"/>
                         </connections>

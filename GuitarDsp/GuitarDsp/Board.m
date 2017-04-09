@@ -10,4 +10,11 @@
 
 @implementation Board
 
+- (NSArray<id<Effect>> *)effects {
+    if (!_effects) {
+        _effects = [NSArray new];
+    }
+    return _effects;
+}
+
 @end

@@ -24,7 +24,9 @@
     self = [super init];
     self.samplingSettings = samplingSettings;
     rmsLevel = 0;
-    self.noiseLevel = 26;
+    self.noiseLevel = 20;
+    self.fadingLevel = 14;
+    
     return self;
 }
 
@@ -37,12 +39,15 @@
     
     float level = 0.005;
     float scale = dB(rmsLevel, level);
-    NSLog(@"%f", scale);
+    
     float gain = level / rmsLevel;
     
-    if (scale > self.noiseLevel) {
-        gain = 1.0;
-    }
+    float fade = (scale - self.fadingLevel) / (self.noiseLevel - self.fadingLevel);
+    fade = MIN(1.0, MAX(fade, 0.0));
+    
+    gain *= (1.0 - fade);
+    gain = MAX(1.0, gain);
+
     vDSP_vsmul(inputSample.amp, 1, &gain, outputBuffer, 1, self.samplingSettings.framesPerPacket);
 }
 

@@ -13,6 +13,7 @@
 @interface CompressorEffect : NSObject <Effect>
 
 @property (nonatomic, assign) float noiseLevel;
+@property (nonatomic, assign) float fadingLevel;
 
 - (instancetype _Nonnull)initWithSamplingSettings:(struct SamplingSettings)samplingSettings;
 

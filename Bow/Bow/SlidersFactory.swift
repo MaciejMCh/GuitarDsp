@@ -73,6 +73,16 @@ struct SlidersFactory {
         return [linear]
     }
     
+    func compressor(compressor: CompressorEffect, color: NSColor) -> [SliderViewController] {
+        let fadeLevel = make(color: color, name: "fading level", valueType: .continous(range: 1.0..<30.0, step: 1.0), initialValue: compressor.fadingLevel) { [weak compressor] in
+            compressor?.fadingLevel = $0
+        }
+        let noiseLevel = make(color: color, name: "noise level", valueType: .continous(range: 1.0..<30.0, step: 1.0), initialValue: compressor.noiseLevel) { [weak compressor] in
+            compressor?.noiseLevel = $0
+        }
+        return [fadeLevel, noiseLevel]
+    }
+    
     private func phaseShift(color: NSColor, initialValue: Float, setter: @escaping (Float) -> Void) -> [SliderViewController] {
         let shiftToSemitones = { (shift: Float) -> Float in
             return log2(shift) * 12.0

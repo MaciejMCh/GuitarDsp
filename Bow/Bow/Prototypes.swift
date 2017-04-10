@@ -34,6 +34,7 @@ extension EffectPrototype {
         case phaseVocoder
         case delay
         case amp
+        case compressor
     }
 }
 

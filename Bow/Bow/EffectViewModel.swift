@@ -8,6 +8,7 @@
 
 import Foundation
 import GuitarDsp
+import HexColors
 
 extension Float {
     static var goldenRatio: Float {
@@ -26,6 +27,7 @@ struct EffectViewModel {
         case .phaseVocoder: return "phase vocoder"
         case .delay: return "delay"
         case .amp: return "amp"
+        case .compressor: return "compressor"
         }
     }
     
@@ -36,6 +38,7 @@ struct EffectViewModel {
         case .phaseVocoder: return NSColor(calibratedRed: 226.0 / 255.0, green: 224.0 / 255.0, blue: 74.0 / 255.0, alpha: 1.0)
         case .delay: return NSColor(calibratedRed: 74.0 / 255.0, green: 136.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0)
         case .amp: return NSColor(calibratedRed: 226 / 255.0, green: 74 / 255.0, blue: 74 / 255.0, alpha: 1.0)
+        case .compressor: return NSColor("4AE24C")!
         }
     }
 }

@@ -13,7 +13,7 @@ struct EffectsFacory {
     let samplingSettings: SamplingSettings
     
     func all() -> [Effect] {
-        return [makeAmp(), makeDelay(), makeHarmonizer(), makePhaseVocoder(), makeReverb()]
+        return [makeAmp(), makeDelay(), makeHarmonizer(), makePhaseVocoder(), makeReverb(), makeCompressor()]
     }
     
     func makeAmp() -> AmpEffect {
@@ -38,5 +38,9 @@ struct EffectsFacory {
     
     func makeLooper() -> LooperEffect {
         return LooperEffect(samplingSettings: samplingSettings, banksCount: 5, tempo: 120, tactsCount: 2)
+    }
+    
+    func makeCompressor() -> CompressorEffect {
+        return CompressorEffect(samplingSettings: samplingSettings)
     }
 }

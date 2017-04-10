@@ -62,6 +62,9 @@ class EffectViewController: NSViewController {
         if let ampEffect = effect as? AmpEffect {
             return SlidersFactory().amp(amp: ampEffect, color: color)
         }
+        if let compressorEffect = effect as? CompressorEffect {
+            return SlidersFactory().compressor(compressor: compressorEffect, color: color)
+        }
         assert(false)
         return []
     }

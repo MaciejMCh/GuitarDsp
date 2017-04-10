@@ -54,6 +54,7 @@ extension EffectPrototype: JsonObjectRepresentable {
         case .harmonizer: return EffectPrototype.effectsFactory.makeHarmonizer()
         case .phaseVocoder: return EffectPrototype.effectsFactory.makePhaseVocoder()
         case .reverb: return EffectPrototype.effectsFactory.makeReverb()
+        case .compressor: return EffectPrototype.effectsFactory.makeCompressor()
         }
     }
     
@@ -117,6 +118,12 @@ extension EffectPrototype: JsonObjectRepresentable {
                 "fb": delayEffect.fadingFunctionB,
             ]
         }
+        if let compressorEffect = effect as? CompressorEffect {
+            return [
+                "fading_level": compressorEffect.fadingLevel,
+                "noise_level": compressorEffect.noiseLevel
+            ]
+        }
         assert(false, "\(self)")
     }
     
@@ -127,6 +134,7 @@ extension EffectPrototype: JsonObjectRepresentable {
         case is HarmonizerEffect: return .harmonizer
         case is PhaseVocoderEffect: return .phaseVocoder
         case is DelayEffect: return .delay
+        case is CompressorEffect: return .compressor
         default: assert(false, "\(self)")
         }
     }

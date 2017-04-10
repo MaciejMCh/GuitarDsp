@@ -46,8 +46,8 @@
 }
 
 - (void)setupAudioPlayers {
-    self.tactAudioPlayer = [[RawAudioPlayer alloc] initWithSamplingSettings:self.samplingSettings file:@"snare"];
-    self.quaterTactAudioPlayer = [[RawAudioPlayer alloc] initWithSamplingSettings:self.samplingSettings file:@"hihat"];
+    self.tactAudioPlayer = [[RawAudioPlayer alloc] initWithSamplingSettings:self.samplingSettings data:[NSData dataWithContentsOfFile:[[NSBundle bundleForClass:[LooperEffect class]] pathForResource:@"snare" ofType:@"raw"]]];
+    self.quaterTactAudioPlayer = [[RawAudioPlayer alloc] initWithSamplingSettings:self.samplingSettings data:[NSData dataWithContentsOfFile:[[NSBundle bundleForClass:[LooperEffect class]] pathForResource:@"hihat" ofType:@"raw"]]];
 }
 
 - (void)calculateTimings {

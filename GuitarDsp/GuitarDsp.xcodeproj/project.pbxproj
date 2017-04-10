@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C28B98B81E9BE70700309FA2 /* BitCrusherEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C28B98B61E9BE70700309FA2 /* BitCrusherEffect.h */; };
+		C28B98B91E9BE70700309FA2 /* BitCrusherEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C28B98B71E9BE70700309FA2 /* BitCrusherEffect.m */; };
 		C2DF19DA1E8AA65500106AE8 /* Allpass.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19B61E8AA65500106AE8 /* Allpass.h */; };
 		C2DF19DB1E8AA65500106AE8 /* Allpass.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DF19B71E8AA65500106AE8 /* Allpass.m */; };
 		C2DF19DC1E8AA65500106AE8 /* Board.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19B81E8AA65500106AE8 /* Board.h */; };
@@ -52,6 +54,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C28B98B61E9BE70700309FA2 /* BitCrusherEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitCrusherEffect.h; sourceTree = "<group>"; };
+		C28B98B71E9BE70700309FA2 /* BitCrusherEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitCrusherEffect.m; sourceTree = "<group>"; };
+		C28B98BA1E9BEEE700309FA2 /* mathUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mathUtilities.h; sourceTree = "<group>"; };
 		C28CAED11E8B234E001BADFE /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		C2DF19B61E8AA65500106AE8 /* Allpass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Allpass.h; sourceTree = "<group>"; };
 		C2DF19B71E8AA65500106AE8 /* Allpass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Allpass.m; sourceTree = "<group>"; };
@@ -128,6 +133,8 @@
 				C2DF19D01E8AA65500106AE8 /* ReverbEffect.m */,
 				C2EFDE5A1E8DDA750063F2D7 /* AmpEffect.h */,
 				C2EFDE5B1E8DDA750063F2D7 /* AmpEffect.m */,
+				C28B98B61E9BE70700309FA2 /* BitCrusherEffect.h */,
+				C28B98B71E9BE70700309FA2 /* BitCrusherEffect.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 		C2DF1A021E8AA6B800106AE8 /* Utiities */ = {
 			isa = PBXGroup;
 			children = (
+				C28B98BA1E9BEEE700309FA2 /* mathUtilities.h */,
 				C2DF19CD1E8AA65500106AE8 /* RawAudioPlayer.h */,
 				C2DF19CE1E8AA65500106AE8 /* RawAudioPlayer.m */,
 			);
@@ -257,6 +265,7 @@
 				C2DF19ED1E8AA65500106AE8 /* PhaseVocoderEffect.h in Headers */,
 				C2DF19EF1E8AA65500106AE8 /* Processor.h in Headers */,
 				C2EB06601E8AA44B0010D1B3 /* GuitarDsp.h in Headers */,
+				C28B98B81E9BE70700309FA2 /* BitCrusherEffect.h in Headers */,
 				C2DF19E41E8AA65500106AE8 /* HarmonizerEffect.h in Headers */,
 				C2DF19DA1E8AA65500106AE8 /* Allpass.h in Headers */,
 				C2DF19FA1E8AA65500106AE8 /* Timing.h in Headers */,
@@ -345,6 +354,7 @@
 				C2DF19DF1E8AA65500106AE8 /* Comb.m in Sources */,
 				C2DF19EA1E8AA65500106AE8 /* MetronomeEffect.m in Sources */,
 				C2DF19F41E8AA65500106AE8 /* ReverbEffect.m in Sources */,
+				C28B98B91E9BE70700309FA2 /* BitCrusherEffect.m in Sources */,
 				C2DF19FC1E8AA65500106AE8 /* TimingCalc.m in Sources */,
 				C2DF19EC1E8AA65500106AE8 /* PhaseVocoder.m in Sources */,
 				C2DF19E51E8AA65500106AE8 /* HarmonizerEffect.m in Sources */,

@@ -8,11 +8,6 @@
 
 #import "RawAudioPlayer.h"
 
-struct RawAudio {
-    float *buffer;
-    int length;
-};
-
 @interface RawAudioPlayer ()
 
 @property (nonatomic, assign, readwrite) RawAudioPlayerStatus status;
@@ -24,12 +19,11 @@ struct RawAudio {
 
 @implementation RawAudioPlayer
 
-- (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings file:(NSString *)name {
+- (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings data:(NSData *)data {
     self = [super init];
     
     self.samplingSettings = samplingSettings;
     
-    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle bundleForClass:[RawAudioPlayer class]] pathForResource:name ofType:@"raw"]];
     int dataLength = data.length / sizeof(float);
     int zeroPaddingCount = self.samplingSettings.framesPerPacket - (dataLength % self.samplingSettings.framesPerPacket);
     struct RawAudio rawAudio;

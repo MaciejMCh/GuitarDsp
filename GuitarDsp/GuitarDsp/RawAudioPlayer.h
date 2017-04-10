@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "SamplingSettings.h"
 
+struct RawAudio {
+    float *buffer;
+    int length;
+};
+
 typedef NS_ENUM(NSUInteger, RawAudioPlayerStatus) {
     Ready,
     Playing
@@ -17,8 +22,9 @@ typedef NS_ENUM(NSUInteger, RawAudioPlayerStatus) {
 @interface RawAudioPlayer : NSObject
 
 @property (nonatomic, assign, readonly) RawAudioPlayerStatus status;
+@property (nonatomic, assign, readonly) struct RawAudio rawAudio;
 
-- (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings file:(NSString *)name;
+- (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings data:(NSData *)data;
 - (void)play;
 - (float *)next;
 

@@ -7,3 +7,4 @@
 //
 
 #define roundTo(x, r)   floorf(x / r) * r
+#define dB(p0, p)   log10(p / p0) * 10

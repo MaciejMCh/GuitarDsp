@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func makeDevelopmentEffect() -> Effect {
-        return SynthEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+        return CompressorEffect(samplingSettings: AudioInterface.shared().samplingSettings)
     }
 
 }

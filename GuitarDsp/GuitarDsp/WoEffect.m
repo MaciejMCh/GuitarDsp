@@ -7,6 +7,7 @@
 //
 
 #import "WoEffect.h"
+#import "mathUtilities.h"
 
 @interface WoEffect ()
 
@@ -14,6 +15,7 @@
 @property (nonatomic, assign) float *buffer;
 @property (nonatomic, assign) int bufferLengthInFrames;
 @property (nonatomic, assign) int time;
+@property (nonatomic, strong) NSMutableData *d;
 
 @end
 
@@ -24,19 +26,13 @@
     self.samplingSettings = samplingSettings;
     self.bufferLengthInFrames = 4;
     self.buffer = malloc(self.samplingSettings.packetByteSize * self.bufferLengthInFrames);
+    self.d = [NSMutableData new];
     return self;
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
-    float speed = 0.2;
+    float speed = 0.15 * (1.0 / 128.0);
     float depth = 60.0;
-    
-    float sine = (sin((double)self.time * speed) + 1.0) * 0.5;
-    int shift = (int)(depth * sine);
-    
-    NSLog(@"%d", shift);
-    
-    self.time += 1;
     
     float *invertedInputSample = malloc(self.samplingSettings.packetByteSize);
     for (int i = 0; i < self.samplingSettings.framesPerPacket; i ++) {
@@ -45,13 +41,29 @@
     
     memcpy(self.buffer + self.samplingSettings.framesPerPacket, self.buffer, self.samplingSettings.packetByteSize * (self.bufferLengthInFrames - 1));
     memcpy(self.buffer, invertedInputSample, self.samplingSettings.packetByteSize);
-    float *reinvertedOutputBuffer = malloc(self.samplingSettings.packetByteSize);
+    float *invertedOutputBuffer = malloc(self.samplingSettings.packetByteSize);
     for (int i = 0; i < self.samplingSettings.framesPerPacket; i ++) {
-        reinvertedOutputBuffer[i] = self.buffer[shift + self.samplingSettings.framesPerPacket - 1 - i];
+        float sine = (sin((double)self.time * speed) + 1.0) * 0.5;
+        float shift = depth * sine;
+        
+        float topSamplePower = shift - floor(shift);
+        float bottomSamplePower = 1.0 - topSamplePower;
+        
+        int bottomSampleIndex = i + (int)floor(shift);
+        int topSampleIndex = bottomSampleIndex + 1;
+        
+        invertedOutputBuffer[i] = (self.buffer[bottomSampleIndex] * bottomSamplePower) + (self.buffer[topSampleIndex] * topSamplePower);
+        self.time += 1;
     }
     
-    memcpy(outputBuffer, reinvertedOutputBuffer, self.samplingSettings.packetByteSize);
-    
+    for (int i = 0; i < self.samplingSettings.framesPerPacket; i ++) {
+        outputBuffer[i] = invertedOutputBuffer[self.samplingSettings.framesPerPacket - i - 1];
+    }
+    [self.d appendBytes:outputBuffer length:self.samplingSettings.packetByteSize];
+}
+
+- (void)s {
+    [self.d writeToFile:@"/Users/maciejchmielewski/Desktop/da" atomically:YES];
 }
 
 @end

@@ -28,3 +28,4 @@ FOUNDATION_EXPORT const unsigned char GuitarDspVersionString[];
 #import "RawAudioPlayer.h"
 #import "BitCrusherEffect.h"
 #import "CompressorEffect.h"
+#import "WoEffect.h"

@@ -35,6 +35,7 @@ extension EffectPrototype {
         case delay
         case amp
         case compressor
+        case bitCrusher
     }
 }
 

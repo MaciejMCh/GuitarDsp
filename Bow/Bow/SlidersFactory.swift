@@ -83,6 +83,19 @@ struct SlidersFactory {
         return [fadeLevel, noiseLevel]
     }
     
+    func bitCrusher(bitCrusher: BitCrusherEffect, color: NSColor) -> [SliderViewController] {
+        let samplingReduction = make(color: color, name: "sampling reduction", valueType: .continous(range: 1.0..<64.0, step: 1.0), initialValue: bitCrusher.samplingReduction) { [weak bitCrusher] in
+            bitCrusher?.samplingReduction = $0
+        }
+        let wet = make(color: color, name: "wet", valueType: .continous(range: 0.0..<1.0, step: 0.01), initialValue: bitCrusher.wet) { [weak bitCrusher] in
+            bitCrusher?.wet = $0
+        }
+        let dry = make(color: color, name: "dry", valueType: .continous(range: 0.0..<1.0, step: 0.01), initialValue: bitCrusher.dry) { [weak bitCrusher] in
+            bitCrusher?.dry = $0
+        }
+        return [samplingReduction, wet, dry]
+    }
+    
     private func phaseShift(color: NSColor, initialValue: Float, setter: @escaping (Float) -> Void) -> [SliderViewController] {
         let shiftToSemitones = { (shift: Float) -> Float in
             return log2(shift) * 12.0

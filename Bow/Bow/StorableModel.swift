@@ -55,6 +55,7 @@ extension EffectPrototype: JsonObjectRepresentable {
         case .phaseVocoder: return EffectPrototype.effectsFactory.makePhaseVocoder()
         case .reverb: return EffectPrototype.effectsFactory.makeReverb()
         case .compressor: return EffectPrototype.effectsFactory.makeCompressor()
+        case .bitCrusher: return EffectPrototype.effectsFactory.makeBitCrusher()
         }
     }
     
@@ -80,6 +81,13 @@ extension EffectPrototype: JsonObjectRepresentable {
                 delayEffect.updateEchoesCount(configuration["echoes_count"] as! Int32)
                 delayEffect.fadingFunctionA = try decoder.decode("fa")
                 delayEffect.fadingFunctionB = try decoder.decode("fb")
+            } else if let bitCrusherEffect = effect as? BitCrusherEffect {
+                bitCrusherEffect.samplingReduction = try decoder.decode("sampling_reduction")
+                bitCrusherEffect.dry = try decoder.decode("dry")
+                bitCrusherEffect.wet = try decoder.decode("wet")
+            } else if let compressorEffect = effect as? CompressorEffect {
+                compressorEffect.fadingLevel = try decoder.decode("fading_level")
+                compressorEffect.noiseLevel = try decoder.decode("noise_level")
             } else {
                 assert(false, "\(self)")
             }
@@ -124,6 +132,13 @@ extension EffectPrototype: JsonObjectRepresentable {
                 "noise_level": compressorEffect.noiseLevel
             ]
         }
+        if let bitCrusherEffect = effect as? BitCrusherEffect {
+            return [
+                "sampling_reduction": bitCrusherEffect.samplingReduction,
+                "dry": bitCrusherEffect.dry,
+                "wet": bitCrusherEffect.wet
+            ]
+        }
         assert(false, "\(self)")
     }
     
@@ -135,6 +150,7 @@ extension EffectPrototype: JsonObjectRepresentable {
         case is PhaseVocoderEffect: return .phaseVocoder
         case is DelayEffect: return .delay
         case is CompressorEffect: return .compressor
+        case is BitCrusherEffect: return .bitCrusher
         default: assert(false, "\(self)")
         }
     }

@@ -11,6 +11,8 @@
 		C28B98B91E9BE70700309FA2 /* BitCrusherEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C28B98B71E9BE70700309FA2 /* BitCrusherEffect.m */; };
 		C28B98BD1E9C014800309FA2 /* CompressorEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C28B98BB1E9C014800309FA2 /* CompressorEffect.h */; };
 		C28B98BE1E9C014800309FA2 /* CompressorEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C28B98BC1E9C014800309FA2 /* CompressorEffect.m */; };
+		C28BB1931E9C4DF600C6216D /* WoEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C28BB1911E9C4DF600C6216D /* WoEffect.h */; };
+		C28BB1941E9C4DF600C6216D /* WoEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C28BB1921E9C4DF600C6216D /* WoEffect.m */; };
 		C2DF19DA1E8AA65500106AE8 /* Allpass.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19B61E8AA65500106AE8 /* Allpass.h */; };
 		C2DF19DB1E8AA65500106AE8 /* Allpass.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DF19B71E8AA65500106AE8 /* Allpass.m */; };
 		C2DF19DC1E8AA65500106AE8 /* Board.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19B81E8AA65500106AE8 /* Board.h */; };
@@ -61,6 +63,8 @@
 		C28B98BA1E9BEEE700309FA2 /* mathUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mathUtilities.h; sourceTree = "<group>"; };
 		C28B98BB1E9C014800309FA2 /* CompressorEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompressorEffect.h; sourceTree = "<group>"; };
 		C28B98BC1E9C014800309FA2 /* CompressorEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompressorEffect.m; sourceTree = "<group>"; };
+		C28BB1911E9C4DF600C6216D /* WoEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoEffect.h; sourceTree = "<group>"; };
+		C28BB1921E9C4DF600C6216D /* WoEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoEffect.m; sourceTree = "<group>"; };
 		C28CAED11E8B234E001BADFE /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		C2DF19B61E8AA65500106AE8 /* Allpass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Allpass.h; sourceTree = "<group>"; };
 		C2DF19B71E8AA65500106AE8 /* Allpass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Allpass.m; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 				C28B98B71E9BE70700309FA2 /* BitCrusherEffect.m */,
 				C28B98BB1E9C014800309FA2 /* CompressorEffect.h */,
 				C28B98BC1E9C014800309FA2 /* CompressorEffect.m */,
+				C28BB1911E9C4DF600C6216D /* WoEffect.h */,
+				C28BB1921E9C4DF600C6216D /* WoEffect.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 				C2DF19F31E8AA65500106AE8 /* ReverbEffect.h in Headers */,
 				C2DF19EB1E8AA65500106AE8 /* PhaseVocoder.h in Headers */,
 				C2DF19E91E8AA65500106AE8 /* MetronomeEffect.h in Headers */,
+				C28BB1931E9C4DF600C6216D /* WoEffect.h in Headers */,
 				C2DF19FD1E8AA65500106AE8 /* tuning.h in Headers */,
 				C2DF19DE1E8AA65500106AE8 /* Comb.h in Headers */,
 				C2DF1A0B1E8AAC8500106AE8 /* AudioInterface.h in Headers */,
@@ -360,6 +367,7 @@
 				C2DF19F61E8AA65500106AE8 /* Revmodel.m in Sources */,
 				C2DF19DF1E8AA65500106AE8 /* Comb.m in Sources */,
 				C2DF19EA1E8AA65500106AE8 /* MetronomeEffect.m in Sources */,
+				C28BB1941E9C4DF600C6216D /* WoEffect.m in Sources */,
 				C2DF19F41E8AA65500106AE8 /* ReverbEffect.m in Sources */,
 				C28B98B91E9BE70700309FA2 /* BitCrusherEffect.m in Sources */,
 				C2DF19FC1E8AA65500106AE8 /* TimingCalc.m in Sources */,

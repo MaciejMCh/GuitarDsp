@@ -65,6 +65,9 @@ class EffectViewController: NSViewController {
         if let compressorEffect = effect as? CompressorEffect {
             return SlidersFactory().compressor(compressor: compressorEffect, color: color)
         }
+        if let bitCrusherEffect = effect as? BitCrusherEffect {
+            return SlidersFactory().bitCrusher(bitCrusher: bitCrusherEffect, color: color)
+        }
         assert(false)
         return []
     }

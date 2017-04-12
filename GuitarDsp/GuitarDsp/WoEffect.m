@@ -15,7 +15,6 @@
 @property (nonatomic, assign) float *buffer;
 @property (nonatomic, assign) int bufferLengthInFrames;
 @property (nonatomic, assign) int time;
-@property (nonatomic, strong) NSMutableData *d;
 
 @end
 
@@ -26,7 +25,6 @@
     self.samplingSettings = samplingSettings;
     self.bufferLengthInFrames = 4;
     self.buffer = malloc(self.samplingSettings.packetByteSize * self.bufferLengthInFrames);
-    self.d = [NSMutableData new];
     return self;
 }
 
@@ -59,11 +57,6 @@
     for (int i = 0; i < self.samplingSettings.framesPerPacket; i ++) {
         outputBuffer[i] = invertedOutputBuffer[self.samplingSettings.framesPerPacket - i - 1];
     }
-    [self.d appendBytes:outputBuffer length:self.samplingSettings.packetByteSize];
-}
-
-- (void)s {
-    [self.d writeToFile:@"/Users/maciejchmielewski/Desktop/da" atomically:YES];
 }
 
 @end

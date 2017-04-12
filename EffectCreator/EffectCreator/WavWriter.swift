@@ -13,7 +13,7 @@ import GuitarDsp
 struct WavWriter {
     let samplingSettings: SamplingSettings
     
-    func write() {
+    func write(dry: UnsafePointer<Float>, wet: UnsafePointer<Float>, length: Int) {
         
         
 //        asbd.mChannelsPerFrame = 2;
@@ -61,17 +61,19 @@ struct WavWriter {
         var outputFile: AudioFileID?
         let outputFileURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, "xd.wav" as CFString!, .cfurlposixPathStyle, false)!
         let s = AudioFileCreateWithURL(outputFileURL, kAudioFileWAVEType, &outputFormat, .eraseFile, &outputFile)
-        let duration = 3.0
-        let freq = 261.37
-        let amplitude = 0.3
-        var sizeOfBuffer = UInt32(outputFormat.mSampleRate * duration * Double(MemoryLayout<Float32>.size) * 2)
-        var audioBuffer = Array<Float>(repeating: 0, count: Int(outputFormat.mSampleRate * duration * 2))
-        for i in 0..<1000 {
-            if i % 2 == 0 {
-                audioBuffer[i] = 0.5
-            } else {
-                audioBuffer[i] = -0.5
-            }
+//        let duration = 3.0
+//        let freq = 261.37
+//        let amplitude = 0.3
+        var sizeOfBuffer = UInt32(Int(length) * Int(MemoryLayout<Float32>.size) * 2)
+        var audioBuffer: [Float] = Array(repeating: 0, count: length * 2)
+        for i in 0..<length {
+            audioBuffer[i * 2] = dry.advanced(by: i).pointee
+            audioBuffer[i * 2 + 1] = wet.advanced(by: i).pointee
+//            if i % 2 == 0 {
+//                audioBuffer[i] = 0.5
+//            } else {
+//                audioBuffer[i] = -0.5
+//            }
         }
 //        for i in 0..<Int(outputFormat.mSampleRate * duration) {
 //            audioBuffer[i] = Float(amplitude) * sinf(Float(i) * Float(freq) / Float(outputFormat.mSampleRate) * Float(2.0) * Float(M_PI))

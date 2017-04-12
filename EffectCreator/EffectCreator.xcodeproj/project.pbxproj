@@ -13,6 +13,8 @@
 		C257E5301E9A55DD006B65A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C257E52F1E9A55DD006B65A5 /* ViewController.swift */; };
 		C257E5321E9A55DD006B65A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C257E5311E9A55DD006B65A5 /* Assets.xcassets */; };
 		C257E5351E9A55DD006B65A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C257E5331E9A55DD006B65A5 /* Main.storyboard */; };
+		C2AAD3C41E9E2F5900CBA12A /* RecordingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AAD3C31E9E2F5900CBA12A /* RecordingProcessor.swift */; };
+		C2AAD3CA1E9E4B7D00CBA12A /* WavWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AAD3C91E9E4B7D00CBA12A /* WavWriter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		C257E5311E9A55DD006B65A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C257E5341E9A55DD006B65A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C257E5361E9A55DD006B65A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2AAD3C31E9E2F5900CBA12A /* RecordingProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingProcessor.swift; sourceTree = "<group>"; };
+		C2AAD3C91E9E4B7D00CBA12A /* WavWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavWriter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 				C257E5331E9A55DD006B65A5 /* Main.storyboard */,
 				C257E5361E9A55DD006B65A5 /* Info.plist */,
 				C20EF3B51E9A5B5500BCDA88 /* SynthEffect.swift */,
+				C2AAD3C31E9E2F5900CBA12A /* RecordingProcessor.swift */,
+				C2AAD3C91E9E4B7D00CBA12A /* WavWriter.swift */,
 			);
 			path = EffectCreator;
 			sourceTree = "<group>";
@@ -150,7 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2AAD3C41E9E2F5900CBA12A /* RecordingProcessor.swift in Sources */,
 				C20EF3B61E9A5B5500BCDA88 /* SynthEffect.swift in Sources */,
+				C2AAD3CA1E9E4B7D00CBA12A /* WavWriter.swift in Sources */,
 				C257E5301E9A55DD006B65A5 /* ViewController.swift in Sources */,
 				C257E52E1E9A55DD006B65A5 /* AppDelegate.swift in Sources */,
 			);

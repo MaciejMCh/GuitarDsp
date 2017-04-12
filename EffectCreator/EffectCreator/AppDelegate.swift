@@ -13,6 +13,8 @@ import GuitarDsp
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        WavWriter(samplingSettings: AudioInterface.shared().samplingSettings).write()
+        
         let processor = Processor(samplingSettings: AudioInterface.shared().samplingSettings, tempo: 120)
         let board = Board()
         board.effects = [makeDevelopmentEffect()]

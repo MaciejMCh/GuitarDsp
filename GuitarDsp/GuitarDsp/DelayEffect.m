@@ -86,11 +86,8 @@
 
 - (void)updateEchoesCount:(int)echoesCount {
     __weak typeof(self) wSelf = self;
-    [self setConfiguration:^{
-        [wSelf freeBuffers];
+    [self updateConfiguration:^{
         wSelf.echoesCount = echoesCount;
-        [wSelf calculateTiming];
-        [wSelf setupBuffers];
     }];
 }
 
@@ -100,11 +97,8 @@
     timing.tempo = self.timing.tempo;
     
     __weak typeof(self) wSelf = self;
-    [self setConfiguration:^{
-        [wSelf freeBuffers];
+    [self updateConfiguration:^{
         wSelf.timing = timing;
-        [wSelf calculateTiming];
-        [wSelf setupBuffers];
     }];
 }
 
@@ -114,9 +108,20 @@
     timing.tempo = tempo;
     
     __weak typeof(self) wSelf = self;
-    [self setConfiguration:^{
-        [wSelf freeBuffers];
+    [self updateConfiguration:^{
         wSelf.timing = timing;
+    }];
+}
+
+- (void)updateConfiguration:(void (^)(void))setup {
+    __weak typeof(self) wSelf = self;
+    void (^currentConfiguration)(void) = self.configuration;
+    [self setConfiguration:^{
+        if (currentConfiguration) {
+            currentConfiguration();
+        }
+        [wSelf freeBuffers];
+        setup();
         [wSelf calculateTiming];
         [wSelf setupBuffers];
     }];

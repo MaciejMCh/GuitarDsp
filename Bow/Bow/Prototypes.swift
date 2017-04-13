@@ -43,13 +43,19 @@ extension EffectPrototype {
 struct EffectPrototype {
     static var effectsFactory: EffectsFacory!
     let kind: Kind
-    let configuration: JsonObject
     let effect: Effect
+    var configuration: JsonObject {
+        get {
+            return EffectPrototype.configuration(effect: effect)
+        }
+        set {
+            EffectPrototype.configure(effect: effect, configuration: newValue)
+        }
+    }
     
     init(effect: Effect) {
         self.effect = effect
         kind = EffectPrototype.kind(effect: effect)
-        configuration = EffectPrototype.configuration(effect: effect)
     }
 }
 

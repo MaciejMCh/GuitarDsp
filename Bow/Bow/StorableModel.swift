@@ -35,9 +35,8 @@ extension EffectPrototype: JsonObjectRepresentable {
         let decoder = JSONDecoder(object: jsonObject)
         do {
             kind = try decoder.decode("kind")
-            configuration = jsonObject["configuration"] as! JsonObject
             effect = EffectPrototype.makeEffect(kind: kind)
-            EffectPrototype.configure(effect: effect, configuration: configuration)
+            configuration = jsonObject["configuration"] as! JsonObject
         } catch(_) {
             return nil
         }
@@ -89,6 +88,9 @@ extension EffectPrototype: JsonObjectRepresentable {
             } else if let compressorEffect = effect as? CompressorEffect {
                 compressorEffect.fadingLevel = try decoder.decode("fading_level")
                 compressorEffect.noiseLevel = try decoder.decode("noise_level")
+            } else if let vibeEffect = effect as? VibeEffect {
+                vibeEffect.frequency = try decoder.decode("frequency")
+                vibeEffect.depth = try decoder.decode("depth")
             } else {
                 assert(false, "\(self)")
             }

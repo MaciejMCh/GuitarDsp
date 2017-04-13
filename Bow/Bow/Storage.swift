@@ -61,7 +61,8 @@ struct Storable<T: JsonObjectRepresentable>: BasicStorable {
     
     func update() {
         switch origin {
-        case .selfMade(let identity): Storage(typeName: T.typeName).save(json: jsonRepresentable.json(), identity: identity)
+        case .selfMade(let identity):
+            Storage(typeName: T.typeName).save(json: jsonRepresentable.json(), identity: identity)
         case .child(let parent): parent.update()
         case .orphan: break
         }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C22F890E1E9FF1F8004D0BCB /* VibeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F890C1E9FF1F8004D0BCB /* VibeEffect.m */; };
+		C22F890F1E9FF1F8004D0BCB /* VibeEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C22F890D1E9FF1F8004D0BCB /* VibeEffect.h */; };
 		C28B98B81E9BE70700309FA2 /* BitCrusherEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C28B98B61E9BE70700309FA2 /* BitCrusherEffect.h */; };
 		C28B98B91E9BE70700309FA2 /* BitCrusherEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C28B98B71E9BE70700309FA2 /* BitCrusherEffect.m */; };
 		C28B98BD1E9C014800309FA2 /* CompressorEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C28B98BB1E9C014800309FA2 /* CompressorEffect.h */; };
@@ -56,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C22F890C1E9FF1F8004D0BCB /* VibeEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibeEffect.m; sourceTree = "<group>"; };
+		C22F890D1E9FF1F8004D0BCB /* VibeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibeEffect.h; sourceTree = "<group>"; };
 		C28B98B61E9BE70700309FA2 /* BitCrusherEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitCrusherEffect.h; sourceTree = "<group>"; };
 		C28B98B71E9BE70700309FA2 /* BitCrusherEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitCrusherEffect.m; sourceTree = "<group>"; };
 		C28B98BA1E9BEEE700309FA2 /* mathUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mathUtilities.h; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 		C2DF19FE1E8AA65900106AE8 /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				C22F890C1E9FF1F8004D0BCB /* VibeEffect.m */,
+				C22F890D1E9FF1F8004D0BCB /* VibeEffect.h */,
 				C2DF19BC1E8AA65500106AE8 /* DelayEffect.h */,
 				C2DF19BD1E8AA65500106AE8 /* DelayEffect.m */,
 				C2DF19C01E8AA65500106AE8 /* HarmonizerEffect.h */,
@@ -256,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2DF19E71E8AA65500106AE8 /* LooperEffect.h in Headers */,
+				C22F890F1E9FF1F8004D0BCB /* VibeEffect.h in Headers */,
 				C2DF19F11E8AA65500106AE8 /* RawAudioPlayer.h in Headers */,
 				C2DF19F81E8AA65500106AE8 /* SamplingSettings.h in Headers */,
 				C2DF19DC1E8AA65500106AE8 /* Board.h in Headers */,
@@ -361,6 +368,7 @@
 				C2DF19DF1E8AA65500106AE8 /* Comb.m in Sources */,
 				C2DF19EA1E8AA65500106AE8 /* MetronomeEffect.m in Sources */,
 				C2DF19F41E8AA65500106AE8 /* ReverbEffect.m in Sources */,
+				C22F890E1E9FF1F8004D0BCB /* VibeEffect.m in Sources */,
 				C28B98B91E9BE70700309FA2 /* BitCrusherEffect.m in Sources */,
 				C2DF19FC1E8AA65500106AE8 /* TimingCalc.m in Sources */,
 				C2DF19EC1E8AA65500106AE8 /* PhaseVocoder.m in Sources */,

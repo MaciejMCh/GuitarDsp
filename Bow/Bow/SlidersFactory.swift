@@ -96,6 +96,16 @@ struct SlidersFactory {
         return [samplingReduction, wet, dry]
     }
     
+    func vibe(vibeEffect: VibeEffect, color: NSColor) -> [SliderViewController] {
+        let frequency = make(color: color, name: "frequency", valueType: .exponential(range: -5..<100, exponent: 1.05), initialValue: vibeEffect.frequency) { [weak vibeEffect] in
+            vibeEffect?.frequency = $0
+        }
+        let depth = make(color: color, name: "depth", valueType: .continous(range: 1.0..<300.0, step: 1.0), initialValue: vibeEffect.depth) { [weak vibeEffect] in
+            vibeEffect?.depth = $0
+        }
+        return [frequency, depth]
+    }
+    
     private func phaseShift(color: NSColor, initialValue: Float, setter: @escaping (Float) -> Void) -> [SliderViewController] {
         let shiftToSemitones = { (shift: Float) -> Float in
             return log2(shift) * 12.0

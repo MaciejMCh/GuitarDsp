@@ -36,6 +36,7 @@ extension EffectPrototype {
         case amp
         case compressor
         case bitCrusher
+        case vibe
     }
 }
 

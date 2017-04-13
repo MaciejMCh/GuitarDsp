@@ -38,7 +38,7 @@
     self.banksCount = banksCount;
     self.tempo = tempo;
     self.tactsCount = tactsCount;
-    self.playMetronome = YES;
+    self.playMetronome = NO;
     [self setupAudioPlayers];
     [self calculateTimings];
     [self setupBuffers];

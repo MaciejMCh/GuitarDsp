@@ -110,6 +110,7 @@ extension SliderViewController {
 extension SliderViewController {
     enum ValueType {
         case continous(range: Range<Float>, step: Float)
+        case exponential(range: Range<Int>, exponent: Float)
         case discrete(values: [Float])
     }
 }
@@ -119,6 +120,7 @@ extension SliderViewController.ValueType {
         switch self {
         case .continous(let range, let step): return Int((range.upperBound - range.lowerBound) / step) + 1
         case .discrete(let values): return values.count
+        case .exponential(let range, _): return range.count
         }
     }
     
@@ -134,6 +136,11 @@ extension SliderViewController.ValueType {
                 i += 1
             }
             return values.count
+        case .exponential(_, let exponent):
+            let logC: (Float, Float) -> Float = {
+                return log($0) / log($1)
+            }
+            return Int(floor(logC(value, exponent)))
         }
     }
     
@@ -147,6 +154,7 @@ extension SliderViewController.ValueType {
         switch self {
         case .continous(let range, let step): return range.lowerBound + (Float(circleIndex) * step)
         case .discrete(let values): return values[circleIndex]
+        case .exponential(_, let exponent): return pow(exponent, Float(index))
         }
     }
 }

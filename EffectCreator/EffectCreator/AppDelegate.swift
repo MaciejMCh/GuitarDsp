@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let samplingSettings = AudioInterface.shared().samplingSettings
-        let processor = RecordingProcessor(samplingSettings: samplingSettings, tempo: 120)
+        let processor = Processor(samplingSettings: samplingSettings, tempo: 120)
         let board = Board()
         board.effects = [makeDevelopmentEffect()]
         processor.activeBoard = board
@@ -54,11 +54,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate {
     func makeDevelopmentEffect() -> Effect {
-        return WoEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+        return VibeEffect(samplingSettings: AudioInterface.shared().samplingSettings)
     }
     
     var signal: SignalGenerator {
-        return .sine(amplitude: 0.1, frequency: 0.1)
+        return .input
+//        return .sine(amplitude: 0.1, frequency: 0.1)
 //        return .ramp(slope: 0.000001)
     }
 }

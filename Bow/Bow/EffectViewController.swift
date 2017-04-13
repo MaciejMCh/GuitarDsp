@@ -68,6 +68,9 @@ class EffectViewController: NSViewController {
         if let bitCrusherEffect = effect as? BitCrusherEffect {
             return SlidersFactory().bitCrusher(bitCrusher: bitCrusherEffect, color: color)
         }
+        if let vibeEffect = effect as? VibeEffect {
+            return SlidersFactory().vibe(vibeEffect: vibeEffect, color: color)
+        }
         assert(false)
         return []
     }

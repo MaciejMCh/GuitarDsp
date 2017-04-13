@@ -60,7 +60,7 @@
         }
     }];
     
-//    [[EZOutput sharedOutput] startPlayback];
+    [[EZOutput sharedOutput] startPlayback];
 }
 
 - (void)useProcessor:(Processor *)processor {

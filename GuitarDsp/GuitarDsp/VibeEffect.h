@@ -10,7 +10,10 @@
 #import "Effect.h"
 #import "SamplingSettings.h"
 
-@interface WoEffect : NSObject <Effect>
+@interface VibeEffect : NSObject <Effect>
+
+@property (nonatomic, assign) float frequency;
+@property (nonatomic, assign) float depth;
 
 - (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings;
 

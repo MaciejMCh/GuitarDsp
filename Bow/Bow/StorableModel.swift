@@ -56,6 +56,7 @@ extension EffectPrototype: JsonObjectRepresentable {
         case .reverb: return EffectPrototype.effectsFactory.makeReverb()
         case .compressor: return EffectPrototype.effectsFactory.makeCompressor()
         case .bitCrusher: return EffectPrototype.effectsFactory.makeBitCrusher()
+        case .vibe: return EffectPrototype.effectsFactory.makeVibe()
         }
     }
     
@@ -139,6 +140,12 @@ extension EffectPrototype: JsonObjectRepresentable {
                 "wet": bitCrusherEffect.wet
             ]
         }
+        if let vibeEffect = effect as? VibeEffect {
+            return [
+                "frequency": vibeEffect.frequency,
+                "depth": vibeEffect.depth
+            ]
+        }
         assert(false, "\(self)")
     }
     
@@ -151,6 +158,7 @@ extension EffectPrototype: JsonObjectRepresentable {
         case is DelayEffect: return .delay
         case is CompressorEffect: return .compressor
         case is BitCrusherEffect: return .bitCrusher
+        case is VibeEffect: return .vibe
         default: assert(false, "\(self)")
         }
     }

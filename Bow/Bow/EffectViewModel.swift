@@ -29,6 +29,7 @@ struct EffectViewModel {
         case .amp: return "amp"
         case .compressor: return "compressor"
         case .bitCrusher: return "bit crusher"
+        case .vibe: return "vibe"
         }
     }
     
@@ -41,6 +42,7 @@ struct EffectViewModel {
         case .amp: return NSColor(calibratedRed: 226 / 255.0, green: 74 / 255.0, blue: 74 / 255.0, alpha: 1.0)
         case .compressor: return NSColor("4AE24C")!
         case .bitCrusher: return NSColor("BFE24A")!
+        case .vibe: return NSColor("E24ACE")!
         }
     }
 }

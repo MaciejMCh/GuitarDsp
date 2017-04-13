@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XRX-b5-lPD">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <scenes>
+        <!--Plot View Controller-->
+        <scene sceneID="7Ee-rT-wLV">
+            <objects>
+                <viewController id="XRX-b5-lPD" customClass="PlotViewController" customModule="EffectCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="JBs-6N-fWs">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fillEqually" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7A-Ou-hbt">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="h7A-Ou-hbt" firstAttribute="top" secondItem="JBs-6N-fWs" secondAttribute="top" id="36j-CI-67g"/>
+                            <constraint firstAttribute="trailing" secondItem="h7A-Ou-hbt" secondAttribute="trailing" id="Nea-jR-RSa"/>
+                            <constraint firstAttribute="bottom" secondItem="h7A-Ou-hbt" secondAttribute="bottom" id="cjy-SB-kNp"/>
+                            <constraint firstItem="h7A-Ou-hbt" firstAttribute="leading" secondItem="JBs-6N-fWs" secondAttribute="leading" id="fpY-53-cF0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="h7A-Ou-hbt" id="EHU-Qb-hSF"/>
+                    </connections>
+                </viewController>
+                <customObject id="b0m-Sl-hCa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7" y="96"/>
+        </scene>
+    </scenes>
+</document>

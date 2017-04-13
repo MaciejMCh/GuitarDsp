@@ -14,6 +14,10 @@
 		C257E5321E9A55DD006B65A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C257E5311E9A55DD006B65A5 /* Assets.xcassets */; };
 		C257E5351E9A55DD006B65A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C257E5331E9A55DD006B65A5 /* Main.storyboard */; };
 		C262F4611E9E8AD700D2A8EF /* SignalGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262F4601E9E8AD700D2A8EF /* SignalGenerator.swift */; };
+		C262F4631E9E995C00D2A8EF /* Plot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C262F4621E9E995C00D2A8EF /* Plot.storyboard */; };
+		C262F4651E9E99DD00D2A8EF /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262F4641E9E99DD00D2A8EF /* PlotView.swift */; };
+		C262F4671E9E9AED00D2A8EF /* PlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262F4661E9E9AED00D2A8EF /* PlotViewController.swift */; };
+		C262F46E1E9E9F2500D2A8EF /* WoEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C262F46C1E9E9F2500D2A8EF /* WoEffect.m */; };
 		C2AAD3C41E9E2F5900CBA12A /* RecordingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AAD3C31E9E2F5900CBA12A /* RecordingProcessor.swift */; };
 		C2AAD3CA1E9E4B7D00CBA12A /* WavWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AAD3C91E9E4B7D00CBA12A /* WavWriter.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +33,12 @@
 		C257E5341E9A55DD006B65A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C257E5361E9A55DD006B65A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C262F4601E9E8AD700D2A8EF /* SignalGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalGenerator.swift; sourceTree = "<group>"; };
+		C262F4621E9E995C00D2A8EF /* Plot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plot.storyboard; sourceTree = "<group>"; };
+		C262F4641E9E99DD00D2A8EF /* PlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
+		C262F4661E9E9AED00D2A8EF /* PlotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotViewController.swift; sourceTree = "<group>"; };
+		C262F4681E9E9EFB00D2A8EF /* EffectCreator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EffectCreator-Bridging-Header.h"; sourceTree = "<group>"; };
+		C262F46C1E9E9F2500D2A8EF /* WoEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoEffect.m; sourceTree = "<group>"; };
+		C262F46D1E9E9F2500D2A8EF /* WoEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoEffect.h; sourceTree = "<group>"; };
 		C2AAD3C31E9E2F5900CBA12A /* RecordingProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingProcessor.swift; sourceTree = "<group>"; };
 		C2AAD3C91E9E4B7D00CBA12A /* WavWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavWriter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +83,8 @@
 		C257E52C1E9A55DD006B65A5 /* EffectCreator */ = {
 			isa = PBXGroup;
 			children = (
+				C262F46C1E9E9F2500D2A8EF /* WoEffect.m */,
+				C262F46D1E9E9F2500D2A8EF /* WoEffect.h */,
 				C20EF3B71E9A667500BCDA88 /* zz.raw */,
 				C257E52D1E9A55DD006B65A5 /* AppDelegate.swift */,
 				C257E52F1E9A55DD006B65A5 /* ViewController.swift */,
@@ -83,6 +95,10 @@
 				C2AAD3C31E9E2F5900CBA12A /* RecordingProcessor.swift */,
 				C2AAD3C91E9E4B7D00CBA12A /* WavWriter.swift */,
 				C262F4601E9E8AD700D2A8EF /* SignalGenerator.swift */,
+				C262F4621E9E995C00D2A8EF /* Plot.storyboard */,
+				C262F4641E9E99DD00D2A8EF /* PlotView.swift */,
+				C262F4661E9E9AED00D2A8EF /* PlotViewController.swift */,
+				C262F4681E9E9EFB00D2A8EF /* EffectCreator-Bridging-Header.h */,
 			);
 			path = EffectCreator;
 			sourceTree = "<group>";
@@ -120,6 +136,7 @@
 					C257E5291E9A55DD006B65A5 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 76RXF4V6NR;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -149,6 +166,7 @@
 			files = (
 				C257E5321E9A55DD006B65A5 /* Assets.xcassets in Resources */,
 				C257E5351E9A55DD006B65A5 /* Main.storyboard in Resources */,
+				C262F4631E9E995C00D2A8EF /* Plot.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +178,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2AAD3C41E9E2F5900CBA12A /* RecordingProcessor.swift in Sources */,
+				C262F4671E9E9AED00D2A8EF /* PlotViewController.swift in Sources */,
 				C20EF3B61E9A5B5500BCDA88 /* SynthEffect.swift in Sources */,
+				C262F4651E9E99DD00D2A8EF /* PlotView.swift in Sources */,
+				C262F46E1E9E9F2500D2A8EF /* WoEffect.m in Sources */,
 				C2AAD3CA1E9E4B7D00CBA12A /* WavWriter.swift in Sources */,
 				C262F4611E9E8AD700D2A8EF /* SignalGenerator.swift in Sources */,
 				C257E5301E9A55DD006B65A5 /* ViewController.swift in Sources */,
@@ -278,12 +299,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 76RXF4V6NR;
 				INFOPLIST_FILE = EffectCreator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mch.EffectCreator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EffectCreator/EffectCreator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -292,12 +316,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 76RXF4V6NR;
 				INFOPLIST_FILE = EffectCreator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mch.EffectCreator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EffectCreator/EffectCreator-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

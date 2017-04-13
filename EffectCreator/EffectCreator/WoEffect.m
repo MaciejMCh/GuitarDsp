@@ -8,6 +8,7 @@
 
 #import "WoEffect.h"
 #import "mathUtilities.h"
+#import "EffectCreator-Swift.h"
 
 @interface WoEffect ()
 
@@ -25,6 +26,7 @@
     self.samplingSettings = samplingSettings;
     self.bufferLengthInFrames = 4;
     self.buffer = malloc(self.samplingSettings.packetByteSize * self.bufferLengthInFrames);
+    bzero(self.buffer, self.samplingSettings.packetByteSize * self.bufferLengthInFrames);
     return self;
 }
 
@@ -40,6 +42,7 @@
     memcpy(self.buffer + self.samplingSettings.framesPerPacket, self.buffer, self.samplingSettings.packetByteSize * (self.bufferLengthInFrames - 1));
     memcpy(self.buffer, invertedInputSample, self.samplingSettings.packetByteSize);
     float *invertedOutputBuffer = malloc(self.samplingSettings.packetByteSize);
+    
     for (int i = 0; i < self.samplingSettings.framesPerPacket; i ++) {
         float sine = (sin((double)self.time * speed) + 1.0) * 0.5;
         float shift = depth * sine;
@@ -52,10 +55,15 @@
         
         invertedOutputBuffer[i] = (self.buffer[bottomSampleIndex] * bottomSamplePower) + (self.buffer[topSampleIndex] * topSamplePower);
         self.time += 1;
+        
+        [PlotViewController recordWithSerie:@"input" value:inputSample.amp[i]];
+        [PlotViewController recordWithSerie:@"sine" value:sine];
+        [PlotViewController recordWithSerie:@"i" value:i];
     }
     
     for (int i = 0; i < self.samplingSettings.framesPerPacket; i ++) {
         outputBuffer[i] = invertedOutputBuffer[self.samplingSettings.framesPerPacket - i - 1];
+        [PlotViewController recordWithSerie:@"output" value:outputBuffer[i]];
     }
 }
 

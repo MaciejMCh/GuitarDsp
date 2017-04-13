@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     packet.removeAll()
                 }
             }
-            NSApplication.shared().terminate(self)
+            PlotViewController.me.draw()
         case .ramp(let slope):
             var packet: [Float] = []
             for i in 0..<100000 {
@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     packet.removeAll()
                 }
             }
-            NSApplication.shared().terminate(self)
+            PlotViewController.me.draw()
         }
     }
 

@@ -16,9 +16,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let samplingSettings = AudioInterface.shared().samplingSettings
         let processor = Processor(samplingSettings: samplingSettings, tempo: 120)
         let board = Board()
-        board.effects = [makeDevelopmentEffect()]
+        let developmentEffect = makeDevelopmentEffect()
+        board.effects = [developmentEffect]
         processor.activeBoard = board
-        
         
         switch signal {
         case .input: AudioInterface.shared().use(processor)
@@ -32,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     packet.removeAll()
                 }
             }
+//            PlotViewController.passData(dict: developmentEffect.data)
             PlotViewController.me.draw()
         case .ramp(let slope):
             var packet: [Float] = []
@@ -43,6 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     packet.removeAll()
                 }
             }
+//            PlotViewController.passData(dict: developmentEffect.data)
             PlotViewController.me.draw()
         }
     }
@@ -53,8 +55,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 extension AppDelegate {
-    func makeDevelopmentEffect() -> Effect {
-        return VibeEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+    func makeDevelopmentEffect() -> FlangerEffect {
+        return FlangerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
     }
     
     var signal: SignalGenerator {

@@ -12,12 +12,24 @@ import Cocoa
 class PlotViewController: NSViewController {
     static var me: PlotViewController!
     private static var data: [String: [Float]] = [:]
+    
     static func record(serie: String, value: Float) {
         if !data.keys.contains(serie) {
             data[serie] = []
         }
         data[serie]?.append(value)
     }
+    
+    static func passData(dict: NSMutableDictionary) {
+        guard let jsonObject = dict as? [String: [NSNumber]] else {
+            assert(false)
+            return
+        }
+        for key in jsonObject.keys {
+            data[key] = jsonObject[key]!.map{$0.floatValue}
+        }
+    }
+    
     
     @IBOutlet weak var stackView: NSStackView!
     

@@ -11,6 +11,8 @@
 
 @interface BitCrusherEffect : NSObject <Effect>
 
+@property (nonatomic, strong) NSMutableDictionary<NSString *, NSMutableArray<NSNumber *> *> *data;
+
 @property (nonatomic, assign) float samplingReduction;
 @property (nonatomic, assign) float wet;
 @property (nonatomic, assign) float dry;

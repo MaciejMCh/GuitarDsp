@@ -31,7 +31,7 @@
     float *wet = malloc(self.samplingSettings.packetByteSize);
     for (int i = 0; i < self.samplingSettings.framesPerPacket; i ++) {
         int index = roundTo(i, self.samplingReduction);
-        wet[i] = roundTo(inputSample.amp[i], 0.03);
+        wet[i] = inputSample.amp[index];
     }
     
     for (int i = 0; i < self.samplingSettings.framesPerPacket; i ++) {

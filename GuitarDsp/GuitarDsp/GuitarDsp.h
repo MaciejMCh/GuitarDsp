@@ -30,3 +30,4 @@ FOUNDATION_EXPORT const unsigned char GuitarDspVersionString[];
 #import "CompressorEffect.h"
 #import "VibeEffect.h"
 #import "FlangerEffect.h"
+#import "PhaserEffect.h"

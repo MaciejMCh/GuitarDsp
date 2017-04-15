@@ -32,8 +32,8 @@
     self.delayLengthInFrames = 10000;
     self.buffer = malloc(sizeof(float) * self.delayLengthInFrames);
     bzero(self.buffer, sizeof(float) * self.delayLengthInFrames);
-    self.frequency = 3.0;
-    self.depth = 220.0;
+    self.frequency = 1.0;
+    self.depth = 320.0;
     self.offset = self.depth / 2.0;
     return self;
 }

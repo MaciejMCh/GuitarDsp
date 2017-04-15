@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2191B951EA23A8D00DF9451 /* PhaserEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C2191B931EA23A8D00DF9451 /* PhaserEffect.h */; };
+		C2191B961EA23A8D00DF9451 /* PhaserEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C2191B941EA23A8D00DF9451 /* PhaserEffect.m */; };
 		C22F890E1E9FF1F8004D0BCB /* VibeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F890C1E9FF1F8004D0BCB /* VibeEffect.m */; };
 		C22F890F1E9FF1F8004D0BCB /* VibeEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C22F890D1E9FF1F8004D0BCB /* VibeEffect.h */; };
 		C28B98B81E9BE70700309FA2 /* BitCrusherEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C28B98B61E9BE70700309FA2 /* BitCrusherEffect.h */; };
@@ -60,6 +62,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C2191B931EA23A8D00DF9451 /* PhaserEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhaserEffect.h; sourceTree = "<group>"; };
+		C2191B941EA23A8D00DF9451 /* PhaserEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhaserEffect.m; sourceTree = "<group>"; };
 		C22F890C1E9FF1F8004D0BCB /* VibeEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibeEffect.m; sourceTree = "<group>"; };
 		C22F890D1E9FF1F8004D0BCB /* VibeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibeEffect.h; sourceTree = "<group>"; };
 		C28B98B61E9BE70700309FA2 /* BitCrusherEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitCrusherEffect.h; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				C28B98BC1E9C014800309FA2 /* CompressorEffect.m */,
 				C28CB14A1EA121AA00E34C7A /* FlangerEffect.h */,
 				C28CB14B1EA121AA00E34C7A /* FlangerEffect.m */,
+				C2191B931EA23A8D00DF9451 /* PhaserEffect.h */,
+				C2191B941EA23A8D00DF9451 /* PhaserEffect.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -271,6 +277,7 @@
 				C22F890F1E9FF1F8004D0BCB /* VibeEffect.h in Headers */,
 				C2DF19F11E8AA65500106AE8 /* RawAudioPlayer.h in Headers */,
 				C2DF19F81E8AA65500106AE8 /* SamplingSettings.h in Headers */,
+				C2191B951EA23A8D00DF9451 /* PhaserEffect.h in Headers */,
 				C2DF19DC1E8AA65500106AE8 /* Board.h in Headers */,
 				C2DF19F31E8AA65500106AE8 /* ReverbEffect.h in Headers */,
 				C2DF19EB1E8AA65500106AE8 /* PhaseVocoder.h in Headers */,
@@ -376,6 +383,7 @@
 				C2DF19EA1E8AA65500106AE8 /* MetronomeEffect.m in Sources */,
 				C2DF19F41E8AA65500106AE8 /* ReverbEffect.m in Sources */,
 				C22F890E1E9FF1F8004D0BCB /* VibeEffect.m in Sources */,
+				C2191B961EA23A8D00DF9451 /* PhaserEffect.m in Sources */,
 				C28B98B91E9BE70700309FA2 /* BitCrusherEffect.m in Sources */,
 				C2DF19FC1E8AA65500106AE8 /* TimingCalc.m in Sources */,
 				C2DF19EC1E8AA65500106AE8 /* PhaseVocoder.m in Sources */,

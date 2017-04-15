@@ -55,8 +55,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 extension AppDelegate {
-    func makeDevelopmentEffect() -> FlangerEffect {
-        return FlangerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+    func makeDevelopmentEffect() -> PhaserEffect {
+        return PhaserEffect(samplingSettings: AudioInterface.shared().samplingSettings)
     }
     
     var signal: SignalGenerator {

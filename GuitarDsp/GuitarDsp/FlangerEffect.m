@@ -32,18 +32,19 @@
     self.delayLengthInFrames = 10000;
     self.buffer = malloc(sizeof(float) * self.delayLengthInFrames);
     bzero(self.buffer, sizeof(float) * self.delayLengthInFrames);
-    self.frequency = 1.0;
-    self.depth = 120.0;
-    self.offset = 00.0;
+    self.frequency = 3.0;
+    self.depth = 220.0;
+    self.offset = self.depth / 2.0;
     return self;
 }
 
 - (float)processFrame:(float)frame {
+    
     memcpy(self.buffer + 1, self.buffer, sizeof(float) * (self.delayLengthInFrames - 1));
     memcpy(self.buffer, &frame, sizeof(float));
     
     float sine = (sin((double)self.time * self.speed) + 1.0) * 0.5;
-    float shift = self.depth * sine + self.offset;
+    float shift = self.depth * sine;
     float topSamplePower = shift - floor(shift);
     float bottomSamplePower = 1.0 - topSamplePower;
     
@@ -52,9 +53,10 @@
     
     self.time += 1;
     
-    float output = (self.buffer[bottomSampleIndex] * bottomSamplePower) + (self.buffer[topSampleIndex] * topSamplePower);
+    float oscilating = (self.buffer[bottomSampleIndex] * bottomSamplePower) + (self.buffer[topSampleIndex] * topSamplePower);
+    float dry = self.buffer[(int)self.offset];
     
-    return output + frame;
+    return oscilating + dry;
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {

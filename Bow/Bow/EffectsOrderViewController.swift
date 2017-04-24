@@ -104,9 +104,9 @@ class EffectIdentityView: NSView {
     }
     
     func updateSubviews() {
-        nameLabel.stringValue = EffectViewModel(effect: effect).name()
+        nameLabel.stringValue = EffectViewModel(effect: effect.instance).name()
         wantsLayer = true
-        layer?.backgroundColor = EffectViewModel(effect: effect).color().withAlphaComponent(0.2).cgColor
+        layer?.backgroundColor = EffectViewModel(effect: effect.instance).color().withAlphaComponent(0.2).cgColor
     }
 }
 

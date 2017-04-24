@@ -22,40 +22,121 @@ struct BoardPrototype {
     
     func makeBoard() -> Board {
         let board = Board()
-        board.effects = effectPrototypes.map{$0.effect}
+        board.effects = effectPrototypes.map{$0.instance.effect}
         return board
     }
 }
 
 extension EffectPrototype {
-    enum Kind: String {
-        case reverb
-        case harmonizer
-        case phaseVocoder
-        case delay
-        case amp
-        case compressor
-        case bitCrusher
-        case vibe
+    enum Instance {
+        case reverb(_: ReverbEffect)
+        case harmonizer(_: HarmonizerEffect)
+        case phaseVocoder(_: PhaseVocoderEffect)
+        case delay(_: DelayEffect)
+        case amp(_: AmpEffect)
+        case compressor(_: CompressorEffect)
+        case bitCrusher(_: BitCrusherEffect)
+        case vibe(_: VibeEffect)
+        case flanger(_: FlangerEffect)
+        case phaser(_: PhaserEffect)
+    }
+}
+
+extension EffectPrototype.Instance {
+    typealias Kind = String
+    
+    // Kind mapping
+    init!(kind: Kind, effectFactory: EffectsFacory) {
+        switch kind {
+        case "amp": self = .amp(effectFactory.makeAmp())
+        case "bit_crusher": self = .bitCrusher(effectFactory.makeBitCrusher())
+        case "compressor": self = .compressor(effectFactory.makeCompressor())
+        case "delay": self = .delay(effectFactory.makeDelay())
+        case "harmonizer": self = .harmonizer(effectFactory.makeHarmonizer())
+        case "phase_vocoder": self = .phaseVocoder(effectFactory.makePhaseVocoder())
+        case "reverb": self = .reverb(effectFactory.makeReverb())
+        case "vibe": self = .vibe(effectFactory.makeVibe())
+        case "flanger": self = .flanger(effectFactory.makeFlanger())
+        default:
+            assert(false)
+            return nil
+        }
+    }
+    
+    var kind: Kind {
+        switch self {
+        case .amp: return "amp"
+        case .bitCrusher: return "bit_crusher"
+        case .compressor: return "compressor"
+        case .delay: return "delay"
+        case .harmonizer: return "harmonizer"
+        case .phaseVocoder: return "phase_vocoder"
+        case .reverb: return "reverb"
+        case .vibe: return "vibe"
+        case .flanger: return "flanger"
+        case .phaser: return "phaser"
+        }
+    }
+    
+    // Effect mapping
+    init!(effect: Effect) {
+        if let ampEffect = effect as? AmpEffect {
+            self = .amp(ampEffect)
+        } else if let bitCrusherEffect = effect as? BitCrusherEffect {
+            self = .bitCrusher(bitCrusherEffect)
+        } else if let compressorEffect = effect as? CompressorEffect {
+            self = .compressor(compressorEffect)
+        } else if let delayEffect = effect as? DelayEffect {
+            self = .delay(delayEffect)
+        } else if let harmonizerEffect = effect as? HarmonizerEffect {
+            self = .harmonizer(harmonizerEffect)
+        } else if let phaseVocoderEffect = effect as? PhaseVocoderEffect {
+            self = .phaseVocoder(phaseVocoderEffect)
+        } else if let reverbEffect = effect as? ReverbEffect {
+            self = .reverb(reverbEffect)
+        } else if let vibeEffect = effect as? VibeEffect {
+            self = .vibe(vibeEffect)
+        } else if let flangerEffect = effect as? FlangerEffect {
+            self = .flanger(flangerEffect)
+        } else if let phaserEffect = effect as? PhaserEffect {
+            self = .phaser(phaserEffect)
+        } else {
+            assert(false)
+            return nil
+        }
+    }
+    
+    var effect: Effect {
+        switch self {
+        case .amp(let effect): return effect
+        case .bitCrusher(let effect): return effect
+        case .compressor(let effect): return effect
+        case .delay(let effect): return effect
+        case .harmonizer(let effect): return effect
+        case .phaseVocoder(let effect): return effect
+        case .reverb(let effect): return effect
+        case .vibe(let effect): return effect
+        case .flanger(let effect): return effect
+        case .phaser(let effect): return effect
+        }
     }
 }
 
 struct EffectPrototype {
     static var effectsFactory: EffectsFacory!
-    let kind: Kind
-    let effect: Effect
+    let instance: Instance
+    
     var configuration: JsonObject {
         get {
-            return EffectPrototype.configuration(effect: effect)
+            return EffectPrototype.configuration(effect: instance)
         }
         set {
-            EffectPrototype.configure(effect: effect, configuration: newValue)
+            EffectPrototype.configure(effect: instance, configuration: newValue)
         }
     }
     
     init(effect: Effect) {
-        self.effect = effect
-        kind = EffectPrototype.kind(effect: effect)
+        instance = Instance(effect: effect)
     }
 }
 

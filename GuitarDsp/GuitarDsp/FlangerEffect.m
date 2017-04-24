@@ -15,7 +15,9 @@
 @property (nonatomic, assign) float *buffer;
 @property (nonatomic, assign) int delayLengthInFrames;
 @property (nonatomic, assign) int time;
+@property (nonatomic, assign) float offset;
 @property (nonatomic, assign) float speed;
+@property (nonatomic, assign) float width;
 
 @end
 
@@ -26,15 +28,20 @@
     self.speed = frequency / self.samplingSettings.frequency;
 }
 
+- (void)setWidth:(float)width {
+    _width = width;
+    self.offset = self.width / 2.0;
+}
+
 - (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings {
     self = [super init];
     self.samplingSettings = samplingSettings;
     self.delayLengthInFrames = 10000;
     self.buffer = malloc(sizeof(float) * self.delayLengthInFrames);
     bzero(self.buffer, sizeof(float) * self.delayLengthInFrames);
+    self.depth = 1.0;
     self.frequency = 1.0;
-    self.depth = 320.0;
-    self.offset = self.depth / 2.0;
+    self.width = 320.0;
     return self;
 }
 
@@ -44,7 +51,7 @@
     memcpy(self.buffer, &frame, sizeof(float));
     
     float sine = (sin((double)self.time * self.speed) + 1.0) * 0.5;
-    float shift = self.depth * sine;
+    float shift = self.width * sine;
     float topSamplePower = shift - floor(shift);
     float bottomSamplePower = 1.0 - topSamplePower;
     
@@ -56,7 +63,7 @@
     float oscilating = (self.buffer[bottomSampleIndex] * bottomSamplePower) + (self.buffer[topSampleIndex] * topSamplePower);
     float dry = self.buffer[(int)self.offset];
     
-    return oscilating + dry;
+    return dry + (oscilating * self.depth);
 }
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {

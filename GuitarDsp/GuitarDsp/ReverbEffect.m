@@ -17,11 +17,9 @@
 @property (nonatomic, assign) int ampsBufferLengthInPackets;
 @property (nonatomic, assign) float * ampsBuffer;
 @property (nonatomic, assign) unsigned long int packetsTime;
-@property (nonatomic, strong) NSMutableString *stringxD;
 @property (nonatomic, assign) float *b;
 @property (nonatomic, assign) float *bb;
 @property (nonatomic, assign) float *bbb;
-@property (nonatomic, strong) NSMutableData *data;
 
 @end
 
@@ -33,7 +31,6 @@
     self.samplingSettings = samplingSettings;
     [self calculateTiming];
     [self setupBuffers];
-    self.stringxD = [NSMutableString new];
     
     self.b = malloc(sizeof(float) * 10000);
     bzero(self.b, sizeof(float) * 10000);
@@ -43,8 +40,10 @@
     bzero(self.bbb, sizeof(float) * 10000);
     
     self.rev = [Revmodel new];
-    
-    self.data = [[NSMutableData alloc] init];
+    [self.rev setdamp:0.7];
+    [self.rev setroomsize:0.3];
+    [self.rev setdry:1.0];
+    [self.rev setwet:0.5];
     
     return self;
 }
@@ -103,7 +102,6 @@
 //        for (int i = 0; i < samplesCount; i++) {
     //        [xd appendString:[NSString stringWithFormat:@"%f", outl[i]]];
     //    }
-    [self.data appendBytes:self.b length:self.samplingSettings.packetByteSize];
 //    NSData *d = [[NSData alloc] initWithBytes:self.b length:self.samplingSettings.packetByteSize];
 //    [d writeToFile:@"/Users/maciejchmielewski/Desktop/xd.raw" atomically:YES];
     

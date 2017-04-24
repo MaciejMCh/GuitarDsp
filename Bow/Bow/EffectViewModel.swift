@@ -17,11 +17,11 @@ extension Float {
 }
 
 struct EffectViewModel {
-    let effect: EffectPrototype
+    let effect: EffectPrototype.Instance
     static let viewHeight: CGFloat = 210
     
     func name() -> String {
-        switch effect.kind {
+        switch effect {
         case .reverb: return "reverb"
         case .harmonizer: return "harmonizer"
         case .phaseVocoder: return "phase vocoder"
@@ -30,11 +30,13 @@ struct EffectViewModel {
         case .compressor: return "compressor"
         case .bitCrusher: return "bit crusher"
         case .vibe: return "vibe"
+        case .flanger: return "flanger"
+        case .phaser: return "phaser"
         }
     }
     
     func color() -> NSColor {
-        switch effect.kind {
+        switch effect {
         case .reverb: return NSColor(calibratedRed: 119.0 / 255.0, green: 74.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0)
         case .harmonizer: return NSColor(calibratedRed: 74.0 / 255.0, green: 226.0 / 255.0, blue: 221.0 / 255.0, alpha: 1.0)
         case .phaseVocoder: return NSColor(calibratedRed: 226.0 / 255.0, green: 224.0 / 255.0, blue: 74.0 / 255.0, alpha: 1.0)
@@ -43,6 +45,8 @@ struct EffectViewModel {
         case .compressor: return NSColor("4AE24C")!
         case .bitCrusher: return NSColor("BFE24A")!
         case .vibe: return NSColor("E24ACE")!
+        case .flanger: return NSColor("4AD0E2")!
+        case .phaser: return NSColor("4AE2B4")!
         }
     }
 }

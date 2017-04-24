@@ -68,7 +68,7 @@ class LooperEffectViewController: NSViewController {
             }
         }
         
-        let tapsCount = 6
+        let tapsCount = 3
         var taps: [Double] = Array(repeating: 0, count: tapsCount)
         tempoTapView.tap = { [weak self] in
             taps.remove(at: 0)

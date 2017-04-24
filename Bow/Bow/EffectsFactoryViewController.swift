@@ -34,11 +34,11 @@ class EffectsFacoryViewController: NSViewController {
         
         for effect in allEffects {
             let button = NSButton(frame: NSRect(x: 0, y: 0, width: EffectsFactoryViewModel().tileSize, height: EffectsFactoryViewModel().tileSize))
-            button.title = "\n\n\n\(EffectViewModel(effect: effect).name())\n\n\n"
+            button.title = "\n\n\n\(EffectViewModel(effect: effect.instance).name())\n\n\n"
             button.font = NSFont(name: "Courier-Bold", size: 15)
             button.wantsLayer = true
             button.isBordered = false
-            button.layer?.backgroundColor = EffectViewModel(effect: effect).color().withAlphaComponent(0.3).cgColor
+            button.layer?.backgroundColor = EffectViewModel(effect: effect.instance).color().withAlphaComponent(0.3).cgColor
             button.target = self
             button.action = #selector(buttonAction)
             stackView.addView(button, in: .leading)

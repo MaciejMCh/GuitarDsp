@@ -14,7 +14,6 @@
 
 @property (nonatomic, assign) float frequency;
 @property (nonatomic, assign) float depth;
-@property (nonatomic, assign) float offset;
 
 - (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings;
 

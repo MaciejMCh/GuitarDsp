@@ -34,8 +34,8 @@ extension EffectPrototype: JsonObjectRepresentable {
     init?(jsonObject: JsonObject) {
         let decoder = JSONDecoder(object: jsonObject)
         do {
-            kind = try decoder.decode("kind")
-            effect = EffectPrototype.makeEffect(kind: kind)
+            let kind: String = try decoder.decode("kind")
+            instance = Instance(kind: kind, effectFactory: EffectPrototype.effectsFactory)
             configuration = jsonObject["configuration"] as! JsonObject
         } catch(_) {
             return nil
@@ -43,65 +43,92 @@ extension EffectPrototype: JsonObjectRepresentable {
     }
     
     func json() -> JsonObject {
-        return ["kind": kind.rawValue, "configuration": configuration]
+        return ["kind": instance.kind, "configuration": configuration]
     }
     
-    static func makeEffect(kind: Kind) -> Effect {
-        switch kind {
-        case .amp: return EffectPrototype.effectsFactory.makeAmp()
-        case .delay: return EffectPrototype.effectsFactory.makeDelay()
-        case .harmonizer: return EffectPrototype.effectsFactory.makeHarmonizer()
-        case .phaseVocoder: return EffectPrototype.effectsFactory.makePhaseVocoder()
-        case .reverb: return EffectPrototype.effectsFactory.makeReverb()
-        case .compressor: return EffectPrototype.effectsFactory.makeCompressor()
-        case .bitCrusher: return EffectPrototype.effectsFactory.makeBitCrusher()
-        case .vibe: return EffectPrototype.effectsFactory.makeVibe()
-        }
-    }
-    
-    static func configure(effect: Effect, configuration: JsonObject) {
+    static func configure(effect: EffectPrototype.Instance, configuration: JsonObject) {
         let decoder = JSONDecoder(object: configuration)
         do {
-            if let ampEffect = effect as? AmpEffect {
+            switch effect {
+            case .amp(let ampEffect):
                 ampEffect.gain = try decoder.decode("gain")
-            } else if let reverb = effect as? ReverbEffect {
-                reverb.rev.setroomsize(try decoder.decode("roomsize"))
-                reverb.rev.setdamp(try decoder.decode("damp"))
-                reverb.rev.setdry(try decoder.decode("dry"))
-                reverb.rev.setwet(try decoder.decode("wet"))
-                reverb.rev.setwidth(try decoder.decode("width"))
-            } else if let harmonizerEffect = effect as? HarmonizerEffect {
-                harmonizerEffect.shift = try decoder.decode("shift")
-                harmonizerEffect.volume = try decoder.decode("volume")
-            } else if let phaseVocoderEffect = effect as? PhaseVocoderEffect {
-                phaseVocoderEffect.shift = try decoder.decode("shift")
-            } else if let delayEffect = effect as? DelayEffect {
+            case .bitCrusher(let bitCrusherEffect):
+                bitCrusherEffect.samplingReduction = try decoder.decode("sampling_reduction")
+                bitCrusherEffect.dry = try decoder.decode("dry")
+                bitCrusherEffect.wet = try decoder.decode("wet")
+            case .compressor(let compressorEffect):
+                compressorEffect.fadingLevel = try decoder.decode("fading_level")
+                compressorEffect.noiseLevel = try decoder.decode("noise_level")
+            case .delay(let delayEffect):
                 let tactPart = TactPart(rawValue: configuration["tact_part"] as! UInt)
                 delayEffect.updateTact(tactPart!)
                 delayEffect.updateEchoesCount(configuration["echoes_count"] as! Int32)
                 delayEffect.fadingFunctionA = try decoder.decode("fa")
                 delayEffect.fadingFunctionB = try decoder.decode("fb")
-            } else if let bitCrusherEffect = effect as? BitCrusherEffect {
-                bitCrusherEffect.samplingReduction = try decoder.decode("sampling_reduction")
-                bitCrusherEffect.dry = try decoder.decode("dry")
-                bitCrusherEffect.wet = try decoder.decode("wet")
-            } else if let compressorEffect = effect as? CompressorEffect {
-                compressorEffect.fadingLevel = try decoder.decode("fading_level")
-                compressorEffect.noiseLevel = try decoder.decode("noise_level")
-            } else if let vibeEffect = effect as? VibeEffect {
+            case .flanger(let flangerEffect):
+                flangerEffect.frequency = try decoder.decode("frequency")
+                flangerEffect.depth = try decoder.decode("depth")
+            case .harmonizer(let harmonizerEffect):
+                harmonizerEffect.shift = try decoder.decode("shift")
+                harmonizerEffect.volume = try decoder.decode("volume")
+            case .phaseVocoder(let phaseVocoderEffect):
+                phaseVocoderEffect.shift = try decoder.decode("shift")
+            case .reverb(let reverbEffect):
+                reverbEffect.rev.setroomsize(try decoder.decode("roomsize"))
+                reverbEffect.rev.setdamp(try decoder.decode("damp"))
+                reverbEffect.rev.setdry(try decoder.decode("dry"))
+                reverbEffect.rev.setwet(try decoder.decode("wet"))
+                reverbEffect.rev.setwidth(try decoder.decode("width"))
+            case .vibe(let vibeEffect):
                 vibeEffect.frequency = try decoder.decode("frequency")
                 vibeEffect.depth = try decoder.decode("depth")
-            } else {
-                assert(false, "\(self)")
+            case .phaser(let phaserEffect): break
+//                phaserEffect.rate = try decoder.decode("rate")
+//                phaserEffect.fMax = try decoder.decode("f_max")
+//                phaserEffect.fMin = try decoder.decode("f_min")
             }
-        } catch (_) {}
+        } catch (_) {
+            assert(false)
+        }
     }
     
-    static func configuration(effect: Effect) -> JsonObject {
-        if let ampEffect = effect as? AmpEffect {
+    static func configuration(effect: EffectPrototype.Instance) -> JsonObject {
+        switch effect {
+        case .amp(let ampEffect):
             return ["gain": ampEffect.gain]
-        }
-        if let reverbEffect = effect as? ReverbEffect {
+        case .bitCrusher(let bitCrusherEffect):
+            return [
+                "sampling_reduction": bitCrusherEffect.samplingReduction,
+                "dry": bitCrusherEffect.dry,
+                "wet": bitCrusherEffect.wet
+            ]
+        case .compressor(let compressorEffect):
+            return [
+                "fading_level": compressorEffect.fadingLevel,
+                "noise_level": compressorEffect.noiseLevel
+            ]
+        case .delay(let delayEffect):
+            return [
+                "echoes_count": delayEffect.echoesCount,
+                "tact_part": delayEffect.timing.tactPart.rawValue,
+                "fa": delayEffect.fadingFunctionA,
+                "fb": delayEffect.fadingFunctionB,
+            ]
+        case .flanger(let flangerEffect):
+            return [
+                "frequency": flangerEffect.frequency,
+                "depth": flangerEffect.depth
+            ]
+        case .harmonizer(let harmonizerEffect):
+            return [
+                "shift": harmonizerEffect.shift,
+                "volume": harmonizerEffect.volume
+            ]
+        case .phaseVocoder(let phaseVocoderEffect):
+            return [
+                "shift": phaseVocoderEffect.shift
+            ]
+        case .reverb(let reverbEffect):
             return [
                 "roomsize": reverbEffect.rev.getroomsize(),
                 "damp": reverbEffect.rev.getdamp(),
@@ -109,59 +136,17 @@ extension EffectPrototype: JsonObjectRepresentable {
                 "dry": reverbEffect.rev.getdry(),
                 "width": reverbEffect.rev.getwidth()
             ]
-        }
-        if let harmonizerEffect = effect as? HarmonizerEffect {
-            return [
-                "shift": harmonizerEffect.shift,
-                "volume": harmonizerEffect.volume
-            ]
-        }
-        if let phaseVocoderEffect = effect as? PhaseVocoderEffect {
-            return [
-                "shift": phaseVocoderEffect.shift
-            ]
-        }
-        if let delayEffect = effect as? DelayEffect {
-            return [
-                "echoes_count": delayEffect.echoesCount,
-                "tact_part": delayEffect.timing.tactPart.rawValue,
-                "fa": delayEffect.fadingFunctionA,
-                "fb": delayEffect.fadingFunctionB,
-            ]
-        }
-        if let compressorEffect = effect as? CompressorEffect {
-            return [
-                "fading_level": compressorEffect.fadingLevel,
-                "noise_level": compressorEffect.noiseLevel
-            ]
-        }
-        if let bitCrusherEffect = effect as? BitCrusherEffect {
-            return [
-                "sampling_reduction": bitCrusherEffect.samplingReduction,
-                "dry": bitCrusherEffect.dry,
-                "wet": bitCrusherEffect.wet
-            ]
-        }
-        if let vibeEffect = effect as? VibeEffect {
+        case .vibe(let vibeEffect):
             return [
                 "frequency": vibeEffect.frequency,
                 "depth": vibeEffect.depth
             ]
-        }
-        assert(false, "\(self)")
-    }
-    
-    static func kind(effect: Effect) -> Kind {
-        switch effect {
-        case is AmpEffect: return .amp
-        case is ReverbEffect: return .reverb
-        case is HarmonizerEffect: return .harmonizer
-        case is PhaseVocoderEffect: return .phaseVocoder
-        case is DelayEffect: return .delay
-        case is CompressorEffect: return .compressor
-        case is BitCrusherEffect: return .bitCrusher
-        case is VibeEffect: return .vibe
-        default: assert(false, "\(self)")
+        case .phaser(let phaserEffect):
+            return [:
+//                "rate": phaserEffect.rate,
+//                "f_max": phaserEffect.fMax,
+//                "f_min": phaserEffect.fMin
+            ]
         }
     }
 }

@@ -106,6 +106,30 @@ struct SlidersFactory {
         return [frequency, depth]
     }
     
+    func flanger(flangerEffect: FlangerEffect, color: NSColor) -> [SliderViewController] {
+        let frequency = make(color: color, name: "frequency", valueType: .exponential(range: -5..<100, exponent: 1.05), initialValue: flangerEffect.frequency) { [weak flangerEffect] in
+            flangerEffect?.frequency = $0
+        }
+        let depth = make(color: color, name: "depth", valueType: .continous(range: 0..<1, step: 0.01), initialValue: flangerEffect.depth) { [weak flangerEffect] in
+            flangerEffect?.depth = $0
+        }
+        return [frequency, depth]
+    }
+    
+    func phaser(phaserEffect: PhaserEffect, color: NSColor) -> [SliderViewController] {
+        return []
+//        let rate = make(color: color, name: "rate", valueType: .continous(range: 0.1..<10, step: 0.01), initialValue: phaserEffect.rate) { [weak phaserEffect] in
+//            phaserEffect?.rate = $0
+//        }
+//        let fMin = make(color: color, name: "f min", valueType: .continous(range: 200..<2000, step: 50), initialValue: phaserEffect.fMin) { [weak phaserEffect] in
+//            phaserEffect?.fMin = $0
+//        }
+//        let fMax = make(color: color, name: "f max", valueType: .continous(range: 200..<2000, step: 50), initialValue: phaserEffect.fMax) { [weak phaserEffect] in
+//            phaserEffect?.fMax = $0
+//        }
+//        return [rate, fMin, fMax]
+    }
+    
     private func phaseShift(color: NSColor, initialValue: Float, setter: @escaping (Float) -> Void) -> [SliderViewController] {
         let shiftToSemitones = { (shift: Float) -> Float in
             return log2(shift) * 12.0

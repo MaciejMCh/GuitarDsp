@@ -23,7 +23,7 @@ class EffectViewController: NSViewController {
     }
     
     func setupAppearence() {
-        nameLabel.stringValue = EffectViewModel(effect: effectPrototype).name()
+        nameLabel.stringValue = EffectViewModel(effect: effectPrototype.instance).name()
         
         view.wantsLayer = true
         view.layer!.cornerRadius = 10
@@ -31,7 +31,7 @@ class EffectViewController: NSViewController {
     }
     
     func setupSliders() {
-        let sliders = sliderViewControllers(effect: effectPrototype.effect)
+        let sliders = sliderViewControllers()
         for sliderViewController in sliders {
             addChildViewController(sliderViewController)
             slidersStackView.addView(sliderViewController.view, in: .leading)
@@ -45,33 +45,19 @@ class EffectViewController: NSViewController {
         view.frame = frame
     }
     
-    func sliderViewControllers(effect: Effect) -> [SliderViewController] {
-        let color = EffectViewModel(effect: effectPrototype).color()
-        if let reverbEffect = effect as? ReverbEffect {
-            return SlidersFactory().reverb(effect: reverbEffect, color: color)
+    func sliderViewControllers() -> [SliderViewController] {
+        let color = EffectViewModel(effect: effectPrototype.instance).color()
+        switch effectPrototype.instance {
+        case .amp(let effect): return SlidersFactory().amp(amp: effect, color: color)
+        case .bitCrusher(let effect): return SlidersFactory().bitCrusher(bitCrusher: effect, color: color)
+        case .compressor(let effect): return SlidersFactory().compressor(compressor: effect, color: color)
+        case .delay(let effect): return SlidersFactory().delay(delay: effect, color: color)
+        case .flanger(let effect): return SlidersFactory().flanger(flangerEffect: effect, color: color)
+        case .harmonizer(let effect): return SlidersFactory().harmonizer(harmonizer: effect, color: color)
+        case .phaseVocoder(let effect): return SlidersFactory().phaseVocoder(phaseVocoder: effect, color: color)
+        case .reverb(let effect): return SlidersFactory().reverb(effect: effect, color: color)
+        case .vibe(let effect): return SlidersFactory().vibe(vibeEffect: effect, color: color)
+        case .phaser(let effect): return SlidersFactory().phaser(phaserEffect: effect, color: color)
         }
-        if let harmonizerEffect = effect as? HarmonizerEffect {
-            return SlidersFactory().harmonizer(harmonizer: harmonizerEffect, color: color)
-        }
-        if let phaseVocoderEffect = effect as? PhaseVocoderEffect {
-            return SlidersFactory().phaseVocoder(phaseVocoder: phaseVocoderEffect, color: color)
-        }
-        if let delayEffect = effect as? DelayEffect {
-            return SlidersFactory().delay(delay: delayEffect, color: color)
-        }
-        if let ampEffect = effect as? AmpEffect {
-            return SlidersFactory().amp(amp: ampEffect, color: color)
-        }
-        if let compressorEffect = effect as? CompressorEffect {
-            return SlidersFactory().compressor(compressor: compressorEffect, color: color)
-        }
-        if let bitCrusherEffect = effect as? BitCrusherEffect {
-            return SlidersFactory().bitCrusher(bitCrusher: bitCrusherEffect, color: color)
-        }
-        if let vibeEffect = effect as? VibeEffect {
-            return SlidersFactory().vibe(vibeEffect: vibeEffect, color: color)
-        }
-        assert(false)
-        return []
     }
 }

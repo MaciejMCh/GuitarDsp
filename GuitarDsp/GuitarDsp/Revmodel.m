@@ -124,34 +124,29 @@
     }
 }
 
-- (void)processmix:(float *)inputL inputR:(float *)inputR outputL:(float *)outputL outputR:(float *)outputR numsamples:(long)numsamples skip:(int)skip {
-    float outL,outR,input;
+- (void)processmix:(float *)inputL outputL:(float *)outputL numsamples:(long)numsamples skip:(int)skip {
+    float outL,input;
     
     while(numsamples-- > 0) {
-        outL = outR = 0;
-        input = (*inputL + *inputR) * gain;
+        outL = 0;
+        input = (*inputL) * gain;
         
         // Accumulate comb filters in parallel
         for(int i=0; i<numcombs; i++) {
             outL += [combL[i] process:input];
-            outR += [combR[i] process:input];
         }
         
         // Feed through allpasses in series
         for(int i=0; i<numallpasses; i++) {
             outL = [allpassL[i] process:outL];
-            outR = [allpassR[i] process:outR];
         }
         
         // Calculate output MIXING with anything already there
-        *outputL += outL*wet1 + outR*wet2 + *inputL*dry;
-        *outputR += outR*wet1 + outL*wet2 + *inputR*dry;
+        *outputL += outL*wet1 + *inputL*dry;
         
         // Increment sample pointers, allowing for interleave (if any)
         inputL += skip;
-        inputR += skip;
         outputL += skip;
-        outputR += skip;
     }
 }
 

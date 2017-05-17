@@ -13,8 +13,6 @@
 @interface PhaseVocoderEffect : NSObject <Effect>
 
 @property (nonatomic, assign) float shift;
-@property (nonatomic, assign) int fftLength;
-@property (nonatomic, assign) int overlapLength;
 
 - (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings;
 

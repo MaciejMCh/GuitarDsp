@@ -36,9 +36,7 @@
 
 - (void)mute;
 - (void)processmix:(float *)inputL
-            inputR:(float *)inputR
            outputL:(float *)outputL
-           outputR:(float *)outputR
         numsamples:(long)numsamples
               skip:(int)skip;
 

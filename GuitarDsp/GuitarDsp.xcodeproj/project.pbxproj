@@ -17,6 +17,8 @@
 		C28B98BE1E9C014800309FA2 /* CompressorEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C28B98BC1E9C014800309FA2 /* CompressorEffect.m */; };
 		C28CB14C1EA121AA00E34C7A /* FlangerEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C28CB14A1EA121AA00E34C7A /* FlangerEffect.h */; };
 		C28CB14D1EA121AA00E34C7A /* FlangerEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C28CB14B1EA121AA00E34C7A /* FlangerEffect.m */; };
+		C2CAD4B41EAE17A8002B3C99 /* FrequencyDomainProcessing.h in Headers */ = {isa = PBXBuildFile; fileRef = C2CAD4B21EAE17A8002B3C99 /* FrequencyDomainProcessing.h */; };
+		C2CAD4B51EAE17A8002B3C99 /* FrequencyDomainProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CAD4B31EAE17A8002B3C99 /* FrequencyDomainProcessing.m */; };
 		C2DF19DA1E8AA65500106AE8 /* Allpass.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19B61E8AA65500106AE8 /* Allpass.h */; };
 		C2DF19DB1E8AA65500106AE8 /* Allpass.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DF19B71E8AA65500106AE8 /* Allpass.m */; };
 		C2DF19DC1E8AA65500106AE8 /* Board.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19B81E8AA65500106AE8 /* Board.h */; };
@@ -74,6 +76,8 @@
 		C28CAED11E8B234E001BADFE /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		C28CB14A1EA121AA00E34C7A /* FlangerEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlangerEffect.h; sourceTree = "<group>"; };
 		C28CB14B1EA121AA00E34C7A /* FlangerEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlangerEffect.m; sourceTree = "<group>"; };
+		C2CAD4B21EAE17A8002B3C99 /* FrequencyDomainProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequencyDomainProcessing.h; sourceTree = "<group>"; };
+		C2CAD4B31EAE17A8002B3C99 /* FrequencyDomainProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequencyDomainProcessing.m; sourceTree = "<group>"; };
 		C2DF19B61E8AA65500106AE8 /* Allpass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Allpass.h; sourceTree = "<group>"; };
 		C2DF19B71E8AA65500106AE8 /* Allpass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Allpass.m; sourceTree = "<group>"; };
 		C2DF19B81E8AA65500106AE8 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 				C28B98BA1E9BEEE700309FA2 /* mathUtilities.h */,
 				C2DF19CD1E8AA65500106AE8 /* RawAudioPlayer.h */,
 				C2DF19CE1E8AA65500106AE8 /* RawAudioPlayer.m */,
+				C2CAD4B21EAE17A8002B3C99 /* FrequencyDomainProcessing.h */,
+				C2CAD4B31EAE17A8002B3C99 /* FrequencyDomainProcessing.m */,
 			);
 			name = Utiities;
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 				C2DF19F81E8AA65500106AE8 /* SamplingSettings.h in Headers */,
 				C2191B951EA23A8D00DF9451 /* PhaserEffect.h in Headers */,
 				C2DF19DC1E8AA65500106AE8 /* Board.h in Headers */,
+				C2CAD4B41EAE17A8002B3C99 /* FrequencyDomainProcessing.h in Headers */,
 				C2DF19F31E8AA65500106AE8 /* ReverbEffect.h in Headers */,
 				C2DF19EB1E8AA65500106AE8 /* PhaseVocoder.h in Headers */,
 				C2DF19E91E8AA65500106AE8 /* MetronomeEffect.h in Headers */,
@@ -392,6 +399,7 @@
 				C2DF19F21E8AA65500106AE8 /* RawAudioPlayer.m in Sources */,
 				C28CB14D1EA121AA00E34C7A /* FlangerEffect.m in Sources */,
 				C28B98BE1E9C014800309FA2 /* CompressorEffect.m in Sources */,
+				C2CAD4B51EAE17A8002B3C99 /* FrequencyDomainProcessing.m in Sources */,
 				C2DF19DD1E8AA65500106AE8 /* Board.m in Sources */,
 				C2DF19EE1E8AA65500106AE8 /* PhaseVocoderEffect.m in Sources */,
 				C2DF1A0C1E8AAC8500106AE8 /* AudioInterface.m in Sources */,

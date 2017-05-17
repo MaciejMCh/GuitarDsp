@@ -7,12 +7,13 @@
 //
 
 #import "PhaseVocoderEffect.h"
-#import "PhaseVocoder.h"
+//#import "PhaseVocoder.h"
+#import "FrequencyDomainProcessing.h"
 
 @interface PhaseVocoderEffect ()
 
 @property (nonatomic, assign) struct SamplingSettings samplingSettings;
-@property (nonatomic, strong) PhaseVocoder *phaseVocoder;
+@property (nonatomic, strong) FrequencyDomainProcessing *frequencyDomainProcessing;
 
 @end
 
@@ -21,22 +22,25 @@
 - (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings {
     self = [super init];
     self.samplingSettings = samplingSettings;
-    self.phaseVocoder = [PhaseVocoder new];
     self.shift = 0.5;
-    self.fftLength = 1024;
-    self.overlapLength = 32;
+    
+    __weak typeof(self) wSelf = self;
+    self.frequencyDomainProcessing = [[FrequencyDomainProcessing alloc] initWithSamplingSettings:self.samplingSettings fftFrameSize:1024 osamp:32 processing:^(int fftLength, float *analysisMagnitudes, float *analysisFrequencies, float *syntesisMagnitudes, float *synthesisFrequencies) {
+        for (int k = 0; k <= fftLength; k++) {
+            int index = k * self.shift;
+            if (index <= fftLength) {
+                syntesisMagnitudes[index] += analysisMagnitudes[k];
+                synthesisFrequencies[index] = analysisFrequencies[k] * wSelf.shift;
+            }
+        }
+    }];
+    
     return self;
 }
 
 
 - (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
-    [self.phaseVocoder smbPitchShift:self.shift
-                   numSampsToProcess:self.samplingSettings.framesPerPacket
-                        fftFrameSize:self.fftLength
-                               osamp:self.overlapLength
-                          sampleRate:self.samplingSettings.framesPerPacket
-                              indata:inputSample.amp
-                             outdata:outputBuffer];
+    [self.frequencyDomainProcessing processWithIndata:inputSample.amp outdata:outputBuffer];
 }
 
 @end

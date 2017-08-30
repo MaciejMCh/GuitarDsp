@@ -39,6 +39,7 @@ extension EffectPrototype {
         case vibe(_: VibeEffect)
         case flanger(_: FlangerEffect)
         case phaser(_: PhaserEffect)
+        case distortion(_: DistortionEffect)
     }
 }
 
@@ -57,6 +58,7 @@ extension EffectPrototype.Instance {
         case "reverb": self = .reverb(effectFactory.makeReverb())
         case "vibe": self = .vibe(effectFactory.makeVibe())
         case "flanger": self = .flanger(effectFactory.makeFlanger())
+        case "distortion": self = .distortion(effectFactory.makeDistortion())
         default:
             assert(false)
             return nil
@@ -75,6 +77,7 @@ extension EffectPrototype.Instance {
         case .vibe: return "vibe"
         case .flanger: return "flanger"
         case .phaser: return "phaser"
+        case .distortion: return "distortion"
         }
     }
     
@@ -100,6 +103,8 @@ extension EffectPrototype.Instance {
             self = .flanger(flangerEffect)
         } else if let phaserEffect = effect as? PhaserEffect {
             self = .phaser(phaserEffect)
+        } else if let distortionEffect = effect as? DistortionEffect {
+            self = .distortion(distortionEffect)
         } else {
             assert(false)
             return nil
@@ -118,6 +123,7 @@ extension EffectPrototype.Instance {
         case .vibe(let effect): return effect
         case .flanger(let effect): return effect
         case .phaser(let effect): return effect
+        case .distortion(let effect): return effect
         }
     }
 }

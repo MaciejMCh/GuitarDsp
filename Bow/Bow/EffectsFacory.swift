@@ -13,7 +13,7 @@ struct EffectsFacory {
     let samplingSettings: SamplingSettings
     
     func all() -> [Effect] {
-        return [makeAmp(), makeDelay(), makeHarmonizer(), makePhaseVocoder(), makeReverb(), makeCompressor(), makeBitCrusher(), makeVibe(), makeFlanger(), makePhaser()]
+        return [makeAmp(), makeDelay(), makeHarmonizer(), makePhaseVocoder(), makeReverb(), makeCompressor(), makeBitCrusher(), makeVibe(), makeFlanger(), makePhaser(), makeDistortion()]
     }
     
     func makeAmp() -> AmpEffect {
@@ -58,5 +58,9 @@ struct EffectsFacory {
     
     func makePhaser() -> PhaserEffect {
         return PhaserEffect(samplingSettings: samplingSettings)
+    }
+    
+    func makeDistortion() -> DistortionEffect {
+        return DistortionEffect(samplingSettings: samplingSettings)
     }
 }

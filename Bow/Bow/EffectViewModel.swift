@@ -32,6 +32,7 @@ struct EffectViewModel {
         case .vibe: return "vibe"
         case .flanger: return "flanger"
         case .phaser: return "phaser"
+        case .distortion: return "distortion"
         }
     }
     
@@ -47,6 +48,7 @@ struct EffectViewModel {
         case .vibe: return NSColor("E24ACE")!
         case .flanger: return NSColor("4AD0E2")!
         case .phaser: return NSColor("4AE2B4")!
+        case .distortion: return NSColor("E24A4A")!
         }
     }
 }

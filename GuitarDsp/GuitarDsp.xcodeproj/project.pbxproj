@@ -17,6 +17,8 @@
 		C28B98BE1E9C014800309FA2 /* CompressorEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C28B98BC1E9C014800309FA2 /* CompressorEffect.m */; };
 		C28CB14C1EA121AA00E34C7A /* FlangerEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C28CB14A1EA121AA00E34C7A /* FlangerEffect.h */; };
 		C28CB14D1EA121AA00E34C7A /* FlangerEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C28CB14B1EA121AA00E34C7A /* FlangerEffect.m */; };
+		C2A4D8951ECCD59D00967874 /* DistortionEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C2A4D8931ECCD59D00967874 /* DistortionEffect.h */; };
+		C2A4D8961ECCD59D00967874 /* DistortionEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D8941ECCD59D00967874 /* DistortionEffect.m */; };
 		C2CAD4B41EAE17A8002B3C99 /* FrequencyDomainProcessing.h in Headers */ = {isa = PBXBuildFile; fileRef = C2CAD4B21EAE17A8002B3C99 /* FrequencyDomainProcessing.h */; };
 		C2CAD4B51EAE17A8002B3C99 /* FrequencyDomainProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CAD4B31EAE17A8002B3C99 /* FrequencyDomainProcessing.m */; };
 		C2DF19DA1E8AA65500106AE8 /* Allpass.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19B61E8AA65500106AE8 /* Allpass.h */; };
@@ -76,6 +78,8 @@
 		C28CAED11E8B234E001BADFE /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		C28CB14A1EA121AA00E34C7A /* FlangerEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlangerEffect.h; sourceTree = "<group>"; };
 		C28CB14B1EA121AA00E34C7A /* FlangerEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlangerEffect.m; sourceTree = "<group>"; };
+		C2A4D8931ECCD59D00967874 /* DistortionEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistortionEffect.h; sourceTree = "<group>"; };
+		C2A4D8941ECCD59D00967874 /* DistortionEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistortionEffect.m; sourceTree = "<group>"; };
 		C2CAD4B21EAE17A8002B3C99 /* FrequencyDomainProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequencyDomainProcessing.h; sourceTree = "<group>"; };
 		C2CAD4B31EAE17A8002B3C99 /* FrequencyDomainProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequencyDomainProcessing.m; sourceTree = "<group>"; };
 		C2DF19B61E8AA65500106AE8 /* Allpass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Allpass.h; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				C28CB14B1EA121AA00E34C7A /* FlangerEffect.m */,
 				C2191B931EA23A8D00DF9451 /* PhaserEffect.h */,
 				C2191B941EA23A8D00DF9451 /* PhaserEffect.m */,
+				C2A4D8931ECCD59D00967874 /* DistortionEffect.h */,
+				C2A4D8941ECCD59D00967874 /* DistortionEffect.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 				C2DF19E91E8AA65500106AE8 /* MetronomeEffect.h in Headers */,
 				C28CB14C1EA121AA00E34C7A /* FlangerEffect.h in Headers */,
 				C2DF19FD1E8AA65500106AE8 /* tuning.h in Headers */,
+				C2A4D8951ECCD59D00967874 /* DistortionEffect.h in Headers */,
 				C2DF19DE1E8AA65500106AE8 /* Comb.h in Headers */,
 				C2DF1A0B1E8AAC8500106AE8 /* AudioInterface.h in Headers */,
 				C2EFDE5C1E8DDA750063F2D7 /* AmpEffect.h in Headers */,
@@ -391,6 +398,7 @@
 				C2DF19F41E8AA65500106AE8 /* ReverbEffect.m in Sources */,
 				C22F890E1E9FF1F8004D0BCB /* VibeEffect.m in Sources */,
 				C2191B961EA23A8D00DF9451 /* PhaserEffect.m in Sources */,
+				C2A4D8961ECCD59D00967874 /* DistortionEffect.m in Sources */,
 				C28B98B91E9BE70700309FA2 /* BitCrusherEffect.m in Sources */,
 				C2DF19FC1E8AA65500106AE8 /* TimingCalc.m in Sources */,
 				C2DF19EC1E8AA65500106AE8 /* PhaseVocoder.m in Sources */,

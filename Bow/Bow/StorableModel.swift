@@ -86,6 +86,9 @@ extension EffectPrototype: JsonObjectRepresentable {
 //                phaserEffect.rate = try decoder.decode("rate")
 //                phaserEffect.fMax = try decoder.decode("f_max")
 //                phaserEffect.fMin = try decoder.decode("f_min")
+            case .distortion(let distortionEffect):
+                distortionEffect.level = try decoder.decode("level")
+                distortionEffect.treshold = try decoder.decode("treshold")
             }
         } catch (_) {
             assert(false)
@@ -146,6 +149,11 @@ extension EffectPrototype: JsonObjectRepresentable {
 //                "rate": phaserEffect.rate,
 //                "f_max": phaserEffect.fMax,
 //                "f_min": phaserEffect.fMin
+            ]
+        case .distortion(let distortionEffect):
+            return [
+                "level": distortionEffect.level,
+                "treshold": distortionEffect.treshold
             ]
         }
     }

@@ -130,6 +130,17 @@ struct SlidersFactory {
 //        return [rate, fMin, fMax]
     }
     
+    func distortion(distortionEffect: DistortionEffect, color: NSColor) -> [SliderViewController] {
+        let treshold = make(color: color, name: "treshold", valueType: .continous(range: 0.0001..<0.1, step: 0.0001), initialValue: distortionEffect.treshold) { [weak distortionEffect] in
+            distortionEffect?.treshold = $0
+        }
+        
+        let level = make(color: color, name: "level", valueType: .continous(range: 0.01..<10.0, step: 0.1), initialValue: distortionEffect.treshold) { [weak distortionEffect] in
+            distortionEffect?.level = $0
+        }
+        return [treshold, level]
+    }
+    
     private func phaseShift(color: NSColor, initialValue: Float, setter: @escaping (Float) -> Void) -> [SliderViewController] {
         let shiftToSemitones = { (shift: Float) -> Float in
             return log2(shift) * 12.0

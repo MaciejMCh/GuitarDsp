@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:GuitarMidi/GuitarMidi.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:GuitarDsp/GuitarDsp.xcodeproj">
    </FileRef>
    <FileRef
@@ -21,5 +24,11 @@
    </FileRef>
    <FileRef
       location = "group:Bow/Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:GuitarMidi/Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:nnn/Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

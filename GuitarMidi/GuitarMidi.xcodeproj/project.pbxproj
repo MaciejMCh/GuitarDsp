@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B48E5AACBB3EB6906900A289 /* Pods_GuitarMidi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1239878A4B320DB80C6464 /* Pods_GuitarMidi.framework */; };
+		C262CA611F5F10AA00411635 /* MidiOutputEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */; };
+		C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CB16841F5F0D5800B8D6FF /* AppDelegate.swift */; };
+		C2CB16871F5F0D5800B8D6FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CB16861F5F0D5800B8D6FF /* ViewController.swift */; };
+		C2CB16891F5F0D5800B8D6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CB16881F5F0D5800B8D6FF /* Assets.xcassets */; };
+		C2CB168C1F5F0D5800B8D6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2CB168A1F5F0D5800B8D6FF /* Main.storyboard */; };
+		C2CB16951F5F0DC100B8D6FF /* GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CB16941F5F0DC100B8D6FF /* GuitarDsp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2485880FDB1C7AAD3D8B5849 /* Pods-GuitarMidi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarMidi.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi.release.xcconfig"; sourceTree = "<group>"; };
+		5F1239878A4B320DB80C6464 /* Pods_GuitarMidi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuitarMidi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiOutputEffect.swift; sourceTree = "<group>"; };
+		C2CB16811F5F0D5800B8D6FF /* GuitarMidi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarMidi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2CB16841F5F0D5800B8D6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C2CB16861F5F0D5800B8D6FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C2CB16881F5F0D5800B8D6FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2CB168B1F5F0D5800B8D6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2CB168D1F5F0D5800B8D6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2CB16941F5F0DC100B8D6FF /* GuitarDsp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarDsp.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-gboowxrazxsddgehsrbqoyrqehfs/Build/Products/Debug/GuitarDsp.framework"; sourceTree = "<group>"; };
+		E6A95BAF96B672E9AE90BD70 /* Pods-GuitarMidi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarMidi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C2CB167E1F5F0D5800B8D6FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2CB16951F5F0DC100B8D6FF /* GuitarDsp.framework in Frameworks */,
+				B48E5AACBB3EB6906900A289 /* Pods_GuitarMidi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CFA17E97FA7D45B735F00B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6A95BAF96B672E9AE90BD70 /* Pods-GuitarMidi.debug.xcconfig */,
+				2485880FDB1C7AAD3D8B5849 /* Pods-GuitarMidi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C2CB16781F5F0D5800B8D6FF = {
+			isa = PBXGroup;
+			children = (
+				C2CB16831F5F0D5800B8D6FF /* GuitarMidi */,
+				C2CB16821F5F0D5800B8D6FF /* Products */,
+				C2CB16931F5F0DC100B8D6FF /* Frameworks */,
+				8CFA17E97FA7D45B735F00B9 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		C2CB16821F5F0D5800B8D6FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2CB16811F5F0D5800B8D6FF /* GuitarMidi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2CB16831F5F0D5800B8D6FF /* GuitarMidi */ = {
+			isa = PBXGroup;
+			children = (
+				C2CB16841F5F0D5800B8D6FF /* AppDelegate.swift */,
+				C2CB16861F5F0D5800B8D6FF /* ViewController.swift */,
+				C2CB16881F5F0D5800B8D6FF /* Assets.xcassets */,
+				C2CB168A1F5F0D5800B8D6FF /* Main.storyboard */,
+				C2CB168D1F5F0D5800B8D6FF /* Info.plist */,
+				C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */,
+			);
+			path = GuitarMidi;
+			sourceTree = "<group>";
+		};
+		C2CB16931F5F0DC100B8D6FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2CB16941F5F0DC100B8D6FF /* GuitarDsp.framework */,
+				5F1239878A4B320DB80C6464 /* Pods_GuitarMidi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C2CB16801F5F0D5800B8D6FF /* GuitarMidi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2CB16901F5F0D5800B8D6FF /* Build configuration list for PBXNativeTarget "GuitarMidi" */;
+			buildPhases = (
+				34295879A4221899E83D9C71 /* [CP] Check Pods Manifest.lock */,
+				C2CB167D1F5F0D5800B8D6FF /* Sources */,
+				C2CB167E1F5F0D5800B8D6FF /* Frameworks */,
+				C2CB167F1F5F0D5800B8D6FF /* Resources */,
+				15B270EE570451DDCEAC5DFB /* [CP] Embed Pods Frameworks */,
+				59B0EB1C20A7F4C82152A658 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuitarMidi;
+			productName = GuitarMidi;
+			productReference = C2CB16811F5F0D5800B8D6FF /* GuitarMidi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C2CB16791F5F0D5800B8D6FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Maciej Chmielewski";
+				TargetAttributes = {
+					C2CB16801F5F0D5800B8D6FF = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 76RXF4V6NR;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C2CB167C1F5F0D5800B8D6FF /* Build configuration list for PBXProject "GuitarMidi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C2CB16781F5F0D5800B8D6FF;
+			productRefGroup = C2CB16821F5F0D5800B8D6FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C2CB16801F5F0D5800B8D6FF /* GuitarMidi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2CB167F1F5F0D5800B8D6FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2CB16891F5F0D5800B8D6FF /* Assets.xcassets in Resources */,
+				C2CB168C1F5F0D5800B8D6FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15B270EE570451DDCEAC5DFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Beethoven/Beethoven.framework",
+				"${BUILT_PRODUCTS_DIR}/Pitchy/Pitchy.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Beethoven.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pitchy.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34295879A4221899E83D9C71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuitarMidi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59B0EB1C20A7F4C82152A658 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C2CB167D1F5F0D5800B8D6FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2CB16871F5F0D5800B8D6FF /* ViewController.swift in Sources */,
+				C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */,
+				C262CA611F5F10AA00411635 /* MidiOutputEffect.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C2CB168A1F5F0D5800B8D6FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2CB168B1F5F0D5800B8D6FF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C2CB168E1F5F0D5800B8D6FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C2CB168F1F5F0D5800B8D6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		C2CB16911F5F0D5800B8D6FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6A95BAF96B672E9AE90BD70 /* Pods-GuitarMidi.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 76RXF4V6NR;
+				INFOPLIST_FILE = GuitarMidi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.GuitarMidi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C2CB16921F5F0D5800B8D6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2485880FDB1C7AAD3D8B5849 /* Pods-GuitarMidi.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 76RXF4V6NR;
+				INFOPLIST_FILE = GuitarMidi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.GuitarMidi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C2CB167C1F5F0D5800B8D6FF /* Build configuration list for PBXProject "GuitarMidi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2CB168E1F5F0D5800B8D6FF /* Debug */,
+				C2CB168F1F5F0D5800B8D6FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2CB16901F5F0D5800B8D6FF /* Build configuration list for PBXNativeTarget "GuitarMidi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2CB16911F5F0D5800B8D6FF /* Debug */,
+				C2CB16921F5F0D5800B8D6FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C2CB16791F5F0D5800B8D6FF /* Project object */;
+}

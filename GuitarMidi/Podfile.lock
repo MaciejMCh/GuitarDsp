@@ -1,0 +1,24 @@
+PODS:
+  - Beethoven (3.0.1):
+    - Pitchy
+  - Pitchy (2.0.1)
+
+DEPENDENCIES:
+  - Beethoven (from `https://github.com/MaciejMCh/Beethoven.git`)
+
+EXTERNAL SOURCES:
+  Beethoven:
+    :git: https://github.com/MaciejMCh/Beethoven.git
+
+CHECKOUT OPTIONS:
+  Beethoven:
+    :commit: 72703951ffaa260a86401cfd913b093aa783e654
+    :git: https://github.com/MaciejMCh/Beethoven.git
+
+SPEC CHECKSUMS:
+  Beethoven: e55480eafd336d5cffe2e381e46995174f33f832
+  Pitchy: 00dbe7cb7ac87fd9c32cb2aa6ce50d11f931289f
+
+PODFILE CHECKSUM: 06ae2104db490796bb3670acca6fa531c638e6a6
+
+COCOAPODS: 1.3.1

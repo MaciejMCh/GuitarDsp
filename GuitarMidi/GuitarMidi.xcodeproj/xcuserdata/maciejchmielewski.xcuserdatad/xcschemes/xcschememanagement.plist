@@ -4,20 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>GuitarDspBoardUI.xcscheme_^#shared#^_</key>
+		<key>GuitarMidi.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>C23C814A1E7177EE0050DCE9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C2D961C31E71804A008870B4</key>
+		<key>C2CB16801F5F0D5800B8D6FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

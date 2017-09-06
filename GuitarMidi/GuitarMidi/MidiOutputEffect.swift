@@ -41,7 +41,7 @@ class MidiOutputEffect: NSObject, Effect {
     
     let samplingSettings: SamplingSettings
     
-    let bufferLengthInFrames = 3
+    let bufferLengthInFrames = 16
     lazy var signalBuffer: [Float] = {
         return Array.init(repeating: 0, count: Int(self.samplingSettings.framesPerPacket) * self.bufferLengthInFrames)
     }()
@@ -64,18 +64,18 @@ class MidiOutputEffect: NSObject, Effect {
         
         var newSignalBuffer: [Float] = inputSignal.reversed()
 //        newSignalBuffer.append(contentsOf: signalBuffer[0..<127])
-        let zz = (self.bufferLengthInFrames - 1) * frameSizeInSamples - 1
+        let zz = (self.bufferLengthInFrames - 1) * frameSizeInSamples
         newSignalBuffer.append(contentsOf: signalBuffer[0..<zz])
         
         signalBuffer = newSignalBuffer
         
         
-        let string = self.signalBuffer.map{String($0) + " "}.reduce("", +)
+//        let string = self.signalBuffer.map{String($0) + " "}.reduce("", +)
         
 //        for (k = 0; k < fftFrameSize;k++) {
-        let fftFrameSize = 2048
+        let fftFrameSize = 4096
 //        let fftFrameSize = 4096 * 2
-        let signalSize = Int(samplingSettings.framesPerPacket)
+        let signalSize = Int(self.samplingSettings.framesPerPacket) * self.bufferLengthInFrames
         var windowedSignal: [Float] = Array(repeating: 0, count: fftFrameSize)
         
         var window = [Float](repeating: 0, count: signalSize)
@@ -83,7 +83,7 @@ class MidiOutputEffect: NSObject, Effect {
         
         let offset = (fftFrameSize / 2) - (signalSize / 2)
         for i in 0..<signalSize {
-            windowedSignal[offset + i] = inputSample.amp.advanced(by: i).pointee * window[i]
+            windowedSignal[offset + i] = signalBuffer[i] * window[i]
         }
         
         
@@ -102,24 +102,24 @@ class MidiOutputEffect: NSObject, Effect {
         let transformedBuffer = try! estimator.transformer.transform(buffer: buffer)
         let frequency = try! estimator.estimateFrequency(sampleRate: Float(samplingSettings.frequency), buffer: transformedBuffer)
         
-        for i in 0..<signalSize {
+        for i in 0..<Int(self.samplingSettings.framesPerPacket) {
             outputBuffer.advanced(by: i).pointee = 0
         }
         
 //        debugPrint(frequency)
         
-        if let xd = try? Pitch(frequency: Double(frequency)) {
-            let freq: Float
-            if xd.note.index >= 7 && xd.note.index <= 19 {
-                freq = Float(pow(1.0 + (1.0 / 12.0), Float(xd.note.index - 7)))
-            } else {
-                freq = 0
-            }
-            for i in 0..<signalSize {
-                outputBuffer.advanced(by: i).pointee = sin(Float(time) * freq * 0.01)
+//        if let xd = try? Pitch(frequency: Double(frequency)) {
+//            let freq: Float
+//            if xd.note.index >= 7 && xd.note.index <= 19 {
+//                freq = Float(pow(1.0 + (1.0 / 12.0), Float(xd.note.index - 7)))
+//            } else {
+//                freq = 0
+//            }
+            for i in 0..<Int(self.samplingSettings.framesPerPacket) {
+                outputBuffer.advanced(by: i).pointee = sin(Float(time) * frequency * 0.0001)
                 time += 1
             }
-        }
+//        }
     }
     
     var time = 0

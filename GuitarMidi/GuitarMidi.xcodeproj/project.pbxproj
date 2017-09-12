@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B48E5AACBB3EB6906900A289 /* Pods_GuitarMidi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1239878A4B320DB80C6464 /* Pods_GuitarMidi.framework */; };
+		C20775E11F671E20009FD61A /* NoteIndexIntegrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20775E01F671E20009FD61A /* NoteIndexIntegrator.swift */; };
+		C24FFF721F66E2C2007CBF57 /* MidiServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24FFF711F66E2C2007CBF57 /* MidiServer.swift */; };
 		C262CA611F5F10AA00411635 /* MidiOutputEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */; };
 		C28CE3761F6094FF002B9567 /* PitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CE3751F6094FF002B9567 /* PitchDetector.swift */; };
 		C28CE3781F60A0A0002B9567 /* SineWaveGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CE3771F60A0A0002B9567 /* SineWaveGenerator.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		2485880FDB1C7AAD3D8B5849 /* Pods-GuitarMidi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarMidi.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi.release.xcconfig"; sourceTree = "<group>"; };
 		5F1239878A4B320DB80C6464 /* Pods_GuitarMidi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuitarMidi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C20775E01F671E20009FD61A /* NoteIndexIntegrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteIndexIntegrator.swift; sourceTree = "<group>"; };
+		C24FFF711F66E2C2007CBF57 /* MidiServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiServer.swift; sourceTree = "<group>"; };
 		C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiOutputEffect.swift; sourceTree = "<group>"; };
 		C28CE3751F6094FF002B9567 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
 		C28CE3771F60A0A0002B9567 /* SineWaveGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SineWaveGenerator.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 				C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */,
 				C28CE3751F6094FF002B9567 /* PitchDetector.swift */,
 				C28CE3771F60A0A0002B9567 /* SineWaveGenerator.swift */,
+				C24FFF711F66E2C2007CBF57 /* MidiServer.swift */,
+				C20775E01F671E20009FD61A /* NoteIndexIntegrator.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -177,11 +183,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Beethoven/Beethoven.framework",
+				"${BUILT_PRODUCTS_DIR}/MIDIKit/MIDIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Pitchy/Pitchy.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Beethoven.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIDIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pitchy.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +238,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C28CE3761F6094FF002B9567 /* PitchDetector.swift in Sources */,
+				C20775E11F671E20009FD61A /* NoteIndexIntegrator.swift in Sources */,
+				C24FFF721F66E2C2007CBF57 /* MidiServer.swift in Sources */,
 				C2CB16871F5F0D5800B8D6FF /* ViewController.swift in Sources */,
 				C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */,
 				C28CE3781F60A0A0002B9567 /* SineWaveGenerator.swift in Sources */,

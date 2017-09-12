@@ -9,19 +9,12 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    var midiServer: MidiServer? = MidiServer()
+    
+    @IBAction func stop(sender: Any?) {
+        midiServer = nil
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
+    
 }
 

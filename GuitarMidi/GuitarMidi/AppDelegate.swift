@@ -13,6 +13,29 @@ import GuitarDsp
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
+//        let lenght = 50
+//
+//        let integrator = NoteIndexIntegrator()
+//        var integrateds: [Int] = []
+//
+//        var indices: [Int] = []
+//        for i in 0..<lenght {
+//            let index = i < (lenght / 2) ? 2 : 1
+//            indices.append(index)
+//
+//            let sound: NoteIndexIntegrator.Sound = (noteIndex: index, volume: 1 * index)
+//            let integratedSound = integrator.integrate(sound: sound)
+//            integrateds.append(integratedSound.noteIndex)
+//        }
+//
+//
+//        let indicesString = indices.map{"\($0) "}.reduce("", +)
+//        let integratedsString = integrateds.map{"\($0) "}.reduce("", +)
+//
+//        debugPrint(indicesString)
+//        debugPrint(integratedsString)
+        
         let samplingSettings = AudioInterface.shared().samplingSettings
         let processor = Processor(samplingSettings: samplingSettings, tempo: 120)
         let board = Board()

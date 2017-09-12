@@ -5,5 +5,6 @@ workspace '../GuitarDsp.xcworkspace'
 target 'GuitarMidi' do
   use_frameworks!
   pod 'Beethoven', :git => 'https://github.com/MaciejMCh/Beethoven.git'
+  pod 'MIDIKit', :git => 'https://github.com/MaciejMCh/MIDIKit.git'
 
 end

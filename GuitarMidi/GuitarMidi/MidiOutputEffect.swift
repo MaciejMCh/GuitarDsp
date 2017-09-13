@@ -11,7 +11,11 @@ import GuitarDsp
 import Pitchy
 import Accelerate
 
+let strokeDetectorXd = StrokeDetector()
+
 class MidiOutputEffect: NSObject, Effect {
+    let sendMidi = false
+    
     let samplingSettings: SamplingSettings
     let pitchDetector: PitchDetector
     let midiServer: MidiServer
@@ -35,8 +39,6 @@ class MidiOutputEffect: NSObject, Effect {
         }
         
         let frequency = pitchDetector.detectPitch(inputSignal: inputSignal)
-        sineWaveGenerator
-        
         let rms: () -> (Float) = {
             var output: Float = 0
             vDSP_rmsqv(inputSample.amp, 1, &output, UInt(self.samplingSettings.framesPerPacket))
@@ -44,9 +46,17 @@ class MidiOutputEffect: NSObject, Effect {
         }
         let amplitude = rms()
         
-//        if amplitude < 0.001 {
-//            return
-//        }
+        if strokeDetectorXd.process(processingSample: Double(amplitude)) == 0 {
+            bzero(outputBuffer, Int(samplingSettings.packetByteSize))
+            return
+        }
+        
+        let sineWave = sineWaveGenerator.generate(samples: 128, frequency: frequency * 0.0001)//.map{$0 * amplitude * 3}
+        for i in 0..<Int(samplingSettings.framesPerPacket) {
+            outputBuffer.advanced(by: i).pointee = sineWave[i]
+        }
+        
+        guard sendMidi else {return}
         guard let note = try? Note(frequency: Double(frequency)) else {return}
         let integratedIndex = noteIndexIntegrator.integrate(sound: (noteIndex: note.index, volume: amplitude))
         if recentNote.index == integratedIndex.noteIndex {
@@ -56,47 +66,5 @@ class MidiOutputEffect: NSObject, Effect {
         }
         midiServer.playNote(note: UInt8(abs(integratedIndex.noteIndex + 50)), on: true)
         
-//        debugPrint(integratedIndex)
-        
-        return
-        
-        noteIntegrator.append(note.index)
-        noteIntegrator.remove(at: 0)
-        
-        let noteIndex = noteIntegrator.flatMap {
-            if let unwrapped = $0 {
-                return unwrapped
-            }
-            return nil
-            }.reduce(0, +) / noteIntegrator.count
-        
-        if noteIndex == recentNote.index {
-            return
-        } else {
-            let noteIndex = noteIndex > 0 ? noteIndex : -noteIndex
-//            debugPrint(noteIndex)
-            midiServer.playNote(note: UInt8(noteIndex + 50), on: true)
-            recentNote = note
-        }
-        
-        memcpy(outputBuffer, inputSample.amp, Int(samplingSettings.packetByteSize))
-//        debugPrint(frequency)
-//
-//        let sineWave = sineWaveGenerator.generate(samples: 128, frequency: frequency * 0.00001)
-//        for i in 0..<Int(samplingSettings.framesPerPacket) {
-//            outputBuffer.advanced(by: i).pointee = sineWave[i]
-//        }
-        
-//        let f: Float = 0.01
-//        let s: Int = 128
-//
-//        var r: [Float] = []
-//
-//        r.append(contentsOf: sineWaveGenerator.generate(samples: s, frequency: f))
-//        r.append(contentsOf: sineWaveGenerator.generate(samples: s, frequency: f))
-//        r.append(contentsOf: sineWaveGenerator.generate(samples: s, frequency: f))
-//        let str = r.map{"\($0) "}.reduce("", +)
-        
-//        debugPrint(str)
     }
 }

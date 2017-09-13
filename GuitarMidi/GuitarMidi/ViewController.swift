@@ -10,11 +10,23 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    var midiServer: MidiServer? = MidiServer()
-    
     @IBAction func stop(sender: Any?) {
-        midiServer = nil
+        
     }
     
+    @IBAction func lagChanged(textField: NSTextField) {
+        guard let int = Int(textField.stringValue) else {return}
+        strokeDetectorXd.lag = int
+    }
+    
+    @IBAction func tresholdChanged(textField: NSTextField) {
+        guard let double = Double(textField.stringValue) else {return}
+        strokeDetectorXd.threshold = double
+    }
+    
+    @IBAction func influenceChanged(textField: NSTextField) {
+        guard let double = Double(textField.stringValue) else {return}
+        strokeDetectorXd.influence = double
+    }
 }
 

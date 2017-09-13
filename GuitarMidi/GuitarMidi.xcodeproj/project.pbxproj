@@ -13,6 +13,7 @@
 		C262CA611F5F10AA00411635 /* MidiOutputEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */; };
 		C28CE3761F6094FF002B9567 /* PitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CE3751F6094FF002B9567 /* PitchDetector.swift */; };
 		C28CE3781F60A0A0002B9567 /* SineWaveGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CE3771F60A0A0002B9567 /* SineWaveGenerator.swift */; };
+		C2A057101F6973EC006BC3D1 /* StrokeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */; };
 		C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CB16841F5F0D5800B8D6FF /* AppDelegate.swift */; };
 		C2CB16871F5F0D5800B8D6FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CB16861F5F0D5800B8D6FF /* ViewController.swift */; };
 		C2CB16891F5F0D5800B8D6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CB16881F5F0D5800B8D6FF /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiOutputEffect.swift; sourceTree = "<group>"; };
 		C28CE3751F6094FF002B9567 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
 		C28CE3771F60A0A0002B9567 /* SineWaveGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SineWaveGenerator.swift; sourceTree = "<group>"; };
+		C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeDetector.swift; sourceTree = "<group>"; };
 		C2CB16811F5F0D5800B8D6FF /* GuitarMidi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarMidi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CB16841F5F0D5800B8D6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2CB16861F5F0D5800B8D6FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				C28CE3771F60A0A0002B9567 /* SineWaveGenerator.swift */,
 				C24FFF711F66E2C2007CBF57 /* MidiServer.swift */,
 				C20775E01F671E20009FD61A /* NoteIndexIntegrator.swift */,
+				C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C28CE3761F6094FF002B9567 /* PitchDetector.swift in Sources */,
+				C2A057101F6973EC006BC3D1 /* StrokeDetector.swift in Sources */,
 				C20775E11F671E20009FD61A /* NoteIndexIntegrator.swift in Sources */,
 				C24FFF721F66E2C2007CBF57 /* MidiServer.swift in Sources */,
 				C2CB16871F5F0D5800B8D6FF /* ViewController.swift in Sources */,

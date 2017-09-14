@@ -55,8 +55,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 extension AppDelegate {
-    func makeDevelopmentEffect() -> DistortionEffect {
-        return DistortionEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+    func makeDevelopmentEffect() -> Effect {
+        return SineWavePlayerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
     }
     
     var signal: SignalGenerator {

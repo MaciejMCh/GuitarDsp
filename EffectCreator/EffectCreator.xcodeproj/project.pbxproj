@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C20EF3B41E9A577B00BCDA88 /* GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20EF3B31E9A577B00BCDA88 /* GuitarDsp.framework */; };
 		C20EF3B61E9A5B5500BCDA88 /* SynthEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EF3B51E9A5B5500BCDA88 /* SynthEffect.swift */; };
+		C23892821F6ADDC4005D1FFB /* SineWaveGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23892811F6ADDC4005D1FFB /* SineWaveGenerator.swift */; };
+		C23892841F6AE4D1005D1FFB /* SineWavePlayerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23892831F6AE4D1005D1FFB /* SineWavePlayerEffect.swift */; };
 		C257E52E1E9A55DD006B65A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C257E52D1E9A55DD006B65A5 /* AppDelegate.swift */; };
 		C257E5301E9A55DD006B65A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C257E52F1E9A55DD006B65A5 /* ViewController.swift */; };
 		C257E5321E9A55DD006B65A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C257E5311E9A55DD006B65A5 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 		C20EF3B31E9A577B00BCDA88 /* GuitarDsp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarDsp.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-gboowxrazxsddgehsrbqoyrqehfs/Build/Products/Debug/GuitarDsp.framework"; sourceTree = "<group>"; };
 		C20EF3B51E9A5B5500BCDA88 /* SynthEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynthEffect.swift; sourceTree = "<group>"; };
 		C20EF3B71E9A667500BCDA88 /* zz.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = zz.raw; sourceTree = "<group>"; };
+		C23892811F6ADDC4005D1FFB /* SineWaveGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SineWaveGenerator.swift; sourceTree = "<group>"; };
+		C23892831F6AE4D1005D1FFB /* SineWavePlayerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SineWavePlayerEffect.swift; sourceTree = "<group>"; };
 		C257E52A1E9A55DD006B65A5 /* EffectCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EffectCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C257E52D1E9A55DD006B65A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C257E52F1E9A55DD006B65A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				C262F4641E9E99DD00D2A8EF /* PlotView.swift */,
 				C262F4661E9E9AED00D2A8EF /* PlotViewController.swift */,
 				C262F4681E9E9EFB00D2A8EF /* EffectCreator-Bridging-Header.h */,
+				C23892811F6ADDC4005D1FFB /* SineWaveGenerator.swift */,
+				C23892831F6AE4D1005D1FFB /* SineWavePlayerEffect.swift */,
 			);
 			path = EffectCreator;
 			sourceTree = "<group>";
@@ -180,6 +186,8 @@
 				C262F4611E9E8AD700D2A8EF /* SignalGenerator.swift in Sources */,
 				C257E5301E9A55DD006B65A5 /* ViewController.swift in Sources */,
 				C257E52E1E9A55DD006B65A5 /* AppDelegate.swift in Sources */,
+				C23892821F6ADDC4005D1FFB /* SineWaveGenerator.swift in Sources */,
+				C23892841F6AE4D1005D1FFB /* SineWavePlayerEffect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

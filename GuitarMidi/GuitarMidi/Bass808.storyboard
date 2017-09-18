@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5jf-pe-vvi">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <scenes>
+        <!--Bass808 View Controller-->
+        <scene sceneID="zmb-sv-Uy2">
+            <objects>
+                <viewController id="5jf-pe-vvi" customClass="Bass808ViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Qlx-4d-moJ">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwI-p0-83J">
+                                <rect key="frame" x="220" y="190" width="220" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="nZo-Dh-s1i"/>
+                                </constraints>
+                            </stackView>
+                            <box title="Oscilators" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-CH-XF5">
+                                <rect key="frame" x="7" y="86" width="206" height="204"/>
+                                <view key="contentView" id="Yjs-tf-OcY">
+                                    <rect key="frame" x="2" y="2" width="202" height="187"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView distribution="fillEqually" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ka-Ik-mhC">
+                                            <rect key="frame" x="0.0" y="0.0" width="202" height="187"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mVC-9T-VYn">
+                                                    <rect key="frame" x="-6" y="-7" width="214" height="198"/>
+                                                    <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xs9-b6-eMP">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="addOscilatorWithSender:" target="5jf-pe-vvi" id="obX-Ga-wZ8"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mVC-9T-VYn" firstAttribute="centerX" secondItem="1Ka-Ik-mhC" secondAttribute="centerX" id="pt1-Vd-yVP"/>
+                                            </constraints>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1Ka-Ik-mhC" firstAttribute="top" secondItem="Yjs-tf-OcY" secondAttribute="top" id="6s1-Iz-tiT"/>
+                                        <constraint firstAttribute="bottom" secondItem="1Ka-Ik-mhC" secondAttribute="bottom" id="irV-3U-wNM"/>
+                                        <constraint firstAttribute="trailing" secondItem="1Ka-Ik-mhC" secondAttribute="trailing" id="oaE-O9-meW"/>
+                                        <constraint firstItem="1Ka-Ik-mhC" firstAttribute="leading" secondItem="Yjs-tf-OcY" secondAttribute="leading" id="saR-ay-UaW"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" placeholder="YES" id="2s1-Dw-U1M"/>
+                                    <constraint firstAttribute="height" constant="200" placeholder="YES" id="QK5-hz-xPe"/>
+                                </constraints>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0gb-CH-XF5" firstAttribute="leading" secondItem="Qlx-4d-moJ" secondAttribute="leading" constant="10" id="KpK-RT-rNz"/>
+                            <constraint firstItem="hwI-p0-83J" firstAttribute="leading" secondItem="Yjs-tf-OcY" secondAttribute="trailing" constant="9" id="Vdi-Js-sui"/>
+                            <constraint firstAttribute="trailing" secondItem="hwI-p0-83J" secondAttribute="trailing" constant="10" id="bpB-ZV-ukL"/>
+                            <constraint firstItem="0gb-CH-XF5" firstAttribute="top" secondItem="Qlx-4d-moJ" secondAttribute="top" constant="10" id="uvI-Gn-j2U"/>
+                            <constraint firstItem="hwI-p0-83J" firstAttribute="top" secondItem="Qlx-4d-moJ" secondAttribute="top" constant="10" id="wNU-92-Gc4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="effectsStackView" destination="hwI-p0-83J" id="HsI-h0-iQi"/>
+                        <outlet property="oscilatorsStackView" destination="1Ka-Ik-mhC" id="hLI-ua-uVV"/>
+                    </connections>
+                </viewController>
+                <customObject id="tQE-5e-bvj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117" y="122"/>
+        </scene>
+    </scenes>
+</document>

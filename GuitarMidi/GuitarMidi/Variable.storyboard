@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="vtE-Vt-APS">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Variable View Controller-->
+        <scene sceneID="CmY-QA-5Mo">
+            <objects>
+                <viewController id="vtE-Vt-APS" customClass="VariableViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="BUb-SD-7u8">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Gga-Jc-xfc">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                                <subviews>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="ftV-fg-q7A">
+                                        <rect key="frame" x="-1" y="33" width="55" height="18"/>
+                                        <buttonCell key="cell" type="radio" title="Fixed" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="bDG-Vb-e5i">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="radioButtonActionWithRadioButton:" target="vtE-Vt-APS" id="BeQ-SD-h8m"/>
+                                        </connections>
+                                    </button>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="ENY-fq-P35">
+                                        <rect key="frame" x="-1" y="7" width="52" height="18"/>
+                                        <buttonCell key="cell" type="radio" title="Func" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="tta-Oj-Enk">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="radioButtonActionWithRadioButton:" target="vtE-Vt-APS" id="Mr9-Bb-s7v"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OPs-0r-QOx">
+                                        <rect key="frame" x="62" y="31" width="50" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="ai7-vS-NID"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="rvN-vq-rx2">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <action selector="fixedTextFieldAction:" target="vtE-Vt-APS" id="Jft-bD-c73"/>
+                                        </connections>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FpU-b0-8JE">
+                                        <rect key="frame" x="56" y="-2" width="62" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Edit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="byb-lI-n8G">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2el-rN-tS4"/>
+                                    <constraint firstItem="FpU-b0-8JE" firstAttribute="trailing" secondItem="OPs-0r-QOx" secondAttribute="trailing" id="BBB-y7-GxJ"/>
+                                    <constraint firstAttribute="width" constant="120" id="DDa-9n-Z3j"/>
+                                    <constraint firstItem="ftV-fg-q7A" firstAttribute="top" secondItem="Gga-Jc-xfc" secondAttribute="top" id="Hsw-o5-4UQ"/>
+                                    <constraint firstItem="FpU-b0-8JE" firstAttribute="leading" secondItem="OPs-0r-QOx" secondAttribute="leading" id="NxR-SL-52V"/>
+                                    <constraint firstItem="OPs-0r-QOx" firstAttribute="leading" secondItem="ftV-fg-q7A" secondAttribute="trailing" constant="10" id="YkF-yn-Pcd"/>
+                                    <constraint firstItem="OPs-0r-QOx" firstAttribute="baseline" secondItem="ftV-fg-q7A" secondAttribute="baseline" id="cmv-8b-FgR"/>
+                                    <constraint firstItem="FpU-b0-8JE" firstAttribute="baseline" secondItem="ENY-fq-P35" secondAttribute="baseline" id="dkQ-hd-2S0"/>
+                                    <constraint firstItem="ENY-fq-P35" firstAttribute="top" secondItem="ftV-fg-q7A" secondAttribute="bottom" constant="10" id="pwh-K2-b9H"/>
+                                    <constraint firstItem="ENY-fq-P35" firstAttribute="leading" secondItem="ftV-fg-q7A" secondAttribute="leading" id="qg9-Jk-yVv"/>
+                                    <constraint firstItem="ftV-fg-q7A" firstAttribute="leading" secondItem="Gga-Jc-xfc" secondAttribute="leading" id="uLJ-WC-79W"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Gga-Jc-xfc" secondAttribute="bottom" id="KdD-f9-kAc"/>
+                            <constraint firstItem="Gga-Jc-xfc" firstAttribute="top" secondItem="BUb-SD-7u8" secondAttribute="top" id="ONo-nl-MaC"/>
+                            <constraint firstAttribute="trailing" secondItem="Gga-Jc-xfc" secondAttribute="trailing" id="muy-lW-nhR"/>
+                            <constraint firstItem="Gga-Jc-xfc" firstAttribute="leading" secondItem="BUb-SD-7u8" secondAttribute="leading" id="mx6-Xz-3hu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="editButton" destination="FpU-b0-8JE" id="efj-La-vlo"/>
+                        <outlet property="fixedButton" destination="ftV-fg-q7A" id="bgf-nQ-6OL"/>
+                        <outlet property="fixedTextField" destination="OPs-0r-QOx" id="8lJ-y6-eqC"/>
+                        <outlet property="funcButton" destination="ENY-fq-P35" id="bPT-Gz-kgA"/>
+                    </connections>
+                </viewController>
+                <customObject id="5d3-Zv-k4E" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="79"/>
+        </scene>
+    </scenes>
+</document>

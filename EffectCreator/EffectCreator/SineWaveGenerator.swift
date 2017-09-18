@@ -8,17 +8,20 @@
 
 import Foundation
 
-let sign: (Float) -> Float = {$0 > 0 ? 1 : -1}
+let sign: (Double) -> Double = {$0 > 0 ? 1 : -1}
 
 class SineWaveGenerator {
     let signalLength = 1000
     
+    var t = 0
+    
     func generate() -> [Float] {
+        return []
         //        let signal = Function.circle.period(samplesCount: signalLength)
         return Function.circle.period(samplesCount: signalLength)
-        let signal = Function.mirrordriven(function: .sine, level: 0.8, bounce: 1.4).period(samplesCount: signalLength)
+//        let signal = Function.mirrordriven(function: .sine, level: 0.8, bounce: 1.4).period(samplesCount: signalLength)
         
-        PlotViewController.passData(dict: ["test": signal])
+//        PlotViewController.passData(dict: ["test": signal])
         
         
         //        PlotViewController.passData(dict: ["sine": Function.sine.period(samplesCount: 1000)])
@@ -26,9 +29,9 @@ class SineWaveGenerator {
         //        PlotViewController.passData(dict: ["triangle": Function.triangle.period(samplesCount: 1000)])
         //        PlotViewController.passData(dict: ["shaped": Function.shaped(f1: .sine, f2: .triangle, percent: 0.5).period(samplesCount: 1000)])
         //
-        PlotViewController.me.draw()
+//        PlotViewController.me.draw()
         
-        return signal
+//        return signal
     }
     
     func generate(percent: Float) -> [Float] {
@@ -43,8 +46,8 @@ extension SineWaveGenerator {
         case triangle
         case circle
         case shaped(f1: Function, f2: Function, percent: Float)
-        case overdriven(function: Function, level: Float)
-        case mirrordriven(function: Function, level: Float, bounce: Float)
+//        case overdriven(function: Function, level: Float)
+//        case mirrordriven(function: Function, level: Float, bounce: Float)
     }
 }
 
@@ -85,11 +88,11 @@ extension SineWaveGenerator.Function {
                 circleSignal.append(-circleSignal[i - signalHalfLength])
             }
             return circleSignal
-        case .overdriven(let function, let level): return function.period(samplesCount: samplesCount).map{min(level, abs($0)) / level * sign($0)}
-        case .mirrordriven(let function, let level, let bounce): return function.period(samplesCount: samplesCount).map {
-            guard abs($0) > level else {return $0}
-            return $0 + ((abs($0) - level) * -sign($0) * bounce * 2)
-            }
+//        case .overdriven(let function, let level): return function.period(samplesCount: samplesCount).map{min(level, abs($0)) / level * sign($0)}
+//        case .mirrordriven(let function, let level, let bounce): return function.period(samplesCount: samplesCount).map {
+//            guard abs($0) > level else {return $0}
+//            return $0 + ((abs($0) - level) * -sign($0) * bounce * 2)
+//            }
         }
     }
 }

@@ -19,6 +19,10 @@
 		C262F4631E9E995C00D2A8EF /* Plot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C262F4621E9E995C00D2A8EF /* Plot.storyboard */; };
 		C262F4651E9E99DD00D2A8EF /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262F4641E9E99DD00D2A8EF /* PlotView.swift */; };
 		C262F4671E9E9AED00D2A8EF /* PlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262F4661E9E9AED00D2A8EF /* PlotViewController.swift */; };
+		C29EF3D61F6F06850069F6F7 /* WaveGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29EF3D51F6F06850069F6F7 /* WaveGenerator.swift */; };
+		C29EF3D81F6F08A30069F6F7 /* FunctionVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29EF3D71F6F08A30069F6F7 /* FunctionVariable.swift */; };
+		C29EF3DA1F6F0DAA0069F6F7 /* WaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29EF3D91F6F0DAA0069F6F7 /* WaveEffect.swift */; };
+		C29EF3DC1F6F107C0069F6F7 /* BassSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29EF3DB1F6F107C0069F6F7 /* BassSynthesizer.swift */; };
 		C2AAD3C41E9E2F5900CBA12A /* RecordingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AAD3C31E9E2F5900CBA12A /* RecordingProcessor.swift */; };
 		C2AAD3CA1E9E4B7D00CBA12A /* WavWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AAD3C91E9E4B7D00CBA12A /* WavWriter.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +44,10 @@
 		C262F4641E9E99DD00D2A8EF /* PlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
 		C262F4661E9E9AED00D2A8EF /* PlotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotViewController.swift; sourceTree = "<group>"; };
 		C262F4681E9E9EFB00D2A8EF /* EffectCreator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EffectCreator-Bridging-Header.h"; sourceTree = "<group>"; };
+		C29EF3D51F6F06850069F6F7 /* WaveGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveGenerator.swift; sourceTree = "<group>"; };
+		C29EF3D71F6F08A30069F6F7 /* FunctionVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionVariable.swift; sourceTree = "<group>"; };
+		C29EF3D91F6F0DAA0069F6F7 /* WaveEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveEffect.swift; sourceTree = "<group>"; };
+		C29EF3DB1F6F107C0069F6F7 /* BassSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BassSynthesizer.swift; sourceTree = "<group>"; };
 		C2AAD3C31E9E2F5900CBA12A /* RecordingProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingProcessor.swift; sourceTree = "<group>"; };
 		C2AAD3C91E9E4B7D00CBA12A /* WavWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavWriter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +108,10 @@
 				C262F4681E9E9EFB00D2A8EF /* EffectCreator-Bridging-Header.h */,
 				C23892811F6ADDC4005D1FFB /* SineWaveGenerator.swift */,
 				C23892831F6AE4D1005D1FFB /* SineWavePlayerEffect.swift */,
+				C29EF3D51F6F06850069F6F7 /* WaveGenerator.swift */,
+				C29EF3D71F6F08A30069F6F7 /* FunctionVariable.swift */,
+				C29EF3D91F6F0DAA0069F6F7 /* WaveEffect.swift */,
+				C29EF3DB1F6F107C0069F6F7 /* BassSynthesizer.swift */,
 			);
 			path = EffectCreator;
 			sourceTree = "<group>";
@@ -179,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2AAD3C41E9E2F5900CBA12A /* RecordingProcessor.swift in Sources */,
+				C29EF3D61F6F06850069F6F7 /* WaveGenerator.swift in Sources */,
 				C262F4671E9E9AED00D2A8EF /* PlotViewController.swift in Sources */,
 				C20EF3B61E9A5B5500BCDA88 /* SynthEffect.swift in Sources */,
 				C262F4651E9E99DD00D2A8EF /* PlotView.swift in Sources */,
@@ -186,6 +199,9 @@
 				C262F4611E9E8AD700D2A8EF /* SignalGenerator.swift in Sources */,
 				C257E5301E9A55DD006B65A5 /* ViewController.swift in Sources */,
 				C257E52E1E9A55DD006B65A5 /* AppDelegate.swift in Sources */,
+				C29EF3DC1F6F107C0069F6F7 /* BassSynthesizer.swift in Sources */,
+				C29EF3D81F6F08A30069F6F7 /* FunctionVariable.swift in Sources */,
+				C29EF3DA1F6F0DAA0069F6F7 /* WaveEffect.swift in Sources */,
 				C23892821F6ADDC4005D1FFB /* SineWaveGenerator.swift in Sources */,
 				C23892841F6AE4D1005D1FFB /* SineWavePlayerEffect.swift in Sources */,
 			);

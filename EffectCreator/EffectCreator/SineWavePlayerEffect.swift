@@ -11,28 +11,22 @@ import GuitarDsp
 
 class SineWavePlayerEffect: NSObject, Effect {
     let samplingSettings: SamplingSettings
-    let sineWaveGenerator = SineWaveGenerator()
-    
-    var pointer: Float = 0
-    
-    private lazy var sineWave: [Float] = {self.sineWaveGenerator.generate()}()
+    let bassSynth: BassSynthesizer
     
     init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
+        
+        let toneFrequency = 1.2
+        let sineWaveGenerator = WaveGenerator(frequencyFunction: FadeInOutFunction(from: toneFrequency * 1.15, to: toneFrequency, duration: 30000))
+        bassSynth = BassSynthesizer(waveGenerator: sineWaveGenerator)
+//        bassSynth.effects.append(.foldback(level: 0.9, bounce: 1))
+//        bassSynth.effects.append(.foldback(level: 0.8, bounce: 1))
+//        bassSynth.effects.append(.overdrive(level: 0.9))
     }
     
-    var p: Float = 0
     func processSample(_ inputSample: Sample, intoBuffer outputBuffer: UnsafeMutablePointer<Float>!) {
-        
-//        p += 0.001
-//        p = fmodf(p, 1)
-//        sineWave = sineWaveGenerator.generate(percent: p)
-        
         for i in 0..<samplingSettings.framesPerPacket {
-            outputBuffer.advanced(by: Int(i)).pointee = sineWave[Int(pointer)]
-            
-            pointer = pointer + 1
-            pointer = fmodf(pointer, Float(sineWave.count))
+            outputBuffer.advanced(by: Int(i)).pointee = Float(bassSynth.nextSample())
         }
     }
 }

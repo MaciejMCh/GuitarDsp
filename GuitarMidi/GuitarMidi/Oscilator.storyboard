@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="wO3-hy-qTl">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Oscilator View Controller-->
+        <scene sceneID="CHX-7a-cwe">
+            <objects>
+                <viewController id="wO3-hy-qTl" customClass="OscilatorViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="4hN-Wt-2eN">
+                        <rect key="frame" x="0.0" y="0.0" width="332" height="94"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="xa9-e2-NJD">
+                                <rect key="frame" x="0.0" y="0.0" width="332" height="94"/>
+                                <subviews>
+                                    <containerView translatesAutoresizingMaskIntoConstraints="NO" id="fW0-fr-XQu">
+                                        <rect key="frame" x="68" y="0.0" width="120" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="9sg-tP-DGH"/>
+                                            <constraint firstAttribute="height" constant="60" id="sfC-k9-1Yf"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="hnf-Jr-McZ" kind="embed" identifier="tune" id="XJK-r2-439"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView translatesAutoresizingMaskIntoConstraints="NO" id="f4P-yr-k5q">
+                                        <rect key="frame" x="202" y="0.0" width="120" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="GJ0-gg-wV0"/>
+                                            <constraint firstAttribute="width" constant="120" id="wt2-Mi-fgA"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="hnf-Jr-McZ" kind="embed" identifier="volume" id="IDL-iy-f69"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="f4P-yr-k5q" firstAttribute="top" secondItem="fW0-fr-XQu" secondAttribute="top" id="1tC-Jo-Bua"/>
+                                    <constraint firstAttribute="bottom" secondItem="fW0-fr-XQu" secondAttribute="bottom" id="5nN-hn-IAE"/>
+                                    <constraint firstAttribute="trailing" secondItem="f4P-yr-k5q" secondAttribute="trailing" constant="10" id="h08-7A-k0z"/>
+                                </constraints>
+                            </customView>
+                            <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="nX1-pW-DxG">
+                                <rect key="frame" x="8" y="37" width="52" height="21"/>
+                                <popUpButtonCell key="cell" type="check" title="Item 1" bezelStyle="regularSquare" imagePosition="left" lineBreakMode="truncatingTail" state="on" inset="2" arrowPosition="noArrow" selectedItem="8oh-AZ-N07" id="ILC-vB-Wkn">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="sx4-hK-HfY">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="8oh-AZ-N07"/>
+                                            <menuItem title="Item 2" id="0Wl-PZ-whz"/>
+                                            <menuItem title="Item 3" id="jqX-rr-fY7"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="viewChanged:" target="wO3-hy-qTl" id="zra-xJ-u1r"/>
+                                </connections>
+                            </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BBQ-VW-iXD">
+                                <rect key="frame" x="66" y="67" width="34" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tune" id="fxq-hM-ce3">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-03-5FB">
+                                <rect key="frame" x="200" y="67" width="49" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Volume" id="TgB-ca-mVu">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="xa9-e2-NJD" secondAttribute="bottom" id="3CU-FS-sBe"/>
+                            <constraint firstItem="f4P-yr-k5q" firstAttribute="leading" secondItem="GzS-03-5FB" secondAttribute="leading" id="EES-Zq-ZEr"/>
+                            <constraint firstAttribute="trailing" secondItem="xa9-e2-NJD" secondAttribute="trailing" id="EWx-oi-CAC"/>
+                            <constraint firstItem="nX1-pW-DxG" firstAttribute="leading" secondItem="4hN-Wt-2eN" secondAttribute="leading" constant="10" id="KFz-8L-IkG"/>
+                            <constraint firstItem="BBQ-VW-iXD" firstAttribute="leading" secondItem="nX1-pW-DxG" secondAttribute="trailing" constant="10" id="KTa-Oz-pt9"/>
+                            <constraint firstItem="xa9-e2-NJD" firstAttribute="leading" secondItem="4hN-Wt-2eN" secondAttribute="leading" id="Pcf-aD-chk"/>
+                            <constraint firstItem="GzS-03-5FB" firstAttribute="leading" secondItem="fW0-fr-XQu" secondAttribute="trailing" constant="14" id="RNQ-tf-fDd"/>
+                            <constraint firstItem="fW0-fr-XQu" firstAttribute="leading" secondItem="BBQ-VW-iXD" secondAttribute="leading" id="aOt-Bv-FnB"/>
+                            <constraint firstItem="nX1-pW-DxG" firstAttribute="centerY" secondItem="4hN-Wt-2eN" secondAttribute="centerY" id="aum-OG-0eh"/>
+                            <constraint firstItem="BBQ-VW-iXD" firstAttribute="top" secondItem="4hN-Wt-2eN" secondAttribute="top" constant="10" id="dET-Cr-HMc"/>
+                            <constraint firstItem="xa9-e2-NJD" firstAttribute="top" secondItem="4hN-Wt-2eN" secondAttribute="top" id="oZO-pH-j9u"/>
+                            <constraint firstItem="GzS-03-5FB" firstAttribute="baseline" secondItem="BBQ-VW-iXD" secondAttribute="baseline" id="vYY-5I-hU1"/>
+                            <constraint firstItem="fW0-fr-XQu" firstAttribute="top" secondItem="BBQ-VW-iXD" secondAttribute="bottom" constant="7" id="vpK-CF-ecy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="shapePopupButton" destination="nX1-pW-DxG" id="Cdj-2o-Dvi"/>
+                    </connections>
+                </viewController>
+                <customObject id="ets-UH-TKN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="67.5" y="113"/>
+        </scene>
+        <!--Variable-->
+        <scene sceneID="UJt-Ef-wII">
+            <objects>
+                <controllerPlaceholder storyboardName="Variable" id="hnf-Jr-McZ" sceneMemberID="viewController"/>
+                <customObject id="Qs5-b8-UQI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="67" y="294"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="IDL-iy-f69"/>
+    </inferredMetricsTieBreakers>
+</document>

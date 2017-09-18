@@ -13,7 +13,7 @@ import GuitarDsp
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
+//        return
 //        let lenght = 50
 //
 //        let integrator = NoteIndexIntegrator()
@@ -79,7 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate {
     func makeDevelopmentEffect() -> Effect {
-        return MidiOutputEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+        return Bass808Effect(samplingSettings: AudioInterface.shared().samplingSettings)
     }
     
     var signal: SignalGenerator {

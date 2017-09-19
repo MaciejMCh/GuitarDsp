@@ -8,6 +8,8 @@
 
 import Foundation
 
+let sign: (Double) -> Double = {$0 > 0 ? 1 : -1}
+
 enum WaveShape {
     case sine
     case square
@@ -26,6 +28,12 @@ class WaveGenerator {
     func nextSample(frequency: Double) -> Double {
         let timeShift = frequency * frequencyFunction.value * 0.01
         x += timeShift
-        return sin(x)
+        
+        switch waveShape {
+        case .sine: return sin(x)
+        case .square: return sign(sin(x))
+        case .triangle: return 0
+        case .circle: return 0
+        }
     }
 }

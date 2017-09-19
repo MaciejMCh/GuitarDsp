@@ -34,3 +34,4 @@ extension InterfaceBuilderInstance where Self: NSView {
 
 // MARK: Concrete
 extension OscilatorViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Oscilator"}}
+extension EnvelopeViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Envelope"}}

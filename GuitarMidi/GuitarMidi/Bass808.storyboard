@@ -65,9 +65,18 @@
                                     <constraint firstAttribute="height" constant="200" placeholder="YES" id="QK5-hz-xPe"/>
                                 </constraints>
                             </box>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="p2P-0Z-Pw8" customClass="PlayerView" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="1xT-0b-5um"/>
+                                    <constraint firstAttribute="height" constant="40" id="mDM-KV-aDV"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="p2P-0Z-Pw8" firstAttribute="leading" secondItem="Qlx-4d-moJ" secondAttribute="leading" constant="10" id="9cT-Ff-vgc"/>
                             <constraint firstItem="0gb-CH-XF5" firstAttribute="leading" secondItem="Qlx-4d-moJ" secondAttribute="leading" constant="10" id="KpK-RT-rNz"/>
+                            <constraint firstAttribute="bottom" secondItem="p2P-0Z-Pw8" secondAttribute="bottom" constant="10" id="UHf-8c-KvJ"/>
                             <constraint firstItem="hwI-p0-83J" firstAttribute="leading" secondItem="Yjs-tf-OcY" secondAttribute="trailing" constant="9" id="Vdi-Js-sui"/>
                             <constraint firstAttribute="trailing" secondItem="hwI-p0-83J" secondAttribute="trailing" constant="10" id="bpB-ZV-ukL"/>
                             <constraint firstItem="0gb-CH-XF5" firstAttribute="top" secondItem="Qlx-4d-moJ" secondAttribute="top" constant="10" id="uvI-Gn-j2U"/>

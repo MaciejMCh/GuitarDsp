@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="AjI-iQ-Fzb">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Envelope View Controller-->
+        <scene sceneID="kRp-Ko-TXS">
+            <objects>
+                <viewController id="AjI-iQ-Fzb" customClass="EnvelopeViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="l4P-MF-KnQ">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nEB-TM-msr">
+                                <rect key="frame" x="8" y="37" width="38" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Delay" id="jfo-We-UFd">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="R3R-Pr-wCp" customClass="VariableTextField" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="50" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="dj2-Bp-VdU"/>
+                                    <constraint firstAttribute="width" constant="50" id="e0J-h1-0ZQ"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="va9-X1-f5C">
+                                    <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" decimalSeparator="." id="kqW-uF-tJ4">
+                                        <real key="minimum" value="0.0"/>
+                                        <real key="maximum" value="1"/>
+                                    </numberFormatter>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="textFieldChanged:" target="AjI-iQ-Fzb" id="Inz-aw-VQb"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T2V-yy-kwN">
+                                <rect key="frame" x="78" y="37" width="43" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Attack" id="VgH-yS-6TA">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bpd-Tf-dku" customClass="VariableTextField" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="80" y="10" width="50" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="GPJ-xf-UNb">
+                                    <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" decimalSeparator="." id="hOs-1n-Fed">
+                                        <real key="minimum" value="0.0"/>
+                                        <real key="maximum" value="1"/>
+                                    </numberFormatter>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="textFieldChanged:" target="AjI-iQ-Fzb" id="Wgw-Kh-ZQs"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UAT-Wa-KfH">
+                                <rect key="frame" x="148" y="37" width="33" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hold" id="uwb-nF-2Ad">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VGB-kV-QCS" customClass="VariableTextField" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="150" y="10" width="50" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="aMn-b9-5L3">
+                                    <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" decimalSeparator="." id="7XK-YQ-dUK">
+                                        <real key="minimum" value="0.0"/>
+                                        <real key="maximum" value="1"/>
+                                    </numberFormatter>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="textFieldChanged:" target="AjI-iQ-Fzb" id="bLs-r1-8Vi"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HTq-c4-8Mj">
+                                <rect key="frame" x="218" y="37" width="42" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Decay" id="8CW-fk-Q1w">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nnn-we-xqI" customClass="VariableTextField" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="220" y="10" width="50" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Jxy-tf-irI">
+                                    <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" decimalSeparator="." id="49p-Fn-FHY">
+                                        <real key="minimum" value="0.0"/>
+                                        <real key="maximum" value="1"/>
+                                    </numberFormatter>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="textFieldChanged:" target="AjI-iQ-Fzb" id="M4j-o1-EFo"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AJO-Lc-Oqe">
+                                <rect key="frame" x="288" y="37" width="49" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sustain" id="5rz-TO-Bwq">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aJr-dl-riV" customClass="VariableTextField" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="290" y="10" width="50" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="TGg-Nb-1bu">
+                                    <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" decimalSeparator="." id="yxE-S2-0rT">
+                                        <real key="minimum" value="0.0"/>
+                                        <real key="maximum" value="1"/>
+                                    </numberFormatter>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="textFieldChanged:" target="AjI-iQ-Fzb" id="nkM-bp-tsq"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4wn-o7-jEJ">
+                                <rect key="frame" x="358" y="37" width="52" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Release" id="xlo-qZ-4X0">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4R3-0u-JKU" customClass="VariableTextField" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="360" y="10" width="50" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="IhD-DA-rZe">
+                                    <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" decimalSeparator="." id="qJb-Wa-Vbz">
+                                        <real key="minimum" value="0.0"/>
+                                        <real key="maximum" value="1"/>
+                                    </numberFormatter>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="textFieldChanged:" target="AjI-iQ-Fzb" id="XFL-Uu-gkQ"/>
+                                </connections>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="A9J-T8-sGg" customClass="EnvelopeView" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="50" y="100" width="350" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="zTv-RJ-Dka"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="aJr-dl-riV" firstAttribute="top" secondItem="AJO-Lc-Oqe" secondAttribute="bottom" constant="5" id="2Y6-Zc-jl4"/>
+                            <constraint firstItem="A9J-T8-sGg" firstAttribute="leading" secondItem="l4P-MF-KnQ" secondAttribute="leading" constant="50" id="3vI-ns-w1B"/>
+                            <constraint firstItem="aJr-dl-riV" firstAttribute="leading" secondItem="Nnn-we-xqI" secondAttribute="trailing" constant="20" id="3vn-8r-FTi"/>
+                            <constraint firstItem="aJr-dl-riV" firstAttribute="bottom" secondItem="Nnn-we-xqI" secondAttribute="bottom" id="5Je-lx-lTG"/>
+                            <constraint firstItem="4R3-0u-JKU" firstAttribute="top" secondItem="4wn-o7-jEJ" secondAttribute="bottom" constant="5" id="7Xk-qI-uJA"/>
+                            <constraint firstItem="4R3-0u-JKU" firstAttribute="leading" secondItem="aJr-dl-riV" secondAttribute="trailing" constant="20" id="7ho-YD-o2u"/>
+                            <constraint firstAttribute="trailing" secondItem="A9J-T8-sGg" secondAttribute="trailing" constant="50" id="95z-z9-X6S"/>
+                            <constraint firstItem="aJr-dl-riV" firstAttribute="top" secondItem="Nnn-we-xqI" secondAttribute="top" id="A0C-RK-9Vz"/>
+                            <constraint firstItem="4R3-0u-JKU" firstAttribute="bottom" secondItem="aJr-dl-riV" secondAttribute="bottom" id="A3x-cp-N7d"/>
+                            <constraint firstItem="HTq-c4-8Mj" firstAttribute="leading" secondItem="Nnn-we-xqI" secondAttribute="leading" id="Dxi-Mg-aNF"/>
+                            <constraint firstItem="4R3-0u-JKU" firstAttribute="width" secondItem="aJr-dl-riV" secondAttribute="width" id="K3W-hH-S2p"/>
+                            <constraint firstItem="4wn-o7-jEJ" firstAttribute="leading" secondItem="4R3-0u-JKU" secondAttribute="leading" id="KA1-6D-6TH"/>
+                            <constraint firstAttribute="bottom" secondItem="R3R-Pr-wCp" secondAttribute="bottom" constant="10" id="KEM-mO-pgq"/>
+                            <constraint firstItem="4R3-0u-JKU" firstAttribute="top" secondItem="aJr-dl-riV" secondAttribute="top" id="MHF-vR-FDm"/>
+                            <constraint firstItem="T2V-yy-kwN" firstAttribute="leading" secondItem="bpd-Tf-dku" secondAttribute="leading" id="O4Y-pK-KaZ"/>
+                            <constraint firstItem="R3R-Pr-wCp" firstAttribute="top" secondItem="nEB-TM-msr" secondAttribute="bottom" constant="5" id="Ow8-qR-kg3"/>
+                            <constraint firstItem="bpd-Tf-dku" firstAttribute="top" secondItem="T2V-yy-kwN" secondAttribute="bottom" constant="5" id="QRj-gJ-Nqy"/>
+                            <constraint firstItem="VGB-kV-QCS" firstAttribute="leading" secondItem="bpd-Tf-dku" secondAttribute="trailing" constant="20" id="Rfu-ez-sYb"/>
+                            <constraint firstItem="R3R-Pr-wCp" firstAttribute="leading" secondItem="l4P-MF-KnQ" secondAttribute="leading" constant="10" id="UKc-qz-Dgn"/>
+                            <constraint firstItem="VGB-kV-QCS" firstAttribute="top" secondItem="UAT-Wa-KfH" secondAttribute="bottom" constant="5" id="VpF-Zy-9IY"/>
+                            <constraint firstItem="bpd-Tf-dku" firstAttribute="width" secondItem="R3R-Pr-wCp" secondAttribute="width" id="XLK-zS-Lqx"/>
+                            <constraint firstItem="Nnn-we-xqI" firstAttribute="top" secondItem="VGB-kV-QCS" secondAttribute="top" id="ZCo-xj-Tff"/>
+                            <constraint firstItem="A9J-T8-sGg" firstAttribute="top" secondItem="l4P-MF-KnQ" secondAttribute="top" constant="50" id="eD6-f1-bbw"/>
+                            <constraint firstItem="VGB-kV-QCS" firstAttribute="bottom" secondItem="bpd-Tf-dku" secondAttribute="bottom" id="ePe-mu-gbg"/>
+                            <constraint firstItem="aJr-dl-riV" firstAttribute="width" secondItem="Nnn-we-xqI" secondAttribute="width" id="fmb-Z5-7Gv"/>
+                            <constraint firstItem="VGB-kV-QCS" firstAttribute="top" secondItem="bpd-Tf-dku" secondAttribute="top" id="hXo-rq-ceL"/>
+                            <constraint firstItem="AJO-Lc-Oqe" firstAttribute="leading" secondItem="aJr-dl-riV" secondAttribute="leading" id="lQh-bq-k67"/>
+                            <constraint firstItem="Nnn-we-xqI" firstAttribute="top" secondItem="HTq-c4-8Mj" secondAttribute="bottom" constant="5" id="mCh-qw-AVy"/>
+                            <constraint firstItem="UAT-Wa-KfH" firstAttribute="leading" secondItem="VGB-kV-QCS" secondAttribute="leading" id="n8P-dg-iJO"/>
+                            <constraint firstItem="Nnn-we-xqI" firstAttribute="leading" secondItem="VGB-kV-QCS" secondAttribute="trailing" constant="20" id="ncC-XS-70y"/>
+                            <constraint firstItem="VGB-kV-QCS" firstAttribute="width" secondItem="bpd-Tf-dku" secondAttribute="width" id="o77-yN-B06"/>
+                            <constraint firstItem="bpd-Tf-dku" firstAttribute="top" secondItem="R3R-Pr-wCp" secondAttribute="top" id="rfC-uT-bZ8"/>
+                            <constraint firstItem="Nnn-we-xqI" firstAttribute="bottom" secondItem="VGB-kV-QCS" secondAttribute="bottom" id="wIV-yX-iwx"/>
+                            <constraint firstItem="bpd-Tf-dku" firstAttribute="leading" secondItem="R3R-Pr-wCp" secondAttribute="trailing" constant="20" id="wLE-Fj-4Ac"/>
+                            <constraint firstItem="bpd-Tf-dku" firstAttribute="bottom" secondItem="R3R-Pr-wCp" secondAttribute="bottom" id="xfg-40-nxT"/>
+                            <constraint firstItem="nEB-TM-msr" firstAttribute="leading" secondItem="R3R-Pr-wCp" secondAttribute="leading" id="y9W-gB-dhE"/>
+                            <constraint firstItem="Nnn-we-xqI" firstAttribute="width" secondItem="VGB-kV-QCS" secondAttribute="width" id="zay-8o-uUn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="attackTextField" destination="bpd-Tf-dku" id="6dD-xG-VvC"/>
+                        <outlet property="decayTextField" destination="Nnn-we-xqI" id="cC5-fs-LKG"/>
+                        <outlet property="delayTextField" destination="R3R-Pr-wCp" id="vbO-sU-bNK"/>
+                        <outlet property="envelopeView" destination="A9J-T8-sGg" id="zet-ZT-hsk"/>
+                        <outlet property="holdTextField" destination="VGB-kV-QCS" id="lsC-ob-qRr"/>
+                        <outlet property="releaseTextField" destination="4R3-0u-JKU" id="3wV-zl-tFA"/>
+                        <outlet property="sustainTextField" destination="aJr-dl-riV" id="tmP-CM-qaN"/>
+                    </connections>
+                </viewController>
+                <customObject id="aYF-gY-h8a" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119" y="163"/>
+        </scene>
+    </scenes>
+</document>

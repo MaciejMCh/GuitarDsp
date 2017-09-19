@@ -11,6 +11,9 @@
 		C20775E11F671E20009FD61A /* NoteIndexIntegrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20775E01F671E20009FD61A /* NoteIndexIntegrator.swift */; };
 		C20AE1C21F70566300AFFBCE /* Variable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20AE1C11F70566300AFFBCE /* Variable.storyboard */; };
 		C20AE1C41F7057F500AFFBCE /* VariableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20AE1C31F7057F500AFFBCE /* VariableViewController.swift */; };
+		C20E18461F71087A00C55086 /* EnvelopeFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18451F71087900C55086 /* EnvelopeFunction.swift */; };
+		C20E18481F710C3000C55086 /* Envelope.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20E18471F710C3000C55086 /* Envelope.storyboard */; };
+		C20E184A1F710E1400C55086 /* EnvelopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18491F710E1400C55086 /* EnvelopeViewController.swift */; };
 		C21D82AD1F70316600F79116 /* Bass808ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82AC1F70316600F79116 /* Bass808ViewController.swift */; };
 		C21D82B11F7032E900F79116 /* Bass808.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21D82B01F7032E900F79116 /* Bass808.storyboard */; };
 		C21D82B31F70330200F79116 /* Oscilator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21D82B21F70330200F79116 /* Oscilator.storyboard */; };
@@ -25,6 +28,7 @@
 		C28CE3781F60A0A0002B9567 /* SineWaveGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CE3771F60A0A0002B9567 /* SineWaveGenerator.swift */; };
 		C2A057101F6973EC006BC3D1 /* StrokeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */; };
 		C2BC08E21F70863300F308AE /* Bass808Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC08E11F70863300F308AE /* Bass808Effect.swift */; };
+		C2BC08E41F70920700F308AE /* TimeFunctionVariable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2BC08E31F70920700F308AE /* TimeFunctionVariable.storyboard */; };
 		C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CB16841F5F0D5800B8D6FF /* AppDelegate.swift */; };
 		C2CB16871F5F0D5800B8D6FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CB16861F5F0D5800B8D6FF /* ViewController.swift */; };
 		C2CB16891F5F0D5800B8D6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CB16881F5F0D5800B8D6FF /* Assets.xcassets */; };
@@ -38,6 +42,9 @@
 		C20775E01F671E20009FD61A /* NoteIndexIntegrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteIndexIntegrator.swift; sourceTree = "<group>"; };
 		C20AE1C11F70566300AFFBCE /* Variable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Variable.storyboard; sourceTree = "<group>"; };
 		C20AE1C31F7057F500AFFBCE /* VariableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableViewController.swift; sourceTree = "<group>"; };
+		C20E18451F71087900C55086 /* EnvelopeFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeFunction.swift; sourceTree = "<group>"; };
+		C20E18471F710C3000C55086 /* Envelope.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Envelope.storyboard; sourceTree = "<group>"; };
+		C20E18491F710E1400C55086 /* EnvelopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeViewController.swift; sourceTree = "<group>"; };
 		C21D82AC1F70316600F79116 /* Bass808ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bass808ViewController.swift; sourceTree = "<group>"; };
 		C21D82B01F7032E900F79116 /* Bass808.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bass808.storyboard; sourceTree = "<group>"; };
 		C21D82B21F70330200F79116 /* Oscilator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Oscilator.storyboard; sourceTree = "<group>"; };
@@ -52,6 +59,7 @@
 		C28CE3771F60A0A0002B9567 /* SineWaveGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SineWaveGenerator.swift; sourceTree = "<group>"; };
 		C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeDetector.swift; sourceTree = "<group>"; };
 		C2BC08E11F70863300F308AE /* Bass808Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bass808Effect.swift; sourceTree = "<group>"; };
+		C2BC08E31F70920700F308AE /* TimeFunctionVariable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeFunctionVariable.storyboard; sourceTree = "<group>"; };
 		C2CB16811F5F0D5800B8D6FF /* GuitarMidi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarMidi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CB16841F5F0D5800B8D6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2CB16861F5F0D5800B8D6FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +143,10 @@
 				C20AE1C11F70566300AFFBCE /* Variable.storyboard */,
 				C20AE1C31F7057F500AFFBCE /* VariableViewController.swift */,
 				C2BC08E11F70863300F308AE /* Bass808Effect.swift */,
+				C2BC08E31F70920700F308AE /* TimeFunctionVariable.storyboard */,
+				C20E18451F71087900C55086 /* EnvelopeFunction.swift */,
+				C20E18471F710C3000C55086 /* Envelope.storyboard */,
+				C20E18491F710E1400C55086 /* EnvelopeViewController.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -211,9 +223,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20E18481F710C3000C55086 /* Envelope.storyboard in Resources */,
 				C21D82B11F7032E900F79116 /* Bass808.storyboard in Resources */,
 				C2CB16891F5F0D5800B8D6FF /* Assets.xcassets in Resources */,
 				C2CB168C1F5F0D5800B8D6FF /* Main.storyboard in Resources */,
+				C2BC08E41F70920700F308AE /* TimeFunctionVariable.storyboard in Resources */,
 				C21D82B31F70330200F79116 /* Oscilator.storyboard in Resources */,
 				C20AE1C21F70566300AFFBCE /* Variable.storyboard in Resources */,
 			);
@@ -286,11 +300,13 @@
 			files = (
 				C21D82BA1F70400900F79116 /* WaveGenerator.swift in Sources */,
 				C28CE3761F6094FF002B9567 /* PitchDetector.swift in Sources */,
+				C20E18461F71087A00C55086 /* EnvelopeFunction.swift in Sources */,
 				C2A057101F6973EC006BC3D1 /* StrokeDetector.swift in Sources */,
 				C20775E11F671E20009FD61A /* NoteIndexIntegrator.swift in Sources */,
 				C2BC08E21F70863300F308AE /* Bass808Effect.swift in Sources */,
 				C21D82B51F70337F00F79116 /* OscilatorViewController.swift in Sources */,
 				C21D82BE1F70410C00F79116 /* 808Bass.swift in Sources */,
+				C20E184A1F710E1400C55086 /* EnvelopeViewController.swift in Sources */,
 				C21D82AD1F70316600F79116 /* Bass808ViewController.swift in Sources */,
 				C24FFF721F66E2C2007CBF57 /* MidiServer.swift in Sources */,
 				C21D82B71F7034B900F79116 /* InterfaceBuilderInstance.swift in Sources */,

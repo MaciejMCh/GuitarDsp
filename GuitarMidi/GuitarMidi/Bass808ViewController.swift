@@ -45,3 +45,22 @@ class Bass808ViewController: NSViewController {
         }
     }
 }
+
+class PlayerView: NSView {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        wantsLayer = true
+        layer?.backgroundColor = NSColor.blue.cgColor
+        becomeFirstResponder()
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        super.mouseDown(with: event)
+        bass808xD.on()
+    }
+    
+    override func mouseUp(with event: NSEvent) {
+        super.mouseUp(with: event)
+        bass808xD.off()
+    }
+}

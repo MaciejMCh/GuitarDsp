@@ -43,11 +43,44 @@ class VariableViewController: NSViewController {
         updateVariable()
     }
     
+    @IBAction func functionButtonAction(_ sencer: Any?) {
+        presentViewControllerAsModalWindow(EnvelopeViewController.make())
+    }
+    
     private func updateVariable() {
         switch fixedButton.state {
         case 1: variableUpdate?(Double(fixedTextField.stringValue)!)
         case 0: break
         default: break
         }
+    }
+}
+
+class VariableTextField: NSTextField {
+    @IBInspectable var minValue: Double = 0
+    @IBInspectable var maxValue: Double = 1
+    
+    enum State {
+        case idle
+        case dragging(from: CGPoint)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        acceptsTouchEvents = true
+    }
+    
+    override func touchesBegan(with event: NSEvent) {
+        super.touchesBegan(with: event)
+    }
+    
+    override func scrollWheel(with event: NSEvent) {
+        super.scrollWheel(with: event)
+        let currentDouble = Double(stringValue)!
+        let change = Double(event.deltaY) * -0.01
+        
+        let newDouble = max(minValue, min(maxValue, currentDouble + change))
+        stringValue = String(newDouble)
+        self.target?.perform(self.action)
     }
 }

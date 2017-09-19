@@ -12,8 +12,18 @@ let halfToneToScale: (Double) -> Double = {pow(2, $0 / 12)}
 
 class Bass808 {
     var oscilators: [Oscilator] = [Oscilator()]
+    private var isOn = false
+    
+    func on() {
+        isOn = true
+    }
+    
+    func off() {
+        isOn = false
+    }
     
     func nextSample(frequency: Double) -> Double {
+        guard isOn else {return 0}
         return oscilators.map{$0.waveGenerator.nextSample(frequency: frequency * halfToneToScale($0.tune.value)) * $0.volume.value}.reduce(0, +)
     }
 }

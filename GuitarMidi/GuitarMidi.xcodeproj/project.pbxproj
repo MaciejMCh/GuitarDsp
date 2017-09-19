@@ -34,7 +34,32 @@
 		C2CB16891F5F0D5800B8D6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CB16881F5F0D5800B8D6FF /* Assets.xcassets */; };
 		C2CB168C1F5F0D5800B8D6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2CB168A1F5F0D5800B8D6FF /* Main.storyboard */; };
 		C2CB16951F5F0DC100B8D6FF /* GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CB16941F5F0DC100B8D6FF /* GuitarDsp.framework */; };
+		C2E7E2AB1F7136BD007A9AF6 /* CubicBezierPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E7E2AA1F7136B3007A9AF6 /* CubicBezierPicker.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C2E7E2A51F7136B3007A9AF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B9D1E5F21AA186C5000C5854;
+			remoteInfo = CubicBezier;
+		};
+		C2E7E2A71F7136B3007A9AF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B9D1E6081AA186C5000C5854;
+			remoteInfo = CubicBezierTests;
+		};
+		C2E7E2A91F7136B3007A9AF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C2E7E2911F71362C007A9AF6;
+			remoteInfo = CubicBezierPicker;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2485880FDB1C7AAD3D8B5849 /* Pods-GuitarMidi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarMidi.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +92,7 @@
 		C2CB168B1F5F0D5800B8D6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2CB168D1F5F0D5800B8D6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2CB16941F5F0DC100B8D6FF /* GuitarDsp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarDsp.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-gboowxrazxsddgehsrbqoyrqehfs/Build/Products/Debug/GuitarDsp.framework"; sourceTree = "<group>"; };
+		C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CubicBezier.xcodeproj; path = CubicBezier/CubicBezier.xcodeproj; sourceTree = "<group>"; };
 		E6A95BAF96B672E9AE90BD70 /* Pods-GuitarMidi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarMidi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2E7E2AB1F7136BD007A9AF6 /* CubicBezierPicker.framework in Frameworks */,
 				C2CB16951F5F0DC100B8D6FF /* GuitarDsp.framework in Frameworks */,
 				B48E5AACBB3EB6906900A289 /* Pods_GuitarMidi.framework in Frameworks */,
 			);
@@ -105,6 +132,7 @@
 		C2CB16781F5F0D5800B8D6FF = {
 			isa = PBXGroup;
 			children = (
+				C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */,
 				C2CB16831F5F0D5800B8D6FF /* GuitarMidi */,
 				C2CB16821F5F0D5800B8D6FF /* Products */,
 				C2CB16931F5F0DC100B8D6FF /* Frameworks */,
@@ -160,6 +188,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C2E7E2A01F7136B2007A9AF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2E7E2A61F7136B3007A9AF6 /* CubicBezier.app */,
+				C2E7E2A81F7136B3007A9AF6 /* CubicBezierTests.xctest */,
+				C2E7E2AA1F7136B3007A9AF6 /* CubicBezierPicker.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,12 +249,42 @@
 			mainGroup = C2CB16781F5F0D5800B8D6FF;
 			productRefGroup = C2CB16821F5F0D5800B8D6FF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C2E7E2A01F7136B2007A9AF6 /* Products */;
+					ProjectRef = C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C2CB16801F5F0D5800B8D6FF /* GuitarMidi */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C2E7E2A61F7136B3007A9AF6 /* CubicBezier.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CubicBezier.app;
+			remoteRef = C2E7E2A51F7136B3007A9AF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C2E7E2A81F7136B3007A9AF6 /* CubicBezierTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CubicBezierTests.xctest;
+			remoteRef = C2E7E2A71F7136B3007A9AF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C2E7E2AA1F7136B3007A9AF6 /* CubicBezierPicker.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CubicBezierPicker.framework;
+			remoteRef = C2E7E2A91F7136B3007A9AF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C2CB167F1F5F0D5800B8D6FF /* Resources */ = {

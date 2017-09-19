@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import CubicBezierPicker
 
 class EnvelopeViewController: NSViewController {
     @IBOutlet weak var envelopeView: EnvelopeView!
@@ -17,6 +18,7 @@ class EnvelopeViewController: NSViewController {
     @IBOutlet weak var decayTextField: NSTextField!
     @IBOutlet weak var sustainTextField: NSTextField!
     @IBOutlet weak var releaseTextField: NSTextField!
+    weak var attackBezierViewController: CubicBezierViewController!
     
     let envelopeFunction = EnvelopeFunction()
     
@@ -33,6 +35,12 @@ class EnvelopeViewController: NSViewController {
         decayTextField.stringValue = String(envelopeFunction.decay)
         sustainTextField.stringValue = String(envelopeFunction.sustain)
         releaseTextField.stringValue = String(envelopeFunction.release)
+    }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if let cubicBezierViewController = segue.destinationController as? CubicBezierViewController {
+            self.attackBezierViewController = cubicBezierViewController
+        }
     }
     
     @IBAction func textFieldChanged(_ sender: Any?) {

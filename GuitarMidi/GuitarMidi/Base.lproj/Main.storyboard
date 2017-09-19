@@ -673,7 +673,7 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="RxZ-Bz-i2B" kind="relationship" relationship="window.shadowedContentViewController" id="zFu-LX-rLP"/>
+                        <segue destination="RxZ-Bz-i2B" kind="relationship" relationship="window.shadowedContentViewController" id="eF4-9g-gp8"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -687,6 +687,14 @@
                 <customObject id="w4O-1f-IU3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="524"/>
+        </scene>
+        <!--CubicBezier-->
+        <scene sceneID="DYK-Ds-Qb1">
+            <objects>
+                <controllerPlaceholder storyboardName="CubicBezier" bundleIdentifier="com.mch.cubicBezierPicker.CubicBezierPicker" id="y6Z-Qe-OW4" sceneMemberID="viewController"/>
+                <customObject id="IMw-DA-gwX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="225" y="524"/>
         </scene>
     </scenes>
 </document>

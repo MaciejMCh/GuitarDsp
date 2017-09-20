@@ -9,8 +9,6 @@
 import Foundation
 import Cocoa
 
-var bass808xD = Bass808()
-
 class Bass808ViewController: NSViewController {
     @IBOutlet weak var effectsStackView: NSStackView!
     @IBOutlet weak var oscilatorsStackView: NSStackView!
@@ -27,7 +25,7 @@ class Bass808ViewController: NSViewController {
     }
     
     @IBAction func addOscilator(sender: Any?) {
-        bass808.oscilators.append(Oscilator())
+        bass808.oscilators.append(Oscilator(samplingSettings: bass808.samplingSettings))
         refreshView()
     }
     

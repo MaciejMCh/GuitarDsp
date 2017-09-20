@@ -7,8 +7,15 @@
 //
 
 import Foundation
+import GuitarDsp
 
 class Oscilator: Playing {
+    let samplingSettings: SamplingSettings
+    
+    init(samplingSettings: SamplingSettings) {
+        self.samplingSettings = samplingSettings
+    }
+    
     var waveGenerator = WaveGenerator()
     var tune: FunctionVariable = -12
     var volume: FunctionVariable = 1

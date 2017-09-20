@@ -7,12 +7,19 @@
 //
 
 import Foundation
+import GuitarDsp
 
 let halfToneToScale: (Double) -> Double = {pow(2, $0 / 12)}
 
 class Bass808: Playing {
-    var oscilators: [Oscilator] = [Oscilator()]
+    let samplingSettings: SamplingSettings
+    var oscilators: [Oscilator]
     var effects: [WaveEffect] = [AmpWaveEffect()]
+    
+    init(samplingSettings: SamplingSettings) {
+        self.samplingSettings = samplingSettings
+        oscilators = [Oscilator(samplingSettings: samplingSettings)]
+    }
     
     func on() {
         for oscilator in oscilators {

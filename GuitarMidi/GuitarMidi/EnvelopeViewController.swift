@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 import CubicBezierPicker
 
-class EnvelopeViewController: NSViewController {
+class EnvelopeViewController: NSViewController, HasSamplingSettings {
     @IBOutlet weak var envelopeView: EnvelopeView!
     @IBOutlet weak var delayTextField: NSTextField!
     @IBOutlet weak var attackTextField: NSTextField!
@@ -23,7 +23,11 @@ class EnvelopeViewController: NSViewController {
     weak var decayBezierViewController: CubicBezierViewController!
     weak var releaseBezierViewController: CubicBezierViewController!
     
-    let envelopeFunction = EnvelopeFunction()
+    lazy var envelopeFunction: EnvelopeFunction = {
+        let envelopeFunction = EnvelopeFunction()
+        envelopeFunction.duration = floor(self.samplingSettings.samplesInSecond())
+        return envelopeFunction
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,15 +97,25 @@ class EnvelopeView: NSView {
         let truePath = NSBezierPath()
         truePath.move(to: .init(x: CGFloat(margin), y: CGFloat(margin)))
         
-        envelopeFunction.duration = Double(length / 2)
-        envelopeFunction.on()
+        let drawingEnvelopeFunction = EnvelopeFunction()
+        drawingEnvelopeFunction.hold = envelopeFunction.hold
+        drawingEnvelopeFunction.decay = envelopeFunction.decay
+        drawingEnvelopeFunction.delay = envelopeFunction.delay
+        drawingEnvelopeFunction.attack = envelopeFunction.attack
+        drawingEnvelopeFunction.sustain = envelopeFunction.sustain
+        drawingEnvelopeFunction.release = envelopeFunction.release
+        drawingEnvelopeFunction.decayBezier = envelopeFunction.decayBezier
+        drawingEnvelopeFunction.attackBezier = envelopeFunction.attackBezier
+        drawingEnvelopeFunction.releaseBezier = envelopeFunction.releaseBezier
+        
+        drawingEnvelopeFunction.duration = Double(length / 2)
+        drawingEnvelopeFunction.on()
         for i in 0..<length {
-            truePath.line(to: .init(x: CGFloat(margin) + CGFloat(i), y: CGFloat(margin) + CGFloat(height) * CGFloat(envelopeFunction.nextSample())))
+            truePath.line(to: .init(x: CGFloat(margin) + CGFloat(i), y: CGFloat(margin) + CGFloat(height) * CGFloat(drawingEnvelopeFunction.nextSample())))
             if i == length / 2 {
-                envelopeFunction.off()
+                drawingEnvelopeFunction.off()
             }
         }
-        envelopeFunction.off()
         
         NSColor.red.setStroke()
         truePath.stroke()

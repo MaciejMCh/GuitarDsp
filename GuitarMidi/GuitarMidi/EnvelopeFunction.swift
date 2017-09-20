@@ -14,7 +14,7 @@ class EnvelopeFunction: FunctionVariable {
         case off(releaseStartTime: Double, releaseStartValue: Double)
     }
     
-    var duration: Double = 10
+    var duration: Double = 100000
     var delay: Double = 0
     var attack: Double = 0.1
     var hold: Double = 0.3

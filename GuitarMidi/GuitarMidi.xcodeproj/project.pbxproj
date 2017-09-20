@@ -14,6 +14,7 @@
 		C20E18461F71087A00C55086 /* EnvelopeFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18451F71087900C55086 /* EnvelopeFunction.swift */; };
 		C20E18481F710C3000C55086 /* Envelope.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20E18471F710C3000C55086 /* Envelope.storyboard */; };
 		C20E184A1F710E1400C55086 /* EnvelopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18491F710E1400C55086 /* EnvelopeViewController.swift */; };
+		C211C0971F73014100999FE8 /* SamplingSettingsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */; };
 		C212EAE21F72BB5000198D25 /* TimeFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212EAE11F72BB5000198D25 /* TimeFunctionViewController.swift */; };
 		C212EAE71F72BD8000198D25 /* WaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212EAE61F72BD8000198D25 /* WaveEffect.swift */; };
 		C21D82AD1F70316600F79116 /* Bass808ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82AC1F70316600F79116 /* Bass808ViewController.swift */; };
@@ -77,6 +78,7 @@
 		C20E18451F71087900C55086 /* EnvelopeFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeFunction.swift; sourceTree = "<group>"; };
 		C20E18471F710C3000C55086 /* Envelope.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Envelope.storyboard; sourceTree = "<group>"; };
 		C20E18491F710E1400C55086 /* EnvelopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeViewController.swift; sourceTree = "<group>"; };
+		C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplingSettingsUtils.swift; sourceTree = "<group>"; };
 		C212EAE11F72BB5000198D25 /* TimeFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFunctionViewController.swift; sourceTree = "<group>"; };
 		C212EAE61F72BD8000198D25 /* WaveEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveEffect.swift; sourceTree = "<group>"; };
 		C21D82AC1F70316600F79116 /* Bass808ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bass808ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				C2E7E2B41F715158007A9AF6 /* CubicBezier.swift */,
 				C212EAE61F72BD8000198D25 /* WaveEffect.swift */,
 				C2FA5B701F72CBE9006E6565 /* Oscilator.swift */,
+				C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				C21D82AD1F70316600F79116 /* Bass808ViewController.swift in Sources */,
 				C2FA5B761F72CC54006E6565 /* AmpViewController.swift in Sources */,
 				C2FA5B7A1F72CDEA006E6565 /* WaveEffectControllers.swift in Sources */,
+				C211C0971F73014100999FE8 /* SamplingSettingsUtils.swift in Sources */,
 				C212EAE21F72BB5000198D25 /* TimeFunctionViewController.swift in Sources */,
 				C24FFF721F66E2C2007CBF57 /* MidiServer.swift in Sources */,
 				C21D82B71F7034B900F79116 /* InterfaceBuilderInstance.swift in Sources */,

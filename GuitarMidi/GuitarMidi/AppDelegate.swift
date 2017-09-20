@@ -9,10 +9,11 @@
 import Cocoa
 import GuitarDsp
 
+var bass808xD = Bass808(samplingSettings: AudioInterface.shared().samplingSettings)
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-//    @IBOutlet
     @IBAction func playAction(sender: Any?) {
         bass808xD.on()
     }

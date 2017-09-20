@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab View Controller-->
+        <!--Time Function View Controller-->
         <scene sceneID="93q-pr-iB6">
             <objects>
-                <tabViewController id="QOm-6v-INE" sceneMemberID="viewController">
+                <tabViewController id="QOm-6v-INE" customClass="TimeFunctionViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem identifier="" id="4tb-b6-wxi"/>
                     </tabViewItems>

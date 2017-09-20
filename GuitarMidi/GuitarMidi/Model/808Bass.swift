@@ -10,26 +10,35 @@ import Foundation
 
 let halfToneToScale: (Double) -> Double = {pow(2, $0 / 12)}
 
-class Bass808 {
+class Bass808: Playing {
     var oscilators: [Oscilator] = [Oscilator()]
-    private var isOn = false
+    var effects: [WaveEffect] = [AmpWaveEffect()]
     
     func on() {
-        isOn = true
+        for oscilator in oscilators {
+            oscilator.on()
+        }
+        for effect in effects {
+            effect.on()
+        }
     }
     
     func off() {
-        isOn = false
+        for oscilator in oscilators {
+            oscilator.off()
+        }
+        for effect in effects {
+            effect.off()
+        }
     }
     
     func nextSample(frequency: Double) -> Double {
-        guard isOn else {return 0}
-        return oscilators.map{$0.waveGenerator.nextSample(frequency: frequency * halfToneToScale($0.tune.value)) * $0.volume.value}.reduce(0, +)
+        var processingSample = oscilators.map{$0.waveGenerator.nextSample(frequency: frequency * halfToneToScale($0.tune.value)) * $0.volume.value}.reduce(0, +)
+        
+        for effect in effects {
+            processingSample = effect.apply(input: processingSample)
+        }
+        
+        return processingSample
     }
-}
-
-class Oscilator {
-    var waveGenerator = WaveGenerator()
-    var tune: FunctionVariable = -12
-    var volume: FunctionVariable = 1
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol FunctionVariable {
+protocol FunctionVariable: Playing {
     var value: Double {get}
 }
 

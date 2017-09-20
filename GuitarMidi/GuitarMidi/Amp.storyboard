@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="f2K-G4-kGP">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Amp View Controller-->
+        <scene sceneID="l8Y-Or-Pyb">
+            <objects>
+                <viewController id="f2K-G4-kGP" customClass="AmpViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="BCj-lf-7SE">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="68"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box title="Amp" translatesAutoresizingMaskIntoConstraints="NO" id="KHA-f1-8VD">
+                                <rect key="frame" x="-3" y="-4" width="456" height="72"/>
+                                <view key="contentView" id="HT3-Ml-ycU">
+                                    <rect key="frame" x="2" y="2" width="452" height="55"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BvP-z8-p8L">
+                                            <rect key="frame" x="3" y="33" width="300" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Gain: " id="1Uw-3a-wRu">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Tmn-bA-8Ym">
+                                            <rect key="frame" x="327" y="5" width="120" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="0dD-JH-Qab"/>
+                                                <constraint firstAttribute="width" constant="120" id="rnP-iL-3n5"/>
+                                            </constraints>
+                                            <connections>
+                                                <segue destination="OHR-IW-hum" kind="embed" id="DEo-qg-7IG"/>
+                                            </connections>
+                                        </containerView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Tmn-bA-8Ym" firstAttribute="leading" secondItem="BvP-z8-p8L" secondAttribute="trailing" constant="26" id="HpB-0X-jnp"/>
+                                        <constraint firstAttribute="trailing" secondItem="Tmn-bA-8Ym" secondAttribute="trailing" constant="5" id="IU8-Ff-Myq"/>
+                                        <constraint firstItem="Tmn-bA-8Ym" firstAttribute="top" secondItem="BvP-z8-p8L" secondAttribute="top" id="RaE-bZ-VxU"/>
+                                        <constraint firstAttribute="bottom" secondItem="Tmn-bA-8Ym" secondAttribute="bottom" constant="5" id="cYR-bu-l4Z"/>
+                                        <constraint firstItem="BvP-z8-p8L" firstAttribute="leading" secondItem="HT3-Ml-ycU" secondAttribute="leading" constant="5" id="hxW-AB-okN"/>
+                                        <constraint firstItem="BvP-z8-p8L" firstAttribute="top" secondItem="HT3-Ml-ycU" secondAttribute="top" constant="5" id="yzh-fQ-ih9"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KHA-f1-8VD" firstAttribute="top" secondItem="BCj-lf-7SE" secondAttribute="top" id="NeC-zk-IjV"/>
+                            <constraint firstAttribute="bottom" secondItem="KHA-f1-8VD" secondAttribute="bottom" id="PP2-0g-eHj"/>
+                            <constraint firstItem="KHA-f1-8VD" firstAttribute="leading" secondItem="BCj-lf-7SE" secondAttribute="leading" id="fYQ-Kb-i9O"/>
+                            <constraint firstAttribute="trailing" secondItem="KHA-f1-8VD" secondAttribute="trailing" id="iZk-sO-V1e"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="deI-kY-1vM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3" y="123"/>
+        </scene>
+        <!--Variable-->
+        <scene sceneID="1WK-Xn-h7q">
+            <objects>
+                <controllerPlaceholder storyboardName="Variable" id="OHR-IW-hum" sceneMemberID="viewController"/>
+                <customObject id="qMy-Oq-dlg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3" y="298"/>
+        </scene>
+    </scenes>
+</document>

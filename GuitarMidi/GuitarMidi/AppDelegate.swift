@@ -12,7 +12,20 @@ import GuitarDsp
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+//    @IBOutlet
+    @IBAction func playAction(sender: Any?) {
+        bass808xD.on()
+    }
+    
+    @IBAction func stopAction(sender: Any?) {
+        bass808xD.off()
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+//        bowMenu?.openMenuItem.target = self
+//        bowMenu?.openMenuItem.action = #selector(openAction)
+        
+//        return
 //        return
 //        let lenght = 50
 //

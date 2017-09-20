@@ -13,8 +13,18 @@
                         <items>
                             <menuItem title="GuitarMidi" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="GuitarMidi" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="GuitarMidi" systemMenu="apple" autoenablesItems="NO" id="uQy-DD-JDr">
                                     <items>
+                                        <menuItem title="play" keyEquivalent="z" id="nNz-Xl-Vmr">
+                                            <connections>
+                                                <action selector="playActionWithSender:" target="Voe-Tx-rLC" id="YjD-bn-bIf"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="stop" keyEquivalent="x" id="5pT-b1-yTb">
+                                            <connections>
+                                                <action selector="stopActionWithSender:" target="Voe-Tx-rLC" id="Pv0-Nv-NGV"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="About GuitarMidi" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
@@ -680,21 +690,13 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--TimeFunctionVariable-->
+        <!--Bass808-->
         <scene sceneID="jza-x2-gu5">
             <objects>
-                <controllerPlaceholder storyboardName="TimeFunctionVariable" id="RxZ-Bz-i2B" sceneMemberID="viewController"/>
+                <controllerPlaceholder storyboardName="Bass808" id="RxZ-Bz-i2B" sceneMemberID="viewController"/>
                 <customObject id="w4O-1f-IU3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="524"/>
-        </scene>
-        <!--CubicBezier-->
-        <scene sceneID="DYK-Ds-Qb1">
-            <objects>
-                <controllerPlaceholder storyboardName="CubicBezier" bundleIdentifier="com.mch.cubicBezierPicker.CubicBezierPicker" id="y6Z-Qe-OW4" sceneMemberID="viewController"/>
-                <customObject id="IMw-DA-gwX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="225" y="524"/>
         </scene>
     </scenes>
 </document>

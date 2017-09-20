@@ -15,6 +15,7 @@ class Bass808ViewController: NSViewController {
     @IBOutlet weak var effectsStackView: NSStackView!
     @IBOutlet weak var oscilatorsStackView: NSStackView!
     private var oscilatorViewControllers: [OscilatorViewController] = []
+    private var effectViewControllers: [NSViewController] = []
     
     private var bass808: Bass808 {
         return bass808xD
@@ -42,6 +43,18 @@ class Bass808ViewController: NSViewController {
             
             oscilatorViewControllers.append(oscilatorViewController)
             oscilatorsStackView.insertView(oscilatorViewController.view, at: 0, in: .leading)
+        }
+        
+        for effectViewController in effectViewControllers {
+            effectsStackView.removeView(effectViewController.view)
+        }
+        effectViewControllers.removeAll()
+        
+        for effect in bass808.effects {
+            let effectViewController = WaveEffectControllers.make(waveEffect: effect)
+            
+            effectViewControllers.append(effectViewController)
+            effectsStackView.insertView(effectViewController.view, at: 0, in: .center)
         }
     }
 }

@@ -44,7 +44,11 @@ class VariableViewController: NSViewController {
     }
     
     @IBAction func functionButtonAction(_ sencer: Any?) {
-        presentViewControllerAsModalWindow(EnvelopeViewController.make())
+        let timeFunctionController = TimeFunctionViewController.make()
+        timeFunctionController.functionChange = { [weak self] in
+            self?.variableUpdate?($0)
+        }
+        presentViewControllerAsModalWindow(timeFunctionController)
     }
     
     private func updateVariable() {

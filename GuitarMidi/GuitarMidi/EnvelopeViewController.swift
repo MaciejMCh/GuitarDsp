@@ -18,7 +18,10 @@ class EnvelopeViewController: NSViewController {
     @IBOutlet weak var decayTextField: NSTextField!
     @IBOutlet weak var sustainTextField: NSTextField!
     @IBOutlet weak var releaseTextField: NSTextField!
+    
     weak var attackBezierViewController: CubicBezierViewController!
+    weak var decayBezierViewController: CubicBezierViewController!
+    weak var releaseBezierViewController: CubicBezierViewController!
     
     let envelopeFunction = EnvelopeFunction()
     
@@ -38,8 +41,28 @@ class EnvelopeViewController: NSViewController {
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        if let cubicBezierViewController = segue.destinationController as? CubicBezierViewController {
-            self.attackBezierViewController = cubicBezierViewController
+        if let bezierViewController = segue.destinationController as? CubicBezierViewController, let identifier = segue.identifier {
+            switch identifier {
+            case "attackBezier":
+                bezierViewController.update = { [weak self] (p1, p2) in
+                    self?.envelopeFunction.attackBezier = CubicBezier(p1: p1, p2: p2)
+                    self?.envelopeView.needsDisplay = true
+                }
+                attackBezierViewController = bezierViewController
+            case "decayBezier":
+                bezierViewController.update = { [weak self] (p1, p2) in
+                    self?.envelopeFunction.decayBezier = CubicBezier(p1: p1, p2: p2)
+                    self?.envelopeView.needsDisplay = true
+                }
+                decayBezierViewController = bezierViewController
+            case "releaseBezier":
+                bezierViewController.update = { [weak self] (p1, p2) in
+                    self?.envelopeFunction.releaseBezier = CubicBezier(p1: p1, p2: p2)
+                    self?.envelopeView.needsDisplay = true
+                }
+                releaseBezierViewController = bezierViewController
+            default: break
+            }
         }
     }
     
@@ -61,45 +84,47 @@ class EnvelopeView: NSView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
-        NSBezierPath.init(rect: dirtyRect).stroke()
+        NSBezierPath(rect: dirtyRect).stroke()
         
-        let maxY = 100.0
-        let maxX = 200.0
-        let minX = 10.0
-        let minY = 10.0
+        let length = 400
+        let height = 100.0
+        let margin = 10.0
         
-        let path = NSBezierPath()
+        let truePath = NSBezierPath()
+        truePath.move(to: .init(x: CGFloat(margin), y: CGFloat(margin)))
         
-        var x = minX
-        var y = minY
+        envelopeFunction.duration = Double(length / 2)
+        envelopeFunction.on()
+        for i in 0..<length {
+            truePath.line(to: .init(x: CGFloat(margin) + CGFloat(i), y: CGFloat(margin) + CGFloat(height) * CGFloat(envelopeFunction.nextSample())))
+            if i == length / 2 {
+                envelopeFunction.off()
+            }
+        }
+        envelopeFunction.off()
         
-        let controlPointSize = 5.0
-        let controlPointColor = NSColor.blue
-        
-        x += envelopeFunction.delay * maxX
-        path.move(to: CGPoint(x: x, y: y))
-        circle(x: x, y: y, size: controlPointSize, color: controlPointColor)
-        
-        x += envelopeFunction.attack * maxX
-        y = maxY
-        path.line(to: CGPoint(x: x, y: y))
-        circle(x: x, y: y, size: controlPointSize, color: controlPointColor)
-        
-        x += envelopeFunction.hold * maxX
-        path.line(to: CGPoint(x: x, y: y))
-        circle(x: x, y: y, size: controlPointSize, color: controlPointColor)
-        
-        x += envelopeFunction.decay * maxX
-        y = envelopeFunction.sustain * maxY
-        path.line(to: CGPoint(x: x, y: y))
-        circle(x: x, y: y, size: controlPointSize, color: controlPointColor)
-        
-        x += envelopeFunction.release * maxX
-        y = minY
-        path.line(to: CGPoint(x: x, y: y))
-        circle(x: x, y: y, size: controlPointSize, color: controlPointColor)
-        
-        path.stroke()
+        NSColor.red.setStroke()
+        truePath.stroke()
+    }
+    
+    private func drawBezier(bezier: CubicBezier, rect: CGRect, inverse: Bool = false) {
+        let bezierPath = NSBezierPath()
+        bezierPath.move(to: rect.origin)
+        let pointsCount = Int(rect.width)
+        for i in 0..<pointsCount {
+            let x = Double(i) / Double(pointsCount)
+            let y = bezier.y(x: x)
+            
+            if inverse {
+                bezierPath.line(to: NSPoint(x: Double(rect.minX) + x * Double(rect.width),
+                                            y: (Double(rect.minY) + y * Double(rect.height))))
+            } else {
+                bezierPath.line(to: NSPoint(x: Double(rect.minX) + x * Double(rect.width),
+                                            y: Double(rect.minY) + y * Double(rect.height)))
+            }
+        }
+        NSColor.green.setStroke()
+        bezierPath.stroke()
     }
     
     private func circle(x: Double, y: Double, size: Double, color: NSColor) {

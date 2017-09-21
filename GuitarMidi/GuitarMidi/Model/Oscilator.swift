@@ -18,13 +18,15 @@ class Oscilator: Playing {
     
     var waveGenerator = WaveGenerator()
     var tune: FunctionVariable = -12
-    var volume: FunctionVariable = 1
+    var volume: FunctionVariable = 0.2
     
     func on() {
         tune.on()
+        volume.on()
     }
     
     func off() {
         tune.off()
+        volume.off()
     }
 }

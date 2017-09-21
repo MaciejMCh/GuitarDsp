@@ -15,10 +15,12 @@ class Bass808: Playing {
     let samplingSettings: SamplingSettings
     var oscilators: [Oscilator]
     var effects: [WaveEffect] = [AmpWaveEffect()]
+    let kickSampler: Sampler
     
     init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
         oscilators = [Oscilator(samplingSettings: samplingSettings)]
+        kickSampler = Sampler(samplingSettings: samplingSettings, fileName: "kick")
     }
     
     func on() {
@@ -28,6 +30,7 @@ class Bass808: Playing {
         for effect in effects {
             effect.on()
         }
+        kickSampler.on()
     }
     
     func off() {
@@ -37,6 +40,7 @@ class Bass808: Playing {
         for effect in effects {
             effect.off()
         }
+        kickSampler.off()
     }
     
     func nextSample(frequency: Double) -> Double {
@@ -46,6 +50,6 @@ class Bass808: Playing {
             processingSample = effect.apply(input: processingSample)
         }
         
-        return processingSample
+        return processingSample + kickSampler.nextSample()
     }
 }

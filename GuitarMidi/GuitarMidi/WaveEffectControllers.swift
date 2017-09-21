@@ -17,6 +17,12 @@ struct WaveEffectControllers {
             return ampController
         }
         
+        if let waveShaper = waveEffect as? WaveShaper {
+            let waveShaperController = WaveShaperNodeViewController.make()
+            waveShaperController.waveShaper = waveShaper
+            return waveShaperController
+        }
+        
         return "" as! NSViewController
     }
 }

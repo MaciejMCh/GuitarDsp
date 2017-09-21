@@ -11,7 +11,7 @@ import Cocoa
 
 struct WaveShapeViewModel {
     static func all() -> [WaveShapeViewModel] {
-        return [WaveShape.sine, WaveShape.square, WaveShape.triangle, WaveShape.circle].map{WaveShapeViewModel(waveShape: $0)}
+        return [WaveShape.sine, .square, .triangle, .sawtooth, .circle].map{WaveShapeViewModel(waveShape: $0)}
     }
     
     let waveShape: WaveShape
@@ -21,6 +21,7 @@ struct WaveShapeViewModel {
         case .sine: return NSImage(named: "Sine Shape")!
         case .square: return NSImage(named: "Square Shape")!
         case .triangle: return NSImage(named: "Triangle Shape")!
+        case .sawtooth: return NSImage(named: "Sawtooth Shape")!
         case .circle: return NSImage(named: "Circle Shape")!
         }
     }
@@ -30,27 +31,24 @@ struct WaveShapeViewModel {
         case .sine: return "sine"
         case .square: return "square"
         case .triangle: return "triangle"
+        case .sawtooth: return "sawtooth"
         case .circle: return "circle"
         }
     }
     
-    var tag: Int {
-        switch waveShape {
-        case .sine: return 0
-        case .square: return 1
-        case .triangle: return 2
-        case .circle: return 3
-        }
+    static func tag(waveShape: WaveShape) -> Int {
+        return all().map{$0.waveShape}.index(of: waveShape)!
+//        switch waveShape {
+//        case .sine: return 0
+//        case .square: return 1
+//        case .triangle: return 2
+//        case .sawtooth: return 3
+//        case .circle: return 4
+//        }
     }
     
     static func shapeFromTag(_ tag: Int) -> WaveShape {
-        switch tag {
-        case 0: return .sine
-        case 1: return .square
-        case 2: return .triangle
-        case 3: return .circle
-        default: return .sine
-        }
+        return all()[tag].waveShape
     }
 }
 
@@ -67,7 +65,7 @@ class OscilatorViewController: NSViewController {
         for shapeViewModel in WaveShapeViewModel.all() {
             shapePopupButton.addItem(withTitle: "")
             shapePopupButton.lastItem?.image = shapeViewModel.image
-            shapePopupButton.lastItem?.tag = shapeViewModel.tag
+            shapePopupButton.lastItem?.tag = WaveShapeViewModel.tag(waveShape: shapeViewModel.waveShape)
         }
     }
     
@@ -96,7 +94,7 @@ class OscilatorViewController: NSViewController {
     private func refreshView() {
         tuneViewController.setVariable(oscilator.tune)
         volumeViewController.setVariable(oscilator.volume)
-        shapePopupButton.selectItem(withTag: WaveShapeViewModel(waveShape: oscilator.waveGenerator.waveShape).tag)
+        shapePopupButton.selectItem(withTag: WaveShapeViewModel.tag(waveShape: oscilator.waveGenerator.waveShape))
     }
     
     @IBAction func viewChanged(_ sender: Any?) {

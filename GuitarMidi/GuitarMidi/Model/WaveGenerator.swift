@@ -14,6 +14,7 @@ enum WaveShape {
     case sine
     case square
     case triangle
+    case sawtooth
     case circle
 }
 
@@ -32,8 +33,26 @@ class WaveGenerator {
         switch waveShape {
         case .sine: return sin(x)
         case .square: return sign(sin(x))
-        case .triangle: return 0
-        case .circle: return 0
+        case .triangle:
+            let periodProgress = x.truncatingRemainder(dividingBy: Double.pi * 2)
+            switch periodProgress {
+            case 0..<Double.pi * 0.5: return periodProgress / (Double.pi / 2)
+            case Double.pi * 0.5..<Double.pi * 1.5: return 2 - (periodProgress / (Double.pi / 2))
+            default: return (periodProgress / (Double.pi / 2)) - 4
+            }
+        case .sawtooth: return (x + Double.pi * 1.5).truncatingRemainder(dividingBy: Double.pi * 2) / (Double.pi) - 1
+        case .circle:
+            let periodProgress = x.truncatingRemainder(dividingBy: Double.pi * 2)
+            switch periodProgress {
+            case 0..<Double.pi:
+                let r2 = pow(Double.pi * 0.5, 2)
+                let x2 = pow(periodProgress - Double.pi * 0.5, 2)
+                return(sqrt(r2 - x2)) / (Double.pi * 0.5)
+            default:
+                let r2 = pow(Double.pi * 0.5, 2)
+                let x2 = pow(periodProgress - Double.pi * 1.5, 2)
+                return(sqrt(r2 - x2)) / (Double.pi * -0.5)
+            }
         }
     }
 }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="e0M-sv-wmq">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wave Shaper Node View Controller-->
+        <scene sceneID="4xf-mt-y9T">
+            <objects>
+                <viewController id="e0M-sv-wmq" customClass="WaveShaperNodeViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="KeG-Ec-bld">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box title="Wave Shaper" translatesAutoresizingMaskIntoConstraints="NO" id="Aki-Iy-9pL">
+                                <rect key="frame" x="-3" y="-4" width="106" height="54"/>
+                                <view key="contentView" id="FBW-CY-U5g">
+                                    <rect key="frame" x="2" y="2" width="102" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qd4-N1-i9O">
+                                            <rect key="frame" x="19" y="1" width="64" height="32"/>
+                                            <buttonCell key="cell" type="push" title="Edit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mav-GX-hFw">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editActionWithSender:" target="e0M-sv-wmq" id="102-qr-rtH"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Qd4-N1-i9O" firstAttribute="centerX" secondItem="FBW-CY-U5g" secondAttribute="centerX" id="G2x-Oh-rKw"/>
+                                        <constraint firstItem="Qd4-N1-i9O" firstAttribute="centerY" secondItem="FBW-CY-U5g" secondAttribute="centerY" id="kKm-8y-eAL"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="C43-Zy-0Go"/>
+                                    <constraint firstAttribute="height" constant="50" id="zqE-H3-ucr"/>
+                                </constraints>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Aki-Iy-9pL" secondAttribute="bottom" id="1Wm-gw-XtA"/>
+                            <constraint firstItem="Aki-Iy-9pL" firstAttribute="top" secondItem="KeG-Ec-bld" secondAttribute="top" id="QMh-Bw-dLu"/>
+                            <constraint firstItem="Aki-Iy-9pL" firstAttribute="leading" secondItem="KeG-Ec-bld" secondAttribute="leading" id="R28-wZ-isV"/>
+                            <constraint firstAttribute="trailing" secondItem="Aki-Iy-9pL" secondAttribute="trailing" id="tLc-lh-m2j"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="myN-nc-YWd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-67" y="36"/>
+        </scene>
+    </scenes>
+</document>

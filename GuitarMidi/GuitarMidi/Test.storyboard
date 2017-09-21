@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="12c-wa-ZN8">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Test View Controller-->
+        <scene sceneID="mfk-Qa-sZ2">
+            <objects>
+                <viewController id="12c-wa-ZN8" customClass="TestViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ArJ-VQ-Y3v">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="230"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Ds8-C0-39K" customClass="WaveView" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="10" y="120" width="400" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Fau-ac-s7s"/>
+                                    <constraint firstAttribute="width" constant="400" id="pOe-0t-t0f"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="7W2-hI-ini" customClass="WaveView" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="400" height="100"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="7W2-hI-ini" firstAttribute="height" secondItem="Ds8-C0-39K" secondAttribute="height" id="87W-VQ-0H9"/>
+                            <constraint firstItem="7W2-hI-ini" firstAttribute="leading" secondItem="ArJ-VQ-Y3v" secondAttribute="leading" constant="10" id="DFb-8Y-Egt"/>
+                            <constraint firstItem="7W2-hI-ini" firstAttribute="top" secondItem="Ds8-C0-39K" secondAttribute="bottom" constant="10" id="E2e-9d-FGe"/>
+                            <constraint firstAttribute="trailing" secondItem="Ds8-C0-39K" secondAttribute="trailing" constant="10" id="JOP-B4-D8P"/>
+                            <constraint firstItem="Ds8-C0-39K" firstAttribute="leading" secondItem="ArJ-VQ-Y3v" secondAttribute="leading" constant="10" id="Q7J-Yn-Boq"/>
+                            <constraint firstItem="Ds8-C0-39K" firstAttribute="top" secondItem="ArJ-VQ-Y3v" secondAttribute="top" constant="10" id="a90-JA-dDy"/>
+                            <constraint firstAttribute="trailing" secondItem="7W2-hI-ini" secondAttribute="trailing" constant="10" id="m8k-dK-gzw"/>
+                            <constraint firstAttribute="bottom" secondItem="7W2-hI-ini" secondAttribute="bottom" constant="10" id="yy5-fQ-QMR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="waveView1" destination="Ds8-C0-39K" id="1CN-57-daC"/>
+                        <outlet property="waveView2" destination="7W2-hI-ini" id="7Ro-rC-frY"/>
+                    </connections>
+                </viewController>
+                <customObject id="Ks5-gP-qqP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="149"/>
+        </scene>
+    </scenes>
+</document>

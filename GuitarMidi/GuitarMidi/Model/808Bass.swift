@@ -41,20 +41,28 @@ class Bass808: Playing {
         let envelope = EnvelopeFunction()
         envelope.duration = self.samplingSettings.samplesInSecond()
         envelope.delay = 0
-        envelope.attack = 0.055
-        envelope.hold = 0.145
-        envelope.decay = 1
+        envelope.attack = 0.02
+        envelope.hold = 0.2
+        envelope.decay = 2
         envelope.sustain = 0
-        envelope.release = 0.3
+        envelope.release = 0.15
+        envelope.attackBezier = CubicBezier(p1: .init(x: 1, y: 0), p2: .init(x: 1, y: 0))
+        envelope.decayBezier = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
+        envelope.releaseBezier = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
+        
         ampWaveEffect.gain = envelope
         
-        return [ampWaveEffect]
-//        return [ampWaveEffect, WaveShaper()]
+        let waveShaper = WaveShaper()
+        waveShaper.cubicBezier = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
+        
+//        return [ampWaveEffect]
+        return [ampWaveEffect, waveShaper]
     }()
     
     init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
         kickSampler = Sampler(samplingSettings: samplingSettings, fileName: "kick")
+        kickSampler.volume = 2.5
     }
     
     func on() {

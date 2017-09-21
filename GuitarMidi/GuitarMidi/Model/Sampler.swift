@@ -10,6 +10,8 @@ import Foundation
 import GuitarDsp
 
 class Sampler: Playing {
+    var volume: FunctionVariable = 1.0
+    
     private let audioPlayer: RawAudioPlayer
     private var time: Int = 0
     
@@ -34,7 +36,7 @@ class Sampler: Playing {
         }
         
         if time < audioPlayer.rawAudio.length {
-            return Double(audioPlayer.rawAudio.buffer.advanced(by: time).pointee)
+            return Double(audioPlayer.rawAudio.buffer.advanced(by: time).pointee) * volume.value
         } else {
             return 0
         }

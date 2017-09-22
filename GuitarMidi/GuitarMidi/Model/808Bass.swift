@@ -60,7 +60,7 @@ class Bass808: Playing {
     
     init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
-        kickSampler = Sampler(samplingSettings: samplingSettings, fileName: "kick")
+        kickSampler = Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/kicks/808-Kicks03.wav")
         kickSampler.volume = 2.5
     }
     

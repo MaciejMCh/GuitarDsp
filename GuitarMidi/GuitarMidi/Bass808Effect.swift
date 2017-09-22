@@ -22,7 +22,7 @@ class Bass808Effect: NSObject, Effect {
     
     func processSample(_ inputSample: Sample, intoBuffer outputBuffer: UnsafeMutablePointer<Float>!) {
         for i in 0..<Int(samplingSettings.framesPerPacket) {
-            outputBuffer.advanced(by: i).pointee = Float(bass808.nextSample(frequency: 1))
+            outputBuffer.advanced(by: i).pointee = Float(bass808.nextSample(frequency: 100))
         }
     }
 }

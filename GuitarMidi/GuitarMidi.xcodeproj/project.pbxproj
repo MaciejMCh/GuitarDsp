@@ -16,7 +16,6 @@
 		C20E184A1F710E1400C55086 /* EnvelopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18491F710E1400C55086 /* EnvelopeViewController.swift */; };
 		C20ECA0D1F73E63C003ADE48 /* kick.raw in Resources */ = {isa = PBXBuildFile; fileRef = C211C09E1F7312D100999FE8 /* kick.raw */; };
 		C211C0971F73014100999FE8 /* SamplingSettingsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */; };
-		C211C09C1F730F5D00999FE8 /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211C09B1F730F5D00999FE8 /* Sampler.swift */; };
 		C212EAE21F72BB5000198D25 /* TimeFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212EAE11F72BB5000198D25 /* TimeFunctionViewController.swift */; };
 		C212EAE71F72BD8000198D25 /* WaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212EAE61F72BD8000198D25 /* WaveEffect.swift */; };
 		C21C583B1F74370A00907502 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21C583A1F74370A00907502 /* TestViewController.swift */; };
@@ -95,7 +94,6 @@
 		C20E18471F710C3000C55086 /* Envelope.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Envelope.storyboard; sourceTree = "<group>"; };
 		C20E18491F710E1400C55086 /* EnvelopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeViewController.swift; sourceTree = "<group>"; };
 		C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplingSettingsUtils.swift; sourceTree = "<group>"; };
-		C211C09B1F730F5D00999FE8 /* Sampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
 		C211C09E1F7312D100999FE8 /* kick.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = kick.raw; sourceTree = "<group>"; };
 		C212EAE11F72BB5000198D25 /* TimeFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFunctionViewController.swift; sourceTree = "<group>"; };
 		C212EAE61F72BD8000198D25 /* WaveEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveEffect.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 				C212EAE61F72BD8000198D25 /* WaveEffect.swift */,
 				C2FA5B701F72CBE9006E6565 /* Oscilator.swift */,
 				C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */,
-				C211C09B1F730F5D00999FE8 /* Sampler.swift */,
 				C226A26A1F7429F300539B80 /* WaveShaper.swift */,
 				C23508081F75340E0049754F /* Sampler2.swift */,
 			);
@@ -457,7 +454,6 @@
 				C226A2691F74217E00539B80 /* WaveShaperViewController.swift in Sources */,
 				C20775E11F671E20009FD61A /* NoteIndexIntegrator.swift in Sources */,
 				C2BC08E21F70863300F308AE /* Bass808Effect.swift in Sources */,
-				C211C09C1F730F5D00999FE8 /* Sampler.swift in Sources */,
 				C21C583B1F74370A00907502 /* TestViewController.swift in Sources */,
 				C21D82B51F70337F00F79116 /* OscilatorViewController.swift in Sources */,
 				C21D82BE1F70410C00F79116 /* 808Bass.swift in Sources */,

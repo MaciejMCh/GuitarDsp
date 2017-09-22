@@ -15,8 +15,8 @@ class TestViewController: NSViewController {
     @IBOutlet weak var waveView2: WaveView!
     
     override func viewDidLoad() {
-        let sampler = Sampler2(fileName: "kick", fileExtension: "wav")
-        waveView1.values = sampler.buffer.map{Double($0)}
+//        let sampler = Sampler2(fileName: "kick", fileExtension: "wav")
+//        waveView1.values = sampler.buffer.map{Double($0)}
 //        waveView2.values = values2
     }
 }

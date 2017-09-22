@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-indirect enum TreeElement<Leaf> {
+indirect enum TreeElement {
     class Branch {
         let name: String
         var open = false
@@ -20,44 +20,36 @@ indirect enum TreeElement<Leaf> {
     }
     
     struct Action {
-        let select: (Leaf) -> Void
-        let pick: (Leaf) -> Void
-    }
-    
-    case branch(Branch, elements: [TreeElement<Leaf>])
-    case leaf(Leaf, action: Action)
-    
-    static func fromRootElements(_ elements: [Any]) -> TreeElement<Leaf> {
-        let select: (Leaf) -> Void = {_ in}
-        let pick: (Leaf) -> Void = {_ in}
+        let select: () -> Void
+        let pick: () -> Void
         
-        return makeTreeElement(element: ("root", elements), action: Action(select: select, pick: pick))
+//        init<T: LeafRepresentable>(select: @escaping (T) -> Void, pick: @escaping (T) -> Void) {
+//            self.select = {
+//                select($0 as! T)
+//            }
+//            self.pick = {
+//                pick($0 as! T)
+//            }
+//        }
     }
     
-    private static func makeTreeElement(element: Any, action: Action) -> TreeElement<Leaf> {
-        if let leafValue = element as? Leaf {
-            return .leaf(leafValue, action: action)
-        }
-        if let branch = element as? (String, [Any]) {
-            return .branch(.init(name: branch.0), elements: branch.1.map{makeTreeElement(element: $0, action: action)})
-        }
-        return "" as! TreeElement<Leaf>
-    }
+    case branch(Branch, elements: [TreeElement])
+    case leaf(LeafRepresentable, action: Action)
 }
 
-struct FlatTreeElement<Leaf> {
-    let element: TreeElement<Leaf>
+struct FlatTreeElement {
+    let element: TreeElement
     let nest: Int
     
-    static func make(root: TreeElement<Leaf>) -> [FlatTreeElement<Leaf>] {
+    static func make(root: TreeElement) -> [FlatTreeElement] {
         return flatten(treeElement: root, nestLevel: 0)
     }
     
-    private static func flatten(treeElement: TreeElement<Leaf>, nestLevel: Int) -> [FlatTreeElement<Leaf>] {
+    private static func flatten(treeElement: TreeElement, nestLevel: Int) -> [FlatTreeElement] {
         switch treeElement {
         case .leaf: return [FlatTreeElement(element: treeElement, nest: nestLevel)]
         case .branch(let branch, let elements):
-            var result: [FlatTreeElement<Leaf>] = [FlatTreeElement(element: treeElement, nest: nestLevel)]
+            var result: [FlatTreeElement] = [FlatTreeElement(element: treeElement, nest: nestLevel)]
             if !branch.open {
                 return result
             }
@@ -69,22 +61,16 @@ struct FlatTreeElement<Leaf> {
     }
 }
 
+protocol LeafRepresentable {
+    var name: String {get}
+}
+
 class TreeViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     @IBOutlet weak var tableView: NSTableView!
     
-    var tree: TreeElement<String> = {
-        let hierarchy: [Any] =
-            [
-                "808",
-                ("kicks", ["k1", "k2", "k3", "k4"]),
-                ("hhs", ["h1", "h2"]),
-                ("crashes", ["c1", "c2", "c3"])
-        ]
-        let root = TreeElement<String>.fromRootElements(hierarchy)
-        return root
-    }()
+    var tree: TreeElement!
     
-    private var flatTree: [FlatTreeElement<String>] = []
+    private var flatTree: [FlatTreeElement] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +78,7 @@ class TreeViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     }
     
     private func refreshView() {
-        flatTree = FlatTreeElement<String>.make(root: tree)
+        flatTree = FlatTreeElement.make(root: tree)
         tableView.reloadData()
     }
     
@@ -104,10 +90,10 @@ class TreeViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
         switch flatTreeElement.element {
         case .leaf(let leaf, let action):
             let leafRowView = tableView.make(withIdentifier: "LeafRowView", owner: nil) as! LeafRowView
-            leafRowView.label.stringValue = leaf
+            leafRowView.label.stringValue = leaf.name
             leafRowView.leadingConstraint.constant = nestMargin * CGFloat(flatTreeElement.nest)
-            leafRowView.selectAction = {action.select(leaf)}
-            leafRowView.pickAction = {action.pick(leaf)}
+            leafRowView.selectAction = {action.select()}
+            leafRowView.pickAction = {action.pick()}
             return leafRowView
         case .branch(let branch, let elements):
             let branchRowView = tableView.make(withIdentifier: "BranchRowView", owner: nil) as! BranchRowView
@@ -124,6 +110,14 @@ class TreeViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return flatTree.count
+    }
+    
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        let flatTreeElement = flatTree[row]
+        if case .leaf(let leaf, let action) = flatTreeElement.element {
+            action.select()
+        }
+        return true
     }
 }
 

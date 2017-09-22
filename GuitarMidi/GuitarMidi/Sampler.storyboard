@@ -23,13 +23,25 @@
                                     <segue destination="g0i-vQ-Sku" kind="embed" id="9fu-xt-KBt"/>
                                 </connections>
                             </containerView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="lAa-32-dUh" customClass="WaveView" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="210" y="159" width="390" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="MRe-rx-nio"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="lAa-32-dUh" firstAttribute="top" secondItem="HMt-Wt-qR4" secondAttribute="top" id="D7P-0p-HKk"/>
+                            <constraint firstAttribute="trailing" secondItem="lAa-32-dUh" secondAttribute="trailing" constant="5" id="Ghb-Or-TF5"/>
+                            <constraint firstItem="lAa-32-dUh" firstAttribute="leading" secondItem="HMt-Wt-qR4" secondAttribute="trailing" constant="5" id="KsD-3e-SUk"/>
                             <constraint firstAttribute="bottom" secondItem="HMt-Wt-qR4" secondAttribute="bottom" constant="5" id="kWE-dt-HS3"/>
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="qzc-3T-TfO"/>
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="leading" secondItem="9wg-5R-nPA" secondAttribute="leading" constant="5" id="rRT-Ji-SQQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="waveView" destination="lAa-32-dUh" id="Gi4-Br-UMZ"/>
+                    </connections>
                 </viewController>
                 <customObject id="H6l-jq-Ig3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

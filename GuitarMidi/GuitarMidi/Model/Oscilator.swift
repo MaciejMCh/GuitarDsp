@@ -11,14 +11,14 @@ import GuitarDsp
 
 class Oscilator: Playing {
     let samplingSettings: SamplingSettings
+    var waveGenerator: WaveGenerator
+    var tune: FunctionVariable = -12
+    var volume: FunctionVariable = 0.2
     
     init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
+        waveGenerator = WaveGenerator(samplingSettings: samplingSettings)
     }
-    
-    var waveGenerator = WaveGenerator()
-    var tune: FunctionVariable = -12
-    var volume: FunctionVariable = 0.2
     
     func on() {
         tune.on()

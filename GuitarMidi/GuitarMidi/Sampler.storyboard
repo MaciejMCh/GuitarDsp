@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="aq1-wa-gil">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sampler View Controller-->
+        <scene sceneID="toa-0R-p3C">
+            <objects>
+                <viewController id="aq1-wa-gil" customClass="SamplerViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="9wg-5R-nPA">
+                        <rect key="frame" x="0.0" y="0.0" width="605" height="364"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="HMt-Wt-qR4">
+                                <rect key="frame" x="5" y="5" width="200" height="354"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ChH-vR-Fsp"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="g0i-vQ-Sku" kind="embed" id="9fu-xt-KBt"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HMt-Wt-qR4" secondAttribute="bottom" constant="5" id="kWE-dt-HS3"/>
+                            <constraint firstItem="HMt-Wt-qR4" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="qzc-3T-TfO"/>
+                            <constraint firstItem="HMt-Wt-qR4" firstAttribute="leading" secondItem="9wg-5R-nPA" secondAttribute="leading" constant="5" id="rRT-Ji-SQQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="H6l-jq-Ig3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63.5" y="68"/>
+        </scene>
+        <!--Tree-->
+        <scene sceneID="U1X-uy-b67">
+            <objects>
+                <controllerPlaceholder storyboardName="Tree" id="g0i-vQ-Sku" sceneMemberID="viewController"/>
+                <customObject id="3pv-3O-PpW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="356"/>
+        </scene>
+    </scenes>
+</document>

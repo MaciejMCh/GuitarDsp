@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GuitarDsp
 
 let sign: (Double) -> Double = {$0 > 0 ? 1 : -1}
 
@@ -19,15 +20,18 @@ enum WaveShape {
 }
 
 class WaveGenerator {
+    let samplingSettings: SamplingSettings
     var waveShape: WaveShape = .sine
     var frequencyFunction: FunctionVariable = 1.0
     
     private var x: Double = 0
     
-    init() {}
+    init(samplingSettings: SamplingSettings) {
+        self.samplingSettings = samplingSettings
+    }
     
     func nextSample(frequency: Double) -> Double {
-        let timeShift = frequency * frequencyFunction.value * 0.01
+        let timeShift = frequency * frequencyFunction.value / Double(self.samplingSettings.frequency) * Double.pi * 2
         x += timeShift
         
         switch waveShape {

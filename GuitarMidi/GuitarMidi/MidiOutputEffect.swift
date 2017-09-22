@@ -19,7 +19,7 @@ class MidiOutputEffect: NSObject, Effect {
     let samplingSettings: SamplingSettings
     let pitchDetector: PitchDetector
     let midiServer: MidiServer
-    let sineWaveGenerator: SineWaveGenerator
+    let waveGenerator: WaveGenerator
     var recentNote = try! Note(index: 0)
     var noteIntegrator: [Int?] = Array(repeating: nil, count: 1000)
     var noteIndexIntegrator = NoteIndexIntegrator()
@@ -27,7 +27,7 @@ class MidiOutputEffect: NSObject, Effect {
     init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
         pitchDetector = PitchDetector(samplingSettings: samplingSettings)
-        sineWaveGenerator = SineWaveGenerator()
+        waveGenerator = WaveGenerator(samplingSettings: samplingSettings)
         midiServer = MidiServer()
         super.init()
     }
@@ -39,6 +39,7 @@ class MidiOutputEffect: NSObject, Effect {
         }
         
         let frequency = pitchDetector.detectPitch(inputSignal: inputSignal)
+        
         let rms: () -> (Float) = {
             var output: Float = 0
             vDSP_rmsqv(inputSample.amp, 1, &output, UInt(self.samplingSettings.framesPerPacket))
@@ -51,9 +52,8 @@ class MidiOutputEffect: NSObject, Effect {
             return
         }
         
-        let sineWave = sineWaveGenerator.generate(samples: 128, frequency: frequency * 0.0001)//.map{$0 * amplitude * 3}
         for i in 0..<Int(samplingSettings.framesPerPacket) {
-            outputBuffer.advanced(by: i).pointee = sineWave[i]
+            outputBuffer.advanced(by: i).pointee = Float(waveGenerator.nextSample(frequency: Double(frequency)))
         }
         
         guard sendMidi else {return}

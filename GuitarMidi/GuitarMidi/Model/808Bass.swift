@@ -49,7 +49,6 @@ class Bass808: Playing {
         envelope.attackBezier = CubicBezier(p1: .init(x: 1, y: 0), p2: .init(x: 1, y: 0))
         envelope.decayBezier = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
         envelope.releaseBezier = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
-        
         ampWaveEffect.gain = envelope
         
         let waveShaper = WaveShaper()

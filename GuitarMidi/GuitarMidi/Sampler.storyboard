@@ -11,11 +11,11 @@
             <objects>
                 <viewController id="aq1-wa-gil" customClass="SamplerViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9wg-5R-nPA">
-                        <rect key="frame" x="0.0" y="0.0" width="605" height="364"/>
+                        <rect key="frame" x="0.0" y="0.0" width="818" height="311"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="HMt-Wt-qR4">
-                                <rect key="frame" x="5" y="5" width="200" height="354"/>
+                                <rect key="frame" x="5" y="5" width="200" height="301"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="ChH-vR-Fsp"/>
                                 </constraints>
@@ -23,29 +23,57 @@
                                     <segue destination="g0i-vQ-Sku" kind="embed" id="9fu-xt-KBt"/>
                                 </connections>
                             </containerView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="lAa-32-dUh" customClass="WaveView" customModule="GuitarMidi" customModuleProvider="target">
-                                <rect key="frame" x="210" y="159" width="390" height="200"/>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdx-wp-sdH">
+                                <rect key="frame" x="210" y="106" width="603" height="200"/>
+                                <clipView key="contentView" id="v2j-F9-N5C">
+                                    <rect key="frame" x="1" y="1" width="586" height="183"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JcM-YS-zpp" customClass="WaveView" customModule="GuitarMidi" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="571" height="168"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="1000" id="7RO-JG-awO"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="MRe-rx-nio"/>
+                                    <constraint firstAttribute="height" constant="200" id="Y9w-oN-v3e"/>
                                 </constraints>
-                            </customView>
+                                <gestureRecognizers>
+                                    <magnificationGestureRecognizer delaysMagnificationEvents="YES" magnification="0.0" id="fc3-rj-yXO">
+                                        <connections>
+                                            <action selector="zoomActionWithGesture:" target="aq1-wa-gil" id="cRa-u8-i0D"/>
+                                        </connections>
+                                    </magnificationGestureRecognizer>
+                                </gestureRecognizers>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="q7d-LA-PCj">
+                                    <rect key="frame" x="1" y="184" width="586" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="31q-9M-YUJ">
+                                    <rect key="frame" x="587" y="1" width="15" height="183"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="lAa-32-dUh" firstAttribute="top" secondItem="HMt-Wt-qR4" secondAttribute="top" id="D7P-0p-HKk"/>
-                            <constraint firstAttribute="trailing" secondItem="lAa-32-dUh" secondAttribute="trailing" constant="5" id="Ghb-Or-TF5"/>
-                            <constraint firstItem="lAa-32-dUh" firstAttribute="leading" secondItem="HMt-Wt-qR4" secondAttribute="trailing" constant="5" id="KsD-3e-SUk"/>
+                            <constraint firstAttribute="trailing" secondItem="Vdx-wp-sdH" secondAttribute="trailing" constant="5" id="6g9-Eo-dzD"/>
+                            <constraint firstItem="Vdx-wp-sdH" firstAttribute="leading" secondItem="HMt-Wt-qR4" secondAttribute="trailing" constant="5" id="VEZ-dh-glH"/>
                             <constraint firstAttribute="bottom" secondItem="HMt-Wt-qR4" secondAttribute="bottom" constant="5" id="kWE-dt-HS3"/>
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="qzc-3T-TfO"/>
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="leading" secondItem="9wg-5R-nPA" secondAttribute="leading" constant="5" id="rRT-Ji-SQQ"/>
+                            <constraint firstItem="Vdx-wp-sdH" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="riV-vA-Dak"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="waveView" destination="lAa-32-dUh" id="Gi4-Br-UMZ"/>
+                        <outlet property="waveView" destination="JcM-YS-zpp" id="84z-zC-AZ8"/>
+                        <outlet property="waveViewWidthConstraint" destination="7RO-JG-awO" id="ADr-YF-YkQ"/>
                     </connections>
                 </viewController>
                 <customObject id="H6l-jq-Ig3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63.5" y="68"/>
+            <point key="canvasLocation" x="-101" y="41.5"/>
         </scene>
         <!--Tree-->
         <scene sceneID="U1X-uy-b67">

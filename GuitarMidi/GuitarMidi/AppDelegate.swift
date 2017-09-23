@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        return
+//        return
         
 //        bowMenu?.openMenuItem.target = self
 //        bowMenu?.openMenuItem.action = #selector(openAction)

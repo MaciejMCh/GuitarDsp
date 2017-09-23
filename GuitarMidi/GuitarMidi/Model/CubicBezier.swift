@@ -20,3 +20,9 @@ struct CubicBezier {
         return y
     }
 }
+
+extension CubicBezier {
+    static let fadeOut = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
+    static let fadeIn = CubicBezier(p1: .init(x: 1, y: 0), p2: .init(x: 1, y: 0))
+    static let fadeInOut = CubicBezier(p1: .init(x: 1, y: 0), p2: .init(x: 0, y: 1))
+}

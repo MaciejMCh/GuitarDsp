@@ -14,7 +14,6 @@
 		C20E18461F71087A00C55086 /* EnvelopeFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18451F71087900C55086 /* EnvelopeFunction.swift */; };
 		C20E18481F710C3000C55086 /* Envelope.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20E18471F710C3000C55086 /* Envelope.storyboard */; };
 		C20E184A1F710E1400C55086 /* EnvelopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18491F710E1400C55086 /* EnvelopeViewController.swift */; };
-		C20ECA0D1F73E63C003ADE48 /* kick.raw in Resources */ = {isa = PBXBuildFile; fileRef = C211C09E1F7312D100999FE8 /* kick.raw */; };
 		C211C0971F73014100999FE8 /* SamplingSettingsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */; };
 		C212EAE21F72BB5000198D25 /* TimeFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212EAE11F72BB5000198D25 /* TimeFunctionViewController.swift */; };
 		C212EAE71F72BD8000198D25 /* WaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212EAE61F72BD8000198D25 /* WaveEffect.swift */; };
@@ -35,14 +34,12 @@
 		C226A26B1F7429F300539B80 /* WaveShaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226A26A1F7429F300539B80 /* WaveShaper.swift */; };
 		C226A26D1F742C1A00539B80 /* WaveShaperNode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C226A26C1F742C1A00539B80 /* WaveShaperNode.storyboard */; };
 		C226A26F1F742C8A00539B80 /* WaveShaperNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226A26E1F742C8A00539B80 /* WaveShaperNodeViewController.swift */; };
-		C23508091F75340E0049754F /* Sampler2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23508081F75340E0049754F /* Sampler2.swift */; };
+		C23508091F75340E0049754F /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23508081F75340E0049754F /* Sampler.swift */; };
 		C24FFF721F66E2C2007CBF57 /* MidiServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24FFF711F66E2C2007CBF57 /* MidiServer.swift */; };
 		C262CA611F5F10AA00411635 /* MidiOutputEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */; };
 		C26AD8E61F7556A9005512E0 /* FileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26AD8E51F7556A9005512E0 /* FileBrowser.swift */; };
 		C28CE3761F6094FF002B9567 /* PitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CE3751F6094FF002B9567 /* PitchDetector.swift */; };
 		C2A057101F6973EC006BC3D1 /* StrokeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */; };
-		C2A4CD011F753663001F8D56 /* hihat.wav in Resources */ = {isa = PBXBuildFile; fileRef = C2A4CCFD1F75356E001F8D56 /* hihat.wav */; };
-		C2A4CD031F753932001F8D56 /* kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = C2A4CD021F75392F001F8D56 /* kick.wav */; };
 		C2A4CD051F753B0D001F8D56 /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CD041F753B0D001F8D56 /* TreeViewController.swift */; };
 		C2A4CD071F7546C2001F8D56 /* Tree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A4CD061F7546C2001F8D56 /* Tree.storyboard */; };
 		C2BC08E21F70863300F308AE /* Bass808Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC08E11F70863300F308AE /* Bass808Effect.swift */; };
@@ -94,7 +91,6 @@
 		C20E18471F710C3000C55086 /* Envelope.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Envelope.storyboard; sourceTree = "<group>"; };
 		C20E18491F710E1400C55086 /* EnvelopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeViewController.swift; sourceTree = "<group>"; };
 		C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplingSettingsUtils.swift; sourceTree = "<group>"; };
-		C211C09E1F7312D100999FE8 /* kick.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = kick.raw; sourceTree = "<group>"; };
 		C212EAE11F72BB5000198D25 /* TimeFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFunctionViewController.swift; sourceTree = "<group>"; };
 		C212EAE61F72BD8000198D25 /* WaveEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveEffect.swift; sourceTree = "<group>"; };
 		C21C583A1F74370A00907502 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -114,14 +110,12 @@
 		C226A26A1F7429F300539B80 /* WaveShaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShaper.swift; sourceTree = "<group>"; };
 		C226A26C1F742C1A00539B80 /* WaveShaperNode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveShaperNode.storyboard; sourceTree = "<group>"; };
 		C226A26E1F742C8A00539B80 /* WaveShaperNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShaperNodeViewController.swift; sourceTree = "<group>"; };
-		C23508081F75340E0049754F /* Sampler2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampler2.swift; sourceTree = "<group>"; };
+		C23508081F75340E0049754F /* Sampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
 		C24FFF711F66E2C2007CBF57 /* MidiServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiServer.swift; sourceTree = "<group>"; };
 		C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiOutputEffect.swift; sourceTree = "<group>"; };
 		C26AD8E51F7556A9005512E0 /* FileBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowser.swift; sourceTree = "<group>"; };
 		C28CE3751F6094FF002B9567 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
 		C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeDetector.swift; sourceTree = "<group>"; };
-		C2A4CCFD1F75356E001F8D56 /* hihat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hihat.wav; sourceTree = "<group>"; };
-		C2A4CD021F75392F001F8D56 /* kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kick.wav; sourceTree = "<group>"; };
 		C2A4CD041F753B0D001F8D56 /* TreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewController.swift; sourceTree = "<group>"; };
 		C2A4CD061F7546C2001F8D56 /* Tree.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tree.storyboard; sourceTree = "<group>"; };
 		C2BC08E11F70863300F308AE /* Bass808Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bass808Effect.swift; sourceTree = "<group>"; };
@@ -176,7 +170,7 @@
 				C2FA5B701F72CBE9006E6565 /* Oscilator.swift */,
 				C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */,
 				C226A26A1F7429F300539B80 /* WaveShaper.swift */,
-				C23508081F75340E0049754F /* Sampler2.swift */,
+				C23508081F75340E0049754F /* Sampler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,10 +178,7 @@
 		C2CB16781F5F0D5800B8D6FF = {
 			isa = PBXGroup;
 			children = (
-				C2A4CD021F75392F001F8D56 /* kick.wav */,
 				C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */,
-				C2A4CCFD1F75356E001F8D56 /* hihat.wav */,
-				C211C09E1F7312D100999FE8 /* kick.raw */,
 				C2CB16831F5F0D5800B8D6FF /* GuitarMidi */,
 				C2CB16821F5F0D5800B8D6FF /* Products */,
 				C2CB16931F5F0DC100B8D6FF /* Frameworks */,
@@ -360,7 +351,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2A4CD031F753932001F8D56 /* kick.wav in Resources */,
 				C20E18481F710C3000C55086 /* Envelope.storyboard in Resources */,
 				C21D82B11F7032E900F79116 /* Bass808.storyboard in Resources */,
 				C2CB16891F5F0D5800B8D6FF /* Assets.xcassets in Resources */,
@@ -372,10 +362,8 @@
 				C21C58401F74386800907502 /* Test.storyboard in Resources */,
 				C2BC08E41F70920700F308AE /* TimeFunctionVariable.storyboard in Resources */,
 				C21D82B31F70330200F79116 /* Oscilator.storyboard in Resources */,
-				C20ECA0D1F73E63C003ADE48 /* kick.raw in Resources */,
 				C226A26D1F742C1A00539B80 /* WaveShaperNode.storyboard in Resources */,
 				C20AE1C21F70566300AFFBCE /* Variable.storyboard in Resources */,
-				C2A4CD011F753663001F8D56 /* hihat.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +445,7 @@
 				C21C583B1F74370A00907502 /* TestViewController.swift in Sources */,
 				C21D82B51F70337F00F79116 /* OscilatorViewController.swift in Sources */,
 				C21D82BE1F70410C00F79116 /* 808Bass.swift in Sources */,
-				C23508091F75340E0049754F /* Sampler2.swift in Sources */,
+				C23508091F75340E0049754F /* Sampler.swift in Sources */,
 				C20E184A1F710E1400C55086 /* EnvelopeViewController.swift in Sources */,
 				C21DD54B1F756B1C00CDD534 /* SamplerViewController.swift in Sources */,
 				C26AD8E61F7556A9005512E0 /* FileBrowser.swift in Sources */,

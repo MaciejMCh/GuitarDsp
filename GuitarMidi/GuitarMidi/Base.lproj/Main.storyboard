@@ -690,10 +690,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Sampler-->
+        <!--Bass808-->
         <scene sceneID="jza-x2-gu5">
             <objects>
-                <controllerPlaceholder storyboardName="Sampler" id="RxZ-Bz-i2B" sceneMemberID="viewController"/>
+                <controllerPlaceholder storyboardName="Bass808" id="RxZ-Bz-i2B" sceneMemberID="viewController"/>
                 <customObject id="w4O-1f-IU3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="76" y="544"/>

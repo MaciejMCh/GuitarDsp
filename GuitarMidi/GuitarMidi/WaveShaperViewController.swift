@@ -56,15 +56,22 @@ class WaveView: NSView {
         let minValue = values.min()!
         let valueSpaceHeight = values.max()! - minValue
         
-        let xScale = dirtyRect.width / CGFloat(valueSpaceWidth)
-        let yScale = dirtyRect.height / CGFloat(valueSpaceHeight)
+        let xScale = bounds.width / CGFloat(valueSpaceWidth)
+        let yScale = bounds.height / CGFloat(valueSpaceHeight)
         
         let path = NSBezierPath()
         path.move(to: NSPoint(x: 0, y: CGFloat(values.first!) * yScale))
         
         var i: CGFloat = 0
         for value in values {
-            path.line(to: NSPoint(x: i * xScale, y: CGFloat(value - minValue) * yScale))
+            let x = i * xScale
+            let y = CGFloat(value - minValue) * yScale
+            
+            if xScale > 5 {
+                NSBezierPath(rect: NSRect(x: x - 1, y: y - 1, width: 3, height: 3)).fill()
+            }
+            
+            path.line(to: NSPoint(x: x, y: y))
             i += 1
         }
         

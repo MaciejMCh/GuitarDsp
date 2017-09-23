@@ -43,9 +43,14 @@ class WaveShaperViewController: NSViewController {
 class WaveView: NSView {
     var values: [Double] = [] {
         didSet {
+            minValue = values.min()!
+            maxValue = values.max()!
             needsDisplay = true
         }
     }
+    
+    private var minValue = -1.0
+    private var maxValue = 1.0
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -53,17 +58,24 @@ class WaveView: NSView {
         guard values.count > 1 else {return}
         
         let valueSpaceWidth = values.count
-        let minValue = values.min()!
-        let valueSpaceHeight = values.max()! - minValue
+        let valueSpaceHeight = maxValue - minValue
         
         let xScale = bounds.width / CGFloat(valueSpaceWidth)
         let yScale = bounds.height / CGFloat(valueSpaceHeight)
-        
+        let skip = Int(0.5 / xScale)
         let path = NSBezierPath()
         path.move(to: NSPoint(x: 0, y: CGFloat(values.first!) * yScale))
         
         var i: CGFloat = 0
         for value in values {
+            defer {
+                i += 1
+            }
+            
+            if skip > 1 && Int(i) % skip != 0 {
+                continue
+            }
+            
             let x = i * xScale
             let y = CGFloat(value - minValue) * yScale
             
@@ -72,7 +84,6 @@ class WaveView: NSView {
             }
             
             path.line(to: NSPoint(x: x, y: y))
-            i += 1
         }
         
         path.stroke()

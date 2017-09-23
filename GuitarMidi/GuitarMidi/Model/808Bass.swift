@@ -60,8 +60,7 @@ class Bass808: Playing {
     
     init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
-//        kickSampler = Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/kicks/808-Kicks03.wav")
-        kickSampler = Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/440.wav")
+        kickSampler = Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/kicks/808-Kicks03.wav", samplingSettings: samplingSettings)
         kickSampler.volume = 2.5
     }
     
@@ -92,7 +91,6 @@ class Bass808: Playing {
             processingSample = effect.apply(input: processingSample)
         }
         
-//        return processingSample + kickSampler.nextSample()
-        return kickSampler.nextSample()
+        return processingSample + kickSampler.nextSample()
     }
 }

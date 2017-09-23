@@ -12,33 +12,34 @@ import EZAudioOSX
 
 struct AudioFile {
     let samples: [Float]
-    let ratio: Double
     
-    static func load(filePath: String) -> AudioFile {
+    static func load(filePath: String, samplingSettings: SamplingSettings) -> AudioFile {
         let url = URL(fileURLWithPath: filePath)
         let audioFile = EZAudioFile(url: url)!
-        let data = audioFile.getWaveformData()!
+        let samplesCount = Double(samplingSettings.frequency) * audioFile.duration
+        let data = audioFile.getWaveformData(withNumberOfPoints: UInt32(samplesCount))!
         var buffer: [Float] = Array.init(repeating: 0, count: Int(data.bufferSize))
         memcpy(&buffer, data.buffer(forChannel: 0), Int(data.bufferSize) * MemoryLayout<Float>.size)
-        
-        return AudioFile(samples: buffer, ratio: 0)
+        return AudioFile(samples: buffer)
     }
 }
 
 class Sampler: Playing {
+    let samplingSettings: SamplingSettings
     var volume = 1.0
     var audioFilePath: String {
         didSet {
-            audioFile = .load(filePath: audioFilePath)
+            audioFile = .load(filePath: audioFilePath, samplingSettings: samplingSettings)
         }
     }
     
     private(set) var audioFile: AudioFile
     private var time = 0
     
-    init(audioFilePath: String) {
+    init(audioFilePath: String, samplingSettings: SamplingSettings) {
+        self.samplingSettings = samplingSettings
         self.audioFilePath = audioFilePath
-        audioFile = .load(filePath: audioFilePath)
+        audioFile = .load(filePath: audioFilePath, samplingSettings: samplingSettings)
     }
     
     func nextSample() -> Double {

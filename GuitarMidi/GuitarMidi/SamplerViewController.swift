@@ -15,7 +15,7 @@ class SamplerViewController: NSViewController {
     @IBOutlet weak var waveView: WaveView!
     @IBOutlet weak var waveViewWidthConstraint: NSLayoutConstraint!
     
-    let sampler: Sampler = Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/kicks/808-Kicks01.wav")
+    let sampler: Sampler = Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/kicks/808-Kicks01.wav", samplingSettings: AudioInterface.shared().samplingSettings)
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let treeViewController = segue.destinationController as? TreeViewController {

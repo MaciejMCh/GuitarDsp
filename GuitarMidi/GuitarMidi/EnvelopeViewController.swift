@@ -23,13 +23,8 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
     private weak var decayBezierViewController: CubicBezierViewController!
     private weak var releaseBezierViewController: CubicBezierViewController!
     
-    lazy var envelopeFunction: EnvelopeFunction = {
-        let envelopeFunction = EnvelopeFunction()
-        envelopeFunction.duration = floor(self.samplingSettings.samplesInSecond())
-        return envelopeFunction
-    }()
-    
-    var envelopeUpdate: ((EnvelopeFunction) -> ())?
+    var envelopeFunction: EnvelopeFunction!
+    var envelopeUpdate: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,18 +48,21 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
                 bezierViewController.update = { [weak self] (p1, p2) in
                     self?.envelopeFunction.attackBezier = CubicBezier(p1: p1, p2: p2)
                     self?.envelopeView.needsDisplay = true
+                    self?.envelopeUpdate?()
                 }
                 attackBezierViewController = bezierViewController
             case "decayBezier":
                 bezierViewController.update = { [weak self] (p1, p2) in
                     self?.envelopeFunction.decayBezier = CubicBezier(p1: p1, p2: p2)
                     self?.envelopeView.needsDisplay = true
+                    self?.envelopeUpdate?()
                 }
                 decayBezierViewController = bezierViewController
             case "releaseBezier":
                 bezierViewController.update = { [weak self] (p1, p2) in
                     self?.envelopeFunction.releaseBezier = CubicBezier(p1: p1, p2: p2)
                     self?.envelopeView.needsDisplay = true
+                    self?.envelopeUpdate?()
                 }
                 releaseBezierViewController = bezierViewController
             default: break
@@ -81,7 +79,7 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
         envelopeFunction.release = Double(releaseTextField.stringValue) ?? 0
         
         envelopeView.needsDisplay = true
-        envelopeUpdate?(envelopeFunction)
+        envelopeUpdate?()
     }
 }
 

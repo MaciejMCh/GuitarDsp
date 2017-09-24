@@ -22,9 +22,9 @@ class EnvelopeFunction: FunctionVariable {
     var sustain: Double = 0.4
     var release: Double = 0.3
     
-    var attackBezier: CubicBezier?
-    var decayBezier: CubicBezier?
-    var releaseBezier: CubicBezier?
+    var attackBezier: CubicBezier? = .fadeOut
+    var decayBezier: CubicBezier? = .fadeOut
+    var releaseBezier: CubicBezier? = .fadeOut
     
     private var state = State.on
     private var time: Double = 0

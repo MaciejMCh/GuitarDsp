@@ -14,7 +14,8 @@ class SamplerViewController: NSViewController {
     weak var fileTreeViewController: TreeViewController!
     @IBOutlet weak var waveView: WaveView!
     @IBOutlet weak var waveViewWidthConstraint: NSLayoutConstraint!
-    weak var envelopeShadowLayer: CALayer?
+    
+    var waveSublayers: [CALayer] = []
     
     let sampler: Sampler = Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/kicks/808-Kicks01.wav", samplingSettings: AudioInterface.shared().samplingSettings)
     
@@ -29,22 +30,62 @@ class SamplerViewController: NSViewController {
         }
         
         if let envelopeViewController = segue.destinationController as? EnvelopeViewController {
+            envelopeViewController.envelopeFunction = sampler.volume as! EnvelopeFunction
             envelopeViewController.envelopeUpdate = { [weak self] in
-                self?.drawVolumeEnvelope(envelope: $0)
+                self?.updateViews()
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawVolumeEnvelope(envelope: EnvelopeFunction())
-//        if let volumeEnvelope = sampler.volume as? EnvelopeFunction {
-//            drawVolumeEnvelope(envelope: volumeEnvelope)
-//        }
+        waveView.wantsLayer = true
     }
     
     private func updateViews() {
+        for waveSublayer in waveSublayers {
+            waveSublayer.removeFromSuperlayer()
+        }
+        waveSublayers.removeAll()
         
+        if let volumeEnvelope = sampler.volume as? EnvelopeFunction {
+            drawVolumeEnvelope(envelope: volumeEnvelope)
+        }
+        drawTimeAxis()
+    }
+    
+    private func drawTimeAxis() {
+        let length = Int(waveView.frame.width)
+        let height = Int(waveView.frame.height)
+        let spacing = 300
+        let indicatorsCount = length / spacing
+        let color = NSColor.red.cgColor
+        
+        let linesPath = NSBezierPath()
+        for i in 1..<indicatorsCount + 1 {
+            let x = CGFloat(spacing * i)
+            let progress = Double(x) / Double(length)
+            let timeInSeconds = progress * Double(sampler.audioFile.duration)
+            
+            linesPath.move(to: NSPoint(x: x, y: 0))
+            linesPath.line(to: NSPoint(x: x, y: CGFloat(height)))
+            
+            let textLayer = CATextLayer()
+            textLayer.fontSize = 15
+            textLayer.contentsScale = 4
+            textLayer.frame = CGRect(x: x - 100, y: 0, width: 100, height: 100)
+            textLayer.alignmentMode = kCAAlignmentRight
+            textLayer.string = String(format: "%.4fs", timeInSeconds)
+            textLayer.foregroundColor = color
+            waveView.layer?.addSublayer(textLayer)
+            waveSublayers.append(textLayer)
+        }
+        
+        let layer = CAShapeLayer()
+        waveSublayers.append(layer)
+        layer.path = linesPath.cgPath
+        layer.strokeColor = color
+        waveView.layer?.addSublayer(layer)
     }
     
     private func drawVolumeEnvelope(envelope: EnvelopeFunction) {
@@ -65,13 +106,10 @@ class SamplerViewController: NSViewController {
         }
         
         let layer = CAShapeLayer()
-        envelopeShadowLayer?.removeFromSuperlayer()
-        envelopeShadowLayer = layer
+        waveSublayers.append(layer)
         layer.path = envelopePath.cgPath
         layer.fillColor = NSColor.blue.withAlphaComponent(0.5).cgColor
         layer.backgroundColor = NSColor.red.cgColor
-        
-        waveView.wantsLayer = true
         waveView.layer?.addSublayer(layer)
     }
     
@@ -93,6 +131,7 @@ class SamplerViewController: NSViewController {
             if case .pending(let initialWidth) = state {
                 waveViewWidthConstraint.constant = max(100, initialWidth * (gesture.magnification + 1))
                 waveView.needsDisplay = true
+                updateViews()
             }
         default: break
         }

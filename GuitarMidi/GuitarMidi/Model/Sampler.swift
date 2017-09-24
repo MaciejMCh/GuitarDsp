@@ -26,7 +26,7 @@ struct AudioFile {
 
 class Sampler: Playing {
     let samplingSettings: SamplingSettings
-    var volume = 1.0
+    var volume: FunctionVariable = 1.0
     var audioFilePath: String {
         didSet {
             audioFile = .load(filePath: audioFilePath, samplingSettings: samplingSettings)
@@ -48,7 +48,7 @@ class Sampler: Playing {
         }
         
         if time < audioFile.samples.count {
-            return Double(audioFile.samples[time])
+            return Double(audioFile.samples[time]) * volume.value
         } else {
             return 0
         }

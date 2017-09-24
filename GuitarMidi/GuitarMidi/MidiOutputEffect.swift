@@ -32,6 +32,8 @@ class MidiOutputEffect: NSObject, Effect {
         super.init()
     }
     
+    var isOn = false
+    
     func processSample(_ inputSample: Sample, intoBuffer outputBuffer: UnsafeMutablePointer<Float>!) {
         var inputSignal: [Float] = Array(repeating: 0, count: Int(samplingSettings.framesPerPacket))
         for i in 0..<Int(samplingSettings.framesPerPacket) {
@@ -45,20 +47,31 @@ class MidiOutputEffect: NSObject, Effect {
             vDSP_rmsqv(inputSample.amp, 1, &output, UInt(self.samplingSettings.framesPerPacket))
             return output
         }
-        let amplitude = rms()
+        let amplitude = Double(rms())
         
-        if strokeDetectorXd.process(processingSample: Double(amplitude)) == 0 {
-            bzero(outputBuffer, Int(samplingSettings.packetByteSize))
-            return
+        let treshold = 0.006
+        let margin = treshold * 0.2
+        
+        if !isOn {
+            if amplitude > treshold {
+                bass808xD.on()
+                isOn = true
+            }
+        } else {
+            if amplitude < treshold - margin {
+                bass808xD.off()
+                isOn = false
+            }
         }
         
+        
         for i in 0..<Int(samplingSettings.framesPerPacket) {
-            outputBuffer.advanced(by: i).pointee = Float(waveGenerator.nextSample(frequency: Double(frequency)))
+            outputBuffer.advanced(by: i).pointee = Float(bass808xD.nextSample(frequency: 0.25 * Double(frequency)))
         }
         
         guard sendMidi else {return}
         guard let note = try? Note(frequency: Double(frequency)) else {return}
-        let integratedIndex = noteIndexIntegrator.integrate(sound: (noteIndex: note.index, volume: amplitude))
+        let integratedIndex = noteIndexIntegrator.integrate(sound: (noteIndex: note.index, volume: Float(amplitude)))
         if recentNote.index == integratedIndex.noteIndex {
             return
         } else {

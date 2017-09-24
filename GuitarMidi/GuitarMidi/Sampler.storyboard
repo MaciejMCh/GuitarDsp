@@ -11,11 +11,11 @@
             <objects>
                 <viewController id="aq1-wa-gil" customClass="SamplerViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9wg-5R-nPA">
-                        <rect key="frame" x="0.0" y="0.0" width="818" height="311"/>
+                        <rect key="frame" x="0.0" y="0.0" width="818" height="432"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="HMt-Wt-qR4">
-                                <rect key="frame" x="5" y="5" width="200" height="301"/>
+                                <rect key="frame" x="5" y="5" width="200" height="422"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="ChH-vR-Fsp"/>
                                 </constraints>
@@ -24,13 +24,13 @@
                                 </connections>
                             </containerView>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdx-wp-sdH">
-                                <rect key="frame" x="210" y="106" width="603" height="200"/>
+                                <rect key="frame" x="210" y="227" width="603" height="200"/>
                                 <clipView key="contentView" id="v2j-F9-N5C">
                                     <rect key="frame" x="1" y="1" width="586" height="183"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JcM-YS-zpp" customClass="WaveView" customModule="GuitarMidi" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="571" height="168"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1000" height="168"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="1000" id="7RO-JG-awO"/>
                                             </constraints>
@@ -56,11 +56,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="uDT-7p-wdQ">
+                                <rect key="frame" x="210" y="5" width="603" height="217"/>
+                                <connections>
+                                    <segue destination="6A0-Pe-ny4" kind="embed" id="7hw-XM-ibi"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uDT-7p-wdQ" secondAttribute="bottom" constant="5" id="2ms-1m-fyg"/>
                             <constraint firstAttribute="trailing" secondItem="Vdx-wp-sdH" secondAttribute="trailing" constant="5" id="6g9-Eo-dzD"/>
+                            <constraint firstAttribute="trailing" secondItem="uDT-7p-wdQ" secondAttribute="trailing" constant="5" id="SLT-9A-9ll"/>
                             <constraint firstItem="Vdx-wp-sdH" firstAttribute="leading" secondItem="HMt-Wt-qR4" secondAttribute="trailing" constant="5" id="VEZ-dh-glH"/>
+                            <constraint firstItem="uDT-7p-wdQ" firstAttribute="top" secondItem="Vdx-wp-sdH" secondAttribute="bottom" constant="5" id="evr-tX-YND"/>
                             <constraint firstAttribute="bottom" secondItem="HMt-Wt-qR4" secondAttribute="bottom" constant="5" id="kWE-dt-HS3"/>
+                            <constraint firstItem="uDT-7p-wdQ" firstAttribute="leading" secondItem="HMt-Wt-qR4" secondAttribute="trailing" constant="5" id="lER-zY-bYG"/>
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="qzc-3T-TfO"/>
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="leading" secondItem="9wg-5R-nPA" secondAttribute="leading" constant="5" id="rRT-Ji-SQQ"/>
                             <constraint firstItem="Vdx-wp-sdH" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="riV-vA-Dak"/>
@@ -73,7 +83,7 @@
                 </viewController>
                 <customObject id="H6l-jq-Ig3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="41.5"/>
+            <point key="canvasLocation" x="-101" y="102"/>
         </scene>
         <!--Tree-->
         <scene sceneID="U1X-uy-b67">
@@ -81,7 +91,15 @@
                 <controllerPlaceholder storyboardName="Tree" id="g0i-vQ-Sku" sceneMemberID="viewController"/>
                 <customObject id="3pv-3O-PpW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64" y="356"/>
+            <point key="canvasLocation" x="-163" y="527"/>
+        </scene>
+        <!--Envelope-->
+        <scene sceneID="SEO-Fb-z3L">
+            <objects>
+                <controllerPlaceholder storyboardName="Envelope" id="6A0-Pe-ny4" sceneMemberID="viewController"/>
+                <customObject id="J5R-oV-Ahi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-54" y="527"/>
         </scene>
     </scenes>
 </document>

@@ -19,15 +19,17 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
     @IBOutlet weak var sustainTextField: NSTextField!
     @IBOutlet weak var releaseTextField: NSTextField!
     
-    weak var attackBezierViewController: CubicBezierViewController!
-    weak var decayBezierViewController: CubicBezierViewController!
-    weak var releaseBezierViewController: CubicBezierViewController!
+    private weak var attackBezierViewController: CubicBezierViewController!
+    private weak var decayBezierViewController: CubicBezierViewController!
+    private weak var releaseBezierViewController: CubicBezierViewController!
     
     lazy var envelopeFunction: EnvelopeFunction = {
         let envelopeFunction = EnvelopeFunction()
         envelopeFunction.duration = floor(self.samplingSettings.samplesInSecond())
         return envelopeFunction
     }()
+    
+    var envelopeUpdate: ((EnvelopeFunction) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +81,7 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
         envelopeFunction.release = Double(releaseTextField.stringValue) ?? 0
         
         envelopeView.needsDisplay = true
+        envelopeUpdate?(envelopeFunction)
     }
 }
 
@@ -97,16 +100,7 @@ class EnvelopeView: NSView {
         let truePath = NSBezierPath()
         truePath.move(to: .init(x: CGFloat(margin), y: CGFloat(margin)))
         
-        let drawingEnvelopeFunction = EnvelopeFunction()
-        drawingEnvelopeFunction.hold = envelopeFunction.hold
-        drawingEnvelopeFunction.decay = envelopeFunction.decay
-        drawingEnvelopeFunction.delay = envelopeFunction.delay
-        drawingEnvelopeFunction.attack = envelopeFunction.attack
-        drawingEnvelopeFunction.sustain = envelopeFunction.sustain
-        drawingEnvelopeFunction.release = envelopeFunction.release
-        drawingEnvelopeFunction.decayBezier = envelopeFunction.decayBezier
-        drawingEnvelopeFunction.attackBezier = envelopeFunction.attackBezier
-        drawingEnvelopeFunction.releaseBezier = envelopeFunction.releaseBezier
+        let drawingEnvelopeFunction = envelopeFunction.makeClone()
         
         drawingEnvelopeFunction.duration = Double(length / 2)
         drawingEnvelopeFunction.on()
@@ -149,5 +143,21 @@ class EnvelopeView: NSView {
         color.setFill()
         circlePath.stroke()
         circlePath.fill()
+    }
+}
+
+extension EnvelopeFunction {
+    func makeClone() -> EnvelopeFunction {
+        let cloneEnvelopeFunction = EnvelopeFunction()
+        cloneEnvelopeFunction.hold = hold
+        cloneEnvelopeFunction.decay = decay
+        cloneEnvelopeFunction.delay = delay
+        cloneEnvelopeFunction.attack = attack
+        cloneEnvelopeFunction.sustain = sustain
+        cloneEnvelopeFunction.release = release
+        cloneEnvelopeFunction.decayBezier = decayBezier
+        cloneEnvelopeFunction.attackBezier = attackBezier
+        cloneEnvelopeFunction.releaseBezier = releaseBezier
+        return cloneEnvelopeFunction
     }
 }

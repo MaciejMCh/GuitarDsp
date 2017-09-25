@@ -16,8 +16,8 @@ class SamplerViewController: NSViewController {
     @IBOutlet weak var waveViewWidthConstraint: NSLayoutConstraint!
     
     var waveSublayers: [CALayer] = []
-    
-    let sampler: Sampler = Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/kicks/808-Kicks01.wav", samplingSettings: AudioInterface.shared().samplingSettings)
+    var channelPlayerEffect: ChannelPlayerEffect! = channelPlayerXd
+    var sampler: Sampler!
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let treeViewController = segue.destinationController as? TreeViewController {
@@ -33,6 +33,7 @@ class SamplerViewController: NSViewController {
             envelopeViewController.envelopeFunction = sampler.volume as! EnvelopeFunction
             envelopeViewController.envelopeUpdate = { [weak self] in
                 self?.updateViews()
+                self?.redrawWave()
             }
         }
     }
@@ -42,6 +43,12 @@ class SamplerViewController: NSViewController {
         waveView.wantsLayer = true
     }
     
+    @IBAction func playAction(sender: Any?) {
+        sampler.off()
+        sampler.on()
+        channelPlayerEffect.play(channel: sampler)
+    }
+    
     private func updateViews() {
         for waveSublayer in waveSublayers {
             waveSublayer.removeFromSuperlayer()
@@ -49,7 +56,7 @@ class SamplerViewController: NSViewController {
         waveSublayers.removeAll()
         
         if let volumeEnvelope = sampler.volume as? EnvelopeFunction {
-            drawVolumeEnvelope(envelope: volumeEnvelope)
+//            drawVolumeEnvelope(envelope: volumeEnvelope)
         }
         drawTimeAxis()
     }
@@ -96,14 +103,13 @@ class SamplerViewController: NSViewController {
         envelopePath.move(to: .init(x: 0, y: 0))
         let drawingEnvelopeFunction = envelope.makeClone()
         
-        drawingEnvelopeFunction.duration = Double(length / 2)
+        drawingEnvelopeFunction.duration = Double(waveView.frame.width)
+        
         drawingEnvelopeFunction.on()
         for i in 0..<length {
             envelopePath.line(to: .init(x: CGFloat(i), y: CGFloat(height) * CGFloat(drawingEnvelopeFunction.nextSample())))
-            if i == length / 2 {
-                drawingEnvelopeFunction.off()
-            }
         }
+        envelopePath.line(to: NSPoint(x: CGFloat(length), y: 0))
         
         let layer = CAShapeLayer()
         waveSublayers.append(layer)
@@ -115,7 +121,19 @@ class SamplerViewController: NSViewController {
     
     private func pickAudioFile(path: String) {
         sampler.audioFilePath = path
-        waveView.values = sampler.audioFile.samples.map{Double($0)}
+        redrawWave()
+    }
+    
+    private func redrawWave() {
+        guard let volumeEnvelope = (sampler.volume as? EnvelopeFunction)?.makeClone() else {return}
+        let drySamples = sampler.audioFile.samples
+        
+        var values: [Double] = []
+        for drySample in drySamples {
+            values.append(Double(drySample) * volumeEnvelope.nextSample())
+        }
+        
+        waveView.values = values
     }
     
     enum Zooming {

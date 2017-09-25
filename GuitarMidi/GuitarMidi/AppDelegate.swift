@@ -23,7 +23,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        return
+//        let channelPlayerEffect = ChannelPlayerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+        let channelPlayerEffect = channelPlayerXd
+        
+//        return
         
 //        bowMenu?.openMenuItem.target = self
 //        bowMenu?.openMenuItem.action = #selector(openAction)
@@ -55,7 +58,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let samplingSettings = AudioInterface.shared().samplingSettings
         let processor = Processor(samplingSettings: samplingSettings, tempo: 120)
         let board = Board()
-        let developmentEffect = makeDevelopmentEffect()
+//        let developmentEffect = makeDevelopmentEffect()
+        let developmentEffect = channelPlayerEffect
         board.effects = [developmentEffect]
         processor.activeBoard = board
         

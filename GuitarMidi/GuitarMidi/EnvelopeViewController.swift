@@ -153,6 +153,7 @@ extension EnvelopeFunction {
         cloneEnvelopeFunction.attack = attack
         cloneEnvelopeFunction.sustain = sustain
         cloneEnvelopeFunction.release = release
+        cloneEnvelopeFunction.duration = duration
         cloneEnvelopeFunction.decayBezier = decayBezier
         cloneEnvelopeFunction.attackBezier = attackBezier
         cloneEnvelopeFunction.releaseBezier = releaseBezier

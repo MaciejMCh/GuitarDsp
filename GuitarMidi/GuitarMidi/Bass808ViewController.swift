@@ -8,12 +8,14 @@
 
 import Foundation
 import Cocoa
+import GuitarDsp
 
 class Bass808ViewController: NSViewController {
     @IBOutlet weak var effectsStackView: NSStackView!
     @IBOutlet weak var oscilatorsStackView: NSStackView!
     private var oscilatorViewControllers: [OscilatorViewController] = []
     private var effectViewControllers: [NSViewController] = []
+    private var samplersViewControllers: [SamplerViewController] = []
     
     private var bass808: Bass808 {
         return bass808xD
@@ -26,6 +28,12 @@ class Bass808ViewController: NSViewController {
     
     @IBAction func addOscilator(sender: Any?) {
         bass808.oscilators.append(Oscilator(samplingSettings: bass808.samplingSettings))
+        refreshView()
+    }
+    
+    @IBAction func addSampler(sender: Any?) {
+        let sampler = Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/kicks/808-Kicks03.wav", samplingSettings: AudioInterface.shared().samplingSettings)
+        bass808.samplers.append(sampler)
         refreshView()
     }
     
@@ -53,6 +61,19 @@ class Bass808ViewController: NSViewController {
             
             effectViewControllers.append(effectViewController)
             effectsStackView.insertView(effectViewController.view, at: 0, in: .center)
+        }
+        
+        for samplerViewController in samplersViewControllers {
+            oscilatorsStackView.removeView(samplerViewController.view)
+        }
+        samplersViewControllers.removeAll()
+        
+        for sampler in bass808.samplers {
+            let samplerViewController = SamplerViewController.make()
+            samplerViewController.sampler = sampler
+            
+            samplersViewControllers.append(samplerViewController)
+            oscilatorsStackView.insertView(samplerViewController.view, at: 0, in: .leading)
         }
     }
 }

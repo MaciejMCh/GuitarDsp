@@ -62,10 +62,21 @@
                                     <segue destination="6A0-Pe-ny4" kind="embed" id="7hw-XM-ibi"/>
                                 </connections>
                             </containerView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m6i-vF-w1u">
+                                <rect key="frame" x="738" y="179" width="66" height="32"/>
+                                <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fra-9m-vEp">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="playActionWithSender:" target="aq1-wa-gil" id="XLk-W4-BDX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="uDT-7p-wdQ" secondAttribute="bottom" constant="5" id="2ms-1m-fyg"/>
                             <constraint firstAttribute="trailing" secondItem="Vdx-wp-sdH" secondAttribute="trailing" constant="5" id="6g9-Eo-dzD"/>
+                            <constraint firstAttribute="trailing" secondItem="m6i-vF-w1u" secondAttribute="trailing" constant="20" id="EzF-QB-fuh"/>
                             <constraint firstAttribute="trailing" secondItem="uDT-7p-wdQ" secondAttribute="trailing" constant="5" id="SLT-9A-9ll"/>
                             <constraint firstItem="Vdx-wp-sdH" firstAttribute="leading" secondItem="HMt-Wt-qR4" secondAttribute="trailing" constant="5" id="VEZ-dh-glH"/>
                             <constraint firstItem="uDT-7p-wdQ" firstAttribute="top" secondItem="Vdx-wp-sdH" secondAttribute="bottom" constant="5" id="evr-tX-YND"/>
@@ -74,6 +85,7 @@
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="qzc-3T-TfO"/>
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="leading" secondItem="9wg-5R-nPA" secondAttribute="leading" constant="5" id="rRT-Ji-SQQ"/>
                             <constraint firstItem="Vdx-wp-sdH" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="riV-vA-Dak"/>
+                            <constraint firstItem="m6i-vF-w1u" firstAttribute="top" secondItem="Vdx-wp-sdH" secondAttribute="bottom" constant="20" id="ucM-Us-0V3"/>
                         </constraints>
                     </view>
                     <connections>

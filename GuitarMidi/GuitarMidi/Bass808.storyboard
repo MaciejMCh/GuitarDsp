@@ -33,7 +33,7 @@
                                             <subviews>
                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mVC-9T-VYn">
                                                     <rect key="frame" x="-6" y="-7" width="214" height="198"/>
-                                                    <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xs9-b6-eMP">
+                                                    <buttonCell key="cell" type="push" title="New Oscilator" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xs9-b6-eMP">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
@@ -72,13 +72,26 @@
                                     <constraint firstAttribute="height" constant="40" id="mDM-KV-aDV"/>
                                 </constraints>
                             </customView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O2p-G6-ysl">
+                                <rect key="frame" x="3" y="62" width="214" height="32"/>
+                                <buttonCell key="cell" type="push" title="New Sampler" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lWd-Zb-fiw">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="addSamplerWithSender:" target="5jf-pe-vvi" id="Qvd-jU-pe4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="p2P-0Z-Pw8" firstAttribute="leading" secondItem="Qlx-4d-moJ" secondAttribute="leading" constant="10" id="9cT-Ff-vgc"/>
                             <constraint firstItem="0gb-CH-XF5" firstAttribute="leading" secondItem="Qlx-4d-moJ" secondAttribute="leading" constant="10" id="KpK-RT-rNz"/>
+                            <constraint firstItem="O2p-G6-ysl" firstAttribute="top" secondItem="0gb-CH-XF5" secondAttribute="bottom" id="R8s-bO-0Xh"/>
+                            <constraint firstItem="O2p-G6-ysl" firstAttribute="leading" secondItem="mVC-9T-VYn" secondAttribute="leading" id="U1C-9a-Duq"/>
                             <constraint firstAttribute="bottom" secondItem="p2P-0Z-Pw8" secondAttribute="bottom" constant="10" id="UHf-8c-KvJ"/>
                             <constraint firstItem="hwI-p0-83J" firstAttribute="leading" secondItem="Yjs-tf-OcY" secondAttribute="trailing" constant="9" id="Vdi-Js-sui"/>
                             <constraint firstAttribute="trailing" secondItem="hwI-p0-83J" secondAttribute="trailing" constant="10" placeholder="YES" id="bpB-ZV-ukL"/>
+                            <constraint firstItem="O2p-G6-ysl" firstAttribute="trailing" secondItem="mVC-9T-VYn" secondAttribute="trailing" id="mX1-iB-MSx"/>
                             <constraint firstItem="0gb-CH-XF5" firstAttribute="top" secondItem="Qlx-4d-moJ" secondAttribute="top" constant="10" id="uvI-Gn-j2U"/>
                             <constraint firstItem="hwI-p0-83J" firstAttribute="top" secondItem="Qlx-4d-moJ" secondAttribute="top" constant="10" id="wNU-92-Gc4"/>
                         </constraints>

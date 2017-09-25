@@ -13,7 +13,7 @@ let halfToneToScale: (Double) -> Double = {pow(2, $0 / 12)}
 
 class Bass808: Playing {
     let samplingSettings: SamplingSettings
-    let kickSampler: Sampler
+    var samplers: [Sampler] = []
     
     lazy var oscilators: [Oscilator] = {
         let single = Oscilator(samplingSettings: self.samplingSettings)
@@ -60,8 +60,6 @@ class Bass808: Playing {
     
     init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
-        kickSampler = Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/kicks/808-Kicks03.wav", samplingSettings: samplingSettings)
-        kickSampler.volume = 2.5
     }
     
     func on() {
@@ -71,7 +69,9 @@ class Bass808: Playing {
         for effect in effects {
             effect.on()
         }
-        kickSampler.on()
+        for sampler in samplers {
+            sampler.on()
+        }
     }
     
     func off() {
@@ -81,7 +81,9 @@ class Bass808: Playing {
         for effect in effects {
             effect.off()
         }
-        kickSampler.off()
+        for sampler in samplers {
+            sampler.off()
+        }
     }
     
     func nextSample(frequency: Double) -> Double {
@@ -91,6 +93,6 @@ class Bass808: Playing {
             processingSample = effect.apply(input: processingSample)
         }
         
-        return processingSample + kickSampler.nextSample()
+        return processingSample + samplers.map{$0.nextSample()}.reduce(0, +)
     }
 }

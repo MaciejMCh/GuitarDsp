@@ -56,6 +56,11 @@ class Sampler: Playing {
     }
     
     func on() {
+         volume.on()
         time = 0
+    }
+    
+    func off() {
+        volume.off()
     }
 }

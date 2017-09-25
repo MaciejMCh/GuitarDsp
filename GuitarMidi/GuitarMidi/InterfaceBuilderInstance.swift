@@ -38,3 +38,4 @@ extension TimeFunctionViewController: InterfaceBuilderInstance {static var inter
 extension AmpViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Amp"}}
 extension WaveShaperViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "WaveShaper"}}
 extension WaveShaperNodeViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "WaveShaperNode"}}
+extension SamplerViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Sampler"}}

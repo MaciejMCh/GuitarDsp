@@ -44,9 +44,7 @@ class SamplerViewController: NSViewController {
     }
     
     @IBAction func playAction(sender: Any?) {
-        sampler.off()
         sampler.on()
-        channelPlayerEffect.play(channel: sampler)
     }
     
     private func updateViews() {
@@ -122,6 +120,7 @@ class SamplerViewController: NSViewController {
     private func pickAudioFile(path: String) {
         sampler.audioFilePath = path
         redrawWave()
+        sampler.on()
     }
     
     private func redrawWave() {

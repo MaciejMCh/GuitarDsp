@@ -88,6 +88,7 @@ class PlayerView: NSView {
     
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
+        bass808xD.frequency = 100
         bass808xD.on()
     }
     

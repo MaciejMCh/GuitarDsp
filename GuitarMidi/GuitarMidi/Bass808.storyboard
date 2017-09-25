@@ -13,26 +13,26 @@
             <objects>
                 <viewController id="5jf-pe-vvi" customClass="Bass808ViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Qlx-4d-moJ">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="732" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwI-p0-83J">
-                                <rect key="frame" x="220" y="190" width="220" height="100"/>
+                                <rect key="frame" x="420" y="190" width="302" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="nZo-Dh-s1i"/>
                                 </constraints>
                             </stackView>
                             <box title="Oscilators" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-CH-XF5">
-                                <rect key="frame" x="7" y="86" width="206" height="204"/>
+                                <rect key="frame" x="7" y="86" width="406" height="204"/>
                                 <view key="contentView" id="Yjs-tf-OcY">
-                                    <rect key="frame" x="2" y="2" width="202" height="187"/>
+                                    <rect key="frame" x="2" y="2" width="402" height="187"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView distribution="fillEqually" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ka-Ik-mhC">
-                                            <rect key="frame" x="0.0" y="0.0" width="202" height="187"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="402" height="187"/>
                                             <subviews>
                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mVC-9T-VYn">
-                                                    <rect key="frame" x="-6" y="-7" width="214" height="198"/>
+                                                    <rect key="frame" x="-6" y="-7" width="414" height="198"/>
                                                     <buttonCell key="cell" type="push" title="New Oscilator" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xs9-b6-eMP">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
@@ -44,6 +44,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="mVC-9T-VYn" firstAttribute="centerX" secondItem="1Ka-Ik-mhC" secondAttribute="centerX" id="pt1-Vd-yVP"/>
+                                                <constraint firstAttribute="width" constant="402" id="rsx-Bm-19I"/>
                                             </constraints>
                                             <visibilityPriorities>
                                                 <integer value="1000"/>
@@ -61,7 +62,7 @@
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" placeholder="YES" id="2s1-Dw-U1M"/>
+                                    <constraint firstAttribute="width" constant="400" placeholder="YES" id="2s1-Dw-U1M"/>
                                     <constraint firstAttribute="height" constant="200" placeholder="YES" id="QK5-hz-xPe"/>
                                 </constraints>
                             </box>
@@ -73,7 +74,7 @@
                                 </constraints>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O2p-G6-ysl">
-                                <rect key="frame" x="3" y="62" width="214" height="32"/>
+                                <rect key="frame" x="3" y="62" width="414" height="32"/>
                                 <buttonCell key="cell" type="push" title="New Sampler" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lWd-Zb-fiw">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -103,7 +104,7 @@
                 </viewController>
                 <customObject id="tQE-5e-bvj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117" y="122"/>
+            <point key="canvasLocation" x="258" y="122"/>
         </scene>
     </scenes>
 </document>

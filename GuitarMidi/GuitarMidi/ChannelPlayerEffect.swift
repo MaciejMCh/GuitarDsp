@@ -15,6 +15,7 @@ protocol Channel: Playing {
     func nextSample() -> Double
 }
 extension Sampler: Channel {}
+extension Bass808: Channel {}
 
 class ChannelPlayerEffect: NSObject, Effect {
     private let samplingSettings: SamplingSettings
@@ -25,7 +26,6 @@ class ChannelPlayerEffect: NSObject, Effect {
     }
     
     func play(channel: Channel) {
-        channels.removeAll()
         channels.append(channel)
     }
     

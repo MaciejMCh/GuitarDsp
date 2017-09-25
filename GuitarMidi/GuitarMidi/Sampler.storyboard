@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,18 +16,15 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="HMt-Wt-qR4">
-                                <rect key="frame" x="5" y="5" width="200" height="422"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="ChH-vR-Fsp"/>
-                                </constraints>
+                                <rect key="frame" x="5" y="5" width="201" height="422"/>
                                 <connections>
                                     <segue destination="g0i-vQ-Sku" kind="embed" id="9fu-xt-KBt"/>
                                 </connections>
                             </containerView>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdx-wp-sdH">
-                                <rect key="frame" x="210" y="227" width="603" height="200"/>
+                                <rect key="frame" x="211" y="227" width="602" height="200"/>
                                 <clipView key="contentView" id="v2j-F9-N5C">
-                                    <rect key="frame" x="1" y="1" width="586" height="183"/>
+                                    <rect key="frame" x="1" y="1" width="585" height="183"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JcM-YS-zpp" customClass="WaveView" customModule="GuitarMidi" customModuleProvider="target">
@@ -38,7 +36,7 @@
                                     </subviews>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Y9w-oN-v3e"/>
+                                    <constraint firstAttribute="height" constant="200" id="Zzx-ma-zJc"/>
                                 </constraints>
                                 <gestureRecognizers>
                                     <magnificationGestureRecognizer delaysMagnificationEvents="YES" magnification="0.0" id="fc3-rj-yXO">
@@ -48,16 +46,16 @@
                                     </magnificationGestureRecognizer>
                                 </gestureRecognizers>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="q7d-LA-PCj">
-                                    <rect key="frame" x="1" y="184" width="586" height="15"/>
+                                    <rect key="frame" x="1" y="184" width="585" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="31q-9M-YUJ">
-                                    <rect key="frame" x="587" y="1" width="15" height="183"/>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="31q-9M-YUJ">
+                                    <rect key="frame" x="586" y="1" width="15" height="183"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="uDT-7p-wdQ">
-                                <rect key="frame" x="210" y="5" width="603" height="217"/>
+                                <rect key="frame" x="211" y="5" width="602" height="217"/>
                                 <connections>
                                     <segue destination="6A0-Pe-ny4" kind="embed" id="7hw-XM-ibi"/>
                                 </connections>
@@ -77,6 +75,7 @@
                             <constraint firstAttribute="bottom" secondItem="uDT-7p-wdQ" secondAttribute="bottom" constant="5" id="2ms-1m-fyg"/>
                             <constraint firstAttribute="trailing" secondItem="Vdx-wp-sdH" secondAttribute="trailing" constant="5" id="6g9-Eo-dzD"/>
                             <constraint firstAttribute="trailing" secondItem="m6i-vF-w1u" secondAttribute="trailing" constant="20" id="EzF-QB-fuh"/>
+                            <constraint firstItem="Vdx-wp-sdH" firstAttribute="width" secondItem="HMt-Wt-qR4" secondAttribute="width" multiplier="3:1" id="GLp-jf-xR8"/>
                             <constraint firstAttribute="trailing" secondItem="uDT-7p-wdQ" secondAttribute="trailing" constant="5" id="SLT-9A-9ll"/>
                             <constraint firstItem="Vdx-wp-sdH" firstAttribute="leading" secondItem="HMt-Wt-qR4" secondAttribute="trailing" constant="5" id="VEZ-dh-glH"/>
                             <constraint firstItem="uDT-7p-wdQ" firstAttribute="top" secondItem="Vdx-wp-sdH" secondAttribute="bottom" constant="5" id="evr-tX-YND"/>
@@ -85,6 +84,7 @@
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="qzc-3T-TfO"/>
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="leading" secondItem="9wg-5R-nPA" secondAttribute="leading" constant="5" id="rRT-Ji-SQQ"/>
                             <constraint firstItem="Vdx-wp-sdH" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="riV-vA-Dak"/>
+                            <constraint firstItem="Vdx-wp-sdH" firstAttribute="height" secondItem="uDT-7p-wdQ" secondAttribute="height" multiplier="100:108" id="t2U-Sq-sSe"/>
                             <constraint firstItem="m6i-vF-w1u" firstAttribute="top" secondItem="Vdx-wp-sdH" secondAttribute="bottom" constant="20" id="ucM-Us-0V3"/>
                         </constraints>
                     </view>

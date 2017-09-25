@@ -86,7 +86,8 @@ class Bass808: Playing {
         }
     }
     
-    func nextSample(frequency: Double) -> Double {
+    var frequency: Double = 0
+    func nextSample() -> Double {
         var processingSample = oscilators.map{$0.waveGenerator.nextSample(frequency: frequency * halfToneToScale($0.tune.value)) * $0.volume.value}.reduce(0, +)
         
         for effect in effects {

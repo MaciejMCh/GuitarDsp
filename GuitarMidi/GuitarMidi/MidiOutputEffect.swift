@@ -66,7 +66,8 @@ class MidiOutputEffect: NSObject, Effect {
         
         
         for i in 0..<Int(samplingSettings.framesPerPacket) {
-            outputBuffer.advanced(by: i).pointee = Float(bass808xD.nextSample(frequency: 0.25 * Double(frequency)))
+            bass808xD.frequency = 0.25 * Double(frequency)
+            outputBuffer.advanced(by: i).pointee = Float(bass808xD.nextSample())
         }
         
         guard sendMidi else {return}

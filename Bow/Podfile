@@ -8,4 +8,8 @@ target 'Bow' do
   pod 'HexColors'
   pod 'GuitarDsp', :path => '../GuitarDsp'
   pod 'EZAudio', :path => '../EZAudio'
+  pod 'GuitarMidi', :path => '../GuitarMidi'
+  pod 'CubicBezier', :path => '../CubicBezier'
+  pod 'Beethoven', :git => 'https://github.com/MaciejMCh/Beethoven.git', :branch => 'osx'
+  pod 'MIDIKit', :git => 'https://github.com/MaciejMCh/MIDIKit.git'
 end

@@ -10,11 +10,11 @@ import Foundation
 
 // https://stackoverflow.com/questions/43583302/peak-detection-for-growing-time-series-using-swift/43607179#43607179
 
-class StrokeDetector {
-    var threshold: Double = 0.00001
-    var influence: Double = 0.0
+public class StrokeDetector {
+    public var threshold: Double = 0.00001
+    public var influence: Double = 0.0
     
-    var lag = 10 {
+    public var lag = 10 {
         didSet {
             filteredSamples = Array(repeating: 0, count: self.lag)
         }

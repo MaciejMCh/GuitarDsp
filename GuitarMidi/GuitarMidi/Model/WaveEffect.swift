@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol Playing {
+public protocol Playing {
     func on()
     func off()
 }
 
 extension Playing {
-    func on() {}
-    func off() {}
+    public func on() {}
+    public func off() {}
 }
 
 protocol WaveEffect: Playing {

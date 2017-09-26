@@ -5,18 +5,19 @@ PODS:
   - Pitchy (2.0.1)
 
 DEPENDENCIES:
-  - Beethoven (from `https://github.com/MaciejMCh/Beethoven.git`)
+  - Beethoven (from `https://github.com/MaciejMCh/Beethoven.git`, branch `osx`)
   - MIDIKit (from `https://github.com/MaciejMCh/MIDIKit.git`)
 
 EXTERNAL SOURCES:
   Beethoven:
+    :branch: osx
     :git: https://github.com/MaciejMCh/Beethoven.git
   MIDIKit:
     :git: https://github.com/MaciejMCh/MIDIKit.git
 
 CHECKOUT OPTIONS:
   Beethoven:
-    :commit: 72703951ffaa260a86401cfd913b093aa783e654
+    :commit: 4891ada9d872c34d2d60b011d32bf878641c4fd6
     :git: https://github.com/MaciejMCh/Beethoven.git
   MIDIKit:
     :commit: 4b5725276449cb310cb0ec7663fb0e50da583904
@@ -27,6 +28,6 @@ SPEC CHECKSUMS:
   MIDIKit: 785c048f399107c47a1ad9a47a8656034edf5162
   Pitchy: 00dbe7cb7ac87fd9c32cb2aa6ce50d11f931289f
 
-PODFILE CHECKSUM: f7fdbcbf44f14b0c47a5779c1eb2c145ff016a97
+PODFILE CHECKSUM: 0d9991f0ce18e636a9a74e6d8e8d7fadfab78741
 
 COCOAPODS: 1.3.1

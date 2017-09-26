@@ -2,9 +2,17 @@
 # platform :ios, '9.0'
 workspace '../GuitarDsp.xcworkspace'
 
-target 'GuitarMidi' do
+def pods
   use_frameworks!
-  pod 'Beethoven', :git => 'https://github.com/MaciejMCh/Beethoven.git'
+  pod 'Beethoven', :git => 'https://github.com/MaciejMCh/Beethoven.git', :branch => 'osx'
   pod 'MIDIKit', :git => 'https://github.com/MaciejMCh/MIDIKit.git'
 
+end
+
+target 'GuitarMidi' do
+   pods
+end
+
+target 'GuitarMidiKit' do
+   pods
 end

@@ -9,9 +9,11 @@
 import Foundation
 import GuitarDsp
 
+public var bass808xD = Bass808(samplingSettings: AudioInterface.shared().samplingSettings)
+
 let halfToneToScale: (Double) -> Double = {pow(2, $0 / 12)}
 
-class Bass808: Playing {
+public class Bass808: Playing {
     let samplingSettings: SamplingSettings
     var samplers: [Sampler] = []
     
@@ -62,7 +64,7 @@ class Bass808: Playing {
         self.samplingSettings = samplingSettings
     }
     
-    func on() {
+    public func on() {
         for oscilator in oscilators {
             oscilator.on()
         }
@@ -74,7 +76,7 @@ class Bass808: Playing {
         }
     }
     
-    func off() {
+    public func off() {
         for oscilator in oscilators {
             oscilator.off()
         }
@@ -87,7 +89,7 @@ class Bass808: Playing {
     }
     
     var frequency: Double = 0
-    func nextSample() -> Double {
+    public func nextSample() -> Double {
         var processingSample = oscilators.map{$0.waveGenerator.nextSample(frequency: frequency * halfToneToScale($0.tune.value)) * $0.volume.value}.reduce(0, +)
         
         for effect in effects {

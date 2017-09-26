@@ -9,15 +9,15 @@
 import Foundation
 import GuitarDsp
 
-let channelPlayerXd = ChannelPlayerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+public let channelPlayerXd = ChannelPlayerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
 
-protocol Channel: Playing {
+public protocol Channel: Playing {
     func nextSample() -> Double
 }
 extension Sampler: Channel {}
 extension Bass808: Channel {}
 
-class ChannelPlayerEffect: NSObject, Effect {
+public class ChannelPlayerEffect: NSObject, Effect {
     private let samplingSettings: SamplingSettings
     private var channels: [Channel] = []
     
@@ -25,11 +25,11 @@ class ChannelPlayerEffect: NSObject, Effect {
         self.samplingSettings = samplingSettings
     }
     
-    func play(channel: Channel) {
+    public func play(channel: Channel) {
         channels.append(channel)
     }
     
-    func processSample(_ inputSample: Sample, intoBuffer outputBuffer: UnsafeMutablePointer<Float>!) {
+    public func processSample(_ inputSample: Sample, intoBuffer outputBuffer: UnsafeMutablePointer<Float>!) {
         for i in 0..<Int(samplingSettings.framesPerPacket) {
             outputBuffer.advanced(by: i).pointee = Float(channels.map{$0.nextSample()}.reduce(0.0, +))
         }

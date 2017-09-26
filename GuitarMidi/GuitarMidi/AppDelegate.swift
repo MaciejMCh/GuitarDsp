@@ -8,8 +8,7 @@
 
 import Cocoa
 import GuitarDsp
-
-var bass808xD = Bass808(samplingSettings: AudioInterface.shared().samplingSettings)
+import GuitarMidiKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

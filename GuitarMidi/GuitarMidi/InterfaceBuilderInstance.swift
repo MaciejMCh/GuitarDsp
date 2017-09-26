@@ -15,14 +15,14 @@ protocol InterfaceBuilderInstance {
 
 extension InterfaceBuilderInstance where Self: NSViewController {
     static func make() -> Self {
-        return NSStoryboard(name: Self.interfaceFileName, bundle: nil).instantiateInitialController() as! Self
+        return NSStoryboard(name: Self.interfaceFileName, bundle: Bundle(identifier: "com.mch.GuitarMidiKit")!).instantiateInitialController() as! Self
     }
 }
 
 extension InterfaceBuilderInstance where Self: NSView {
     static func make() -> Self! {
         var nibContents = NSArray()
-        Bundle(for: Self.self).loadNibNamed(Self.interfaceFileName, owner: nil, topLevelObjects: &nibContents)
+        Bundle(identifier: "com.mch.GuitarMidiKit")!.loadNibNamed(Self.interfaceFileName, owner: nil, topLevelObjects: &nibContents)
         for content in nibContents {
             if let me = content as? Self {
                 return me

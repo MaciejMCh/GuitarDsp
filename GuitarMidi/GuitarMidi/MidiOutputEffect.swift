@@ -11,9 +11,9 @@ import GuitarDsp
 import Pitchy
 import Accelerate
 
-let strokeDetectorXd = StrokeDetector()
+public let strokeDetectorXd = StrokeDetector()
 
-class MidiOutputEffect: NSObject, Effect {
+public class MidiOutputEffect: NSObject, Effect {
     let sendMidi = false
     
     let samplingSettings: SamplingSettings
@@ -24,7 +24,7 @@ class MidiOutputEffect: NSObject, Effect {
     var noteIntegrator: [Int?] = Array(repeating: nil, count: 1000)
     var noteIndexIntegrator = NoteIndexIntegrator()
     
-    init(samplingSettings: SamplingSettings) {
+    public init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
         pitchDetector = PitchDetector(samplingSettings: samplingSettings)
         waveGenerator = WaveGenerator(samplingSettings: samplingSettings)
@@ -34,7 +34,7 @@ class MidiOutputEffect: NSObject, Effect {
     
     var isOn = false
     
-    func processSample(_ inputSample: Sample, intoBuffer outputBuffer: UnsafeMutablePointer<Float>!) {
+    public func processSample(_ inputSample: Sample, intoBuffer outputBuffer: UnsafeMutablePointer<Float>!) {
         var inputSignal: [Float] = Array(repeating: 0, count: Int(samplingSettings.framesPerPacket))
         for i in 0..<Int(samplingSettings.framesPerPacket) {
             inputSignal[i] = inputSample.amp.advanced(by: i).pointee

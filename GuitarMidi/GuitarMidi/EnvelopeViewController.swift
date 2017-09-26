@@ -8,7 +8,7 @@
 
 import Foundation
 import Cocoa
-import CubicBezierPicker
+import CubicBezier
 
 class EnvelopeViewController: NSViewController, HasSamplingSettings {
     @IBOutlet weak var envelopeView: EnvelopeView!

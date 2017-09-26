@@ -7,93 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		827E49CC425DBDB9ADD32F77 /* Pods_GuitarMidiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C633EA3563B6DEE0015953 /* Pods_GuitarMidiKit.framework */; };
 		B48E5AACBB3EB6906900A289 /* Pods_GuitarMidi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1239878A4B320DB80C6464 /* Pods_GuitarMidi.framework */; };
-		C25EED8A1F7ABE8A0071ABAD /* GuitarMidiKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C25EED881F7ABE8A0071ABAD /* GuitarMidiKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C25EED8D1F7ABE8A0071ABAD /* GuitarMidiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25EED861F7ABE8A0071ABAD /* GuitarMidiKit.framework */; };
-		C25EED8E1F7ABE8A0071ABAD /* GuitarMidiKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C25EED861F7ABE8A0071ABAD /* GuitarMidiKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C25EED961F7ABECE0071ABAD /* WaveGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82B91F70400900F79116 /* WaveGenerator.swift */; };
-		C25EED971F7ABECE0071ABAD /* FunctionVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82BB1F70402C00F79116 /* FunctionVariable.swift */; };
-		C25EED981F7ABECE0071ABAD /* 808Bass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82BD1F70410C00F79116 /* 808Bass.swift */; };
-		C25EED991F7ABECE0071ABAD /* CubicBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7E2B41F715158007A9AF6 /* CubicBezier.swift */; };
-		C25EED9A1F7ABECE0071ABAD /* WaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212EAE61F72BD8000198D25 /* WaveEffect.swift */; };
-		C25EED9B1F7ABECE0071ABAD /* Oscilator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA5B701F72CBE9006E6565 /* Oscilator.swift */; };
-		C25EED9C1F7ABECE0071ABAD /* SamplingSettingsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */; };
-		C25EED9D1F7ABECE0071ABAD /* WaveShaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226A26A1F7429F300539B80 /* WaveShaper.swift */; };
-		C25EED9E1F7ABECE0071ABAD /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23508081F75340E0049754F /* Sampler.swift */; };
-		C25EED9F1F7ABECE0071ABAD /* InterfaceBuilderInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82B61F7034B900F79116 /* InterfaceBuilderInstance.swift */; };
-		C25EEDA01F7ABECE0071ABAD /* MidiOutputEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */; };
-		C25EEDA11F7ABECE0071ABAD /* PitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CE3751F6094FF002B9567 /* PitchDetector.swift */; };
-		C25EEDA21F7ABECE0071ABAD /* MidiServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24FFF711F66E2C2007CBF57 /* MidiServer.swift */; };
-		C25EEDA31F7ABECE0071ABAD /* NoteIndexIntegrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20775E01F671E20009FD61A /* NoteIndexIntegrator.swift */; };
-		C25EEDA41F7ABECE0071ABAD /* StrokeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */; };
-		C25EEDA51F7ABECE0071ABAD /* Bass808ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82AC1F70316600F79116 /* Bass808ViewController.swift */; };
-		C25EEDA61F7ABECE0071ABAD /* Bass808.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21D82B01F7032E900F79116 /* Bass808.storyboard */; };
-		C25EEDA71F7ABECE0071ABAD /* Oscilator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21D82B21F70330200F79116 /* Oscilator.storyboard */; };
-		C25EEDA81F7ABECE0071ABAD /* OscilatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82B41F70337F00F79116 /* OscilatorViewController.swift */; };
-		C25EEDA91F7ABECE0071ABAD /* Variable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20AE1C11F70566300AFFBCE /* Variable.storyboard */; };
-		C25EEDAA1F7ABECE0071ABAD /* VariableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20AE1C31F7057F500AFFBCE /* VariableViewController.swift */; };
-		C25EEDAB1F7ABECE0071ABAD /* Bass808Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC08E11F70863300F308AE /* Bass808Effect.swift */; };
-		C25EEDAC1F7ABECE0071ABAD /* TimeFunctionVariable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2BC08E31F70920700F308AE /* TimeFunctionVariable.storyboard */; };
-		C25EEDAD1F7ABECE0071ABAD /* EnvelopeFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18451F71087900C55086 /* EnvelopeFunction.swift */; };
-		C25EEDAE1F7ABECE0071ABAD /* Envelope.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20E18471F710C3000C55086 /* Envelope.storyboard */; };
-		C25EEDAF1F7ABECE0071ABAD /* EnvelopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18491F710E1400C55086 /* EnvelopeViewController.swift */; };
-		C25EEDB01F7ABECE0071ABAD /* TimeFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212EAE11F72BB5000198D25 /* TimeFunctionViewController.swift */; };
-		C25EEDB11F7ABECE0071ABAD /* AmpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA5B751F72CC54006E6565 /* AmpViewController.swift */; };
-		C25EEDB21F7ABECE0071ABAD /* Amp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2FA5B771F72CD05006E6565 /* Amp.storyboard */; };
-		C25EEDB31F7ABECE0071ABAD /* WaveEffectControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA5B791F72CDEA006E6565 /* WaveEffectControllers.swift */; };
-		C25EEDB41F7ABECE0071ABAD /* WaveShaper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C226A2661F74212E00539B80 /* WaveShaper.storyboard */; };
-		C25EEDB51F7ABECE0071ABAD /* WaveShaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226A2681F74217E00539B80 /* WaveShaperViewController.swift */; };
-		C25EEDB61F7ABECE0071ABAD /* WaveShaperNode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C226A26C1F742C1A00539B80 /* WaveShaperNode.storyboard */; };
-		C25EEDB71F7ABECE0071ABAD /* WaveShaperNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226A26E1F742C8A00539B80 /* WaveShaperNodeViewController.swift */; };
-		C25EEDB81F7ABECE0071ABAD /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21C583A1F74370A00907502 /* TestViewController.swift */; };
-		C25EEDB91F7ABECE0071ABAD /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21C583F1F74386800907502 /* Test.storyboard */; };
-		C25EEDBA1F7ABECE0071ABAD /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CD041F753B0D001F8D56 /* TreeViewController.swift */; };
-		C25EEDBB1F7ABECE0071ABAD /* Tree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A4CD061F7546C2001F8D56 /* Tree.storyboard */; };
-		C25EEDBC1F7ABECE0071ABAD /* FileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26AD8E51F7556A9005512E0 /* FileBrowser.swift */; };
-		C25EEDBD1F7ABECE0071ABAD /* Sampler.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21DD5451F756AF500CDD534 /* Sampler.storyboard */; };
-		C25EEDBE1F7ABECE0071ABAD /* SamplerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DD54A1F756B1C00CDD534 /* SamplerViewController.swift */; };
-		C25EEDBF1F7ABECE0071ABAD /* ChannelPlayerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F63BD21F7988710046A7D5 /* ChannelPlayerEffect.swift */; };
-		C25EEDC71F7AC08E0071ABAD /* CubicBezierPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E7E2AA1F7136B3007A9AF6 /* CubicBezierPicker.framework */; };
-		C25EEDC81F7AC08E0071ABAD /* GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CB16941F5F0DC100B8D6FF /* GuitarDsp.framework */; };
+		C2C19A891F7AFE3500FDE938 /* InterfaceBuilderInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82B61F7034B900F79116 /* InterfaceBuilderInstance.swift */; };
+		C2C19A8A1F7AFE4400FDE938 /* MidiOutputEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */; };
+		C2C19A8B1F7AFE4400FDE938 /* PitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CE3751F6094FF002B9567 /* PitchDetector.swift */; };
+		C2C19A8C1F7AFE4400FDE938 /* MidiServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24FFF711F66E2C2007CBF57 /* MidiServer.swift */; };
+		C2C19A8D1F7AFE4400FDE938 /* NoteIndexIntegrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20775E01F671E20009FD61A /* NoteIndexIntegrator.swift */; };
+		C2C19A8E1F7AFE4400FDE938 /* StrokeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */; };
+		C2C19A8F1F7AFE4400FDE938 /* Bass808ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82AC1F70316600F79116 /* Bass808ViewController.swift */; };
+		C2C19A901F7AFE4400FDE938 /* Bass808.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21D82B01F7032E900F79116 /* Bass808.storyboard */; };
+		C2C19A911F7AFE4400FDE938 /* Oscilator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21D82B21F70330200F79116 /* Oscilator.storyboard */; };
+		C2C19A921F7AFE4400FDE938 /* OscilatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82B41F70337F00F79116 /* OscilatorViewController.swift */; };
+		C2C19A931F7AFE4400FDE938 /* Variable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20AE1C11F70566300AFFBCE /* Variable.storyboard */; };
+		C2C19A941F7AFE4400FDE938 /* VariableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20AE1C31F7057F500AFFBCE /* VariableViewController.swift */; };
+		C2C19A951F7AFE4400FDE938 /* Bass808Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC08E11F70863300F308AE /* Bass808Effect.swift */; };
+		C2C19A961F7AFE4400FDE938 /* TimeFunctionVariable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2BC08E31F70920700F308AE /* TimeFunctionVariable.storyboard */; };
+		C2C19A971F7AFE4400FDE938 /* EnvelopeFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18451F71087900C55086 /* EnvelopeFunction.swift */; };
+		C2C19A981F7AFE4400FDE938 /* Envelope.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20E18471F710C3000C55086 /* Envelope.storyboard */; };
+		C2C19A991F7AFE4400FDE938 /* EnvelopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18491F710E1400C55086 /* EnvelopeViewController.swift */; };
+		C2C19A9A1F7AFE4400FDE938 /* TimeFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212EAE11F72BB5000198D25 /* TimeFunctionViewController.swift */; };
+		C2C19A9B1F7AFE4400FDE938 /* AmpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA5B751F72CC54006E6565 /* AmpViewController.swift */; };
+		C2C19A9C1F7AFE4400FDE938 /* Amp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2FA5B771F72CD05006E6565 /* Amp.storyboard */; };
+		C2C19A9D1F7AFE4400FDE938 /* WaveEffectControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA5B791F72CDEA006E6565 /* WaveEffectControllers.swift */; };
+		C2C19A9E1F7AFE4400FDE938 /* WaveShaper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C226A2661F74212E00539B80 /* WaveShaper.storyboard */; };
+		C2C19A9F1F7AFE4400FDE938 /* WaveShaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226A2681F74217E00539B80 /* WaveShaperViewController.swift */; };
+		C2C19AA01F7AFE4400FDE938 /* WaveShaperNode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C226A26C1F742C1A00539B80 /* WaveShaperNode.storyboard */; };
+		C2C19AA11F7AFE4400FDE938 /* WaveShaperNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226A26E1F742C8A00539B80 /* WaveShaperNodeViewController.swift */; };
+		C2C19AA21F7AFE4400FDE938 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21C583A1F74370A00907502 /* TestViewController.swift */; };
+		C2C19AA31F7AFE4400FDE938 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21C583F1F74386800907502 /* Test.storyboard */; };
+		C2C19AA41F7AFE4400FDE938 /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CD041F753B0D001F8D56 /* TreeViewController.swift */; };
+		C2C19AA51F7AFE4400FDE938 /* Tree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A4CD061F7546C2001F8D56 /* Tree.storyboard */; };
+		C2C19AA61F7AFE4400FDE938 /* FileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26AD8E51F7556A9005512E0 /* FileBrowser.swift */; };
+		C2C19AA71F7AFE4400FDE938 /* Sampler.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21DD5451F756AF500CDD534 /* Sampler.storyboard */; };
+		C2C19AA81F7AFE4400FDE938 /* SamplerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DD54A1F756B1C00CDD534 /* SamplerViewController.swift */; };
+		C2C19AA91F7AFE4400FDE938 /* ChannelPlayerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F63BD21F7988710046A7D5 /* ChannelPlayerEffect.swift */; };
+		C2C19AAA1F7AFE5300FDE938 /* WaveGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82B91F70400900F79116 /* WaveGenerator.swift */; };
+		C2C19AAB1F7AFE5300FDE938 /* FunctionVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82BB1F70402C00F79116 /* FunctionVariable.swift */; };
+		C2C19AAC1F7AFE5300FDE938 /* 808Bass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82BD1F70410C00F79116 /* 808Bass.swift */; };
+		C2C19AAD1F7AFE5300FDE938 /* CubicBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7E2B41F715158007A9AF6 /* CubicBezier.swift */; };
+		C2C19AAE1F7AFE5300FDE938 /* WaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212EAE61F72BD8000198D25 /* WaveEffect.swift */; };
+		C2C19AAF1F7AFE5300FDE938 /* Oscilator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA5B701F72CBE9006E6565 /* Oscilator.swift */; };
+		C2C19AB01F7AFE5300FDE938 /* SamplingSettingsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */; };
+		C2C19AB11F7AFE5300FDE938 /* WaveShaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226A26A1F7429F300539B80 /* WaveShaper.swift */; };
+		C2C19AB21F7AFE5300FDE938 /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23508081F75340E0049754F /* Sampler.swift */; };
 		C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CB16841F5F0D5800B8D6FF /* AppDelegate.swift */; };
 		C2CB16871F5F0D5800B8D6FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CB16861F5F0D5800B8D6FF /* ViewController.swift */; };
 		C2CB16891F5F0D5800B8D6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CB16881F5F0D5800B8D6FF /* Assets.xcassets */; };
 		C2CB168C1F5F0D5800B8D6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2CB168A1F5F0D5800B8D6FF /* Main.storyboard */; };
-		C2CB16951F5F0DC100B8D6FF /* GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CB16941F5F0DC100B8D6FF /* GuitarDsp.framework */; };
-		C2E7E2AB1F7136BD007A9AF6 /* CubicBezierPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E7E2AA1F7136B3007A9AF6 /* CubicBezierPicker.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C25EED8B1F7ABE8A0071ABAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C2CB16791F5F0D5800B8D6FF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C25EED851F7ABE8A0071ABAD;
-			remoteInfo = GuitarMidiKit;
-		};
-		C2E7E2A51F7136B3007A9AF6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B9D1E5F21AA186C5000C5854;
-			remoteInfo = CubicBezier;
-		};
-		C2E7E2A71F7136B3007A9AF6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B9D1E6081AA186C5000C5854;
-			remoteInfo = CubicBezierTests;
-		};
-		C2E7E2A91F7136B3007A9AF6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C2E7E2911F71362C007A9AF6;
-			remoteInfo = CubicBezierPicker;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C25EED951F7ABE8A0071ABAD /* Embed Frameworks */ = {
@@ -102,7 +63,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C25EED8E1F7ABE8A0071ABAD /* GuitarMidiKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,9 +102,6 @@
 		C226A26E1F742C8A00539B80 /* WaveShaperNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShaperNodeViewController.swift; sourceTree = "<group>"; };
 		C23508081F75340E0049754F /* Sampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
 		C24FFF711F66E2C2007CBF57 /* MidiServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiServer.swift; sourceTree = "<group>"; };
-		C25EED861F7ABE8A0071ABAD /* GuitarMidiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GuitarMidiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C25EED881F7ABE8A0071ABAD /* GuitarMidiKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuitarMidiKit.h; sourceTree = "<group>"; };
-		C25EED891F7ABE8A0071ABAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiOutputEffect.swift; sourceTree = "<group>"; };
 		C26AD8E51F7556A9005512E0 /* FileBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowser.swift; sourceTree = "<group>"; };
 		C28CE3751F6094FF002B9567 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
@@ -160,7 +117,6 @@
 		C2CB168B1F5F0D5800B8D6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2CB168D1F5F0D5800B8D6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2CB16941F5F0DC100B8D6FF /* GuitarDsp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarDsp.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-gboowxrazxsddgehsrbqoyrqehfs/Build/Products/Debug/GuitarDsp.framework"; sourceTree = "<group>"; };
-		C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CubicBezier.xcodeproj; path = CubicBezier/CubicBezier.xcodeproj; sourceTree = "<group>"; };
 		C2E7E2B41F715158007A9AF6 /* CubicBezier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicBezier.swift; sourceTree = "<group>"; };
 		C2F63BD21F7988710046A7D5 /* ChannelPlayerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPlayerEffect.swift; sourceTree = "<group>"; };
 		C2FA5B701F72CBE9006E6565 /* Oscilator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscilator.swift; sourceTree = "<group>"; };
@@ -172,23 +128,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C25EED821F7ABE8A0071ABAD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C25EEDC71F7AC08E0071ABAD /* CubicBezierPicker.framework in Frameworks */,
-				C25EEDC81F7AC08E0071ABAD /* GuitarDsp.framework in Frameworks */,
-				827E49CC425DBDB9ADD32F77 /* Pods_GuitarMidiKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C2CB167E1F5F0D5800B8D6FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2E7E2AB1F7136BD007A9AF6 /* CubicBezierPicker.framework in Frameworks */,
-				C2CB16951F5F0DC100B8D6FF /* GuitarDsp.framework in Frameworks */,
-				C25EED8D1F7ABE8A0071ABAD /* GuitarMidiKit.framework in Frameworks */,
 				B48E5AACBB3EB6906900A289 /* Pods_GuitarMidi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,7 +150,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C21D82B81F703FEF00F79116 /* Model */ = {
+		C2CB16781F5F0D5800B8D6FF = {
+			isa = PBXGroup;
+			children = (
+				C2CB16831F5F0D5800B8D6FF /* GuitarMidi */,
+				C2CB16821F5F0D5800B8D6FF /* Products */,
+				C2CB16931F5F0DC100B8D6FF /* Frameworks */,
+				8CFA17E97FA7D45B735F00B9 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		C2CB16821F5F0D5800B8D6FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2CB16811F5F0D5800B8D6FF /* GuitarMidi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2CB16831F5F0D5800B8D6FF /* GuitarMidi */ = {
 			isa = PBXGroup;
 			children = (
 				C21D82B91F70400900F79116 /* WaveGenerator.swift */,
@@ -219,44 +180,6 @@
 				C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */,
 				C226A26A1F7429F300539B80 /* WaveShaper.swift */,
 				C23508081F75340E0049754F /* Sampler.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C25EED871F7ABE8A0071ABAD /* GuitarMidiKit */ = {
-			isa = PBXGroup;
-			children = (
-				C25EED881F7ABE8A0071ABAD /* GuitarMidiKit.h */,
-				C25EED891F7ABE8A0071ABAD /* Info.plist */,
-			);
-			path = GuitarMidiKit;
-			sourceTree = "<group>";
-		};
-		C2CB16781F5F0D5800B8D6FF = {
-			isa = PBXGroup;
-			children = (
-				C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */,
-				C2CB16831F5F0D5800B8D6FF /* GuitarMidi */,
-				C25EED871F7ABE8A0071ABAD /* GuitarMidiKit */,
-				C2CB16821F5F0D5800B8D6FF /* Products */,
-				C2CB16931F5F0DC100B8D6FF /* Frameworks */,
-				8CFA17E97FA7D45B735F00B9 /* Pods */,
-			);
-			sourceTree = "<group>";
-		};
-		C2CB16821F5F0D5800B8D6FF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C2CB16811F5F0D5800B8D6FF /* GuitarMidi.app */,
-				C25EED861F7ABE8A0071ABAD /* GuitarMidiKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C2CB16831F5F0D5800B8D6FF /* GuitarMidi */ = {
-			isa = PBXGroup;
-			children = (
-				C21D82B81F703FEF00F79116 /* Model */,
 				C2CB16841F5F0D5800B8D6FF /* AppDelegate.swift */,
 				C21D82B61F7034B900F79116 /* InterfaceBuilderInstance.swift */,
 				C2CB16861F5F0D5800B8D6FF /* ViewController.swift */,
@@ -309,50 +232,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C2E7E2A01F7136B2007A9AF6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C2E7E2A61F7136B3007A9AF6 /* CubicBezier.app */,
-				C2E7E2A81F7136B3007A9AF6 /* CubicBezierTests.xctest */,
-				C2E7E2AA1F7136B3007A9AF6 /* CubicBezierPicker.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		C25EED831F7ABE8A0071ABAD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C25EED8A1F7ABE8A0071ABAD /* GuitarMidiKit.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		C25EED851F7ABE8A0071ABAD /* GuitarMidiKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C25EED941F7ABE8A0071ABAD /* Build configuration list for PBXNativeTarget "GuitarMidiKit" */;
-			buildPhases = (
-				E3B4B0409AE6D2D22391982E /* [CP] Check Pods Manifest.lock */,
-				C25EED811F7ABE8A0071ABAD /* Sources */,
-				C25EED821F7ABE8A0071ABAD /* Frameworks */,
-				C25EED831F7ABE8A0071ABAD /* Headers */,
-				C25EED841F7ABE8A0071ABAD /* Resources */,
-				D22C27534C930C634F071C80 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GuitarMidiKit;
-			productName = GuitarMidiKit;
-			productReference = C25EED861F7ABE8A0071ABAD /* GuitarMidiKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		C2CB16801F5F0D5800B8D6FF /* GuitarMidi */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2CB16901F5F0D5800B8D6FF /* Build configuration list for PBXNativeTarget "GuitarMidi" */;
@@ -368,7 +250,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C25EED8C1F7ABE8A0071ABAD /* PBXTargetDependency */,
 			);
 			name = GuitarMidi;
 			productName = GuitarMidi;
@@ -385,10 +266,6 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Maciej Chmielewski";
 				TargetAttributes = {
-					C25EED851F7ABE8A0071ABAD = {
-						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = 76RXF4V6NR;
-					};
 					C2CB16801F5F0D5800B8D6FF = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 76RXF4V6NR;
@@ -407,69 +284,31 @@
 			mainGroup = C2CB16781F5F0D5800B8D6FF;
 			productRefGroup = C2CB16821F5F0D5800B8D6FF /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C2E7E2A01F7136B2007A9AF6 /* Products */;
-					ProjectRef = C2E7E29F1F7136B2007A9AF6 /* CubicBezier.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C2CB16801F5F0D5800B8D6FF /* GuitarMidi */,
-				C25EED851F7ABE8A0071ABAD /* GuitarMidiKit */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		C2E7E2A61F7136B3007A9AF6 /* CubicBezier.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = CubicBezier.app;
-			remoteRef = C2E7E2A51F7136B3007A9AF6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C2E7E2A81F7136B3007A9AF6 /* CubicBezierTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CubicBezierTests.xctest;
-			remoteRef = C2E7E2A71F7136B3007A9AF6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C2E7E2AA1F7136B3007A9AF6 /* CubicBezierPicker.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CubicBezierPicker.framework;
-			remoteRef = C2E7E2A91F7136B3007A9AF6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
-		C25EED841F7ABE8A0071ABAD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C25EEDBD1F7ABECE0071ABAD /* Sampler.storyboard in Resources */,
-				C25EEDA61F7ABECE0071ABAD /* Bass808.storyboard in Resources */,
-				C25EEDAC1F7ABECE0071ABAD /* TimeFunctionVariable.storyboard in Resources */,
-				C25EEDAE1F7ABECE0071ABAD /* Envelope.storyboard in Resources */,
-				C25EEDB41F7ABECE0071ABAD /* WaveShaper.storyboard in Resources */,
-				C25EEDB61F7ABECE0071ABAD /* WaveShaperNode.storyboard in Resources */,
-				C25EEDB21F7ABECE0071ABAD /* Amp.storyboard in Resources */,
-				C25EEDBB1F7ABECE0071ABAD /* Tree.storyboard in Resources */,
-				C25EEDB91F7ABECE0071ABAD /* Test.storyboard in Resources */,
-				C25EEDA91F7ABECE0071ABAD /* Variable.storyboard in Resources */,
-				C25EEDA71F7ABECE0071ABAD /* Oscilator.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C2CB167F1F5F0D5800B8D6FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C19AA01F7AFE4400FDE938 /* WaveShaperNode.storyboard in Resources */,
+				C2C19A981F7AFE4400FDE938 /* Envelope.storyboard in Resources */,
+				C2C19A901F7AFE4400FDE938 /* Bass808.storyboard in Resources */,
+				C2C19A9E1F7AFE4400FDE938 /* WaveShaper.storyboard in Resources */,
 				C2CB16891F5F0D5800B8D6FF /* Assets.xcassets in Resources */,
+				C2C19A9C1F7AFE4400FDE938 /* Amp.storyboard in Resources */,
+				C2C19AA51F7AFE4400FDE938 /* Tree.storyboard in Resources */,
 				C2CB168C1F5F0D5800B8D6FF /* Main.storyboard in Resources */,
+				C2C19A961F7AFE4400FDE938 /* TimeFunctionVariable.storyboard in Resources */,
+				C2C19AA31F7AFE4400FDE938 /* Test.storyboard in Resources */,
+				C2C19A911F7AFE4400FDE938 /* Oscilator.storyboard in Resources */,
+				C2C19A931F7AFE4400FDE938 /* Variable.storyboard in Resources */,
+				C2C19AA71F7AFE4400FDE938 /* Sampler.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,14 +323,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Beethoven/Beethoven.framework",
+				"${BUILT_PRODUCTS_DIR}/CubicBezier/CubicBezier.framework",
+				"${BUILT_PRODUCTS_DIR}/EZAudio/EZAudio.framework",
+				"${BUILT_PRODUCTS_DIR}/GuitarDsp/GuitarDsp.framework",
 				"${BUILT_PRODUCTS_DIR}/MIDIKit/MIDIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Pitchy/Pitchy.framework",
+				"${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Beethoven.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CubicBezier.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZAudio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GuitarDsp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIDIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pitchy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPCircularBuffer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -531,98 +378,50 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D22C27534C930C634F071C80 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuitarMidiKit/Pods-GuitarMidiKit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E3B4B0409AE6D2D22391982E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GuitarMidiKit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C25EED811F7ABE8A0071ABAD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C25EEDAB1F7ABECE0071ABAD /* Bass808Effect.swift in Sources */,
-				C25EEDAA1F7ABECE0071ABAD /* VariableViewController.swift in Sources */,
-				C25EED9A1F7ABECE0071ABAD /* WaveEffect.swift in Sources */,
-				C25EEDA41F7ABECE0071ABAD /* StrokeDetector.swift in Sources */,
-				C25EEDA31F7ABECE0071ABAD /* NoteIndexIntegrator.swift in Sources */,
-				C25EED9D1F7ABECE0071ABAD /* WaveShaper.swift in Sources */,
-				C25EED9E1F7ABECE0071ABAD /* Sampler.swift in Sources */,
-				C25EED981F7ABECE0071ABAD /* 808Bass.swift in Sources */,
-				C25EEDA11F7ABECE0071ABAD /* PitchDetector.swift in Sources */,
-				C25EEDAD1F7ABECE0071ABAD /* EnvelopeFunction.swift in Sources */,
-				C25EEDBC1F7ABECE0071ABAD /* FileBrowser.swift in Sources */,
-				C25EED9F1F7ABECE0071ABAD /* InterfaceBuilderInstance.swift in Sources */,
-				C25EEDAF1F7ABECE0071ABAD /* EnvelopeViewController.swift in Sources */,
-				C25EEDB11F7ABECE0071ABAD /* AmpViewController.swift in Sources */,
-				C25EEDBF1F7ABECE0071ABAD /* ChannelPlayerEffect.swift in Sources */,
-				C25EEDB31F7ABECE0071ABAD /* WaveEffectControllers.swift in Sources */,
-				C25EED9B1F7ABECE0071ABAD /* Oscilator.swift in Sources */,
-				C25EED961F7ABECE0071ABAD /* WaveGenerator.swift in Sources */,
-				C25EEDB81F7ABECE0071ABAD /* TestViewController.swift in Sources */,
-				C25EED971F7ABECE0071ABAD /* FunctionVariable.swift in Sources */,
-				C25EEDA01F7ABECE0071ABAD /* MidiOutputEffect.swift in Sources */,
-				C25EED991F7ABECE0071ABAD /* CubicBezier.swift in Sources */,
-				C25EEDA81F7ABECE0071ABAD /* OscilatorViewController.swift in Sources */,
-				C25EED9C1F7ABECE0071ABAD /* SamplingSettingsUtils.swift in Sources */,
-				C25EEDBA1F7ABECE0071ABAD /* TreeViewController.swift in Sources */,
-				C25EEDA51F7ABECE0071ABAD /* Bass808ViewController.swift in Sources */,
-				C25EEDBE1F7ABECE0071ABAD /* SamplerViewController.swift in Sources */,
-				C25EEDB71F7ABECE0071ABAD /* WaveShaperNodeViewController.swift in Sources */,
-				C25EEDB01F7ABECE0071ABAD /* TimeFunctionViewController.swift in Sources */,
-				C25EEDA21F7ABECE0071ABAD /* MidiServer.swift in Sources */,
-				C25EEDB51F7ABECE0071ABAD /* WaveShaperViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C2CB167D1F5F0D5800B8D6FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C19A9A1F7AFE4400FDE938 /* TimeFunctionViewController.swift in Sources */,
+				C2C19AB11F7AFE5300FDE938 /* WaveShaper.swift in Sources */,
+				C2C19AA41F7AFE4400FDE938 /* TreeViewController.swift in Sources */,
+				C2C19A951F7AFE4400FDE938 /* Bass808Effect.swift in Sources */,
+				C2C19A8B1F7AFE4400FDE938 /* PitchDetector.swift in Sources */,
+				C2C19A8E1F7AFE4400FDE938 /* StrokeDetector.swift in Sources */,
+				C2C19A8D1F7AFE4400FDE938 /* NoteIndexIntegrator.swift in Sources */,
+				C2C19AAA1F7AFE5300FDE938 /* WaveGenerator.swift in Sources */,
+				C2C19A9D1F7AFE4400FDE938 /* WaveEffectControllers.swift in Sources */,
+				C2C19A9F1F7AFE4400FDE938 /* WaveShaperViewController.swift in Sources */,
+				C2C19AAC1F7AFE5300FDE938 /* 808Bass.swift in Sources */,
+				C2C19A991F7AFE4400FDE938 /* EnvelopeViewController.swift in Sources */,
+				C2C19A921F7AFE4400FDE938 /* OscilatorViewController.swift in Sources */,
+				C2C19A8F1F7AFE4400FDE938 /* Bass808ViewController.swift in Sources */,
+				C2C19AB01F7AFE5300FDE938 /* SamplingSettingsUtils.swift in Sources */,
+				C2C19AA81F7AFE4400FDE938 /* SamplerViewController.swift in Sources */,
+				C2C19AA21F7AFE4400FDE938 /* TestViewController.swift in Sources */,
+				C2C19AB21F7AFE5300FDE938 /* Sampler.swift in Sources */,
+				C2C19A8C1F7AFE4400FDE938 /* MidiServer.swift in Sources */,
+				C2C19A891F7AFE3500FDE938 /* InterfaceBuilderInstance.swift in Sources */,
+				C2C19AA91F7AFE4400FDE938 /* ChannelPlayerEffect.swift in Sources */,
+				C2C19AA11F7AFE4400FDE938 /* WaveShaperNodeViewController.swift in Sources */,
 				C2CB16871F5F0D5800B8D6FF /* ViewController.swift in Sources */,
+				C2C19A971F7AFE4400FDE938 /* EnvelopeFunction.swift in Sources */,
+				C2C19A941F7AFE4400FDE938 /* VariableViewController.swift in Sources */,
+				C2C19AAE1F7AFE5300FDE938 /* WaveEffect.swift in Sources */,
+				C2C19AA61F7AFE4400FDE938 /* FileBrowser.swift in Sources */,
+				C2C19A8A1F7AFE4400FDE938 /* MidiOutputEffect.swift in Sources */,
+				C2C19AAB1F7AFE5300FDE938 /* FunctionVariable.swift in Sources */,
+				C2C19AAF1F7AFE5300FDE938 /* Oscilator.swift in Sources */,
 				C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */,
+				C2C19A9B1F7AFE4400FDE938 /* AmpViewController.swift in Sources */,
+				C2C19AAD1F7AFE5300FDE938 /* CubicBezier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C25EED8C1F7ABE8A0071ABAD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C25EED851F7ABE8A0071ABAD /* GuitarMidiKit */;
-			targetProxy = C25EED8B1F7ABE8A0071ABAD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C2CB168A1F5F0D5800B8D6FF /* Main.storyboard */ = {
@@ -636,72 +435,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C25EED8F1F7ABE8A0071ABAD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1757CB00591DBA9848112594 /* Pods-GuitarMidiKit.debug.xcconfig */;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 76RXF4V6NR;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = GuitarMidiKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mch.GuitarMidiKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C25EED901F7ABE8A0071ABAD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5F010D11174259137D117C6 /* Pods-GuitarMidiKit.release.xcconfig */;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 76RXF4V6NR;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = GuitarMidiKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mch.GuitarMidiKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		C2CB168E1F5F0D5800B8D6FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -743,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -789,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -831,15 +564,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C25EED941F7ABE8A0071ABAD /* Build configuration list for PBXNativeTarget "GuitarMidiKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C25EED8F1F7ABE8A0071ABAD /* Debug */,
-				C25EED901F7ABE8A0071ABAD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C2CB167C1F5F0D5800B8D6FF /* Build configuration list for PBXProject "GuitarMidi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

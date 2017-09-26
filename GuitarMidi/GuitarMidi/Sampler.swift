@@ -8,7 +8,7 @@
 
 import Foundation
 import GuitarDsp
-import EZAudioOSX
+import EZAudio
 
 struct AudioFile {
     let samples: [Float]

@@ -8,7 +8,6 @@
 
 import Cocoa
 import GuitarDsp
-import GuitarMidiKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

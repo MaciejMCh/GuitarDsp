@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import GuitarMidiKit
 
 class ViewController: NSViewController {
     

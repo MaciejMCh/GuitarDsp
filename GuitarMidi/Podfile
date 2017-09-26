@@ -1,18 +1,16 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
-workspace '../GuitarDsp.xcworkspace'
 
 def pods
   use_frameworks!
   pod 'Beethoven', :git => 'https://github.com/MaciejMCh/Beethoven.git', :branch => 'osx'
   pod 'MIDIKit', :git => 'https://github.com/MaciejMCh/MIDIKit.git'
+  pod 'GuitarDsp', :path => '../GuitarDsp'
+  pod 'EZAudio', :path => '../EZAudio'
+  pod 'CubicBezier', :path => '../CubicBezier'
 
 end
 
 target 'GuitarMidi' do
-   pods
-end
-
-target 'GuitarMidiKit' do
    pods
 end

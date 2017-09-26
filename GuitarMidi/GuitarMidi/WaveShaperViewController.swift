@@ -8,7 +8,7 @@
 
 import Foundation
 import Cocoa
-import CubicBezierPicker
+import CubicBezier
 
 class WaveShaperViewController: NSViewController {
     @IBOutlet weak var waveView: WaveView!

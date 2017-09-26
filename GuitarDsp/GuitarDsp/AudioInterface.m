@@ -7,7 +7,7 @@
 //
 
 #import "AudioInterface.h"
-#import <EZAudio/EZAudio.h>
+@import EZAudio;
 
 @interface AudioInterface ()
 

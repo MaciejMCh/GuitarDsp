@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A459C6497CE1EEC80CA3D16 /* Pods_GuitarDsp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52AD391ED4FBB688A8CFCC1 /* Pods_GuitarDsp.framework */; };
 		C2191B951EA23A8D00DF9451 /* PhaserEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C2191B931EA23A8D00DF9451 /* PhaserEffect.h */; };
 		C2191B961EA23A8D00DF9451 /* PhaserEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C2191B941EA23A8D00DF9451 /* PhaserEffect.m */; };
 		C22F890E1E9FF1F8004D0BCB /* VibeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F890C1E9FF1F8004D0BCB /* VibeEffect.m */; };
@@ -57,7 +58,6 @@
 		C2DF19FB1E8AA65500106AE8 /* TimingCalc.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19D71E8AA65500106AE8 /* TimingCalc.h */; };
 		C2DF19FC1E8AA65500106AE8 /* TimingCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DF19D81E8AA65500106AE8 /* TimingCalc.m */; };
 		C2DF19FD1E8AA65500106AE8 /* tuning.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19D91E8AA65500106AE8 /* tuning.h */; };
-		C2DF1A081E8AA83C00106AE8 /* EZAudioOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DF1A071E8AA83C00106AE8 /* EZAudioOSX.framework */; };
 		C2DF1A0B1E8AAC8500106AE8 /* AudioInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF1A091E8AAC8500106AE8 /* AudioInterface.h */; };
 		C2DF1A0C1E8AAC8500106AE8 /* AudioInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DF1A0A1E8AAC8500106AE8 /* AudioInterface.m */; };
 		C2EB06601E8AA44B0010D1B3 /* GuitarDsp.h in Headers */ = {isa = PBXBuildFile; fileRef = C2EB065E1E8AA44B0010D1B3 /* GuitarDsp.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,6 +66,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		868704F614D3437C364BC24A /* Pods-GuitarDsp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarDsp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarDsp/Pods-GuitarDsp.debug.xcconfig"; sourceTree = "<group>"; };
+		9B6D4B645F22E8FC5D1A37B1 /* Pods-GuitarDsp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarDsp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarDsp/Pods-GuitarDsp.release.xcconfig"; sourceTree = "<group>"; };
 		C2191B931EA23A8D00DF9451 /* PhaserEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhaserEffect.h; sourceTree = "<group>"; };
 		C2191B941EA23A8D00DF9451 /* PhaserEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhaserEffect.m; sourceTree = "<group>"; };
 		C22F890C1E9FF1F8004D0BCB /* VibeEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibeEffect.m; sourceTree = "<group>"; };
@@ -75,7 +77,6 @@
 		C28B98BA1E9BEEE700309FA2 /* mathUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mathUtilities.h; sourceTree = "<group>"; };
 		C28B98BB1E9C014800309FA2 /* CompressorEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompressorEffect.h; sourceTree = "<group>"; };
 		C28B98BC1E9C014800309FA2 /* CompressorEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompressorEffect.m; sourceTree = "<group>"; };
-		C28CAED11E8B234E001BADFE /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		C28CB14A1EA121AA00E34C7A /* FlangerEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlangerEffect.h; sourceTree = "<group>"; };
 		C28CB14B1EA121AA00E34C7A /* FlangerEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlangerEffect.m; sourceTree = "<group>"; };
 		C2A4D8931ECCD59D00967874 /* DistortionEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistortionEffect.h; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		C2EB065F1E8AA44B0010D1B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2EFDE5A1E8DDA750063F2D7 /* AmpEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmpEffect.h; sourceTree = "<group>"; };
 		C2EFDE5B1E8DDA750063F2D7 /* AmpEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmpEffect.m; sourceTree = "<group>"; };
+		E52AD391ED4FBB688A8CFCC1 /* Pods_GuitarDsp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuitarDsp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,13 +135,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2DF1A081E8AA83C00106AE8 /* EZAudioOSX.framework in Frameworks */,
+				8A459C6497CE1EEC80CA3D16 /* Pods_GuitarDsp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F1AE0A232E39CB71DC70B57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				868704F614D3437C364BC24A /* Pods-GuitarDsp.debug.xcconfig */,
+				9B6D4B645F22E8FC5D1A37B1 /* Pods-GuitarDsp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C2DF19FE1E8AA65900106AE8 /* Effects */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				C2DF1A071E8AA83C00106AE8 /* EZAudioOSX.framework */,
+				E52AD391ED4FBB688A8CFCC1 /* Pods_GuitarDsp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -242,10 +254,10 @@
 		C2EB06511E8AA44B0010D1B3 = {
 			isa = PBXGroup;
 			children = (
-				C28CAED11E8B234E001BADFE /* module.modulemap */,
 				C2EB065D1E8AA44B0010D1B3 /* GuitarDsp */,
 				C2EB065C1E8AA44B0010D1B3 /* Products */,
 				C2DF1A061E8AA83B00106AE8 /* Frameworks */,
+				1F1AE0A232E39CB71DC70B57 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -325,10 +337,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2EB06631E8AA44B0010D1B3 /* Build configuration list for PBXNativeTarget "GuitarDsp" */;
 			buildPhases = (
+				FFA89DB7AB140A6FDFCC822C /* [CP] Check Pods Manifest.lock */,
 				C2EB06561E8AA44B0010D1B3 /* Sources */,
 				C2EB06571E8AA44B0010D1B3 /* Frameworks */,
 				C2EB06581E8AA44B0010D1B3 /* Headers */,
 				C2EB06591E8AA44B0010D1B3 /* Resources */,
+				E64D2347A5F7D2F3507464FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -383,6 +397,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E64D2347A5F7D2F3507464FE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuitarDsp/Pods-GuitarDsp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFA89DB7AB140A6FDFCC822C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuitarDsp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C2EB06561E8AA44B0010D1B3 /* Sources */ = {
@@ -459,7 +509,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -504,7 +553,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../**";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -515,6 +563,7 @@
 		};
 		C2EB06641E8AA44B0010D1B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 868704F614D3437C364BC24A /* Pods-GuitarDsp.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -535,6 +584,7 @@
 		};
 		C2EB06651E8AA44B0010D1B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B6D4B645F22E8FC5D1A37B1 /* Pods-GuitarDsp.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;

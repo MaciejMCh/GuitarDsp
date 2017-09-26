@@ -28,7 +28,4 @@
    <FileRef
       location = "group:GuitarMidi/Pods/Pods.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:nnn/Pods/Pods.xcodeproj">
-   </FileRef>
 </Workspace>

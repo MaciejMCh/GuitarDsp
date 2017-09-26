@@ -9,7 +9,7 @@
 #import "Processor.h"
 #import "Sample.h"
 #import "Effect.h"
-#import <EZAudio/EZAudio.h>
+@import EZAudio;
 
 @interface Processor ()
 

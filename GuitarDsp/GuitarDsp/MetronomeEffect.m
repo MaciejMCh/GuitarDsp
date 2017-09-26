@@ -7,7 +7,7 @@
 //
 
 #import "MetronomeEffect.h"
-#import <EZAudio/EZAudio.h>
+@import EZAudio;
 
 @interface MetronomeEffect () <EZAudioFileDelegate>
 

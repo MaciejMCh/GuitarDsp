@@ -11,18 +11,18 @@
         <scene sceneID="toa-0R-p3C">
             <objects>
                 <viewController id="aq1-wa-gil" customClass="SamplerViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="9wg-5R-nPA">
-                        <rect key="frame" x="0.0" y="0.0" width="818" height="430"/>
+                    <view key="view" id="9wg-5R-nPA">
+                        <rect key="frame" x="0.0" y="0.0" width="818" height="427"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="HMt-Wt-qR4">
-                                <rect key="frame" x="5" y="5" width="201" height="422"/>
+                                <rect key="frame" x="5" y="5" width="201" height="417"/>
                                 <connections>
                                     <segue destination="g0i-vQ-Sku" kind="embed" id="9fu-xt-KBt"/>
                                 </connections>
                             </containerView>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdx-wp-sdH">
-                                <rect key="frame" x="211" y="227" width="602" height="200"/>
+                                <rect key="frame" x="211" y="222" width="602" height="200"/>
                                 <clipView key="contentView" id="v2j-F9-N5C">
                                     <rect key="frame" x="1" y="1" width="585" height="183"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,13 +55,13 @@
                                 </scroller>
                             </scrollView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="uDT-7p-wdQ">
-                                <rect key="frame" x="211" y="5" width="602" height="217"/>
+                                <rect key="frame" x="211" y="0.0" width="602" height="217"/>
                                 <connections>
                                     <segue destination="6A0-Pe-ny4" kind="embed" id="7hw-XM-ibi"/>
                                 </connections>
                             </containerView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m6i-vF-w1u">
-                                <rect key="frame" x="738" y="179" width="66" height="32"/>
+                                <rect key="frame" x="738" y="174" width="66" height="32"/>
                                 <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fra-9m-vEp">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -72,7 +72,6 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="uDT-7p-wdQ" secondAttribute="bottom" constant="5" id="2ms-1m-fyg"/>
                             <constraint firstAttribute="trailing" secondItem="Vdx-wp-sdH" secondAttribute="trailing" constant="5" id="6g9-Eo-dzD"/>
                             <constraint firstAttribute="trailing" secondItem="m6i-vF-w1u" secondAttribute="trailing" constant="20" id="EzF-QB-fuh"/>
                             <constraint firstItem="Vdx-wp-sdH" firstAttribute="width" secondItem="HMt-Wt-qR4" secondAttribute="width" multiplier="3:1" id="GLp-jf-xR8"/>
@@ -84,8 +83,8 @@
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="qzc-3T-TfO"/>
                             <constraint firstItem="HMt-Wt-qR4" firstAttribute="leading" secondItem="9wg-5R-nPA" secondAttribute="leading" constant="5" id="rRT-Ji-SQQ"/>
                             <constraint firstItem="Vdx-wp-sdH" firstAttribute="top" secondItem="9wg-5R-nPA" secondAttribute="top" constant="5" id="riV-vA-Dak"/>
-                            <constraint firstItem="Vdx-wp-sdH" firstAttribute="height" secondItem="uDT-7p-wdQ" secondAttribute="height" multiplier="100:108" id="t2U-Sq-sSe"/>
                             <constraint firstItem="m6i-vF-w1u" firstAttribute="top" secondItem="Vdx-wp-sdH" secondAttribute="bottom" constant="20" id="ucM-Us-0V3"/>
+                            <constraint firstAttribute="bottom" secondItem="uDT-7p-wdQ" secondAttribute="bottom" id="uoR-vo-g3n"/>
                         </constraints>
                     </view>
                     <connections>

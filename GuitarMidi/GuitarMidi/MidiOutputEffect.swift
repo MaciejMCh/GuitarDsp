@@ -11,44 +11,37 @@ import GuitarDsp
 import Pitchy
 import Accelerate
 
-protocol MidiPlayer {
-    func setFrequency(_ frequency: Double)
-    func on()
-    func off()
-    func nextSample() -> Double
+public enum MidiEvent {
+    case on
+    case off
+    case frequency(Double)
 }
 
-public class MidiOutputEffect: NSObject, Effect {
+public class MidiOutput {
     let sendMidi = false
     let strokeDetector = StrokeDetector()
-    let samplingSettings: SamplingSettings
     let pitchDetector: PitchDetector
     let midiServer: MidiServer
-    var midiPlayer: MidiPlayer!
     var recentNote = try! Note(index: 0)
     var noteIntegrator: [Int?] = Array(repeating: nil, count: 1000)
     var noteIndexIntegrator = NoteIndexIntegrator()
-    
-    public init(samplingSettings: SamplingSettings) {
-        self.samplingSettings = samplingSettings
-        pitchDetector = PitchDetector(samplingSettings: samplingSettings)
-        midiServer = MidiServer()
-        super.init()
-    }
-    
     var isOn = false
     
-    public func processSample(_ inputSample: Sample, intoBuffer outputBuffer: UnsafeMutablePointer<Float>!) {
-        var inputSignal: [Float] = Array(repeating: 0, count: Int(samplingSettings.framesPerPacket))
-        for i in 0..<Int(samplingSettings.framesPerPacket) {
-            inputSignal[i] = inputSample.amp.advanced(by: i).pointee
-        }
+    public init(samplingSettings: SamplingSettings) {
+        pitchDetector = PitchDetector(samplingSettings: samplingSettings)
+        midiServer = MidiServer()
+    }
+    
+    public func detectEvents(buffer: [Float]) -> [MidiEvent] {
+        var events: [MidiEvent] = []
+        
+        var inputSignal = buffer
         
         let frequency = pitchDetector.detectPitch(inputSignal: inputSignal)
         
         let rms: () -> (Float) = {
             var output: Float = 0
-            vDSP_rmsqv(inputSample.amp, 1, &output, UInt(self.samplingSettings.framesPerPacket))
+            vDSP_rmsqv(&inputSignal, 1, &output, UInt(buffer.count))
             return output
         }
         let amplitude = Double(rms())
@@ -58,31 +51,29 @@ public class MidiOutputEffect: NSObject, Effect {
         
         if !isOn {
             if amplitude > treshold {
-                midiPlayer.on()
+                events.append(.on)
                 isOn = true
             }
         } else {
             if amplitude < treshold - margin {
-                midiPlayer.off()
+                events.append(.off)
                 isOn = false
             }
         }
         
+        events.append(.frequency(0.25 * Double(frequency)))
         
-        for i in 0..<Int(samplingSettings.framesPerPacket) {
-            midiPlayer.setFrequency(0.25 * Double(frequency))
-            outputBuffer.advanced(by: i).pointee = Float(midiPlayer.nextSample())
-        }
+        return events
         
-        guard sendMidi else {return}
-        guard let note = try? Note(frequency: Double(frequency)) else {return}
-        let integratedIndex = noteIndexIntegrator.integrate(sound: (noteIndex: note.index, volume: Float(amplitude)))
-        if recentNote.index == integratedIndex.noteIndex {
-            return
-        } else {
-            recentNote = note
-        }
-        midiServer.playNote(note: UInt8(abs(integratedIndex.noteIndex + 50)), on: true)
+//        guard sendMidi else {return}
+//        guard let note = try? Note(frequency: Double(frequency)) else {return}
+//        let integratedIndex = noteIndexIntegrator.integrate(sound: (noteIndex: note.index, volume: Float(amplitude)))
+//        if recentNote.index == integratedIndex.noteIndex {
+//            return
+//        } else {
+//            recentNote = note
+//        }
+//        midiServer.playNote(note: UInt8(abs(integratedIndex.noteIndex + 50)), on: true)
         
     }
 }

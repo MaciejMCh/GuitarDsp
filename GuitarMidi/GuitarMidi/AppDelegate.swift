@@ -100,7 +100,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate {
     func makeDevelopmentEffect() -> Effect {
-        return MidiOutputEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+        return ChannelPlayerEffect(samplingSettings: SamplingSettings())
+//        return MidiOutputEffect(samplingSettings: AudioInterface.shared().samplingSettings)
 //        return Bass808Effect(samplingSettings: AudioInterface.shared().samplingSettings)
     }
     

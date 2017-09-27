@@ -11,7 +11,7 @@ import GuitarDsp
 
 let halfToneToScale: (Double) -> Double = {pow(2, $0 / 12)}
 
-public class Bass808: Playing {
+public class Bass808: Playing, MidiPlayer {
     let samplingSettings: SamplingSettings
     public var samplers: [Sampler] = []
     
@@ -72,6 +72,10 @@ public class Bass808: Playing {
         for sampler in samplers {
             sampler.on()
         }
+    }
+    
+    func setFrequency(_ frequency: Double) {
+        self.frequency = frequency
     }
     
     public func off() {

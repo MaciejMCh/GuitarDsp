@@ -41,7 +41,6 @@
 		C29953B51E8E9BE900CDF481 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29953B41E8E9BE900CDF481 /* Storage.swift */; };
 		C2ADB8721E8C4031001B0EF3 /* SlidersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB8711E8C4031001B0EF3 /* SlidersFactory.swift */; };
 		C2ADB8741E8C47E1001B0EF3 /* EffectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB8731E8C47E1001B0EF3 /* EffectViewModel.swift */; };
-		C2C6180F1F7BE8B00084CAC4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C6180E1F7BE8B00084CAC4 /* Test.swift */; };
 		C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -355,7 +354,6 @@
 				C26AFDDA1E8C7FA000C72E63 /* EffectsOrderViewController.swift in Sources */,
 				C26DED5D1E8AF81400E61B7C /* AppDelegate.swift in Sources */,
 				C26066331E8D9F7100FD381D /* EffectsFactoryViewController.swift in Sources */,
-				C2C6180F1F7BE8B00084CAC4 /* Test.swift in Sources */,
 				C28ABBE91E97C2CE0050D955 /* SetupViewController.swift in Sources */,
 				C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */,
 				C29953B51E8E9BE900CDF481 /* Storage.swift in Sources */,

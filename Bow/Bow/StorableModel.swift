@@ -91,7 +91,7 @@ extension EffectPrototype: JsonObjectRepresentable {
                 distortionEffect.level = try decoder.decode("level")
                 distortionEffect.treshold = try decoder.decode("treshold")
             case .channelPlayer(let channelPlayerEffect):
-                channelPlayerEffect.channels = (configuration["channels"] as! [JsonObject]).map{channelFromJson($0)}
+                channelPlayerEffect.channelPlayer.channels = (configuration["channels"] as! [JsonObject]).map{channelFromJson($0)}
             }
         } catch (_) {
             assert(false)
@@ -249,7 +249,7 @@ extension EffectPrototype: JsonObjectRepresentable {
                 "treshold": distortionEffect.treshold
             ]
         case .channelPlayer(let channelPlayerEffect):
-            return ["channels": channelPlayerEffect.channels.map{channelConfiguration(channel: $0)}]
+            return ["channels": channelPlayerEffect.channelPlayer.channels.map{channelConfiguration(channel: $0)}]
         }
     }
     

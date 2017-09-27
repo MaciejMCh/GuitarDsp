@@ -15,7 +15,7 @@ public class Bass808ViewController: NSViewController {
     @IBOutlet weak var oscilatorsStackView: NSStackView!
     private var oscilatorViewControllers: [OscilatorViewController] = []
     private var effectViewControllers: [NSViewController] = []
-    private var samplersViewControllers: [SamplerViewController] = []
+    private var samplersViewControllers: [SamplerNodeViewController] = []
     
     public var bass808: Bass808!
     
@@ -67,7 +67,7 @@ public class Bass808ViewController: NSViewController {
         samplersViewControllers.removeAll()
         
         for sampler in bass808.samplers {
-            let samplerViewController = SamplerViewController.make()
+            let samplerViewController = SamplerNodeViewController.make()
             samplerViewController.sampler = sampler
             
             samplersViewControllers.append(samplerViewController)

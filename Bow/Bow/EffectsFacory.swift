@@ -8,12 +8,13 @@
 
 import Foundation
 import GuitarDsp
+import GuitarMidi
 
 struct EffectsFacory {
     let samplingSettings: SamplingSettings
     
     func all() -> [Effect] {
-        return [makeAmp(), makeDelay(), makeHarmonizer(), makePhaseVocoder(), makeReverb(), makeCompressor(), makeBitCrusher(), makeVibe(), makeFlanger(), makePhaser(), makeDistortion()]
+        return [makeChannelPlayer(), makeAmp(), makeDelay(), makeHarmonizer(), makePhaseVocoder(), makeReverb(), makeCompressor(), makeBitCrusher(), makeVibe(), makeFlanger(), makePhaser(), makeDistortion()]
     }
     
     func makeAmp() -> AmpEffect {
@@ -62,5 +63,9 @@ struct EffectsFacory {
     
     func makeDistortion() -> DistortionEffect {
         return DistortionEffect(samplingSettings: samplingSettings)
+    }
+    
+    func makeChannelPlayer() -> ChannelPlayerEffect {
+        return ChannelPlayerEffect(samplingSettings: samplingSettings)
     }
 }

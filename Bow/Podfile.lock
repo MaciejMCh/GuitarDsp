@@ -62,7 +62,7 @@ SPEC CHECKSUMS:
   CubicBezier: a409bea768ec73dbd5d1cbcb881947a416701c19
   EZAudio: b46eb8c28899cfff30995a180672afd148a54e31
   GuitarDsp: adf8387415647b85e078d03b368cc019f996fccc
-  GuitarMidi: 08bfa5b8a6522a5efccd500952a1d2fde6b69b3b
+  GuitarMidi: 5dcc1ec00ef9b3347ebe1c9e2099465ba4917a7d
   HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
   MIDIKit: 785c048f399107c47a1ad9a47a8656034edf5162

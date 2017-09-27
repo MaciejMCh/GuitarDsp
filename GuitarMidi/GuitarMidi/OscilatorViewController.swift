@@ -17,12 +17,13 @@ struct WaveShapeViewModel {
     let waveShape: WaveShape
     
     var image: NSImage {
+        let bundle = Bundle(for: ChannelPlayerEffect)
         switch waveShape {
-        case .sine: return NSImage(named: "Sine Shape")!
-        case .square: return NSImage(named: "Square Shape")!
-        case .triangle: return NSImage(named: "Triangle Shape")!
-        case .sawtooth: return NSImage(named: "Sawtooth Shape")!
-        case .circle: return NSImage(named: "Circle Shape")!
+        case .sine: return bundle.image(forResource: "Sine Shape")!
+        case .square: return bundle.image(forResource: "Square Shape")!
+        case .triangle: return bundle.image(forResource: "Triangle Shape")!
+        case .sawtooth: return bundle.image(forResource: "Sawtooth Shape")!
+        case .circle: return bundle.image(forResource: "Circle Shape")!
         }
     }
     
@@ -38,13 +39,6 @@ struct WaveShapeViewModel {
     
     static func tag(waveShape: WaveShape) -> Int {
         return all().map{$0.waveShape}.index(of: waveShape)!
-//        switch waveShape {
-//        case .sine: return 0
-//        case .square: return 1
-//        case .triangle: return 2
-//        case .sawtooth: return 3
-//        case .circle: return 4
-//        }
     }
     
     static func shapeFromTag(_ tag: Int) -> WaveShape {

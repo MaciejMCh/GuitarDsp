@@ -8,6 +8,7 @@
 
 import Foundation
 import GuitarDsp
+import GuitarMidi
 
 struct BoardPrototype {
     var effectPrototypes: [EffectPrototype]
@@ -29,17 +30,18 @@ struct BoardPrototype {
 
 extension EffectPrototype {
     enum Instance {
-        case reverb(_: ReverbEffect)
-        case harmonizer(_: HarmonizerEffect)
-        case phaseVocoder(_: PhaseVocoderEffect)
-        case delay(_: DelayEffect)
-        case amp(_: AmpEffect)
-        case compressor(_: CompressorEffect)
-        case bitCrusher(_: BitCrusherEffect)
-        case vibe(_: VibeEffect)
-        case flanger(_: FlangerEffect)
-        case phaser(_: PhaserEffect)
-        case distortion(_: DistortionEffect)
+        case reverb(ReverbEffect)
+        case harmonizer(HarmonizerEffect)
+        case phaseVocoder(PhaseVocoderEffect)
+        case delay(DelayEffect)
+        case amp(AmpEffect)
+        case compressor(CompressorEffect)
+        case bitCrusher(BitCrusherEffect)
+        case vibe(VibeEffect)
+        case flanger(FlangerEffect)
+        case phaser(PhaserEffect)
+        case distortion(DistortionEffect)
+        case channelPlayer(ChannelPlayerEffect)
     }
 }
 
@@ -59,6 +61,7 @@ extension EffectPrototype.Instance {
         case "vibe": self = .vibe(effectFactory.makeVibe())
         case "flanger": self = .flanger(effectFactory.makeFlanger())
         case "distortion": self = .distortion(effectFactory.makeDistortion())
+        case "channel_player": self = .channelPlayer(effectFactory.makeChannelPlayer())
         default:
             assert(false)
             return nil
@@ -78,6 +81,7 @@ extension EffectPrototype.Instance {
         case .flanger: return "flanger"
         case .phaser: return "phaser"
         case .distortion: return "distortion"
+        case .channelPlayer: return "channel_player"
         }
     }
     
@@ -105,6 +109,8 @@ extension EffectPrototype.Instance {
             self = .phaser(phaserEffect)
         } else if let distortionEffect = effect as? DistortionEffect {
             self = .distortion(distortionEffect)
+        } else if let channelPlayerEffect = effect as? ChannelPlayerEffect {
+            self = .channelPlayer(channelPlayerEffect)
         } else {
             assert(false)
             return nil
@@ -124,6 +130,7 @@ extension EffectPrototype.Instance {
         case .flanger(let effect): return effect
         case .phaser(let effect): return effect
         case .distortion(let effect): return effect
+        case .channelPlayer(let effect): return effect
         }
     }
 }

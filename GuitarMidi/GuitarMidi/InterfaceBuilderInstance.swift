@@ -15,7 +15,7 @@ protocol InterfaceBuilderInstance {
 
 extension InterfaceBuilderInstance where Self: NSViewController {
     static func make() -> Self {
-        return NSStoryboard(name: Self.interfaceFileName, bundle: nil).instantiateInitialController() as! Self
+        return NSStoryboard(name: Self.interfaceFileName, bundle: Bundle(for: Self.self)).instantiateInitialController() as! Self
     }
 }
 

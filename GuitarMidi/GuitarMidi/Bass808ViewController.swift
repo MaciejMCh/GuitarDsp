@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 import GuitarDsp
 
-class Bass808ViewController: NSViewController {
+public class Bass808ViewController: NSViewController {
     @IBOutlet weak var effectsStackView: NSStackView!
     @IBOutlet weak var oscilatorsStackView: NSStackView!
     private var oscilatorViewControllers: [OscilatorViewController] = []
@@ -21,7 +21,7 @@ class Bass808ViewController: NSViewController {
         return bass808xD
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         refreshView()
     }

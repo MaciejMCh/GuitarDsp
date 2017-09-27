@@ -115,8 +115,17 @@ class BoardViewController: NSViewController {
     func addEffectControllers() {
         var i = 0
         for effectPrototype in setup.board.jsonRepresentable.effectPrototypes {
-            let effectController = EffectViewController.make()
-            effectController.effectPrototype = effectPrototype
+            let effectController: NSViewController
+            switch effectPrototype.instance {
+            case .channelPlayer(let channelPlayerEffect):
+                let channelPlayerTileController = ChannelPlayerTileController.make()
+                channelPlayerTileController.channelPlayerEffect = channelPlayerEffect
+                effectController = channelPlayerTileController
+            default:
+                let effectViewController = EffectViewController.make()
+                effectViewController.effectPrototype = effectPrototype
+                effectController = effectViewController
+            }
             addChildViewController(effectController)
             insertViewInSocket(viewToInsert: effectController.view, index: i)
             i += 1

@@ -45,10 +45,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return setupViewController
     }
     
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-    
     func setupFileSystem() {
         for path in [BoardPrototype.typeName, EffectPrototype.typeName].map({Storage(typeName: $0).storagePath}) {
             try! FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)

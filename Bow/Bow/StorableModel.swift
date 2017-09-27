@@ -9,6 +9,7 @@
 import Foundation
 import GuitarDsp
 import JSONCodable
+import GuitarMidi
 
 extension BoardPrototype: JsonObjectRepresentable {
     static var typeName = "board"
@@ -89,6 +90,7 @@ extension EffectPrototype: JsonObjectRepresentable {
             case .distortion(let distortionEffect):
                 distortionEffect.level = try decoder.decode("level")
                 distortionEffect.treshold = try decoder.decode("treshold")
+            case .channelPlayer(let channelPlayerEffect): break
             }
         } catch (_) {
             assert(false)
@@ -155,6 +157,8 @@ extension EffectPrototype: JsonObjectRepresentable {
                 "level": distortionEffect.level,
                 "treshold": distortionEffect.treshold
             ]
+        case .channelPlayer(let channelPlayerEffect):
+            return [:]
         }
     }
 }

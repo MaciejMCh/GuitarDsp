@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Pf-Md-bDK">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Channel Player Tile Controller-->
+        <scene sceneID="e3O-ng-OCK">
+            <objects>
+                <viewController id="4Pf-Md-bDK" customClass="ChannelPlayerTileController" customModule="Bow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="zch-SE-z9J">
+                        <rect key="frame" x="0.0" y="0.0" width="104" height="77"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CUJ-dn-pbv">
+                                <rect key="frame" x="4" y="21" width="97" height="32"/>
+                                <buttonCell key="cell" type="push" title="Channels" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A7k-8r-SD6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="editActionWithSender:" target="4Pf-Md-bDK" id="iYd-xB-TkS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="CUJ-dn-pbv" firstAttribute="centerY" secondItem="zch-SE-z9J" secondAttribute="centerY" id="7J6-Di-nr6"/>
+                            <constraint firstItem="CUJ-dn-pbv" firstAttribute="centerX" secondItem="zch-SE-z9J" secondAttribute="centerX" id="SHi-0A-4h7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="rbf-8s-1mq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2081" y="-431.5"/>
+        </scene>
+    </scenes>
+</document>

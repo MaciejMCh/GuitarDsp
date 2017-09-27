@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => 'https://github.com/maciejmch/guitardsp.git' }
   spec.osx.deployment_target  = '10.12'
   spec.source_files = 'GuitarMidi/*.swift'
-  spec.resources    = 'GuitarMidi/*.storyboard'
+  spec.resources    = 'GuitarMidi/*.storyboard', 'GuitarMidi/Assets.xcassets'
   spec.dependency 'EZAudio'
   spec.dependency 'CubicBezier'
   spec.dependency 'GuitarDsp'

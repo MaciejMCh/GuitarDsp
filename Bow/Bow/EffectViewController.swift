@@ -59,6 +59,7 @@ class EffectViewController: NSViewController {
         case .vibe(let effect): return SlidersFactory().vibe(vibeEffect: effect, color: color)
         case .phaser(let effect): return SlidersFactory().phaser(phaserEffect: effect, color: color)
         case .distortion(let effect): return SlidersFactory().distortion(distortionEffect: effect, color: color)
+        case .channelPlayer: return SlidersFactory().distortion(distortionEffect: "" as! DistortionEffect, color: color)
         }
     }
 }

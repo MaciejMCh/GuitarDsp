@@ -19,9 +19,9 @@ extension Bass808: Channel {}
 
 public class ChannelPlayerEffect: NSObject, Effect {
     private let samplingSettings: SamplingSettings
-    private var channels: [Channel] = []
+    var channels: [Channel] = []
     
-    init(samplingSettings: SamplingSettings) {
+    public init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
     }
     

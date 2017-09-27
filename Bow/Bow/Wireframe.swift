@@ -42,3 +42,4 @@ extension SearchViewController: InterfaceBuilderInstance {static var interfaceFi
 extension TagPickerController: InterfaceBuilderInstance {static var interfaceFileName: String {return "TagPickerController"}}
 extension LooperEffectViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "LooperViewController"}}
 extension SetupViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "SetupViewController"}}
+extension ChannelPlayerTileController: InterfaceBuilderInstance {static var interfaceFileName: String {return "ChannelPlayerTile"}}

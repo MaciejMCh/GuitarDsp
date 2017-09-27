@@ -12,7 +12,7 @@
             <objects>
                 <viewController id="AjI-iQ-Fzb" customClass="EnvelopeViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="l4P-MF-KnQ">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="354"/>
+                        <rect key="frame" x="0.0" y="0.0" width="579" height="536"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nEB-TM-msr">
@@ -158,121 +158,156 @@
                                 </connections>
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="A9J-T8-sGg" customClass="EnvelopeView" customModule="GuitarMidi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="204" width="450" height="150"/>
+                                <rect key="frame" x="0.0" y="343" width="579" height="193"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="zTv-RJ-Dka"/>
+                                    <constraint firstAttribute="width" secondItem="A9J-T8-sGg" secondAttribute="height" multiplier="3:1" id="EWB-B8-rjn"/>
                                 </constraints>
                             </customView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="aAh-Cg-YUl">
-                                <rect key="frame" x="0.0" y="54" width="150" height="150"/>
+                                <rect key="frame" x="0.0" y="123" width="190" height="190"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="aAh-Cg-YUl" secondAttribute="height" id="8Pz-f0-8aP"/>
+                                    <constraint firstAttribute="width" secondItem="aAh-Cg-YUl" secondAttribute="height" multiplier="1:1" id="8TO-q4-FX9"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="qOB-os-IYc" kind="embed" identifier="attackBezier" id="sce-q1-eL7"/>
                                 </connections>
                             </containerView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="FN6-qv-Dp8">
-                                <rect key="frame" x="150" y="54" width="150" height="150"/>
+                                <rect key="frame" x="195" y="123" width="189" height="190"/>
                                 <connections>
                                     <segue destination="qOB-os-IYc" kind="embed" identifier="decayBezier" id="wfK-Vf-d2d"/>
                                 </connections>
                             </containerView>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="n9M-Gd-2Ub">
-                                <rect key="frame" x="300" y="54" width="150" height="150"/>
-                                <connections>
-                                    <segue destination="qOB-os-IYc" kind="embed" identifier="releaseBezier" id="Jwd-oi-7Vf"/>
-                                </connections>
-                            </containerView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="H63-os-AD4" customClass="PlayerView" customModule="GuitarMidi" customModuleProvider="target">
-                                <rect key="frame" x="390" y="10" width="50" height="50"/>
+                                <rect key="frame" x="519" y="10" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Mon-mG-Fe6"/>
                                     <constraint firstAttribute="width" constant="50" id="etv-m0-oEc"/>
                                 </constraints>
                             </customView>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="n9M-Gd-2Ub">
+                                <rect key="frame" x="389" y="123" width="190" height="190"/>
+                                <connections>
+                                    <segue destination="qOB-os-IYc" kind="embed" identifier="releaseBezier" id="Jwd-oi-7Vf"/>
+                                </connections>
+                            </containerView>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="Gxm-Va-isE">
+                                <rect key="frame" x="-2" y="311" width="61" height="18"/>
+                                <buttonCell key="cell" type="check" title="Attack" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="18K-ve-5qU">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="bezierSwitchChanged:" target="AjI-iQ-Fzb" id="962-iX-E3W"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="em7-KZ-0hD">
+                                <rect key="frame" x="193" y="311" width="60" height="18"/>
+                                <buttonCell key="cell" type="check" title="Decay" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="O5o-BF-buq">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="bezierSwitchChanged:" target="AjI-iQ-Fzb" id="bQc-aT-Eoj"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="2SS-7V-KH6">
+                                <rect key="frame" x="387" y="311" width="70" height="18"/>
+                                <buttonCell key="cell" type="check" title="Release" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KYl-HT-7N8">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="bezierSwitchChanged:" target="AjI-iQ-Fzb" id="uYd-bd-xwQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="aJr-dl-riV" firstAttribute="top" secondItem="AJO-Lc-Oqe" secondAttribute="bottom" constant="5" id="2Y6-Zc-jl4"/>
-                            <constraint firstItem="A9J-T8-sGg" firstAttribute="leading" secondItem="l4P-MF-KnQ" secondAttribute="leading" id="3vI-ns-w1B"/>
+                            <constraint firstItem="Gxm-Va-isE" firstAttribute="leading" secondItem="aAh-Cg-YUl" secondAttribute="leading" id="3kS-KC-Wpa"/>
                             <constraint firstItem="aJr-dl-riV" firstAttribute="leading" secondItem="Nnn-we-xqI" secondAttribute="trailing" constant="5" id="3vn-8r-FTi"/>
-                            <constraint firstItem="FN6-qv-Dp8" firstAttribute="width" secondItem="n9M-Gd-2Ub" secondAttribute="width" id="5A1-DX-EbT"/>
                             <constraint firstItem="aJr-dl-riV" firstAttribute="bottom" secondItem="Nnn-we-xqI" secondAttribute="bottom" id="5Je-lx-lTG"/>
                             <constraint firstAttribute="trailing" secondItem="H63-os-AD4" secondAttribute="trailing" constant="10" id="6oB-Ld-sG7"/>
                             <constraint firstItem="4R3-0u-JKU" firstAttribute="top" secondItem="4wn-o7-jEJ" secondAttribute="bottom" constant="5" id="7Xk-qI-uJA"/>
+                            <constraint firstItem="em7-KZ-0hD" firstAttribute="baseline" secondItem="Gxm-Va-isE" secondAttribute="baseline" id="7fE-uy-utP"/>
                             <constraint firstAttribute="bottom" secondItem="H63-os-AD4" secondAttribute="bottom" constant="10" id="7gt-cN-PPg"/>
                             <constraint firstItem="4R3-0u-JKU" firstAttribute="leading" secondItem="aJr-dl-riV" secondAttribute="trailing" constant="5" id="7ho-YD-o2u"/>
-                            <constraint firstAttribute="trailing" secondItem="A9J-T8-sGg" secondAttribute="trailing" id="95z-z9-X6S"/>
+                            <constraint firstItem="FN6-qv-Dp8" firstAttribute="width" secondItem="n9M-Gd-2Ub" secondAttribute="width" id="7ij-sQ-4fh"/>
+                            <constraint firstAttribute="trailing" secondItem="n9M-Gd-2Ub" secondAttribute="trailing" id="9ZW-pI-XtR"/>
                             <constraint firstItem="aJr-dl-riV" firstAttribute="top" secondItem="Nnn-we-xqI" secondAttribute="top" id="A0C-RK-9Vz"/>
                             <constraint firstItem="4R3-0u-JKU" firstAttribute="bottom" secondItem="aJr-dl-riV" secondAttribute="bottom" id="A3x-cp-N7d"/>
-                            <constraint firstItem="n9M-Gd-2Ub" firstAttribute="leading" secondItem="FN6-qv-Dp8" secondAttribute="trailing" id="CdI-sE-wdQ"/>
                             <constraint firstItem="HTq-c4-8Mj" firstAttribute="leading" secondItem="Nnn-we-xqI" secondAttribute="leading" id="Dxi-Mg-aNF"/>
+                            <constraint firstItem="2SS-7V-KH6" firstAttribute="leading" secondItem="n9M-Gd-2Ub" secondAttribute="leading" id="Feb-CS-W00"/>
                             <constraint firstItem="4R3-0u-JKU" firstAttribute="width" secondItem="aJr-dl-riV" secondAttribute="width" id="K3W-hH-S2p"/>
                             <constraint firstItem="4wn-o7-jEJ" firstAttribute="leading" secondItem="4R3-0u-JKU" secondAttribute="leading" id="KA1-6D-6TH"/>
                             <constraint firstAttribute="bottom" secondItem="R3R-Pr-wCp" secondAttribute="bottom" constant="10" id="KEM-mO-pgq"/>
+                            <constraint firstItem="2SS-7V-KH6" firstAttribute="baseline" secondItem="em7-KZ-0hD" secondAttribute="baseline" id="Lc3-PG-yAL"/>
+                            <constraint firstItem="n9M-Gd-2Ub" firstAttribute="bottom" secondItem="FN6-qv-Dp8" secondAttribute="bottom" id="Ley-Nw-0tl"/>
                             <constraint firstItem="4R3-0u-JKU" firstAttribute="top" secondItem="aJr-dl-riV" secondAttribute="top" id="MHF-vR-FDm"/>
-                            <constraint firstItem="n9M-Gd-2Ub" firstAttribute="leading" secondItem="FN6-qv-Dp8" secondAttribute="trailing" id="MdG-W0-AEV"/>
-                            <constraint firstAttribute="trailing" secondItem="n9M-Gd-2Ub" secondAttribute="trailing" id="NSW-9U-CqM"/>
                             <constraint firstItem="T2V-yy-kwN" firstAttribute="leading" secondItem="bpd-Tf-dku" secondAttribute="leading" id="O4Y-pK-KaZ"/>
                             <constraint firstItem="R3R-Pr-wCp" firstAttribute="top" secondItem="nEB-TM-msr" secondAttribute="bottom" constant="5" id="Ow8-qR-kg3"/>
                             <constraint firstItem="bpd-Tf-dku" firstAttribute="top" secondItem="T2V-yy-kwN" secondAttribute="bottom" constant="5" id="QRj-gJ-Nqy"/>
+                            <constraint firstItem="aAh-Cg-YUl" firstAttribute="width" secondItem="FN6-qv-Dp8" secondAttribute="width" id="RWm-SS-jdv"/>
                             <constraint firstItem="VGB-kV-QCS" firstAttribute="leading" secondItem="bpd-Tf-dku" secondAttribute="trailing" constant="5" id="Rfu-ez-sYb"/>
-                            <constraint firstItem="aAh-Cg-YUl" firstAttribute="width" secondItem="FN6-qv-Dp8" secondAttribute="width" id="TXE-hb-Zin"/>
+                            <constraint firstItem="em7-KZ-0hD" firstAttribute="leading" secondItem="FN6-qv-Dp8" secondAttribute="leading" id="SWY-wM-CDb"/>
                             <constraint firstItem="R3R-Pr-wCp" firstAttribute="leading" secondItem="l4P-MF-KnQ" secondAttribute="leading" constant="10" id="UKc-qz-Dgn"/>
+                            <constraint firstItem="FN6-qv-Dp8" firstAttribute="top" secondItem="aAh-Cg-YUl" secondAttribute="top" id="Ulw-Ip-7H3"/>
                             <constraint firstItem="VGB-kV-QCS" firstAttribute="top" secondItem="UAT-Wa-KfH" secondAttribute="bottom" constant="5" id="VpF-Zy-9IY"/>
+                            <constraint firstItem="FN6-qv-Dp8" firstAttribute="leading" secondItem="aAh-Cg-YUl" secondAttribute="trailing" constant="5" id="XHr-iL-FuX"/>
                             <constraint firstItem="bpd-Tf-dku" firstAttribute="width" secondItem="R3R-Pr-wCp" secondAttribute="width" id="XLK-zS-Lqx"/>
                             <constraint firstItem="Nnn-we-xqI" firstAttribute="top" secondItem="VGB-kV-QCS" secondAttribute="top" id="ZCo-xj-Tff"/>
-                            <constraint firstItem="nEB-TM-msr" firstAttribute="top" secondItem="aAh-Cg-YUl" secondAttribute="bottom" id="aq0-1l-vpi"/>
-                            <constraint firstItem="A9J-T8-sGg" firstAttribute="top" secondItem="l4P-MF-KnQ" secondAttribute="top" id="eD6-f1-bbw"/>
+                            <constraint firstItem="A9J-T8-sGg" firstAttribute="leading" secondItem="l4P-MF-KnQ" secondAttribute="leading" id="cY9-TS-0jq"/>
+                            <constraint firstItem="n9M-Gd-2Ub" firstAttribute="leading" secondItem="FN6-qv-Dp8" secondAttribute="trailing" constant="5" id="dBy-8l-MIP"/>
+                            <constraint firstItem="aAh-Cg-YUl" firstAttribute="leading" secondItem="l4P-MF-KnQ" secondAttribute="leading" id="dqp-GX-aKY"/>
                             <constraint firstItem="VGB-kV-QCS" firstAttribute="bottom" secondItem="bpd-Tf-dku" secondAttribute="bottom" id="ePe-mu-gbg"/>
+                            <constraint firstItem="aAh-Cg-YUl" firstAttribute="top" secondItem="A9J-T8-sGg" secondAttribute="bottom" constant="30" id="exF-zg-AZH"/>
                             <constraint firstItem="aJr-dl-riV" firstAttribute="width" secondItem="Nnn-we-xqI" secondAttribute="width" id="fmb-Z5-7Gv"/>
+                            <constraint firstItem="n9M-Gd-2Ub" firstAttribute="top" secondItem="FN6-qv-Dp8" secondAttribute="top" id="h1b-th-sVX"/>
                             <constraint firstItem="VGB-kV-QCS" firstAttribute="top" secondItem="bpd-Tf-dku" secondAttribute="top" id="hXo-rq-ceL"/>
-                            <constraint firstItem="aAh-Cg-YUl" firstAttribute="leading" secondItem="l4P-MF-KnQ" secondAttribute="leading" id="j1v-GV-1wL"/>
-                            <constraint firstItem="FN6-qv-Dp8" firstAttribute="bottom" secondItem="aAh-Cg-YUl" secondAttribute="bottom" id="jQt-XU-QHD"/>
-                            <constraint firstItem="aAh-Cg-YUl" firstAttribute="height" secondItem="A9J-T8-sGg" secondAttribute="height" multiplier="1:1" id="jVx-vE-uwy"/>
-                            <constraint firstItem="FN6-qv-Dp8" firstAttribute="leading" secondItem="aAh-Cg-YUl" secondAttribute="trailing" id="jqZ-60-OX0"/>
-                            <constraint firstItem="aAh-Cg-YUl" firstAttribute="top" secondItem="A9J-T8-sGg" secondAttribute="bottom" id="kSJ-6Y-TyH"/>
+                            <constraint firstItem="FN6-qv-Dp8" firstAttribute="bottom" secondItem="aAh-Cg-YUl" secondAttribute="bottom" id="kQ8-pM-4L9"/>
                             <constraint firstItem="AJO-Lc-Oqe" firstAttribute="leading" secondItem="aJr-dl-riV" secondAttribute="leading" id="lQh-bq-k67"/>
                             <constraint firstItem="Nnn-we-xqI" firstAttribute="top" secondItem="HTq-c4-8Mj" secondAttribute="bottom" constant="5" id="mCh-qw-AVy"/>
                             <constraint firstItem="UAT-Wa-KfH" firstAttribute="leading" secondItem="VGB-kV-QCS" secondAttribute="leading" id="n8P-dg-iJO"/>
                             <constraint firstItem="Nnn-we-xqI" firstAttribute="leading" secondItem="VGB-kV-QCS" secondAttribute="trailing" constant="5" id="ncC-XS-70y"/>
                             <constraint firstItem="VGB-kV-QCS" firstAttribute="width" secondItem="bpd-Tf-dku" secondAttribute="width" id="o77-yN-B06"/>
+                            <constraint firstItem="A9J-T8-sGg" firstAttribute="top" secondItem="l4P-MF-KnQ" secondAttribute="top" id="peU-LQ-noz"/>
                             <constraint firstItem="bpd-Tf-dku" firstAttribute="top" secondItem="R3R-Pr-wCp" secondAttribute="top" id="rfC-uT-bZ8"/>
-                            <constraint firstItem="n9M-Gd-2Ub" firstAttribute="top" secondItem="A9J-T8-sGg" secondAttribute="bottom" id="teJ-Mi-MfV"/>
-                            <constraint firstItem="FN6-qv-Dp8" firstAttribute="top" secondItem="A9J-T8-sGg" secondAttribute="bottom" id="tzW-Jk-Rvs"/>
-                            <constraint firstItem="FN6-qv-Dp8" firstAttribute="leading" secondItem="aAh-Cg-YUl" secondAttribute="trailing" id="uwU-aa-q2n"/>
+                            <constraint firstItem="aAh-Cg-YUl" firstAttribute="top" secondItem="Gxm-Va-isE" secondAttribute="bottom" id="rpG-b5-fiu"/>
                             <constraint firstItem="Nnn-we-xqI" firstAttribute="bottom" secondItem="VGB-kV-QCS" secondAttribute="bottom" id="wIV-yX-iwx"/>
                             <constraint firstItem="bpd-Tf-dku" firstAttribute="leading" secondItem="R3R-Pr-wCp" secondAttribute="trailing" constant="5" id="wLE-Fj-4Ac"/>
                             <constraint firstItem="bpd-Tf-dku" firstAttribute="bottom" secondItem="R3R-Pr-wCp" secondAttribute="bottom" id="xfg-40-nxT"/>
                             <constraint firstItem="nEB-TM-msr" firstAttribute="leading" secondItem="R3R-Pr-wCp" secondAttribute="leading" id="y9W-gB-dhE"/>
-                            <constraint firstItem="n9M-Gd-2Ub" firstAttribute="bottom" secondItem="FN6-qv-Dp8" secondAttribute="bottom" id="yM0-rc-iEd"/>
+                            <constraint firstAttribute="trailing" secondItem="A9J-T8-sGg" secondAttribute="trailing" id="yQv-6w-Rax"/>
                             <constraint firstItem="Nnn-we-xqI" firstAttribute="width" secondItem="VGB-kV-QCS" secondAttribute="width" id="zay-8o-uUn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attackBezierSwitchButton" destination="Gxm-Va-isE" id="1HB-f9-S4M"/>
                         <outlet property="attackTextField" destination="bpd-Tf-dku" id="6dD-xG-VvC"/>
+                        <outlet property="decayBezierSwitchButton" destination="em7-KZ-0hD" id="yAz-IN-9Ct"/>
                         <outlet property="decayTextField" destination="Nnn-we-xqI" id="cC5-fs-LKG"/>
                         <outlet property="delayTextField" destination="R3R-Pr-wCp" id="vbO-sU-bNK"/>
                         <outlet property="envelopeView" destination="A9J-T8-sGg" id="zet-ZT-hsk"/>
                         <outlet property="holdTextField" destination="VGB-kV-QCS" id="lsC-ob-qRr"/>
+                        <outlet property="releaseBezierSwitchButton" destination="2SS-7V-KH6" id="1xK-UI-QyA"/>
                         <outlet property="releaseTextField" destination="4R3-0u-JKU" id="3wV-zl-tFA"/>
                         <outlet property="sustainTextField" destination="aJr-dl-riV" id="tmP-CM-qaN"/>
                     </connections>
                 </viewController>
                 <customObject id="aYF-gY-h8a" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77.5" y="339"/>
+            <point key="canvasLocation" x="141.5" y="430"/>
         </scene>
         <!--CubicBezier-->
         <scene sceneID="EoM-5L-D3R">
             <objects>
-                <controllerPlaceholder storyboardName="CubicBezier" bundleIdentifier="com.mch.cubicBezierPicker.CubicBezierPicker" id="qOB-os-IYc" sceneMemberID="viewController"/>
+                <controllerPlaceholder storyboardName="CubicBezier" bundleIdentifier="org.cocoapods.CubicBezier" id="qOB-os-IYc" sceneMemberID="viewController"/>
                 <customObject id="Ybl-WZ-2P1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="804"/>
+            <point key="canvasLocation" x="142" y="828"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Jwd-oi-7Vf"/>
+        <segue reference="wfK-Vf-d2d"/>
     </inferredMetricsTieBreakers>
 </document>

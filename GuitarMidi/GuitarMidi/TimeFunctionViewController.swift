@@ -11,6 +11,16 @@ import Cocoa
 
 class TimeFunctionViewController: NSTabViewController {
     var functionChange: ((FunctionVariable) -> ())?
+    var initialFunctionVariable: FunctionVariable!
+    
+    override func viewDidLoad() {
+        for controller in tabViewItems.map({$0.viewController}) {
+            (controller as? EnvelopeViewController)?.envelopeFunction = initialFunctionVariable as? EnvelopeFunction ?? EnvelopeFunction()
+        }
+        super.viewDidLoad()
+    }
+    
+    
     
     override func tabView(_ tabView: NSTabView, didSelect tabViewItem: NSTabViewItem?) {
         if let envelopeController = tabViewItem?.viewController as? EnvelopeViewController {

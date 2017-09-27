@@ -15,9 +15,11 @@ class VariableViewController: NSViewController {
     @IBOutlet weak var editButton: NSButton!
     @IBOutlet weak var fixedTextField: NSTextField!
     
+    private var initialVariable: FunctionVariable!
     var variableUpdate: ((FunctionVariable) -> ())?
     
     func setVariable(_ variable: FunctionVariable) {
+        initialVariable = variable
         if let double = variable as? Double {
             fixedButton.state = 1
             fixedTextField.stringValue = String(double)
@@ -45,6 +47,7 @@ class VariableViewController: NSViewController {
     
     @IBAction func functionButtonAction(_ sencer: Any?) {
         let timeFunctionController = TimeFunctionViewController.make()
+        timeFunctionController.initialFunctionVariable = initialVariable
         timeFunctionController.functionChange = { [weak self] in
             self?.variableUpdate?($0)
         }

@@ -18,6 +18,9 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
     @IBOutlet weak var decayTextField: NSTextField!
     @IBOutlet weak var sustainTextField: NSTextField!
     @IBOutlet weak var releaseTextField: NSTextField!
+    @IBOutlet weak var attackBezierSwitchButton: NSButton!
+    @IBOutlet weak var decayBezierSwitchButton: NSButton!
+    @IBOutlet weak var releaseBezierSwitchButton: NSButton!
     
     private weak var attackBezierViewController: CubicBezierViewController!
     private weak var decayBezierViewController: CubicBezierViewController!
@@ -29,7 +32,6 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
     override func viewDidLoad() {
         super.viewDidLoad()
         envelopeView.envelopeFunction = envelopeFunction
-        updateViews()
     }
     
     private func updateViews() {
@@ -39,6 +41,31 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
         decayTextField.stringValue = String(envelopeFunction.decay)
         sustainTextField.stringValue = String(envelopeFunction.sustain)
         releaseTextField.stringValue = String(envelopeFunction.release)
+        
+        attackBezierSwitchButton.state = envelopeFunction.attackBezier == nil ? 0 : 1
+        decayBezierSwitchButton.state = envelopeFunction.decayBezier == nil ? 0 : 1
+        releaseBezierSwitchButton.state = envelopeFunction.releaseBezier == nil ? 0 : 1
+        
+        let fadedAlpha = CGFloat(0.1)
+        attackBezierViewController.view.alphaValue = envelopeFunction.attackBezier == nil ? fadedAlpha : 1
+        decayBezierViewController.view.alphaValue = envelopeFunction.decayBezier == nil ? fadedAlpha : 1
+        releaseBezierViewController.view.alphaValue = envelopeFunction.releaseBezier == nil ? fadedAlpha : 1
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        updateViews()
+        
+        if let attackBezier = envelopeFunction.attackBezier {
+            attackBezierViewController.setup(attackBezier.p1, p2: attackBezier.p2)
+        }
+        if let decayBezier = envelopeFunction.decayBezier {
+            decayBezierViewController.setup(decayBezier.p1, p2: decayBezier.p2)
+        }
+        if let releaseBezier = envelopeFunction.releaseBezier {
+            releaseBezierViewController.setup(releaseBezier.p1, p2: releaseBezier.p2)
+        }
+        
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
@@ -46,6 +73,7 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
             switch identifier {
             case "attackBezier":
                 bezierViewController.update = { [weak self] (p1, p2) in
+                    guard self?.envelopeFunction.attackBezier != nil else {return}
                     self?.envelopeFunction.attackBezier = CubicBezier(p1: p1, p2: p2)
                     self?.envelopeView.needsDisplay = true
                     self?.envelopeUpdate?()
@@ -53,6 +81,7 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
                 attackBezierViewController = bezierViewController
             case "decayBezier":
                 bezierViewController.update = { [weak self] (p1, p2) in
+                    guard self?.envelopeFunction.decayBezier != nil else {return}
                     self?.envelopeFunction.decayBezier = CubicBezier(p1: p1, p2: p2)
                     self?.envelopeView.needsDisplay = true
                     self?.envelopeUpdate?()
@@ -60,6 +89,7 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
                 decayBezierViewController = bezierViewController
             case "releaseBezier":
                 bezierViewController.update = { [weak self] (p1, p2) in
+                    guard self?.envelopeFunction.releaseBezier != nil else {return}
                     self?.envelopeFunction.releaseBezier = CubicBezier(p1: p1, p2: p2)
                     self?.envelopeView.needsDisplay = true
                     self?.envelopeUpdate?()
@@ -81,6 +111,22 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
         envelopeView.needsDisplay = true
         envelopeUpdate?()
     }
+    
+    @IBAction func bezierSwitchChanged(_ sender: NSButton) {
+        switch (sender, sender.state) {
+        case (attackBezierSwitchButton, let state):
+            envelopeFunction.attackBezier = state == 1 ? CubicBezier(p1: attackBezierViewController.bezierDataPoint1, p2: attackBezierViewController.bezierDataPoint2) : nil
+        case (decayBezierSwitchButton, let state):
+            envelopeFunction.decayBezier = state == 1 ? CubicBezier(p1: decayBezierViewController.bezierDataPoint1, p2: decayBezierViewController.bezierDataPoint2) : nil
+        case (releaseBezierSwitchButton, let state):
+            envelopeFunction.releaseBezier = state == 1 ? CubicBezier(p1: releaseBezierViewController.bezierDataPoint1, p2: releaseBezierViewController.bezierDataPoint2) : nil
+        default: break
+        }
+        
+        updateViews()
+        envelopeView.needsDisplay = true
+        envelopeUpdate?()
+    }
 }
 
 class EnvelopeView: NSView {
@@ -91,9 +137,9 @@ class EnvelopeView: NSView {
         
         NSBezierPath(rect: dirtyRect).stroke()
         
-        let length = 400
-        let height = 100.0
-        let margin = 10.0
+        let margin = CGFloat(10.0)
+        let length = Int(frame.width - (2 * margin))
+        let height = frame.height - (2 * margin)
         
         let truePath = NSBezierPath()
         truePath.move(to: .init(x: CGFloat(margin), y: CGFloat(margin)))

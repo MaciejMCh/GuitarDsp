@@ -21,6 +21,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        let bassController = Bass808ViewController.make()
+        bassController.bass808 = Bass808(samplingSettings: AudioInterface.shared().samplingSettings)
+        NSApplication.shared().windows.first!.contentViewController = bassController
 //        let channelPlayerEffect = ChannelPlayerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
 //        let channelPlayerEffect = channelPlayerXd
 //        channelPlayerXd.play(channel: bass808xD)

@@ -25,6 +25,12 @@ class WaveShaperViewController: NSViewController {
         }
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        cubicBezierViewController.setup(waveShaper.cubicBezier.p1, p2: waveShaper.cubicBezier.p2)
+        updateBezier(bezier: waveShaper.cubicBezier)
+    }
+    
     private func updateBezier(bezier: CubicBezier) {
         waveShaper.cubicBezier = bezier
         

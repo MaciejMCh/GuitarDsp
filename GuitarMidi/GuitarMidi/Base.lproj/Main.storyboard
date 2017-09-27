@@ -682,21 +682,10 @@
                             <outlet property="delegate" destination="B8D-0N-5wS" id="scY-a6-XJd"/>
                         </connections>
                     </window>
-                    <connections>
-                        <segue destination="RxZ-Bz-i2B" kind="relationship" relationship="window.shadowedContentViewController" id="eF4-9g-gp8"/>
-                    </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
-        </scene>
-        <!--Bass808-->
-        <scene sceneID="jza-x2-gu5">
-            <objects>
-                <controllerPlaceholder storyboardName="Bass808" id="RxZ-Bz-i2B" sceneMemberID="viewController"/>
-                <customObject id="w4O-1f-IU3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="76" y="544"/>
         </scene>
     </scenes>
 </document>

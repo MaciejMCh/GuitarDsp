@@ -60,10 +60,10 @@
         <!--CubicBezier-->
         <scene sceneID="0xN-sE-vKg">
             <objects>
-                <controllerPlaceholder storyboardName="CubicBezier" bundleIdentifier="com.mch.cubicBezierPicker.CubicBezierPicker" id="hLF-xn-J56" sceneMemberID="viewController"/>
+                <controllerPlaceholder storyboardName="CubicBezier" bundleIdentifier="org.cocoapods.CubicBezier" id="hLF-xn-J56" sceneMemberID="viewController"/>
                 <customObject id="zaM-Wv-Xdr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-125" y="319"/>
+            <point key="canvasLocation" x="-125" y="340"/>
         </scene>
     </scenes>
 </document>

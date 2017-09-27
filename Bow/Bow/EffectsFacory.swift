@@ -66,7 +66,9 @@ struct EffectsFacory {
     }
     
     func makeChannelPlayer() -> ChannelPlayerEffect {
-        return ChannelPlayerEffect(samplingSettings: samplingSettings)
+        let channelPlayerEffect = ChannelPlayerEffect(samplingSettings: samplingSettings)
+        channelPlayerEffect.channels = [Bass808(samplingSettings: samplingSettings)]
+        return channelPlayerEffect
     }
     
     func makeSampler() -> Sampler {

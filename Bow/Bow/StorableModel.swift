@@ -166,6 +166,22 @@ extension EffectPrototype: JsonObjectRepresentable {
             envelope.decay = try! decoder.decode("decay") as Double
             envelope.sustain = try! decoder.decode("sustain") as Double
             envelope.release = try! decoder.decode("release") as Double
+            if let attackBezierJsonObject = json["attack_bezier"] as? JsonObject {
+                envelope.attackBezier = cubicBezierFromJson(attackBezierJsonObject)
+            } else {
+                envelope.attackBezier = nil
+            }
+            if let decayBezierJsonObject = json["decay_bezier"] as? JsonObject {
+                envelope.decayBezier = cubicBezierFromJson(decayBezierJsonObject)
+            } else {
+                envelope.decayBezier = nil
+            }
+            if let releaseBezierJsonObject = json["release_bezier"] as? JsonObject {
+                envelope.releaseBezier = cubicBezierFromJson(releaseBezierJsonObject)
+            } else {
+                envelope.releaseBezier = nil
+            }
+            
             return envelope
         default:
             return "" as! FunctionVariable

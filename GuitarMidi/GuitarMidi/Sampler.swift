@@ -27,7 +27,7 @@ struct AudioFile {
 
 public class Sampler: Playing {
     let samplingSettings: SamplingSettings
-    public var volume: FunctionVariable = 1
+    public var volume: FunctionVariable = EnvelopeFunction()
     public var audioFilePath: String {
         didSet {
             audioFile = .load(filePath: audioFilePath, samplingSettings: samplingSettings)

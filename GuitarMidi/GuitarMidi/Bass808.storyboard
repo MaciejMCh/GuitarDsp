@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwI-p0-83J">
-                                <rect key="frame" x="420" y="190" width="302" height="100"/>
+                                <rect key="frame" x="722" y="190" width="0.0" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="nZo-Dh-s1i"/>
                                 </constraints>
@@ -29,10 +29,10 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView distribution="fillEqually" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ka-Ik-mhC">
-                                            <rect key="frame" x="0.0" y="0.0" width="402" height="187"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="500" height="187"/>
                                             <subviews>
                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mVC-9T-VYn">
-                                                    <rect key="frame" x="-6" y="-7" width="414" height="198"/>
+                                                    <rect key="frame" x="-6" y="-7" width="512" height="198"/>
                                                     <buttonCell key="cell" type="push" title="New Oscilator" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xs9-b6-eMP">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
@@ -44,7 +44,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="mVC-9T-VYn" firstAttribute="centerX" secondItem="1Ka-Ik-mhC" secondAttribute="centerX" id="pt1-Vd-yVP"/>
-                                                <constraint firstAttribute="width" constant="402" id="rsx-Bm-19I"/>
+                                                <constraint firstAttribute="width" constant="500" id="rsx-Bm-19I"/>
                                             </constraints>
                                             <visibilityPriorities>
                                                 <integer value="1000"/>
@@ -74,7 +74,7 @@
                                 </constraints>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O2p-G6-ysl">
-                                <rect key="frame" x="3" y="62" width="414" height="32"/>
+                                <rect key="frame" x="3" y="62" width="512" height="32"/>
                                 <buttonCell key="cell" type="push" title="New Sampler" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lWd-Zb-fiw">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>

@@ -12,6 +12,7 @@ import GuitarMidi
 
 class ChannelPlayerTileController: NSViewController {
     var channelPlayerEffect: ChannelPlayerEffect!
+    var bass808: Bass808!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,8 @@ class ChannelPlayerTileController: NSViewController {
     }
     
     @IBAction func editAction(sender: Any?) {
-        let channelPlayerController = NSStoryboard(name: "Bass808", bundle: Bundle(identifier: "org.cocoapods.GuitarMidi")!).instantiateInitialController()
-        presentViewControllerAsModalWindow(channelPlayerController as! NSViewController)
+        let channelPlayerController = NSStoryboard(name: "Bass808", bundle: Bundle(identifier: "org.cocoapods.GuitarMidi")!).instantiateInitialController() as! Bass808ViewController
+        channelPlayerController.bass808 = bass808
+        presentViewControllerAsModalWindow(channelPlayerController)
     }
 }

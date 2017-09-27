@@ -17,7 +17,7 @@ public class Bass808ViewController: NSViewController {
     private var effectViewControllers: [NSViewController] = []
     private var samplersViewControllers: [SamplerViewController] = []
     
-    var bass808: Bass808!
+    public var bass808: Bass808!
     
     public override func viewDidLoad() {
         super.viewDidLoad()

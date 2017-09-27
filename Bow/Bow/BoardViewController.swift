@@ -9,6 +9,7 @@
 import Foundation
 import Cocoa
 import GuitarDsp
+import GuitarMidi
 
 class BoardViewController: NSViewController {
     @IBOutlet weak var gridView: GridView!
@@ -120,6 +121,7 @@ class BoardViewController: NSViewController {
             case .channelPlayer(let channelPlayerEffect):
                 let channelPlayerTileController = ChannelPlayerTileController.make()
                 channelPlayerTileController.channelPlayerEffect = channelPlayerEffect
+                channelPlayerTileController.bass808 = channelPlayerEffect.channels.first as! Bass808
                 effectController = channelPlayerTileController
             default:
                 let effectViewController = EffectViewController.make()

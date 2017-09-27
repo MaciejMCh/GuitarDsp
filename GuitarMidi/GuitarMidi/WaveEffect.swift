@@ -18,22 +18,24 @@ extension Playing {
     public func off() {}
 }
 
-protocol WaveEffect: Playing {
+public protocol WaveEffect: Playing {
     func apply(input: Double) -> Double
 }
 
-class AmpWaveEffect: WaveEffect {
-    var gain: FunctionVariable = 1.0
+public class AmpWaveEffect: WaveEffect {
+    public var gain: FunctionVariable = 1.0
     
-    func apply(input: Double) -> Double {
+    public init() {}
+    
+    public func apply(input: Double) -> Double {
         return input * gain.value
     }
     
-    func on() {
+    public func on() {
         gain.on()
     }
     
-    func off() {
+    public func off() {
         gain.off()
     }
 }

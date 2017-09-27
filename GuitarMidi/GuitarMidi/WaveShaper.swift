@@ -8,11 +8,13 @@
 
 import Foundation
 
-class WaveShaper: WaveEffect {
-    var cubicBezier: CubicBezier = CubicBezier(p1: .zero, p2: .zero)
-    var mirrorNegatives: Bool = true
+public class WaveShaper: WaveEffect {
+    public var cubicBezier: CubicBezier = CubicBezier(p1: .zero, p2: .zero)
+    public var mirrorNegatives: Bool = true
     
-    func apply(input: Double) -> Double {
+    public init() {}
+    
+    public func apply(input: Double) -> Double {
         if mirrorNegatives && input < 0 {
             return -cubicBezier.y(x: -input)
         } else {

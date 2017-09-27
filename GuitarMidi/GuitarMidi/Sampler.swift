@@ -25,10 +25,10 @@ struct AudioFile {
     }
 }
 
-class Sampler: Playing {
+public class Sampler: Playing {
     let samplingSettings: SamplingSettings
-    var volume: FunctionVariable = EnvelopeFunction()
-    var audioFilePath: String {
+    public var volume: FunctionVariable = 1
+    public var audioFilePath: String {
         didSet {
             audioFile = .load(filePath: audioFilePath, samplingSettings: samplingSettings)
         }
@@ -37,13 +37,13 @@ class Sampler: Playing {
     private(set) var audioFile: AudioFile
     private var time = 0
     
-    init(audioFilePath: String, samplingSettings: SamplingSettings) {
+    public init(audioFilePath: String, samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
         self.audioFilePath = audioFilePath
         audioFile = .load(filePath: audioFilePath, samplingSettings: samplingSettings)
     }
     
-    func nextSample() -> Double {
+    public func nextSample() -> Double {
         defer {
             time += 1
         }
@@ -55,12 +55,12 @@ class Sampler: Playing {
         }
     }
     
-    func on() {
+    public func on() {
          volume.on()
         time = 0
     }
     
-    func off() {
+    public func off() {
         volume.off()
     }
 }

@@ -11,7 +11,7 @@ import Cocoa
 
 struct WaveShapeViewModel {
     static func all() -> [WaveShapeViewModel] {
-        return [WaveShape.sine, .square, .triangle, .sawtooth, .circle].map{WaveShapeViewModel(waveShape: $0)}
+        return WaveShape.all().map{WaveShapeViewModel(waveShape: $0)}
     }
     
     let waveShape: WaveShape

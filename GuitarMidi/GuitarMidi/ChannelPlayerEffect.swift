@@ -9,8 +9,6 @@
 import Foundation
 import GuitarDsp
 
-public let channelPlayerXd = ChannelPlayerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
-
 public protocol Channel: Playing {
     func nextSample() -> Double
 }
@@ -19,7 +17,7 @@ extension Bass808: Channel {}
 
 public class ChannelPlayerEffect: NSObject, Effect {
     private let samplingSettings: SamplingSettings
-    var channels: [Channel] = []
+    public var channels: [Channel] = []
     
     public init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings

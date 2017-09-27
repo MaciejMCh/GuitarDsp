@@ -11,15 +11,20 @@ import GuitarDsp
 import Pitchy
 import Accelerate
 
-public let strokeDetectorXd = StrokeDetector()
+protocol MidiPlayer {
+    func setFrequency(_ frequency: Double)
+    func on()
+    func off()
+    func nextSample() -> Double
+}
 
 public class MidiOutputEffect: NSObject, Effect {
     let sendMidi = false
-    
+    let strokeDetector = StrokeDetector()
     let samplingSettings: SamplingSettings
     let pitchDetector: PitchDetector
     let midiServer: MidiServer
-    let waveGenerator: WaveGenerator
+    var midiPlayer: MidiPlayer!
     var recentNote = try! Note(index: 0)
     var noteIntegrator: [Int?] = Array(repeating: nil, count: 1000)
     var noteIndexIntegrator = NoteIndexIntegrator()
@@ -27,7 +32,6 @@ public class MidiOutputEffect: NSObject, Effect {
     public init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
         pitchDetector = PitchDetector(samplingSettings: samplingSettings)
-        waveGenerator = WaveGenerator(samplingSettings: samplingSettings)
         midiServer = MidiServer()
         super.init()
     }
@@ -54,20 +58,20 @@ public class MidiOutputEffect: NSObject, Effect {
         
         if !isOn {
             if amplitude > treshold {
-                bass808xD.on()
+                midiPlayer.on()
                 isOn = true
             }
         } else {
             if amplitude < treshold - margin {
-                bass808xD.off()
+                midiPlayer.off()
                 isOn = false
             }
         }
         
         
         for i in 0..<Int(samplingSettings.framesPerPacket) {
-            bass808xD.frequency = 0.25 * Double(frequency)
-            outputBuffer.advanced(by: i).pointee = Float(bass808xD.nextSample())
+            midiPlayer.setFrequency(0.25 * Double(frequency))
+            outputBuffer.advanced(by: i).pointee = Float(midiPlayer.nextSample())
         }
         
         guard sendMidi else {return}

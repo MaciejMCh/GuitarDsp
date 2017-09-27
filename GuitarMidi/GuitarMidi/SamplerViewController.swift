@@ -16,7 +16,7 @@ class SamplerViewController: NSViewController {
     @IBOutlet weak var waveViewWidthConstraint: NSLayoutConstraint!
     
     var waveSublayers: [CALayer] = []
-    var channelPlayerEffect: ChannelPlayerEffect! = channelPlayerXd
+    var channelPlayerEffect: ChannelPlayerEffect!
     var sampler: Sampler!
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {

@@ -11,27 +11,30 @@ import GuitarDsp
 
 let sign: (Double) -> Double = {$0 > 0 ? 1 : -1}
 
-enum WaveShape {
+public enum WaveShape {
     case sine
     case square
     case triangle
     case sawtooth
     case circle
+    
+    public static func all() -> [WaveShape] {
+        return [.sine, .square, .triangle, .sawtooth, .circle]
+    }
 }
 
-class WaveGenerator {
+public class WaveGenerator {
     let samplingSettings: SamplingSettings
-    var waveShape: WaveShape = .sine
-    var frequencyFunction: FunctionVariable = 1.0
+    public var waveShape: WaveShape = .sine
     
     private var x: Double = 0
     
-    init(samplingSettings: SamplingSettings) {
+    public init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
     }
     
-    func nextSample(frequency: Double) -> Double {
-        let timeShift = frequency * frequencyFunction.value / Double(self.samplingSettings.frequency) * Double.pi * 2
+    public func nextSample(frequency: Double) -> Double {
+        let timeShift = frequency / Double(self.samplingSettings.frequency) * Double.pi * 2
         x += timeShift
         
         switch waveShape {

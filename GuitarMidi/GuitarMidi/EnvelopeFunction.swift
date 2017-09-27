@@ -8,42 +8,44 @@
 
 import Foundation
 
-class EnvelopeFunction: FunctionVariable {
+public class EnvelopeFunction: FunctionVariable {
     enum State {
         case on
         case off(releaseStartTime: Double, releaseStartValue: Double)
     }
     
-    var duration: Double = 100000
-    var delay: Double = 0
-    var attack: Double = 0.1
-    var hold: Double = 0.3
-    var decay: Double = 0.2
-    var sustain: Double = 0.4
-    var release: Double = 0.3
+    public var duration: Double = 100000
+    public var delay: Double = 0
+    public var attack: Double = 0.1
+    public var hold: Double = 0.3
+    public var decay: Double = 0.2
+    public var sustain: Double = 0.4
+    public var release: Double = 0.3
     
-    var attackBezier: CubicBezier? = .fadeOut
-    var decayBezier: CubicBezier? = .fadeOut
-    var releaseBezier: CubicBezier? = .fadeOut
+    public var attackBezier: CubicBezier? = .fadeOut
+    public var decayBezier: CubicBezier? = .fadeOut
+    public var releaseBezier: CubicBezier? = .fadeOut
     
     private var state = State.on
     private var time: Double = 0
     
-    func on() {
+    public init() {}
+    
+    public func on() {
         state = .on
         time = 0
     }
     
-    func off() {
+    public func off() {
         time -= 1
         state = .off(releaseStartTime: time + 1, releaseStartValue: nextSample())
     }
     
-    var value: Double {
+    public var value: Double {
         return nextSample()
     }
     
-    func nextSample() -> Double {
+    public func nextSample() -> Double {
         defer {
             time += 1
         }

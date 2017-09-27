@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'Bow' do
+def pods
   use_frameworks!
   pod 'RxSwift'
   pod 'JSONCodable'
@@ -12,4 +12,8 @@ target 'Bow' do
   pod 'CubicBezier', :path => '../CubicBezier'
   pod 'Beethoven', :git => 'https://github.com/MaciejMCh/Beethoven.git', :branch => 'osx'
   pod 'MIDIKit', :git => 'https://github.com/MaciejMCh/MIDIKit.git'
+end
+
+target 'Bow' do
+  pods
 end

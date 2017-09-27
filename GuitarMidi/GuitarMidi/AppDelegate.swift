@@ -13,17 +13,17 @@ import GuitarDsp
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func playAction(sender: Any?) {
-        bass808xD.on()
+//        bass808xD.on()
     }
     
     @IBAction func stopAction(sender: Any?) {
-        bass808xD.off()
+//        bass808xD.off()
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 //        let channelPlayerEffect = ChannelPlayerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
-        let channelPlayerEffect = channelPlayerXd
-        channelPlayerXd.play(channel: bass808xD)
+//        let channelPlayerEffect = channelPlayerXd
+//        channelPlayerXd.play(channel: bass808xD)
 //        return
         
 //        bowMenu?.openMenuItem.target = self

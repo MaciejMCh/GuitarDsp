@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol FunctionVariable: Playing {
+public protocol FunctionVariable: Playing {
     var value: Double {get}
 }
 
 extension Double: FunctionVariable {
-    var value: Double {return self}
+    public var value: Double {return self}
 }
 
 class LinearFunction: FunctionVariable {

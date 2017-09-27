@@ -9,23 +9,23 @@
 import Foundation
 import GuitarDsp
 
-class Oscilator: Playing {
+public class Oscilator: Playing {
     let samplingSettings: SamplingSettings
-    var waveGenerator: WaveGenerator
-    var tune: FunctionVariable = -12
-    var volume: FunctionVariable = 0.2
+    public var waveGenerator: WaveGenerator
+    public var tune: FunctionVariable = -12
+    public var volume: FunctionVariable = 0.2
     
-    init(samplingSettings: SamplingSettings) {
+    public init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
         waveGenerator = WaveGenerator(samplingSettings: samplingSettings)
     }
     
-    func on() {
+    public func on() {
         tune.on()
         volume.on()
     }
     
-    func off() {
+    public func off() {
         tune.off()
         volume.off()
     }

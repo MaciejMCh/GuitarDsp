@@ -9,15 +9,13 @@
 import Foundation
 import GuitarDsp
 
-public var bass808xD = Bass808(samplingSettings: AudioInterface.shared().samplingSettings)
-
 let halfToneToScale: (Double) -> Double = {pow(2, $0 / 12)}
 
 public class Bass808: Playing {
     let samplingSettings: SamplingSettings
-    var samplers: [Sampler] = []
+    public var samplers: [Sampler] = []
     
-    lazy var oscilators: [Oscilator] = {
+    public lazy var oscilators: [Oscilator] = {
         let single = Oscilator(samplingSettings: self.samplingSettings)
         single.tune = -12
         single.volume = 1
@@ -38,7 +36,7 @@ public class Bass808: Playing {
 //        return [triple1, triple2, triple3]
     }()
     
-    lazy var effects: [WaveEffect] = {
+    public lazy var effects: [WaveEffect] = {
         let ampWaveEffect = AmpWaveEffect()
         let envelope = EnvelopeFunction()
         envelope.duration = self.samplingSettings.samplesInSecond()
@@ -60,7 +58,7 @@ public class Bass808: Playing {
         return [ampWaveEffect, waveShaper]
     }()
     
-    init(samplingSettings: SamplingSettings) {
+    public init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
     }
     

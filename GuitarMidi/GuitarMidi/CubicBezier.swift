@@ -8,11 +8,16 @@
 
 import Foundation
 
-struct CubicBezier {
-    let p1: CGPoint
-    let p2: CGPoint
+public struct CubicBezier {
+    public let p1: CGPoint
+    public let p2: CGPoint
     
-    func y(x: Double) -> Double {
+    public init(p1: CGPoint, p2: CGPoint) {
+        self.p1 = p1
+        self.p2 = p2
+    }
+    
+    public func y(x: Double) -> Double {
         let f1 = 3 * x * pow(1 - x, 2)
         let f2 = 3 * x * x * (1 - x)
         let f3 = x * x * x
@@ -22,7 +27,7 @@ struct CubicBezier {
 }
 
 extension CubicBezier {
-    static let fadeOut = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
-    static let fadeIn = CubicBezier(p1: .init(x: 1, y: 0), p2: .init(x: 1, y: 0))
-    static let fadeInOut = CubicBezier(p1: .init(x: 1, y: 0), p2: .init(x: 0, y: 1))
+    public static let fadeOut = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
+    public static let fadeIn = CubicBezier(p1: .init(x: 1, y: 0), p2: .init(x: 1, y: 0))
+    public static let fadeInOut = CubicBezier(p1: .init(x: 1, y: 0), p2: .init(x: 0, y: 1))
 }

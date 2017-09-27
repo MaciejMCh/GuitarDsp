@@ -17,9 +17,7 @@ public class Bass808ViewController: NSViewController {
     private var effectViewControllers: [NSViewController] = []
     private var samplersViewControllers: [SamplerViewController] = []
     
-    private var bass808: Bass808 {
-        return bass808xD
-    }
+    var bass808: Bass808!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,12 +86,12 @@ class PlayerView: NSView {
     
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
-        bass808xD.frequency = 100
-        bass808xD.on()
+//        bass808.setFrequency(100)
+//        bass808.on()
     }
     
     override func mouseUp(with event: NSEvent) {
         super.mouseUp(with: event)
-        bass808xD.off()
+//        bass808.off()
     }
 }

@@ -68,4 +68,12 @@ struct EffectsFacory {
     func makeChannelPlayer() -> ChannelPlayerEffect {
         return ChannelPlayerEffect(samplingSettings: samplingSettings)
     }
+    
+    func makeSampler() -> Sampler {
+        return Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/440.wav", samplingSettings: samplingSettings)
+    }
+    
+    func make808() -> Bass808 {
+        return Bass808(samplingSettings: samplingSettings)
+    }
 }

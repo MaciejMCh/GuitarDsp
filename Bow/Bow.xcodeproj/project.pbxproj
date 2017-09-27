@@ -41,11 +41,15 @@
 		C29953B51E8E9BE900CDF481 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29953B41E8E9BE900CDF481 /* Storage.swift */; };
 		C2ADB8721E8C4031001B0EF3 /* SlidersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB8711E8C4031001B0EF3 /* SlidersFactory.swift */; };
 		C2ADB8741E8C47E1001B0EF3 /* EffectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB8731E8C47E1001B0EF3 /* EffectViewModel.swift */; };
+		C2C6180F1F7BE8B00084CAC4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C6180E1F7BE8B00084CAC4 /* Test.swift */; };
 		C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01882A91461F1E88A0E53A76 /* Pods-BowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BowTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BowTests/Pods-BowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		06124A6EE250C5E01B155F5F /* Pods-Bow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bow.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bow/Pods-Bow.release.xcconfig"; sourceTree = "<group>"; };
+		08F5F8DFE224865881F90838 /* Pods-BowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BowTests/Pods-BowTests.release.xcconfig"; sourceTree = "<group>"; };
+		47FC252DEE665F67EF917D61 /* Pods_BowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C4A3906F747571D0D71E1CF /* Pods-Bow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bow/Pods-Bow.debug.xcconfig"; sourceTree = "<group>"; };
 		93EE436A140626A8B1D489A8 /* Pods_Bow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C203174E1E928852008ACFCB /* SearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 		C2ADB8711E8C4031001B0EF3 /* SlidersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidersFactory.swift; sourceTree = "<group>"; };
 		C2ADB8731E8C47E1001B0EF3 /* EffectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectViewModel.swift; sourceTree = "<group>"; };
 		C2C2FA2F1F7AEAD400ED83AA /* GuitarMidiKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarMidiKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-gboowxrazxsddgehsrbqoyrqehfs/Build/Products/Debug/GuitarMidiKit.framework"; sourceTree = "<group>"; };
+		C2C6180E1F7BE8B00084CAC4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDetectingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +111,8 @@
 			children = (
 				7C4A3906F747571D0D71E1CF /* Pods-Bow.debug.xcconfig */,
 				06124A6EE250C5E01B155F5F /* Pods-Bow.release.xcconfig */,
+				01882A91461F1E88A0E53A76 /* Pods-BowTests.debug.xcconfig */,
+				08F5F8DFE224865881F90838 /* Pods-BowTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 				C28ABBEA1E97C2E70050D955 /* SetupViewController.storyboard */,
 				C22F02951F7BB68600B146C3 /* ChannelPlayerTile.storyboard */,
 				C22F02971F7BB69800B146C3 /* ChannelPlayerTileViewController.swift */,
+				C2C6180E1F7BE8B00084CAC4 /* Test.swift */,
 			);
 			path = Bow;
 			sourceTree = "<group>";
@@ -177,6 +185,7 @@
 				C2C2FA2F1F7AEAD400ED83AA /* GuitarMidiKit.framework */,
 				C28CAECF1E8B2098001BADFE /* GuitarDsp.framework */,
 				93EE436A140626A8B1D489A8 /* Pods_Bow.framework */,
+				47FC252DEE665F67EF917D61 /* Pods_BowTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,7 +219,7 @@
 		C26DED511E8AF81400E61B7C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Maciej Chmielewski";
 				TargetAttributes = {
@@ -346,6 +355,7 @@
 				C26AFDDA1E8C7FA000C72E63 /* EffectsOrderViewController.swift in Sources */,
 				C26DED5D1E8AF81400E61B7C /* AppDelegate.swift in Sources */,
 				C26066331E8D9F7100FD381D /* EffectsFactoryViewController.swift in Sources */,
+				C2C6180F1F7BE8B00084CAC4 /* Test.swift in Sources */,
 				C28ABBE91E97C2CE0050D955 /* SetupViewController.swift in Sources */,
 				C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */,
 				C29953B51E8E9BE900CDF481 /* Storage.swift in Sources */,
@@ -426,6 +436,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -468,6 +479,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -483,7 +495,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mch.Bow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -499,7 +510,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mch.Bow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

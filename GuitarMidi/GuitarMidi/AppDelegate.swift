@@ -20,12 +20,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        bass808xD.off()
     }
     
+    func n() {
+        bass808.on()
+        DispatchQueue(label: "xd").asyncAfter(deadline: DispatchTime.now() + 4) {
+            self.f()
+        }
+    }
+    
+    func f() {
+        bass808.off()
+        DispatchQueue(label: "xd").asyncAfter(deadline: DispatchTime.now() + 1) {
+            self.n()
+        }
+    }
+    
+    let bass808 = Bass808(samplingSettings: AudioInterface.shared().samplingSettings)
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let bassController = Bass808ViewController.make()
-        bassController.bass808 = Bass808(samplingSettings: AudioInterface.shared().samplingSettings)
+        bassController.bass808 = bass808
         NSApplication.shared().windows.first!.contentViewController = bassController
-//        let channelPlayerEffect = ChannelPlayerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
-//        let channelPlayerEffect = channelPlayerXd
+        let channelPlayerEffect = ChannelPlayerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
+        channelPlayerEffect.play(channel: bassController.bass808)
+        f()
 //        channelPlayerXd.play(channel: bass808xD)
 //        return
         
@@ -59,8 +76,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let samplingSettings = AudioInterface.shared().samplingSettings
         let processor = Processor(samplingSettings: samplingSettings, tempo: 120)
         let board = Board()
-        let developmentEffect = makeDevelopmentEffect()
-//        let developmentEffect = channelPlayerEffect
+//        let developmentEffect = makeDevelopmentEffect()
+        let developmentEffect = channelPlayerEffect
         board.effects = [developmentEffect]
         processor.activeBoard = board
         

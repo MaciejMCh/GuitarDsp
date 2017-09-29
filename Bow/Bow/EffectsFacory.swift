@@ -72,7 +72,7 @@ struct EffectsFacory {
     }
     
     func makeSampler() -> Sampler {
-        return Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/440.wav", samplingSettings: samplingSettings)
+        return Sampler(sampleFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/440.wav", samplingSettings: samplingSettings)
     }
     
     func make808() -> Bass808 {

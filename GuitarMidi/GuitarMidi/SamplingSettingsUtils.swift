@@ -10,7 +10,7 @@ import Foundation
 import GuitarDsp
 
 extension SamplingSettings {
-    func samplesInSecond() -> Double {
+    public func samplesInSecond() -> Double {
         return Double(frequency)
     }
 }

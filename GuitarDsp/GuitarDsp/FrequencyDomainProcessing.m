@@ -15,7 +15,6 @@
 @property (nonatomic, assign) struct SamplingSettings samplingSettings;
 @property (nonatomic, assign) long fftFrameSize;
 @property (nonatomic, assign) long osamp;
-@property (nonatomic, copy) void (^processing)(int fftLength, float *analysisMagnitudes, float *analysisFrequencies, float *syntesisMagnitudes, float *synthesisFrequencies);
 
 @end
 
@@ -73,18 +72,17 @@
 
 // -----------------------------------------------------------------------------------------------------------------
 
-- (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings fftFrameSize:(long)fftFrameSize osamp:(long)osamp processing:(void (^)(int, float *, float *, float *, float *))processing {
+- (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings fftFrameSize:(long)fftFrameSize osamp:(long)osamp {
     self = [super init];
     
     self.samplingSettings = samplingSettings;
     self.fftFrameSize = fftFrameSize;
     self.osamp = osamp;
-    self.processing = processing;
     
     return self;
 }
 
-- (void)processWithIndata:(float *)indata outdata:(float *)outdata {
+- (void)processWithIndata:(float *)indata outdata:(float *)outdata processing:(void (^)(int fftLength, float *analysisMagnitudes, float *analysisFrequencies, float *syntesisMagnitudes, float *synthesisFrequencies))processing {
     /*
      Routine smbPitchShift(). See top of file for explanation
      Purpose: doing pitch shifting while maintaining duration using the Short
@@ -183,7 +181,7 @@
                 memset(gSynMagn, 0, self.fftFrameSize*sizeof(float));
                 memset(gSynFreq, 0, self.fftFrameSize*sizeof(float));
                 
-                self.processing(fftFrameSize2, gAnaMagn, gAnaFreq, gSynMagn, gSynFreq);
+                processing(fftFrameSize2, gAnaMagn, gAnaFreq, gSynMagn, gSynFreq);
                 
                 /* ***************** SYNTHESIS ******************* */
                 /* this is the synthesis step */
@@ -327,6 +325,17 @@
     return atan2(x, y);
 }
 
+- (void)pitchShift:(float *)indata outdata:(float *)outdata shift:(float)shift {
+    [self processWithIndata:indata outdata:outdata processing:^(int fftLength, float *analysisMagnitudes, float *analysisFrequencies, float *syntesisMagnitudes, float *synthesisFrequencies) {
+        for (int k = 0; k <= fftLength; k++) {
+            int index = k * shift;
+            if (index <= fftLength) {
+                syntesisMagnitudes[index] += analysisMagnitudes[k];
+                synthesisFrequencies[index] = analysisFrequencies[k] * shift;
+            }
+        }
+    }];
+}
 
 // -----------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------

@@ -25,7 +25,16 @@
     self.shift = 0.5;
     
     __weak typeof(self) wSelf = self;
-    self.frequencyDomainProcessing = [[FrequencyDomainProcessing alloc] initWithSamplingSettings:self.samplingSettings fftFrameSize:1024 osamp:32 processing:^(int fftLength, float *analysisMagnitudes, float *analysisFrequencies, float *syntesisMagnitudes, float *synthesisFrequencies) {
+    self.frequencyDomainProcessing = [[FrequencyDomainProcessing alloc] initWithSamplingSettings:self.samplingSettings fftFrameSize:1024 osamp:32];
+    
+    return self;
+}
+
+
+- (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
+    __weak typeof(self) wSelf = self;
+    
+    [self.frequencyDomainProcessing processWithIndata:inputSample.amp outdata:outputBuffer processing:^(int fftLength, float *analysisMagnitudes, float *analysisFrequencies, float *syntesisMagnitudes, float *synthesisFrequencies) {
         for (int k = 0; k <= fftLength; k++) {
             int index = k * self.shift;
             if (index <= fftLength) {
@@ -34,13 +43,6 @@
             }
         }
     }];
-    
-    return self;
-}
-
-
-- (void)processSample:(struct Sample)inputSample intoBuffer:(float *)outputBuffer {
-    [self.frequencyDomainProcessing processWithIndata:inputSample.amp outdata:outputBuffer];
 }
 
 @end

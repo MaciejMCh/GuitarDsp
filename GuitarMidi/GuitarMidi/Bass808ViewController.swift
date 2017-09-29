@@ -30,7 +30,7 @@ public class Bass808ViewController: NSViewController {
     }
     
     @IBAction func addSampler(sender: Any?) {
-        let sampler = Sampler(audioFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/kicks/808-Kicks03.wav", samplingSettings: AudioInterface.shared().samplingSettings)
+        let sampler = Sampler(sampleFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/kicks/808-Kicks03.wav", samplingSettings: AudioInterface.shared().samplingSettings)
         bass808.samplers.append(sampler)
         refreshView()
     }
@@ -86,12 +86,17 @@ class PlayerView: NSView {
     
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
+        ChannelPlayer.xd.setFrequency(100)
+        ChannelPlayer.xd.on()
+//        Sampler.xd.on()
 //        bass808.setFrequency(100)
 //        bass808.on()
     }
     
     override func mouseUp(with event: NSEvent) {
         super.mouseUp(with: event)
+        ChannelPlayer.xd.off()
+//        Sampler.xd.off()
 //        bass808.off()
     }
 }

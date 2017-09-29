@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="hpJ-eE-dXr">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Foldback View Controller-->
+        <scene sceneID="8X0-vx-Lrs">
+            <objects>
+                <viewController id="hpJ-eE-dXr" customClass="FoldbackViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Mv0-zt-7sA">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="68"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box title="Foldback" translatesAutoresizingMaskIntoConstraints="NO" id="SMF-DY-fFT">
+                                <rect key="frame" x="-3" y="-4" width="456" height="72"/>
+                                <view key="contentView" id="L5M-rb-Br9">
+                                    <rect key="frame" x="2" y="2" width="452" height="55"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9L7-RN-K3L">
+                                            <rect key="frame" x="3" y="33" width="300" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="treshold: " id="xRt-Dg-wOg">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <containerView translatesAutoresizingMaskIntoConstraints="NO" id="uMv-lt-Arj">
+                                            <rect key="frame" x="327" y="5" width="120" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="ZhF-Zk-niM"/>
+                                                <constraint firstAttribute="width" constant="120" id="pki-M2-pyG"/>
+                                            </constraints>
+                                            <connections>
+                                                <segue destination="D6h-xH-sDW" kind="embed" id="mUs-PP-3zA"/>
+                                            </connections>
+                                        </containerView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="uMv-lt-Arj" firstAttribute="top" secondItem="9L7-RN-K3L" secondAttribute="top" id="6Tr-25-EgP"/>
+                                        <constraint firstItem="9L7-RN-K3L" firstAttribute="leading" secondItem="L5M-rb-Br9" secondAttribute="leading" constant="5" id="WFN-sk-ac9"/>
+                                        <constraint firstItem="uMv-lt-Arj" firstAttribute="leading" secondItem="9L7-RN-K3L" secondAttribute="trailing" constant="26" id="cUs-kn-mfH"/>
+                                        <constraint firstItem="9L7-RN-K3L" firstAttribute="top" secondItem="L5M-rb-Br9" secondAttribute="top" constant="5" id="dBz-Ls-acy"/>
+                                        <constraint firstAttribute="bottom" secondItem="uMv-lt-Arj" secondAttribute="bottom" constant="5" id="gFi-oP-JAz"/>
+                                        <constraint firstAttribute="trailing" secondItem="uMv-lt-Arj" secondAttribute="trailing" constant="5" id="hjc-ib-yil"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="SMF-DY-fFT" firstAttribute="top" secondItem="Mv0-zt-7sA" secondAttribute="top" id="Iet-sG-ovq"/>
+                            <constraint firstItem="SMF-DY-fFT" firstAttribute="leading" secondItem="Mv0-zt-7sA" secondAttribute="leading" id="UpJ-MF-3fh"/>
+                            <constraint firstAttribute="trailing" secondItem="SMF-DY-fFT" secondAttribute="trailing" id="dc3-qJ-pV9"/>
+                            <constraint firstAttribute="bottom" secondItem="SMF-DY-fFT" secondAttribute="bottom" id="gb1-oH-Gqu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="LA3-qn-kwr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3" y="123"/>
+        </scene>
+        <!--Variable-->
+        <scene sceneID="17J-Ae-MYS">
+            <objects>
+                <controllerPlaceholder storyboardName="Variable" id="D6h-xH-sDW" sceneMemberID="viewController"/>
+                <customObject id="jXV-Zy-URU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3" y="298"/>
+        </scene>
+    </scenes>
+</document>

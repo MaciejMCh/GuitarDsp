@@ -22,18 +22,9 @@ indirect enum TreeElement {
     struct Action {
         let select: () -> Void
         let pick: () -> Void
-        
-//        init<T: LeafRepresentable>(select: @escaping (T) -> Void, pick: @escaping (T) -> Void) {
-//            self.select = {
-//                select($0 as! T)
-//            }
-//            self.pick = {
-//                pick($0 as! T)
-//            }
-//        }
     }
     
-    case branch(Branch, elements: [TreeElement])
+    case branch(Branch, elements: [TreeElement], action: () -> ())
     case leaf(LeafRepresentable, action: Action)
 }
 
@@ -48,7 +39,7 @@ struct FlatTreeElement {
     private static func flatten(treeElement: TreeElement, nestLevel: Int) -> [FlatTreeElement] {
         switch treeElement {
         case .leaf: return [FlatTreeElement(element: treeElement, nest: nestLevel)]
-        case .branch(let branch, let elements):
+        case .branch(let branch, let elements, _):
             var result: [FlatTreeElement] = [FlatTreeElement(element: treeElement, nest: nestLevel)]
             if !branch.open {
                 return result
@@ -95,7 +86,7 @@ class TreeViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
             leafRowView.selectAction = {action.select()}
             leafRowView.pickAction = {action.pick()}
             return leafRowView
-        case .branch(let branch, let elements):
+        case .branch(let branch, let elements, _):
             let branchRowView = tableView.make(withIdentifier: "BranchRowView", owner: nil) as! BranchRowView
             branchRowView.label.stringValue = "\(branch.name) (\(elements.count))"
             branchRowView.leadingConstraint.constant = nestMargin * CGFloat(flatTreeElement.nest)
@@ -114,8 +105,9 @@ class TreeViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         let flatTreeElement = flatTree[row]
-        if case .leaf(let leaf, let action) = flatTreeElement.element {
-            action.select()
+        switch flatTreeElement.element {
+        case .leaf(_, let action): action.select()
+        case .branch(_, _, let action): action()
         }
         return true
     }

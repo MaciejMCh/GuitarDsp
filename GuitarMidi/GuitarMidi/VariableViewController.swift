@@ -65,7 +65,7 @@ class VariableViewController: NSViewController {
 
 class VariableTextField: NSTextField {
     @IBInspectable var minValue: Double = 0
-    @IBInspectable var maxValue: Double = 1
+    @IBInspectable var maxValue: Double = 5
     
     enum State {
         case idle

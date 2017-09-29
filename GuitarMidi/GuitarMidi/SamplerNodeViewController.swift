@@ -16,7 +16,7 @@ class SamplerNodeViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        editButton.title = sampler.audioFilePath.components(separatedBy: "/").last!
+        editButton.title = sampler.sampleFilePath.components(separatedBy: "/").last!
     }
     
     @IBAction func editAction(_ sender: Any) {

@@ -18,6 +18,7 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
     @IBOutlet weak var decayTextField: NSTextField!
     @IBOutlet weak var sustainTextField: NSTextField!
     @IBOutlet weak var releaseTextField: NSTextField!
+    @IBOutlet weak var volumeTextField: NSTextField!
     @IBOutlet weak var attackBezierSwitchButton: NSButton!
     @IBOutlet weak var decayBezierSwitchButton: NSButton!
     @IBOutlet weak var releaseBezierSwitchButton: NSButton!
@@ -41,6 +42,7 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
         decayTextField.stringValue = String(envelopeFunction.decay)
         sustainTextField.stringValue = String(envelopeFunction.sustain)
         releaseTextField.stringValue = String(envelopeFunction.release)
+        volumeTextField.stringValue = String(envelopeFunction.volume)
         
         attackBezierSwitchButton.state = envelopeFunction.attackBezier == nil ? 0 : 1
         decayBezierSwitchButton.state = envelopeFunction.decayBezier == nil ? 0 : 1
@@ -107,6 +109,7 @@ class EnvelopeViewController: NSViewController, HasSamplingSettings {
         envelopeFunction.decay = Double(decayTextField.stringValue) ?? 0
         envelopeFunction.sustain = Double(sustainTextField.stringValue) ?? 0
         envelopeFunction.release = Double(releaseTextField.stringValue) ?? 0
+        envelopeFunction.volume =  Double(volumeTextField.stringValue) ?? 0
         
         envelopeView.needsDisplay = true
         envelopeUpdate?()
@@ -196,6 +199,7 @@ extension EnvelopeFunction {
         cloneEnvelopeFunction.hold = hold
         cloneEnvelopeFunction.decay = decay
         cloneEnvelopeFunction.delay = delay
+        cloneEnvelopeFunction.volume = volume
         cloneEnvelopeFunction.attack = attack
         cloneEnvelopeFunction.sustain = sustain
         cloneEnvelopeFunction.release = release

@@ -13,6 +13,7 @@ struct FileBrowser {
     let extensions: [String]
     let selectAction: (File) -> Void
     let pickAction: (File) -> Void
+    let selectDirectory: (String) -> Void
     
     func makeTree() -> TreeElement {
         return treeElementAtPath(root)
@@ -36,7 +37,10 @@ struct FileBrowser {
         }
         
         if let children = try? FileManager.default.contentsOfDirectory(atPath: path) {
-            return TreeElement.branch(TreeElement.Branch(name: path.components(separatedBy: "/").last ?? path), elements: children.map{self.treeElementAtPath(path + "/" + $0)})
+            let branch = TreeElement.Branch(name: path.components(separatedBy: "/").last ?? path)
+            return TreeElement.branch(branch, elements: children.map{self.treeElementAtPath(path + "/" + $0)}) {
+                self.selectDirectory(path)
+            }
         }
         
         return "" as! TreeElement
@@ -52,7 +56,7 @@ struct File: LeafRepresentable {
 }
 
 extension FileBrowser {
-    static func samples(selectAction: @escaping (File) -> Void, pickAction: @escaping (File) -> Void) -> FileBrowser {
-        return FileBrowser(root: "/Users/maciejchmielewski/Documents/GuitarDsp/samples", extensions: ["wav"], selectAction: selectAction, pickAction: pickAction)
+    static func samples(selectAction: @escaping (File) -> Void, pickAction: @escaping (File) -> Void, directoryAction: @escaping (String) -> Void) -> FileBrowser {
+        return FileBrowser(root: "/Users/maciejchmielewski/Documents/GuitarDsp/samples", extensions: ["wav"], selectAction: selectAction, pickAction: pickAction, selectDirectory: directoryAction)
     }
 }

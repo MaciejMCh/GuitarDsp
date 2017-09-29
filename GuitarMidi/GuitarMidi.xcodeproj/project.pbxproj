@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B48E5AACBB3EB6906900A289 /* Pods_GuitarMidi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1239878A4B320DB80C6464 /* Pods_GuitarMidi.framework */; };
+		C29547A01F7D9FC300D8EEF0 /* WaveDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */; };
+		C29547A21F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29547A11F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift */; };
+		C29547A41F7DA15000D8EEF0 /* Foldback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29547A31F7DA15000D8EEF0 /* Foldback.storyboard */; };
 		C2C19A891F7AFE3500FDE938 /* InterfaceBuilderInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82B61F7034B900F79116 /* InterfaceBuilderInstance.swift */; };
 		C2C19A8A1F7AFE4400FDE938 /* MidiOutputEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */; };
 		C2C19A8B1F7AFE4400FDE938 /* PitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CE3751F6094FF002B9567 /* PitchDetector.swift */; };
@@ -105,6 +108,9 @@
 		C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiOutputEffect.swift; sourceTree = "<group>"; };
 		C26AD8E51F7556A9005512E0 /* FileBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowser.swift; sourceTree = "<group>"; };
 		C28CE3751F6094FF002B9567 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
+		C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveDistortion.swift; sourceTree = "<group>"; };
+		C29547A11F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldbackEffectViewController.swift; sourceTree = "<group>"; };
+		C29547A31F7DA15000D8EEF0 /* Foldback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Foldback.storyboard; sourceTree = "<group>"; };
 		C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeDetector.swift; sourceTree = "<group>"; };
 		C2A4CD041F753B0D001F8D56 /* TreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewController.swift; sourceTree = "<group>"; };
 		C2A4CD061F7546C2001F8D56 /* Tree.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tree.storyboard; sourceTree = "<group>"; };
@@ -218,6 +224,9 @@
 				C2F63BD21F7988710046A7D5 /* ChannelPlayerEffect.swift */,
 				C2ECD25E1F7C20880037780F /* SamplerNodeViewController.swift */,
 				C2ECD2601F7C223D0037780F /* SamplerNode.storyboard */,
+				C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */,
+				C29547A11F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift */,
+				C29547A31F7DA15000D8EEF0 /* Foldback.storyboard */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -309,6 +318,7 @@
 				C2C19AA31F7AFE4400FDE938 /* Test.storyboard in Resources */,
 				C2C19A911F7AFE4400FDE938 /* Oscilator.storyboard in Resources */,
 				C2C19A931F7AFE4400FDE938 /* Variable.storyboard in Resources */,
+				C29547A41F7DA15000D8EEF0 /* Foldback.storyboard in Resources */,
 				C2C19AA71F7AFE4400FDE938 /* Sampler.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +401,7 @@
 				C2C19AA41F7AFE4400FDE938 /* TreeViewController.swift in Sources */,
 				C2C19A8B1F7AFE4400FDE938 /* PitchDetector.swift in Sources */,
 				C2C19A8E1F7AFE4400FDE938 /* StrokeDetector.swift in Sources */,
+				C29547A21F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift in Sources */,
 				C2C19A8D1F7AFE4400FDE938 /* NoteIndexIntegrator.swift in Sources */,
 				C2C19AAA1F7AFE5300FDE938 /* WaveGenerator.swift in Sources */,
 				C2C19A9D1F7AFE4400FDE938 /* WaveEffectControllers.swift in Sources */,
@@ -413,6 +424,7 @@
 				C2C19AAE1F7AFE5300FDE938 /* WaveEffect.swift in Sources */,
 				C2C19AA61F7AFE4400FDE938 /* FileBrowser.swift in Sources */,
 				C2C19A8A1F7AFE4400FDE938 /* MidiOutputEffect.swift in Sources */,
+				C29547A01F7D9FC300D8EEF0 /* WaveDistortion.swift in Sources */,
 				C2C19AAB1F7AFE5300FDE938 /* FunctionVariable.swift in Sources */,
 				C2C19AAF1F7AFE5300FDE938 /* Oscilator.swift in Sources */,
 				C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */,

@@ -20,7 +20,12 @@ protocol MidiPlayer: Playing {
 }
 
 public class ChannelPlayer: MidiPlayer {
+    static var xd: ChannelPlayer!
     public var channels: [Channel] = []
+    
+    init() {
+        ChannelPlayer.xd = self
+    }
     
     public func setFrequency(_ frequency: Double) {
         for channel in channels {
@@ -65,13 +70,13 @@ public class ChannelPlayerEffect: NSObject, Effect {
             buffer[i] = inputSample.amp.advanced(by: i).pointee
         }
         
-        for event in midiOutput.detectEvents(buffer: buffer) {
-            switch event {
-            case .on: channelPlayer.on()
-            case .off: channelPlayer.off()
-            case .frequency(let frequency): channelPlayer.setFrequency(frequency)
-            }
-        }
+    //        for event in midiOutput.detectEvents(buffer: buffer) {
+    //            switch event {
+    //            case .on: channelPlayer.on()
+    //            case .off: channelPlayer.off()
+    //            case .frequency(let frequency): channelPlayer.setFrequency(frequency)
+    //            }
+    //        }
         
         for i in 0..<Int(samplingSettings.framesPerPacket) {
             outputBuffer.advanced(by: i).pointee = Float(channelPlayer.nextSample())

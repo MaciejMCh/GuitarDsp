@@ -23,9 +23,13 @@ class SamplerViewController: NSViewController {
         if let treeViewController = segue.destinationController as? TreeViewController {
             fileTreeViewController = treeViewController
             treeViewController.tree = FileBrowser.samples(selectAction: { [weak self] file in
-                self?.pickAudioFile(path: file.path)
+                self?.pickSampleFile(path: file.path)
             }, pickAction: { [weak self] file in
-                self?.pickAudioFile(path: file.path)
+                self?.pickSampleFile(path: file.path)
+            }, directoryAction: {[weak self] directoryPath in
+                if directoryPath.hasSuffix(".sampleset") {
+                    self?.pickSampleFile(path: directoryPath)
+                }
             }).makeTree()
         }
         
@@ -70,7 +74,7 @@ class SamplerViewController: NSViewController {
         for i in 1..<indicatorsCount + 1 {
             let x = CGFloat(spacing * i)
             let progress = Double(x) / Double(length)
-            let timeInSeconds = progress * Double(sampler.audioFile.duration)
+            let timeInSeconds = progress * Double(sampler.player.duration)
             
             linesPath.move(to: NSPoint(x: x, y: 0))
             linesPath.line(to: NSPoint(x: x, y: CGFloat(height)))
@@ -117,15 +121,15 @@ class SamplerViewController: NSViewController {
         waveView.layer?.addSublayer(layer)
     }
     
-    private func pickAudioFile(path: String) {
-        sampler.audioFilePath = path
+    private func pickSampleFile(path: String) {
+        sampler.sampleFilePath = path
         redrawWave()
         sampler.on()
     }
     
     private func redrawWave() {
         guard let volumeEnvelope = (sampler.volume as? EnvelopeFunction)?.makeClone() else {return}
-        let drySamples = sampler.audioFile.samples
+        let drySamples = sampler.player.samplesForView
         
         var values: [Double] = []
         for drySample in drySamples {

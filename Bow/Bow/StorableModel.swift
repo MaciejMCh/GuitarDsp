@@ -149,7 +149,7 @@ extension EffectPrototype: JsonObjectRepresentable {
     static func samplerFromJson(_ json: JsonObject) -> Sampler {
         let decoder = JSONDecoder(object: json)
         let sampler = effectsFactory.makeSampler()
-        sampler.audioFilePath = try! decoder.decode("audio_file_path")
+        sampler.sampleFilePath = try! decoder.decode("audio_file_path")
         sampler.volume = functionVariableFromJson(json["volume"] as! JsonObject)
         return sampler
     }
@@ -166,6 +166,7 @@ extension EffectPrototype: JsonObjectRepresentable {
             envelope.decay = try! decoder.decode("decay") as Double
             envelope.sustain = try! decoder.decode("sustain") as Double
             envelope.release = try! decoder.decode("release") as Double
+            envelope.volume = try! decoder.decode("volume") as Double
             if let attackBezierJsonObject = json["attack_bezier"] as? JsonObject {
                 envelope.attackBezier = cubicBezierFromJson(attackBezierJsonObject)
             } else {
@@ -257,7 +258,7 @@ extension EffectPrototype: JsonObjectRepresentable {
         if let sampler = channel as? Sampler {
             return [
                 "type": "sampler",
-                "audio_file_path": sampler.audioFilePath,
+                "audio_file_path": sampler.sampleFilePath,
                 "volume": functionVariableConfiguration(functionVariable: sampler.volume)
             ]
         }
@@ -305,7 +306,8 @@ extension EffectPrototype: JsonObjectRepresentable {
                                       "decay": envelope.decay,
                                       "sustain": envelope.sustain,
                                       "release": envelope.release,
-                                      "duration": envelope.duration]
+                                      "duration": envelope.duration,
+                                      "volume": envelope.volume]
             if let attackBezier = envelope.attackBezier {
                 result["attack_bezier"] = cubicBezierConfiguration(attackBezier)
             }

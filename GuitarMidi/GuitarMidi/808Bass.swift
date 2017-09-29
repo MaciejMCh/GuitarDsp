@@ -46,6 +46,7 @@ public class Bass808: Playing, MidiPlayer {
         envelope.decay = 2
         envelope.sustain = 0
         envelope.release = 0.15
+        envelope.volume = 1.0
         envelope.attackBezier = CubicBezier(p1: .init(x: 1, y: 0), p2: .init(x: 1, y: 0))
         envelope.decayBezier = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
         envelope.releaseBezier = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
@@ -54,8 +55,10 @@ public class Bass808: Playing, MidiPlayer {
         let waveShaper = WaveShaper()
         waveShaper.cubicBezier = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
         
+        let foldback = FoldbackWaveEffect(treshold: 0.8)
+        
 //        return [ampWaveEffect]
-        return [ampWaveEffect, waveShaper]
+        return [waveShaper, foldback, ampWaveEffect]
     }()
     
     public init(samplingSettings: SamplingSettings) {

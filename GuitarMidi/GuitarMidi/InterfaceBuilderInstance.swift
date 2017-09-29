@@ -41,3 +41,4 @@ extension WaveShaperNodeViewController: InterfaceBuilderInstance {static var int
 extension SamplerViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Sampler"}}
 extension Bass808ViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Bass808"}}
 extension SamplerNodeViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "SamplerNode"}}
+extension FoldbackViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Foldback"}}

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import GuitarDsp
+import GuitarMidi
 
 public class EnvelopeFunction: FunctionVariable {
     enum State {
@@ -14,13 +16,14 @@ public class EnvelopeFunction: FunctionVariable {
         case off(releaseStartTime: Double, releaseStartValue: Double)
     }
     
-    public var duration: Double = 100000
+    public var duration: Double = AudioInterface.shared().samplingSettings.samplesInSecond()
     public var delay: Double = 0
     public var attack: Double = 0.1
     public var hold: Double = 0.3
     public var decay: Double = 0.2
     public var sustain: Double = 0.4
     public var release: Double = 0.3
+    public var volume: Double = 1.0
     
     public var attackBezier: CubicBezier? = .fadeOut
     public var decayBezier: CubicBezier? = .fadeOut
@@ -54,6 +57,7 @@ public class EnvelopeFunction: FunctionVariable {
             return (pointer - range.lowerBound) / (range.upperBound - range.lowerBound)
         }
         
+        let envelopeOutput: Double
         switch state {
         case .on:
             let delayTime = 0..<delay * duration
@@ -62,23 +66,23 @@ public class EnvelopeFunction: FunctionVariable {
             let decayTime = holdTime.upperBound..<holdTime.upperBound + decay * duration
             
             switch time {
-            case delayTime: return 0
+            case delayTime: envelopeOutput = 0
             case attackTime:
                 let progress = progress(attackTime, time)
                 if let attackBezier = attackBezier {
-                    return attackBezier.y(x: progress)
+                    envelopeOutput = attackBezier.y(x: progress)
                 } else {
-                    return progress
+                    envelopeOutput = progress
                 }
-            case holdTime: return 1
+            case holdTime: envelopeOutput = 1
             case decayTime:
                 let progress = progress(decayTime, time)
                 if let decayBezier = decayBezier {
-                    return 1 - (decayBezier.y(x: progress) * (1 - sustain))
+                    envelopeOutput = 1 - (decayBezier.y(x: progress) * (1 - sustain))
                 } else {
-                    return 1 - (progress * (1 - sustain))
+                    envelopeOutput = 1 - (progress * (1 - sustain))
                 }
-            default: return sustain
+            default: envelopeOutput = sustain
             }
         case .off(let releaseStartTime, let releaseStartValue):
             let releaseTime = releaseStartTime..<releaseStartTime + release * duration
@@ -87,14 +91,14 @@ public class EnvelopeFunction: FunctionVariable {
             case releaseTime:
                 let progress = progress(releaseTime, time)
                 if let releaseBezier = releaseBezier {
-                    return releaseStartValue * (1 - releaseBezier.y(x: progress))
+                    envelopeOutput = releaseStartValue * (1 - releaseBezier.y(x: progress))
                 } else {
-                    return releaseStartValue * (1 - progress)
+                    envelopeOutput = releaseStartValue * (1 - progress)
                 }
-            default: return 0
+            default: envelopeOutput = 0
             }
         }
-        
+        return envelopeOutput * volume
         
     }
 }

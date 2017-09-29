@@ -23,6 +23,12 @@ struct WaveEffectControllers {
             return waveShaperController
         }
         
+        if let foldback = waveEffect as? FoldbackWaveEffect {
+            let foldbackViewController = FoldbackViewController.make()
+            foldbackViewController.foldbackEffect = foldback
+            return foldbackViewController
+        }
+        
         return "" as! NSViewController
     }
 }

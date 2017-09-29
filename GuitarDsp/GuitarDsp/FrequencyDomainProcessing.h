@@ -13,13 +13,14 @@
 
 - (instancetype)initWithSamplingSettings:(struct SamplingSettings)samplingSettings
                             fftFrameSize:(long)fftFrameSize
-                                   osamp:(long)osamp
-                              processing:(void (^)(int fftLength,
-                                                   float *analysisMagnitudes,
-                                                   float *analysisFrequencies,
-                                                   float *syntesisMagnitudes,
-                                                   float *synthesisFrequencies))processing;
+                                   osamp:(long)osamp;
 
-- (void)processWithIndata:(float *)indata outdata:(float *)outdata;
+- (void)processWithIndata:(float *)indata outdata:(float *)outdata processing:(void (^)(int fftLength,
+                                                                                        float *analysisMagnitudes,
+                                                                                        float *analysisFrequencies,
+                                                                                        float *syntesisMagnitudes,
+                                                                                        float *synthesisFrequencies))processing;
+
+- (void)pitchShift:(float *)indata outdata:(float *)outdata shift:(float)shift;
 
 @end

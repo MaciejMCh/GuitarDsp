@@ -31,7 +31,7 @@
 - (void)setupTickBuffer {
     self.tickBuffer = malloc(self.samplingSettings.packetByteSize);
     for (int i = 0; i < 10000; i++) {
-        self.tickBuffer[i] = 0;
+        self.tickBuffer[i] = sin(i * 0.1);
     }
 //    [self openFileWithFilePathURL:[[NSBundle mainBundle] URLForResource:@"simple-drum-beat" withExtension:@"wav"]];
 }

@@ -25,7 +25,7 @@
     self.samplingSettings = samplingSettings;
     _tempo = tempo;
     [self setupBuffers];
-//    [self setupMetronome];
+    [self setupMetronome];
     return self;
 }
 

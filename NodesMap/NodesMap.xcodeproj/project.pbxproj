@@ -1,0 +1,1181 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2295F7CE7CCAC3D17FA2FE0E /* Pods_NodesMap_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166A5CFFFC28F28D57392255 /* Pods_NodesMap_iOS.framework */; };
+		69F3BACDFE0ADA2A3E8F219D /* Pods_NodesMap_watchOS_App_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E1C4E18FB9A73B81E98406 /* Pods_NodesMap_watchOS_App_Extension.framework */; };
+		6BD544D47D5934C2CDF986B7 /* Pods_NodesMap_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B655CD12FAA915963F4269 /* Pods_NodesMap_tvOS.framework */; };
+		C2614F2B1F7E4D9900FEF64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F2A1F7E4D9900FEF64F /* AppDelegate.swift */; };
+		C2614F2D1F7E4D9900FEF64F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F2C1F7E4D9900FEF64F /* GameViewController.swift */; };
+		C2614F301F7E4D9900FEF64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2614F2E1F7E4D9900FEF64F /* Main.storyboard */; };
+		C2614F331F7E4D9900FEF64F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2614F311F7E4D9900FEF64F /* LaunchScreen.storyboard */; };
+		C2614F381F7E4D9900FEF64F /* NodesMap.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C2614F371F7E4D9900FEF64F /* NodesMap.app */; };
+		C2614F3E1F7E4D9900FEF64F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2614F3C1F7E4D9900FEF64F /* Interface.storyboard */; };
+		C2614F451F7E4D9900FEF64F /* NodesMap Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C2614F441F7E4D9900FEF64F /* NodesMap Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C2614F4A1F7E4D9900FEF64F /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F491F7E4D9900FEF64F /* InterfaceController.swift */; };
+		C2614F4C1F7E4D9900FEF64F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F4B1F7E4D9900FEF64F /* ExtensionDelegate.swift */; };
+		C2614F551F7E4D9900FEF64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F541F7E4D9900FEF64F /* AppDelegate.swift */; };
+		C2614F571F7E4D9900FEF64F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F561F7E4D9900FEF64F /* GameViewController.swift */; };
+		C2614F5A1F7E4D9900FEF64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2614F581F7E4D9900FEF64F /* Main.storyboard */; };
+		C2614F631F7E4D9900FEF64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F621F7E4D9900FEF64F /* AppDelegate.swift */; };
+		C2614F651F7E4D9900FEF64F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F641F7E4D9900FEF64F /* GameViewController.swift */; };
+		C2614F681F7E4D9900FEF64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2614F661F7E4D9900FEF64F /* Main.storyboard */; };
+		C2614F6A1F7E4D9900FEF64F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2614F1F1F7E4D9900FEF64F /* Actions.sks */; };
+		C2614F6B1F7E4D9900FEF64F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2614F1F1F7E4D9900FEF64F /* Actions.sks */; };
+		C2614F6C1F7E4D9900FEF64F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2614F1F1F7E4D9900FEF64F /* Actions.sks */; };
+		C2614F6D1F7E4D9900FEF64F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2614F201F7E4D9900FEF64F /* GameScene.sks */; };
+		C2614F6E1F7E4D9900FEF64F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2614F201F7E4D9900FEF64F /* GameScene.sks */; };
+		C2614F6F1F7E4D9900FEF64F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2614F201F7E4D9900FEF64F /* GameScene.sks */; };
+		C2614F701F7E4D9900FEF64F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2614F201F7E4D9900FEF64F /* GameScene.sks */; };
+		C2614F711F7E4D9900FEF64F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F211F7E4D9900FEF64F /* GameScene.swift */; };
+		C2614F721F7E4D9900FEF64F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F211F7E4D9900FEF64F /* GameScene.swift */; };
+		C2614F731F7E4D9900FEF64F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F211F7E4D9900FEF64F /* GameScene.swift */; };
+		C2614F741F7E4D9900FEF64F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2614F211F7E4D9900FEF64F /* GameScene.swift */; };
+		C2614F751F7E4D9900FEF64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2614F221F7E4D9900FEF64F /* Assets.xcassets */; };
+		C2614F761F7E4D9900FEF64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2614F221F7E4D9900FEF64F /* Assets.xcassets */; };
+		C2614F771F7E4D9900FEF64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2614F221F7E4D9900FEF64F /* Assets.xcassets */; };
+		C2614F781F7E4D9900FEF64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2614F221F7E4D9900FEF64F /* Assets.xcassets */; };
+		C28309BF1F8417AC0061FCC6 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28309BE1F8417AC0061FCC6 /* Test.swift */; };
+		C28309C01F841A1C0061FCC6 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28309BE1F8417AC0061FCC6 /* Test.swift */; };
+		DE25E1F07E3A5B75CC067EBF /* Pods_NodesMap_watchOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AA3AC37A2A6940681BDEB2 /* Pods_NodesMap_watchOS_App.framework */; };
+		EDAB96A4C66C7A6D619D774D /* Pods_NodesMap_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50364BF2791D22E38A009A84 /* Pods_NodesMap_macOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C2614F391F7E4D9900FEF64F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2614F1A1F7E4D9900FEF64F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2614F361F7E4D9900FEF64F;
+			remoteInfo = "NodesMap watchOS App";
+		};
+		C2614F461F7E4D9900FEF64F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2614F1A1F7E4D9900FEF64F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2614F431F7E4D9900FEF64F;
+			remoteInfo = "NodesMap watchOS App Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C2614F7E1F7E4D9900FEF64F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C2614F451F7E4D9900FEF64F /* NodesMap Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2614F821F7E4D9900FEF64F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C2614F381F7E4D9900FEF64F /* NodesMap.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		102D26837911A31B9CE2B562 /* Pods-NodesMap watchOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodesMap watchOS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-NodesMap watchOS App/Pods-NodesMap watchOS App.release.xcconfig"; sourceTree = "<group>"; };
+		166A5CFFFC28F28D57392255 /* Pods_NodesMap_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NodesMap_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DA22F3102AB6346C7B50007 /* Pods-NodesMap macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodesMap macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-NodesMap macOS/Pods-NodesMap macOS.release.xcconfig"; sourceTree = "<group>"; };
+		47E85436AE761638434E30FC /* Pods-NodesMap tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodesMap tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-NodesMap tvOS/Pods-NodesMap tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		4DAAA1B5836A365A1261E8A0 /* Pods-NodesMap iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodesMap iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NodesMap iOS/Pods-NodesMap iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		50364BF2791D22E38A009A84 /* Pods_NodesMap_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NodesMap_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		507CAAF1B4063B150697BA96 /* Pods-NodesMap macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodesMap macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NodesMap macOS/Pods-NodesMap macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		669085FD5204F9BAA4367502 /* Pods-NodesMap watchOS App Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodesMap watchOS App Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-NodesMap watchOS App Extension/Pods-NodesMap watchOS App Extension.release.xcconfig"; sourceTree = "<group>"; };
+		71B655CD12FAA915963F4269 /* Pods_NodesMap_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NodesMap_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86D14FB521BF95364D9893E4 /* Pods-NodesMap iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodesMap iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-NodesMap iOS/Pods-NodesMap iOS.release.xcconfig"; sourceTree = "<group>"; };
+		9B048F380157DA89CCBF552C /* Pods-NodesMap tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodesMap tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NodesMap tvOS/Pods-NodesMap tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A6297E75E1F39DF024898FB7 /* Pods-NodesMap watchOS App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodesMap watchOS App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NodesMap watchOS App/Pods-NodesMap watchOS App.debug.xcconfig"; sourceTree = "<group>"; };
+		B8E1C4E18FB9A73B81E98406 /* Pods_NodesMap_watchOS_App_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NodesMap_watchOS_App_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCB3C568C1C1B5098E05BAA2 /* Pods-NodesMap watchOS App Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodesMap watchOS App Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NodesMap watchOS App Extension/Pods-NodesMap watchOS App Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		C2614F1F1F7E4D9900FEF64F /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		C2614F201F7E4D9900FEF64F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		C2614F211F7E4D9900FEF64F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		C2614F221F7E4D9900FEF64F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2614F271F7E4D9900FEF64F /* NodesMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NodesMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2614F2A1F7E4D9900FEF64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C2614F2C1F7E4D9900FEF64F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		C2614F2F1F7E4D9900FEF64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2614F321F7E4D9900FEF64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C2614F341F7E4D9900FEF64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2614F371F7E4D9900FEF64F /* NodesMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NodesMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2614F3D1F7E4D9900FEF64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C2614F3F1F7E4D9900FEF64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2614F441F7E4D9900FEF64F /* NodesMap Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NodesMap Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2614F491F7E4D9900FEF64F /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C2614F4B1F7E4D9900FEF64F /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		C2614F4D1F7E4D9900FEF64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2614F521F7E4D9900FEF64F /* NodesMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NodesMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2614F541F7E4D9900FEF64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C2614F561F7E4D9900FEF64F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		C2614F591F7E4D9900FEF64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2614F5B1F7E4D9900FEF64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2614F601F7E4D9900FEF64F /* NodesMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NodesMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2614F621F7E4D9900FEF64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C2614F641F7E4D9900FEF64F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		C2614F671F7E4D9900FEF64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2614F691F7E4D9900FEF64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C28309BE1F8417AC0061FCC6 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		C5AA3AC37A2A6940681BDEB2 /* Pods_NodesMap_watchOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NodesMap_watchOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C2614F241F7E4D9900FEF64F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2295F7CE7CCAC3D17FA2FE0E /* Pods_NodesMap_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2614F411F7E4D9900FEF64F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69F3BACDFE0ADA2A3E8F219D /* Pods_NodesMap_watchOS_App_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2614F4F1F7E4D9900FEF64F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BD544D47D5934C2CDF986B7 /* Pods_NodesMap_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2614F5D1F7E4D9900FEF64F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDAB96A4C66C7A6D619D774D /* Pods_NodesMap_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA152EBCE8177B69848C4D47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE25E1F07E3A5B75CC067EBF /* Pods_NodesMap_watchOS_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		939791E1719CE3A0C89E86D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DAAA1B5836A365A1261E8A0 /* Pods-NodesMap iOS.debug.xcconfig */,
+				86D14FB521BF95364D9893E4 /* Pods-NodesMap iOS.release.xcconfig */,
+				507CAAF1B4063B150697BA96 /* Pods-NodesMap macOS.debug.xcconfig */,
+				1DA22F3102AB6346C7B50007 /* Pods-NodesMap macOS.release.xcconfig */,
+				9B048F380157DA89CCBF552C /* Pods-NodesMap tvOS.debug.xcconfig */,
+				47E85436AE761638434E30FC /* Pods-NodesMap tvOS.release.xcconfig */,
+				A6297E75E1F39DF024898FB7 /* Pods-NodesMap watchOS App.debug.xcconfig */,
+				102D26837911A31B9CE2B562 /* Pods-NodesMap watchOS App.release.xcconfig */,
+				BCB3C568C1C1B5098E05BAA2 /* Pods-NodesMap watchOS App Extension.debug.xcconfig */,
+				669085FD5204F9BAA4367502 /* Pods-NodesMap watchOS App Extension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9954E9B0E58D132F2E3A33EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				166A5CFFFC28F28D57392255 /* Pods_NodesMap_iOS.framework */,
+				50364BF2791D22E38A009A84 /* Pods_NodesMap_macOS.framework */,
+				71B655CD12FAA915963F4269 /* Pods_NodesMap_tvOS.framework */,
+				C5AA3AC37A2A6940681BDEB2 /* Pods_NodesMap_watchOS_App.framework */,
+				B8E1C4E18FB9A73B81E98406 /* Pods_NodesMap_watchOS_App_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2614F191F7E4D9900FEF64F = {
+			isa = PBXGroup;
+			children = (
+				C2614F1E1F7E4D9900FEF64F /* NodesMap Shared */,
+				C2614F291F7E4D9900FEF64F /* NodesMap iOS */,
+				C2614F3B1F7E4D9900FEF64F /* NodesMap watchOS App */,
+				C2614F481F7E4D9900FEF64F /* NodesMap watchOS App Extension */,
+				C2614F531F7E4D9900FEF64F /* NodesMap tvOS */,
+				C2614F611F7E4D9900FEF64F /* NodesMap macOS */,
+				C2614F281F7E4D9900FEF64F /* Products */,
+				939791E1719CE3A0C89E86D6 /* Pods */,
+				9954E9B0E58D132F2E3A33EA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C2614F1E1F7E4D9900FEF64F /* NodesMap Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C2614F1F1F7E4D9900FEF64F /* Actions.sks */,
+				C2614F201F7E4D9900FEF64F /* GameScene.sks */,
+				C2614F211F7E4D9900FEF64F /* GameScene.swift */,
+				C2614F221F7E4D9900FEF64F /* Assets.xcassets */,
+				C28309BE1F8417AC0061FCC6 /* Test.swift */,
+			);
+			path = "NodesMap Shared";
+			sourceTree = "<group>";
+		};
+		C2614F281F7E4D9900FEF64F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2614F271F7E4D9900FEF64F /* NodesMap.app */,
+				C2614F371F7E4D9900FEF64F /* NodesMap.app */,
+				C2614F441F7E4D9900FEF64F /* NodesMap Extension.appex */,
+				C2614F521F7E4D9900FEF64F /* NodesMap.app */,
+				C2614F601F7E4D9900FEF64F /* NodesMap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2614F291F7E4D9900FEF64F /* NodesMap iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C2614F2A1F7E4D9900FEF64F /* AppDelegate.swift */,
+				C2614F2C1F7E4D9900FEF64F /* GameViewController.swift */,
+				C2614F2E1F7E4D9900FEF64F /* Main.storyboard */,
+				C2614F311F7E4D9900FEF64F /* LaunchScreen.storyboard */,
+				C2614F341F7E4D9900FEF64F /* Info.plist */,
+			);
+			path = "NodesMap iOS";
+			sourceTree = "<group>";
+		};
+		C2614F3B1F7E4D9900FEF64F /* NodesMap watchOS App */ = {
+			isa = PBXGroup;
+			children = (
+				C2614F3C1F7E4D9900FEF64F /* Interface.storyboard */,
+				C2614F3F1F7E4D9900FEF64F /* Info.plist */,
+			);
+			path = "NodesMap watchOS App";
+			sourceTree = "<group>";
+		};
+		C2614F481F7E4D9900FEF64F /* NodesMap watchOS App Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C2614F491F7E4D9900FEF64F /* InterfaceController.swift */,
+				C2614F4B1F7E4D9900FEF64F /* ExtensionDelegate.swift */,
+				C2614F4D1F7E4D9900FEF64F /* Info.plist */,
+			);
+			path = "NodesMap watchOS App Extension";
+			sourceTree = "<group>";
+		};
+		C2614F531F7E4D9900FEF64F /* NodesMap tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				C2614F541F7E4D9900FEF64F /* AppDelegate.swift */,
+				C2614F561F7E4D9900FEF64F /* GameViewController.swift */,
+				C2614F581F7E4D9900FEF64F /* Main.storyboard */,
+				C2614F5B1F7E4D9900FEF64F /* Info.plist */,
+			);
+			path = "NodesMap tvOS";
+			sourceTree = "<group>";
+		};
+		C2614F611F7E4D9900FEF64F /* NodesMap macOS */ = {
+			isa = PBXGroup;
+			children = (
+				C2614F621F7E4D9900FEF64F /* AppDelegate.swift */,
+				C2614F641F7E4D9900FEF64F /* GameViewController.swift */,
+				C2614F661F7E4D9900FEF64F /* Main.storyboard */,
+				C2614F691F7E4D9900FEF64F /* Info.plist */,
+			);
+			path = "NodesMap macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C2614F261F7E4D9900FEF64F /* NodesMap iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2614F831F7E4D9900FEF64F /* Build configuration list for PBXNativeTarget "NodesMap iOS" */;
+			buildPhases = (
+				3DD712FECFD6D1BF9C46D650 /* [CP] Check Pods Manifest.lock */,
+				C2614F231F7E4D9900FEF64F /* Sources */,
+				C2614F241F7E4D9900FEF64F /* Frameworks */,
+				C2614F251F7E4D9900FEF64F /* Resources */,
+				C2614F821F7E4D9900FEF64F /* Embed Watch Content */,
+				0D7383018F24ACA39ADF8462 /* [CP] Embed Pods Frameworks */,
+				14E22289F9E4F2D7E6CAD241 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2614F3A1F7E4D9900FEF64F /* PBXTargetDependency */,
+			);
+			name = "NodesMap iOS";
+			productName = "NodesMap iOS";
+			productReference = C2614F271F7E4D9900FEF64F /* NodesMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C2614F361F7E4D9900FEF64F /* NodesMap watchOS App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2614F7F1F7E4D9900FEF64F /* Build configuration list for PBXNativeTarget "NodesMap watchOS App" */;
+			buildPhases = (
+				EC95D4E85D7A4A8D4BE19E70 /* [CP] Check Pods Manifest.lock */,
+				C2614F351F7E4D9900FEF64F /* Resources */,
+				C2614F7E1F7E4D9900FEF64F /* Embed App Extensions */,
+				CA152EBCE8177B69848C4D47 /* Frameworks */,
+				4CD6C848FA634DBC216E0C77 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2614F471F7E4D9900FEF64F /* PBXTargetDependency */,
+			);
+			name = "NodesMap watchOS App";
+			productName = "NodesMap watchOS App";
+			productReference = C2614F371F7E4D9900FEF64F /* NodesMap.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		C2614F431F7E4D9900FEF64F /* NodesMap watchOS App Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2614F7B1F7E4D9900FEF64F /* Build configuration list for PBXNativeTarget "NodesMap watchOS App Extension" */;
+			buildPhases = (
+				53D6908F5FD09975D7B5BE37 /* [CP] Check Pods Manifest.lock */,
+				C2614F401F7E4D9900FEF64F /* Sources */,
+				C2614F411F7E4D9900FEF64F /* Frameworks */,
+				C2614F421F7E4D9900FEF64F /* Resources */,
+				1943FE96639580FDFC6A36F9 /* [CP] Embed Pods Frameworks */,
+				5D1AEDEE4EC559F80C51DC10 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NodesMap watchOS App Extension";
+			productName = "NodesMap watchOS App Extension";
+			productReference = C2614F441F7E4D9900FEF64F /* NodesMap Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		C2614F511F7E4D9900FEF64F /* NodesMap tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2614F861F7E4D9900FEF64F /* Build configuration list for PBXNativeTarget "NodesMap tvOS" */;
+			buildPhases = (
+				1E7D60FAF462B8983C3BDFF8 /* [CP] Check Pods Manifest.lock */,
+				C2614F4E1F7E4D9900FEF64F /* Sources */,
+				C2614F4F1F7E4D9900FEF64F /* Frameworks */,
+				C2614F501F7E4D9900FEF64F /* Resources */,
+				69A61C49D23BE840914631E5 /* [CP] Embed Pods Frameworks */,
+				36D7760817507A0AD8991905 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NodesMap tvOS";
+			productName = "NodesMap tvOS";
+			productReference = C2614F521F7E4D9900FEF64F /* NodesMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C2614F5F1F7E4D9900FEF64F /* NodesMap macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2614F891F7E4D9900FEF64F /* Build configuration list for PBXNativeTarget "NodesMap macOS" */;
+			buildPhases = (
+				D7EF0E7297613C7069806185 /* [CP] Check Pods Manifest.lock */,
+				C2614F5C1F7E4D9900FEF64F /* Sources */,
+				C2614F5D1F7E4D9900FEF64F /* Frameworks */,
+				C2614F5E1F7E4D9900FEF64F /* Resources */,
+				7BF09F74FF625E99951ADB08 /* [CP] Embed Pods Frameworks */,
+				F9B929C2CEA879692E9714B2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NodesMap macOS";
+			productName = "NodesMap macOS";
+			productReference = C2614F601F7E4D9900FEF64F /* NodesMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C2614F1A1F7E4D9900FEF64F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Maciej Chmielewski";
+				TargetAttributes = {
+					C2614F261F7E4D9900FEF64F = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					C2614F361F7E4D9900FEF64F = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					C2614F431F7E4D9900FEF64F = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					C2614F511F7E4D9900FEF64F = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					C2614F5F1F7E4D9900FEF64F = {
+						CreatedOnToolsVersion = 9.0;
+					};
+				};
+			};
+			buildConfigurationList = C2614F1D1F7E4D9900FEF64F /* Build configuration list for PBXProject "NodesMap" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C2614F191F7E4D9900FEF64F;
+			productRefGroup = C2614F281F7E4D9900FEF64F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C2614F261F7E4D9900FEF64F /* NodesMap iOS */,
+				C2614F361F7E4D9900FEF64F /* NodesMap watchOS App */,
+				C2614F431F7E4D9900FEF64F /* NodesMap watchOS App Extension */,
+				C2614F511F7E4D9900FEF64F /* NodesMap tvOS */,
+				C2614F5F1F7E4D9900FEF64F /* NodesMap macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2614F251F7E4D9900FEF64F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2614F6D1F7E4D9900FEF64F /* GameScene.sks in Resources */,
+				C2614F301F7E4D9900FEF64F /* Main.storyboard in Resources */,
+				C2614F6A1F7E4D9900FEF64F /* Actions.sks in Resources */,
+				C2614F331F7E4D9900FEF64F /* LaunchScreen.storyboard in Resources */,
+				C2614F751F7E4D9900FEF64F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2614F351F7E4D9900FEF64F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2614F761F7E4D9900FEF64F /* Assets.xcassets in Resources */,
+				C2614F3E1F7E4D9900FEF64F /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2614F421F7E4D9900FEF64F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2614F6E1F7E4D9900FEF64F /* GameScene.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2614F501F7E4D9900FEF64F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2614F5A1F7E4D9900FEF64F /* Main.storyboard in Resources */,
+				C2614F6F1F7E4D9900FEF64F /* GameScene.sks in Resources */,
+				C2614F771F7E4D9900FEF64F /* Assets.xcassets in Resources */,
+				C2614F6B1F7E4D9900FEF64F /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2614F5E1F7E4D9900FEF64F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2614F681F7E4D9900FEF64F /* Main.storyboard in Resources */,
+				C2614F701F7E4D9900FEF64F /* GameScene.sks in Resources */,
+				C2614F781F7E4D9900FEF64F /* Assets.xcassets in Resources */,
+				C2614F6C1F7E4D9900FEF64F /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D7383018F24ACA39ADF8462 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NodesMap iOS/Pods-NodesMap iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14E22289F9E4F2D7E6CAD241 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NodesMap iOS/Pods-NodesMap iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1943FE96639580FDFC6A36F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NodesMap watchOS App Extension/Pods-NodesMap watchOS App Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E7D60FAF462B8983C3BDFF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NodesMap tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36D7760817507A0AD8991905 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NodesMap tvOS/Pods-NodesMap tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DD712FECFD6D1BF9C46D650 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NodesMap iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CD6C848FA634DBC216E0C77 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NodesMap watchOS App/Pods-NodesMap watchOS App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53D6908F5FD09975D7B5BE37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NodesMap watchOS App Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D1AEDEE4EC559F80C51DC10 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NodesMap watchOS App Extension/Pods-NodesMap watchOS App Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69A61C49D23BE840914631E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NodesMap tvOS/Pods-NodesMap tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BF09F74FF625E99951ADB08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NodesMap macOS/Pods-NodesMap macOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NodesMap macOS/Pods-NodesMap macOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7EF0E7297613C7069806185 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NodesMap macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC95D4E85D7A4A8D4BE19E70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NodesMap watchOS App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9B929C2CEA879692E9714B2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NodesMap macOS/Pods-NodesMap macOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C2614F231F7E4D9900FEF64F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2614F711F7E4D9900FEF64F /* GameScene.swift in Sources */,
+				C28309BF1F8417AC0061FCC6 /* Test.swift in Sources */,
+				C2614F2D1F7E4D9900FEF64F /* GameViewController.swift in Sources */,
+				C2614F2B1F7E4D9900FEF64F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2614F401F7E4D9900FEF64F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2614F721F7E4D9900FEF64F /* GameScene.swift in Sources */,
+				C2614F4C1F7E4D9900FEF64F /* ExtensionDelegate.swift in Sources */,
+				C2614F4A1F7E4D9900FEF64F /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2614F4E1F7E4D9900FEF64F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2614F731F7E4D9900FEF64F /* GameScene.swift in Sources */,
+				C2614F571F7E4D9900FEF64F /* GameViewController.swift in Sources */,
+				C2614F551F7E4D9900FEF64F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2614F5C1F7E4D9900FEF64F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2614F741F7E4D9900FEF64F /* GameScene.swift in Sources */,
+				C28309C01F841A1C0061FCC6 /* Test.swift in Sources */,
+				C2614F651F7E4D9900FEF64F /* GameViewController.swift in Sources */,
+				C2614F631F7E4D9900FEF64F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2614F3A1F7E4D9900FEF64F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2614F361F7E4D9900FEF64F /* NodesMap watchOS App */;
+			targetProxy = C2614F391F7E4D9900FEF64F /* PBXContainerItemProxy */;
+		};
+		C2614F471F7E4D9900FEF64F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2614F431F7E4D9900FEF64F /* NodesMap watchOS App Extension */;
+			targetProxy = C2614F461F7E4D9900FEF64F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C2614F2E1F7E4D9900FEF64F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2614F2F1F7E4D9900FEF64F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C2614F311F7E4D9900FEF64F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2614F321F7E4D9900FEF64F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C2614F3C1F7E4D9900FEF64F /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2614F3D1F7E4D9900FEF64F /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		C2614F581F7E4D9900FEF64F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2614F591F7E4D9900FEF64F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C2614F661F7E4D9900FEF64F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2614F671F7E4D9900FEF64F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C2614F791F7E4D9900FEF64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C2614F7A1F7E4D9900FEF64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		C2614F7C1F7E4D9900FEF64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCB3C568C1C1B5098E05BAA2 /* Pods-NodesMap watchOS App Extension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "NodesMap watchOS App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.NodesMap.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "NodesMap Extension";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		C2614F7D1F7E4D9900FEF64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 669085FD5204F9BAA4367502 /* Pods-NodesMap watchOS App Extension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "NodesMap watchOS App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.NodesMap.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "NodesMap Extension";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+		C2614F801F7E4D9900FEF64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6297E75E1F39DF024898FB7 /* Pods-NodesMap watchOS App.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IBSC_MODULE = NodesMap_Extension;
+				INFOPLIST_FILE = "NodesMap watchOS App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.NodesMap.watchkitapp;
+				PRODUCT_NAME = NodesMap;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		C2614F811F7E4D9900FEF64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 102D26837911A31B9CE2B562 /* Pods-NodesMap watchOS App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IBSC_MODULE = NodesMap_Extension;
+				INFOPLIST_FILE = "NodesMap watchOS App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.NodesMap.watchkitapp;
+				PRODUCT_NAME = NodesMap;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+		C2614F841F7E4D9900FEF64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DAAA1B5836A365A1261E8A0 /* Pods-NodesMap iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "NodesMap iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.NodesMap;
+				PRODUCT_NAME = NodesMap;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C2614F851F7E4D9900FEF64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86D14FB521BF95364D9893E4 /* Pods-NodesMap iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "NodesMap iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.NodesMap;
+				PRODUCT_NAME = NodesMap;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C2614F871F7E4D9900FEF64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B048F380157DA89CCBF552C /* Pods-NodesMap tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "tvOS LaunchImage";
+				INFOPLIST_FILE = "NodesMap tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.NodesMap;
+				PRODUCT_NAME = NodesMap;
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		C2614F881F7E4D9900FEF64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47E85436AE761638434E30FC /* Pods-NodesMap tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "tvOS LaunchImage";
+				INFOPLIST_FILE = "NodesMap tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.NodesMap;
+				PRODUCT_NAME = NodesMap;
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C2614F8A1F7E4D9900FEF64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 507CAAF1B4063B150697BA96 /* Pods-NodesMap macOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "NodesMap macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.NodesMap;
+				PRODUCT_NAME = NodesMap;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		C2614F8B1F7E4D9900FEF64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DA22F3102AB6346C7B50007 /* Pods-NodesMap macOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "NodesMap macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.NodesMap;
+				PRODUCT_NAME = NodesMap;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C2614F1D1F7E4D9900FEF64F /* Build configuration list for PBXProject "NodesMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2614F791F7E4D9900FEF64F /* Debug */,
+				C2614F7A1F7E4D9900FEF64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2614F7B1F7E4D9900FEF64F /* Build configuration list for PBXNativeTarget "NodesMap watchOS App Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2614F7C1F7E4D9900FEF64F /* Debug */,
+				C2614F7D1F7E4D9900FEF64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2614F7F1F7E4D9900FEF64F /* Build configuration list for PBXNativeTarget "NodesMap watchOS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2614F801F7E4D9900FEF64F /* Debug */,
+				C2614F811F7E4D9900FEF64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2614F831F7E4D9900FEF64F /* Build configuration list for PBXNativeTarget "NodesMap iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2614F841F7E4D9900FEF64F /* Debug */,
+				C2614F851F7E4D9900FEF64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2614F861F7E4D9900FEF64F /* Build configuration list for PBXNativeTarget "NodesMap tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2614F871F7E4D9900FEF64F /* Debug */,
+				C2614F881F7E4D9900FEF64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2614F891F7E4D9900FEF64F /* Build configuration list for PBXNativeTarget "NodesMap macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2614F8A1F7E4D9900FEF64F /* Debug */,
+				C2614F8B1F7E4D9900FEF64F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C2614F1A1F7E4D9900FEF64F /* Project object */;
+}

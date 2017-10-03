@@ -25,11 +25,16 @@
     self.samplingSettings = samplingSettings;
     
     int dataLength = data.length / sizeof(float);
+    dataLength = 1000;
     int zeroPaddingCount = self.samplingSettings.framesPerPacket - (dataLength % self.samplingSettings.framesPerPacket);
     struct RawAudio rawAudio;
     rawAudio.buffer = malloc(sizeof(float) * (dataLength + zeroPaddingCount));
     bzero(rawAudio.buffer, sizeof(float) * (dataLength + zeroPaddingCount));
-    memcpy(rawAudio.buffer, data.bytes, data.length);
+    
+    for (int i = 0; i < 1000; i ++) {
+        rawAudio.buffer[i] = sin(i * 0.1);
+    }
+    
     rawAudio.length = dataLength;
     self.rawAudio = rawAudio;
     

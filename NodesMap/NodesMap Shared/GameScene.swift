@@ -20,15 +20,21 @@ extension CGPoint {
     }
 }
 
+typealias ConnectionEndpoint = (Node, Interface)
+
 class GameScene: SKScene {
-    
+    var connections: [(ConnectionEndpoint, ConnectionEndpoint, SKShapeNode)] = []
     
     fileprivate var label : SKLabelNode?
     fileprivate var spinnyNode : SKShapeNode?
     
-    lazy var draggingLineNode: SKShapeNode = {
+    static func makeLineSprite() -> SKShapeNode {
         let line = SKShapeNode(rect: CGRect(x: 0, y: 1, width: 1, height: 1000))
         return line
+    }
+    
+    lazy var draggingLineNode: SKShapeNode = {
+        GameScene.makeLineSprite()
     }()
     
     var nodes: [Node] = []
@@ -49,7 +55,7 @@ class GameScene: SKScene {
     enum State {
         case none
         case dragging(Node)
-        case connecting(Node, Interface)
+        case connecting(ConnectionEndpoint)
     }
     
     var state = State.none
@@ -66,7 +72,7 @@ class GameScene: SKScene {
             for interface in node.interfaces {
                 let interfaceRect = node.frameForInterface(interface: interface).moved(by: node.sprite.position)
                 if interfaceRect.contains(location) {
-                    state = .connecting(node, interface)
+                    state = .connecting((node, interface))
                     addChild(draggingLineNode)
                 }
             }
@@ -76,7 +82,7 @@ class GameScene: SKScene {
     func drag(location: CGPoint) {
         if case .dragging(let node) = state {
             node.sprite.position = location
-            return
+            updateConnections()
         }
         
         if case .connecting(let node, let interface) = state {
@@ -88,26 +94,57 @@ class GameScene: SKScene {
     }
     
     func setLine(line: SKShapeNode, from: CGPoint, to: CGPoint) {
-        draggingLineNode.yScale = to.distance(to: from) / 1000
-        draggingLineNode.position = to
-        draggingLineNode.zRotation = atan2(from.y - to.y, from.x - to.x) + CGFloat(Float.pi / -2)
+        line.yScale = to.distance(to: from) / 1000
+        line.position = to
+        line.zRotation = atan2(from.y - to.y, from.x - to.x) + CGFloat(Float.pi / -2)
     }
     
     func off(location: CGPoint) {
+        for node in nodes {
+            for interface in node.interfaces {
+                let interfaceRect = node.frameForInterface(interface: interface).moved(by: node.sprite.position)
+                if interfaceRect.contains(location) {
+                    if case .connecting(let originEndpoint) = state {
+                        let connectionSprite = GameScene.makeLineSprite()
+                        addChild(connectionSprite)
+                        connections.append((originEndpoint, (node, interface), connectionSprite))
+                        updateConnections()
+                    }
+                }
+            }
+        }
+        
         state = .none
         draggingLineNode.removeFromParent()
     }
     
+    func updateConnections() {
+        for connection in connections {
+            setLine(line: connection.2,
+                    from: connection.0.0.frameForInterface(interface: connection.0.1).moved(by: connection.0.0.sprite.position).origin,
+                    to: connection.1.0.frameForInterface(interface: connection.1.1).moved(by: connection.1.0.sprite.position).origin)
+        }
+    }
+    
     func setUpScene() {
-        let node = Node(name: "foldback", interfaces: [
+        let node1 = Node(name: "foldback", interfaces: [
             Interface(name: "in"),
             Interface(name: "out"),
             Interface(name: "treshold")
             ])
         
-        addChild(node.sprite)
+        let node2 = Node(name: "osc", interfaces: [
+            Interface(name: "out"),
+            Interface(name: "fre"),
+            Interface(name: "amp"),
+            ])
         
-        nodes.append(node)
+        node2.sprite.position = CGPoint(x: -200, y: 0)
+        
+        for node in [node1, node2] {
+            addChild(node.sprite)
+            nodes.append(node)
+        }
     }
     
     #if os(watchOS)

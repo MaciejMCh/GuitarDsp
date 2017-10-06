@@ -8,6 +8,7 @@
 
 import Cocoa
 import GuitarDsp
+import NodesMap
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -20,29 +21,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        bass808xD.off()
     }
     
-    func n() {
-        bass808.on()
-        DispatchQueue(label: "xd").asyncAfter(deadline: DispatchTime.now() + 4) {
-            self.f()
-        }
-    }
-    
-    func f() {
-        bass808.off()
-        DispatchQueue(label: "xd").asyncAfter(deadline: DispatchTime.now() + 1) {
-            self.n()
-        }
-    }
+//    func n() {
+//        bass808.on()
+//        DispatchQueue(label: "xd").asyncAfter(deadline: DispatchTime.now() + 4) {
+//            self.f()
+//        }
+//    }
+//
+//    func f() {
+//        bass808.off()
+//        DispatchQueue(label: "xd").asyncAfter(deadline: DispatchTime.now() + 1) {
+//            self.n()
+//        }
+//    }
     
     let bass808 = Bass808(samplingSettings: AudioInterface.shared().samplingSettings)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        NSApplication.shared().windows.first!.contentViewController = makeInitialController()
+        return;
+        
         let bassController = Bass808ViewController.make()
         bassController.bass808 = bass808
-        NSApplication.shared().windows.first!.contentViewController = bassController
         let channelPlayerEffect = ChannelPlayerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
         channelPlayerEffect.play(channel: bassController.bass808)
-        f()
+//        f()
 //        channelPlayerXd.play(channel: bass808xD)
 //        return
         
@@ -116,6 +119,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 extension AppDelegate {
+    func makeInitialController() -> NSViewController {
+//        let map = Map.mocked()
+        let map = Map.wave()
+        let vc = WaveMapController.make()
+        vc.creator = SoundNetworkElementsCreator(samplingSettings: AudioInterface.shared().samplingSettings)
+        vc.map = map
+        return vc
+    }
+    
     func makeDevelopmentEffect() -> Effect {
         return ChannelPlayerEffect(samplingSettings: SamplingSettings())
 //        return MidiOutputEffect(samplingSettings: AudioInterface.shared().samplingSettings)

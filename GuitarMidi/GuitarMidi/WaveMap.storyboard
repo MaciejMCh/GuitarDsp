@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="EMc-4j-2VH">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wave Map Controller-->
+        <scene sceneID="1RW-Ql-v1t">
+            <objects>
+                <viewController id="EMc-4j-2VH" customClass="WaveMapController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="rbi-Ly-o6F">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Wi9-wj-csB">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="260"/>
+                                <connections>
+                                    <segue destination="TXP-Dt-IIr" kind="embed" id="7Oh-p9-pKl"/>
+                                </connections>
+                            </containerView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xfN-oV-Xq1">
+                                <rect key="frame" x="-1" y="267" width="92" height="32"/>
+                                <buttonCell key="cell" type="push" title="oscilator" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W0J-r8-M3y">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="newOscilator:" target="EMc-4j-2VH" id="jSM-zC-sNl"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zFp-nE-3u0">
+                                <rect key="frame" x="84" y="267" width="89" height="32"/>
+                                <buttonCell key="cell" type="push" title="sampler" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FpD-13-hnv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="newSampler:" target="EMc-4j-2VH" id="gbF-EH-SuO"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9in-Nv-AAD">
+                                <rect key="frame" x="166" y="267" width="95" height="32"/>
+                                <buttonCell key="cell" type="push" title="envelope" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="N7p-Ld-G0N">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="newEnvelope:" target="EMc-4j-2VH" id="Spl-7L-1l5"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-UJ-7zH">
+                                <rect key="frame" x="254" y="267" width="93" height="32"/>
+                                <buttonCell key="cell" type="push" title="constant" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fBt-lg-yGm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="newConstant:" target="EMc-4j-2VH" id="UzO-wL-InQ"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cE3-0a-xeU">
+                                <rect key="frame" x="340" y="267" width="67" height="32"/>
+                                <buttonCell key="cell" type="push" title="amp" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fie-JN-Oqy">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="newAmp:" target="EMc-4j-2VH" id="89B-pi-ZHG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Wi9-wj-csB" firstAttribute="top" secondItem="rbi-Ly-o6F" secondAttribute="top" constant="40" id="1BT-8d-jFI"/>
+                            <constraint firstItem="9in-Nv-AAD" firstAttribute="baseline" secondItem="zFp-nE-3u0" secondAttribute="baseline" id="CDi-7l-EX6"/>
+                            <constraint firstItem="1vJ-UJ-7zH" firstAttribute="leading" secondItem="9in-Nv-AAD" secondAttribute="trailing" constant="5" id="F05-d8-hg1"/>
+                            <constraint firstItem="cE3-0a-xeU" firstAttribute="leading" secondItem="1vJ-UJ-7zH" secondAttribute="trailing" constant="5" id="GoE-gr-Vz0"/>
+                            <constraint firstAttribute="trailing" secondItem="Wi9-wj-csB" secondAttribute="trailing" id="H2t-QR-Ot4"/>
+                            <constraint firstItem="1vJ-UJ-7zH" firstAttribute="baseline" secondItem="9in-Nv-AAD" secondAttribute="baseline" id="Ial-aK-grk"/>
+                            <constraint firstItem="Wi9-wj-csB" firstAttribute="leading" secondItem="rbi-Ly-o6F" secondAttribute="leading" id="LM7-NU-T78"/>
+                            <constraint firstItem="zFp-nE-3u0" firstAttribute="baseline" secondItem="xfN-oV-Xq1" secondAttribute="baseline" id="MUT-uc-cNp"/>
+                            <constraint firstItem="9in-Nv-AAD" firstAttribute="leading" secondItem="zFp-nE-3u0" secondAttribute="trailing" constant="5" id="RMg-r5-6QL"/>
+                            <constraint firstItem="xfN-oV-Xq1" firstAttribute="leading" secondItem="rbi-Ly-o6F" secondAttribute="leading" constant="5" id="UaI-6a-fqI"/>
+                            <constraint firstItem="xfN-oV-Xq1" firstAttribute="top" secondItem="rbi-Ly-o6F" secondAttribute="top" constant="5" id="YS1-tr-k6P"/>
+                            <constraint firstAttribute="bottom" secondItem="Wi9-wj-csB" secondAttribute="bottom" id="niY-Cr-ZtF"/>
+                            <constraint firstItem="zFp-nE-3u0" firstAttribute="leading" secondItem="xfN-oV-Xq1" secondAttribute="trailing" constant="5" id="vGr-B6-Gd3"/>
+                            <constraint firstItem="cE3-0a-xeU" firstAttribute="baseline" secondItem="1vJ-UJ-7zH" secondAttribute="baseline" id="yr5-Ym-fhY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="KyS-Tw-ksx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-132" y="121"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="suk-4k-6Ts">
+            <objects>
+                <controllerPlaceholder storyboardName="Map" bundleIdentifier="org.cocoapods.NodesMap" id="TXP-Dt-IIr" sceneMemberID="viewController"/>
+                <customObject id="Qu6-Tc-igj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-132" y="405"/>
+        </scene>
+    </scenes>
+</document>

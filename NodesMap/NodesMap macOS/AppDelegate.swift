@@ -10,21 +10,15 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-
-
+    let map = Map.mocked()
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-    }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        let mapController = NSStoryboard(name: "Map", bundle: Bundle(for: Map.self)).instantiateInitialController() as! MapViewController
+        mapController.map = map
+        NSApplication.shared().windows.first!.contentViewController = mapController
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
-
-
 }
-

@@ -70,9 +70,9 @@ class OscilatorViewController: NSViewController {
         tuneViewController.variableUpdate = { [weak self] in
             self?.oscilator.tune = $0
         }
-        volumeViewController.variableUpdate = { [weak self] in
-            self?.oscilator.volume = $0
-        }
+//        volumeViewController.variableUpdate = { [weak self] in
+//            self?.oscilator.volume = $0
+//        }
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
@@ -87,7 +87,7 @@ class OscilatorViewController: NSViewController {
     
     private func refreshView() {
         tuneViewController.setVariable(oscilator.tune)
-        volumeViewController.setVariable(oscilator.volume)
+//        volumeViewController.setVariable(oscilator.volume)
         shapePopupButton.selectItem(withTag: WaveShapeViewModel.tag(waveShape: oscilator.waveGenerator.waveShape))
     }
     

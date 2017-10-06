@@ -7,7 +7,7 @@
 		<key>NodesMap iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>6</integer>
 		</dict>
 		<key>NodesMap macOS.xcscheme</key>
 		<dict>
@@ -22,7 +22,7 @@
 		<key>NodesMap watchOS App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>7</integer>
 		</dict>
 	</dict>
 </dict>

@@ -8,12 +8,17 @@
 
 import Foundation
 
+typealias FunctionVariableSetter = (FunctionVariable) -> Void
+
 public protocol FunctionVariable: Playing {
     var value: Double {get}
 }
 
 extension Double: FunctionVariable {
     public var value: Double {return self}
+    public var output: SignalOutput {
+        return SignalOutput {_ in self}
+    }
 }
 
 class LinearFunction: FunctionVariable {

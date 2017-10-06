@@ -18,19 +18,19 @@ public class Bass808: Playing, MidiPlayer {
     public lazy var oscilators: [Oscilator] = {
         let single = Oscilator(samplingSettings: self.samplingSettings)
         single.tune = -12
-        single.volume = 1
+//        single.volume = 1
         
         let triple1 = Oscilator(samplingSettings: self.samplingSettings)
         triple1.tune = -12
-        triple1.volume = 0.5
+//        triple1.volume = 0.5
         
         let triple2 = Oscilator(samplingSettings: self.samplingSettings)
         triple2.tune = 7
-        triple2.volume = 0.3
+//        triple2.volume = 0.3
         
         let triple3 = Oscilator(samplingSettings: self.samplingSettings)
         triple3.tune = 0
-        triple3.volume = 0.2
+//        triple3.volume = 0.2
         
         return [single]
 //        return [triple1, triple2, triple3]
@@ -58,7 +58,8 @@ public class Bass808: Playing, MidiPlayer {
         let foldback = FoldbackWaveEffect(treshold: 0.8)
         
 //        return [ampWaveEffect]
-        return [waveShaper, foldback, ampWaveEffect]
+//        return [waveShaper, foldback, ampWaveEffect]
+        return []
     }()
     
     public init(samplingSettings: SamplingSettings) {
@@ -95,7 +96,7 @@ public class Bass808: Playing, MidiPlayer {
     
     var frequency: Double = 0
     public func nextSample() -> Double {
-        var processingSample = oscilators.map{$0.waveGenerator.nextSample(frequency: frequency * halfToneToScale($0.tune.value)) * $0.volume.value}.reduce(0, +)
+        var processingSample = oscilators.map{$0.waveGenerator.nextSample(frequency: frequency * halfToneToScale($0.tune.value))}.reduce(0, +)
         
         for effect in effects {
             processingSample = effect.apply(input: processingSample)

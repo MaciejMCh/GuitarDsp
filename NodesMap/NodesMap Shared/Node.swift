@@ -1,19 +1,19 @@
 //
-//  Test.swift
+//  Node.swift
 //  NodesMap iOS
 //
-//  Created by Maciej Chmielewski on 03.10.2017.
+//  Created by Maciej Chmielewski on 06.10.2017.
 //  Copyright © 2017 Maciej Chmielewski. All rights reserved.
 //
 
 import Foundation
-import CoreGraphics
 import SpriteKit
 
-class Node {
-    var name: String
+public class Node {
+    public var name: String
     let interfaces: [Interface]
     var sprite: SKNode!
+    public var model: Any
     
     private let width = CGFloat(140)
     let rowHeight = CGFloat(40)
@@ -31,9 +31,10 @@ class Node {
                       height: nameHeight)
     }
     
-    init(name: String, interfaces: [Interface]) {
+    public init(name: String, interfaces: [Interface], model: Any) {
         self.name = name
         self.interfaces = interfaces
+        self.model = model
         sprite = makeSprite()
     }
     
@@ -58,10 +59,12 @@ class Node {
     
 }
 
-class Interface {
-    let name: String
+public class Interface {
+    public var name: String
+    public var model: Any
     
-    init(name: String) {
+    public init(name: String, model: Any) {
         self.name = name
+        self.model = model
     }
 }

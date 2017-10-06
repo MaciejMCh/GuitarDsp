@@ -31,6 +31,7 @@ public class Sampler: Playing, MidiPlayer {
     let samplingSettings: SamplingSettings
     public var volume: FunctionVariable = EnvelopeFunction()
     private(set) var player: SamplePlayer
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.nextOutput(time: $0) ?? 0}}()
     public var sampleFilePath: String {
         didSet {
             player = Sampler.loadPlayer(path: sampleFilePath, samplingSettings: samplingSettings)
@@ -61,6 +62,10 @@ public class Sampler: Playing, MidiPlayer {
         self.sampleFilePath = sampleFilePath
         player = Sampler.loadPlayer(path: sampleFilePath, samplingSettings: samplingSettings)
         Sampler.xd = self
+    }
+    
+    func nextOutput(time: Int) -> Double {
+        return 0 // TODO
     }
     
     public func nextSample() -> Double {

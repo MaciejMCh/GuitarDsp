@@ -8,14 +8,14 @@
 
 import Cocoa
 import SpriteKit
-import GameplayKit
 
-class GameViewController: NSViewController {
-
-    override func viewDidLoad() {
+public class MapViewController: NSViewController {
+    public var map: Map!
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = GameScene.newGameScene()
+        let scene = map.scene
         
         // Present the scene
         let skView = self.view as! SKView

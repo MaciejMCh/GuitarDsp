@@ -9,24 +9,31 @@
 import Foundation
 import GuitarDsp
 
-public class Oscilator: Playing {
+public class Oscilator: Playing, MidiPlayer {
     let samplingSettings: SamplingSettings
-    public var waveGenerator: WaveGenerator
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.nextOutput(time: $0) ?? 0}}()
+    public let waveGenerator: WaveGenerator
     public var tune: FunctionVariable = -12
-    public var volume: FunctionVariable = 0.2
+    private var frequency: Double = 0
     
     public init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
         waveGenerator = WaveGenerator(samplingSettings: samplingSettings)
     }
     
+    private func nextOutput(time: Int) -> Double {
+        return waveGenerator.nextSample(frequency: frequency * halfToneToScale(tune.value))
+    }
+    
     public func on() {
         tune.on()
-        volume.on()
     }
     
     public func off() {
         tune.off()
-        volume.off()
+    }
+    
+    func setFrequency(_ frequency: Double) {
+        self.frequency = frequency
     }
 }

@@ -277,9 +277,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Bow/Pods-Bow-resources.sh",
+				"${PODS_ROOT}/../../NodesMap/NodesMap macOS/Map.storyboard",
+				"${PODS_ROOT}/../../NodesMap/NodesMap Shared/Scene.sks",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

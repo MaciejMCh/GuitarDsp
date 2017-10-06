@@ -11,6 +11,7 @@ PODS:
   - GuitarDsp (1.0.0):
     - EZAudio
   - MIDIKit (1.0.0)
+  - NodesMap (1.0.0)
   - Pitchy (2.0.1)
   - TPCircularBuffer (1.1)
 
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - EZAudio (from `../EZAudio`)
   - GuitarDsp (from `../GuitarDsp`)
   - MIDIKit (from `https://github.com/MaciejMCh/MIDIKit.git`)
+  - NodesMap (from `../NodesMap`)
 
 EXTERNAL SOURCES:
   Beethoven:
@@ -33,6 +35,8 @@ EXTERNAL SOURCES:
     :path: ../GuitarDsp
   MIDIKit:
     :git: https://github.com/MaciejMCh/MIDIKit.git
+  NodesMap:
+    :path: ../NodesMap
 
 CHECKOUT OPTIONS:
   Beethoven:
@@ -48,9 +52,10 @@ SPEC CHECKSUMS:
   EZAudio: b46eb8c28899cfff30995a180672afd148a54e31
   GuitarDsp: adf8387415647b85e078d03b368cc019f996fccc
   MIDIKit: 785c048f399107c47a1ad9a47a8656034edf5162
+  NodesMap: 47b096d77b20ac81121a31e624eedbef976d2e54
   Pitchy: 00dbe7cb7ac87fd9c32cb2aa6ce50d11f931289f
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
-PODFILE CHECKSUM: a05e8185183fae74aa3ada07d3dc42c1921a531a
+PODFILE CHECKSUM: 406d8fa011bd7d0f8c8ffe2bb69028350884dbb2
 
 COCOAPODS: 1.3.1

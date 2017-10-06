@@ -35,7 +35,7 @@
 
 - (void)setup {
     [self setupSamplingSettings];
-    [self setupEzAudio];
+//    [self setupEzAudio];
 }
 
 - (void)setupSamplingSettings {

@@ -33,12 +33,14 @@ extension InterfaceBuilderInstance where Self: NSView {
 }
 
 // MARK: Concrete
-extension OscilatorViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Oscilator"}}
-extension TimeFunctionViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "TimeFunctionVariable"}}
-extension AmpViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Amp"}}
-extension WaveShaperViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "WaveShaper"}}
-extension WaveShaperNodeViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "WaveShaperNode"}}
+extension WaveMapController: InterfaceBuilderInstance {static var interfaceFileName: String {return "WaveMap"}}
 extension SamplerViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Sampler"}}
-extension Bass808ViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Bass808"}}
-extension SamplerNodeViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "SamplerNode"}}
 extension FoldbackViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Foldback"}}
+extension OscilatorViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Oscilator"}}
+extension WaveShaperViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "WaveShaper"}}
+extension SamplerNodeViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "SamplerNode"}}
+extension TimeFunctionViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "TimeFunctionVariable"}}
+extension WaveShaperNodeViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "WaveShaperNode"}}
+extension Bass808ViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Bass808"}}
+extension AmpViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "Amp"}}
+

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="BTC-zM-tsg">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="BTC-zM-tsg">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -198,9 +198,65 @@
                                     <action selector="toggleMetronomeActionWithButton:" target="BTC-zM-tsg" id="nf1-w4-NrC"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ox6-0o-73H" customClass="VariableTextField" customModule="GuitarMidi">
+                                <rect key="frame" x="146" y="5" width="37" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Ha4-Fc-2B0">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="volumeLabelActionWithLabel:" target="BTC-zM-tsg" id="Kau-Lz-sSd"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zCZ-Xz-cwe" customClass="VariableTextField" customModule="GuitarMidi">
+                                <rect key="frame" x="195" y="5" width="37" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="8N6-ex-Bi6">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="volumeLabelActionWithLabel:" target="BTC-zM-tsg" id="m38-RP-m28"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jbb-kv-bsv" customClass="VariableTextField" customModule="GuitarMidi">
+                                <rect key="frame" x="244" y="5" width="37" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="xUz-9g-PyZ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="volumeLabelActionWithLabel:" target="BTC-zM-tsg" id="lX1-V5-w8J"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uKv-lK-fjh" customClass="VariableTextField" customModule="GuitarMidi">
+                                <rect key="frame" x="293" y="5" width="37" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="BAR-7D-Vsz">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="volumeLabelActionWithLabel:" target="BTC-zM-tsg" id="Ho9-UF-Dge"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UME-dg-0am" customClass="VariableTextField" customModule="GuitarMidi">
+                                <rect key="frame" x="341" y="5" width="37" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="3Ky-Vf-WND">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="volumeLabelActionWithLabel:" target="BTC-zM-tsg" id="VrO-fY-OMf"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="SSw-sv-qNX" firstAttribute="leading" secondItem="hmd-RT-hkL" secondAttribute="leading" id="0U7-11-tMZ"/>
+                            <constraint firstItem="UME-dg-0am" firstAttribute="baseline" secondItem="uKv-lK-fjh" secondAttribute="baseline" id="0kK-i1-GeL"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="hmd-RT-hkL" secondAttribute="top" id="28k-yd-aW8"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="syp-Sr-BHB" secondAttribute="top" id="4nH-FP-ai5"/>
                             <constraint firstItem="fw1-cU-xfw" firstAttribute="centerX" secondItem="RJM-qC-uty" secondAttribute="centerX" id="54w-rT-KnV"/>
@@ -216,8 +272,10 @@
                             <constraint firstItem="fw1-cU-xfw" firstAttribute="top" secondItem="Wv1-p4-LWZ" secondAttribute="bottom" constant="22" id="D2h-XT-xCA"/>
                             <constraint firstItem="eRe-qS-0OG" firstAttribute="centerY" secondItem="RJM-qC-uty" secondAttribute="centerY" id="DQM-H9-0g1"/>
                             <constraint firstItem="syp-Sr-BHB" firstAttribute="top" secondItem="afl-fD-u7Y" secondAttribute="bottom" constant="22" id="ECZ-St-rlf"/>
+                            <constraint firstItem="ox6-0o-73H" firstAttribute="top" secondItem="hmd-RT-hkL" secondAttribute="bottom" id="EXc-qQ-A8d"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="width" secondItem="hmd-RT-hkL" secondAttribute="width" id="Eqj-hV-GGO"/>
                             <constraint firstItem="hmd-RT-hkL" firstAttribute="top" secondItem="SSw-sv-qNX" secondAttribute="bottom" constant="22" id="F1X-0f-1C4"/>
+                            <constraint firstItem="hmd-RT-hkL" firstAttribute="centerX" secondItem="ox6-0o-73H" secondAttribute="centerX" id="Hcl-3S-air"/>
                             <constraint firstItem="SSw-sv-qNX" firstAttribute="leading" secondItem="Awm-z4-Pis" secondAttribute="trailing" constant="22" id="IXX-PL-bjW"/>
                             <constraint firstItem="afl-fD-u7Y" firstAttribute="leading" secondItem="syp-Sr-BHB" secondAttribute="leading" id="Kad-Oc-P7Y"/>
                             <constraint firstItem="EcE-kH-afQ" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="L7P-dn-3e5"/>
@@ -232,9 +290,12 @@
                             <constraint firstItem="EcE-kH-afQ" firstAttribute="trailing" secondItem="WL2-oA-ttV" secondAttribute="trailing" id="WDH-FI-1uW"/>
                             <constraint firstItem="7ST-Xc-bhf" firstAttribute="centerX" secondItem="Wv1-p4-LWZ" secondAttribute="centerX" id="Wau-aa-cnw"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="height" secondItem="WL2-oA-ttV" secondAttribute="height" id="WoR-23-now"/>
+                            <constraint firstItem="zCZ-Xz-cwe" firstAttribute="centerX" secondItem="Ant-U2-16f" secondAttribute="centerX" id="XjC-bA-DSi"/>
                             <constraint firstItem="N9h-d6-55m" firstAttribute="centerX" secondItem="Wv1-p4-LWZ" secondAttribute="centerX" id="ZOF-7d-s6T"/>
+                            <constraint firstItem="jbb-kv-bsv" firstAttribute="baseline" secondItem="zCZ-Xz-cwe" secondAttribute="baseline" id="ZVk-rO-oKK"/>
                             <constraint firstItem="afl-fD-u7Y" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="ZVy-eg-PSW"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="width" secondItem="syp-Sr-BHB" secondAttribute="width" id="beU-Rj-qwH"/>
+                            <constraint firstItem="uKv-lK-fjh" firstAttribute="baseline" secondItem="jbb-kv-bsv" secondAttribute="baseline" id="c2r-A7-8ww"/>
                             <constraint firstItem="syp-Sr-BHB" firstAttribute="leading" secondItem="Ant-U2-16f" secondAttribute="trailing" constant="13" id="cAn-rK-8eX"/>
                             <constraint firstItem="7ST-Xc-bhf" firstAttribute="bottom" secondItem="hmd-RT-hkL" secondAttribute="bottom" id="dPs-6K-YWf"/>
                             <constraint firstItem="6e7-DK-Dvt" firstAttribute="top" secondItem="Yri-eS-l6k" secondAttribute="top" constant="22" id="eaR-Ha-O8h"/>
@@ -242,6 +303,7 @@
                             <constraint firstAttribute="trailing" secondItem="DBz-WZ-tew" secondAttribute="trailing" constant="22" id="fnh-NA-NGh"/>
                             <constraint firstItem="RJM-qC-uty" firstAttribute="leading" secondItem="4UL-ba-oyW" secondAttribute="trailing" id="gxy-Dw-EBC"/>
                             <constraint firstItem="4UL-ba-oyW" firstAttribute="top" secondItem="eRe-qS-0OG" secondAttribute="top" id="hrk-V0-JgK"/>
+                            <constraint firstItem="zCZ-Xz-cwe" firstAttribute="baseline" secondItem="ox6-0o-73H" secondAttribute="baseline" id="kLl-ie-Eak"/>
                             <constraint firstItem="EcE-kH-afQ" firstAttribute="leading" secondItem="WL2-oA-ttV" secondAttribute="leading" id="kac-Xi-CNR"/>
                             <constraint firstItem="4UL-ba-oyW" firstAttribute="width" secondItem="eRe-qS-0OG" secondAttribute="width" id="ljN-Cp-421"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="rtN-HX-1IK" secondAttribute="bottom" constant="22" id="oHy-zM-bRh"/>
@@ -251,10 +313,13 @@
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="width" secondItem="WL2-oA-ttV" secondAttribute="width" id="rfs-xu-UIn"/>
                             <constraint firstItem="DBz-WZ-tew" firstAttribute="top" secondItem="WL2-oA-ttV" secondAttribute="top" id="w8i-zy-5Pl"/>
                             <constraint firstItem="SSw-sv-qNX" firstAttribute="trailing" secondItem="hmd-RT-hkL" secondAttribute="trailing" id="w8p-A5-d6u"/>
+                            <constraint firstItem="jbb-kv-bsv" firstAttribute="centerX" secondItem="syp-Sr-BHB" secondAttribute="centerX" id="wUr-VT-MHn"/>
                             <constraint firstItem="Ant-U2-16f" firstAttribute="leading" secondItem="hmd-RT-hkL" secondAttribute="trailing" constant="13" id="y7K-RZ-M8p"/>
+                            <constraint firstItem="uKv-lK-fjh" firstAttribute="centerX" secondItem="WL2-oA-ttV" secondAttribute="centerX" id="yZU-0c-ZvC"/>
                             <constraint firstItem="WL2-oA-ttV" firstAttribute="top" secondItem="EcE-kH-afQ" secondAttribute="bottom" constant="22" id="yxD-LF-e7R"/>
                             <constraint firstItem="6e7-DK-Dvt" firstAttribute="trailing" secondItem="Ant-U2-16f" secondAttribute="trailing" id="z26-tk-JbC"/>
                             <constraint firstItem="Awm-z4-Pis" firstAttribute="leading" secondItem="Yri-eS-l6k" secondAttribute="leading" constant="22" id="z2d-aR-1iP"/>
+                            <constraint firstItem="UME-dg-0am" firstAttribute="centerX" secondItem="DBz-WZ-tew" secondAttribute="centerX" id="zgo-Bp-3qu"/>
                         </constraints>
                     </view>
                     <connections>
@@ -273,6 +338,11 @@
                         <outlet property="tempoLabel" destination="N9h-d6-55m" id="Yv4-u1-WPz"/>
                         <outlet property="tempoTapView" destination="Awm-z4-Pis" id="YXl-5C-CGF"/>
                         <outlet property="toggleMetronomeButton" destination="7ST-Xc-bhf" id="t2k-sj-Ceb"/>
+                        <outlet property="volumeLabel0" destination="ox6-0o-73H" id="KiP-xw-6Bs"/>
+                        <outlet property="volumeLabel1" destination="zCZ-Xz-cwe" id="3k6-1H-B6w"/>
+                        <outlet property="volumeLabel2" destination="jbb-kv-bsv" id="D2L-7Y-ICy"/>
+                        <outlet property="volumeLabel3" destination="uKv-lK-fjh" id="oKL-6i-XeY"/>
+                        <outlet property="volumeLabel4" destination="UME-dg-0am" id="1Se-0s-kgx"/>
                     </connections>
                 </viewController>
                 <customObject id="rqX-Xh-8I6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

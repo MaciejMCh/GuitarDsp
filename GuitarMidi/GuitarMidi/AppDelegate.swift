@@ -35,16 +35,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        }
 //    }
     
-    let bass808 = Bass808(samplingSettings: AudioInterface.shared().samplingSettings)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         NSApplication.shared().windows.first!.contentViewController = makeInitialController()
         return;
         
-        let bassController = Bass808ViewController.make()
-        bassController.bass808 = bass808
         let channelPlayerEffect = ChannelPlayerEffect(samplingSettings: AudioInterface.shared().samplingSettings)
-        channelPlayerEffect.play(channel: bassController.bass808)
+//        channelPlayerEffect.play(channel: bassController.bass808)
+        
+        
 //        f()
 //        channelPlayerXd.play(channel: bass808xD)
 //        return
@@ -120,11 +119,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate {
     func makeInitialController() -> NSViewController {
-//        let map = Map.mocked()
-        let map = Map.wave()
         let vc = WaveMapController.make()
-        vc.creator = SoundNetworkElementsCreator(samplingSettings: AudioInterface.shared().samplingSettings)
-        vc.map = map
+        vc.waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings)
+        vc.creator = Creator()
         return vc
     }
     
@@ -145,4 +142,34 @@ enum SignalGenerator {
     case sine(amplitude: Float, frequency: Float)
     case ramp(slope: Float)
     case input
+}
+
+struct Creator: SoundNetworkElementsCreator {
+    func makeOscilator() -> Oscilator {
+        return Oscilator(samplingSettings: AudioInterface.shared().samplingSettings)
+    }
+    func makeFoldback() -> FoldbackWaveEffect {
+        return FoldbackWaveEffect()
+    }
+    func makeAmp() -> AmpWaveEffect {
+        return AmpWaveEffect()
+    }
+    func makeConstant() -> Constant {
+        return Constant(value: 1)
+    }
+    func makeSampler() -> Sampler {
+        return Sampler(sampleFilePath: "", samplingSettings: AudioInterface.shared().samplingSettings)
+    }
+    func makeEnvelope() -> EnvelopeFunction {
+        return EnvelopeFunction()
+    }
+    func makeSum() -> SumWaveNode {
+        return SumWaveNode()
+    }
+    func makeWaveShaper() -> WaveShaper {
+        return WaveShaper()
+    }
+    func makeOverdrive() -> OverdriveWaveEffect {
+        return OverdriveWaveEffect()
+    }
 }

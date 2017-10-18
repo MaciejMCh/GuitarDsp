@@ -152,7 +152,7 @@ class EnvelopeView: NSView {
         drawingEnvelopeFunction.duration = Double(length / 2)
         drawingEnvelopeFunction.on()
         for i in 0..<length {
-            truePath.line(to: .init(x: CGFloat(margin) + CGFloat(i), y: CGFloat(margin) + CGFloat(height) * CGFloat(drawingEnvelopeFunction.nextSample())))
+            truePath.line(to: .init(x: CGFloat(margin) + CGFloat(i), y: CGFloat(margin) + CGFloat(height) * CGFloat(drawingEnvelopeFunction.next(time: i))))
             if i == length / 2 {
                 drawingEnvelopeFunction.off()
             }

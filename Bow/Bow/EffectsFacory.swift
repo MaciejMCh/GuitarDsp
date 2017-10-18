@@ -14,7 +14,7 @@ struct EffectsFacory {
     let samplingSettings: SamplingSettings
     
     func all() -> [Effect] {
-        return [makeChannelPlayer(), makeAmp(), makeDelay(), makeHarmonizer(), makePhaseVocoder(), makeReverb(), makeCompressor(), makeBitCrusher(), makeVibe(), makeFlanger(), makePhaser(), makeDistortion()]
+        return [makeWaveMap(), makeAmp(), makeDelay(), makeHarmonizer(), makePhaseVocoder(), makeReverb(), makeCompressor(), makeBitCrusher(), makeVibe(), makeFlanger(), makePhaser(), makeDistortion()]
     }
     
     func makeAmp() -> AmpEffect {
@@ -65,17 +65,43 @@ struct EffectsFacory {
         return DistortionEffect(samplingSettings: samplingSettings)
     }
     
-    func makeChannelPlayer() -> ChannelPlayerEffect {
-        let channelPlayerEffect = ChannelPlayerEffect(samplingSettings: samplingSettings)
-        channelPlayerEffect.channelPlayer.channels = [Bass808(samplingSettings: samplingSettings)]
-        return channelPlayerEffect
+    func makeWaveMap() -> WaveMap {
+        return WaveMap(samplingSettings: samplingSettings)
     }
     
-    func makeSampler() -> Sampler {
-        return Sampler(sampleFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/440.wav", samplingSettings: samplingSettings)
+    func makeSampler(id: String?) -> Sampler {
+        return Sampler(sampleFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/440.wav", samplingSettings: samplingSettings, id: id)
     }
     
-    func make808() -> Bass808 {
-        return Bass808(samplingSettings: samplingSettings)
+    func makeOscilator(id: String?) -> Oscilator {
+        return Oscilator(samplingSettings: samplingSettings, id: id)
+    }
+    
+    func makeEnvelope(id: String?) -> EnvelopeFunction {
+        return EnvelopeFunction(id: id)
+    }
+    
+    func makeConstant(id: String?) -> Constant {
+        return Constant(value: 1, id: id)
+    }
+    
+    func makeAmpWaveEffect(id: String?) -> AmpWaveEffect {
+        return AmpWaveEffect(id: id)
+    }
+    
+    func makeWaveShaper(id: String?) -> WaveShaper {
+        return WaveShaper(id: id)
+    }
+    
+    func makeFoldback(id: String?) -> FoldbackWaveEffect {
+        return FoldbackWaveEffect(id: id)
+    }
+    
+    func makeSum(id: String?) -> SumWaveNode {
+        return SumWaveNode(id: id)
+    }
+    
+    func makeOverdrive(id: String?) -> OverdriveWaveEffect {
+        return OverdriveWaveEffect(id: id)
     }
 }

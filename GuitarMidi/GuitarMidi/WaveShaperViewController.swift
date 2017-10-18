@@ -10,13 +10,13 @@ import Foundation
 import Cocoa
 import CubicBezier
 
-class WaveShaperViewController: NSViewController {
+public class WaveShaperViewController: NSViewController {
     @IBOutlet weak var waveView: WaveView!
     weak var cubicBezierViewController: CubicBezierViewController!
     
     var waveShaper: WaveShaper!
     
-    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+    public override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let cubicBezierViewController = segue.destinationController as? CubicBezierViewController {
             self.cubicBezierViewController = cubicBezierViewController
             cubicBezierViewController.update = { [weak self] in
@@ -25,7 +25,7 @@ class WaveShaperViewController: NSViewController {
         }
     }
     
-    override func viewWillAppear() {
+    public override func viewWillAppear() {
         super.viewWillAppear()
         cubicBezierViewController.setup(waveShaper.cubicBezier.p1, p2: waveShaper.cubicBezier.p2)
         updateBezier(bezier: waveShaper.cubicBezier)
@@ -34,14 +34,15 @@ class WaveShaperViewController: NSViewController {
     private func updateBezier(bezier: CubicBezier) {
         waveShaper.cubicBezier = bezier
         
-        let valuesCount = 1000
-        var values: [Double] = []
-        for i in 0..<valuesCount {
-            let x: Double = Double(i) / Double(valuesCount)
-            let sinY = sin(x * Double.pi * 4)
-            values.append(waveShaper.apply(input: sinY))
-        }
-        waveView.values = values
+//        let valuesCount = 1000
+//        var values: [Double] = []
+//        for i in 0..<valuesCount {
+//            let x: Double = Double(i) / Double(valuesCount)
+//            let sinY = sin(x * Double.pi * 4)
+//            waveShaper.input.output = SignalOutput {_ in sinY}
+//            values.append(waveShaper.next(time: i))
+//        }
+//        waveView.values = values
     }
 }
 

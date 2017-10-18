@@ -68,7 +68,7 @@ class BoardViewController: NSViewController {
     }
     
     func newAction() {
-        changeBoard(board: Storable(origin: .orphan, jsonRepresentable: BoardPrototype(board: Board())))
+        changeBoard(board: Storable(origin: .orphan, jsonRepresentable: setup.board.jsonRepresentable))
     }
     
     func saveAction() {
@@ -118,11 +118,11 @@ class BoardViewController: NSViewController {
         for effectPrototype in setup.board.jsonRepresentable.effectPrototypes {
             let effectController: NSViewController
             switch effectPrototype.instance {
-            case .channelPlayer(let channelPlayerEffect):
-                let channelPlayerTileController = ChannelPlayerTileController.make()
-                channelPlayerTileController.channelPlayerEffect = channelPlayerEffect
-                channelPlayerTileController.bass808 = channelPlayerEffect.channelPlayer.channels.first as! Bass808
-                effectController = channelPlayerTileController
+            case .waveMap(let waveMap):
+                let waveMapTileController = WaveMapTileController.make()
+                waveMapTileController.samplingSettings = AudioInterface.shared().samplingSettings
+                waveMapTileController.waveMap = waveMap
+                effectController = waveMapTileController
             default:
                 let effectViewController = EffectViewController.make()
                 effectViewController.effectPrototype = effectPrototype

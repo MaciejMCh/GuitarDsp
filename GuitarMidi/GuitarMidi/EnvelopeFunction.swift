@@ -8,13 +8,15 @@
 
 import Foundation
 import GuitarDsp
-import GuitarMidi
 
-public class EnvelopeFunction: FunctionVariable {
+public class EnvelopeFunction: FunctionVariable, WaveNode {
     enum State {
         case on
         case off(releaseStartTime: Double, releaseStartValue: Double)
     }
+    
+    public let id: String
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
     
     public var duration: Double = AudioInterface.shared().samplingSettings.samplesInSecond()
     public var delay: Double = 0
@@ -31,8 +33,12 @@ public class EnvelopeFunction: FunctionVariable {
     
     private var state = State.on
     private var time: Double = 0
+    private var lastOutput: Double = 0
+    private var lastTime = -1
     
-    public init() {}
+    public init(id: String? = nil) {
+        self.id = id ?? IdGenerator.next()
+    }
     
     public func on() {
         state = .on
@@ -40,23 +46,22 @@ public class EnvelopeFunction: FunctionVariable {
     }
     
     public func off() {
-        time -= 1
-        state = .off(releaseStartTime: time + 1, releaseStartValue: nextSample())
+        state = .off(releaseStartTime: time, releaseStartValue: lastOutput)
     }
     
-    public var value: Double {
-        return nextSample()
-    }
-    
-    public func nextSample() -> Double {
+    public func next(time: Int) -> Double {
         defer {
-            time += 1
+            self.time += 1
         }
         
+        if time == lastTime {
+            return lastOutput
+        }
+
         let progress = {(range: Range<Double>, pointer: Double) -> Double in
             return (pointer - range.lowerBound) / (range.upperBound - range.lowerBound)
         }
-        
+
         let envelopeOutput: Double
         switch state {
         case .on:
@@ -64,11 +69,11 @@ public class EnvelopeFunction: FunctionVariable {
             let attackTime = delayTime.upperBound..<delayTime.upperBound + attack * duration
             let holdTime = attackTime.upperBound..<attackTime.upperBound + hold * duration
             let decayTime = holdTime.upperBound..<holdTime.upperBound + decay * duration
-            
-            switch time {
+
+            switch self.time {
             case delayTime: envelopeOutput = 0
             case attackTime:
-                let progress = progress(attackTime, time)
+                let progress = progress(attackTime, self.time)
                 if let attackBezier = attackBezier {
                     envelopeOutput = attackBezier.y(x: progress)
                 } else {
@@ -76,7 +81,7 @@ public class EnvelopeFunction: FunctionVariable {
                 }
             case holdTime: envelopeOutput = 1
             case decayTime:
-                let progress = progress(decayTime, time)
+                let progress = progress(decayTime, self.time)
                 if let decayBezier = decayBezier {
                     envelopeOutput = 1 - (decayBezier.y(x: progress) * (1 - sustain))
                 } else {
@@ -86,10 +91,10 @@ public class EnvelopeFunction: FunctionVariable {
             }
         case .off(let releaseStartTime, let releaseStartValue):
             let releaseTime = releaseStartTime..<releaseStartTime + release * duration
-            
-            switch time {
+
+            switch self.time {
             case releaseTime:
-                let progress = progress(releaseTime, time)
+                let progress = progress(releaseTime, self.time)
                 if let releaseBezier = releaseBezier {
                     envelopeOutput = releaseStartValue * (1 - releaseBezier.y(x: progress))
                 } else {
@@ -98,7 +103,12 @@ public class EnvelopeFunction: FunctionVariable {
             default: envelopeOutput = 0
             }
         }
-        return envelopeOutput * volume
         
+        let output = envelopeOutput * volume
+        
+        lastOutput = output
+        lastTime = time
+        
+        return output
     }
 }

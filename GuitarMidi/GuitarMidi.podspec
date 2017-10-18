@@ -14,5 +14,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'GuitarDsp'
   spec.dependency 'Beethoven'
   spec.dependency 'MIDIKit'
+  spec.dependency 'NodesMap'
   spec.requires_arc = true
 end

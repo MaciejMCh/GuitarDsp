@@ -8,17 +8,28 @@
 
 import Foundation
 
-public class WaveShaper: WaveEffect {
+public class WaveShaper: WaveNode {
+    public let id: String
     public var cubicBezier: CubicBezier = CubicBezier(p1: .zero, p2: .zero)
     public var mirrorNegatives: Bool = true
+    let ff = FlipFlop()
     
-    public init() {}
+    let input: SignalInput = SignalInput()
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
     
-    public func apply(input: Double) -> Double {
-        if mirrorNegatives && input < 0 {
-            return -cubicBezier.y(x: -input)
-        } else {
-            return cubicBezier.y(x: input)
+    public init(id: String? = nil) {
+        self.id = id ?? IdGenerator.next()
+    }
+    
+    public func next(time: Int) -> Double {
+        return ff.value(time: time) {
+            guard let inputValue = self.input.output?.next(time) else {return 0}
+            
+            if self.mirrorNegatives && inputValue < 0 {
+                return -self.cubicBezier.y(x: -inputValue)
+            } else {
+                return self.cubicBezier.y(x: inputValue)
+            }
         }
     }
 }

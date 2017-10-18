@@ -10,6 +10,7 @@ import Foundation
 import Cocoa
 import GuitarDsp
 import HexColors
+import GuitarMidi
 
 class LooperEffectViewController: NSViewController {
     var looperEffect: LooperEffect!
@@ -25,6 +26,12 @@ class LooperEffectViewController: NSViewController {
     @IBOutlet weak var buttonView2: NSView!
     @IBOutlet weak var buttonView3: NSView!
     @IBOutlet weak var buttonView4: NSView!
+    
+    @IBOutlet weak var volumeLabel0: NSTextField!
+    @IBOutlet weak var volumeLabel1: NSTextField!
+    @IBOutlet weak var volumeLabel2: NSTextField!
+    @IBOutlet weak var volumeLabel3: NSTextField!
+    @IBOutlet weak var volumeLabel4: NSTextField!
     
     @IBOutlet weak var tempoTapView: TapView!
     @IBOutlet weak var tempoAnimationView: NSView!
@@ -68,7 +75,7 @@ class LooperEffectViewController: NSViewController {
             }
         }
         
-        let tapsCount = 3
+        let tapsCount = 6
         var taps: [Double] = Array(repeating: 0, count: tapsCount)
         tempoTapView.tap = { [weak self] in
             taps.remove(at: 0)
@@ -89,11 +96,11 @@ class LooperEffectViewController: NSViewController {
     }
     
     func setupLoopViews() {
-        loopViews.append(LoopView(bar: barView0, button: buttonView0))
-        loopViews.append(LoopView(bar: barView1, button: buttonView1))
-        loopViews.append(LoopView(bar: barView2, button: buttonView2))
-        loopViews.append(LoopView(bar: barView3, button: buttonView3))
-        loopViews.append(LoopView(bar: barView4, button: buttonView4))
+        loopViews.append(LoopView(bar: barView0, button: buttonView0, volumeLabel: volumeLabel0))
+        loopViews.append(LoopView(bar: barView1, button: buttonView1, volumeLabel: volumeLabel1))
+        loopViews.append(LoopView(bar: barView2, button: buttonView2, volumeLabel: volumeLabel2))
+        loopViews.append(LoopView(bar: barView3, button: buttonView3, volumeLabel: volumeLabel3))
+        loopViews.append(LoopView(bar: barView4, button: buttonView4, volumeLabel: volumeLabel4))
         
         for loopView in loopViews {
             loopView.bar.wantsLayer = true
@@ -125,6 +132,7 @@ class LooperEffectViewController: NSViewController {
             }
             loopView.bar.layer?.backgroundColor = barColor.cgColor
             loopView.button.layer?.backgroundColor = buttonColor.cgColor
+            loopView.volumeLabel.stringValue = String(format: "%.2f", looperEffect.looperBanks.advanced(by: i).pointee.volume)
             
             i += 1
         }
@@ -170,6 +178,13 @@ class LooperEffectViewController: NSViewController {
         updateLoopViewsAterWhile()
     }
     
+    @IBAction func volumeLabelAction(label: NSTextField) {
+        let index = loopViews.map{$0.volumeLabel}.index(of: label)!
+        let bank = looperEffect.looperBanks.advanced(by: index)
+        bank.pointee.volume = Float(label.stringValue) ?? 0
+        updateLoopViews()
+    }
+    
     func updateLoopViewsAterWhile() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.updateLoopViews()
@@ -182,10 +197,12 @@ extension LooperEffectViewController {
         let bar: NSView
         let button: NSView
         let progress: CALayer
+        let volumeLabel: NSTextField
         
-        init(bar: NSView, button: NSView) {
+        init(bar: NSView, button: NSView, volumeLabel: NSTextField) {
             self.bar = bar
             self.button = button
+            self.volumeLabel = volumeLabel
             progress = CALayer()
         }
     }

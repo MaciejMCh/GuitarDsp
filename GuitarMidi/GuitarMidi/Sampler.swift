@@ -26,17 +26,19 @@ struct AudioFile {
     }
 }
 
-public class Sampler: Playing, MidiPlayer {
+public class Sampler: Playing, MidiPlayer, WaveNode {
+    public let id: String
     public static var xd: Sampler!
     let samplingSettings: SamplingSettings
     public var volume: FunctionVariable = EnvelopeFunction()
     private(set) var player: SamplePlayer
-    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.nextOutput(time: $0) ?? 0}}()
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
     public var sampleFilePath: String {
         didSet {
             player = Sampler.loadPlayer(path: sampleFilePath, samplingSettings: samplingSettings)
         }
     }
+    private let ff = FlipFlop()
     
     static func loadPlayer(path: String, samplingSettings: SamplingSettings) -> SamplePlayer {
         var isDirectory: ObjCBool = false
@@ -57,19 +59,18 @@ public class Sampler: Playing, MidiPlayer {
         }
     }
     
-    public init(sampleFilePath: String, samplingSettings: SamplingSettings) {
+    public init(sampleFilePath: String, samplingSettings: SamplingSettings, id: String? = nil) {
         self.samplingSettings = samplingSettings
         self.sampleFilePath = sampleFilePath
         player = Sampler.loadPlayer(path: sampleFilePath, samplingSettings: samplingSettings)
+        self.id = id ?? IdGenerator.next()
         Sampler.xd = self
     }
     
-    func nextOutput(time: Int) -> Double {
-        return 0 // TODO
-    }
-    
-    public func nextSample() -> Double {
-        return player.nextSample() * volume.value
+    public func next(time: Int) -> Double {
+        return ff.value(time: time) {
+            self.player.nextSample() * self.volume.next(time: time)
+        }
     }
     
     public func on() {
@@ -82,7 +83,7 @@ public class Sampler: Playing, MidiPlayer {
         player.off()
     }
     
-    func setFrequency(_ frequency: Double) {
+    public func setFrequency(_ frequency: Double) {
         player.setFrequency(frequency)
     }
 }

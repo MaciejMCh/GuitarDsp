@@ -46,8 +46,8 @@
 }
 
 - (void)setupAudioPlayers {
-    self.tactAudioPlayer = [[RawAudioPlayer alloc] initWithSamplingSettings:self.samplingSettings data:[NSData dataWithContentsOfFile:[[NSBundle bundleForClass:[LooperEffect class]] pathForResource:@"snare" ofType:@"raw"]]];
-    self.quaterTactAudioPlayer = [[RawAudioPlayer alloc] initWithSamplingSettings:self.samplingSettings data:[NSData dataWithContentsOfFile:[[NSBundle bundleForClass:[LooperEffect class]] pathForResource:@"hihat" ofType:@"raw"]]];
+    self.tactAudioPlayer = [[RawAudioPlayer alloc] initWithSamplingSettings:self.samplingSettings data:nil];
+    self.quaterTactAudioPlayer = [[RawAudioPlayer alloc] initWithSamplingSettings:self.samplingSettings data:nil];
 }
 
 - (void)calculateTimings {
@@ -66,6 +66,7 @@
     self.looperBanks = malloc(sizeof(struct LooperBank) * self.banksCount);
     for (int i = 0; i < self.banksCount; i++) {
         self.looperBanks[i].state = Off;
+        self.looperBanks[i].volume = 1.0;
         self.looperBanks[i].packetsBuffer = malloc(sizeof(float *) * self.bankLengthInPackets);
         for (int j = 0; j < self.bankLengthInPackets; j++) {
             self.looperBanks[i].packetsBuffer[j] = malloc(self.samplingSettings.packetByteSize);
@@ -150,7 +151,7 @@
         struct LooperBank looperBank = self.looperBanks[i];
         if (looperBank.state == On) {
             for (int j = 0; j < self.samplingSettings.framesPerPacket; j++) {
-                output[j] += looperBank.packetsBuffer[self.currentPacketPointer][j];
+                output[j] += looperBank.packetsBuffer[self.currentPacketPointer][j] * looperBank.volume;
             }
         }
     }

@@ -6,17 +6,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Channel Player Tile Controller-->
+        <!--Wave Map Tile Controller-->
         <scene sceneID="e3O-ng-OCK">
             <objects>
-                <viewController id="4Pf-Md-bDK" customClass="ChannelPlayerTileController" customModule="Bow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4Pf-Md-bDK" customClass="WaveMapTileController" customModule="Bow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="zch-SE-z9J">
                         <rect key="frame" x="0.0" y="0.0" width="104" height="77"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CUJ-dn-pbv">
-                                <rect key="frame" x="4" y="21" width="97" height="32"/>
-                                <buttonCell key="cell" type="push" title="Channels" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A7k-8r-SD6">
+                                <rect key="frame" x="2" y="21" width="101" height="32"/>
+                                <buttonCell key="cell" type="push" title="wave map" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A7k-8r-SD6">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

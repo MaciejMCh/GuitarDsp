@@ -9,11 +9,15 @@
 import Foundation
 import SpriteKit
 
-public class Node {
+public protocol Indentificable {
+    var id: String {get}
+}
+
+public final class Node {
     public var name: String
-    let interfaces: [Interface]
-    var sprite: SKNode!
-    public var model: Any
+    public let interfaces: [Interface]
+    public var sprite: SKNode!
+    public var model: Indentificable
     
     private let width = CGFloat(140)
     let rowHeight = CGFloat(40)
@@ -31,7 +35,7 @@ public class Node {
                       height: nameHeight)
     }
     
-    public init(name: String, interfaces: [Interface], model: Any) {
+    public init(name: String, interfaces: [Interface], model: Indentificable) {
         self.name = name
         self.interfaces = interfaces
         self.model = model

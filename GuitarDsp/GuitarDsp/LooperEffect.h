@@ -20,6 +20,7 @@ typedef NS_ENUM(NSUInteger, BankState) {
 struct LooperBank {
     float **packetsBuffer;
     BankState state;
+    float volume;
 };
 
 @interface LooperEffect : NSObject <Effect>

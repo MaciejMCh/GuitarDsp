@@ -8,19 +8,43 @@
 
 import Foundation
 
-struct OverdriveWaveEffect: WaveEffect {
-    let treshold: FunctionVariable
+public class OverdriveWaveEffect: WaveNode {
+    public let id: String
+    public var treshold: FunctionVariable = Constant(value: 0.8)
+    private let ff = FlipFlop()
     
-    func apply(input: Double) -> Double {
-        return min(input, treshold.value)
+    let input: SignalInput = SignalInput()
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
+    
+    public init(id: String? = nil) {
+        self.id = id ?? IdGenerator.next()
+    }
+    
+    public func next(time: Int) -> Double {
+        return ff.value(time: time) {
+            guard let inputValue = self.input.output?.next(time) else {return 0}
+            return min(abs(inputValue), self.treshold.next(time: time)) * sign(inputValue)
+        }
     }
 }
 
-struct FoldbackWaveEffect: WaveEffect {
-    var treshold: FunctionVariable
+public class FoldbackWaveEffect: WaveNode {
+    public let id: String
+    public var treshold: FunctionVariable = Constant(value: 0.8)
+    private let ff = FlipFlop()
     
-    func apply(input: Double) -> Double {
-        let diff = input - treshold.value
-        return diff > 0 ? input - (2 * diff) : input
+    let input: SignalInput = SignalInput()
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
+    
+    public init(id: String? = nil) {
+        self.id = id ?? IdGenerator.next()
+    }
+    
+    public func next(time: Int) -> Double {
+        return ff.value(time: time) {
+            guard let inputValue = self.input.output?.next(time) else {return 0}
+            let diff = inputValue - self.treshold.next(time: time)
+            return diff > 0 ? inputValue - (2 * diff) : inputValue
+        }
     }
 }

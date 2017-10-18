@@ -11,11 +11,11 @@
             <objects>
                 <viewController id="EMc-4j-2VH" customClass="WaveMapController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="rbi-Ly-o6F">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="688" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Wi9-wj-csB">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="260"/>
+                                <rect key="frame" x="0.0" y="0.0" width="688" height="260"/>
                                 <connections>
                                     <segue destination="TXP-Dt-IIr" kind="embed" id="7Oh-p9-pKl"/>
                                 </connections>
@@ -70,10 +70,41 @@
                                     <action selector="newAmp:" target="EMc-4j-2VH" id="89B-pi-ZHG"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lOq-Yh-JbY">
+                                <rect key="frame" x="400" y="267" width="66" height="32"/>
+                                <buttonCell key="cell" type="push" title="sum" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aTj-k6-Fbh">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="newSum:" target="EMc-4j-2VH" id="lbd-Oc-44d"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8yH-EU-8oC">
+                                <rect key="frame" x="459" y="267" width="116" height="32"/>
+                                <buttonCell key="cell" type="push" title="wave shaper" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iTG-ij-aYZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="newWaveShaper:" target="EMc-4j-2VH" id="KEX-Du-zT6"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nK0-ww-gf4">
+                                <rect key="frame" x="568" y="267" width="97" height="32"/>
+                                <buttonCell key="cell" type="push" title="overdrive" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DNt-OJ-IVm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="newOverdrive:" target="EMc-4j-2VH" id="4pc-fF-1XT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Wi9-wj-csB" firstAttribute="top" secondItem="rbi-Ly-o6F" secondAttribute="top" constant="40" id="1BT-8d-jFI"/>
                             <constraint firstItem="9in-Nv-AAD" firstAttribute="baseline" secondItem="zFp-nE-3u0" secondAttribute="baseline" id="CDi-7l-EX6"/>
+                            <constraint firstItem="nK0-ww-gf4" firstAttribute="baseline" secondItem="8yH-EU-8oC" secondAttribute="baseline" id="DSx-fZ-uvk"/>
                             <constraint firstItem="1vJ-UJ-7zH" firstAttribute="leading" secondItem="9in-Nv-AAD" secondAttribute="trailing" constant="5" id="F05-d8-hg1"/>
                             <constraint firstItem="cE3-0a-xeU" firstAttribute="leading" secondItem="1vJ-UJ-7zH" secondAttribute="trailing" constant="5" id="GoE-gr-Vz0"/>
                             <constraint firstAttribute="trailing" secondItem="Wi9-wj-csB" secondAttribute="trailing" id="H2t-QR-Ot4"/>
@@ -81,9 +112,14 @@
                             <constraint firstItem="Wi9-wj-csB" firstAttribute="leading" secondItem="rbi-Ly-o6F" secondAttribute="leading" id="LM7-NU-T78"/>
                             <constraint firstItem="zFp-nE-3u0" firstAttribute="baseline" secondItem="xfN-oV-Xq1" secondAttribute="baseline" id="MUT-uc-cNp"/>
                             <constraint firstItem="9in-Nv-AAD" firstAttribute="leading" secondItem="zFp-nE-3u0" secondAttribute="trailing" constant="5" id="RMg-r5-6QL"/>
+                            <constraint firstItem="nK0-ww-gf4" firstAttribute="leading" secondItem="8yH-EU-8oC" secondAttribute="trailing" constant="5" id="RjJ-7z-oLv"/>
                             <constraint firstItem="xfN-oV-Xq1" firstAttribute="leading" secondItem="rbi-Ly-o6F" secondAttribute="leading" constant="5" id="UaI-6a-fqI"/>
+                            <constraint firstItem="8yH-EU-8oC" firstAttribute="leading" secondItem="lOq-Yh-JbY" secondAttribute="trailing" constant="5" id="YKl-ZR-xme"/>
                             <constraint firstItem="xfN-oV-Xq1" firstAttribute="top" secondItem="rbi-Ly-o6F" secondAttribute="top" constant="5" id="YS1-tr-k6P"/>
+                            <constraint firstItem="lOq-Yh-JbY" firstAttribute="leading" secondItem="cE3-0a-xeU" secondAttribute="trailing" constant="5" id="k1e-sw-6fa"/>
+                            <constraint firstItem="lOq-Yh-JbY" firstAttribute="baseline" secondItem="cE3-0a-xeU" secondAttribute="baseline" id="lbC-Yo-cih"/>
                             <constraint firstAttribute="bottom" secondItem="Wi9-wj-csB" secondAttribute="bottom" id="niY-Cr-ZtF"/>
+                            <constraint firstItem="8yH-EU-8oC" firstAttribute="baseline" secondItem="lOq-Yh-JbY" secondAttribute="baseline" id="usa-m4-KTr"/>
                             <constraint firstItem="zFp-nE-3u0" firstAttribute="leading" secondItem="xfN-oV-Xq1" secondAttribute="trailing" constant="5" id="vGr-B6-Gd3"/>
                             <constraint firstItem="cE3-0a-xeU" firstAttribute="baseline" secondItem="1vJ-UJ-7zH" secondAttribute="baseline" id="yr5-Ym-fhY"/>
                         </constraints>
@@ -91,7 +127,7 @@
                 </viewController>
                 <customObject id="KyS-Tw-ksx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-132" y="121"/>
+            <point key="canvasLocation" x="-13" y="121"/>
         </scene>
         <!--Map-->
         <scene sceneID="suk-4k-6Ts">

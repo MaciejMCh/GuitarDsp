@@ -10,13 +10,16 @@ import Foundation
 import GuitarDsp
 
 public protocol Channel: Playing {
-    func nextSample() -> Double
+    //    func nextSample() -> Double
 }
 extension Sampler: Channel {}
-extension Bass808: Channel {}
 
-protocol MidiPlayer: Playing {
+public protocol MidiPlayer: Playing {
     func setFrequency(_ frequency: Double)
+}
+
+extension MidiPlayer {
+    public func setFrequency(_ frequency: Double) {}
 }
 
 public class ChannelPlayer: MidiPlayer {
@@ -46,7 +49,8 @@ public class ChannelPlayer: MidiPlayer {
     }
     
     public func nextSample() -> Double {
-        return channels.map{$0.nextSample()}.reduce(0.0, +)
+        return 0
+        //        return channels.map{$0.nextSample()}.reduce(0.0, +)
     }
 }
 
@@ -70,13 +74,13 @@ public class ChannelPlayerEffect: NSObject, Effect {
             buffer[i] = inputSample.amp.advanced(by: i).pointee
         }
         
-            for event in midiOutput.detectEvents(buffer: buffer) {
-                switch event {
-                case .on: channelPlayer.on()
-                case .off: channelPlayer.off()
-                case .frequency(let frequency): channelPlayer.setFrequency(frequency)
-                }
+        for event in midiOutput.detectEvents(buffer: buffer) {
+            switch event {
+            case .on: channelPlayer.on()
+            case .off: channelPlayer.off()
+            case .frequency(let frequency): channelPlayer.setFrequency(frequency)
             }
+        }
         
         for i in 0..<Int(samplingSettings.framesPerPacket) {
             outputBuffer.advanced(by: i).pointee = Float(channelPlayer.nextSample())

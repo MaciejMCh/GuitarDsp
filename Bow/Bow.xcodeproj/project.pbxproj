@@ -10,8 +10,8 @@
 		703DCFCCD322A30617D387D7 /* Pods_Bow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93EE436A140626A8B1D489A8 /* Pods_Bow.framework */; };
 		C203174F1E928852008ACFCB /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C203174E1E928852008ACFCB /* SearchViewController.storyboard */; };
 		C20317511E9288DA008ACFCB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20317501E9288DA008ACFCB /* SearchViewController.swift */; };
-		C22F02961F7BB68600B146C3 /* ChannelPlayerTile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22F02951F7BB68600B146C3 /* ChannelPlayerTile.storyboard */; };
-		C22F02981F7BB69800B146C3 /* ChannelPlayerTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F02971F7BB69800B146C3 /* ChannelPlayerTileViewController.swift */; };
+		C22F02961F7BB68600B146C3 /* WaveMapTile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22F02951F7BB68600B146C3 /* WaveMapTile.storyboard */; };
+		C22F02981F7BB69800B146C3 /* WaveMapTileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F02971F7BB69800B146C3 /* WaveMapTileController.swift */; };
 		C24415F61E953BB700F2DEAB /* LooperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24415F51E953BB700F2DEAB /* LooperViewController.swift */; };
 		C24751C11E9426F000718BDF /* StorableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24751C01E9426F000718BDF /* StorableModel.swift */; };
 		C24751C31E94270B00718BDF /* Prototypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24751C21E94270B00718BDF /* Prototypes.swift */; };
@@ -53,8 +53,8 @@
 		93EE436A140626A8B1D489A8 /* Pods_Bow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C203174E1E928852008ACFCB /* SearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		C20317501E9288DA008ACFCB /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		C22F02951F7BB68600B146C3 /* ChannelPlayerTile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChannelPlayerTile.storyboard; sourceTree = "<group>"; };
-		C22F02971F7BB69800B146C3 /* ChannelPlayerTileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPlayerTileViewController.swift; sourceTree = "<group>"; };
+		C22F02951F7BB68600B146C3 /* WaveMapTile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapTile.storyboard; sourceTree = "<group>"; };
+		C22F02971F7BB69800B146C3 /* WaveMapTileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMapTileController.swift; sourceTree = "<group>"; };
 		C24415F51E953BB700F2DEAB /* LooperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooperViewController.swift; sourceTree = "<group>"; };
 		C24751C01E9426F000718BDF /* StorableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorableModel.swift; sourceTree = "<group>"; };
 		C24751C21E94270B00718BDF /* Prototypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prototypes.swift; sourceTree = "<group>"; };
@@ -170,8 +170,8 @@
 				C24415F51E953BB700F2DEAB /* LooperViewController.swift */,
 				C28ABBE81E97C2CE0050D955 /* SetupViewController.swift */,
 				C28ABBEA1E97C2E70050D955 /* SetupViewController.storyboard */,
-				C22F02951F7BB68600B146C3 /* ChannelPlayerTile.storyboard */,
-				C22F02971F7BB69800B146C3 /* ChannelPlayerTileViewController.swift */,
+				C22F02951F7BB68600B146C3 /* WaveMapTile.storyboard */,
+				C22F02971F7BB69800B146C3 /* WaveMapTileController.swift */,
 				C2C6180E1F7BE8B00084CAC4 /* Test.swift */,
 			);
 			path = Bow;
@@ -252,7 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C22F02961F7BB68600B146C3 /* ChannelPlayerTile.storyboard in Resources */,
+				C22F02961F7BB68600B146C3 /* WaveMapTile.storyboard in Resources */,
 				C26DED611E8AF81400E61B7C /* Assets.xcassets in Resources */,
 				C24751CB1E942EE100718BDF /* TagPickerController.storyboard in Resources */,
 				C26AFDD81E8C7F8C00C72E63 /* EffectsOrderViewController.storyboard in Resources */,
@@ -305,6 +305,7 @@
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONCodable/JSONCodable.framework",
 				"${BUILT_PRODUCTS_DIR}/MIDIKit/MIDIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/NodesMap/NodesMap.framework",
 				"${BUILT_PRODUCTS_DIR}/Pitchy/Pitchy.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework",
@@ -319,6 +320,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONCodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIDIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NodesMap.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pitchy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPCircularBuffer.framework",
@@ -353,7 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C22F02981F7BB69800B146C3 /* ChannelPlayerTileViewController.swift in Sources */,
+				C22F02981F7BB69800B146C3 /* WaveMapTileController.swift in Sources */,
 				C26DED721E8AFCB400E61B7C /* EffectViewController.swift in Sources */,
 				C26AFDDA1E8C7FA000C72E63 /* EffectsOrderViewController.swift in Sources */,
 				C26DED5D1E8AF81400E61B7C /* AppDelegate.swift in Sources */,

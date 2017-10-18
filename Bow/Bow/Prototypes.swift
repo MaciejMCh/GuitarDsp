@@ -41,7 +41,7 @@ extension EffectPrototype {
         case flanger(FlangerEffect)
         case phaser(PhaserEffect)
         case distortion(DistortionEffect)
-        case channelPlayer(ChannelPlayerEffect)
+        case waveMap(WaveMap)
     }
 }
 
@@ -61,7 +61,7 @@ extension EffectPrototype.Instance {
         case "vibe": self = .vibe(effectFactory.makeVibe())
         case "flanger": self = .flanger(effectFactory.makeFlanger())
         case "distortion": self = .distortion(effectFactory.makeDistortion())
-        case "channel_player": self = .channelPlayer(effectFactory.makeChannelPlayer())
+        case "wave_map": self = .waveMap(effectFactory.makeWaveMap())
         default:
             assert(false)
             return nil
@@ -81,7 +81,7 @@ extension EffectPrototype.Instance {
         case .flanger: return "flanger"
         case .phaser: return "phaser"
         case .distortion: return "distortion"
-        case .channelPlayer: return "channel_player"
+        case .waveMap: return "wave_map"
         }
     }
     
@@ -109,8 +109,8 @@ extension EffectPrototype.Instance {
             self = .phaser(phaserEffect)
         } else if let distortionEffect = effect as? DistortionEffect {
             self = .distortion(distortionEffect)
-        } else if let channelPlayerEffect = effect as? ChannelPlayerEffect {
-            self = .channelPlayer(channelPlayerEffect)
+        } else if let waveMap = effect as? WaveMap {
+            self = .waveMap(waveMap)
         } else {
             assert(false)
             return nil
@@ -130,7 +130,7 @@ extension EffectPrototype.Instance {
         case .flanger(let effect): return effect
         case .phaser(let effect): return effect
         case .distortion(let effect): return effect
-        case .channelPlayer(let effect): return effect
+        case .waveMap(let effect): return effect
         }
     }
 }

@@ -16,6 +16,7 @@ PODS:
     - EZAudio
     - GuitarDsp
     - MIDIKit
+    - NodesMap
   - HexColors (5.0.1)
   - JSONCodable (3.0.1)
   - MIDIKit (1.0.0)
@@ -66,11 +67,11 @@ SPEC CHECKSUMS:
   CubicBezier: a409bea768ec73dbd5d1cbcb881947a416701c19
   EZAudio: b46eb8c28899cfff30995a180672afd148a54e31
   GuitarDsp: adf8387415647b85e078d03b368cc019f996fccc
-  GuitarMidi: 5dcc1ec00ef9b3347ebe1c9e2099465ba4917a7d
+  GuitarMidi: 1bb09fb25989ec3bd455b43a1f776a5cbd04cb4a
   HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
   MIDIKit: 785c048f399107c47a1ad9a47a8656034edf5162
-  NodesMap: 3e1e79c01d66e806b883479aeae5977b6f3c9caa
+  NodesMap: 47b096d77b20ac81121a31e624eedbef976d2e54
   Pitchy: 00dbe7cb7ac87fd9c32cb2aa6ce50d11f931289f
   RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62

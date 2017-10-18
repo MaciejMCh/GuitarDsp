@@ -9,20 +9,25 @@
 import Foundation
 import GuitarDsp
 
-public class Oscilator: Playing, MidiPlayer {
+public class Oscilator: Playing, MidiPlayer, WaveNode {
+    public let id: String
     let samplingSettings: SamplingSettings
-    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.nextOutput(time: $0) ?? 0}}()
-    public let waveGenerator: WaveGenerator
-    public var tune: FunctionVariable = -12
-    private var frequency: Double = 0
+    let ff = FlipFlop()
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
+    public var waveGenerator: WaveGenerator
+    public var tune: FunctionVariable = Constant(value: -12)
+    private var frequency: Double = 1.0
     
-    public init(samplingSettings: SamplingSettings) {
+    public init(samplingSettings: SamplingSettings, id: String? = nil) {
         self.samplingSettings = samplingSettings
+        self.id = id ?? IdGenerator.next()
         waveGenerator = WaveGenerator(samplingSettings: samplingSettings)
     }
     
-    private func nextOutput(time: Int) -> Double {
-        return waveGenerator.nextSample(frequency: frequency * halfToneToScale(tune.value))
+    public func next(time: Int) -> Double {
+        let v = ff.value(time: time) {self.waveGenerator.nextSample(frequency: self.frequency * halfToneToScale(self.tune.next(time: time)))}
+//        debugPrint(v)
+        return v
     }
     
     public func on() {
@@ -33,7 +38,7 @@ public class Oscilator: Playing, MidiPlayer {
         tune.off()
     }
     
-    func setFrequency(_ frequency: Double) {
+    public func setFrequency(_ frequency: Double) {
         self.frequency = frequency
     }
 }

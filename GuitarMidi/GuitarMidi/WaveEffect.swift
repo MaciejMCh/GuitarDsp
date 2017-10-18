@@ -7,6 +7,36 @@
 //
 
 import Foundation
+import NodesMap
+
+class IdGenerator {
+    private static var last: Int = 0
+    static func next() -> String {
+        defer {
+            last += 1
+        }
+        return String(last)
+    }
+}
+
+class FlipFlop {
+    private var lastValue = 0.0
+    private var lastTime = -1
+    
+    func value(time: Int, value: () -> Double) -> Double {
+        if lastTime == time {
+            return lastValue
+        }
+        
+        lastTime = time
+        lastValue = value()
+        return lastValue
+    }
+}
+
+public protocol WaveNode: MidiPlayer, Indentificable {
+    func next(time: Int) -> Double
+}
 
 public protocol Playing {
     func on()
@@ -18,20 +48,22 @@ extension Playing {
     public func off() {}
 }
 
-public protocol WaveEffect: Playing {
-    func apply(input: Double) -> Double
-}
-
-public class AmpWaveEffect {
-    public var gain: FunctionVariable = 1.0
+public class AmpWaveEffect: WaveNode {
+    public let id: String
+    public var gain: FunctionVariable = Constant(value: 1.0)
+    private let ff = FlipFlop()
     
     let input: SignalInput = SignalInput()
     lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
     
-    public init() {}
+    public init(id: String? = nil) {
+        self.id = id ?? IdGenerator.next()
+    }
     
     public func next(time: Int) -> Double {
-        return input.output?.next(time) ?? 0
+        return ff.value(time: time) {
+            (input.output?.next(time) ?? 0) * self.gain.next(time: time)
+        }
     }
     
     public func on() {
@@ -40,5 +72,25 @@ public class AmpWaveEffect {
     
     public func off() {
         gain.off()
+    }
+}
+
+public class SumWaveNode: WaveNode {
+    public let id: String
+    
+    let input1: SignalInput = SignalInput()
+    let input2: SignalInput = SignalInput()
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
+    
+    private let ff = FlipFlop()
+    
+    public init(id: String? = nil) {
+        self.id = id ?? IdGenerator.next()
+    }
+    
+    public func next(time: Int) -> Double {
+        return ff.value(time: time) {
+            return (self.input1.output?.next(time) ?? 0) + (self.input2.output?.next(time) ?? 0)
+        }
     }
 }

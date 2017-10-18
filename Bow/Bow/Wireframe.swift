@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import GuitarMidi
 
 protocol InterfaceBuilderInstance {
     static var interfaceFileName: String {get}
@@ -42,4 +43,5 @@ extension SearchViewController: InterfaceBuilderInstance {static var interfaceFi
 extension TagPickerController: InterfaceBuilderInstance {static var interfaceFileName: String {return "TagPickerController"}}
 extension LooperEffectViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "LooperViewController"}}
 extension SetupViewController: InterfaceBuilderInstance {static var interfaceFileName: String {return "SetupViewController"}}
-extension ChannelPlayerTileController: InterfaceBuilderInstance {static var interfaceFileName: String {return "ChannelPlayerTile"}}
+extension WaveMapTileController: InterfaceBuilderInstance {static var interfaceFileName: String {return "WaveMapTile"}}
+extension WaveMapController: InterfaceBuilderInstance {static var interfaceFileName: String {return "WaveMap"}}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="iY3-YN-CVr">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13156.6"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Constant View Controller-->
+        <scene sceneID="Ynz-Xi-Xex">
+            <objects>
+                <viewController id="iY3-YN-CVr" customClass="ConstantViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="cHD-qC-eoR">
+                        <rect key="frame" x="0.0" y="0.0" width="96" height="22"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H9Z-Db-EaG" customClass="VariableTextField" customModule="GuitarMidi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="96" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="6cC-hp-Ieu"/>
+                                    <constraint firstAttribute="width" constant="96" id="DpC-hF-I8b"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Y1I-jY-FpI">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="variableTextFieldAction:" target="iY3-YN-CVr" id="afn-0Q-48C"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="H9Z-Db-EaG" secondAttribute="bottom" id="8M6-NO-bof"/>
+                            <constraint firstItem="H9Z-Db-EaG" firstAttribute="top" secondItem="cHD-qC-eoR" secondAttribute="top" id="B0W-4u-CC5"/>
+                            <constraint firstItem="H9Z-Db-EaG" firstAttribute="leading" secondItem="cHD-qC-eoR" secondAttribute="leading" id="wWL-It-nmm"/>
+                            <constraint firstAttribute="trailing" secondItem="H9Z-Db-EaG" secondAttribute="trailing" id="zpm-pE-kXs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="variableTextField" destination="H9Z-Db-EaG" id="BGW-pG-qLQ"/>
+                    </connections>
+                </viewController>
+                <customObject id="oaB-NO-0d7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-115" y="155"/>
+        </scene>
+    </scenes>
+</document>

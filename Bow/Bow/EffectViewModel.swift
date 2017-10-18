@@ -33,7 +33,7 @@ struct EffectViewModel {
         case .flanger: return "flanger"
         case .phaser: return "phaser"
         case .distortion: return "distortion"
-        case .channelPlayer: return "channel player"
+        case .waveMap: return "wave map"
         }
     }
     
@@ -50,7 +50,7 @@ struct EffectViewModel {
         case .flanger: return NSColor("4AD0E2")!
         case .phaser: return NSColor("4AE2B4")!
         case .distortion: return NSColor("E24A4A")!
-        case .channelPlayer: return .black
+        case .waveMap: return .black
         }
     }
 }

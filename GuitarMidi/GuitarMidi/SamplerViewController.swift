@@ -109,7 +109,7 @@ class SamplerViewController: NSViewController {
         
         drawingEnvelopeFunction.on()
         for i in 0..<length {
-            envelopePath.line(to: .init(x: CGFloat(i), y: CGFloat(height) * CGFloat(drawingEnvelopeFunction.nextSample())))
+            envelopePath.line(to: .init(x: CGFloat(i), y: CGFloat(height) * CGFloat(drawingEnvelopeFunction.next(time: i))))
         }
         envelopePath.line(to: NSPoint(x: CGFloat(length), y: 0))
         
@@ -132,8 +132,12 @@ class SamplerViewController: NSViewController {
         let drySamples = sampler.player.samplesForView
         
         var values: [Double] = []
+        var i = 0
         for drySample in drySamples {
-            values.append(Double(drySample) * volumeEnvelope.nextSample())
+            defer {
+                i += 1
+            }
+            values.append(Double(drySample) * volumeEnvelope.next(time: i))
         }
         
         waveView.values = values

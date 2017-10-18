@@ -56,14 +56,14 @@ class VariableViewController: NSViewController {
     
     private func updateVariable() {
         switch fixedButton.state {
-        case 1: variableUpdate?(Double(fixedTextField.stringValue)!)
+        case 1: variableUpdate?(Constant(value: Double(fixedTextField.stringValue) ?? 0))
         case 0: break
         default: break
         }
     }
 }
 
-class VariableTextField: NSTextField {
+public class VariableTextField: NSTextField {
     @IBInspectable var minValue: Double = 0
     @IBInspectable var maxValue: Double = 5
     
@@ -72,22 +72,22 @@ class VariableTextField: NSTextField {
         case dragging(from: CGPoint)
     }
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         acceptsTouchEvents = true
     }
     
-    override func touchesBegan(with event: NSEvent) {
+    public override func touchesBegan(with event: NSEvent) {
         super.touchesBegan(with: event)
     }
     
-    override func scrollWheel(with event: NSEvent) {
+    public override func scrollWheel(with event: NSEvent) {
         super.scrollWheel(with: event)
         let currentDouble = Double(stringValue)!
         let change = Double(event.deltaY) * -0.01
         
         let newDouble = max(minValue, min(maxValue, currentDouble + change))
         stringValue = String(newDouble)
-        self.target?.perform(self.action)
+        target?.perform(action, with: self)
     }
 }

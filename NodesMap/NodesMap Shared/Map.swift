@@ -11,7 +11,7 @@ import SpriteKit
 
 public typealias ConnectionEndpoint = (Node, Interface)
 
-public class Map {
+public final class Map {
     static func makeLineSprite() -> SKShapeNode {
         let line = SKShapeNode(rect: CGRect(x: 0, y: 1, width: 1, height: 1000))
         return line
@@ -19,8 +19,9 @@ public class Map {
     
     private let connect: (ConnectionEndpoint, ConnectionEndpoint) -> Bool
     private var state = State.none
-    private var nodes: [Node] = []
-    private var connections: [(ConnectionEndpoint, ConnectionEndpoint, SKShapeNode)] = []
+    public var nodes: [Node] = []
+    public var connections: [(ConnectionEndpoint, ConnectionEndpoint, SKShapeNode)] = []
+    public var select: ((Node) -> ())?
     
     private lazy var draggingLineNode: SKShapeNode = {
         Map.makeLineSprite()
@@ -47,6 +48,15 @@ public class Map {
     public func addNode(_ node: Node) {
         nodes.append(node)
         scene.addChild(node.sprite)
+    }
+    
+    public func connect(lhs: ConnectionEndpoint, rhs: ConnectionEndpoint) {
+        if connect(lhs, rhs) {
+            let connectionSprite = Map.makeLineSprite()
+            scene.addChild(connectionSprite)
+            connections.append((lhs, rhs, connectionSprite))
+            updateConnections()
+        }
     }
     
     private func on(location: CGPoint) {
@@ -89,18 +99,22 @@ public class Map {
     }
     
     private func off(location: CGPoint) {
+        if case .dragging(let onLocation) = state {
+            for node in nodes {
+                let nodeRect = node.frameForName().moved(by: node.sprite.position)
+                if nodeRect.contains(location) {
+                    select?(node)
+                }
+            }
+        }
+        
         for node in nodes {
             for interface in node.interfaces {
                 let interfaceRect = node.frameForInterface(interface: interface).moved(by: node.sprite.position)
                 if interfaceRect.contains(location) {
                     if case .connecting(let originEndpoint) = state {
                         let secondEndpoint = (node, interface)
-                        if connect(originEndpoint, secondEndpoint) {
-                            let connectionSprite = Map.makeLineSprite()
-                            scene.addChild(connectionSprite)
-                            connections.append((originEndpoint, secondEndpoint, connectionSprite))
-                            updateConnections()
-                        }
+                        self.connect(lhs: originEndpoint, rhs: secondEndpoint)
                     }
                 }
             }

@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "59C7C9FA5F3953E2EEB12CCCEBABED38294BB22F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "59C7C9FA5F3953E2EEB12CCCEBABED38294BB22F" : 9223372036854775807,
+    "9D6FF97A89F512CD81EAE1A971A1D2EB03E03F7C" : 9223372036854775807,
+    "2954B13BFC0D10A6647BFC32968490A0B4190327" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "473FA22B-1D28-44ED-AC1B-EB1E66DCB4AF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "59C7C9FA5F3953E2EEB12CCCEBABED38294BB22F" : "GuitarDsp\/",
+    "9D6FF97A89F512CD81EAE1A971A1D2EB03E03F7C" : "GuitarDsp\/EZAudio\/",
+    "2954B13BFC0D10A6647BFC32968490A0B4190327" : "GuitarDsp\/CubicBezier\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GuitarMidi",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GuitarMidi\/GuitarMidi.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MaciejMCh\/CubicBezier.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2954B13BFC0D10A6647BFC32968490A0B4190327"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MaciejMCh\/GuitarDsp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "59C7C9FA5F3953E2EEB12CCCEBABED38294BB22F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MaciejMCh\/EZAudio.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9D6FF97A89F512CD81EAE1A971A1D2EB03E03F7C"
+    }
+  ]
+}

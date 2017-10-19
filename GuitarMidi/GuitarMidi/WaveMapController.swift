@@ -44,6 +44,8 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
             }
         }
         
+//        memcpy(outputBuffer, inputSample.amp, Int(samplingSettings.packetByteSize))
+//        return;
         
         for i in 0..<Int(samplingSettings.framesPerPacket) {
             defer {
@@ -109,6 +111,14 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
         }
         if let overdrive = waveNode as? OverdriveWaveEffect {
             map.addNode(WaveMap.nodeFromOverdrive(overdrive))
+            return
+        }
+        if let foldback = waveNode as? FoldbackWaveEffect {
+            map.addNode(WaveMap.nodeFromFoldback(foldback))
+            return
+        }
+        if let lpf = waveNode as? LowpassFilterEffect {
+            map.addNode(WaveMap.nodeFromLpf(lpf))
             return
         }
         assert(false)
@@ -206,6 +216,20 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
                         Interface(name: "treshold", model: overdrve.tresholdSetter)],
                     model: overdrve)
     }
+    fileprivate static func nodeFromFoldback(_ foldback: FoldbackWaveEffect) -> Node {
+        return Node(name: "foldback",
+                    interfaces: [
+                        Interface(name: "in", model: foldback.input),
+                        Interface(name: "out", model: foldback.output)],
+                    model: foldback)
+    }
+    fileprivate static func nodeFromLpf(_ lpf: LowpassFilterEffect) -> Node {
+        return Node(name: "lpf",
+                    interfaces: [
+                        Interface(name: "in", model: lpf.input),
+                        Interface(name: "out", model: lpf.output)],
+                    model: lpf)
+    }
 }
 
 public class WaveMapController: NSViewController {
@@ -281,6 +305,14 @@ public class WaveMapController: NSViewController {
     
     @IBAction func newOverdrive(_ sender: Any?) {
         waveMap.addWaveNode(waveNode: creator.makeOverdrive())
+    }
+    
+    @IBAction func newFoldback(_ sender: Any?) {
+        waveMap.addWaveNode(waveNode: creator.makeFoldback())
+    }
+    
+    @IBAction func newLpf(_ sender: Any?) {
+        waveMap.addWaveNode(waveNode: creator.makeLpf())
     }
 }
 

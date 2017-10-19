@@ -32,6 +32,8 @@ public class MidiOutput {
         midiServer = MidiServer()
     }
     
+    var prev = 1.0
+    var cooldown = 6
     public func detectEvents(buffer: [Float]) -> [MidiEvent] {
         var events: [MidiEvent] = []
         
@@ -49,11 +51,26 @@ public class MidiOutput {
         let treshold = 0.006
         let margin = treshold * 0.2
         
-        if !isOn {
-            if amplitude > treshold {
+        let diff = amplitude / prev
+        prev = amplitude
+        
+        cooldown -= 1
+        
+        if diff > 2.5 {
+            if cooldown < 0 {
+//                debugPrint(diff)
                 events.append(.on)
                 isOn = true
+                cooldown = 6
             }
+        }
+//        debugPrint(diff)
+        
+        if !isOn {
+//            if amplitude > treshold {
+//                events.append(.on)
+//                isOn = true
+//            }
         } else {
             if amplitude < treshold - margin {
                 events.append(.off)

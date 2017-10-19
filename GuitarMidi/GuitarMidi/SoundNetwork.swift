@@ -19,6 +19,7 @@ public protocol SoundNetworkElementsCreator {
     func makeSum() -> SumWaveNode
     func makeWaveShaper() -> WaveShaper
     func makeOverdrive() -> OverdriveWaveEffect
+    func makeLpf() -> LowpassFilterEffect
 }
 
 public class SignalOutput {

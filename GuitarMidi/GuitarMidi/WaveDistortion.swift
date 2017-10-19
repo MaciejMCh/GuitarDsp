@@ -43,8 +43,8 @@ public class FoldbackWaveEffect: WaveNode {
     public func next(time: Int) -> Double {
         return ff.value(time: time) {
             guard let inputValue = self.input.output?.next(time) else {return 0}
-            let diff = inputValue - self.treshold.next(time: time)
-            return diff > 0 ? inputValue - (2 * diff) : inputValue
+            let diff = abs(inputValue) - self.treshold.next(time: time)
+            return diff > 0 ? inputValue - (2 * diff * sign(inputValue)) : inputValue
         }
     }
 }

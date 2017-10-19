@@ -172,4 +172,7 @@ struct Creator: SoundNetworkElementsCreator {
     func makeOverdrive() -> OverdriveWaveEffect {
         return OverdriveWaveEffect()
     }
+    func makeLpf() -> LowpassFilterEffect {
+        return LowpassFilterEffect()
+    }
 }

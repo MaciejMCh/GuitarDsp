@@ -63,12 +63,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarMidi/WaveMapController.swift"
-            timestampString = "529351026.946319"
+            timestampString = "530135563.01294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
-            landmarkName = "node(id:)"
+            landmarkName = "connectionEndpoint(nodeId:interfaceName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -79,7 +79,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarMidi/SoundNetwork.swift"
-            timestampString = "529350496.334426"
+            timestampString = "530135563.013679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -95,7 +95,7 @@
                   moduleName = "GuitarMidi"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/SoundNetwork.swift"
-                  timestampString = "530042782.261419"
+                  timestampString = "530128611.295524"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -110,7 +110,7 @@
                   moduleName = "GuitarMidi"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/SoundNetwork.swift"
-                  timestampString = "530042782.26513"
+                  timestampString = "530128611.298813"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -127,12 +127,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarMidi/WaveMapController.swift"
-            timestampString = "529351026.946504"
+            timestampString = "530135563.01377"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "updatePosition(_:waveNode:)"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "position(waveNode:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

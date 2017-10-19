@@ -60,6 +60,7 @@
 		C2ECD2611F7C223D0037780F /* SamplerNode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2ECD2601F7C223D0037780F /* SamplerNode.storyboard */; };
 		C2ED99271F8D3FF100FA9738 /* ConstantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED99261F8D3FF100FA9738 /* ConstantViewController.swift */; };
 		C2ED99291F8D40C900FA9738 /* Constant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2ED99281F8D40C900FA9738 /* Constant.storyboard */; };
+		C2F136211F9929B700069C8D /* LowpassFilterEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F136201F9929B700069C8D /* LowpassFilterEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -131,6 +132,7 @@
 		C2ECD2601F7C223D0037780F /* SamplerNode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SamplerNode.storyboard; sourceTree = "<group>"; };
 		C2ED99261F8D3FF100FA9738 /* ConstantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantViewController.swift; sourceTree = "<group>"; };
 		C2ED99281F8D40C900FA9738 /* Constant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Constant.storyboard; sourceTree = "<group>"; };
+		C2F136201F9929B700069C8D /* LowpassFilterEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowpassFilterEffect.swift; sourceTree = "<group>"; };
 		C2F63BD21F7988710046A7D5 /* ChannelPlayerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPlayerEffect.swift; sourceTree = "<group>"; };
 		C2FA5B701F72CBE9006E6565 /* Oscilator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscilator.swift; sourceTree = "<group>"; };
 		C2FA5B751F72CC54006E6565 /* AmpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				C21AA3C31F8B90A400D6C490 /* MathUtils.swift */,
 				C2ED99261F8D3FF100FA9738 /* ConstantViewController.swift */,
 				C2ED99281F8D40C900FA9738 /* Constant.storyboard */,
+				C2F136201F9929B700069C8D /* LowpassFilterEffect.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				C2ECD25F1F7C20880037780F /* SamplerNodeViewController.swift in Sources */,
 				C2C19AA91F7AFE4400FDE938 /* ChannelPlayerEffect.swift in Sources */,
 				C2C19AA11F7AFE4400FDE938 /* WaveShaperNodeViewController.swift in Sources */,
+				C2F136211F9929B700069C8D /* LowpassFilterEffect.swift in Sources */,
 				C2C19A971F7AFE4400FDE938 /* EnvelopeFunction.swift in Sources */,
 				C2C19A941F7AFE4400FDE938 /* VariableViewController.swift in Sources */,
 				C2C19AAE1F7AFE5300FDE938 /* WaveEffect.swift in Sources */,

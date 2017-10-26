@@ -7,7 +7,10 @@ Pod::Spec.new do |spec|
   spec.summary      = 'guitar dsp kit'
   spec.source       = { :git => 'https://github.com/maciejmch/guitardsp.git' }
   spec.osx.deployment_target  = '10.12'
-  spec.source_files = 'GuitarDsp/*.{h,m}'
-  spec.dependency 'EZAudio'
+  spec.ios.deployment_target  = '11.0'
+  spec.ios.source_files = 'GuitarDsp/{Board,Processor,AudioInterface,SamplingSettings,Effect,Sample,FrequencyDomainProcessing}.{h,m}'
+  spec.osx.source_files = 'GuitarDsp/*.{h,m}'
+  spec.osx.dependency 'EZAudio'
+  spec.ios.dependency 'Novocaine'
   spec.requires_arc = true
 end

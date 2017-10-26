@@ -9,7 +9,6 @@
 #import "Processor.h"
 #import "Sample.h"
 #import "Effect.h"
-@import EZAudio;
 
 @interface Processor ()
 
@@ -25,17 +24,11 @@
     self.samplingSettings = samplingSettings;
     _tempo = tempo;
     [self setupBuffers];
-    [self setupMetronome];
     return self;
 }
 
 #pragma mark -
 #pragma mark - Setup
-
-
-- (void)setupMetronome {
-    self.metronomeEffect = [[MetronomeEffect alloc] initWithSamplingSettings:self.samplingSettings tempo:self.tempo];
-}
 
 - (void)setupBuffers {
     free(self.outputBuffer);

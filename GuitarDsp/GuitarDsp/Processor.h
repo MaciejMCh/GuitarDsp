@@ -10,13 +10,9 @@
 #import "SamplingSettings.h"
 #import "Board.h"
 
-// Temporary
-#import "MetronomeEffect.h"
-
 @interface Processor : NSObject
 
 @property (nonatomic, strong) Board *activeBoard;
-@property (nonatomic, strong) MetronomeEffect *metronomeEffect;
 @property (nonatomic, assign) float *outputBuffer;
 @property (nonatomic, assign) struct SamplingSettings samplingSettings;
 @property (nonatomic, assign) float tempo;

@@ -62,22 +62,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GuitarMidi/WaveMapController.swift"
-            timestampString = "530135563.01294"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "connectionEndpoint(nodeId:interfaceName:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "GuitarMidi/SoundNetwork.swift"
             timestampString = "530135563.013679"
             startingColumnNumber = "9223372036854775807"
@@ -91,49 +75,33 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "GuitarMidi.SignalOutput.deinit"
-                  moduleName = "GuitarMidi"
+                  symbolName = "WaveMapCreator.SignalOutput.deinit"
+                  moduleName = "WaveMapCreator"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/SoundNetwork.swift"
-                  timestampString = "530128611.295524"
+                  timestampString = "530730773.054244"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "GuitarMidi.SignalOutput.__deallocating_deinit"
-                  moduleName = "GuitarMidi"
+                  symbolName = "WaveMapCreator.SignalOutput.__deallocating_deinit"
+                  moduleName = "WaveMapCreator"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/SoundNetwork.swift"
-                  timestampString = "530128611.298813"
+                  timestampString = "530730773.057484"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GuitarMidi/WaveMapController.swift"
-            timestampString = "530135563.01377"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "position(waveNode:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

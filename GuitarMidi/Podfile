@@ -15,3 +15,11 @@ end
 target 'GuitarMidi' do
    pods
 end
+
+target 'WaveMapCreator' do
+    use_frameworks!
+    pod 'NodesMap', :path => '../NodesMap'
+    pod 'GuitarDsp', :path => '../GuitarDsp'
+    pod 'Beethoven', :git => 'https://github.com/MaciejMCh/Beethoven.git', :branch => 'osx'
+    pod 'Novocaine', :path => '../novocaine'
+end

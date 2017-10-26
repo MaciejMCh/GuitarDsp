@@ -55,8 +55,13 @@ class PitchDetector {
             paddedSignal[offset + i] = signalBuffer[i] * windowSignal[i]
         }
         
-        let format = AVAudioFormat(standardFormatWithSampleRate: Double(samplingSettings.frequency), channels: 1)
-        let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: AVAudioFrameCount(fftFrameSize))
+        #if os(OSX)
+            let format = AVAudioFormat(standardFormatWithSampleRate: Double(samplingSettings.frequency), channels: 1)
+            let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: AVAudioFrameCount(fftFrameSize))
+        #elseif os(iOS)
+            let format = AVAudioFormat(standardFormatWithSampleRate: Double(samplingSettings.frequency), channels: 1)!
+            let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: AVAudioFrameCount(fftFrameSize))!
+        #endif
         
         if let channelData = buffer.floatChannelData {
             for i in 0..<fftFrameSize {

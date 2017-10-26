@@ -66,7 +66,7 @@ struct EffectsFacory {
     }
     
     func makeWaveMap() -> WaveMap {
-        return WaveMap(samplingSettings: samplingSettings)
+        return WaveMap(samplingSettings: samplingSettings, midiOutput: GuitarDetectorMidiOutput(samplingSettings: samplingSettings))
     }
     
     func makeSampler(id: String?) -> Sampler {

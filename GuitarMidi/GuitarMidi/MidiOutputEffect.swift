@@ -17,11 +17,35 @@ public enum MidiEvent {
     case frequency(Double)
 }
 
-public class MidiOutput {
+public protocol MidiOutput {
+    func detectEvents(buffer: [Float]) -> [MidiEvent]
+}
+
+public class PadMidiOutput: MidiOutput {
+    private var detectedEvents: [MidiEvent] = []
+    
+    public func onNoteAtIndex(_ noteIndex: Int) {
+        let note = try! Note(index: noteIndex)
+        detectedEvents = [.frequency(note.frequency), .on]
+    }
+    
+    public func off() {
+        detectedEvents = [.off]
+    }
+    
+    public func detectEvents(buffer: [Float]) -> [MidiEvent] {
+        defer {
+            detectedEvents.removeAll()
+        }
+        return detectedEvents
+    }
+}
+
+public class GuitarDetectorMidiOutput: MidiOutput {
     let sendMidi = false
     let strokeDetector = StrokeDetector()
     let pitchDetector: PitchDetector
-    let midiServer: MidiServer
+//    let midiServer: MidiServer
     var recentNote = try! Note(index: 0)
     var noteIntegrator: [Int?] = Array(repeating: nil, count: 1000)
     var noteIndexIntegrator = NoteIndexIntegrator()
@@ -29,7 +53,7 @@ public class MidiOutput {
     
     public init(samplingSettings: SamplingSettings) {
         pitchDetector = PitchDetector(samplingSettings: samplingSettings)
-        midiServer = MidiServer()
+//        midiServer = MidiServer()
     }
     
     var prev = 1.0

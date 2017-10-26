@@ -1,15 +1,15 @@
 //
 //  GameViewController.swift
-//  NodesMap macOS
+//  NodesMap iOS
 //
 //  Created by Maciej Chmielewski on 29.09.2017.
 //  Copyright © 2017 Maciej Chmielewski. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 import SpriteKit
 
-public class MapViewController: NSViewController {
+public class MapViewController: UIViewController {
     public var map: Map!
     
     public override func viewDidLoad() {
@@ -26,5 +26,5 @@ public class MapViewController: NSViewController {
         skView.showsFPS = true
         skView.showsNodeCount = true
     }
-
+    
 }

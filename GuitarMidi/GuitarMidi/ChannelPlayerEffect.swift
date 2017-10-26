@@ -57,11 +57,10 @@ public class ChannelPlayer: MidiPlayer {
 public class ChannelPlayerEffect: NSObject, Effect {
     private let samplingSettings: SamplingSettings
     public let channelPlayer = ChannelPlayer()
-    let midiOutput: MidiOutput
+    var midiOutput: MidiOutput!
     
     public init(samplingSettings: SamplingSettings) {
         self.samplingSettings = samplingSettings
-        midiOutput = MidiOutput(samplingSettings: samplingSettings)
     }
     
     public func play(channel: Channel) {

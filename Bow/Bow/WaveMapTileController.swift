@@ -30,6 +30,10 @@ class WaveMapTileController: NSViewController {
 }
 
 extension EffectsFacory: SoundNetworkElementsCreator {
+    func makeLpf() -> LowpassFilterEffect {
+        return LowpassFilterEffect(id: nil)
+    }
+    
     func makeOscilator() -> Oscilator {
         return makeOscilator(id: nil)
     }

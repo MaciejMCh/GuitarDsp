@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0wt-pH-TFF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pad View Controller-->
+        <scene sceneID="yo2-CB-Oa5">
+            <objects>
+                <tableViewController id="0wt-pH-TFF" customClass="PadViewController" customModule="WaveMapCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qes-pX-1Sv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PadButtonCell" id="10D-d0-cFS" customClass="PadButtonCell" customModule="WaveMapCreator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="10D-d0-cFS" id="oSX-ua-uG8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRB-tE-j9z">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <connections>
+                                                <action selector="off:" destination="10D-d0-cFS" eventType="touchUpInside" id="BKl-2J-v6x"/>
+                                                <action selector="off:" destination="10D-d0-cFS" eventType="touchUpOutside" id="f9s-sB-ZdI"/>
+                                                <action selector="off:" destination="10D-d0-cFS" eventType="touchCancel" id="ttt-kX-qxS"/>
+                                                <action selector="on:" destination="10D-d0-cFS" eventType="touchDown" id="O88-0D-qel"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YRB-tE-j9z" firstAttribute="leading" secondItem="oSX-ua-uG8" secondAttribute="leading" id="8z8-xU-VSA"/>
+                                        <constraint firstAttribute="bottom" secondItem="YRB-tE-j9z" secondAttribute="bottom" id="BsC-ZM-B2Z"/>
+                                        <constraint firstItem="YRB-tE-j9z" firstAttribute="top" secondItem="oSX-ua-uG8" secondAttribute="top" id="NjV-4X-aSO"/>
+                                        <constraint firstAttribute="trailing" secondItem="YRB-tE-j9z" secondAttribute="trailing" id="kuq-cI-caF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0wt-pH-TFF" id="ByC-Uh-Es9"/>
+                            <outlet property="delegate" destination="0wt-pH-TFF" id="m9x-t4-HZ8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mZO-IO-iA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-212" y="153"/>
+        </scene>
+    </scenes>
+</document>

@@ -10,6 +10,7 @@ PODS:
     - TPCircularBuffer (= 1.1)
   - GuitarDsp (1.0.0):
     - EZAudio
+    - Novocaine
   - GuitarMidi (1.0.0):
     - Beethoven
     - CubicBezier
@@ -66,12 +67,12 @@ SPEC CHECKSUMS:
   Beethoven: e55480eafd336d5cffe2e381e46995174f33f832
   CubicBezier: a409bea768ec73dbd5d1cbcb881947a416701c19
   EZAudio: b46eb8c28899cfff30995a180672afd148a54e31
-  GuitarDsp: adf8387415647b85e078d03b368cc019f996fccc
+  GuitarDsp: 3315277ac1faa4e1369bf1210e9e1ff5df9c534f
   GuitarMidi: 1bb09fb25989ec3bd455b43a1f776a5cbd04cb4a
   HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
   MIDIKit: 785c048f399107c47a1ad9a47a8656034edf5162
-  NodesMap: 47b096d77b20ac81121a31e624eedbef976d2e54
+  NodesMap: 45af8fa6a83f15652f6e48df1a51ad7b9526451a
   Pitchy: 00dbe7cb7ac87fd9c32cb2aa6ce50d11f931289f
   RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62

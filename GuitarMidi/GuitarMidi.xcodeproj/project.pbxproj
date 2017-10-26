@@ -8,11 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		B48E5AACBB3EB6906900A289 /* Pods_GuitarMidi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1239878A4B320DB80C6464 /* Pods_GuitarMidi.framework */; };
+		C20035EB1F9E2F5F00C21EF7 /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23508081F75340E0049754F /* Sampler.swift */; };
+		C20035EC1F9E2F6400C21EF7 /* FunctionVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82BB1F70402C00F79116 /* FunctionVariable.swift */; };
+		C20035ED1F9E32AB00C21EF7 /* MidiOutputEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */; };
+		C20035EE1F9E32B400C21EF7 /* EnvelopeFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E18451F71087900C55086 /* EnvelopeFunction.swift */; };
+		C20035EF1F9E32B900C21EF7 /* WaveShaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226A26A1F7429F300539B80 /* WaveShaper.swift */; };
+		C20035F01F9E32BF00C21EF7 /* LowpassFilterEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F136201F9929B700069C8D /* LowpassFilterEffect.swift */; };
+		C20035F11F9E32CF00C21EF7 /* PitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CE3751F6094FF002B9567 /* PitchDetector.swift */; };
+		C20035F21F9E32D400C21EF7 /* StrokeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */; };
+		C20035F31F9E32DD00C21EF7 /* NoteIndexIntegrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20775E01F671E20009FD61A /* NoteIndexIntegrator.swift */; };
+		C20035F41F9E33E000C21EF7 /* CubicBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7E2B41F715158007A9AF6 /* CubicBezier.swift */; };
+		C20035F51F9E344300C21EF7 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21AA3C31F8B90A400D6C490 /* MathUtils.swift */; };
+		C20035F61F9E344A00C21EF7 /* SamplingSettingsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */; };
 		C21AA3C41F8B90A400D6C490 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21AA3C31F8B90A400D6C490 /* MathUtils.swift */; };
 		C2305C531F87E17900A89F63 /* WaveMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2305C521F87E17900A89F63 /* WaveMapController.swift */; };
+		C231401A1F9C92E500EA6027 /* MapCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23140191F9C92E500EA6027 /* MapCreatorViewController.swift */; };
+		C231401E1F9C96B700EA6027 /* WaveMapCreator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C231401D1F9C96B700EA6027 /* WaveMapCreator.storyboard */; };
+		C241701A1FA10417000E293F /* AudioFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24170191FA10417000E293F /* AudioFileReader.swift */; };
+		C241701B1FA104FC000E293F /* AudioFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24170191FA10417000E293F /* AudioFileReader.swift */; };
+		C241701D1FA10FC7000E293F /* NodesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C241701C1FA10FC7000E293F /* NodesList.storyboard */; };
+		C24170211FA11000000E293F /* NodesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24170201FA11000000E293F /* NodesListViewController.swift */; };
+		C24170701FA12184000E293F /* PadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C241706F1FA12184000E293F /* PadViewController.swift */; };
+		C24170721FA121AB000E293F /* Pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24170711FA121AB000E293F /* Pad.storyboard */; };
 		C29547A01F7D9FC300D8EEF0 /* WaveDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */; };
 		C29547A21F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29547A11F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift */; };
 		C29547A41F7DA15000D8EEF0 /* Foldback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29547A31F7DA15000D8EEF0 /* Foldback.storyboard */; };
+		C29E51471F9A2E5D0039651C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29E51461F9A2E5D0039651C /* AppDelegate.swift */; };
+		C29E51541F9A2E5D0039651C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C29E51531F9A2E5D0039651C /* Assets.xcassets */; };
+		C29E51571F9A2E5D0039651C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29E51551F9A2E5D0039651C /* LaunchScreen.storyboard */; };
 		C2BF23E11F87CFC100EF9A6A /* SoundNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF23E01F87CFC100EF9A6A /* SoundNetwork.swift */; };
 		C2BF34E91F87ECC20049C460 /* WaveMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2BF34E81F87ECC20049C460 /* WaveMap.storyboard */; };
 		C2C19A891F7AFE3500FDE938 /* InterfaceBuilderInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82B61F7034B900F79116 /* InterfaceBuilderInstance.swift */; };
@@ -56,11 +79,20 @@
 		C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CB16841F5F0D5800B8D6FF /* AppDelegate.swift */; };
 		C2CB16891F5F0D5800B8D6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2CB16881F5F0D5800B8D6FF /* Assets.xcassets */; };
 		C2CB168C1F5F0D5800B8D6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2CB168A1F5F0D5800B8D6FF /* Main.storyboard */; };
+		C2CF79D01F9E16FC0087C6A1 /* WaveMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CF79CF1F9E16FC0087C6A1 /* WaveMap.swift */; };
+		C2CF79D11F9E17440087C6A1 /* WaveMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CF79CF1F9E16FC0087C6A1 /* WaveMap.swift */; };
+		C2CF79D21F9E17800087C6A1 /* ChannelPlayerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F63BD21F7988710046A7D5 /* ChannelPlayerEffect.swift */; };
+		C2CF79D31F9E17940087C6A1 /* WaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212EAE61F72BD8000198D25 /* WaveEffect.swift */; };
+		C2CF79D41F9E17A00087C6A1 /* SoundNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF23E01F87CFC100EF9A6A /* SoundNetwork.swift */; };
+		C2CF79D51F9E17AA0087C6A1 /* Oscilator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA5B701F72CBE9006E6565 /* Oscilator.swift */; };
+		C2CF79D61F9E17BB0087C6A1 /* WaveGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82B91F70400900F79116 /* WaveGenerator.swift */; };
+		C2CF79D71F9E17D00087C6A1 /* WaveDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */; };
 		C2ECD25F1F7C20880037780F /* SamplerNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ECD25E1F7C20880037780F /* SamplerNodeViewController.swift */; };
 		C2ECD2611F7C223D0037780F /* SamplerNode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2ECD2601F7C223D0037780F /* SamplerNode.storyboard */; };
 		C2ED99271F8D3FF100FA9738 /* ConstantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED99261F8D3FF100FA9738 /* ConstantViewController.swift */; };
 		C2ED99291F8D40C900FA9738 /* Constant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2ED99281F8D40C900FA9738 /* Constant.storyboard */; };
 		C2F136211F9929B700069C8D /* LowpassFilterEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F136201F9929B700069C8D /* LowpassFilterEffect.swift */; };
+		CA8706BC595401596FD33F81 /* Pods_WaveMapCreator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E699D986BA89A03F33A4E25 /* Pods_WaveMapCreator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,7 +111,9 @@
 /* Begin PBXFileReference section */
 		1757CB00591DBA9848112594 /* Pods-GuitarMidiKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarMidiKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarMidiKit/Pods-GuitarMidiKit.debug.xcconfig"; sourceTree = "<group>"; };
 		2485880FDB1C7AAD3D8B5849 /* Pods-GuitarMidi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarMidi.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi.release.xcconfig"; sourceTree = "<group>"; };
+		3E699D986BA89A03F33A4E25 /* Pods_WaveMapCreator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaveMapCreator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F1239878A4B320DB80C6464 /* Pods_GuitarMidi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuitarMidi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7909DABEEE7746610422A4C5 /* Pods-WaveMapCreator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaveMapCreator.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaveMapCreator/Pods-WaveMapCreator.release.xcconfig"; sourceTree = "<group>"; };
 		B5C633EA3563B6DEE0015953 /* Pods_GuitarMidiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuitarMidiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20775E01F671E20009FD61A /* NoteIndexIntegrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteIndexIntegrator.swift; sourceTree = "<group>"; };
 		C20AE1C11F70566300AFFBCE /* Variable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Variable.storyboard; sourceTree = "<group>"; };
@@ -107,7 +141,14 @@
 		C226A26C1F742C1A00539B80 /* WaveShaperNode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveShaperNode.storyboard; sourceTree = "<group>"; };
 		C226A26E1F742C8A00539B80 /* WaveShaperNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShaperNodeViewController.swift; sourceTree = "<group>"; };
 		C2305C521F87E17900A89F63 /* WaveMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMapController.swift; sourceTree = "<group>"; };
+		C23140191F9C92E500EA6027 /* MapCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCreatorViewController.swift; sourceTree = "<group>"; };
+		C231401D1F9C96B700EA6027 /* WaveMapCreator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapCreator.storyboard; sourceTree = "<group>"; };
 		C23508081F75340E0049754F /* Sampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
+		C24170191FA10417000E293F /* AudioFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileReader.swift; sourceTree = "<group>"; };
+		C241701C1FA10FC7000E293F /* NodesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NodesList.storyboard; sourceTree = "<group>"; };
+		C24170201FA11000000E293F /* NodesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListViewController.swift; sourceTree = "<group>"; };
+		C241706F1FA12184000E293F /* PadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadViewController.swift; sourceTree = "<group>"; };
+		C24170711FA121AB000E293F /* Pad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pad.storyboard; sourceTree = "<group>"; };
 		C24FFF711F66E2C2007CBF57 /* MidiServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiServer.swift; sourceTree = "<group>"; };
 		C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiOutputEffect.swift; sourceTree = "<group>"; };
 		C26AD8E51F7556A9005512E0 /* FileBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowser.swift; sourceTree = "<group>"; };
@@ -115,6 +156,11 @@
 		C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveDistortion.swift; sourceTree = "<group>"; };
 		C29547A11F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldbackEffectViewController.swift; sourceTree = "<group>"; };
 		C29547A31F7DA15000D8EEF0 /* Foldback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Foldback.storyboard; sourceTree = "<group>"; };
+		C29E51441F9A2E5D0039651C /* WaveMapCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaveMapCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C29E51461F9A2E5D0039651C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C29E51531F9A2E5D0039651C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C29E51561F9A2E5D0039651C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C29E51581F9A2E5D0039651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2A0570F1F6973EC006BC3D1 /* StrokeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeDetector.swift; sourceTree = "<group>"; };
 		C2A4CD041F753B0D001F8D56 /* TreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewController.swift; sourceTree = "<group>"; };
 		C2A4CD061F7546C2001F8D56 /* Tree.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tree.storyboard; sourceTree = "<group>"; };
@@ -127,6 +173,7 @@
 		C2CB168B1F5F0D5800B8D6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2CB168D1F5F0D5800B8D6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2CB16941F5F0DC100B8D6FF /* GuitarDsp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarDsp.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-gboowxrazxsddgehsrbqoyrqehfs/Build/Products/Debug/GuitarDsp.framework"; sourceTree = "<group>"; };
+		C2CF79CF1F9E16FC0087C6A1 /* WaveMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMap.swift; sourceTree = "<group>"; };
 		C2E7E2B41F715158007A9AF6 /* CubicBezier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicBezier.swift; sourceTree = "<group>"; };
 		C2ECD25E1F7C20880037780F /* SamplerNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerNodeViewController.swift; sourceTree = "<group>"; };
 		C2ECD2601F7C223D0037780F /* SamplerNode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SamplerNode.storyboard; sourceTree = "<group>"; };
@@ -139,9 +186,18 @@
 		C2FA5B771F72CD05006E6565 /* Amp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Amp.storyboard; sourceTree = "<group>"; };
 		C5F010D11174259137D117C6 /* Pods-GuitarMidiKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarMidiKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarMidiKit/Pods-GuitarMidiKit.release.xcconfig"; sourceTree = "<group>"; };
 		E6A95BAF96B672E9AE90BD70 /* Pods-GuitarMidi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarMidi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi.debug.xcconfig"; sourceTree = "<group>"; };
+		FA7019476D5691482E6E1EAC /* Pods-WaveMapCreator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaveMapCreator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaveMapCreator/Pods-WaveMapCreator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C29E51411F9A2E5D0039651C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA8706BC595401596FD33F81 /* Pods_WaveMapCreator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C2CB167E1F5F0D5800B8D6FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,14 +216,34 @@
 				2485880FDB1C7AAD3D8B5849 /* Pods-GuitarMidi.release.xcconfig */,
 				1757CB00591DBA9848112594 /* Pods-GuitarMidiKit.debug.xcconfig */,
 				C5F010D11174259137D117C6 /* Pods-GuitarMidiKit.release.xcconfig */,
+				FA7019476D5691482E6E1EAC /* Pods-WaveMapCreator.debug.xcconfig */,
+				7909DABEEE7746610422A4C5 /* Pods-WaveMapCreator.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C29E51451F9A2E5D0039651C /* WaveMapCreator */ = {
+			isa = PBXGroup;
+			children = (
+				C29E51461F9A2E5D0039651C /* AppDelegate.swift */,
+				C29E51531F9A2E5D0039651C /* Assets.xcassets */,
+				C29E51551F9A2E5D0039651C /* LaunchScreen.storyboard */,
+				C29E51581F9A2E5D0039651C /* Info.plist */,
+				C23140191F9C92E500EA6027 /* MapCreatorViewController.swift */,
+				C231401D1F9C96B700EA6027 /* WaveMapCreator.storyboard */,
+				C241701C1FA10FC7000E293F /* NodesList.storyboard */,
+				C24170201FA11000000E293F /* NodesListViewController.swift */,
+				C241706F1FA12184000E293F /* PadViewController.swift */,
+				C24170711FA121AB000E293F /* Pad.storyboard */,
+			);
+			path = WaveMapCreator;
 			sourceTree = "<group>";
 		};
 		C2CB16781F5F0D5800B8D6FF = {
 			isa = PBXGroup;
 			children = (
 				C2CB16831F5F0D5800B8D6FF /* GuitarMidi */,
+				C29E51451F9A2E5D0039651C /* WaveMapCreator */,
 				C2CB16821F5F0D5800B8D6FF /* Products */,
 				C2CB16931F5F0DC100B8D6FF /* Frameworks */,
 				8CFA17E97FA7D45B735F00B9 /* Pods */,
@@ -178,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				C2CB16811F5F0D5800B8D6FF /* GuitarMidi.app */,
+				C29E51441F9A2E5D0039651C /* WaveMapCreator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +316,8 @@
 				C2ED99261F8D3FF100FA9738 /* ConstantViewController.swift */,
 				C2ED99281F8D40C900FA9738 /* Constant.storyboard */,
 				C2F136201F9929B700069C8D /* LowpassFilterEffect.swift */,
+				C2CF79CF1F9E16FC0087C6A1 /* WaveMap.swift */,
+				C24170191FA10417000E293F /* AudioFileReader.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -249,6 +328,7 @@
 				C2CB16941F5F0DC100B8D6FF /* GuitarDsp.framework */,
 				5F1239878A4B320DB80C6464 /* Pods_GuitarMidi.framework */,
 				B5C633EA3563B6DEE0015953 /* Pods_GuitarMidiKit.framework */,
+				3E699D986BA89A03F33A4E25 /* Pods_WaveMapCreator.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,6 +336,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C29E51431F9A2E5D0039651C /* WaveMapCreator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C29E515B1F9A2E5D0039651C /* Build configuration list for PBXNativeTarget "WaveMapCreator" */;
+			buildPhases = (
+				72EF5B63BDA55F484304BB50 /* [CP] Check Pods Manifest.lock */,
+				C29E51401F9A2E5D0039651C /* Sources */,
+				C29E51411F9A2E5D0039651C /* Frameworks */,
+				C29E51421F9A2E5D0039651C /* Resources */,
+				A9D6D5BBAFC3C02CBF64C4F0 /* [CP] Embed Pods Frameworks */,
+				B8FAABD338E6E2A8D3E878BF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaveMapCreator;
+			productName = WaveMapCreator;
+			productReference = C29E51441F9A2E5D0039651C /* WaveMapCreator.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C2CB16801F5F0D5800B8D6FF /* GuitarMidi */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2CB16901F5F0D5800B8D6FF /* Build configuration list for PBXNativeTarget "GuitarMidi" */;
@@ -283,10 +383,14 @@
 		C2CB16791F5F0D5800B8D6FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Maciej Chmielewski";
 				TargetAttributes = {
+					C29E51431F9A2E5D0039651C = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = 76RXF4V6NR;
+					};
 					C2CB16801F5F0D5800B8D6FF = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 76RXF4V6NR;
@@ -308,11 +412,24 @@
 			projectRoot = "";
 			targets = (
 				C2CB16801F5F0D5800B8D6FF /* GuitarMidi */,
+				C29E51431F9A2E5D0039651C /* WaveMapCreator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C29E51421F9A2E5D0039651C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C241701D1FA10FC7000E293F /* NodesList.storyboard in Resources */,
+				C231401E1F9C96B700EA6027 /* WaveMapCreator.storyboard in Resources */,
+				C29E51541F9A2E5D0039651C /* Assets.xcassets in Resources */,
+				C24170721FA121AB000E293F /* Pad.storyboard in Resources */,
+				C29E51571F9A2E5D0039651C /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C2CB167F1F5F0D5800B8D6FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,13 +464,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Beethoven/Beethoven.framework",
+				"${BUILT_PRODUCTS_DIR}/Beethoven-macOS/Beethoven.framework",
 				"${BUILT_PRODUCTS_DIR}/CubicBezier/CubicBezier.framework",
 				"${BUILT_PRODUCTS_DIR}/EZAudio/EZAudio.framework",
-				"${BUILT_PRODUCTS_DIR}/GuitarDsp/GuitarDsp.framework",
+				"${BUILT_PRODUCTS_DIR}/GuitarDsp-macOS/GuitarDsp.framework",
 				"${BUILT_PRODUCTS_DIR}/MIDIKit/MIDIKit.framework",
-				"${BUILT_PRODUCTS_DIR}/NodesMap/NodesMap.framework",
-				"${BUILT_PRODUCTS_DIR}/Pitchy/Pitchy.framework",
+				"${BUILT_PRODUCTS_DIR}/NodesMap-macOS/NodesMap.framework",
+				"${BUILT_PRODUCTS_DIR}/Pitchy-macOS/Pitchy.framework",
 				"${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -409,9 +526,99 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		72EF5B63BDA55F484304BB50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaveMapCreator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9D6D5BBAFC3C02CBF64C4F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WaveMapCreator/Pods-WaveMapCreator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Beethoven-iOS/Beethoven.framework",
+				"${BUILT_PRODUCTS_DIR}/GuitarDsp-iOS/GuitarDsp.framework",
+				"${BUILT_PRODUCTS_DIR}/NodesMap-iOS/NodesMap.framework",
+				"${BUILT_PRODUCTS_DIR}/Pitchy-iOS/Pitchy.framework",
+				"${BUILT_PRODUCTS_DIR}/Novocaine/Novocaine.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Beethoven.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GuitarDsp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NodesMap.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pitchy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Novocaine.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaveMapCreator/Pods-WaveMapCreator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8FAABD338E6E2A8D3E878BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaveMapCreator/Pods-WaveMapCreator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C29E51401F9A2E5D0039651C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C20035F11F9E32CF00C21EF7 /* PitchDetector.swift in Sources */,
+				C20035F01F9E32BF00C21EF7 /* LowpassFilterEffect.swift in Sources */,
+				C2CF79D61F9E17BB0087C6A1 /* WaveGenerator.swift in Sources */,
+				C2CF79D31F9E17940087C6A1 /* WaveEffect.swift in Sources */,
+				C20035ED1F9E32AB00C21EF7 /* MidiOutputEffect.swift in Sources */,
+				C2CF79D11F9E17440087C6A1 /* WaveMap.swift in Sources */,
+				C24170701FA12184000E293F /* PadViewController.swift in Sources */,
+				C20035F61F9E344A00C21EF7 /* SamplingSettingsUtils.swift in Sources */,
+				C2CF79D71F9E17D00087C6A1 /* WaveDistortion.swift in Sources */,
+				C20035F21F9E32D400C21EF7 /* StrokeDetector.swift in Sources */,
+				C231401A1F9C92E500EA6027 /* MapCreatorViewController.swift in Sources */,
+				C20035F51F9E344300C21EF7 /* MathUtils.swift in Sources */,
+				C29E51471F9A2E5D0039651C /* AppDelegate.swift in Sources */,
+				C20035EF1F9E32B900C21EF7 /* WaveShaper.swift in Sources */,
+				C2CF79D41F9E17A00087C6A1 /* SoundNetwork.swift in Sources */,
+				C2CF79D51F9E17AA0087C6A1 /* Oscilator.swift in Sources */,
+				C20035EE1F9E32B400C21EF7 /* EnvelopeFunction.swift in Sources */,
+				C20035F41F9E33E000C21EF7 /* CubicBezier.swift in Sources */,
+				C241701B1FA104FC000E293F /* AudioFileReader.swift in Sources */,
+				C24170211FA11000000E293F /* NodesListViewController.swift in Sources */,
+				C20035EC1F9E2F6400C21EF7 /* FunctionVariable.swift in Sources */,
+				C20035F31F9E32DD00C21EF7 /* NoteIndexIntegrator.swift in Sources */,
+				C20035EB1F9E2F5F00C21EF7 /* Sampler.swift in Sources */,
+				C2CF79D21F9E17800087C6A1 /* ChannelPlayerEffect.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C2CB167D1F5F0D5800B8D6FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -449,7 +656,9 @@
 				C29547A01F7D9FC300D8EEF0 /* WaveDistortion.swift in Sources */,
 				C2C19AAB1F7AFE5300FDE938 /* FunctionVariable.swift in Sources */,
 				C2C19AAF1F7AFE5300FDE938 /* Oscilator.swift in Sources */,
+				C241701A1FA10417000E293F /* AudioFileReader.swift in Sources */,
 				C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */,
+				C2CF79D01F9E16FC0087C6A1 /* WaveMap.swift in Sources */,
 				C2C19A9B1F7AFE4400FDE938 /* AmpViewController.swift in Sources */,
 				C2C19AAD1F7AFE5300FDE938 /* CubicBezier.swift in Sources */,
 			);
@@ -458,6 +667,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C29E51551F9A2E5D0039651C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C29E51561F9A2E5D0039651C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		C2CB168A1F5F0D5800B8D6FF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -469,6 +686,61 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C29E51591F9A2E5D0039651C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA7019476D5691482E6E1EAC /* Pods-WaveMapCreator.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 76RXF4V6NR;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = WaveMapCreator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.WaveMapCreator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C29E515A1F9A2E5D0039651C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7909DABEEE7746610422A4C5 /* Pods-WaveMapCreator.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 76RXF4V6NR;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = WaveMapCreator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mch.nodesMap.WaveMapCreator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		C2CB168E1F5F0D5800B8D6FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -598,6 +870,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C29E515B1F9A2E5D0039651C /* Build configuration list for PBXNativeTarget "WaveMapCreator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C29E51591F9A2E5D0039651C /* Debug */,
+				C29E515A1F9A2E5D0039651C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C2CB167C1F5F0D5800B8D6FF /* Build configuration list for PBXProject "GuitarMidi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

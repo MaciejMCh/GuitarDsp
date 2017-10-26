@@ -10,8 +10,10 @@ PODS:
     - TPCircularBuffer (= 1.1)
   - GuitarDsp (1.0.0):
     - EZAudio
+    - Novocaine
   - MIDIKit (1.0.0)
   - NodesMap (1.0.0)
+  - Novocaine (0.0.1)
   - Pitchy (2.0.1)
   - TPCircularBuffer (1.1)
 
@@ -22,6 +24,7 @@ DEPENDENCIES:
   - GuitarDsp (from `../GuitarDsp`)
   - MIDIKit (from `https://github.com/MaciejMCh/MIDIKit.git`)
   - NodesMap (from `../NodesMap`)
+  - Novocaine (from `../novocaine`)
 
 EXTERNAL SOURCES:
   Beethoven:
@@ -37,6 +40,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/MaciejMCh/MIDIKit.git
   NodesMap:
     :path: ../NodesMap
+  Novocaine:
+    :path: ../novocaine
 
 CHECKOUT OPTIONS:
   Beethoven:
@@ -50,12 +55,13 @@ SPEC CHECKSUMS:
   Beethoven: e55480eafd336d5cffe2e381e46995174f33f832
   CubicBezier: a409bea768ec73dbd5d1cbcb881947a416701c19
   EZAudio: b46eb8c28899cfff30995a180672afd148a54e31
-  GuitarDsp: adf8387415647b85e078d03b368cc019f996fccc
+  GuitarDsp: 3315277ac1faa4e1369bf1210e9e1ff5df9c534f
   MIDIKit: 785c048f399107c47a1ad9a47a8656034edf5162
-  NodesMap: 47b096d77b20ac81121a31e624eedbef976d2e54
+  NodesMap: 45af8fa6a83f15652f6e48df1a51ad7b9526451a
+  Novocaine: ea478c38ac0b460736668c12034b1e8b40dc8d39
   Pitchy: 00dbe7cb7ac87fd9c32cb2aa6ce50d11f931289f
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
-PODFILE CHECKSUM: 406d8fa011bd7d0f8c8ffe2bb69028350884dbb2
+PODFILE CHECKSUM: f0535f1dedd2d6e1ebaf7907b018699b86d08e09
 
 COCOAPODS: 1.3.1

@@ -120,7 +120,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension AppDelegate {
     func makeInitialController() -> NSViewController {
         let vc = WaveMapController.make()
-        vc.waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings)
+        let guitarMidiOutput = GuitarDetectorMidiOutput(samplingSettings: AudioInterface.shared().samplingSettings)
+        vc.waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: guitarMidiOutput)
         vc.creator = Creator()
         return vc
     }

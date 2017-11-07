@@ -15,6 +15,23 @@ class MapCreatorViewController: UIViewController {
     var waveMap: WaveMap!
     var padMidiOutput: PadMidiOutput!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        waveMap.map.select = { [weak self] node in
+            if let constant = node.model as? Constant {
+                let constantViewController = UIStoryboard(name: "Constant", bundle: nil).instantiateInitialViewController() as! ConstantViewController
+                constantViewController.constantVariable = constant
+                self?.showController(constantViewController)
+            }
+            if let envelopeFunction = node.model as? EnvelopeFunction {
+                let envelopeViewController = UIStoryboard(name: "Envelope", bundle: nil).instantiateInitialViewController() as! EnvelopeViewController
+                envelopeViewController.envelopeFunction = envelopeFunction
+                self?.showController(envelopeViewController)
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let mapController = segue.destination as? MapViewController {
             mapController.map = waveMap.map
@@ -27,5 +44,9 @@ class MapCreatorViewController: UIViewController {
         if let padController = segue.destination as? PadViewController {
             padController.padMidiOutput = padMidiOutput
         }
+    }
+    
+    private func showController(_ controller: UIViewController) {
+        present(controller, animated: true, completion: nil)
     }
 }

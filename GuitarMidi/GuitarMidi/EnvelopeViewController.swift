@@ -192,21 +192,3 @@ class EnvelopeView: NSView {
         circlePath.fill()
     }
 }
-
-extension EnvelopeFunction {
-    func makeClone() -> EnvelopeFunction {
-        let cloneEnvelopeFunction = EnvelopeFunction()
-        cloneEnvelopeFunction.hold = hold
-        cloneEnvelopeFunction.decay = decay
-        cloneEnvelopeFunction.delay = delay
-        cloneEnvelopeFunction.volume = volume
-        cloneEnvelopeFunction.attack = attack
-        cloneEnvelopeFunction.sustain = sustain
-        cloneEnvelopeFunction.release = release
-        cloneEnvelopeFunction.duration = duration
-        cloneEnvelopeFunction.decayBezier = decayBezier
-        cloneEnvelopeFunction.attackBezier = attackBezier
-        cloneEnvelopeFunction.releaseBezier = releaseBezier
-        return cloneEnvelopeFunction
-    }
-}

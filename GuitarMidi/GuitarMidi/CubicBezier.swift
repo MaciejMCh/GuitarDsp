@@ -31,4 +31,5 @@ extension CubicBezier {
     public static let fadeOut = CubicBezier(p1: .init(x: 0, y: 1), p2: .init(x: 0, y: 1))
     public static let fadeIn = CubicBezier(p1: .init(x: 1, y: 0), p2: .init(x: 1, y: 0))
     public static let fadeInOut = CubicBezier(p1: .init(x: 1, y: 0), p2: .init(x: 0, y: 1))
+    public static let none = CubicBezier(p1: .init(x: 0, y: 0), p2: .init(x: 1, y: 1))
 }

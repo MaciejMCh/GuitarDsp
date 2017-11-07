@@ -15,7 +15,10 @@ class NodesListViewController: UITableViewController {
     
     private lazy var allNodeModels: [WaveNode] = {
         [
-            Oscilator(samplingSettings: self.samplingSettings)
+            Oscilator(samplingSettings: self.samplingSettings),
+            Constant(value: 1),
+            EnvelopeFunction(),
+            AmpWaveEffect()
         ]
     }()
     
@@ -42,6 +45,9 @@ extension WaveNode {
     var name: String {
         switch self {
         case is Oscilator: return "oscilator"
+        case is Constant: return "constant"
+        case is EnvelopeFunction: return "envelope"
+        case is AmpWaveEffect: return "amp"
         default:
             assert(false)
             return "xd"
@@ -51,6 +57,9 @@ extension WaveNode {
     func makeClone(samplingSettings: SamplingSettings) -> WaveNode {
         switch self {
         case is Oscilator: return Oscilator(samplingSettings: samplingSettings)
+        case is Constant: return Constant(value: 1)
+        case is EnvelopeFunction: return EnvelopeFunction()
+        case is AmpWaveEffect: return AmpWaveEffect()
         default:
             return "xd" as! WaveNode
         }

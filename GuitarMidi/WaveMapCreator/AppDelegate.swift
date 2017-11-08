@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let padMidiOutput = PadMidiOutput()
-        waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: padMidiOutput)
+        waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
         let mapCreatorViewController = UIStoryboard(name: "WaveMapCreator", bundle: nil).instantiateInitialViewController() as! MapCreatorViewController
         mapCreatorViewController.waveMap = waveMap
         mapCreatorViewController.padMidiOutput = padMidiOutput

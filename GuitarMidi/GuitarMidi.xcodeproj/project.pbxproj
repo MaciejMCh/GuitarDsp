@@ -105,6 +105,8 @@
 		C2ED99271F8D3FF100FA9738 /* ConstantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED99261F8D3FF100FA9738 /* ConstantViewController.swift */; };
 		C2ED99291F8D40C900FA9738 /* Constant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2ED99281F8D40C900FA9738 /* Constant.storyboard */; };
 		C2F136211F9929B700069C8D /* LowpassFilterEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F136201F9929B700069C8D /* LowpassFilterEffect.swift */; };
+		C2FC489A1FB36E8B008838F4 /* Sequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC48991FB36E8B008838F4 /* Sequencer.swift */; };
+		C2FC489B1FB36EBF008838F4 /* Sequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC48991FB36E8B008838F4 /* Sequencer.swift */; };
 		CA8706BC595401596FD33F81 /* Pods_WaveMapCreator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E699D986BA89A03F33A4E25 /* Pods_WaveMapCreator.framework */; };
 /* End PBXBuildFile section */
 
@@ -209,6 +211,7 @@
 		C2FA5B701F72CBE9006E6565 /* Oscilator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscilator.swift; sourceTree = "<group>"; };
 		C2FA5B751F72CC54006E6565 /* AmpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpViewController.swift; sourceTree = "<group>"; };
 		C2FA5B771F72CD05006E6565 /* Amp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Amp.storyboard; sourceTree = "<group>"; };
+		C2FC48991FB36E8B008838F4 /* Sequencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequencer.swift; sourceTree = "<group>"; };
 		C5F010D11174259137D117C6 /* Pods-GuitarMidiKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarMidiKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarMidiKit/Pods-GuitarMidiKit.release.xcconfig"; sourceTree = "<group>"; };
 		E6A95BAF96B672E9AE90BD70 /* Pods-GuitarMidi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuitarMidi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuitarMidi/Pods-GuitarMidi.debug.xcconfig"; sourceTree = "<group>"; };
 		FA7019476D5691482E6E1EAC /* Pods-WaveMapCreator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaveMapCreator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaveMapCreator/Pods-WaveMapCreator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +274,7 @@
 				C2D5B7071FA8CE99006C44D1 /* CubicBezierViewController.swift */,
 				C2D5B7091FA8D1C0006C44D1 /* CubicBezier.storyboard */,
 				C2744F2C1FB0F4CF0017BD86 /* GraphView.swift */,
+				C2FC48991FB36E8B008838F4 /* Sequencer.swift */,
 			);
 			path = WaveMapCreator;
 			sourceTree = "<group>";
@@ -655,6 +659,7 @@
 				C248D9DA1FB115BC007BC866 /* EnvelopeClone.swift in Sources */,
 				C20035EF1F9E32B900C21EF7 /* WaveShaper.swift in Sources */,
 				C2CF79D41F9E17A00087C6A1 /* SoundNetwork.swift in Sources */,
+				C2FC489A1FB36E8B008838F4 /* Sequencer.swift in Sources */,
 				C2CF79D51F9E17AA0087C6A1 /* Oscilator.swift in Sources */,
 				C20035EE1F9E32B400C21EF7 /* EnvelopeFunction.swift in Sources */,
 				C20035F41F9E33E000C21EF7 /* CubicBezier.swift in Sources */,
@@ -709,6 +714,7 @@
 				C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */,
 				C248D9D91FB115B4007BC866 /* EnvelopeClone.swift in Sources */,
 				C2CF79D01F9E16FC0087C6A1 /* WaveMap.swift in Sources */,
+				C2FC489B1FB36EBF008838F4 /* Sequencer.swift in Sources */,
 				C2C19A9B1F7AFE4400FDE938 /* AmpViewController.swift in Sources */,
 				C2C19AAD1F7AFE5300FDE938 /* CubicBezier.swift in Sources */,
 			);

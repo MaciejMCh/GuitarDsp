@@ -10,7 +10,7 @@ import Foundation
 
 extension Map {
     static func mocked() -> Map {
-        let me = Map{_, _ in false}
+        let me = Map(connect: {_, _ in false}){_, _ in false}
         
 //        let node1 = Node(name: "foldback", interfaces: [
 //            Interface(name: "in", model: "in"),

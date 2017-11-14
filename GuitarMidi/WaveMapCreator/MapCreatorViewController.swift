@@ -29,6 +29,11 @@ class MapCreatorViewController: UIViewController {
                 envelopeViewController.envelopeFunction = envelopeFunction
                 self?.showController(envelopeViewController)
             }
+            if let sampler = node.model as? Sampler {
+                let samplerViewController = UIStoryboard(name: "Sampler", bundle: nil).instantiateInitialViewController() as! SamplerViewController
+                samplerViewController.sampler = sampler
+                self?.showController(samplerViewController)
+            }
         }
     }
     

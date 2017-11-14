@@ -18,6 +18,7 @@ public final class Map {
     }
     
     private let connect: (ConnectionEndpoint, ConnectionEndpoint) -> Bool
+    private let breakConnection: (ConnectionEndpoint, ConnectionEndpoint) -> Bool
     private var state = State.none
     public var nodes: [Node] = []
     public var connections: [(ConnectionEndpoint, ConnectionEndpoint, SKShapeNode)] = []
@@ -41,8 +42,9 @@ public final class Map {
         return scene
     }()
     
-    public init(connect: @escaping (ConnectionEndpoint, ConnectionEndpoint) -> Bool) {
+    public init(connect: @escaping (ConnectionEndpoint, ConnectionEndpoint) -> Bool, breakConnection: @escaping (ConnectionEndpoint, ConnectionEndpoint) -> Bool) {
         self.connect = connect
+        self.breakConnection = breakConnection
     }
     
     public func addNode(_ node: Node) {
@@ -106,6 +108,29 @@ public final class Map {
                     select?(node)
                 }
             }
+        }
+        
+        if case .none = state {
+            let tapRadius = CGFloat(20)
+            let tapNode = SKShapeNode(ellipseIn: CGRect(x: location.x - tapRadius, y: location.y - tapRadius, width: tapRadius * 2, height: tapRadius * 2))
+            scene.addChild(tapNode)
+            var i = 0
+            var indexToRemove: Int?
+            for connection in connections {
+                defer {
+                    i += 1
+                }
+                if connection.2.intersects(tapNode) {
+                    if breakConnection(connection.0, connection.1) {
+                        indexToRemove = i
+                        connection.2.removeFromParent()
+                    }
+                }
+            }
+            if let indexToRemove = indexToRemove {
+                connections.remove(at: indexToRemove)
+            }
+            tapNode.removeFromParent()
         }
         
         for node in nodes {

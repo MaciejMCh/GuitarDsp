@@ -8,10 +8,46 @@ PODS:
   - EZAudio/Full (1.1.5):
     - EZAudio/Core
     - TPCircularBuffer (= 1.1)
+  - Firebase/Core (4.4.0):
+    - FirebaseAnalytics (= 4.0.4)
+    - FirebaseCore (= 4.0.9)
+  - Firebase/Database (4.4.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.1.1)
+  - Firebase/Storage (4.4.0):
+    - Firebase/Core
+    - FirebaseStorage (= 2.0.2)
+  - FirebaseAnalytics (4.0.4):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.9):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseDatabase (4.1.1):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - leveldb-library (~> 1.18)
+  - FirebaseInstanceID (2.0.5)
+  - FirebaseStorage (2.0.2):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GTMSessionFetcher/Core (1.1.12)
   - GuitarDsp (1.0.0):
     - EZAudio
     - Novocaine
+  - leveldb-library (1.18.3)
   - MIDIKit (1.0.0)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - NodesMap (1.0.0)
   - Novocaine (0.0.1)
   - Pitchy (2.0.1)
@@ -21,6 +57,9 @@ DEPENDENCIES:
   - Beethoven (from `https://github.com/MaciejMCh/Beethoven.git`, branch `osx`)
   - CubicBezier (from `../CubicBezier`)
   - EZAudio (from `../EZAudio`)
+  - Firebase/Core
+  - Firebase/Database
+  - Firebase/Storage
   - GuitarDsp (from `../GuitarDsp`)
   - MIDIKit (from `https://github.com/MaciejMCh/MIDIKit.git`)
   - NodesMap (from `../NodesMap`)
@@ -55,13 +94,23 @@ SPEC CHECKSUMS:
   Beethoven: e55480eafd336d5cffe2e381e46995174f33f832
   CubicBezier: a409bea768ec73dbd5d1cbcb881947a416701c19
   EZAudio: b46eb8c28899cfff30995a180672afd148a54e31
+  Firebase: 3e92884a63e8f76d107c43a67d2ab9071e1eda10
+  FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
+  FirebaseCore: ebe73f64302705e693b1de9919a76edbdd17a19d
+  FirebaseDatabase: 2e6e8e110b93b9a6e7aac71774c769a363035cb1
+  FirebaseInstanceID: f2b688c66b972f30d7fa9f5f9f91455454a03b47
+  FirebaseStorage: 0cca42d9b889a0227c3a50121f45a4469fc9eb27
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   GuitarDsp: 3315277ac1faa4e1369bf1210e9e1ff5df9c534f
+  leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
   MIDIKit: 785c048f399107c47a1ad9a47a8656034edf5162
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NodesMap: 45af8fa6a83f15652f6e48df1a51ad7b9526451a
   Novocaine: ea478c38ac0b460736668c12034b1e8b40dc8d39
   Pitchy: 00dbe7cb7ac87fd9c32cb2aa6ce50d11f931289f
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
-PODFILE CHECKSUM: f0535f1dedd2d6e1ebaf7907b018699b86d08e09
+PODFILE CHECKSUM: 3800fbb3d35a93fd63827e4d427db8941ed421cb
 
 COCOAPODS: 1.3.1

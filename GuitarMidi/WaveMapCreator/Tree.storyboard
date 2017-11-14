@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IQV-sv-mqF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tree View Controller-->
+        <scene sceneID="9MG-uJ-hYr">
+            <objects>
+                <tableViewController id="IQV-sv-mqF" customClass="TreeViewController" customModule="GuitarMidi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bro-k6-mgO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="X0s-BC-lRh">
+                            <rect key="frame" x="0.0" y="116" width="375" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeafCell" id="ZpX-Ao-sZP" customClass="LeafCell" customModule="WaveMapCreator">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZpX-Ao-sZP" id="zLi-tS-l6X">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy8-1x-Iaz">
+                                            <rect key="frame" x="0.0" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jy8-1x-Iaz" firstAttribute="leading" secondItem="zLi-tS-l6X" secondAttribute="leading" id="Gvg-HB-SMD"/>
+                                        <constraint firstItem="jy8-1x-Iaz" firstAttribute="centerY" secondItem="zLi-tS-l6X" secondAttribute="centerY" id="vPl-VG-cyA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="jy8-1x-Iaz" id="rrg-49-YAW"/>
+                                    <outlet property="leadingConstraint" destination="Gvg-HB-SMD" id="yqJ-fk-XV9"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BranchCell" id="8Hd-JW-ER3" customClass="BranchCell" customModule="WaveMapCreator">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Hd-JW-ER3" id="uCE-fR-I0h">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btY-hu-aGf">
+                                            <rect key="frame" x="0.0" y="6" width="30" height="30"/>
+                                            <state key="normal" title="+"/>
+                                            <connections>
+                                                <action selector="expandButtonActionWithSender:" destination="8Hd-JW-ER3" eventType="touchUpInside" id="cBt-Vx-3C2"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHu-B7-YDq">
+                                            <rect key="frame" x="32" y="11.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="sHu-B7-YDq" firstAttribute="centerY" secondItem="uCE-fR-I0h" secondAttribute="centerY" id="Rlx-EA-8Id"/>
+                                        <constraint firstItem="btY-hu-aGf" firstAttribute="centerY" secondItem="uCE-fR-I0h" secondAttribute="centerY" id="dlv-NI-vjO"/>
+                                        <constraint firstItem="btY-hu-aGf" firstAttribute="leading" secondItem="uCE-fR-I0h" secondAttribute="leading" id="eqi-dG-txf"/>
+                                        <constraint firstItem="sHu-B7-YDq" firstAttribute="leading" secondItem="btY-hu-aGf" secondAttribute="leading" constant="32" id="loN-Bc-gwd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="expandButton" destination="btY-hu-aGf" id="qRo-on-dIK"/>
+                                    <outlet property="label" destination="sHu-B7-YDq" id="nwf-rr-wEH"/>
+                                    <outlet property="leadingConstraint" destination="eqi-dG-txf" id="pLB-GX-rGS"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IQV-sv-mqF" id="YOB-Dv-ML8"/>
+                            <outlet property="delegate" destination="IQV-sv-mqF" id="H7X-Fk-yen"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8SN-vQ-thh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="75"/>
+        </scene>
+    </scenes>
+</document>

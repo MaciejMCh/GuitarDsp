@@ -18,7 +18,8 @@ class NodesListViewController: UITableViewController {
             Oscilator(samplingSettings: self.samplingSettings),
             Constant(value: 1),
             EnvelopeFunction(),
-            AmpWaveEffect()
+            AmpWaveEffect(),
+            Sampler.zero()
         ]
     }()
     
@@ -48,6 +49,7 @@ extension WaveNode {
         case is Constant: return "constant"
         case is EnvelopeFunction: return "envelope"
         case is AmpWaveEffect: return "amp"
+        case is Sampler: return "sampler"
         default:
             assert(false)
             return "xd"
@@ -60,8 +62,15 @@ extension WaveNode {
         case is Constant: return Constant(value: 1)
         case is EnvelopeFunction: return EnvelopeFunction()
         case is AmpWaveEffect: return AmpWaveEffect()
+        case is Sampler: return Sampler.zero()
         default:
             return "xd" as! WaveNode
         }
+    }
+}
+
+fileprivate extension Sampler {
+    static func zero() -> Sampler {
+        return Sampler(sampleFilePath: Bundle.main.path(forResource: "440", ofType: "wav")!, samplingSettings: AudioInterface.shared().samplingSettings)
     }
 }

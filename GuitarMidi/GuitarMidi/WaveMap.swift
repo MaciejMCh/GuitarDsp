@@ -245,7 +245,7 @@ extension OverdriveWaveEffect {
 
 extension Map {
     static func wave() -> Map {
-        let map = Map{ (lhs, rhs) in
+        let map = Map(connect: { (lhs, rhs) in
             
             if (with(lhs: lhs.1.model, rhs: rhs.1.model) { (input: SignalInput, output: SignalOutput) in
                 input.output = output
@@ -260,7 +260,21 @@ extension Map {
             }) {return true}
             
             return false
-        }
+        }, breakConnection: { (lhs, rhs) in
+            if (oneOf(lhs: lhs.1.model, rhs: rhs.1.model) { (input: SignalInput) in
+                input.output = nil
+            }) {return true}
+            
+            if (oneOf(lhs: lhs.1.model, rhs: rhs.1.model) { (waveMap: WaveMap) in
+                waveMap.output.output = nil
+            }) {return true}
+            
+            if (oneOf(lhs: lhs.1.model, rhs: rhs.1.model) { (variableSetter: FunctionVariableSetter) in
+                variableSetter(Constant(value: 0))
+            }) {return true}
+            
+            return false
+        })
         
         return map
     }
@@ -275,5 +289,18 @@ extension Map {
         }
         
         return false
+    }
+    
+    static func oneOf<T>(lhs: Any, rhs: Any, operation: (T) -> Void) -> Bool {
+        var result = false
+        if let tLhs = lhs as? T {
+            operation(tLhs)
+            result = result || true
+        }
+        if let tRhs = rhs as? T {
+            operation(tRhs)
+            result = result || true
+        }
+        return result
     }
 }

@@ -22,4 +22,7 @@ target 'WaveMapCreator' do
     pod 'GuitarDsp', :path => '../GuitarDsp'
     pod 'Beethoven', :git => 'https://github.com/MaciejMCh/Beethoven.git', :branch => 'osx'
     pod 'Novocaine', :path => '../novocaine'
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
+    pod 'Firebase/Storage'
 end

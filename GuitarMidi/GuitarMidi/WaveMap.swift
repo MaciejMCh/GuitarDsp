@@ -194,8 +194,7 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
     fileprivate static func nodeFromSum(_ sum: SumWaveNode) -> Node {
         return Node(name: "sum",
                     interfaces: [
-                        Interface(name: "in 1", model: sum.input1),
-                        Interface(name: "in 2", model: sum.input2),
+                        Interface(name: "in", model: sum.inputCollection),
                         Interface(name: "out", model: sum.output)],
                     model: sum)
     }
@@ -259,6 +258,10 @@ extension Map {
                 waveMap.output.output = output
             }) {return true}
             
+            if (with(lhs: lhs.1.model, rhs: rhs.1.model) { (output: SignalOutput, inputsCollection: SumWaveNode.InputsCollection) in
+                inputsCollection.outputs.append(output)
+            }) {return true}
+            
             return false
         }, breakConnection: { (lhs, rhs) in
             if (oneOf(lhs: lhs.1.model, rhs: rhs.1.model) { (input: SignalInput) in
@@ -271,6 +274,10 @@ extension Map {
             
             if (oneOf(lhs: lhs.1.model, rhs: rhs.1.model) { (variableSetter: FunctionVariableSetter) in
                 variableSetter(Constant(value: 0))
+            }) {return true}
+            
+            if (with(lhs: lhs.1.model, rhs: rhs.1.model) { (output: SignalOutput, inputsCollection: SumWaveNode.InputsCollection) in
+                inputsCollection.outputs = inputsCollection.outputs.filter{$0 != output}
             }) {return true}
             
             return false

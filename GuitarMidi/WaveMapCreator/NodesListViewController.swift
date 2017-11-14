@@ -19,7 +19,8 @@ class NodesListViewController: UITableViewController {
             Constant(value: 1),
             EnvelopeFunction(),
             AmpWaveEffect(),
-            Sampler.zero()
+            Sampler.zero(),
+            SumWaveNode()
         ]
     }()
     
@@ -50,6 +51,7 @@ extension WaveNode {
         case is EnvelopeFunction: return "envelope"
         case is AmpWaveEffect: return "amp"
         case is Sampler: return "sampler"
+        case is SumWaveNode: return "sum"
         default:
             assert(false)
             return "xd"
@@ -63,6 +65,7 @@ extension WaveNode {
         case is EnvelopeFunction: return EnvelopeFunction()
         case is AmpWaveEffect: return AmpWaveEffect()
         case is Sampler: return Sampler.zero()
+        case is SumWaveNode: return SumWaveNode()
         default:
             return "xd" as! WaveNode
         }

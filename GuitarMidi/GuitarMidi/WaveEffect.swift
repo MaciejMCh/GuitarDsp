@@ -76,10 +76,13 @@ public class AmpWaveEffect: WaveNode {
 }
 
 public class SumWaveNode: WaveNode {
+    class InputsCollection {
+        var outputs: [SignalOutput] = []
+    }
+    
     public let id: String
     
-    let input1: SignalInput = SignalInput()
-    let input2: SignalInput = SignalInput()
+    let inputCollection = InputsCollection()
     lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
     
     private let ff = FlipFlop()
@@ -90,7 +93,7 @@ public class SumWaveNode: WaveNode {
     
     public func next(time: Int) -> Double {
         return ff.value(time: time) {
-            return (self.input1.output?.next(time) ?? 0) + (self.input2.output?.next(time) ?? 0)
+            return inputCollection.outputs.map{$0.next(time)}.reduce(0, +)
         }
     }
 }

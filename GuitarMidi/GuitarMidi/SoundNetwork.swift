@@ -22,7 +22,7 @@ public protocol SoundNetworkElementsCreator {
     func makeLpf() -> LowpassFilterEffect
 }
 
-public class SignalOutput {
+public class SignalOutput: NSObject {
     let next: (Int) -> Double
     
     init(next: @escaping (Int) -> Double) {

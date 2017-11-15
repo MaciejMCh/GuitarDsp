@@ -68,40 +68,4 @@ struct EffectsFacory {
     func makeWaveMap() -> WaveMap {
         return WaveMap(samplingSettings: samplingSettings, midiOutput: GuitarDetectorMidiOutput(samplingSettings: samplingSettings))
     }
-    
-    func makeSampler(id: String?) -> Sampler {
-        return Sampler(sampleFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/440.wav", samplingSettings: samplingSettings, id: id)
-    }
-    
-    func makeOscilator(id: String?) -> Oscilator {
-        return Oscilator(samplingSettings: samplingSettings, id: id)
-    }
-    
-    func makeEnvelope(id: String?) -> EnvelopeFunction {
-        return EnvelopeFunction(id: id)
-    }
-    
-    func makeConstant(id: String?) -> Constant {
-        return Constant(value: 1, id: id)
-    }
-    
-    func makeAmpWaveEffect(id: String?) -> AmpWaveEffect {
-        return AmpWaveEffect(id: id)
-    }
-    
-    func makeWaveShaper(id: String?) -> WaveShaper {
-        return WaveShaper(id: id)
-    }
-    
-    func makeFoldback(id: String?) -> FoldbackWaveEffect {
-        return FoldbackWaveEffect(id: id)
-    }
-    
-    func makeSum(id: String?) -> SumWaveNode {
-        return SumWaveNode(id: id)
-    }
-    
-    func makeOverdrive(id: String?) -> OverdriveWaveEffect {
-        return OverdriveWaveEffect(id: id)
-    }
 }

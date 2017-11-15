@@ -9,7 +9,7 @@ def pods
   pod 'EZAudio', :path => '../EZAudio'
   pod 'CubicBezier', :path => '../CubicBezier'
   pod 'NodesMap', :path => '../NodesMap'
-
+  pod 'JSONCodable'
 end
 
 target 'GuitarMidi' do
@@ -25,4 +25,5 @@ target 'WaveMapCreator' do
     pod 'Firebase/Core'
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
+    pod 'JSONCodable'
 end

@@ -63,93 +63,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarMidi/SoundNetwork.swift"
-            timestampString = "532393698.575251"
+            timestampString = "532394043.858365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
             landmarkName = "SoundNetworkElementsCreator"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WaveMapCreator.SignalOutput.deinit"
-                  moduleName = "WaveMapCreator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/SoundNetwork.swift"
-                  timestampString = "532393073.49742"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WaveMapCreator.SignalOutput.__deallocating_deinit"
-                  moduleName = "WaveMapCreator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/SoundNetwork.swift"
-                  timestampString = "532393073.501399"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GuitarMidi/WaveMap.swift"
-            timestampString = "532393698.575481"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
-            landmarkName = "wave()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static (extension in WaveMapCreator):NodesMap.Map.with&lt;A, B&gt;(lhs: Any, rhs: Any, operation: (A, B) -&gt; ()) -&gt; Swift.Bool"
-                  moduleName = "WaveMapCreator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/WaveMap.swift"
-                  timestampString = "532393073.508466"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "286"
-                  endingLineNumber = "286"
-                  offsetFromSymbolStart = "389">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Any) -&gt; Swift.Optional&lt;A&gt; in static (extension in WaveMapCreator):NodesMap.Map.with&lt;A, B&gt;(lhs: Any, rhs: Any, operation: (A, B) -&gt; ()) -&gt; Swift.Bool"
-                  moduleName = "WaveMapCreator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/WaveMap.swift"
-                  timestampString = "532393073.511715"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "286"
-                  endingLineNumber = "286"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

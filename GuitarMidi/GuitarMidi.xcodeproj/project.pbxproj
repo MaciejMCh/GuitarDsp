@@ -39,6 +39,8 @@
 		C24170721FA121AB000E293F /* Pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24170711FA121AB000E293F /* Pad.storyboard */; };
 		C248D9D91FB115B4007BC866 /* EnvelopeClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248D9D81FB115B4007BC866 /* EnvelopeClone.swift */; };
 		C248D9DA1FB115BC007BC866 /* EnvelopeClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248D9D81FB115B4007BC866 /* EnvelopeClone.swift */; };
+		C26C1FD21FBBBE6A00621EEA /* WaveMapStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */; };
+		C26C1FD31FBBBE6E00621EEA /* WaveMapStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */; };
 		C2744F2D1FB0F4CF0017BD86 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2744F2C1FB0F4CF0017BD86 /* GraphView.swift */; };
 		C287159E1FA7A19F0098B257 /* VariableLabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287159D1FA7A19F0098B257 /* VariableLabelController.swift */; };
 		C29547A01F7D9FC300D8EEF0 /* WaveDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */; };
@@ -187,6 +189,7 @@
 		C24FFF711F66E2C2007CBF57 /* MidiServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiServer.swift; sourceTree = "<group>"; };
 		C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiOutputEffect.swift; sourceTree = "<group>"; };
 		C26AD8E51F7556A9005512E0 /* FileBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowser.swift; sourceTree = "<group>"; };
+		C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveMapStorage.swift; sourceTree = "<group>"; };
 		C2744F2C1FB0F4CF0017BD86 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		C287159D1FA7A19F0098B257 /* VariableLabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableLabelController.swift; sourceTree = "<group>"; };
 		C28CE3751F6094FF002B9567 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
@@ -331,6 +334,7 @@
 		C2CB16831F5F0D5800B8D6FF /* GuitarMidi */ = {
 			isa = PBXGroup;
 			children = (
+				C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */,
 				C21D82B91F70400900F79116 /* WaveGenerator.swift */,
 				C21D82BB1F70402C00F79116 /* FunctionVariable.swift */,
 				C2E7E2B41F715158007A9AF6 /* CubicBezier.swift */,
@@ -550,6 +554,7 @@
 				"${BUILT_PRODUCTS_DIR}/CubicBezier/CubicBezier.framework",
 				"${BUILT_PRODUCTS_DIR}/EZAudio/EZAudio.framework",
 				"${BUILT_PRODUCTS_DIR}/GuitarDsp-macOS/GuitarDsp.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONCodable-macOS/JSONCodable.framework",
 				"${BUILT_PRODUCTS_DIR}/MIDIKit/MIDIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/NodesMap-macOS/NodesMap.framework",
 				"${BUILT_PRODUCTS_DIR}/Pitchy-macOS/Pitchy.framework",
@@ -561,6 +566,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CubicBezier.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZAudio.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GuitarDsp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONCodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIDIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NodesMap.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pitchy.framework",
@@ -635,6 +641,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-WaveMapCreator/Pods-WaveMapCreator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Beethoven-iOS/Beethoven.framework",
 				"${BUILT_PRODUCTS_DIR}/GuitarDsp-iOS/GuitarDsp.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONCodable-iOS/JSONCodable.framework",
 				"${BUILT_PRODUCTS_DIR}/NodesMap-iOS/NodesMap.framework",
 				"${BUILT_PRODUCTS_DIR}/Pitchy-iOS/Pitchy.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -647,6 +654,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Beethoven.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GuitarDsp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONCodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NodesMap.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pitchy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -689,6 +697,7 @@
 				C2CF79D31F9E17940087C6A1 /* WaveEffect.swift in Sources */,
 				C2A8CCB71FA8B874002EE832 /* EnvelopeViewController.swift in Sources */,
 				C2744F2D1FB0F4CF0017BD86 /* GraphView.swift in Sources */,
+				C26C1FD31FBBBE6E00621EEA /* WaveMapStorage.swift in Sources */,
 				C20035ED1F9E32AB00C21EF7 /* MidiOutputEffect.swift in Sources */,
 				C2CF79D11F9E17440087C6A1 /* WaveMap.swift in Sources */,
 				C24170701FA12184000E293F /* PadViewController.swift in Sources */,
@@ -731,6 +740,7 @@
 				C2FE27201FBB87B2001CED37 /* Tree.swift in Sources */,
 				C2C19AA41F7AFE4400FDE938 /* TreeViewController.swift in Sources */,
 				C2C19A8B1F7AFE4400FDE938 /* PitchDetector.swift in Sources */,
+				C26C1FD21FBBBE6A00621EEA /* WaveMapStorage.swift in Sources */,
 				C2C19A8E1F7AFE4400FDE938 /* StrokeDetector.swift in Sources */,
 				C29547A21F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift in Sources */,
 				C2C19A8D1F7AFE4400FDE938 /* NoteIndexIntegrator.swift in Sources */,

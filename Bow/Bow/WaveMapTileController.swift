@@ -24,49 +24,7 @@ class WaveMapTileController: NSViewController {
     @IBAction func editAction(sender: Any?) {
         let waveMapController = NSStoryboard(name: "WaveMap", bundle: Bundle(identifier: "org.cocoapods.GuitarMidi")!).instantiateInitialController() as! WaveMapController
         waveMapController.waveMap = waveMap
-        waveMapController.creator = EffectsFacory(samplingSettings: samplingSettings)
+        waveMapController.creator = WaveNodesFactory(samplingSettings: samplingSettings)
         presentViewControllerAsModalWindow(waveMapController)
-    }
-}
-
-extension EffectsFacory: SoundNetworkElementsCreator {
-    func makeLpf() -> LowpassFilterEffect {
-        return LowpassFilterEffect(id: nil)
-    }
-    
-    func makeOscilator() -> Oscilator {
-        return makeOscilator(id: nil)
-    }
-    
-    func makeFoldback() -> FoldbackWaveEffect {
-        return makeFoldback(id: nil)
-    }
-    
-    func makeAmp() -> AmpWaveEffect {
-        return makeAmpWaveEffect(id: nil)
-    }
-    
-    func makeConstant() -> Constant {
-        return makeConstant(id: nil)
-    }
-    
-    func makeSampler() -> Sampler {
-        return makeSampler(id: nil)
-    }
-    
-    func makeEnvelope() -> EnvelopeFunction {
-        return makeEnvelope(id: nil)
-    }
-    
-    func makeSum() -> SumWaveNode {
-        return makeSum(id: nil)
-    }
-    
-    func makeWaveShaper() -> WaveShaper {
-        return makeWaveShaper(id: nil)
-    }
-    
-    func makeOverdrive() -> OverdriveWaveEffect {
-        return makeOverdrive(id: nil)
     }
 }

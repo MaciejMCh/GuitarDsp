@@ -13,7 +13,7 @@ import GuitarDsp
 
 public class WaveMapController: NSViewController {
     weak var mapViewController: MapViewController!
-    public var creator: SoundNetworkElementsCreator!
+    public var creator: WaveNodesFactory!
     public var waveMap: WaveMap!
     
     public override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
@@ -71,7 +71,7 @@ public class WaveMapController: NSViewController {
     }
     
     @IBAction func newAmp(_ sender: Any?) {
-        waveMap.addWaveNode(waveNode: creator.makeAmp())
+        waveMap.addWaveNode(waveNode: creator.makeAmpWaveEffect())
     }
     
     @IBAction func newSum(_ sender: Any?) {

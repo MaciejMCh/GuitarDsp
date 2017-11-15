@@ -15,5 +15,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'Beethoven'
   spec.dependency 'MIDIKit'
   spec.dependency 'NodesMap'
+  spec.dependency 'JSONCodable'
   spec.requires_arc = true
 end

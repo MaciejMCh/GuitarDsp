@@ -16,6 +16,7 @@ PODS:
     - CubicBezier
     - EZAudio
     - GuitarDsp
+    - JSONCodable
     - MIDIKit
     - NodesMap
   - HexColors (5.0.1)
@@ -68,7 +69,7 @@ SPEC CHECKSUMS:
   CubicBezier: a409bea768ec73dbd5d1cbcb881947a416701c19
   EZAudio: b46eb8c28899cfff30995a180672afd148a54e31
   GuitarDsp: 3315277ac1faa4e1369bf1210e9e1ff5df9c534f
-  GuitarMidi: 1bb09fb25989ec3bd455b43a1f776a5cbd04cb4a
+  GuitarMidi: 061261eda6fe2303e9d5d6acc30a0e1ac4f69b74
   HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
   MIDIKit: 785c048f399107c47a1ad9a47a8656034edf5162

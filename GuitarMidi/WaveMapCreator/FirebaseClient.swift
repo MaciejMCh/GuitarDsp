@@ -11,17 +11,50 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class FirebaseClient {
-    private(set) var samples: [FirebaseSample] = []
+    func sync() {
+        syncSamples()
+        syncWaveMapConfigurations()
+    }
     
     func syncSamples() {
         samplesIndex { firebaseSamples in
-            self.samples = firebaseSamples
             for firebaseSample in firebaseSamples {
                 if !FileManager.default.fileExists(atPath: self.filePathForSample(firebaseSample)) {
                     self.downloadSample(firebaseSample)
                 }
             }
         }
+    }
+    
+    func syncWaveMapConfigurations() {
+        waveMapsIndex { [weak self] waveMapConfigurations in
+            guard let wSelf = self else {return}
+            for waveMapConfiguration in waveMapConfigurations {
+                NSKeyedArchiver.archiveRootObject(waveMapConfiguration.1, toFile: wSelf.filePathForWaveMap(name: waveMapConfiguration.0))
+            }
+        }
+    }
+    
+    private func waveMapsIndex(completion: @escaping ([(String, JsonObject)]) -> Void) {
+        Database.database().reference().child("wave_maps").observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
+            var configurations: [(String, JsonObject)] = []
+            for waveMapSnapshot in snapshot.children.allObjects as! [DataSnapshot] {
+                let configuration = waveMapSnapshot.value as! [String: Any]
+                let name = waveMapSnapshot.key
+                configurations.append((name, configuration))
+            }
+            completion(configurations)
+        }
+    }
+    
+    func saveWaveMap(name: String, configuration: JsonObject) {
+        let data = NSKeyedArchiver.archivedData(withRootObject: configuration)
+        try! data.write(to: URL(fileURLWithPath: filePathForWaveMap(name: name)))
+        Database.database().reference().child("wave_maps/\(name)").updateChildValues(configuration)
+    }
+    
+    private func filePathForWaveMap(name: String) -> String {
+        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/wave_maps/" + name
     }
     
     private func downloadSample(_ firebaseSample: FirebaseSample) {

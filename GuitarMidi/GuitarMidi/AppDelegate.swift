@@ -122,7 +122,7 @@ extension AppDelegate {
         let vc = WaveMapController.make()
         let guitarMidiOutput = GuitarDetectorMidiOutput(samplingSettings: AudioInterface.shared().samplingSettings)
         vc.waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: guitarMidiOutput)
-        vc.creator = Creator()
+        vc.creator = WaveNodesFactory(samplingSettings: AudioInterface.shared().samplingSettings)
         return vc
     }
     
@@ -143,37 +143,4 @@ enum SignalGenerator {
     case sine(amplitude: Float, frequency: Float)
     case ramp(slope: Float)
     case input
-}
-
-struct Creator: SoundNetworkElementsCreator {
-    func makeOscilator() -> Oscilator {
-        return Oscilator(samplingSettings: AudioInterface.shared().samplingSettings)
-    }
-    func makeFoldback() -> FoldbackWaveEffect {
-        return FoldbackWaveEffect()
-    }
-    func makeAmp() -> AmpWaveEffect {
-        return AmpWaveEffect()
-    }
-    func makeConstant() -> Constant {
-        return Constant(value: 1)
-    }
-    func makeSampler() -> Sampler {
-        return Sampler(sampleFilePath: "", samplingSettings: AudioInterface.shared().samplingSettings)
-    }
-    func makeEnvelope() -> EnvelopeFunction {
-        return EnvelopeFunction()
-    }
-    func makeSum() -> SumWaveNode {
-        return SumWaveNode()
-    }
-    func makeWaveShaper() -> WaveShaper {
-        return WaveShaper()
-    }
-    func makeOverdrive() -> OverdriveWaveEffect {
-        return OverdriveWaveEffect()
-    }
-    func makeLpf() -> LowpassFilterEffect {
-        return LowpassFilterEffect()
-    }
 }

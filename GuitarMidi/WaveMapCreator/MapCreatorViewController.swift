@@ -11,9 +11,40 @@ import UIKit
 import NodesMap
 import GuitarDsp
 
+enum WaveMapSource {
+    case orphan
+    case assigned(name: String)
+}
+
 class MapCreatorViewController: UIViewController {
+    var waveMapSource = WaveMapSource.orphan
+    
     var waveMap: WaveMap!
     var padMidiOutput: PadMidiOutput!
+    
+    @IBAction func saveAction(_ sender: Any?) {
+        let save: (String, JsonObject) -> Void = { (name, configuration) in
+            FirebaseClient().saveWaveMap(name: name, configuration: configuration)
+        }
+        
+        let waveMapConfiguration = WaveMapStorage.waveMapConfiguration(waveMap)
+        switch waveMapSource {
+        case .orphan:
+            let alert = UIAlertController(title: "Save", message: "Name", preferredStyle: UIAlertControllerStyle.alert)
+            var textFieldReference: UITextField!
+            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: {[weak self] (action) in
+                let newName: String = textFieldReference.text!
+                save(newName, waveMapConfiguration)
+                self?.waveMapSource = .assigned(name: newName)
+            }))
+            alert.addTextField(configurationHandler: {(textField: UITextField!) in
+                textField.placeholder = "Name"
+                textFieldReference = textField
+            })
+            present(alert, animated: true, completion: nil)
+        case .assigned(let name): save(name, waveMapConfiguration)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

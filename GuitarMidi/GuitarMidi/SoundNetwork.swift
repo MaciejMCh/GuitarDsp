@@ -9,19 +9,6 @@
 import Foundation
 import GuitarDsp
 
-public protocol SoundNetworkElementsCreator {
-    func makeOscilator() -> Oscilator
-    func makeFoldback() -> FoldbackWaveEffect
-    func makeAmp() -> AmpWaveEffect
-    func makeConstant() -> Constant
-    func makeSampler() -> Sampler
-    func makeEnvelope() -> EnvelopeFunction
-    func makeSum() -> SumWaveNode
-    func makeWaveShaper() -> WaveShaper
-    func makeOverdrive() -> OverdriveWaveEffect
-    func makeLpf() -> LowpassFilterEffect
-}
-
 public class SignalOutput: NSObject {
     let next: (Int) -> Double
     

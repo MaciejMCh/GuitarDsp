@@ -36,6 +36,12 @@ public class MapViewController: UIViewController {
         map.scene.camera = camera
     }
     
+    public func updateMap(_ map: Map) {
+        self.map = map
+        map.scene.camera = camera
+        (view as! SKView).presentScene(map.scene)
+    }
+    
     private var lastPanPosition = CGPoint.zero
     @objc func panAction(_ panGestureRecognizer: UIPanGestureRecognizer) {
         let cameraPosition = camera.position

@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let firebaseClient = FirebaseClient()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        WaveMapStorage.waveNodesFactory = WaveNodesFactory(samplingSettings: AudioInterface.shared().samplingSettings)
+        
         FirebaseApp.configure()
         firebaseClient.sync()
         
@@ -36,6 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         board.effects = [waveMap]
         processor.activeBoard = board
         AudioInterface.shared().use(processor)
+        mapCreatorViewController.mapChange = {
+            board.effects = [$0]
+        }
         
         return true
     }

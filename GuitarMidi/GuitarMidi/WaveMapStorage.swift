@@ -24,7 +24,7 @@ public struct WaveMapStorage {
             waveMap.updatePosition(CGPoint(x: x, y: y), waveNode: waveNode)
         }
         
-        for connectionJsonObjects in configuration["connections"] as! [JsonObject] {
+        for connectionJsonObjects in configuration["connections"] as? [JsonObject] ?? [] {
             let firstNodeId = connectionJsonObjects["n_1_id"] as! String
             let firstInterfaceId = connectionJsonObjects["i_1_name"] as! String
             let secondNodeId = connectionJsonObjects["n_2_id"] as! String
@@ -35,7 +35,7 @@ public struct WaveMapStorage {
         }
     }
     
-    static func waveNodeFromJson(_ json: JsonObject) -> WaveNode {
+    private static func waveNodeFromJson(_ json: JsonObject) -> WaveNode {
         let decoder = JSONDecoder(object: json)
         switch try! decoder.decode("type") as String {
         case "amp":
@@ -52,11 +52,16 @@ public struct WaveMapStorage {
         case "constant", "envelope": return functionVariableFromJson(json)
         case "sampler": return samplerFromJson(json)
         case "sum": return waveNodesFactory.makeSum(id: json["id"] as! String)
-        default: return "" as! WaveNode
+        case "foldback": return waveNodesFactory.makeFoldback(id: json["id"] as! String)
+        case "overdrive": return waveNodesFactory.makeOverdrive(id: json["id"] as! String)
+        case "lpf": return waveNodesFactory.makeLpf(id: json["id"] as! String)
+        default:
+            debugPrint(json)
+            return "" as! WaveNode
         }
     }
     
-    static func cubicBezierFromJson(_ json: JsonObject) -> CubicBezier {
+    private static func cubicBezierFromJson(_ json: JsonObject) -> CubicBezier {
         let x1: CGFloat = (json["p1"] as! JsonObject)["x"] as! CGFloat
         let y1: CGFloat = (json["p1"] as! JsonObject)["y"] as! CGFloat
         let x2: CGFloat = (json["p2"] as! JsonObject)["x"] as! CGFloat
@@ -65,7 +70,7 @@ public struct WaveMapStorage {
         return CubicBezier(p1: CGPoint(x: x1, y: y1), p2: CGPoint(x: x2, y: y2))
     }
     
-    static func oscilatorFromJson(_ json: JsonObject) -> Oscilator {
+    private static func oscilatorFromJson(_ json: JsonObject) -> Oscilator {
         let oscilator = waveNodesFactory.makeOscilator(id: json["id"] as! String)
         oscilator.tune = functionVariableFromJson(json["tune"] as! JsonObject)
         let waveGenerator = WaveGenerator(samplingSettings: waveNodesFactory.samplingSettings)
@@ -74,15 +79,16 @@ public struct WaveMapStorage {
         return oscilator
     }
     
-    static func samplerFromJson(_ json: JsonObject) -> Sampler {
+    private static func samplerFromJson(_ json: JsonObject) -> Sampler {
         let decoder = JSONDecoder(object: json)
         let sampler = waveNodesFactory.makeSampler(id: json["id"] as! String)
-        sampler.sampleFilePath = try! decoder.decode("audio_file_path")
+        let audioFilePath: String = try! decoder.decode("audio_file_path")
+        sampler.sampleFilePath = "\(StorageConstants.samplesRootDirectory)/\(audioFilePath)"
         sampler.volume = functionVariableFromJson(json["volume"] as! JsonObject)
         return sampler
     }
     
-    static func functionVariableFromJson(_ json: JsonObject) -> FunctionVariable {
+    private static func functionVariableFromJson(_ json: JsonObject) -> FunctionVariable {
         let decoder = JSONDecoder(object: json)
         switch try! decoder.decode("type") as String {
         case "constant":
@@ -146,7 +152,7 @@ public struct WaveMapStorage {
                 "connections": connectionsJsonArray]
     }
     
-    static func waveNodeConfiguration(_ waveNode: WaveNode) -> JsonObject {
+    private static func waveNodeConfiguration(_ waveNode: WaveNode) -> JsonObject {
         if let ampWaveEffect = waveNode as? AmpWaveEffect {
             return ["type": "amp",
                     "id": ampWaveEffect.id,
@@ -172,7 +178,7 @@ public struct WaveMapStorage {
             return [
                 "type": "sampler",
                 "id": sampler.id,
-                "audio_file_path": sampler.sampleFilePath,
+                "audio_file_path": sampler.sampleFilePath.components(separatedBy: "samples/").last!,
                 "volume": functionVariableConfiguration(functionVariable: sampler.volume)
             ]
         }
@@ -182,10 +188,28 @@ public struct WaveMapStorage {
                 "id": sum.id
             ]
         }
+        if let foldBack = waveNode as? FoldbackWaveEffect {
+            return [
+                "type": "foldback",
+                "id": foldBack.id
+            ]
+        }
+        if let overdrive = waveNode as? OverdriveWaveEffect {
+            return [
+                "type": "overdrive",
+                "id": overdrive.id
+            ]
+        }
+        if let lpf = waveNode as? LowpassFilterEffect {
+            return [
+                "type": "lpf",
+                "id": lpf.id
+            ]
+        }
         return "" as! JsonObject
     }
     
-    static func functionVariableConfiguration(functionVariable: FunctionVariable) -> JsonObject {
+    private static func functionVariableConfiguration(functionVariable: FunctionVariable) -> JsonObject {
         if let constant = functionVariable as? Constant {
             return ["type": "constant",
                     "id": constant.id,
@@ -233,7 +257,7 @@ public struct WaveNodesFactory {
     }
     
     func makeSampler(id: String? = nil) -> Sampler {
-        return Sampler(sampleFilePath: "/Users/maciejchmielewski/Documents/GuitarDsp/samples/440.wav", samplingSettings: samplingSettings, id: id)
+        return Sampler(sampleFilePath: Bundle.main.path(forResource: "440", ofType: "wav")!, samplingSettings: samplingSettings, id: id)
     }
     
     func makeOscilator(id: String? = nil) -> Oscilator {

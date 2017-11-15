@@ -17,10 +17,43 @@ enum WaveMapSource {
 }
 
 class MapCreatorViewController: UIViewController {
-    var waveMapSource = WaveMapSource.orphan
+    private weak var mapViewController: MapViewController!
     
+    var waveMapSource = WaveMapSource.orphan
     var waveMap: WaveMap!
     var padMidiOutput: PadMidiOutput!
+    var mapChange: ((WaveMap) -> Void)?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let mapController = segue.destination as? MapViewController {
+            self.mapViewController = mapController
+            updateWaveMap(waveMap)
+        }
+        if let addNodesController = segue.destination as? NodesListViewController {
+            addNodesController.addNode = {
+                self.waveMap.addWaveNode(waveNode: $0)
+            }
+        }
+        if let padController = segue.destination as? PadViewController {
+            padController.padMidiOutput = padMidiOutput
+        }
+    }
+    
+    @IBAction func newAction(_ sender: Any?) {
+        waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
+        waveMapSource = .orphan
+        updateWaveMap(waveMap)
+    }
+    
+    @IBAction func loadAction(_ sender: Any?) {
+        let controller = UIStoryboard(name: "WaveMapPicker", bundle: nil).instantiateInitialViewController() as! WaveMapPickerController
+        controller.pickWaveMap = {[weak self] (waveMap, name) in
+            self?.waveMap = waveMap
+            self?.waveMapSource = .assigned(name: name)
+            self?.updateWaveMap(waveMap)
+        }
+        present(controller, animated: true, completion: nil)
+    }
     
     @IBAction func saveAction(_ sender: Any?) {
         let save: (String, JsonObject) -> Void = { (name, configuration) in
@@ -46,9 +79,8 @@ class MapCreatorViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    private func updateWaveMap(_ waveMap: WaveMap) {
+        mapViewController.updateMap(waveMap.map)
         waveMap.map.select = { [weak self] node in
             if let constant = node.model as? Constant {
                 let constantViewController = UIStoryboard(name: "Constant", bundle: nil).instantiateInitialViewController() as! ConstantViewController
@@ -66,20 +98,7 @@ class MapCreatorViewController: UIViewController {
                 self?.showController(samplerViewController)
             }
         }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let mapController = segue.destination as? MapViewController {
-            mapController.map = waveMap.map
-        }
-        if let addNodesController = segue.destination as? NodesListViewController {
-            addNodesController.addNode = {
-                self.waveMap.addWaveNode(waveNode: $0)
-            }
-        }
-        if let padController = segue.destination as? PadViewController {
-            padController.padMidiOutput = padMidiOutput
-        }
+        mapChange?(waveMap)
     }
     
     private func showController(_ controller: UIViewController) {

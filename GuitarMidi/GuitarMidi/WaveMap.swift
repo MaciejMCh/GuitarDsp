@@ -218,16 +218,26 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
         return Node(name: "foldback",
                     interfaces: [
                         Interface(name: "in", model: foldback.input),
-                        Interface(name: "out", model: foldback.output)],
+                        Interface(name: "out", model: foldback.output),
+                        Interface(name: "treshold", model: foldback.tresholdSetter)],
                     model: foldback)
     }
     fileprivate static func nodeFromLpf(_ lpf: LowpassFilterEffect) -> Node {
         return Node(name: "lpf",
                     interfaces: [
                         Interface(name: "in", model: lpf.input),
-                        Interface(name: "out", model: lpf.output)],
+                        Interface(name: "out", model: lpf.output),
+                        Interface(name: "width", model: lpf.widthSetter)],
                     model: lpf)
     }
+}
+
+extension LowpassFilterEffect {
+    var widthSetter: FunctionVariableSetter {return {self.width = $0}}
+}
+
+extension FoldbackWaveEffect {
+    var tresholdSetter: FunctionVariableSetter {return {self.treshold = $0}}
 }
 
 extension Oscilator {

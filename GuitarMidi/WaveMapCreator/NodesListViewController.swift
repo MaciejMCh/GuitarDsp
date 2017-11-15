@@ -20,7 +20,11 @@ class NodesListViewController: UITableViewController {
             EnvelopeFunction(),
             AmpWaveEffect(),
             Sampler.zero(),
-            SumWaveNode()
+            SumWaveNode(),
+            WaveShaper(),
+            FoldbackWaveEffect(),
+            OverdriveWaveEffect(),
+            LowpassFilterEffect(),
         ]
     }()
     
@@ -52,6 +56,10 @@ extension WaveNode {
         case is AmpWaveEffect: return "amp"
         case is Sampler: return "sampler"
         case is SumWaveNode: return "sum"
+        case is WaveShaper: return "wave shaper"
+        case is FoldbackWaveEffect: return "foldback"
+        case is OverdriveWaveEffect: return "overdrive"
+        case is LowpassFilterEffect: return "lpf"
         default:
             assert(false)
             return "xd"
@@ -66,6 +74,10 @@ extension WaveNode {
         case is AmpWaveEffect: return AmpWaveEffect()
         case is Sampler: return Sampler.zero()
         case is SumWaveNode: return SumWaveNode()
+        case is WaveShaper: return WaveShaper()
+        case is FoldbackWaveEffect: return FoldbackWaveEffect()
+        case is OverdriveWaveEffect: return OverdriveWaveEffect()
+        case is LowpassFilterEffect: return LowpassFilterEffect()
         default:
             return "xd" as! WaveNode
         }

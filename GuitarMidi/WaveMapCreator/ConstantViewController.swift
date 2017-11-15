@@ -14,7 +14,7 @@ class ConstantViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let variableLabelController = segue.destination as? VariableLabelController {
-            variableLabelController.setup(range: 0..<10, initial: 1) { [weak self] in
+            variableLabelController.setup(range: 0..<10, initial: constantVariable.value) { [weak self] in
                 self?.constantVariable.value = $0
             }
         }

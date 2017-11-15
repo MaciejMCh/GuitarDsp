@@ -27,6 +27,8 @@
 		C2305C531F87E17900A89F63 /* WaveMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2305C521F87E17900A89F63 /* WaveMapController.swift */; };
 		C231401A1F9C92E500EA6027 /* MapCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23140191F9C92E500EA6027 /* MapCreatorViewController.swift */; };
 		C231401E1F9C96B700EA6027 /* WaveMapCreator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C231401D1F9C96B700EA6027 /* WaveMapCreator.storyboard */; };
+		C23AEBE31FBCCE820022BD97 /* WaveMapPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AEBE21FBCCE820022BD97 /* WaveMapPickerController.swift */; };
+		C23AEBE51FBCCE990022BD97 /* WaveMapPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23AEBE41FBCCE990022BD97 /* WaveMapPicker.storyboard */; };
 		C23F52EB1FA78E9B00127604 /* OscilatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F52EA1FA78E9B00127604 /* OscilatorViewController.swift */; };
 		C23F52ED1FA78F4A00127604 /* Oscilator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23F52EC1FA78F4A00127604 /* Oscilator.storyboard */; };
 		C23F52F31FA797C000127604 /* Constant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23F52F21FA797C000127604 /* Constant.storyboard */; };
@@ -113,13 +115,14 @@
 		C2F136211F9929B700069C8D /* LowpassFilterEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F136201F9929B700069C8D /* LowpassFilterEffect.swift */; };
 		C2FC489A1FB36E8B008838F4 /* Sequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC48991FB36E8B008838F4 /* Sequencer.swift */; };
 		C2FC489B1FB36EBF008838F4 /* Sequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC48991FB36E8B008838F4 /* Sequencer.swift */; };
+		C2FDB8171FBCF5CB00509C82 /* StorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FDB8161FBCF5CB00509C82 /* StorageConstants.swift */; };
+		C2FDB8181FBCF5CB00509C82 /* StorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FDB8161FBCF5CB00509C82 /* StorageConstants.swift */; };
 		C2FE271B1FBB8564001CED37 /* SamplerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FE271A1FBB8564001CED37 /* SamplerViewController.swift */; };
 		C2FE271D1FBB8589001CED37 /* Sampler.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2FE271C1FBB8589001CED37 /* Sampler.storyboard */; };
 		C2FE271E1FBB8790001CED37 /* FileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26AD8E51F7556A9005512E0 /* FileBrowser.swift */; };
 		C2FE27201FBB87B2001CED37 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FE271F1FBB87B2001CED37 /* Tree.swift */; };
 		C2FE27211FBB87B2001CED37 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FE271F1FBB87B2001CED37 /* Tree.swift */; };
 		C2FE27241FBB8819001CED37 /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FE27221FBB8819001CED37 /* TreeViewController.swift */; };
-		C2FE27261FBB8909001CED37 /* Tree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2FE27251FBB8909001CED37 /* Tree.storyboard */; };
 		C2FE27271FBB8909001CED37 /* Tree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2FE27251FBB8909001CED37 /* Tree.storyboard */; };
 		CA8706BC595401596FD33F81 /* Pods_WaveMapCreator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E699D986BA89A03F33A4E25 /* Pods_WaveMapCreator.framework */; };
 /* End PBXBuildFile section */
@@ -176,6 +179,8 @@
 		C23140191F9C92E500EA6027 /* MapCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCreatorViewController.swift; sourceTree = "<group>"; };
 		C231401D1F9C96B700EA6027 /* WaveMapCreator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapCreator.storyboard; sourceTree = "<group>"; };
 		C23508081F75340E0049754F /* Sampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
+		C23AEBE21FBCCE820022BD97 /* WaveMapPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMapPickerController.swift; sourceTree = "<group>"; };
+		C23AEBE41FBCCE990022BD97 /* WaveMapPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapPicker.storyboard; sourceTree = "<group>"; };
 		C23F52EA1FA78E9B00127604 /* OscilatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscilatorViewController.swift; sourceTree = "<group>"; };
 		C23F52EC1FA78F4A00127604 /* Oscilator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Oscilator.storyboard; sourceTree = "<group>"; };
 		C23F52F21FA797C000127604 /* Constant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Constant.storyboard; sourceTree = "<group>"; };
@@ -231,6 +236,7 @@
 		C2FA5B751F72CC54006E6565 /* AmpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpViewController.swift; sourceTree = "<group>"; };
 		C2FA5B771F72CD05006E6565 /* Amp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Amp.storyboard; sourceTree = "<group>"; };
 		C2FC48991FB36E8B008838F4 /* Sequencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequencer.swift; sourceTree = "<group>"; };
+		C2FDB8161FBCF5CB00509C82 /* StorageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageConstants.swift; sourceTree = "<group>"; };
 		C2FE271A1FBB8564001CED37 /* SamplerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerViewController.swift; sourceTree = "<group>"; };
 		C2FE271C1FBB8589001CED37 /* Sampler.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sampler.storyboard; sourceTree = "<group>"; };
 		C2FE271F1FBB87B2001CED37 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
@@ -307,6 +313,8 @@
 				C2FE271C1FBB8589001CED37 /* Sampler.storyboard */,
 				C2FE27221FBB8819001CED37 /* TreeViewController.swift */,
 				C2FE27251FBB8909001CED37 /* Tree.storyboard */,
+				C23AEBE21FBCCE820022BD97 /* WaveMapPickerController.swift */,
+				C23AEBE41FBCCE990022BD97 /* WaveMapPicker.storyboard */,
 			);
 			path = WaveMapCreator;
 			sourceTree = "<group>";
@@ -393,6 +401,7 @@
 				C24170191FA10417000E293F /* AudioFileReader.swift */,
 				C248D9D81FB115B4007BC866 /* EnvelopeClone.swift */,
 				C2FE271F1FBB87B2001CED37 /* Tree.swift */,
+				C2FDB8161FBCF5CB00509C82 /* StorageConstants.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -506,6 +515,7 @@
 				C2FE27271FBB8909001CED37 /* Tree.storyboard in Resources */,
 				C210352D1FBA38FE0073F46C /* GoogleService-Info.plist in Resources */,
 				C23F52F31FA797C000127604 /* Constant.storyboard in Resources */,
+				C23AEBE51FBCCE990022BD97 /* WaveMapPicker.storyboard in Resources */,
 				C29E51541F9A2E5D0039651C /* Assets.xcassets in Resources */,
 				C2FE271D1FBB8589001CED37 /* Sampler.storyboard in Resources */,
 				C2C3F1971FA8B13300E9A4E9 /* VariableLabel.storyboard in Resources */,
@@ -519,7 +529,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2FE27261FBB8909001CED37 /* Tree.storyboard in Resources */,
 				C2C19AA01F7AFE4400FDE938 /* WaveShaperNode.storyboard in Resources */,
 				C2C19A981F7AFE4400FDE938 /* Envelope.storyboard in Resources */,
 				C2C19A901F7AFE4400FDE938 /* Bass808.storyboard in Resources */,
@@ -717,6 +726,7 @@
 				C2CF79D41F9E17A00087C6A1 /* SoundNetwork.swift in Sources */,
 				C2FC489A1FB36E8B008838F4 /* Sequencer.swift in Sources */,
 				C2CF79D51F9E17AA0087C6A1 /* Oscilator.swift in Sources */,
+				C2FDB8181FBCF5CB00509C82 /* StorageConstants.swift in Sources */,
 				C20035EE1F9E32B400C21EF7 /* EnvelopeFunction.swift in Sources */,
 				C20035F41F9E33E000C21EF7 /* CubicBezier.swift in Sources */,
 				C23F52EB1FA78E9B00127604 /* OscilatorViewController.swift in Sources */,
@@ -728,6 +738,7 @@
 				C20035EB1F9E2F5F00C21EF7 /* Sampler.swift in Sources */,
 				C2CF79D21F9E17800087C6A1 /* ChannelPlayerEffect.swift in Sources */,
 				C2FE27241FBB8819001CED37 /* TreeViewController.swift in Sources */,
+				C23AEBE31FBCCE820022BD97 /* WaveMapPickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +761,7 @@
 				C2305C531F87E17900A89F63 /* WaveMapController.swift in Sources */,
 				C2C19A991F7AFE4400FDE938 /* EnvelopeViewController.swift in Sources */,
 				C2C19A921F7AFE4400FDE938 /* OscilatorViewController.swift in Sources */,
+				C2FDB8171FBCF5CB00509C82 /* StorageConstants.swift in Sources */,
 				C2ED99271F8D3FF100FA9738 /* ConstantViewController.swift in Sources */,
 				C2C19AB01F7AFE5300FDE938 /* SamplingSettingsUtils.swift in Sources */,
 				C2C19AA81F7AFE4400FDE938 /* SamplerViewController.swift in Sources */,

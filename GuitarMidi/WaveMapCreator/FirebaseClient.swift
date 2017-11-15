@@ -11,6 +11,10 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class FirebaseClient {
+    init() {
+        setupFileSystem()
+    }
+    
     func sync() {
         syncSamples()
         syncWaveMapConfigurations()
@@ -35,6 +39,13 @@ class FirebaseClient {
         }
     }
     
+    private func setupFileSystem() {
+        let waveMapsDirectoryPath = filePathForWaveMap(name: "")
+        if !FileManager.default.fileExists(atPath: waveMapsDirectoryPath) {
+            try! FileManager.default.createDirectory(atPath: waveMapsDirectoryPath, withIntermediateDirectories: true, attributes: nil)
+        }
+    }
+    
     private func waveMapsIndex(completion: @escaping ([(String, JsonObject)]) -> Void) {
         Database.database().reference().child("wave_maps").observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
             var configurations: [(String, JsonObject)] = []
@@ -54,7 +65,7 @@ class FirebaseClient {
     }
     
     private func filePathForWaveMap(name: String) -> String {
-        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/wave_maps/" + name
+        return "\(StorageConstants.waveMapsRootDirectory)/\(name)"
     }
     
     private func downloadSample(_ firebaseSample: FirebaseSample) {
@@ -64,7 +75,7 @@ class FirebaseClient {
     }
     
     private func filePathForSample(_ firebaseSample: FirebaseSample) -> String {
-        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/samples/" + firebaseSample.path
+        return "\(StorageConstants.samplesRootDirectory)/\(firebaseSample.path)"
     }
     
     private func samplesIndex(completion: @escaping ([FirebaseSample]) -> Void) {

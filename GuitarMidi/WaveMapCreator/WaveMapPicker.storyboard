@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FYe-yi-GhS">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wave Map Picker Controller-->
+        <scene sceneID="Zaw-tI-o7f">
+            <objects>
+                <viewController id="FYe-yi-GhS" customClass="WaveMapPickerController" customModule="WaveMapCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hem-aR-kyq">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a83-zC-8Pu">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="YYS-xv-fhu"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="neV-kr-cQP" kind="embed" id="NZj-nR-8uL"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgG-gl-Ozs">
+                                <rect key="frame" x="608" y="325" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="FYe-yi-GhS" eventType="touchUpInside" id="cFZ-Xb-2Br"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ndD-Cc-HvN" firstAttribute="bottom" secondItem="RgG-gl-Ozs" secondAttribute="bottom" constant="20" id="13L-LO-SU3"/>
+                            <constraint firstItem="ndD-Cc-HvN" firstAttribute="trailing" secondItem="RgG-gl-Ozs" secondAttribute="trailing" constant="20" id="5fi-58-emB"/>
+                            <constraint firstItem="a83-zC-8Pu" firstAttribute="leading" secondItem="ndD-Cc-HvN" secondAttribute="leading" id="Bxb-wk-Kkg"/>
+                            <constraint firstItem="a83-zC-8Pu" firstAttribute="top" secondItem="ndD-Cc-HvN" secondAttribute="top" id="Of4-nn-Nmz"/>
+                            <constraint firstItem="ndD-Cc-HvN" firstAttribute="bottom" secondItem="a83-zC-8Pu" secondAttribute="bottom" id="g7R-cF-Vyl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ndD-Cc-HvN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MdX-LI-sAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-324" y="-57"/>
+        </scene>
+        <!--Tree-->
+        <scene sceneID="DN6-iV-85c">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tree" id="neV-kr-cQP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fpn-3j-BBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="-59"/>
+        </scene>
+    </scenes>
+</document>

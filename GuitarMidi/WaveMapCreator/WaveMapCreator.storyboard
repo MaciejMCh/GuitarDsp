@@ -48,9 +48,24 @@
                                     <action selector="saveAction:" destination="WC0-0L-qSe" eventType="touchUpInside" id="xao-bL-dc0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnI-Ah-6uT">
+                                <rect key="frame" x="174" y="345" width="34" height="30"/>
+                                <state key="normal" title="Load"/>
+                                <connections>
+                                    <action selector="loadAction:" destination="WC0-0L-qSe" eventType="touchUpInside" id="m4g-dZ-AmS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFu-SZ-SFb">
+                                <rect key="frame" x="243" y="345" width="31" height="30"/>
+                                <state key="normal" title="New"/>
+                                <connections>
+                                    <action selector="newAction:" destination="WC0-0L-qSe" eventType="touchUpInside" id="JJY-pB-HvQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YFu-SZ-SFb" firstAttribute="baseline" secondItem="bnI-Ah-6uT" secondAttribute="baseline" id="2NY-Fb-8au"/>
                             <constraint firstItem="klT-Ox-PFm" firstAttribute="leading" secondItem="gKu-Vw-x5a" secondAttribute="leading" id="6xb-7K-f74"/>
                             <constraint firstItem="BmZ-Np-z23" firstAttribute="bottom" secondItem="rSi-ak-eNO" secondAttribute="bottom" id="EK7-zR-Rab"/>
                             <constraint firstItem="rSi-ak-eNO" firstAttribute="top" secondItem="BmZ-Np-z23" secondAttribute="top" id="FTi-DQ-2Ba"/>
@@ -58,10 +73,13 @@
                             <constraint firstItem="rSi-ak-eNO" firstAttribute="leading" secondItem="PV7-Tf-erD" secondAttribute="trailing" id="NkQ-hZ-GUh"/>
                             <constraint firstItem="fxj-Qx-2jc" firstAttribute="bottom" secondItem="BmZ-Np-z23" secondAttribute="bottom" id="W7L-Ow-myu"/>
                             <constraint firstItem="fxj-Qx-2jc" firstAttribute="leading" secondItem="klT-Ox-PFm" secondAttribute="trailing" constant="5" id="Wuy-bt-3ac"/>
+                            <constraint firstItem="bnI-Ah-6uT" firstAttribute="baseline" secondItem="fxj-Qx-2jc" secondAttribute="baseline" id="YDP-LW-W4F"/>
                             <constraint firstItem="klT-Ox-PFm" firstAttribute="top" secondItem="BmZ-Np-z23" secondAttribute="top" id="aRc-HY-ese"/>
+                            <constraint firstItem="YFu-SZ-SFb" firstAttribute="leading" secondItem="bnI-Ah-6uT" secondAttribute="trailing" constant="35" id="e4i-4J-54o"/>
                             <constraint firstItem="BmZ-Np-z23" firstAttribute="bottom" secondItem="klT-Ox-PFm" secondAttribute="bottom" id="fii-LZ-IFs"/>
                             <constraint firstItem="PV7-Tf-erD" firstAttribute="leading" secondItem="klT-Ox-PFm" secondAttribute="trailing" id="hRJ-Qu-OQ3"/>
                             <constraint firstItem="BmZ-Np-z23" firstAttribute="bottom" secondItem="PV7-Tf-erD" secondAttribute="bottom" id="qm5-cm-Fcv"/>
+                            <constraint firstItem="bnI-Ah-6uT" firstAttribute="leading" secondItem="fxj-Qx-2jc" secondAttribute="trailing" constant="35" id="trk-55-0Mw"/>
                             <constraint firstItem="PV7-Tf-erD" firstAttribute="top" secondItem="BmZ-Np-z23" secondAttribute="top" id="zzH-rU-j0j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BmZ-Np-z23"/>

@@ -53,6 +53,8 @@
 		C29E51571F9A2E5D0039651C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29E51551F9A2E5D0039651C /* LaunchScreen.storyboard */; };
 		C2A8CCB71FA8B874002EE832 /* EnvelopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8CCB61FA8B874002EE832 /* EnvelopeViewController.swift */; };
 		C2A8CCB91FA8B8A9002EE832 /* Envelope.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A8CCB81FA8B8A9002EE832 /* Envelope.storyboard */; };
+		C2B26BE51FBE0F2C002A18AF /* UserFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B26BE41FBE0F2C002A18AF /* UserFeedback.swift */; };
+		C2B26BE61FBE0F88002A18AF /* UserFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B26BE41FBE0F2C002A18AF /* UserFeedback.swift */; };
 		C2BF23E11F87CFC100EF9A6A /* SoundNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF23E01F87CFC100EF9A6A /* SoundNetwork.swift */; };
 		C2BF34E91F87ECC20049C460 /* WaveMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2BF34E81F87ECC20049C460 /* WaveMap.storyboard */; };
 		C2C19A891F7AFE3500FDE938 /* InterfaceBuilderInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D82B61F7034B900F79116 /* InterfaceBuilderInstance.swift */; };
@@ -111,6 +113,7 @@
 		C2ECD2611F7C223D0037780F /* SamplerNode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2ECD2601F7C223D0037780F /* SamplerNode.storyboard */; };
 		C2ED99271F8D3FF100FA9738 /* ConstantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED99261F8D3FF100FA9738 /* ConstantViewController.swift */; };
 		C2ED99291F8D40C900FA9738 /* Constant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2ED99281F8D40C900FA9738 /* Constant.storyboard */; };
+		C2EE30981FBE21D7000DD9CE /* 440.wav in Resources */ = {isa = PBXBuildFile; fileRef = C2F0A61F1FBA276200BC8AA6 /* 440.wav */; };
 		C2F0A6201FBA276200BC8AA6 /* 440.wav in Resources */ = {isa = PBXBuildFile; fileRef = C2F0A61F1FBA276200BC8AA6 /* 440.wav */; };
 		C2F136211F9929B700069C8D /* LowpassFilterEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F136201F9929B700069C8D /* LowpassFilterEffect.swift */; };
 		C2FC489A1FB36E8B008838F4 /* Sequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC48991FB36E8B008838F4 /* Sequencer.swift */; };
@@ -213,6 +216,7 @@
 		C2A4CD061F7546C2001F8D56 /* Tree.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tree.storyboard; sourceTree = "<group>"; };
 		C2A8CCB61FA8B874002EE832 /* EnvelopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeViewController.swift; sourceTree = "<group>"; };
 		C2A8CCB81FA8B8A9002EE832 /* Envelope.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Envelope.storyboard; sourceTree = "<group>"; };
+		C2B26BE41FBE0F2C002A18AF /* UserFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedback.swift; sourceTree = "<group>"; };
 		C2BC08E31F70920700F308AE /* TimeFunctionVariable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeFunctionVariable.storyboard; sourceTree = "<group>"; };
 		C2BF23E01F87CFC100EF9A6A /* SoundNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundNetwork.swift; sourceTree = "<group>"; };
 		C2BF34E81F87ECC20049C460 /* WaveMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMap.storyboard; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 				C2FE271F1FBB87B2001CED37 /* Tree.swift */,
 				C2FDB8161FBCF5CB00509C82 /* StorageConstants.swift */,
 				C2FDB8191FBD08E500509C82 /* FirebaseClient.swift */,
+				C2B26BE41FBE0F2C002A18AF /* UserFeedback.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -544,6 +549,7 @@
 				C2C19AA51F7AFE4400FDE938 /* Tree.storyboard in Resources */,
 				C2CB168C1F5F0D5800B8D6FF /* Main.storyboard in Resources */,
 				C2C19A961F7AFE4400FDE938 /* TimeFunctionVariable.storyboard in Resources */,
+				C2EE30981FBE21D7000DD9CE /* 440.wav in Resources */,
 				C2FDB81B1FBD0EA900509C82 /* GoogleService-Info.plist in Resources */,
 				C2BF34E91F87ECC20049C460 /* WaveMap.storyboard in Resources */,
 				C2C19AA31F7AFE4400FDE938 /* Test.storyboard in Resources */,
@@ -724,6 +730,7 @@
 				C2CF79D11F9E17440087C6A1 /* WaveMap.swift in Sources */,
 				C24170701FA12184000E293F /* PadViewController.swift in Sources */,
 				C287159E1FA7A19F0098B257 /* VariableLabelController.swift in Sources */,
+				C2B26BE61FBE0F88002A18AF /* UserFeedback.swift in Sources */,
 				C20035F61F9E344A00C21EF7 /* SamplingSettingsUtils.swift in Sources */,
 				C2CF79D71F9E17D00087C6A1 /* WaveDistortion.swift in Sources */,
 				C23F52F51FA797DF00127604 /* ConstantViewController.swift in Sources */,
@@ -797,6 +804,7 @@
 				C2C19AAB1F7AFE5300FDE938 /* FunctionVariable.swift in Sources */,
 				C2C19AAF1F7AFE5300FDE938 /* Oscilator.swift in Sources */,
 				C241701A1FA10417000E293F /* AudioFileReader.swift in Sources */,
+				C2B26BE51FBE0F2C002A18AF /* UserFeedback.swift in Sources */,
 				C2CB16851F5F0D5800B8D6FF /* AppDelegate.swift in Sources */,
 				C248D9D91FB115B4007BC866 /* EnvelopeClone.swift in Sources */,
 				C2CF79D01F9E16FC0087C6A1 /* WaveMap.swift in Sources */,

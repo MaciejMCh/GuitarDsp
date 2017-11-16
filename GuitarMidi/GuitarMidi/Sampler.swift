@@ -24,10 +24,13 @@ public class Sampler: Playing, MidiPlayer, WaveNode {
     lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
     public var sampleFilePath: String {
         didSet {
+            lock = true
             player = Sampler.loadPlayer(path: sampleFilePath, samplingSettings: samplingSettings)
+            lock = false
         }
     }
     private let ff = FlipFlop()
+    private var lock = false
     
     static func loadPlayer(path: String, samplingSettings: SamplingSettings) -> SamplePlayer {
         var isDirectory: ObjCBool = false
@@ -57,6 +60,7 @@ public class Sampler: Playing, MidiPlayer, WaveNode {
     }
     
     public func next(time: Int) -> Double {
+        if lock {return 0}
         return ff.value(time: time) {
             self.player.nextSample() * self.volume.next(time: time)
         }

@@ -62,6 +62,12 @@
                                     <action selector="newAction:" destination="WC0-0L-qSe" eventType="touchUpInside" id="JJY-pB-HvQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f6-dZ-mIG">
+                                <rect key="frame" x="309" y="370" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -75,15 +81,20 @@
                             <constraint firstItem="fxj-Qx-2jc" firstAttribute="leading" secondItem="klT-Ox-PFm" secondAttribute="trailing" constant="5" id="Wuy-bt-3ac"/>
                             <constraint firstItem="bnI-Ah-6uT" firstAttribute="baseline" secondItem="fxj-Qx-2jc" secondAttribute="baseline" id="YDP-LW-W4F"/>
                             <constraint firstItem="klT-Ox-PFm" firstAttribute="top" secondItem="BmZ-Np-z23" secondAttribute="top" id="aRc-HY-ese"/>
+                            <constraint firstItem="5f6-dZ-mIG" firstAttribute="leading" secondItem="YFu-SZ-SFb" secondAttribute="trailing" constant="35" id="bkY-BU-hFU"/>
                             <constraint firstItem="YFu-SZ-SFb" firstAttribute="leading" secondItem="bnI-Ah-6uT" secondAttribute="trailing" constant="35" id="e4i-4J-54o"/>
                             <constraint firstItem="BmZ-Np-z23" firstAttribute="bottom" secondItem="klT-Ox-PFm" secondAttribute="bottom" id="fii-LZ-IFs"/>
                             <constraint firstItem="PV7-Tf-erD" firstAttribute="leading" secondItem="klT-Ox-PFm" secondAttribute="trailing" id="hRJ-Qu-OQ3"/>
                             <constraint firstItem="BmZ-Np-z23" firstAttribute="bottom" secondItem="PV7-Tf-erD" secondAttribute="bottom" id="qm5-cm-Fcv"/>
                             <constraint firstItem="bnI-Ah-6uT" firstAttribute="leading" secondItem="fxj-Qx-2jc" secondAttribute="trailing" constant="35" id="trk-55-0Mw"/>
+                            <constraint firstItem="5f6-dZ-mIG" firstAttribute="baseline" secondItem="YFu-SZ-SFb" secondAttribute="baseline" id="v6j-EE-IFF"/>
                             <constraint firstItem="PV7-Tf-erD" firstAttribute="top" secondItem="BmZ-Np-z23" secondAttribute="top" id="zzH-rU-j0j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BmZ-Np-z23"/>
                     </view>
+                    <connections>
+                        <outlet property="feedbackLabel" destination="5f6-dZ-mIG" id="WFv-XD-vHp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWJ-m4-gwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

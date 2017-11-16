@@ -18,11 +18,19 @@ enum WaveMapSource {
 
 class MapCreatorViewController: UIViewController {
     private weak var mapViewController: MapViewController!
+    @IBOutlet weak var feedbackLabel: UILabel!
     
     var waveMapSource = WaveMapSource.orphan
     var waveMap: WaveMap!
     var padMidiOutput: PadMidiOutput!
     var mapChange: ((WaveMap) -> Void)?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        UserFeedback.messageDisplay = { [weak self] in
+            self?.feedbackLabel.text = $0
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let mapController = segue.destination as? MapViewController {

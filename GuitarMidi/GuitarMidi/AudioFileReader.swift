@@ -39,9 +39,14 @@ import GuitarDsp
                 return "" as! AudioFile
             }
             let totSamples = file.length
-            let format = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: file.fileFormat.sampleRate, channels: 1, interleaved: false)
-            let buffer = AVAudioPCMBuffer(pcmFormat: format!, frameCapacity: AVAudioFrameCount(totSamples))!
-            try! file.read(into: buffer)
+            let format = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: file.fileFormat.sampleRate, channels: file.fileFormat.channelCount, interleaved: false)!
+            let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: AVAudioFrameCount(totSamples))!
+            do {
+                try file.read(into: buffer)
+            } catch (let e) {
+                print("Error:", e)
+                return "" as! AudioFile
+            }
             let floatArray = Array(UnsafeBufferPointer(start: buffer.floatChannelData?[0], count:Int(buffer.frameLength)))
             let duration = Float(floatArray.count) / Float(file.fileFormat.sampleRate)
             return AudioFile(samples: floatArray, duration: duration)

@@ -13,6 +13,7 @@ import GuitarDsp
 
 public class WaveMapController: NSViewController {
     weak var mapViewController: MapViewController!
+    @IBOutlet weak var feedbackLabel: NSTextField!
     public var creator: WaveNodesFactory!
     public var waveMap: WaveMap!
     
@@ -25,6 +26,9 @@ public class WaveMapController: NSViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        UserFeedback.messageDisplay = {[weak self] in
+            self?.feedbackLabel.stringValue = $0
+        }
         waveMap.map.select = { node in
             if let oscilator = node.model as? Oscilator {
                 let oscilatorController = OscilatorViewController.make()
@@ -37,7 +41,7 @@ public class WaveMapController: NSViewController {
                 self.presentViewControllerAsModalWindow(envelopeViewController)
             }
             if let sampler = node.model as? Sampler {
-                let samplerViewController = NSStoryboard(name: "Sampler", bundle: Bundle(identifier: "org.cocoapods.GuitarMidi")!).instantiateInitialController() as! SamplerViewController
+                let samplerViewController = SamplerViewController.make()
                 samplerViewController.sampler = sampler
                 self.presentViewControllerAsModalWindow(samplerViewController)
             }

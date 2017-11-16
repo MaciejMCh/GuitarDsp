@@ -23,11 +23,28 @@ class FirebaseClient {
     func syncSamples() {
         Database.database().reference(withPath: "samples").observeSingleEvent(of: .value) { snapshot in
             guard let sampleRecords = snapshot.value as? [String: String] else {return}
+            var samplesRecordsToDownload: [(id: String, sampleFilePath: String)] = []
             for sampleRecord in sampleRecords {
                 let sampleFilePath = "\(StorageConstants.samplesRootDirectory)/\(sampleRecord.value)"
                 if !FileManager.default.fileExists(atPath: sampleFilePath) {
-                    Storage.storage().reference(withPath: "samples/\(sampleRecord.key)").write(toFile: URL(fileURLWithPath: sampleFilePath))
+                    samplesRecordsToDownload.append((id: sampleRecord.key, sampleFilePath: sampleFilePath))
                 }
+            }
+            
+            let totalDownloadsCount = samplesRecordsToDownload.count
+            var remainingDownloadsCount = totalDownloadsCount
+            if totalDownloadsCount > 0 {
+                UserFeedback.displayMessage("downloading (\(totalDownloadsCount)/\(totalDownloadsCount))")
+            }
+            
+            for sampleToDownloadRecord in samplesRecordsToDownload {
+                Storage.storage().reference(withPath: "samples/\(sampleToDownloadRecord.id)").write(toFile: URL(fileURLWithPath: sampleToDownloadRecord.sampleFilePath), completion: { (_, _) in
+                    remainingDownloadsCount -= 1
+                    switch remainingDownloadsCount {
+                    case 0: UserFeedback.displayMessage("downloading done")
+                    default: UserFeedback.displayMessage("downloading (\(remainingDownloadsCount)/\(totalDownloadsCount))")
+                    }
+                })
             }
         }
     }

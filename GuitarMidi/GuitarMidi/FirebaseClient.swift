@@ -26,12 +26,23 @@ class FirebaseClient {
             var newServerSamplesRecords = serverSamplesRecords
             
             let localSamplesFilesPaths = self.indexSamples()
+            let totalUploadsCount = localSamplesFilesPaths.count - serverSamplesRecords.count
+            var remainingUploadsCount = totalUploadsCount
+            if totalUploadsCount > 0 {
+                UserFeedback.displayMessage("uploading (\(totalUploadsCount)/\(totalUploadsCount))")
+            }
             for localSampleFilePath in localSamplesFilesPaths {
                 let localSamplePath = localSampleFilePath.components(separatedBy: "samples/").last!
                 if serverSamplesPaths.contains(localSamplePath) {continue}
                 let newSampleRecord = (id: NSUUID().uuidString, path: localSamplePath)
                 newServerSamplesRecords.append(newSampleRecord)
-                Storage.storage().reference(withPath: "samples/\(newSampleRecord.id)").putFile(from: URL(fileURLWithPath: localSampleFilePath))
+                Storage.storage().reference(withPath: "samples/\(newSampleRecord.id)").putFile(from: URL(fileURLWithPath: localSampleFilePath), metadata: nil, completion: { (_, _) in
+                    remainingUploadsCount -= 1
+                    switch remainingUploadsCount {
+                    case 0: UserFeedback.displayMessage("uploading done")
+                    default: UserFeedback.displayMessage("uploading (\(remainingUploadsCount)/\(totalUploadsCount))")
+                    }
+                })
             }
             
             var newSamplesRecordsJson: [String: String] = [:]

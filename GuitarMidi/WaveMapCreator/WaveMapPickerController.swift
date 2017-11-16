@@ -15,7 +15,7 @@ class WaveMapPickerController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let treeViewController = segue.destination as? TreeViewController {
-            treeViewController.tree = FileBrowser(root: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/wave_maps", extensions: ["wav"], selectAction: { [weak self] file in
+            treeViewController.tree = FileBrowser(root: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/wave_maps", extensions: StorageConstants.audioFileExtensions, selectAction: { [weak self] file in
                 self?.pickFile(path: file.path)
                 }, pickAction: { [weak self] file in
                     self?.pickFile(path: file.path)

@@ -57,6 +57,6 @@ struct File: LeafRepresentable {
 
 extension FileBrowser {
     static func samples(selectAction: @escaping (File) -> Void, pickAction: @escaping (File) -> Void, directoryAction: @escaping (String) -> Void) -> FileBrowser {
-        return FileBrowser(root: "/Users/maciejchmielewski/Documents/GuitarDsp/samples", extensions: ["wav"], selectAction: selectAction, pickAction: pickAction, selectDirectory: directoryAction)
+        return FileBrowser(root: "/Users/maciejchmielewski/Documents/GuitarDsp/samples", extensions: StorageConstants.audioFileExtensions, selectAction: selectAction, pickAction: pickAction, selectDirectory: directoryAction)
     }
 }

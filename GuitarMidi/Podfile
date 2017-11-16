@@ -10,6 +10,8 @@ def pods
   pod 'CubicBezier', :path => '../CubicBezier'
   pod 'NodesMap', :path => '../NodesMap'
   pod 'JSONCodable'
+  pod 'FirebaseCommunity/Database'
+  pod 'FirebaseCommunity/Storage'
 end
 
 target 'GuitarMidi' do

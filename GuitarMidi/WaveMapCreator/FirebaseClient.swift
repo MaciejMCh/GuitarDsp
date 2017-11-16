@@ -21,10 +21,12 @@ class FirebaseClient {
     }
     
     func syncSamples() {
-        samplesIndex { firebaseSamples in
-            for firebaseSample in firebaseSamples {
-                if !FileManager.default.fileExists(atPath: self.filePathForSample(firebaseSample)) {
-                    self.downloadSample(firebaseSample)
+        Database.database().reference(withPath: "samples").observeSingleEvent(of: .value) { snapshot in
+            guard let sampleRecords = snapshot.value as? [String: String] else {return}
+            for sampleRecord in sampleRecords {
+                let sampleFilePath = "\(StorageConstants.samplesRootDirectory)/\(sampleRecord.value)"
+                if !FileManager.default.fileExists(atPath: sampleFilePath) {
+                    Storage.storage().reference(withPath: "samples/\(sampleRecord.key)").write(toFile: URL(fileURLWithPath: sampleFilePath))
                 }
             }
         }
@@ -43,6 +45,10 @@ class FirebaseClient {
         let waveMapsDirectoryPath = filePathForWaveMap(name: "")
         if !FileManager.default.fileExists(atPath: waveMapsDirectoryPath) {
             try! FileManager.default.createDirectory(atPath: waveMapsDirectoryPath, withIntermediateDirectories: true, attributes: nil)
+        }
+        
+        if !FileManager.default.fileExists(atPath: StorageConstants.samplesRootDirectory) {
+            try! FileManager.default.createDirectory(atPath: StorageConstants.samplesRootDirectory, withIntermediateDirectories: true, attributes: nil)
         }
     }
     

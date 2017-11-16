@@ -12,6 +12,7 @@ import NodesMap
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    let firebaseClient = FirebaseClient()
     
     @IBAction func playAction(sender: Any?) {
 //        bass808xD.on()
@@ -37,6 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        firebaseClient.sync()
         NSApplication.shared().windows.first!.contentViewController = makeInitialController()
         return;
         

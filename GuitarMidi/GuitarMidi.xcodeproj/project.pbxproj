@@ -117,6 +117,8 @@
 		C2FC489B1FB36EBF008838F4 /* Sequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC48991FB36E8B008838F4 /* Sequencer.swift */; };
 		C2FDB8171FBCF5CB00509C82 /* StorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FDB8161FBCF5CB00509C82 /* StorageConstants.swift */; };
 		C2FDB8181FBCF5CB00509C82 /* StorageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FDB8161FBCF5CB00509C82 /* StorageConstants.swift */; };
+		C2FDB81A1FBD08E500509C82 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FDB8191FBD08E500509C82 /* FirebaseClient.swift */; };
+		C2FDB81B1FBD0EA900509C82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C210352C1FBA38FD0073F46C /* GoogleService-Info.plist */; };
 		C2FE271B1FBB8564001CED37 /* SamplerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FE271A1FBB8564001CED37 /* SamplerViewController.swift */; };
 		C2FE271D1FBB8589001CED37 /* Sampler.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2FE271C1FBB8589001CED37 /* Sampler.storyboard */; };
 		C2FE271E1FBB8790001CED37 /* FileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26AD8E51F7556A9005512E0 /* FileBrowser.swift */; };
@@ -237,6 +239,7 @@
 		C2FA5B771F72CD05006E6565 /* Amp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Amp.storyboard; sourceTree = "<group>"; };
 		C2FC48991FB36E8B008838F4 /* Sequencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequencer.swift; sourceTree = "<group>"; };
 		C2FDB8161FBCF5CB00509C82 /* StorageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageConstants.swift; sourceTree = "<group>"; };
+		C2FDB8191FBD08E500509C82 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		C2FE271A1FBB8564001CED37 /* SamplerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerViewController.swift; sourceTree = "<group>"; };
 		C2FE271C1FBB8589001CED37 /* Sampler.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sampler.storyboard; sourceTree = "<group>"; };
 		C2FE271F1FBB87B2001CED37 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
@@ -402,6 +405,7 @@
 				C248D9D81FB115B4007BC866 /* EnvelopeClone.swift */,
 				C2FE271F1FBB87B2001CED37 /* Tree.swift */,
 				C2FDB8161FBCF5CB00509C82 /* StorageConstants.swift */,
+				C2FDB8191FBD08E500509C82 /* FirebaseClient.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -540,6 +544,7 @@
 				C2C19AA51F7AFE4400FDE938 /* Tree.storyboard in Resources */,
 				C2CB168C1F5F0D5800B8D6FF /* Main.storyboard in Resources */,
 				C2C19A961F7AFE4400FDE938 /* TimeFunctionVariable.storyboard in Resources */,
+				C2FDB81B1FBD0EA900509C82 /* GoogleService-Info.plist in Resources */,
 				C2BF34E91F87ECC20049C460 /* WaveMap.storyboard in Resources */,
 				C2C19AA31F7AFE4400FDE938 /* Test.storyboard in Resources */,
 				C2C19A911F7AFE4400FDE938 /* Oscilator.storyboard in Resources */,
@@ -562,24 +567,32 @@
 				"${BUILT_PRODUCTS_DIR}/Beethoven-macOS/Beethoven.framework",
 				"${BUILT_PRODUCTS_DIR}/CubicBezier/CubicBezier.framework",
 				"${BUILT_PRODUCTS_DIR}/EZAudio/EZAudio.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCommunity/FirebaseCommunity.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-macOS/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-macOS/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GuitarDsp-macOS/GuitarDsp.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONCodable-macOS/JSONCodable.framework",
 				"${BUILT_PRODUCTS_DIR}/MIDIKit/MIDIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/NodesMap-macOS/NodesMap.framework",
 				"${BUILT_PRODUCTS_DIR}/Pitchy-macOS/Pitchy.framework",
 				"${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library-macOS/leveldb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Beethoven.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CubicBezier.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZAudio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCommunity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GuitarDsp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONCodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIDIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NodesMap.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pitchy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPCircularBuffer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -649,27 +662,27 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WaveMapCreator/Pods-WaveMapCreator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Beethoven-iOS/Beethoven.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GuitarDsp-iOS/GuitarDsp.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONCodable-iOS/JSONCodable.framework",
 				"${BUILT_PRODUCTS_DIR}/NodesMap-iOS/NodesMap.framework",
 				"${BUILT_PRODUCTS_DIR}/Pitchy-iOS/Pitchy.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library-iOS/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/Novocaine/Novocaine.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Beethoven.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GuitarDsp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONCodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NodesMap.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pitchy.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Novocaine.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Novocaine.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,6 +766,7 @@
 				C2C19A8B1F7AFE4400FDE938 /* PitchDetector.swift in Sources */,
 				C26C1FD21FBBBE6A00621EEA /* WaveMapStorage.swift in Sources */,
 				C2C19A8E1F7AFE4400FDE938 /* StrokeDetector.swift in Sources */,
+				C2FDB81A1FBD08E500509C82 /* FirebaseClient.swift in Sources */,
 				C29547A21F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift in Sources */,
 				C2C19A8D1F7AFE4400FDE938 /* NoteIndexIntegrator.swift in Sources */,
 				C2C19AAA1F7AFE5300FDE938 /* WaveGenerator.swift in Sources */,

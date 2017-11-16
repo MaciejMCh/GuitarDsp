@@ -17,7 +17,7 @@ class SamplerViewController: UIViewController {
             envelopeViewController.envelopeFunction = sampler.volume as! EnvelopeFunction
         }
         if let treeViewController = segue.destination as? TreeViewController {
-            treeViewController.tree = FileBrowser(root: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/samples", extensions: ["wav"], selectAction: { [weak self] file in
+            treeViewController.tree = FileBrowser(root: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/samples", extensions: StorageConstants.audioFileExtensions, selectAction: { [weak self] file in
                 self?.pickSampleFile(path: file.path)
                 }, pickAction: { [weak self] file in
                     self?.pickSampleFile(path: file.path)

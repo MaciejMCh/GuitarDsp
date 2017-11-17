@@ -13,6 +13,12 @@ import GuitarDsp
 class WaveMapPickerController: UIViewController {
     var pickWaveMap: ((WaveMap, String) -> Void)?
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        pickFile(path: StorageConstants.waveMapsRootDirectory + "/overdrive")
+        closeAction(nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let treeViewController = segue.destination as? TreeViewController {
             treeViewController.tree = FileBrowser(root: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/wave_maps", extensions: StorageConstants.audioFileExtensions, selectAction: { [weak self] file in

@@ -105,6 +105,21 @@ class MapCreatorViewController: UIViewController {
                 samplerViewController.sampler = sampler
                 self?.showController(samplerViewController)
             }
+            if let foldbackEffect = node.model as? FoldbackWaveEffect {
+                let foldbackViewController = UIStoryboard(name: "Foldback", bundle: nil).instantiateInitialViewController() as! FoldbackViewController
+                foldbackViewController.foldbackEffect = foldbackEffect
+                self?.showController(foldbackViewController)
+            }
+            if let oscilator = node.model as? Oscilator {
+                let oscilatorViewController = OscilatorViewController.make()
+                oscilatorViewController.oscilator = oscilator
+                self?.showController(oscilatorViewController)
+            }
+            if let waveShaper = node.model as? WaveShaper {
+                let waveShaperViewController = WaveShaperViewController.make()
+                waveShaperViewController.waveShaper = waveShaper
+                self?.showController(waveShaperViewController)
+            }
         }
         mapChange?(waveMap)
     }

@@ -18,6 +18,11 @@ class ConstantViewController: UIViewController {
                 self?.constantVariable.value = $0
             }
         }
+        if let decadeViewController = segue.destination as? DecadeViewController {
+            decadeViewController.setup(initialValue: constantVariable.value, powers: -7..<2) { [weak self] in
+                self?.constantVariable.value = $0
+            }
+        }
     }
     
     @IBAction func closeAction(_ sender: Any?) {

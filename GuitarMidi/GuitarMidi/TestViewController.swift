@@ -39,13 +39,15 @@ class TestViewController: NSViewController {
         }
         
         let overdrive = OverdriveWaveEffect()
+        overdrive.negative = false
+        overdrive.compress = false
         overdrive.input.output = oscilator.output
         var values4: [Double] = []
         for i in 0..<1000 {
             values4.append(overdrive.next(time: i))
         }
         
-        waveView1.values = values2
-        waveView2.values = values3
+        waveView1.values = values
+        waveView2.values = values4
     }
 }

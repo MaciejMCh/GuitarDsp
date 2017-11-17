@@ -79,7 +79,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarMidi/WaveMapController.swift"
-            timestampString = "532558055.214577"
+            timestampString = "532569275.892671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -95,7 +95,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarMidi/WaveMapController.swift"
-            timestampString = "532558055.214683"
+            timestampString = "532569275.892769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -126,13 +126,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GuitarMidi/AudioFileReader.swift"
-            timestampString = "532558055.214784"
+            filePath = "GuitarMidi/WaveDistortion.swift"
+            timestampString = "532645394.235555"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "load(filePath:samplingSettings:)"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "next(time:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WaveMapCreator.FoldbackWaveEffect.next(time: Swift.Int) -&gt; Swift.Double"
+                  moduleName = "WaveMapCreator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/WaveDistortion.swift"
+                  timestampString = "532645394.305675"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Double in WaveMapCreator.FoldbackWaveEffect.next(time: Swift.Int) -&gt; Swift.Double"
+                  moduleName = "WaveMapCreator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/WaveDistortion.swift"
+                  timestampString = "532645394.310083"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WaveMapCreator/DecadeViewController.swift"
+            timestampString = "532645394.235702"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "setValue(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

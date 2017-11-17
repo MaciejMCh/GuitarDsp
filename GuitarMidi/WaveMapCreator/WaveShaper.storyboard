@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7uV-Yn-VkR">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wave Shaper View Controller-->
+        <scene sceneID="5VL-Md-uH5">
+            <objects>
+                <viewController id="7uV-Yn-VkR" customClass="WaveShaperViewController" customModule="WaveMapCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nz0-ng-1G6">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nr1-qo-B72">
+                                <rect key="frame" x="5" y="46" width="229" height="229"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nr1-qo-B72" secondAttribute="height" id="QE3-bK-axk"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="O0N-ay-Tlb" kind="embed" id="TKJ-gL-ay0"/>
+                                </connections>
+                            </containerView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXX-B2-LzS">
+                                <rect key="frame" x="229.5" y="10" width="51" height="31"/>
+                                <connections>
+                                    <action selector="mirrorNegativesSwitchAction:" destination="7uV-Yn-VkR" eventType="valueChanged" id="Lpq-8a-Pgh"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mirror negatives" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qal-LO-Pbx">
+                                <rect key="frame" x="100" y="15" width="124.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D68-Y7-XLg">
+                                <rect key="frame" x="5" y="11" width="37" height="30"/>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="7uV-Yn-VkR" eventType="touchUpInside" id="fpf-Ov-mMx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="izE-SO-AJs" firstAttribute="bottom" secondItem="nr1-qo-B72" secondAttribute="bottom" constant="100" id="6cB-tH-T3g"/>
+                            <constraint firstItem="D68-Y7-XLg" firstAttribute="leading" secondItem="izE-SO-AJs" secondAttribute="leading" constant="5" id="6iL-F4-VoK"/>
+                            <constraint firstItem="AXX-B2-LzS" firstAttribute="centerY" secondItem="qal-LO-Pbx" secondAttribute="centerY" id="FwO-xW-Pdm"/>
+                            <constraint firstItem="nr1-qo-B72" firstAttribute="leading" secondItem="izE-SO-AJs" secondAttribute="leading" constant="5" id="NBR-zJ-6Q0"/>
+                            <constraint firstItem="AXX-B2-LzS" firstAttribute="leading" secondItem="qal-LO-Pbx" secondAttribute="trailing" constant="5" id="X3l-xV-jVL"/>
+                            <constraint firstItem="qal-LO-Pbx" firstAttribute="leading" secondItem="izE-SO-AJs" secondAttribute="leading" constant="100" id="kTI-9c-SVq"/>
+                            <constraint firstItem="nr1-qo-B72" firstAttribute="top" secondItem="AXX-B2-LzS" secondAttribute="bottom" constant="5" id="ls1-t3-lpw"/>
+                            <constraint firstItem="qal-LO-Pbx" firstAttribute="top" secondItem="izE-SO-AJs" secondAttribute="top" constant="15" id="sAR-Td-6mw"/>
+                            <constraint firstItem="D68-Y7-XLg" firstAttribute="baseline" secondItem="qal-LO-Pbx" secondAttribute="baseline" id="syw-0q-o7R"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="izE-SO-AJs"/>
+                    </view>
+                    <connections>
+                        <outlet property="mirrorNegativesSwitch" destination="AXX-B2-LzS" id="cjG-2y-GmF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="INA-aY-aub" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="151"/>
+        </scene>
+        <!--CubicBezier-->
+        <scene sceneID="b2L-0V-nun">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CubicBezier" id="O0N-ay-Tlb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7o-lg-vsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="149"/>
+        </scene>
+    </scenes>
+</document>

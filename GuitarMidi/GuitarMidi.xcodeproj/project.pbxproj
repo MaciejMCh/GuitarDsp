@@ -23,6 +23,10 @@
 		C20CAFC01FBA6EE10015D88C /* 5s.wav in Resources */ = {isa = PBXBuildFile; fileRef = C20CAFBF1FBA6EE10015D88C /* 5s.wav */; };
 		C210352B1FBA34CD0073F46C /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C210352A1FBA34CD0073F46C /* FirebaseClient.swift */; };
 		C210352D1FBA38FE0073F46C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C210352C1FBA38FD0073F46C /* GoogleService-Info.plist */; };
+		C2159FFA1FBF4ACB009B487D /* OverdriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2159FF91FBF4ACB009B487D /* OverdriveViewController.swift */; };
+		C2159FFC1FBF4B22009B487D /* Overdrive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2159FFB1FBF4B22009B487D /* Overdrive.storyboard */; };
+		C2159FFE1FBF4C77009B487D /* Decade.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2159FFD1FBF4C77009B487D /* Decade.storyboard */; };
+		C215A0001FBF4C9F009B487D /* DecadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2159FFF1FBF4C9F009B487D /* DecadeViewController.swift */; };
 		C21AA3C41F8B90A400D6C490 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21AA3C31F8B90A400D6C490 /* MathUtils.swift */; };
 		C2305C531F87E17900A89F63 /* WaveMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2305C521F87E17900A89F63 /* WaveMapController.swift */; };
 		C231401A1F9C92E500EA6027 /* MapCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23140191F9C92E500EA6027 /* MapCreatorViewController.swift */; };
@@ -45,6 +49,8 @@
 		C26C1FD31FBBBE6E00621EEA /* WaveMapStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */; };
 		C2744F2D1FB0F4CF0017BD86 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2744F2C1FB0F4CF0017BD86 /* GraphView.swift */; };
 		C287159E1FA7A19F0098B257 /* VariableLabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287159D1FA7A19F0098B257 /* VariableLabelController.swift */; };
+		C28B24BA1FBF355F00E3015E /* WaveShaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28B24B91FBF355F00E3015E /* WaveShaperViewController.swift */; };
+		C28B24BC1FBF36B600E3015E /* WaveShaper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28B24BB1FBF36B600E3015E /* WaveShaper.storyboard */; };
 		C29547A01F7D9FC300D8EEF0 /* WaveDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */; };
 		C29547A21F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29547A11F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift */; };
 		C29547A41F7DA15000D8EEF0 /* Foldback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29547A31F7DA15000D8EEF0 /* Foldback.storyboard */; };
@@ -111,9 +117,12 @@
 		C2D5B70A1FA8D1C0006C44D1 /* CubicBezier.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D5B7091FA8D1C0006C44D1 /* CubicBezier.storyboard */; };
 		C2ECD25F1F7C20880037780F /* SamplerNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ECD25E1F7C20880037780F /* SamplerNodeViewController.swift */; };
 		C2ECD2611F7C223D0037780F /* SamplerNode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2ECD2601F7C223D0037780F /* SamplerNode.storyboard */; };
+		C2ED66DF1FBF33FF0002EBB7 /* InterfaceBuilderInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED66DE1FBF33FF0002EBB7 /* InterfaceBuilderInstance.swift */; };
 		C2ED99271F8D3FF100FA9738 /* ConstantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED99261F8D3FF100FA9738 /* ConstantViewController.swift */; };
 		C2ED99291F8D40C900FA9738 /* Constant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2ED99281F8D40C900FA9738 /* Constant.storyboard */; };
 		C2EE30981FBE21D7000DD9CE /* 440.wav in Resources */ = {isa = PBXBuildFile; fileRef = C2F0A61F1FBA276200BC8AA6 /* 440.wav */; };
+		C2EE309A1FBE59B6000DD9CE /* Foldback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EE30991FBE59B6000DD9CE /* Foldback.storyboard */; };
+		C2EE309C1FBE5A56000DD9CE /* FoldbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE309B1FBE5A56000DD9CE /* FoldbackViewController.swift */; };
 		C2F0A6201FBA276200BC8AA6 /* 440.wav in Resources */ = {isa = PBXBuildFile; fileRef = C2F0A61F1FBA276200BC8AA6 /* 440.wav */; };
 		C2F136211F9929B700069C8D /* LowpassFilterEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F136201F9929B700069C8D /* LowpassFilterEffect.swift */; };
 		C2FC489A1FB36E8B008838F4 /* Sequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC48991FB36E8B008838F4 /* Sequencer.swift */; };
@@ -164,6 +173,10 @@
 		C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplingSettingsUtils.swift; sourceTree = "<group>"; };
 		C212EAE11F72BB5000198D25 /* TimeFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFunctionViewController.swift; sourceTree = "<group>"; };
 		C212EAE61F72BD8000198D25 /* WaveEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveEffect.swift; sourceTree = "<group>"; };
+		C2159FF91FBF4ACB009B487D /* OverdriveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverdriveViewController.swift; sourceTree = "<group>"; };
+		C2159FFB1FBF4B22009B487D /* Overdrive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overdrive.storyboard; sourceTree = "<group>"; };
+		C2159FFD1FBF4C77009B487D /* Decade.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Decade.storyboard; sourceTree = "<group>"; };
+		C2159FFF1FBF4C9F009B487D /* DecadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecadeViewController.swift; sourceTree = "<group>"; };
 		C21AA3C31F8B90A400D6C490 /* MathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
 		C21C583A1F74370A00907502 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		C21C583F1F74386800907502 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
@@ -202,6 +215,8 @@
 		C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveMapStorage.swift; sourceTree = "<group>"; };
 		C2744F2C1FB0F4CF0017BD86 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		C287159D1FA7A19F0098B257 /* VariableLabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableLabelController.swift; sourceTree = "<group>"; };
+		C28B24B91FBF355F00E3015E /* WaveShaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShaperViewController.swift; sourceTree = "<group>"; };
+		C28B24BB1FBF36B600E3015E /* WaveShaper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveShaper.storyboard; sourceTree = "<group>"; };
 		C28CE3751F6094FF002B9567 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
 		C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveDistortion.swift; sourceTree = "<group>"; };
 		C29547A11F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldbackEffectViewController.swift; sourceTree = "<group>"; };
@@ -233,8 +248,11 @@
 		C2E7E2B41F715158007A9AF6 /* CubicBezier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicBezier.swift; sourceTree = "<group>"; };
 		C2ECD25E1F7C20880037780F /* SamplerNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerNodeViewController.swift; sourceTree = "<group>"; };
 		C2ECD2601F7C223D0037780F /* SamplerNode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SamplerNode.storyboard; sourceTree = "<group>"; };
+		C2ED66DE1FBF33FF0002EBB7 /* InterfaceBuilderInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceBuilderInstance.swift; sourceTree = "<group>"; };
 		C2ED99261F8D3FF100FA9738 /* ConstantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantViewController.swift; sourceTree = "<group>"; };
 		C2ED99281F8D40C900FA9738 /* Constant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Constant.storyboard; sourceTree = "<group>"; };
+		C2EE30991FBE59B6000DD9CE /* Foldback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Foldback.storyboard; sourceTree = "<group>"; };
+		C2EE309B1FBE5A56000DD9CE /* FoldbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldbackViewController.swift; sourceTree = "<group>"; };
 		C2F0A61F1FBA276200BC8AA6 /* 440.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 440.wav; sourceTree = "<group>"; };
 		C2F136201F9929B700069C8D /* LowpassFilterEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowpassFilterEffect.swift; sourceTree = "<group>"; };
 		C2F63BD21F7988710046A7D5 /* ChannelPlayerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPlayerEffect.swift; sourceTree = "<group>"; };
@@ -322,6 +340,15 @@
 				C2FE27251FBB8909001CED37 /* Tree.storyboard */,
 				C23AEBE21FBCCE820022BD97 /* WaveMapPickerController.swift */,
 				C23AEBE41FBCCE990022BD97 /* WaveMapPicker.storyboard */,
+				C2EE30991FBE59B6000DD9CE /* Foldback.storyboard */,
+				C2EE309B1FBE5A56000DD9CE /* FoldbackViewController.swift */,
+				C2ED66DE1FBF33FF0002EBB7 /* InterfaceBuilderInstance.swift */,
+				C28B24B91FBF355F00E3015E /* WaveShaperViewController.swift */,
+				C28B24BB1FBF36B600E3015E /* WaveShaper.storyboard */,
+				C2159FF91FBF4ACB009B487D /* OverdriveViewController.swift */,
+				C2159FFB1FBF4B22009B487D /* Overdrive.storyboard */,
+				C2159FFD1FBF4C77009B487D /* Decade.storyboard */,
+				C2159FFF1FBF4C9F009B487D /* DecadeViewController.swift */,
 			);
 			path = WaveMapCreator;
 			sourceTree = "<group>";
@@ -517,6 +544,8 @@
 			files = (
 				C20CAFC01FBA6EE10015D88C /* 5s.wav in Resources */,
 				C2D5B70A1FA8D1C0006C44D1 /* CubicBezier.storyboard in Resources */,
+				C28B24BC1FBF36B600E3015E /* WaveShaper.storyboard in Resources */,
+				C2EE309A1FBE59B6000DD9CE /* Foldback.storyboard in Resources */,
 				C2A8CCB91FA8B8A9002EE832 /* Envelope.storyboard in Resources */,
 				C241701D1FA10FC7000E293F /* NodesList.storyboard in Resources */,
 				C23F52ED1FA78F4A00127604 /* Oscilator.storyboard in Resources */,
@@ -531,6 +560,8 @@
 				C24170721FA121AB000E293F /* Pad.storyboard in Resources */,
 				C2F0A6201FBA276200BC8AA6 /* 440.wav in Resources */,
 				C29E51571F9A2E5D0039651C /* LaunchScreen.storyboard in Resources */,
+				C2159FFE1FBF4C77009B487D /* Decade.storyboard in Resources */,
+				C2159FFC1FBF4B22009B487D /* Overdrive.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +766,8 @@
 				C2CF79D71F9E17D00087C6A1 /* WaveDistortion.swift in Sources */,
 				C23F52F51FA797DF00127604 /* ConstantViewController.swift in Sources */,
 				C2FE271E1FBB8790001CED37 /* FileBrowser.swift in Sources */,
+				C2ED66DF1FBF33FF0002EBB7 /* InterfaceBuilderInstance.swift in Sources */,
+				C28B24BA1FBF355F00E3015E /* WaveShaperViewController.swift in Sources */,
 				C20035F21F9E32D400C21EF7 /* StrokeDetector.swift in Sources */,
 				C231401A1F9C92E500EA6027 /* MapCreatorViewController.swift in Sources */,
 				C20035F51F9E344300C21EF7 /* MathUtils.swift in Sources */,
@@ -750,14 +783,17 @@
 				C20035EE1F9E32B400C21EF7 /* EnvelopeFunction.swift in Sources */,
 				C20035F41F9E33E000C21EF7 /* CubicBezier.swift in Sources */,
 				C23F52EB1FA78E9B00127604 /* OscilatorViewController.swift in Sources */,
+				C215A0001FBF4C9F009B487D /* DecadeViewController.swift in Sources */,
 				C241701B1FA104FC000E293F /* AudioFileReader.swift in Sources */,
 				C24170211FA11000000E293F /* NodesListViewController.swift in Sources */,
+				C2EE309C1FBE5A56000DD9CE /* FoldbackViewController.swift in Sources */,
 				C20035EC1F9E2F6400C21EF7 /* FunctionVariable.swift in Sources */,
 				C210352B1FBA34CD0073F46C /* FirebaseClient.swift in Sources */,
 				C20035F31F9E32DD00C21EF7 /* NoteIndexIntegrator.swift in Sources */,
 				C20035EB1F9E2F5F00C21EF7 /* Sampler.swift in Sources */,
 				C2CF79D21F9E17800087C6A1 /* ChannelPlayerEffect.swift in Sources */,
 				C2FE27241FBB8819001CED37 /* TreeViewController.swift in Sources */,
+				C2159FFA1FBF4ACB009B487D /* OverdriveViewController.swift in Sources */,
 				C23AEBE31FBCCE820022BD97 /* WaveMapPickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

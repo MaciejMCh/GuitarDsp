@@ -18,7 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2J-vj-h1v">
-                                <rect key="frame" x="0.0" y="100" width="667" height="275"/>
+                                <rect key="frame" x="0.0" y="100" width="100" height="275"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="DvI-lh-8IK"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="tH9-Ey-IJR" kind="embed" id="xgc-8n-brT"/>
                                 </connections>
@@ -32,15 +35,24 @@
                                     <action selector="closeAction:" destination="INR-d2-Pvh" eventType="touchUpInside" id="NkP-Rc-4qC"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYe-eV-F4n">
+                                <rect key="frame" x="100" y="100" width="567" height="275"/>
+                                <connections>
+                                    <segue destination="KZT-0k-fZ5" kind="embed" id="z9S-XT-DCf"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DLU-wB-FTd" firstAttribute="trailing" secondItem="M2J-vj-h1v" secondAttribute="trailing" id="51b-wy-yoZ"/>
                             <constraint firstItem="M2J-vj-h1v" firstAttribute="top" secondItem="DLU-wB-FTd" secondAttribute="top" constant="100" id="DuO-Cf-jjc"/>
                             <constraint firstItem="M2J-vj-h1v" firstAttribute="leading" secondItem="DLU-wB-FTd" secondAttribute="leading" id="G9O-nK-bC3"/>
+                            <constraint firstItem="TYe-eV-F4n" firstAttribute="top" secondItem="M2J-vj-h1v" secondAttribute="top" id="Uwo-bu-6ba"/>
+                            <constraint firstItem="TYe-eV-F4n" firstAttribute="leading" secondItem="M2J-vj-h1v" secondAttribute="trailing" id="e4h-XY-khM"/>
+                            <constraint firstItem="DLU-wB-FTd" firstAttribute="trailing" secondItem="TYe-eV-F4n" secondAttribute="trailing" id="iIP-Ba-XAS"/>
                             <constraint firstItem="BYe-tU-Oum" firstAttribute="leading" secondItem="DLU-wB-FTd" secondAttribute="leading" constant="20" id="mV1-Ba-fKB"/>
                             <constraint firstItem="BYe-tU-Oum" firstAttribute="top" secondItem="DLU-wB-FTd" secondAttribute="top" constant="20" id="q7e-1H-5ba"/>
                             <constraint firstItem="DLU-wB-FTd" firstAttribute="bottom" secondItem="M2J-vj-h1v" secondAttribute="bottom" id="xcv-s9-n88"/>
+                            <constraint firstItem="DLU-wB-FTd" firstAttribute="bottom" secondItem="TYe-eV-F4n" secondAttribute="bottom" id="y5L-qo-ZxU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DLU-wB-FTd"/>
                     </view>
@@ -55,7 +67,15 @@
                 <viewControllerPlaceholder storyboardName="VariableLabel" id="tH9-Ey-IJR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1h-qJ-VDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544" y="128"/>
+            <point key="canvasLocation" x="544" y="85"/>
+        </scene>
+        <!--Decade-->
+        <scene sceneID="fCm-cb-cCg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Decade" id="KZT-0k-fZ5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKm-Zq-NtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527" y="173"/>
         </scene>
     </scenes>
 </document>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qq2-ma-VfA">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,9 +16,37 @@
                     <view key="view" contentMode="scaleToFill" id="aog-KZ-ecS">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pt-MQ-9GV">
+                                <rect key="frame" x="0.0" y="106.5" width="200" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="FlM-Zt-ofM"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="qq2-ma-VfA" id="LhO-1c-EwR"/>
+                                    <outlet property="delegate" destination="qq2-ma-VfA" id="gvz-d5-Kij"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCy-g1-xVC">
+                                <rect key="frame" x="5" y="5" width="37" height="30"/>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="qq2-ma-VfA" eventType="touchUpInside" id="LeD-Dh-Iyg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1pt-MQ-9GV" firstAttribute="centerY" secondItem="aog-KZ-ecS" secondAttribute="centerY" id="VXX-Xw-pM1"/>
+                            <constraint firstItem="dCy-g1-xVC" firstAttribute="top" secondItem="MN0-Te-dDL" secondAttribute="top" constant="5" id="gW6-LL-BGR"/>
+                            <constraint firstItem="1pt-MQ-9GV" firstAttribute="leading" secondItem="MN0-Te-dDL" secondAttribute="leading" id="i53-CL-oHQ"/>
+                            <constraint firstItem="dCy-g1-xVC" firstAttribute="leading" secondItem="MN0-Te-dDL" secondAttribute="leading" constant="5" id="yof-U7-Hha"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MN0-Te-dDL"/>
                     </view>
+                    <connections>
+                        <outlet property="waveShapePicker" destination="1pt-MQ-9GV" id="QZD-JC-Lsa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpl-WI-kPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

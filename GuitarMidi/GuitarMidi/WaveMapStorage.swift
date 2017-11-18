@@ -296,3 +296,12 @@ public struct WaveNodesFactory {
         return LowpassFilterEffect(id: id)
     }
 }
+
+extension WaveMap {
+    static func fromPath(_ path: String) -> WaveMap {
+        let waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
+        let configuration = NSKeyedUnarchiver.unarchiveObject(withFile: StorageConstants.waveMapsRootDirectory + "/" + path) as! [String: Any]
+        WaveMapStorage.configureWaveMap(waveMap, configuration: configuration)
+        return waveMap
+    }
+}

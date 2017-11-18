@@ -12,9 +12,11 @@ import UIKit
 class DecadeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var negativeSwitch: UISwitch!
     @IBOutlet weak var windowHeightConstraint: NSLayoutConstraint!
     private var tableViews: [UITableView] = []
     private let tableViewLength = 1000
+    private let correctionIndex = 4
     private var cellHeight: CGFloat {
         return self.view.frame.height / 9
     }
@@ -30,7 +32,9 @@ class DecadeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.update = update
     }
     
-    private func setValue(_ value: Double) {
+    private func setValue(_ newValue: Double) {
+        negativeSwitch.isOn = newValue < 0
+        let value = abs(newValue)
         let digits: (Double, Range<Int>) -> [Int] = { (value, powers) in
             let intValue = pow(10, Double(-powers.lowerBound)) * value
             var stringValue = String(format: "%.0f", intValue)
@@ -44,7 +48,7 @@ class DecadeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         for i in 0..<tableViews.count {
             let tableView = tableViews[tableViews.count - i - 1]
             let digit = newDigits[i]
-            tableView.scrollToRow(at: IndexPath(row: digit + (tableViewLength / 2) - 2, section: 0), at: .top, animated: false)
+            tableView.scrollToRow(at: IndexPath(row: digit + (tableViewLength / 2) - correctionIndex, section: 0), at: .top, animated: false)
         }
     }
     
@@ -95,7 +99,11 @@ class DecadeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let tableView: UITableView = scrollView as! UITableView
         
         guard let indexPath = tableView.indexPathForRow(at: CGPoint(x: 0, y: scrollView.contentOffset.y + (cellHeight / 2))) else {return}
-        picker(index: tableViews.index(of: tableView)!, focusedAt: (indexPath.row + 2) % 10)
+        picker(index: tableViews.index(of: tableView)!, focusedAt: (indexPath.row + correctionIndex) % 10)
+    }
+    
+    @IBAction func negativeSwitchAction(_ sender: Any?) {
+        reportValueUpdate()
     }
     
     private var lastChange: (pickerIndex: Int, row: Int) = (0, 0)
@@ -105,13 +113,11 @@ class DecadeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         defer {
             lastChange = currentState
         }
-        let newValue = currentValue()
-        valueLabel.text = String(newValue)
-        update?(newValue)
+        reportValueUpdate()
     }
     
     private func pickersConfiguration() -> [Int] {
-        return tableViews.map{(($0.indexPathForRow(at: CGPoint(x: 0, y: $0.contentOffset.y + (cellHeight / 2)))?.row ?? 0) + 2) % 10}
+        return tableViews.map{(($0.indexPathForRow(at: CGPoint(x: 0, y: $0.contentOffset.y + (cellHeight / 2)))?.row ?? 0) + correctionIndex) % 10}
     }
     
     private func valueForRow(_ row: Int) -> Int {
@@ -131,7 +137,12 @@ class DecadeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             result += Double(digit) * pow(10, i)
         }
-        return Double(result) * pow(10, Double(powers.lowerBound))
+        return Double(result) * pow(10, Double(powers.lowerBound)) * (negativeSwitch.isOn ? -1 : 1)
     }
     
+    private func reportValueUpdate() {
+        let newValue = currentValue()
+        valueLabel.text = String(newValue)
+        update?(newValue)
+    }
 }

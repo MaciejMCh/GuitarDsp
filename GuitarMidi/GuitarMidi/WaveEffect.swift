@@ -10,12 +10,8 @@ import Foundation
 import NodesMap
 
 class IdGenerator {
-    private static var last: Int = 0
     static func next() -> String {
-        defer {
-            last += 1
-        }
-        return String(last)
+        return NSUUID().uuidString
     }
 }
 
@@ -52,6 +48,7 @@ public class AmpWaveEffect: WaveNode {
     public let id: String
     public var gain: FunctionVariable = Constant(value: 1.0)
     private let ff = FlipFlop()
+    private let integrator = VelocityIntegrator(maxVelocity: 0.0009)
     
     let input: SignalInput = SignalInput()
     lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
@@ -62,7 +59,9 @@ public class AmpWaveEffect: WaveNode {
     
     public func next(time: Int) -> Double {
         return ff.value(time: time) {
-            (input.output?.next(time) ?? 0) * self.gain.next(time: time)
+            let rawGain = self.gain.next(time: time)
+            let integratedGain = self.integrator.next(rawGain)
+            return (input.output?.next(time) ?? 0) * integratedGain
         }
     }
     
@@ -95,5 +94,21 @@ public class SumWaveNode: WaveNode {
         return ff.value(time: time) {
             return inputCollection.outputs.map{$0.next(time)}.reduce(0, +)
         }
+    }
+}
+
+class VelocityIntegrator {
+    private let maxVelocity: Double
+    private var lastOutput = 0.0
+    
+    init(maxVelocity: Double) {
+        self.maxVelocity = maxVelocity
+    }
+    
+    func next(_ input: Double) -> Double {
+        let diff = input - lastOutput
+        let output = lastOutput + (min(maxVelocity, abs(diff)) * sign(diff))
+        lastOutput = output
+        return output
     }
 }

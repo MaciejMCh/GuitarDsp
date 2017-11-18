@@ -35,6 +35,18 @@
                                 <rect key="frame" x="0.0" y="209" width="667" height="166"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVX-kv-l7L">
+                                <rect key="frame" x="608" y="26" width="51" height="31"/>
+                                <connections>
+                                    <action selector="negativeSwitchAction:" destination="hOX-Kz-Ml0" eventType="touchUpInside" id="cjx-wc-iTi"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="negative" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfz-cv-DyB">
+                                <rect key="frame" x="542.5" y="31" width="65.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVZ-h3-g3T">
                                 <rect key="frame" x="625" y="0.0" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -51,12 +63,16 @@
                             <constraint firstItem="Ilh-nt-cbC" firstAttribute="top" secondItem="BYg-P0-zkh" secondAttribute="top" id="FbY-T8-Q23"/>
                             <constraint firstAttribute="bottom" secondItem="003-fj-BY6" secondAttribute="bottom" id="Hfd-Yd-jYZ"/>
                             <constraint firstItem="003-fj-BY6" firstAttribute="trailing" secondItem="BYg-P0-zkh" secondAttribute="trailing" id="ILe-3M-SAC"/>
+                            <constraint firstItem="Mfz-cv-DyB" firstAttribute="centerY" secondItem="ZVX-kv-l7L" secondAttribute="centerY" id="KPZ-GY-nfd"/>
                             <constraint firstItem="wIk-1E-hVP" firstAttribute="centerY" secondItem="Da9-dV-STa" secondAttribute="centerY" id="RCO-t0-rrO"/>
+                            <constraint firstItem="ZVX-kv-l7L" firstAttribute="top" secondItem="fVZ-h3-g3T" secondAttribute="bottom" constant="5" id="SE8-vs-Ap7"/>
                             <constraint firstItem="BYg-P0-zkh" firstAttribute="bottom" secondItem="hWh-e0-mld" secondAttribute="bottom" id="bIo-Dv-Xba"/>
                             <constraint firstItem="fVZ-h3-g3T" firstAttribute="trailing" secondItem="BYg-P0-zkh" secondAttribute="trailing" id="blg-Yn-5dK"/>
                             <constraint firstItem="BYg-P0-zkh" firstAttribute="trailing" secondItem="wIk-1E-hVP" secondAttribute="trailing" id="c9e-ue-H93"/>
                             <constraint firstItem="fVZ-h3-g3T" firstAttribute="top" secondItem="BYg-P0-zkh" secondAttribute="top" id="lwm-fq-tzB"/>
+                            <constraint firstItem="ZVX-kv-l7L" firstAttribute="leading" secondItem="Mfz-cv-DyB" secondAttribute="trailing" id="n2O-Ty-LRr"/>
                             <constraint firstItem="hWh-e0-mld" firstAttribute="leading" secondItem="BYg-P0-zkh" secondAttribute="leading" id="ngc-Rl-PXR"/>
+                            <constraint firstItem="BYg-P0-zkh" firstAttribute="trailing" secondItem="ZVX-kv-l7L" secondAttribute="trailing" constant="10" id="p1y-9X-6gy"/>
                             <constraint firstItem="wIk-1E-hVP" firstAttribute="leading" secondItem="BYg-P0-zkh" secondAttribute="leading" id="qIU-1p-7tF"/>
                             <constraint firstItem="hWh-e0-mld" firstAttribute="top" secondItem="BYg-P0-zkh" secondAttribute="top" id="rku-uJ-fc3"/>
                             <constraint firstItem="Ilh-nt-cbC" firstAttribute="leading" secondItem="BYg-P0-zkh" secondAttribute="leading" id="uDr-k5-8LC"/>
@@ -65,6 +81,7 @@
                         <viewLayoutGuide key="safeArea" id="BYg-P0-zkh"/>
                     </view>
                     <connections>
+                        <outlet property="negativeSwitch" destination="ZVX-kv-l7L" id="VoB-pw-xnU"/>
                         <outlet property="stackView" destination="hWh-e0-mld" id="jwW-bn-If7"/>
                         <outlet property="valueLabel" destination="fVZ-h3-g3T" id="ATm-eV-zFo"/>
                         <outlet property="windowHeightConstraint" destination="tZj-oF-J4p" id="Ync-Dg-a5F"/>

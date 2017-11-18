@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         firebaseClient.sync()
         
         let padMidiOutput = PadMidiOutput()
-        waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
+//        waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
+        waveMap = .fromPath("sum issue")
         let mapCreatorViewController = UIStoryboard(name: "WaveMapCreator", bundle: nil).instantiateInitialViewController() as! MapCreatorViewController
         mapCreatorViewController.waveMap = waveMap
         mapCreatorViewController.padMidiOutput = padMidiOutput

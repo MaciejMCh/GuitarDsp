@@ -15,6 +15,12 @@ public struct WaveMapStorage {
     static var waveNodesFactory: WaveNodesFactory!
     
     public static func configureWaveMap(_ waveMap: WaveMap, configuration: [String: Any]) {
+        
+        let outputX = configuration["out_x"] as? CGFloat ?? 0
+        let outputY = configuration["out_y"] as? CGFloat ?? 0
+        
+        waveMap.outputNode.sprite.position = CGPoint(x: outputX, y: outputY)
+        
         for nodeJsonObject in configuration["nodes"] as! [JsonObject] {
             let waveNode = waveNodeFromJson(nodeJsonObject["model"] as! JsonObject)
             waveMap.addWaveNode(waveNode: waveNode)
@@ -149,7 +155,10 @@ public struct WaveMapStorage {
         }
         
         return ["nodes": waveNodesJsonArray,
-                "connections": connectionsJsonArray]
+                "connections": connectionsJsonArray,
+                "out_x": waveMap.outputNode.sprite.position.x,
+                "out_y": waveMap.outputNode.sprite.position.y
+        ]
     }
     
     private static func waveNodeConfiguration(_ waveNode: WaveNode) -> JsonObject {

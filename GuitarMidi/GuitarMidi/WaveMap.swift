@@ -19,14 +19,16 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
     public let map = Map.wave()
     public var waveNodes: [WaveNode] = []
     public let output = SignalInput()
+    public let outputNode: Node
     private let midiOutput: MidiOutput
     private var time = 0
     
     public init(samplingSettings: SamplingSettings, midiOutput: MidiOutput) {
         self.samplingSettings = samplingSettings
         self.midiOutput = midiOutput
+        outputNode = Node(name: "output", interfaces: [Interface(name: "in", model: output)], model: "none")
         super.init()
-        map.addNode(Node(name: "output", interfaces: [Interface(name: "in", model: self)], model: "none"))
+        map.addNode(outputNode)
     }
     
     public func processSample(_ inputSample: Sample, intoBuffer outputBuffer: UnsafeMutablePointer<Float>!) {
@@ -42,9 +44,6 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
             case .frequency(let frequency): setFrequency(frequency)
             }
         }
-        
-        //        memcpy(outputBuffer, inputSample.amp, Int(samplingSettings.packetByteSize))
-        //        return;
         
         for i in 0..<Int(samplingSettings.framesPerPacket) {
             defer {
@@ -264,10 +263,6 @@ extension Map {
                 variableSetter(variable)
             }) {return true}
             
-            if (with(lhs: lhs.1.model, rhs: rhs.1.model) { (output: SignalOutput, waveMap: WaveMap) in
-                waveMap.output.output = output
-            }) {return true}
-            
             if (with(lhs: lhs.1.model, rhs: rhs.1.model) { (output: SignalOutput, inputsCollection: SumWaveNode.InputsCollection) in
                 inputsCollection.outputs.append(output)
             }) {return true}
@@ -276,10 +271,6 @@ extension Map {
         }, breakConnection: { (lhs, rhs) in
             if (oneOf(lhs: lhs.1.model, rhs: rhs.1.model) { (input: SignalInput) in
                 input.output = nil
-            }) {return true}
-            
-            if (oneOf(lhs: lhs.1.model, rhs: rhs.1.model) { (waveMap: WaveMap) in
-                waveMap.output.output = nil
             }) {return true}
             
             if (oneOf(lhs: lhs.1.model, rhs: rhs.1.model) { (variableSetter: FunctionVariableSetter) in

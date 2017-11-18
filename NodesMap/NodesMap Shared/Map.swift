@@ -82,7 +82,9 @@ public final class Map {
     
     private func drag(location: CGPoint) {
         if case .dragging(let node) = state {
-            node.sprite.position = location
+            let gridSize: CGFloat = 20
+            node.sprite.position = CGPoint(x: CGFloat(Int(location.x / gridSize)) * gridSize,
+                                           y: CGFloat(Int(location.y / gridSize)) * gridSize)
             updateConnections()
         }
         

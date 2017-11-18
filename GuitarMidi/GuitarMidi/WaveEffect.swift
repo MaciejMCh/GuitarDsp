@@ -51,7 +51,7 @@ public class AmpWaveEffect: WaveNode {
     private let integrator = VelocityIntegrator(maxVelocity: 0.0009)
     
     let input: SignalInput = SignalInput()
-    lazy var output: SignalOutput = {SignalOutput(waveName: "amp_\(id)_output") {[weak self] in self?.next(time: $0) ?? 0}}()
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
     
     public init(id: String? = nil) {
         self.id = id ?? IdGenerator.next()
@@ -82,7 +82,7 @@ public class SumWaveNode: WaveNode {
     public let id: String
     
     let inputCollection = InputsCollection()
-    lazy var output: SignalOutput = {SignalOutput(waveName: "sum_\(id)_output") {[weak self] in self?.next(time: $0) ?? 0}}()
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
     
     private let ff = FlipFlop()
     
@@ -91,9 +91,6 @@ public class SumWaveNode: WaveNode {
     }
     
     public func next(time: Int) -> Double {
-        if id == "969B22E7-BDF3-4C7A-B907-6ABF5FABC778" {
-            let zz = "zz"
-        }
         return ff.value(time: time) {
             return inputCollection.outputs.map{$0.next(time)}.reduce(0, +)
         }

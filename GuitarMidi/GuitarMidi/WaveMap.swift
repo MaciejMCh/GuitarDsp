@@ -165,7 +165,7 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
     }
     
     fileprivate static func nodeFromOscilator(_ oscilator: Oscilator) -> Node {
-        return Node(name: "oscilator \(oscilator.id)",
+        return Node(name: "oscilator",
                     interfaces: [Interface(name: "out", model: oscilator.output),
                                  Interface(name: "tune", model: oscilator.tuneSetter)],
                     model: oscilator)
@@ -192,7 +192,7 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
     }
     
     fileprivate static func nodeFromSum(_ sum: SumWaveNode) -> Node {
-        return Node(name: "sum \(sum.id)",
+        return Node(name: "sum",
                     interfaces: [
                         Interface(name: "in", model: sum.inputCollection),
                         Interface(name: "out", model: sum.output)],

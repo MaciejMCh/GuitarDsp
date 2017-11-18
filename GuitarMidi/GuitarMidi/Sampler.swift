@@ -21,7 +21,7 @@ public class Sampler: Playing, MidiPlayer, WaveNode {
     let samplingSettings: SamplingSettings
     public var volume: FunctionVariable = EnvelopeFunction()
     private(set) var player: SamplePlayer
-    lazy var output: SignalOutput = {SignalOutput(waveName: "sampler_\(id)_output") {[weak self] in self?.next(time: $0) ?? 0}}()
+    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
     public var sampleFilePath: String {
         didSet {
             lock = true

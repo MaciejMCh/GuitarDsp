@@ -10,9 +10,11 @@ import Foundation
 import GuitarDsp
 
 public class SignalOutput: NSObject {
+    let waveName: String
     let next: (Int) -> Double
     
-    init(next: @escaping (Int) -> Double) {
+    init(waveName: String, next: @escaping (Int) -> Double) {
+        self.waveName = waveName
         self.next = next
     }
 }

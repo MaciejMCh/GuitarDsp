@@ -13,7 +13,7 @@ public class Oscilator: Playing, MidiPlayer, WaveNode {
     public let id: String
     let samplingSettings: SamplingSettings
     let ff = FlipFlop()
-    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
+    lazy var output: SignalOutput = {SignalOutput(waveName: "oscilator_\(id)_output") {[weak self] in self?.next(time: $0) ?? 0}}()
     public var waveGenerator: WaveGenerator
     public var tune: FunctionVariable = Constant(value: -12)
     private var frequency: Double = 1.0
@@ -25,6 +25,7 @@ public class Oscilator: Playing, MidiPlayer, WaveNode {
     }
     
     public func next(time: Int) -> Double {
+//        return 1
         let v = ff.value(time: time) {self.waveGenerator.nextSample(frequency: self.frequency * halfToneToScale(self.tune.next(time: time)))}
 //        debugPrint(v)
         return v

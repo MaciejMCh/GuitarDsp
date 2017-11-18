@@ -22,6 +22,7 @@ class GraphView: UIView {
         
         let sortedValues = values.sorted()
         let valueSpaceHeight = sortedValues.last! - sortedValues.first!
+        let minValue: Double = sortedValues.first!
         
         let yScale = rect.height / CGFloat(valueSpaceHeight)
         let xScale = rect.width / CGFloat(values.count)
@@ -33,7 +34,7 @@ class GraphView: UIView {
         context?.move(to: CGPoint(x: 0, y: rect.height))
         
         for i in 0..<values.count {
-            context?.addLine(to: CGPoint(x: CGFloat(i) * xScale, y: rect.height - CGFloat(values[i]) * yScale))
+            context?.addLine(to: CGPoint(x: CGFloat(i) * xScale, y: (CGFloat(values[i] - minValue) * yScale)))
         }
         
         context?.strokePath()

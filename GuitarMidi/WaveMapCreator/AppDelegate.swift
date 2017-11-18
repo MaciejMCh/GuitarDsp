@@ -18,7 +18,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let firebaseClient = FirebaseClient()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         WaveMapStorage.waveNodesFactory = WaveNodesFactory(samplingSettings: AudioInterface.shared().samplingSettings)
+        
+        let monitor = true
+        
+        if monitor {
+            let waveMap = WaveMap.fromPath("sum issue")
+            let monitorController = OutputMonitorViewController.make()
+            
+            for node in waveMap.waveNodes {
+                if let sumWaveNode = node as? SumWaveNode {
+                    if sumWaveNode.id == "969B22E7-BDF3-4C7A-B907-6ABF5FABC778" {
+//                        monitorController.output = sumWaveNode.output
+                    }
+                }
+                if let oscilator = node as? Oscilator {
+                    oscilator.setFrequency(1000)
+                    oscilator.on()
+                    if oscilator.id == "770FA679-02B7-43F6-8B1D-F3EEE7DD5BC9" {
+//                        monitorController.output = oscilator.output
+                    }
+                }
+                monitorController.output = waveMap.output.output!
+            }
+            
+            application.windows.first?.rootViewController = monitorController
+            application.windows.first?.makeKeyAndVisible()
+            
+            
+            return true
+        }
         
         FirebaseApp.configure()
         firebaseClient.sync()

@@ -15,7 +15,7 @@ public class LowpassFilterEffect: WaveNode {
     private var buffer = 0.0
     
     let input: SignalInput = SignalInput()
-    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
+    lazy var output: SignalOutput = {SignalOutput(waveName: "lpf_\(id)_output") {[weak self] in self?.next(time: $0) ?? 0}}()
     
     public init(id: String? = nil) {
         self.id = id ?? IdGenerator.next()

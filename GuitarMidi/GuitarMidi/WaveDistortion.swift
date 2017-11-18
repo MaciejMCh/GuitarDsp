@@ -17,7 +17,7 @@ public class OverdriveWaveEffect: WaveNode {
     var compress = false
     
     let input: SignalInput = SignalInput()
-    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
+    lazy var output: SignalOutput = {SignalOutput(waveName: "overdrive_\(id)_output") {[weak self] in self?.next(time: $0) ?? 0}}()
     
     public init(id: String? = nil) {
         self.id = id ?? IdGenerator.next()
@@ -46,7 +46,7 @@ public class FoldbackWaveEffect: WaveNode {
     var compress = false
     
     let input: SignalInput = SignalInput()
-    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
+    lazy var output: SignalOutput = {SignalOutput(waveName: "foldback_\(id)_output") {[weak self] in self?.next(time: $0) ?? 0}}()
     
     public init(id: String? = nil) {
         self.id = id ?? IdGenerator.next()

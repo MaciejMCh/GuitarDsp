@@ -48,6 +48,9 @@
 		C26C1FD21FBBBE6A00621EEA /* WaveMapStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */; };
 		C26C1FD31FBBBE6E00621EEA /* WaveMapStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */; };
 		C2744F2D1FB0F4CF0017BD86 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2744F2C1FB0F4CF0017BD86 /* GraphView.swift */; };
+		C2791FD71FC0BB910015CC85 /* ValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2791FD61FC0BB910015CC85 /* ValuesView.swift */; };
+		C2791FD91FC0BE8A0015CC85 /* OutputMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2791FD81FC0BE8A0015CC85 /* OutputMonitorViewController.swift */; };
+		C2791FDB1FC0C3260015CC85 /* Monitor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2791FDA1FC0C3260015CC85 /* Monitor.storyboard */; };
 		C287159E1FA7A19F0098B257 /* VariableLabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287159D1FA7A19F0098B257 /* VariableLabelController.swift */; };
 		C28B24BA1FBF355F00E3015E /* WaveShaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28B24B91FBF355F00E3015E /* WaveShaperViewController.swift */; };
 		C28B24BC1FBF36B600E3015E /* WaveShaper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28B24BB1FBF36B600E3015E /* WaveShaper.storyboard */; };
@@ -214,6 +217,9 @@
 		C26AD8E51F7556A9005512E0 /* FileBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowser.swift; sourceTree = "<group>"; };
 		C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveMapStorage.swift; sourceTree = "<group>"; };
 		C2744F2C1FB0F4CF0017BD86 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		C2791FD61FC0BB910015CC85 /* ValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesView.swift; sourceTree = "<group>"; };
+		C2791FD81FC0BE8A0015CC85 /* OutputMonitorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputMonitorViewController.swift; sourceTree = "<group>"; };
+		C2791FDA1FC0C3260015CC85 /* Monitor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monitor.storyboard; sourceTree = "<group>"; };
 		C287159D1FA7A19F0098B257 /* VariableLabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableLabelController.swift; sourceTree = "<group>"; };
 		C28B24B91FBF355F00E3015E /* WaveShaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShaperViewController.swift; sourceTree = "<group>"; };
 		C28B24BB1FBF36B600E3015E /* WaveShaper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveShaper.storyboard; sourceTree = "<group>"; };
@@ -349,6 +355,9 @@
 				C2159FFB1FBF4B22009B487D /* Overdrive.storyboard */,
 				C2159FFD1FBF4C77009B487D /* Decade.storyboard */,
 				C2159FFF1FBF4C9F009B487D /* DecadeViewController.swift */,
+				C2791FD61FC0BB910015CC85 /* ValuesView.swift */,
+				C2791FD81FC0BE8A0015CC85 /* OutputMonitorViewController.swift */,
+				C2791FDA1FC0C3260015CC85 /* Monitor.storyboard */,
 			);
 			path = WaveMapCreator;
 			sourceTree = "<group>";
@@ -543,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C20CAFC01FBA6EE10015D88C /* 5s.wav in Resources */,
+				C2791FDB1FC0C3260015CC85 /* Monitor.storyboard in Resources */,
 				C2D5B70A1FA8D1C0006C44D1 /* CubicBezier.storyboard in Resources */,
 				C28B24BC1FBF36B600E3015E /* WaveShaper.storyboard in Resources */,
 				C2EE309A1FBE59B6000DD9CE /* Foldback.storyboard in Resources */,
@@ -764,6 +774,7 @@
 				C2B26BE61FBE0F88002A18AF /* UserFeedback.swift in Sources */,
 				C20035F61F9E344A00C21EF7 /* SamplingSettingsUtils.swift in Sources */,
 				C2CF79D71F9E17D00087C6A1 /* WaveDistortion.swift in Sources */,
+				C2791FD71FC0BB910015CC85 /* ValuesView.swift in Sources */,
 				C23F52F51FA797DF00127604 /* ConstantViewController.swift in Sources */,
 				C2FE271E1FBB8790001CED37 /* FileBrowser.swift in Sources */,
 				C2ED66DF1FBF33FF0002EBB7 /* InterfaceBuilderInstance.swift in Sources */,
@@ -776,6 +787,7 @@
 				C248D9DA1FB115BC007BC866 /* EnvelopeClone.swift in Sources */,
 				C2FE27211FBB87B2001CED37 /* Tree.swift in Sources */,
 				C20035EF1F9E32B900C21EF7 /* WaveShaper.swift in Sources */,
+				C2791FD91FC0BE8A0015CC85 /* OutputMonitorViewController.swift in Sources */,
 				C2CF79D41F9E17A00087C6A1 /* SoundNetwork.swift in Sources */,
 				C2FC489A1FB36E8B008838F4 /* Sequencer.swift in Sources */,
 				C2CF79D51F9E17AA0087C6A1 /* Oscilator.swift in Sources */,

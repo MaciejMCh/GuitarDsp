@@ -127,7 +127,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarMidi/WaveDistortion.swift"
-            timestampString = "532652074.701074"
+            timestampString = "532719884.845988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -143,7 +143,7 @@
                   moduleName = "WaveMapCreator"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/WaveDistortion.swift"
-                  timestampString = "532718765.42369"
+                  timestampString = "532727902.265613"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -158,7 +158,7 @@
                   moduleName = "WaveMapCreator"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/WaveDistortion.swift"
-                  timestampString = "532718765.426532"
+                  timestampString = "532727902.268478"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "57"
@@ -206,46 +206,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GuitarMidi/WaveEffect.swift"
-            timestampString = "532718761.825085"
+            filePath = "WaveMapCreator/GraphView.swift"
+            timestampString = "532728110.651166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "next(time:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "draw(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WaveMapCreator.SumWaveNode.next(time: Swift.Int) -&gt; Swift.Double"
-                  moduleName = "WaveMapCreator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/WaveEffect.swift"
-                  timestampString = "532718762.956463"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; Swift.Double in WaveMapCreator.SumWaveNode.next(time: Swift.Int) -&gt; Swift.Double"
-                  moduleName = "WaveMapCreator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/WaveEffect.swift"
-                  timestampString = "532718762.960134"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

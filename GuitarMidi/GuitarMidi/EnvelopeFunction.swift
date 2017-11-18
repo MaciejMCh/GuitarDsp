@@ -16,7 +16,7 @@ public class EnvelopeFunction: FunctionVariable, WaveNode {
     }
     
     public let id: String
-    lazy var output: SignalOutput = {SignalOutput {[weak self] in self?.next(time: $0) ?? 0}}()
+    lazy var output: SignalOutput = {SignalOutput(waveName: "envelope_\(id)_output") {[weak self] in self?.next(time: $0) ?? 0}}()
     
     public var duration: Double = AudioInterface.shared().samplingSettings.samplesInSecond()
     public var delay: Double = 0

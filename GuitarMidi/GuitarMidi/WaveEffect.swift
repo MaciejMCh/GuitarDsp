@@ -92,7 +92,11 @@ public class SumWaveNode: WaveNode {
     
     public func next(time: Int) -> Double {
         return ff.value(time: time) {
-            return inputCollection.outputs.map{$0.next(time)}.reduce(0, +)
+            var result = 0.0
+            for output in inputCollection.outputs {
+                result += output.next(time)
+            }
+            return result
         }
     }
 }

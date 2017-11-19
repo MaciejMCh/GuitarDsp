@@ -19,6 +19,7 @@ public final class Map {
     
     private let connect: (ConnectionEndpoint, ConnectionEndpoint) -> Bool
     private let breakConnection: (ConnectionEndpoint, ConnectionEndpoint) -> Bool
+    private let remove: (Node) -> Bool
     private var state: State = .none
     public var nodes: [Node] = []
     public var connections: [(ConnectionEndpoint, ConnectionEndpoint, SKShapeNode)] = []
@@ -42,9 +43,12 @@ public final class Map {
         return scene
     }()
     
-    public init(connect: @escaping (ConnectionEndpoint, ConnectionEndpoint) -> Bool, breakConnection: @escaping (ConnectionEndpoint, ConnectionEndpoint) -> Bool) {
+    public init(connect: @escaping (ConnectionEndpoint, ConnectionEndpoint) -> Bool,
+                breakConnection: @escaping (ConnectionEndpoint, ConnectionEndpoint) -> Bool,
+                remove: @escaping (Node) -> Bool) {
         self.connect = connect
         self.breakConnection = breakConnection
+        self.remove = remove
     }
     
     public func startSelecting() {
@@ -90,6 +94,7 @@ public final class Map {
     }
     
     private func removeNode(_ node: Node) {
+        guard remove(node) else {return}
         nodes = nodes.filter{$0.model.id != node.model.id}
         node.sprite.removeFromParent()
         

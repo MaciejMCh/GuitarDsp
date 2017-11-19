@@ -94,6 +94,7 @@ class MapCreatorViewController: UIViewController {
             var textFieldReference: UITextField!
             alert.addAction(UIAlertAction(title: "Save", style: .default, handler: {[weak self] (action) in
                 let newName: String = textFieldReference.text!
+                guard newName.count > 0 else {return}
                 save(newName, waveMapConfiguration)
                 self?.waveMapSource = .assigned(name: newName)
             }))

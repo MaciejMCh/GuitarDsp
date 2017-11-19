@@ -16,7 +16,9 @@ extension String: Indentificable {
 
 public class WaveMap: NSObject, Effect, MidiPlayer {
     let samplingSettings: SamplingSettings
-    public let map = Map.wave()
+    public lazy var map: Map = {
+        Map.wave(waveMap: self)
+    }()
     public var waveNodes: [WaveNode] = []
     public let output = SignalInput()
     public let outputNode: Node
@@ -252,7 +254,7 @@ extension OverdriveWaveEffect {
 }
 
 extension Map {
-    static func wave() -> Map {
+    static func wave(waveMap: WaveMap) -> Map {
         let map = Map(connect: { (lhs, rhs) in
             
             if (with(lhs: lhs.1.model, rhs: rhs.1.model) { (input: SignalInput, output: SignalOutput) in
@@ -282,8 +284,26 @@ extension Map {
             }) {return true}
             
             return false
+        }, remove: {[weak waveMap] node in
+            guard let waveMap = waveMap else {return false}
+            var nodeIndexToRemove: Int?
+            var i = 0
+            for waveNode in waveMap.waveNodes {
+                defer {
+                    i += 1
+                }
+                if waveNode.id == node.model.id {
+                    nodeIndexToRemove = i
+                }
+            }
+            
+            if let nodeIndexToRemove = nodeIndexToRemove {
+                waveMap.waveNodes.remove(at: nodeIndexToRemove)
+                return true
+            } else {
+                return false
+            }
         })
-        
         return map
     }
     

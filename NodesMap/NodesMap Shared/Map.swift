@@ -131,7 +131,7 @@ public final class Map {
             for node in nodes {
                 let nodeRect = node.frameForName().moved(by: node.sprite.position)
                 if nodeRect.contains(location) {
-                    state = .dragging(node)
+                    state = .dragging(origin: location, node: node)
                 }
             }
             
@@ -179,9 +179,16 @@ public final class Map {
             selectionNode.position = selection.rect.origin
             selectionNode.xScale = selection.rect.size.width / 200
             selectionNode.yScale = selection.rect.size.height / 200
-        case .dragging(let node):
-            node.sprite.position = CGPoint(x: CGFloat(Int(location.x / gridSize)) * gridSize,
-                                           y: CGFloat(Int(location.y / gridSize)) * gridSize)
+        case .dragging(let origin, let node):
+            let dragDiffX = CGFloat(Int((location.x - origin.x) / gridSize)) * gridSize
+            let dragDiffY = CGFloat(Int((location.y - origin.y) / gridSize)) * gridSize
+            
+            guard abs(dragDiffX) + abs(dragDiffY) > 0 else {return}
+            
+            node.sprite.position = CGPoint(x: node.sprite.position.x + dragDiffX,
+                                           y: node.sprite.position.y + dragDiffY)
+            
+            state = .dragging(origin: location, node: node)
             updateConnections()
         case .connecting(let node, let interface):
             let interfaceRect = node.frameForInterface(interface: interface).moved(by: node.sprite.position)
@@ -275,7 +282,7 @@ public final class Map {
 extension Map {
     public enum State {
         case none
-        case dragging(Node)
+        case dragging(origin: CGPoint, node: Node)
         case connecting(ConnectionEndpoint)
         case willSelect
         case selecting(origin: CGPoint, selectionNode: SKNode)

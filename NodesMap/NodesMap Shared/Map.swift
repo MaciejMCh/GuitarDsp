@@ -19,7 +19,7 @@ public final class Map {
     
     private let connect: (ConnectionEndpoint, ConnectionEndpoint) -> Bool
     private let breakConnection: (ConnectionEndpoint, ConnectionEndpoint) -> Bool
-    private var state = State.none
+    private var state: State = .willSelect
     public var nodes: [Node] = []
     public var connections: [(ConnectionEndpoint, ConnectionEndpoint, SKShapeNode)] = []
     public var select: ((Node) -> ())?
@@ -61,7 +61,36 @@ public final class Map {
         }
     }
     
+    private func select(p1: CGPoint, p2: CGPoint) -> (nodes: [Node], rect: CGRect) {
+        let originX = min(p1.x, p2.x)
+        let originY = min(p1.y, p2.y)
+        let width = max(p1.x, p2.x) - originX
+        let height = max(p1.y, p2.y) - originY
+        let selectionRect = CGRect(x: originX, y: originY, width: width, height: height)
+        
+        let selectedNodes = nodes.filter{selectionRect.contains($0.sprite.frame)}
+        
+        return (selectedNodes, selectionRect)
+    }
+    
+    private func styleSelected(sprite: SKNode) {
+        (sprite as? SKShapeNode)?.strokeColor = .green
+    }
+    
+    private func styleRegular(sprite: SKNode) {
+        (sprite as? SKShapeNode)?.strokeColor = .white
+    }
+    
     private func on(location: CGPoint) {
+        if case .willSelect = state {
+            let selectionNode = SKShapeNode(rect: CGRect(x: 0, y: 0, width: 200, height: 200))
+            selectionNode.fillColor = .init(white: 1, alpha: 0.4)
+            selectionNode.strokeColor = .white
+            scene.addChild(selectionNode)
+            state = .selecting(origin: location, selectionNode: selectionNode)
+            return
+        }
+        
         for node in nodes {
             let nodeRect = node.frameForName().moved(by: node.sprite.position)
             if nodeRect.contains(location) {
@@ -81,6 +110,23 @@ public final class Map {
     }
     
     private func drag(location: CGPoint) {
+        if case .selecting(let origin, let selectionNode) = state {
+            let selection = self.select(p1: origin, p2: location)
+            
+            for node in nodes {
+                styleRegular(sprite: node.sprite)
+            }
+            for selectedNode in selection.nodes {
+                styleSelected(sprite: selectedNode.sprite)
+            }
+            
+            selectionNode.position = selection.rect.origin
+            selectionNode.xScale = selection.rect.size.width / 200
+            selectionNode.yScale = selection.rect.size.height / 200
+            
+            return
+        }
+        
         if case .dragging(let node) = state {
             let gridSize: CGFloat = 20
             node.sprite.position = CGPoint(x: CGFloat(Int(location.x / gridSize)) * gridSize,
@@ -96,13 +142,13 @@ public final class Map {
         }
     }
     
-    private func setLine(line: SKShapeNode, from: CGPoint, to: CGPoint) {
-        line.yScale = to.distance(to: from) / 1000
-        line.position = to
-        line.zRotation = atan2(from.y - to.y, from.x - to.x) + CGFloat(Float.pi / -2)
-    }
-    
     private func off(location: CGPoint) {
+        if case .selecting(let origin, let selectionNode) = state {
+            selectionNode.removeFromParent()
+            state = .willSelect
+            return
+        }
+        
         if case .dragging(let onLocation) = state {
             for node in nodes {
                 let nodeRect = node.frameForName().moved(by: node.sprite.position)
@@ -151,6 +197,12 @@ public final class Map {
         draggingLineNode.removeFromParent()
     }
     
+    private func setLine(line: SKShapeNode, from: CGPoint, to: CGPoint) {
+        line.yScale = to.distance(to: from) / 1000
+        line.position = to
+        line.zRotation = atan2(from.y - to.y, from.x - to.x) + CGFloat(Float.pi / -2)
+    }
+    
     private func updateConnections() {
         for connection in connections {
             setLine(line: connection.2,
@@ -165,6 +217,8 @@ extension Map {
         case none
         case dragging(Node)
         case connecting(ConnectionEndpoint)
+        case willSelect
+        case selecting(origin: CGPoint, selectionNode: SKNode)
     }
 }
 

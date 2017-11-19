@@ -24,7 +24,9 @@ public class LowpassFilterEffect: WaveNode {
     public func next(time: Int) -> Double {
         return ff.value(time: time) {
             guard let inputValue = self.input.output?.next(time) else {return 0}
-            self.buffer = (inputValue * width.next(time: time)) + (self.buffer * (1 - width.next(time: time)))
+            let widthValue = width.next(time: time)
+            let trimmedWidthValue = min(1, max(0, widthValue))
+            self.buffer = (inputValue * trimmedWidthValue) + (self.buffer * (1 - trimmedWidthValue))
             return self.buffer
         }
     }

@@ -51,6 +51,10 @@ public final class Map {
         state = .willSelect
     }
     
+    public func startDeleting() {
+        state = .willDelete
+    }
+    
     public func addNode(_ node: Node) {
         nodes.append(node)
         scene.addChild(node.sprite)
@@ -83,6 +87,27 @@ public final class Map {
     
     private func styleRegular(sprite: SKNode) {
         (sprite as? SKShapeNode)?.strokeColor = .white
+    }
+    
+    private func removeNode(_ node: Node) {
+        nodes = nodes.filter{$0.model.id != node.model.id}
+        node.sprite.removeFromParent()
+        
+        var connectionsIndicesToBreak: [Int] = []
+        var i = 0
+        for connection in connections {
+            defer {
+                i += 1
+            }
+            if connection.0.0.model.id == node.model.id || connection.1.0.model.id == node.model.id {
+                connectionsIndicesToBreak.append(i)
+                connection.2.removeFromParent()
+            }
+        }
+        
+        for connectionIndexToBreak in connectionsIndicesToBreak.sorted().reversed() {
+            connections.remove(at: connectionIndexToBreak)
+        }
     }
     
     private func on(location: CGPoint) {
@@ -169,6 +194,13 @@ public final class Map {
     
     private func off(location: CGPoint) {
         switch state {
+        case .willDelete:
+            for node in nodes {
+                if node.sprite.frame.contains(location) {
+                    removeNode(node)
+                }
+            }
+            state = .none
         case .draggingSelection(let origin, let nodes):
             state = .selected(nodes)
         case .selected(let nodes):
@@ -249,6 +281,7 @@ extension Map {
         case selecting(origin: CGPoint, selectionNode: SKNode)
         case selected([Node])
         case draggingSelection(origin: CGPoint, nodes: [Node])
+        case willDelete
     }
 }
 

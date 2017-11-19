@@ -51,6 +51,10 @@ class MapCreatorViewController: UIViewController {
         waveMap.map.startSelecting()
     }
     
+    @IBAction func deleteAction(_ sender: Any?) {
+        waveMap.map.startDeleting()
+    }
+    
     @IBAction func padAction(_ sender: Any?) {
         let padViewController = PadContainerViewController.make()
         let padMidiOutput = PadMidiOutput()

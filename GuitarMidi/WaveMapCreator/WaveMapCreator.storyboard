@@ -73,6 +73,13 @@
                                     <action selector="selectAction:" destination="WC0-0L-qSe" eventType="touchUpInside" id="nhB-3g-6cR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-LE-oxe">
+                                <rect key="frame" x="182" y="5" width="43" height="30"/>
+                                <state key="normal" title="delete"/>
+                                <connections>
+                                    <action selector="deleteAction:" destination="WC0-0L-qSe" eventType="touchUpInside" id="Ddf-c7-nxI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -80,10 +87,12 @@
                             <constraint firstItem="YFu-SZ-SFb" firstAttribute="baseline" secondItem="bnI-Ah-6uT" secondAttribute="baseline" id="2NY-Fb-8au"/>
                             <constraint firstItem="klT-Ox-PFm" firstAttribute="leading" secondItem="gKu-Vw-x5a" secondAttribute="leading" id="6xb-7K-f74"/>
                             <constraint firstItem="BmZ-Np-z23" firstAttribute="trailing" secondItem="PV7-Tf-erD" secondAttribute="trailing" id="74p-0h-O5F"/>
+                            <constraint firstItem="GaD-LE-oxe" firstAttribute="leading" secondItem="B6m-LI-UGh" secondAttribute="trailing" constant="35" id="Igo-vI-aGY"/>
                             <constraint firstItem="BmZ-Np-z23" firstAttribute="trailing" secondItem="ngp-Pc-M0x" secondAttribute="trailing" constant="5" id="OpZ-ck-255"/>
                             <constraint firstItem="ngp-Pc-M0x" firstAttribute="top" secondItem="BmZ-Np-z23" secondAttribute="top" constant="5" id="W0K-GN-bUu"/>
                             <constraint firstItem="fxj-Qx-2jc" firstAttribute="bottom" secondItem="BmZ-Np-z23" secondAttribute="bottom" id="W7L-Ow-myu"/>
                             <constraint firstItem="fxj-Qx-2jc" firstAttribute="leading" secondItem="klT-Ox-PFm" secondAttribute="trailing" constant="5" id="Wuy-bt-3ac"/>
+                            <constraint firstItem="GaD-LE-oxe" firstAttribute="baseline" secondItem="B6m-LI-UGh" secondAttribute="baseline" id="XeE-Sn-oSj"/>
                             <constraint firstItem="bnI-Ah-6uT" firstAttribute="baseline" secondItem="fxj-Qx-2jc" secondAttribute="baseline" id="YDP-LW-W4F"/>
                             <constraint firstItem="klT-Ox-PFm" firstAttribute="top" secondItem="BmZ-Np-z23" secondAttribute="top" id="aRc-HY-ese"/>
                             <constraint firstItem="5f6-dZ-mIG" firstAttribute="leading" secondItem="YFu-SZ-SFb" secondAttribute="trailing" constant="35" id="bkY-BU-hFU"/>

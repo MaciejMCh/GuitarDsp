@@ -17,37 +17,46 @@ class TestViewController: NSViewController {
     override func viewDidLoad() {
         let ss = AudioInterface.shared().samplingSettings
         
+        let signalLength = 1000
+        
         let oscilator = Oscilator(samplingSettings: ss)
         oscilator.setFrequency(1000)
-        var values: [Double] = []
-        for i in 0..<1000 {
-            values.append(oscilator.next(time: i))
+        var rawValues: [Double] = []
+        for i in 0..<signalLength {
+            rawValues.append(oscilator.next(time: i))
         }
         
         let foldback = FoldbackWaveEffect()
         foldback.input.output = oscilator.output
-        var values2: [Double] = []
-        for i in 0..<1000 {
-            values2.append(foldback.next(time: i))
+        var foldbackValues: [Double] = []
+        for i in 0..<signalLength {
+            foldbackValues.append(foldback.next(time: i))
         }
         
         let lpf = LowpassFilterEffect()
         lpf.input.output = foldback.output
-        var values3: [Double] = []
-        for i in 0..<1000 {
-            values3.append(lpf.next(time: i))
+        var lpfValues: [Double] = []
+        for i in 0..<signalLength {
+            lpfValues.append(lpf.next(time: i))
         }
         
         let overdrive = OverdriveWaveEffect()
         overdrive.negative = false
         overdrive.compress = false
         overdrive.input.output = oscilator.output
-        var values4: [Double] = []
-        for i in 0..<1000 {
-            values4.append(overdrive.next(time: i))
+        var overdireValues: [Double] = []
+        for i in 0..<signalLength {
+            overdireValues.append(overdrive.next(time: i))
         }
         
-        waveView1.values = values
-        waveView2.values = values4
+        let saturation = SaturationWaveEffect()
+        saturation.input.output = oscilator.output
+        var saturationValues: [Double] = []
+        for i in 0..<signalLength {
+            saturationValues.append(saturation.next(time: i))
+        }
+        
+        waveView1.values = rawValues
+        waveView2.values = saturationValues
     }
 }

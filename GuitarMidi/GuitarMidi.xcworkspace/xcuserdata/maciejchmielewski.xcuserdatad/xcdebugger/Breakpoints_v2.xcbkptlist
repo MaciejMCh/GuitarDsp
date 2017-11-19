@@ -63,7 +63,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarMidi/WaveMapController.swift"
-            timestampString = "532569275.892671"
+            timestampString = "532824405.465098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -79,7 +79,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarMidi/WaveMapController.swift"
-            timestampString = "532569275.892769"
+            timestampString = "532824405.465196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -102,6 +102,53 @@
             endingLineNumber = "13"
             landmarkName = "displayMessage(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed&gt; of closure #1 (__ObjC.DataSnapshot) -&gt; () in WaveMapCreator.FirebaseClient.syncSamples() -&gt; ()"
+                  moduleName = "WaveMapCreator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/UserFeedback.swift"
+                  timestampString = "532823643.637899"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "1648">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[2] = Owned To Guaranteed&gt; of closure #1 (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (__ObjC.DataSnapshot) -&gt; () in WaveMapCreator.FirebaseClient.syncSamples() -&gt; ()"
+                  moduleName = "WaveMapCreator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/UserFeedback.swift"
+                  timestampString = "532823643.640644"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[2] = Owned To Guaranteed&gt; of closure #1 (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (__ObjC.DataSnapshot) -&gt; () in WaveMapCreator.FirebaseClient.syncSamples() -&gt; ()"
+                  moduleName = "WaveMapCreator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maciejchmielewski/Desktop/p/hmm/GuitarDsp/GuitarMidi/GuitarMidi/UserFeedback.swift"
+                  timestampString = "532823643.643256"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "428">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -143,7 +190,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../NodesMap/NodesMap Shared/Map.swift"
-            timestampString = "532821487.019935"
+            timestampString = "532823643.221972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "204"
@@ -159,11 +206,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarMidi/WaveMap.swift"
-            timestampString = "532821779.806699"
+            timestampString = "532824533.853911"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
             landmarkName = "wave(waveMap:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -175,11 +222,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarMidi/WaveMapStorage.swift"
-            timestampString = "532821293.156245"
+            timestampString = "532824533.85403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "waveMapConfiguration(_:)"
             landmarkType = "7">
          </BreakpointContent>

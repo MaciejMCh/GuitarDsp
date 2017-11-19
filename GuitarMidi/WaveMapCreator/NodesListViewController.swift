@@ -25,6 +25,7 @@ class NodesListViewController: UITableViewController {
             FoldbackWaveEffect(),
             OverdriveWaveEffect(),
             LowpassFilterEffect(),
+            SaturationWaveEffect(),
         ]
     }()
     
@@ -60,6 +61,7 @@ extension WaveNode {
         case is FoldbackWaveEffect: return "foldback"
         case is OverdriveWaveEffect: return "overdrive"
         case is LowpassFilterEffect: return "lpf"
+        case is SaturationWaveEffect: return "saturation"
         default:
             assert(false)
             return "xd"
@@ -78,6 +80,7 @@ extension WaveNode {
         case is FoldbackWaveEffect: return FoldbackWaveEffect()
         case is OverdriveWaveEffect: return OverdriveWaveEffect()
         case is LowpassFilterEffect: return LowpassFilterEffect()
+        case is SaturationWaveEffect: return SaturationWaveEffect()
         default:
             return "xd" as! WaveNode
         }

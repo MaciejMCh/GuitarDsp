@@ -61,6 +61,7 @@ public struct WaveMapStorage {
         case "foldback": return waveNodesFactory.makeFoldback(id: json["id"] as! String)
         case "overdrive": return waveNodesFactory.makeOverdrive(id: json["id"] as! String)
         case "lpf": return waveNodesFactory.makeLpf(id: json["id"] as! String)
+        case "saturation": return waveNodesFactory.makeSaturation(id: json["id"] as! String)
         default:
             debugPrint(json)
             return "" as! WaveNode
@@ -215,6 +216,13 @@ public struct WaveMapStorage {
                 "id": lpf.id
             ]
         }
+        if let saturation = waveNode as? SaturationWaveEffect {
+            return [
+                "type": "saturation",
+                "id": saturation.id
+            ]
+        }
+        
         return "" as! JsonObject
     }
     
@@ -303,6 +311,10 @@ public struct WaveNodesFactory {
     
     func makeLpf(id: String? = nil) -> LowpassFilterEffect {
         return LowpassFilterEffect(id: id)
+    }
+    
+    func makeSaturation(id: String? = nil) -> SaturationWaveEffect {
+        return SaturationWaveEffect(id: id)
     }
 }
 

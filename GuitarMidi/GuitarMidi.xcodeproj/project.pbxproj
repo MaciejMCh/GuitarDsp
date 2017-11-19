@@ -46,6 +46,8 @@
 		C24170721FA121AB000E293F /* Pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24170711FA121AB000E293F /* Pad.storyboard */; };
 		C248D9D91FB115B4007BC866 /* EnvelopeClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248D9D81FB115B4007BC866 /* EnvelopeClone.swift */; };
 		C248D9DA1FB115BC007BC866 /* EnvelopeClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248D9D81FB115B4007BC866 /* EnvelopeClone.swift */; };
+		C26852921FC23846009AE28C /* SaturationWaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26852911FC23846009AE28C /* SaturationWaveEffect.swift */; };
+		C26852931FC23846009AE28C /* SaturationWaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26852911FC23846009AE28C /* SaturationWaveEffect.swift */; };
 		C26C1FD21FBBBE6A00621EEA /* WaveMapStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */; };
 		C26C1FD31FBBBE6E00621EEA /* WaveMapStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */; };
 		C2744F2D1FB0F4CF0017BD86 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2744F2C1FB0F4CF0017BD86 /* GraphView.swift */; };
@@ -216,6 +218,7 @@
 		C248D9D81FB115B4007BC866 /* EnvelopeClone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeClone.swift; sourceTree = "<group>"; };
 		C24FFF711F66E2C2007CBF57 /* MidiServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiServer.swift; sourceTree = "<group>"; };
 		C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiOutputEffect.swift; sourceTree = "<group>"; };
+		C26852911FC23846009AE28C /* SaturationWaveEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationWaveEffect.swift; sourceTree = "<group>"; };
 		C26AD8E51F7556A9005512E0 /* FileBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowser.swift; sourceTree = "<group>"; };
 		C26C1FD11FBBBE6A00621EEA /* WaveMapStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveMapStorage.swift; sourceTree = "<group>"; };
 		C2744F2C1FB0F4CF0017BD86 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
@@ -450,6 +453,7 @@
 				C2FDB8161FBCF5CB00509C82 /* StorageConstants.swift */,
 				C2FDB8191FBD08E500509C82 /* FirebaseClient.swift */,
 				C2B26BE41FBE0F2C002A18AF /* UserFeedback.swift */,
+				C26852911FC23846009AE28C /* SaturationWaveEffect.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -782,6 +786,7 @@
 				C23F52F51FA797DF00127604 /* ConstantViewController.swift in Sources */,
 				C2FE271E1FBB8790001CED37 /* FileBrowser.swift in Sources */,
 				C2ED66DF1FBF33FF0002EBB7 /* InterfaceBuilderInstance.swift in Sources */,
+				C26852931FC23846009AE28C /* SaturationWaveEffect.swift in Sources */,
 				C28B24BA1FBF355F00E3015E /* WaveShaperViewController.swift in Sources */,
 				C20035F21F9E32D400C21EF7 /* StrokeDetector.swift in Sources */,
 				C231401A1F9C92E500EA6027 /* MapCreatorViewController.swift in Sources */,
@@ -823,6 +828,7 @@
 				C2FE27201FBB87B2001CED37 /* Tree.swift in Sources */,
 				C2C19AA41F7AFE4400FDE938 /* TreeViewController.swift in Sources */,
 				C2C19A8B1F7AFE4400FDE938 /* PitchDetector.swift in Sources */,
+				C26852921FC23846009AE28C /* SaturationWaveEffect.swift in Sources */,
 				C26C1FD21FBBBE6A00621EEA /* WaveMapStorage.swift in Sources */,
 				C2C19A8E1F7AFE4400FDE938 /* StrokeDetector.swift in Sources */,
 				C2FDB81A1FBD08E500509C82 /* FirebaseClient.swift in Sources */,

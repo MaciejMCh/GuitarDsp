@@ -121,6 +121,9 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
             map.addNode(WaveMap.nodeFromLpf(lpf))
             return
         }
+        if let saturation = waveNode as? SaturationWaveEffect {
+            map.addNode(WaveMap.nodeFromSaturation(saturation))
+        }
         assert(false)
     }
     
@@ -231,6 +234,18 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
                         Interface(name: "width", model: lpf.widthSetter)],
                     model: lpf)
     }
+    fileprivate static func nodeFromSaturation(_ saturation: SaturationWaveEffect) -> Node {
+        return Node(name: "saturation",
+                    interfaces: [
+                        Interface(name: "in", model: saturation.input),
+                        Interface(name: "out", model: saturation.output),
+                        Interface(name: "level", model: saturation.levelSetter)],
+                    model: saturation)
+    }
+}
+
+extension SaturationWaveEffect {
+    var levelSetter: FunctionVariableSetter {return {self.level = $0}}
 }
 
 extension LowpassFilterEffect {

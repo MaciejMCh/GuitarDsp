@@ -47,7 +47,7 @@ public class MapViewController: UIViewController {
         let cameraPosition = camera.position
         let panPosition = panGestureRecognizer.location(in: nil)
         
-        if panGestureRecognizer.state == .changed {
+        if panGestureRecognizer.state == .changed && panGestureRecognizer.numberOfTouches == 2 {
             let panPositionDiff = CGPoint(x: lastPanPosition.x - panPosition.x, y: lastPanPosition.y - panPosition.y)
             camera.position = CGPoint(x: cameraPosition.x + panPositionDiff.x, y: cameraPosition.y - panPositionDiff.y)
         }

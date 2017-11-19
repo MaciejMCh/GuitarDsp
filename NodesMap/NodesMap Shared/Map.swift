@@ -19,7 +19,7 @@ public final class Map {
     
     private let connect: (ConnectionEndpoint, ConnectionEndpoint) -> Bool
     private let breakConnection: (ConnectionEndpoint, ConnectionEndpoint) -> Bool
-    private var state: State = .willSelect
+    private var state: State = .none
     public var nodes: [Node] = []
     public var connections: [(ConnectionEndpoint, ConnectionEndpoint, SKShapeNode)] = []
     public var select: ((Node) -> ())?
@@ -47,6 +47,10 @@ public final class Map {
         self.breakConnection = breakConnection
     }
     
+    public func startSelecting() {
+        state = .willSelect
+    }
+    
     public func addNode(_ node: Node) {
         nodes.append(node)
         scene.addChild(node.sprite)
@@ -68,7 +72,7 @@ public final class Map {
         let height = max(p1.y, p2.y) - originY
         let selectionRect = CGRect(x: originX, y: originY, width: width, height: height)
         
-        let selectedNodes = nodes.filter{selectionRect.contains($0.sprite.frame)}
+        let selectedNodes = nodes.filter{selectionRect.contains($0.sprite.frame) || selectionRect.intersects($0.sprite.frame)}
         
         return (selectedNodes, selectionRect)
     }
@@ -82,35 +86,62 @@ public final class Map {
     }
     
     private func on(location: CGPoint) {
-        if case .willSelect = state {
+        switch state {
+        case .selected(let nodes):
+            for node in nodes {
+                if node.sprite.frame.contains(location) {
+                    state = .draggingSelection(origin: location, nodes: nodes)
+                    break
+                }
+            }
+        case .willSelect:
             let selectionNode = SKShapeNode(rect: CGRect(x: 0, y: 0, width: 200, height: 200))
             selectionNode.fillColor = .init(white: 1, alpha: 0.4)
             selectionNode.strokeColor = .white
+            selectionNode.setScale(0.0001)
             scene.addChild(selectionNode)
             state = .selecting(origin: location, selectionNode: selectionNode)
-            return
-        }
-        
-        for node in nodes {
-            let nodeRect = node.frameForName().moved(by: node.sprite.position)
-            if nodeRect.contains(location) {
-                state = .dragging(node)
-            }
-        }
-        
-        for node in nodes {
-            for interface in node.interfaces {
-                let interfaceRect = node.frameForInterface(interface: interface).moved(by: node.sprite.position)
-                if interfaceRect.contains(location) {
-                    state = .connecting((node, interface))
-                    scene.addChild(draggingLineNode)
+        case .none:
+            // start drag single node
+            for node in nodes {
+                let nodeRect = node.frameForName().moved(by: node.sprite.position)
+                if nodeRect.contains(location) {
+                    state = .dragging(node)
                 }
             }
+            
+            // start connecting interfaces
+            for node in nodes {
+                for interface in node.interfaces {
+                    let interfaceRect = node.frameForInterface(interface: interface).moved(by: node.sprite.position)
+                    if interfaceRect.contains(location) {
+                        state = .connecting((node, interface))
+                        scene.addChild(draggingLineNode)
+                    }
+                }
+            }
+        default: break
         }
     }
     
+    let gridSize: CGFloat = 20
+    
     private func drag(location: CGPoint) {
-        if case .selecting(let origin, let selectionNode) = state {
+        switch state {
+        case .draggingSelection(let origin, let nodes):
+            let dragDiffX = CGFloat(Int((location.x - origin.x) / gridSize)) * gridSize
+            let dragDiffY = CGFloat(Int((location.y - origin.y) / gridSize)) * gridSize
+            
+            guard abs(dragDiffX) + abs(dragDiffY) > 0 else {return}
+            
+            for node in nodes {
+                node.sprite.position = CGPoint(x: node.sprite.position.x + dragDiffX,
+                                               y: node.sprite.position.y + dragDiffY)
+            }
+            
+            state = .draggingSelection(origin: location, nodes: nodes)
+            updateConnections()
+        case .selecting(let origin, let selectionNode):
             let selection = self.select(p1: origin, p2: location)
             
             for node in nodes {
@@ -123,42 +154,40 @@ public final class Map {
             selectionNode.position = selection.rect.origin
             selectionNode.xScale = selection.rect.size.width / 200
             selectionNode.yScale = selection.rect.size.height / 200
-            
-            return
-        }
-        
-        if case .dragging(let node) = state {
-            let gridSize: CGFloat = 20
+        case .dragging(let node):
             node.sprite.position = CGPoint(x: CGFloat(Int(location.x / gridSize)) * gridSize,
                                            y: CGFloat(Int(location.y / gridSize)) * gridSize)
             updateConnections()
-        }
-        
-        if case .connecting(let node, let interface) = state {
+        case .connecting(let node, let interface):
             let interfaceRect = node.frameForInterface(interface: interface).moved(by: node.sprite.position)
             let draggingOrigin = CGPoint(x: interfaceRect.minX, y: interfaceRect.minY + 10)
             let draggingEnd = location
             setLine(line: draggingLineNode, from: draggingOrigin, to: draggingEnd)
+        default: break
         }
     }
     
     private func off(location: CGPoint) {
-        if case .selecting(let origin, let selectionNode) = state {
+        switch state {
+        case .draggingSelection(let origin, let nodes):
+            state = .selected(nodes)
+        case .selected(let nodes):
+            for node in nodes {
+                styleRegular(sprite: node.sprite)
+            }
+            state = .none
+        case .selecting(let origin, let selectionNode):
             selectionNode.removeFromParent()
-            state = .willSelect
-            return
-        }
-        
-        if case .dragging(let onLocation) = state {
+            state = .selected(select(p1: origin, p2: location).nodes)
+        case .dragging:
             for node in nodes {
                 let nodeRect = node.frameForName().moved(by: node.sprite.position)
                 if nodeRect.contains(location) {
                     select?(node)
                 }
             }
-        }
-        
-        if case .none = state {
+            state = .none
+        case .none:
             let tapRadius = CGFloat(20)
             let tapNode = SKShapeNode(ellipseIn: CGRect(x: location.x - tapRadius, y: location.y - tapRadius, width: tapRadius * 2, height: tapRadius * 2))
             scene.addChild(tapNode)
@@ -179,22 +208,21 @@ public final class Map {
                 connections.remove(at: indexToRemove)
             }
             tapNode.removeFromParent()
-        }
-        
-        for node in nodes {
-            for interface in node.interfaces {
-                let interfaceRect = node.frameForInterface(interface: interface).moved(by: node.sprite.position)
-                if interfaceRect.contains(location) {
-                    if case .connecting(let originEndpoint) = state {
+        case .connecting(let originEndpoint):
+            for node in nodes {
+                for interface in node.interfaces {
+                    let interfaceRect = node.frameForInterface(interface: interface).moved(by: node.sprite.position)
+                    if interfaceRect.contains(location) {
                         let secondEndpoint = (node, interface)
                         self.connect(lhs: originEndpoint, rhs: secondEndpoint)
                     }
                 }
             }
+            state = .none
+            draggingLineNode.removeFromParent()
+        default:
+            state = .none
         }
-        
-        state = .none
-        draggingLineNode.removeFromParent()
     }
     
     private func setLine(line: SKShapeNode, from: CGPoint, to: CGPoint) {
@@ -219,6 +247,8 @@ extension Map {
         case connecting(ConnectionEndpoint)
         case willSelect
         case selecting(origin: CGPoint, selectionNode: SKNode)
+        case selected([Node])
+        case draggingSelection(origin: CGPoint, nodes: [Node])
     }
 }
 

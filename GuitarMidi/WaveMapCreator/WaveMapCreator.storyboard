@@ -66,9 +66,17 @@
                                     <action selector="padAction:" destination="WC0-0L-qSe" eventType="touchUpInside" id="Odh-nz-fI2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6m-LI-UGh">
+                                <rect key="frame" x="105" y="5" width="42" height="30"/>
+                                <state key="normal" title="select"/>
+                                <connections>
+                                    <action selector="selectAction:" destination="WC0-0L-qSe" eventType="touchUpInside" id="nhB-3g-6cR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="B6m-LI-UGh" firstAttribute="leading" secondItem="klT-Ox-PFm" secondAttribute="trailing" constant="5" id="1WI-Ew-Xom"/>
                             <constraint firstItem="YFu-SZ-SFb" firstAttribute="baseline" secondItem="bnI-Ah-6uT" secondAttribute="baseline" id="2NY-Fb-8au"/>
                             <constraint firstItem="klT-Ox-PFm" firstAttribute="leading" secondItem="gKu-Vw-x5a" secondAttribute="leading" id="6xb-7K-f74"/>
                             <constraint firstItem="BmZ-Np-z23" firstAttribute="trailing" secondItem="PV7-Tf-erD" secondAttribute="trailing" id="74p-0h-O5F"/>
@@ -81,6 +89,7 @@
                             <constraint firstItem="5f6-dZ-mIG" firstAttribute="leading" secondItem="YFu-SZ-SFb" secondAttribute="trailing" constant="35" id="bkY-BU-hFU"/>
                             <constraint firstItem="YFu-SZ-SFb" firstAttribute="leading" secondItem="bnI-Ah-6uT" secondAttribute="trailing" constant="35" id="e4i-4J-54o"/>
                             <constraint firstItem="BmZ-Np-z23" firstAttribute="bottom" secondItem="klT-Ox-PFm" secondAttribute="bottom" id="fii-LZ-IFs"/>
+                            <constraint firstItem="B6m-LI-UGh" firstAttribute="top" secondItem="BmZ-Np-z23" secondAttribute="top" constant="5" id="g7Y-3V-rlJ"/>
                             <constraint firstItem="PV7-Tf-erD" firstAttribute="leading" secondItem="klT-Ox-PFm" secondAttribute="trailing" id="hRJ-Qu-OQ3"/>
                             <constraint firstItem="BmZ-Np-z23" firstAttribute="bottom" secondItem="PV7-Tf-erD" secondAttribute="bottom" id="qm5-cm-Fcv"/>
                             <constraint firstItem="bnI-Ah-6uT" firstAttribute="leading" secondItem="fxj-Qx-2jc" secondAttribute="trailing" constant="35" id="trk-55-0Mw"/>

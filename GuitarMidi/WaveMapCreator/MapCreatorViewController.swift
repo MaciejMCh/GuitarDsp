@@ -47,6 +47,10 @@ class MapCreatorViewController: UIViewController {
         }
     }
     
+    @IBAction func selectAction(_ sender: Any?) {
+        waveMap.map.startSelecting()
+    }
+    
     @IBAction func padAction(_ sender: Any?) {
         let padViewController = PadContainerViewController.make()
         let padMidiOutput = PadMidiOutput()

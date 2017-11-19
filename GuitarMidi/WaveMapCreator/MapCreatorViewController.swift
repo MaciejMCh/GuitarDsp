@@ -39,7 +39,7 @@ class MapCreatorViewController: UIViewController {
         }
         if let addNodesController = segue.destination as? NodesListViewController {
             addNodesController.addNode = {
-                self.waveMap.addWaveNode(waveNode: $0)
+                self.waveMap.startAddingWaveNode($0)
             }
         }
         if let padController = segue.destination as? PadViewController {

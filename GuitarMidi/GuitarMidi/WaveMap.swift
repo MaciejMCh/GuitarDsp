@@ -78,53 +78,14 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
         return nil
     }
     
+    public func startAddingWaveNode(_ waveNode: WaveNode) {
+        waveNodes.append(waveNode)
+        map.startAddingNode(nodeFromWaveNode(waveNode))
+    }
+    
     public func addWaveNode(waveNode: WaveNode) {
         waveNodes.append(waveNode)
-        
-        if let envelope = waveNode as? EnvelopeFunction {
-            map.addNode(WaveMap.nodeFromEnvelope(envelope))
-            return
-        }
-        if let oscilator = waveNode as? Oscilator {
-            map.addNode(WaveMap.nodeFromOscilator(oscilator))
-            return
-        }
-        if let amp = waveNode as? AmpWaveEffect {
-            map.addNode(WaveMap.nodeFromAmp(amp))
-            return
-        }
-        if let constant = waveNode as? Constant {
-            map.addNode(WaveMap.nodeFromConstant(constant))
-            return
-        }
-        if let sampler = waveNode as? Sampler {
-            map.addNode(WaveMap.nodeFromSampler(sampler))
-            return
-        }
-        if let sum = waveNode as? SumWaveNode {
-            map.addNode(WaveMap.nodeFromSum(sum))
-            return
-        }
-        if let waveShaper = waveNode as? WaveShaper {
-            map.addNode(WaveMap.nodeFromWaveShaper(waveShaper))
-            return
-        }
-        if let overdrive = waveNode as? OverdriveWaveEffect {
-            map.addNode(WaveMap.nodeFromOverdrive(overdrive))
-            return
-        }
-        if let foldback = waveNode as? FoldbackWaveEffect {
-            map.addNode(WaveMap.nodeFromFoldback(foldback))
-            return
-        }
-        if let lpf = waveNode as? LowpassFilterEffect {
-            map.addNode(WaveMap.nodeFromLpf(lpf))
-            return
-        }
-        if let saturation = waveNode as? SaturationWaveEffect {
-            map.addNode(WaveMap.nodeFromSaturation(saturation))
-        }
-        assert(false)
+        map.addNode(nodeFromWaveNode(waveNode))
     }
     
     public func position(waveNode: WaveNode) -> CGPoint? {
@@ -160,6 +121,44 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
         for waveNode in waveNodes {
             waveNode.setFrequency(frequency)
         }
+    }
+    
+    private func nodeFromWaveNode(_ waveNode: WaveNode) -> Node {
+        if let envelope = waveNode as? EnvelopeFunction {
+            return WaveMap.nodeFromEnvelope(envelope)
+        }
+        if let oscilator = waveNode as? Oscilator {
+            return WaveMap.nodeFromOscilator(oscilator)
+        }
+        if let amp = waveNode as? AmpWaveEffect {
+            return WaveMap.nodeFromAmp(amp)
+        }
+        if let constant = waveNode as? Constant {
+            return WaveMap.nodeFromConstant(constant)
+        }
+        if let sampler = waveNode as? Sampler {
+            return WaveMap.nodeFromSampler(sampler)
+        }
+        if let sum = waveNode as? SumWaveNode {
+            return WaveMap.nodeFromSum(sum)
+        }
+        if let waveShaper = waveNode as? WaveShaper {
+            return WaveMap.nodeFromWaveShaper(waveShaper)
+        }
+        if let overdrive = waveNode as? OverdriveWaveEffect {
+            return WaveMap.nodeFromOverdrive(overdrive)
+        }
+        if let foldback = waveNode as? FoldbackWaveEffect {
+            return WaveMap.nodeFromFoldback(foldback)
+        }
+        if let lpf = waveNode as? LowpassFilterEffect {
+            return WaveMap.nodeFromLpf(lpf)
+        }
+        if let saturation = waveNode as? SaturationWaveEffect {
+            return WaveMap.nodeFromSaturation(saturation)
+        }
+        
+        return "" as! Node
     }
     
     fileprivate static func nodeFromEnvelope(_ envelope: EnvelopeFunction) -> Node {

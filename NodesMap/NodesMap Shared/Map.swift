@@ -59,8 +59,13 @@ public final class Map {
         state = .willDelete
     }
     
-    public func addNode(_ node: Node) {
+    public func startAddingNode(_ node: Node) {
         state = .willAdd(node)
+    }
+    
+    public func addNode(_ node: Node) {
+        nodes.append(node)
+        scene.addChild(node.sprite)
     }
     
     public func connect(lhs: ConnectionEndpoint, rhs: ConnectionEndpoint) {
@@ -117,8 +122,7 @@ public final class Map {
     private func on(location: CGPoint) {
         switch state {
         case .willAdd(let node):
-            nodes.append(node)
-            scene.addChild(node.sprite)
+            addNode(node)
             node.sprite.position = location
             state = .dragging(origin: location, node: node)
         case .selected(let nodes):

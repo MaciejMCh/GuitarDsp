@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let padMidiOutput = PadMidiOutput()
         waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
+//        waveMap = .fromPath("fat808")
         let mapCreatorViewController = UIStoryboard(name: "WaveMapCreator", bundle: nil).instantiateInitialViewController() as! MapCreatorViewController
         mapCreatorViewController.waveMap = waveMap
         mapCreatorViewController.padMidiOutput = padMidiOutput

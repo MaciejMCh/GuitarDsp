@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0wt-pH-TFF">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hR8-FY-QWg">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,52 +9,55 @@
     </dependencies>
     <scenes>
         <!--Pad View Controller-->
-        <scene sceneID="yo2-CB-Oa5">
+        <scene sceneID="RPZ-hN-9Ed">
             <objects>
-                <tableViewController id="0wt-pH-TFF" customClass="PadViewController" customModule="WaveMapCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qes-pX-1Sv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <collectionViewController id="hR8-FY-QWg" customClass="PadViewController" customModule="WaveMapCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lLK-9k-g5s">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PadButtonCell" id="10D-d0-cFS" customClass="PadButtonCell" customModule="WaveMapCreator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="10D-d0-cFS" id="oSX-ua-uG8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                        <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pvo-iP-smS">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PadButtonCell" id="fJH-Ji-yIA" customClass="PadButtonCell" customModule="WaveMapCreator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRB-tE-j9z">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <connections>
-                                                <action selector="off:" destination="10D-d0-cFS" eventType="touchUpInside" id="BKl-2J-v6x"/>
-                                                <action selector="off:" destination="10D-d0-cFS" eventType="touchUpOutside" id="f9s-sB-ZdI"/>
-                                                <action selector="off:" destination="10D-d0-cFS" eventType="touchCancel" id="ttt-kX-qxS"/>
-                                                <action selector="on:" destination="10D-d0-cFS" eventType="touchDown" id="O88-0D-qel"/>
-                                            </connections>
-                                        </button>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pad Inactive" translatesAutoresizingMaskIntoConstraints="NO" id="DOi-Ah-17V">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="YRB-tE-j9z" firstAttribute="leading" secondItem="oSX-ua-uG8" secondAttribute="leading" id="8z8-xU-VSA"/>
-                                        <constraint firstAttribute="bottom" secondItem="YRB-tE-j9z" secondAttribute="bottom" id="BsC-ZM-B2Z"/>
-                                        <constraint firstItem="YRB-tE-j9z" firstAttribute="top" secondItem="oSX-ua-uG8" secondAttribute="top" id="NjV-4X-aSO"/>
-                                        <constraint firstAttribute="trailing" secondItem="YRB-tE-j9z" secondAttribute="trailing" id="kuq-cI-caF"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </tableViewCell>
-                        </prototypes>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="DOi-Ah-17V" firstAttribute="leading" secondItem="fJH-Ji-yIA" secondAttribute="leading" id="9QL-Bz-yn3"/>
+                                    <constraint firstAttribute="bottom" secondItem="DOi-Ah-17V" secondAttribute="bottom" id="AwJ-Zt-06S"/>
+                                    <constraint firstItem="DOi-Ah-17V" firstAttribute="top" secondItem="fJH-Ji-yIA" secondAttribute="top" id="bOt-gG-Pbc"/>
+                                    <constraint firstAttribute="trailing" secondItem="DOi-Ah-17V" secondAttribute="trailing" id="ciA-u7-Oks"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="padImageView" destination="DOi-Ah-17V" id="Z5C-jD-FuX"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
                         <connections>
-                            <outlet property="dataSource" destination="0wt-pH-TFF" id="ByC-Uh-Es9"/>
-                            <outlet property="delegate" destination="0wt-pH-TFF" id="m9x-t4-HZ8"/>
+                            <outlet property="dataSource" destination="hR8-FY-QWg" id="XkG-52-BLp"/>
+                            <outlet property="delegate" destination="hR8-FY-QWg" id="COj-BQ-0kH"/>
                         </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mZO-IO-iA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7j-ZF-w8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="153"/>
+            <point key="canvasLocation" x="-519" y="233"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Pad Inactive" width="50" height="50"/>
+    </resources>
 </document>

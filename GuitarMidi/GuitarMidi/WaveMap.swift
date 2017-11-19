@@ -20,7 +20,7 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
     public var waveNodes: [WaveNode] = []
     public let output = SignalInput()
     public let outputNode: Node
-    private let midiOutput: MidiOutput
+    var midiOutput: MidiOutput
     private var time = 0
     
     public init(samplingSettings: SamplingSettings, midiOutput: MidiOutput) {

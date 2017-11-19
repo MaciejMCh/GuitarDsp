@@ -28,6 +28,7 @@
 		C2159FFE1FBF4C77009B487D /* Decade.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2159FFD1FBF4C77009B487D /* Decade.storyboard */; };
 		C215A0001FBF4C9F009B487D /* DecadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2159FFF1FBF4C9F009B487D /* DecadeViewController.swift */; };
 		C21AA3C41F8B90A400D6C490 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21AA3C31F8B90A400D6C490 /* MathUtils.swift */; };
+		C22751F01FC1B012009DE62F /* PadContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22751EF1FC1B012009DE62F /* PadContainer.storyboard */; };
 		C2305C531F87E17900A89F63 /* WaveMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2305C521F87E17900A89F63 /* WaveMapController.swift */; };
 		C231401A1F9C92E500EA6027 /* MapCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23140191F9C92E500EA6027 /* MapCreatorViewController.swift */; };
 		C231401E1F9C96B700EA6027 /* WaveMapCreator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C231401D1F9C96B700EA6027 /* WaveMapCreator.storyboard */; };
@@ -196,6 +197,7 @@
 		C226A26A1F7429F300539B80 /* WaveShaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShaper.swift; sourceTree = "<group>"; };
 		C226A26C1F742C1A00539B80 /* WaveShaperNode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveShaperNode.storyboard; sourceTree = "<group>"; };
 		C226A26E1F742C8A00539B80 /* WaveShaperNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShaperNodeViewController.swift; sourceTree = "<group>"; };
+		C22751EF1FC1B012009DE62F /* PadContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PadContainer.storyboard; sourceTree = "<group>"; };
 		C2305C521F87E17900A89F63 /* WaveMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMapController.swift; sourceTree = "<group>"; };
 		C23140191F9C92E500EA6027 /* MapCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCreatorViewController.swift; sourceTree = "<group>"; };
 		C231401D1F9C96B700EA6027 /* WaveMapCreator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapCreator.storyboard; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				C2791FD61FC0BB910015CC85 /* ValuesView.swift */,
 				C2791FD81FC0BE8A0015CC85 /* OutputMonitorViewController.swift */,
 				C2791FDA1FC0C3260015CC85 /* Monitor.storyboard */,
+				C22751EF1FC1B012009DE62F /* PadContainer.storyboard */,
 			);
 			path = WaveMapCreator;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				C2F0A6201FBA276200BC8AA6 /* 440.wav in Resources */,
 				C29E51571F9A2E5D0039651C /* LaunchScreen.storyboard in Resources */,
 				C2159FFE1FBF4C77009B487D /* Decade.storyboard in Resources */,
+				C22751F01FC1B012009DE62F /* PadContainer.storyboard in Resources */,
 				C2159FFC1FBF4B22009B487D /* Overdrive.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

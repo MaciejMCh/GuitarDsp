@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PV7-Tf-erD">
-                                <rect key="frame" x="100" y="0.0" width="467" height="375"/>
+                                <rect key="frame" x="100" y="0.0" width="567" height="375"/>
                                 <connections>
                                     <segue destination="tk9-M8-cXQ" kind="embed" id="Ewn-lQ-2r8"/>
                                 </connections>
@@ -30,15 +30,6 @@
                                 </constraints>
                                 <connections>
                                     <segue destination="x8w-Lf-wb8" kind="embed" id="Upv-ry-J7s"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rSi-ak-eNO">
-                                <rect key="frame" x="567" y="0.0" width="100" height="375"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="AGP-D7-BF8"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="5QM-EZ-ZTm" kind="embed" id="RNc-Sc-gbf"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxj-Qx-2jc">
@@ -68,15 +59,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngp-Pc-M0x">
+                                <rect key="frame" x="632" y="5" width="30" height="30"/>
+                                <state key="normal" title="Pad"/>
+                                <connections>
+                                    <action selector="padAction:" destination="WC0-0L-qSe" eventType="touchUpInside" id="Odh-nz-fI2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YFu-SZ-SFb" firstAttribute="baseline" secondItem="bnI-Ah-6uT" secondAttribute="baseline" id="2NY-Fb-8au"/>
                             <constraint firstItem="klT-Ox-PFm" firstAttribute="leading" secondItem="gKu-Vw-x5a" secondAttribute="leading" id="6xb-7K-f74"/>
-                            <constraint firstItem="BmZ-Np-z23" firstAttribute="bottom" secondItem="rSi-ak-eNO" secondAttribute="bottom" id="EK7-zR-Rab"/>
-                            <constraint firstItem="rSi-ak-eNO" firstAttribute="top" secondItem="BmZ-Np-z23" secondAttribute="top" id="FTi-DQ-2Ba"/>
-                            <constraint firstAttribute="trailing" secondItem="rSi-ak-eNO" secondAttribute="trailing" id="I19-qB-hG3"/>
-                            <constraint firstItem="rSi-ak-eNO" firstAttribute="leading" secondItem="PV7-Tf-erD" secondAttribute="trailing" id="NkQ-hZ-GUh"/>
+                            <constraint firstItem="BmZ-Np-z23" firstAttribute="trailing" secondItem="PV7-Tf-erD" secondAttribute="trailing" id="74p-0h-O5F"/>
+                            <constraint firstItem="BmZ-Np-z23" firstAttribute="trailing" secondItem="ngp-Pc-M0x" secondAttribute="trailing" constant="5" id="OpZ-ck-255"/>
+                            <constraint firstItem="ngp-Pc-M0x" firstAttribute="top" secondItem="BmZ-Np-z23" secondAttribute="top" constant="5" id="W0K-GN-bUu"/>
                             <constraint firstItem="fxj-Qx-2jc" firstAttribute="bottom" secondItem="BmZ-Np-z23" secondAttribute="bottom" id="W7L-Ow-myu"/>
                             <constraint firstItem="fxj-Qx-2jc" firstAttribute="leading" secondItem="klT-Ox-PFm" secondAttribute="trailing" constant="5" id="Wuy-bt-3ac"/>
                             <constraint firstItem="bnI-Ah-6uT" firstAttribute="baseline" secondItem="fxj-Qx-2jc" secondAttribute="baseline" id="YDP-LW-W4F"/>

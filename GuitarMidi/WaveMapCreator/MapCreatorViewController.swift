@@ -47,6 +47,17 @@ class MapCreatorViewController: UIViewController {
         }
     }
     
+    @IBAction func padAction(_ sender: Any?) {
+        let padViewController = PadContainerViewController.make()
+        let padMidiOutput = PadMidiOutput()
+        let previousMidiOutput = waveMap.midiOutput
+        padViewController.setup(padMidiOutput: padMidiOutput) { [weak self] in
+            self?.waveMap.midiOutput = previousMidiOutput
+        }
+        waveMap.midiOutput = padMidiOutput
+        showController(padViewController)
+    }
+    
     @IBAction func newAction(_ sender: Any?) {
         waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
         waveMapSource = .orphan

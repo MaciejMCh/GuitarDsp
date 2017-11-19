@@ -25,8 +25,9 @@ public class PadMidiOutput: MidiOutput {
     private var detectedEvents: [MidiEvent] = []
     
     public func onNoteAtIndex(_ noteIndex: Int) {
-        let note = try! Note(index: noteIndex)
-        detectedEvents = [.frequency(note.frequency), .on]
+        if let note = try? Note(index: noteIndex) {
+            detectedEvents = [.frequency(note.frequency), .on]
+        }
     }
     
     public func off() {

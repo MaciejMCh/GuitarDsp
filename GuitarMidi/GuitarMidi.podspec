@@ -16,5 +16,8 @@ Pod::Spec.new do |spec|
   spec.dependency 'MIDIKit'
   spec.dependency 'NodesMap'
   spec.dependency 'JSONCodable'
+  spec.osx.dependency 'FirebaseCommunity/Database'
+  spec.osx.dependency 'FirebaseCommunity/Storage'
+  spec.ios.dependency 'Firebase'
   spec.requires_arc = true
 end

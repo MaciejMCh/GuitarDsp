@@ -13,6 +13,8 @@ def pods
   pod 'NodesMap', :path => '../NodesMap'
   pod 'Beethoven', :git => 'https://github.com/MaciejMCh/Beethoven.git', :branch => 'osx'
   pod 'MIDIKit', :git => 'https://github.com/MaciejMCh/MIDIKit.git'
+  pod 'FirebaseCommunity/Database'
+  pod 'FirebaseCommunity/Storage'
 end
 
 target 'Bow' do

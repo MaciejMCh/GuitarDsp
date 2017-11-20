@@ -300,6 +300,9 @@
 				"${BUILT_PRODUCTS_DIR}/Beethoven/Beethoven.framework",
 				"${BUILT_PRODUCTS_DIR}/CubicBezier/CubicBezier.framework",
 				"${BUILT_PRODUCTS_DIR}/EZAudio/EZAudio.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCommunity/FirebaseCommunity.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GuitarDsp/GuitarDsp.framework",
 				"${BUILT_PRODUCTS_DIR}/GuitarMidi/GuitarMidi.framework",
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
@@ -309,12 +312,16 @@
 				"${BUILT_PRODUCTS_DIR}/Pitchy/Pitchy.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Beethoven.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CubicBezier.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZAudio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCommunity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GuitarDsp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GuitarMidi.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
@@ -324,6 +331,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pitchy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPCircularBuffer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

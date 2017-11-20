@@ -124,23 +124,49 @@ class SingleSamplePlayer: SamplePlayer {
 
 class SampleSetPlayer: SamplePlayer {
     private let samplingSettings: SamplingSettings
-    private let audioFilesByNotes: [(Note, AudioFile)]
+    private let signalBuffersByNotes: [(Note, [Float])]
+    private let signalBufferLength: Int
     private let frequencyDomainProcessing: FrequencyDomainProcessing
-    private let sampleSetLength: Int
-    private let finePitchBufferLength: Int = 128
-    private var finePitchBuffer: [Float] = []
+    private let fftFrameSize: Int
+    private let finePitchBufferLength: Int
+    private var finePitchBuffer: [Float]
     private var frequency: Double = 0
     private var time = 0
 
     init(samplingSettings: SamplingSettings, audioFilesByNotes: [(Note, AudioFile)]) {
         self.samplingSettings = samplingSettings
-        self.audioFilesByNotes = audioFilesByNotes
-        frequencyDomainProcessing = FrequencyDomainProcessing(samplingSettings: samplingSettings, fftFrameSize: 1024, osamp: 32)
-        sampleSetLength = audioFilesByNotes.first!.1.samples.count
+        finePitchBufferLength = Int(samplingSettings.framesPerPacket)
+        
+        if finePitchBufferLength < 1024 {
+            fftFrameSize = 1024
+        } else {
+            fftFrameSize = finePitchBufferLength * 2
+        }
+        
+        frequencyDomainProcessing = FrequencyDomainProcessing(samplingSettings: samplingSettings, fftFrameSize: fftFrameSize, osamp: 32)
+        finePitchBuffer = Array.init(repeating: 0, count: finePitchBufferLength)
+        
+        var signalBuffersByNotes: [(Note, [Float])] = []
+        let longestAudioFileLength = audioFilesByNotes.map{$0.1.samples.count}.sorted().last!
+        let signalBufferLength = Int(ceil(Double(longestAudioFileLength) / Double(fftFrameSize))) * fftFrameSize
+        for audioFileByNote in audioFilesByNotes {
+            var signalBuffer = Array<Float>(repeating: 0, count: signalBufferLength)
+            for i in 0..<audioFileByNote.1.samples.count {
+                signalBuffer[i] = audioFileByNote.1.samples[i]
+            }
+            signalBuffersByNotes.append((audioFileByNote.0, signalBuffer))
+        }
+        self.signalBuffersByNotes = signalBuffersByNotes
+        
+        self.signalBufferLength = signalBufferLength
     }
     
     func setFrequency(_ frequency: Double) {
         self.frequency = frequency
+    }
+    
+    func on() {
+        time = 0
     }
     
     func nextSample() -> Double {
@@ -148,11 +174,15 @@ class SampleSetPlayer: SamplePlayer {
             time += 1
         }
         
-        if time > sampleSetLength {
+        if frequency == 0 {
             return 0
         }
         
-        let finePitchBufferTime = time % Int(samplingSettings.framesPerPacket)
+        if time >= signalBufferLength {
+            return 0
+        }
+        
+        let finePitchBufferTime = time % finePitchBufferLength
         if finePitchBufferTime == 0 {
             refreshFinePitchBuffer()
         }
@@ -160,18 +190,18 @@ class SampleSetPlayer: SamplePlayer {
     }
     
     private func refreshFinePitchBuffer() {
-        let closestAudioFile = audioFilesByNotes.sorted{abs($0.0.frequency - self.frequency) < abs($1.0.frequency - self.frequency)}.first!
-        let pitchShift = closestAudioFile.0.frequency / frequency
-        var samplesToProcess = Array(closestAudioFile.1.samples[time..<time + finePitchBufferLength])
+        let closestSignalBuffer = signalBuffersByNotes.sorted{abs($0.0.frequency - self.frequency) < abs($1.0.frequency - self.frequency)}.first!
+        let pitchShift = frequency / closestSignalBuffer.0.frequency
+        var samplesToProcess = Array(closestSignalBuffer.1[time..<time + finePitchBufferLength])
         frequencyDomainProcessing.pitchShift(&samplesToProcess, outdata: &finePitchBuffer, shift: Float(pitchShift))
     }
     
     var duration: Double {
-        return Double(audioFilesByNotes.first!.1.duration)
+        return 100
     }
     
     var samplesForView: [Float] {
-        return audioFilesByNotes.first!.1.samples
+        return signalBuffersByNotes.first!.1
     }
 }
 

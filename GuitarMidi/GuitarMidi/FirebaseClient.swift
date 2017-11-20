@@ -66,7 +66,7 @@ class FirebaseClient {
             if isDirectory.boolValue {
                 filePaths.append(contentsOf: files(path: directoryElementPath))
             } else {
-                if let fileExtension = directoryElement.components(separatedBy: ".").last, StorageConstants.audioFileExtensions.contains(fileExtension) {
+                if let fileExtension = directoryElement.components(separatedBy: ".").last, StorageConstants.storableFileExtensions.contains(fileExtension) {
                     filePaths.append(directoryElementPath)
                 }
             }

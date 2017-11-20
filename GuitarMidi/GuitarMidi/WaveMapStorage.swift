@@ -319,8 +319,8 @@ public struct WaveNodesFactory {
 }
 
 extension WaveMap {
-    static func fromPath(_ path: String) -> WaveMap {
-        let waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
+    static func fromPath(_ path: String, midiOutput: MidiOutput?) -> WaveMap {
+        let waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: midiOutput)
         let configuration = NSKeyedUnarchiver.unarchiveObject(withFile: StorageConstants.waveMapsRootDirectory + "/" + path) as! [String: Any]
         WaveMapStorage.configureWaveMap(waveMap, configuration: configuration)
         return waveMap

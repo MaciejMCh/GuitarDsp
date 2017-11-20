@@ -22,10 +22,10 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
     public var waveNodes: [WaveNode] = []
     public let output = SignalInput()
     public let outputNode: Node
-    var midiOutput: MidiOutput
+    var midiOutput: MidiOutput?
     private var time = 0
     
-    public init(samplingSettings: SamplingSettings, midiOutput: MidiOutput) {
+    public init(samplingSettings: SamplingSettings, midiOutput: MidiOutput?) {
         self.samplingSettings = samplingSettings
         self.midiOutput = midiOutput
         outputNode = Node(name: "output", interfaces: [Interface(name: "in", model: output)], model: "none")
@@ -39,11 +39,13 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
             buffer[i] = inputSample.amp.advanced(by: i).pointee
         }
         
-        for event in midiOutput.detectEvents(buffer: buffer) {
-            switch event {
-            case .on: on()
-            case .off: off()
-            case .frequency(let frequency): setFrequency(frequency)
+        if let midiOutput = midiOutput {
+            for event in midiOutput.detectEvents(buffer: buffer) {
+                switch event {
+                case .on: on()
+                case .off: off()
+                case .frequency(let frequency): setFrequency(frequency)
+                }
             }
         }
         

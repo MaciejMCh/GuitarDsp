@@ -142,22 +142,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GuitarMidi/WaveMap.swift"
-            timestampString = "532827047.0656"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
-            landmarkName = "wave(waveMap:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "GuitarMidi/WaveMapStorage.swift"
             timestampString = "532827047.065734"
             startingColumnNumber = "9223372036854775807"
@@ -190,13 +174,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GuitarMidi/WaveMap.swift"
-            timestampString = "532827047.065947"
+            filePath = "GuitarMidi/FileBrowser.swift"
+            timestampString = "532892246.026232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "318"
-            endingLineNumber = "318"
-            landmarkName = "wave(waveMap:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "treeElementAtPath(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../GuitarDsp/GuitarDsp/FrequencyDomainProcessing.m"
+            timestampString = "532901032.941259"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-processWithIndata:outdata:processing:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

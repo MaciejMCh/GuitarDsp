@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oXf-AO-XrA">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Songs List View Controller-->
+        <scene sceneID="bS7-9r-r6d">
+            <objects>
+                <viewController id="oXf-AO-XrA" customClass="SongsListViewController" customModule="WaveMapCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7J0-vn-ZRR">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KDk-WF-3G4">
+                                <rect key="frame" x="0.0" y="0.0" width="333.5" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i4L-xg-1q8">
+                                    <rect key="frame" x="0.0" y="0.0" width="333.5" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="new"/>
+                                    <connections>
+                                        <action selector="newSong:" destination="oXf-AO-XrA" eventType="touchUpInside" id="c88-hJ-Vaf"/>
+                                    </connections>
+                                </button>
+                                <connections>
+                                    <outlet property="dataSource" destination="oXf-AO-XrA" id="f1J-GJ-G3p"/>
+                                    <outlet property="delegate" destination="oXf-AO-XrA" id="bKP-Xa-y0c"/>
+                                </connections>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XIc-vB-bl0">
+                                <rect key="frame" x="333.5" y="0.0" width="333.5" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nMK-9l-8ZM">
+                                    <rect key="frame" x="0.0" y="0.0" width="333.5" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="new"/>
+                                    <connections>
+                                        <action selector="newWaveMap:" destination="oXf-AO-XrA" eventType="touchUpInside" id="Eyq-BV-Odh"/>
+                                    </connections>
+                                </button>
+                                <connections>
+                                    <outlet property="dataSource" destination="oXf-AO-XrA" id="do6-nf-KMq"/>
+                                    <outlet property="delegate" destination="oXf-AO-XrA" id="KFW-tM-xDn"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xkQ-Li-ajY" firstAttribute="bottom" secondItem="KDk-WF-3G4" secondAttribute="bottom" id="6nG-LD-Oo1"/>
+                            <constraint firstItem="KDk-WF-3G4" firstAttribute="top" secondItem="xkQ-Li-ajY" secondAttribute="top" id="AnT-9r-BgB"/>
+                            <constraint firstItem="XIc-vB-bl0" firstAttribute="width" secondItem="KDk-WF-3G4" secondAttribute="width" id="H3M-Q5-6ue"/>
+                            <constraint firstItem="KDk-WF-3G4" firstAttribute="leading" secondItem="xkQ-Li-ajY" secondAttribute="leading" id="XcM-A5-K8C"/>
+                            <constraint firstItem="XIc-vB-bl0" firstAttribute="leading" secondItem="KDk-WF-3G4" secondAttribute="trailing" id="mTF-6V-4Yn"/>
+                            <constraint firstItem="XIc-vB-bl0" firstAttribute="top" secondItem="xkQ-Li-ajY" secondAttribute="top" id="rKj-CK-jXF"/>
+                            <constraint firstItem="xkQ-Li-ajY" firstAttribute="trailing" secondItem="XIc-vB-bl0" secondAttribute="trailing" id="zv7-nZ-cBg"/>
+                            <constraint firstAttribute="bottom" secondItem="XIc-vB-bl0" secondAttribute="bottom" id="zys-DZ-ZXX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xkQ-Li-ajY"/>
+                    </view>
+                    <connections>
+                        <outlet property="setupsTableView" destination="XIc-vB-bl0" id="5hG-Gc-umQ"/>
+                        <outlet property="songsTableView" destination="KDk-WF-3G4" id="DO2-Li-lB5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YbM-Vr-OMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-182" y="116"/>
+        </scene>
+    </scenes>
+</document>

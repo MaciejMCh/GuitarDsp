@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k9t-JN-yGc">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wave Maps List View Controller-->
+        <scene sceneID="1Br-Bu-d3E">
+            <objects>
+                <viewController id="k9t-JN-yGc" customClass="WaveMapsListViewController" customModule="WaveMapCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lOI-87-YUg">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gHq-2T-mup">
+                                <rect key="frame" x="150" y="0.0" width="300" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="4bL-eN-Zpu"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="k9t-JN-yGc" id="ctD-Xm-0qh"/>
+                                    <outlet property="delegate" destination="k9t-JN-yGc" id="37l-IF-0WS"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNj-lq-LLt">
+                                <rect key="frame" x="5" y="5" width="37" height="30"/>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="k9t-JN-yGc" eventType="touchUpInside" id="pmN-Lm-ySV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tsx-M6-9Wu">
+                                <rect key="frame" x="82" y="5" width="30" height="30"/>
+                                <state key="normal" title="new"/>
+                                <connections>
+                                    <action selector="newAction:" destination="k9t-JN-yGc" eventType="touchUpInside" id="jQ8-Ue-fdY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UNj-lq-LLt" firstAttribute="leading" secondItem="CO8-xN-ypX" secondAttribute="leading" constant="5" id="3yN-Li-AFk"/>
+                            <constraint firstItem="CO8-xN-ypX" firstAttribute="bottom" secondItem="gHq-2T-mup" secondAttribute="bottom" id="Bgq-Rp-RS5"/>
+                            <constraint firstItem="gHq-2T-mup" firstAttribute="top" secondItem="CO8-xN-ypX" secondAttribute="top" id="D0h-YB-uNh"/>
+                            <constraint firstItem="UNj-lq-LLt" firstAttribute="top" secondItem="CO8-xN-ypX" secondAttribute="top" constant="5" id="NSI-ZG-pBv"/>
+                            <constraint firstItem="Tsx-M6-9Wu" firstAttribute="leading" secondItem="UNj-lq-LLt" secondAttribute="trailing" constant="40" id="XCc-0q-Kai"/>
+                            <constraint firstItem="gHq-2T-mup" firstAttribute="leading" secondItem="CO8-xN-ypX" secondAttribute="leading" constant="150" id="ddA-h9-yoA"/>
+                            <constraint firstItem="Tsx-M6-9Wu" firstAttribute="baseline" secondItem="UNj-lq-LLt" secondAttribute="baseline" id="dgN-qf-xcx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CO8-xN-ypX"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="gHq-2T-mup" id="bBk-od-NWn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TgQ-0x-XM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55" y="181"/>
+        </scene>
+    </scenes>
+</document>

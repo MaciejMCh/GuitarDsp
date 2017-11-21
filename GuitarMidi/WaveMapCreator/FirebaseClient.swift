@@ -10,6 +10,15 @@ import Foundation
 import FirebaseDatabase
 import FirebaseStorage
 
+struct WaveMapReference {
+    let name: String
+    let configuration: [String: Any]
+    
+    static func new(name: String) -> WaveMapReference {
+        return WaveMapReference(name: name, configuration: WaveMap.zeroConfiguration())
+    }
+}
+
 class FirebaseClient {
     init() {
         setupFileSystem()
@@ -50,12 +59,12 @@ class FirebaseClient {
     }
     
     func syncWaveMapConfigurations() {
-        waveMapsIndex { [weak self] waveMapConfigurations in
+        waveMapsIndex { [weak self] waveMapReferences in
             guard let wSelf = self else {return}
             try! FileManager.default.removeItem(atPath: StorageConstants.waveMapsRootDirectory)
             try! FileManager.default.createDirectory(atPath: StorageConstants.waveMapsRootDirectory, withIntermediateDirectories: true, attributes: nil)
-            for waveMapConfiguration in waveMapConfigurations {
-                NSKeyedArchiver.archiveRootObject(waveMapConfiguration.1, toFile: wSelf.filePathForWaveMap(name: waveMapConfiguration.0))
+            for waveMapReference in waveMapReferences {
+                NSKeyedArchiver.archiveRootObject(waveMapReference.configuration, toFile: wSelf.filePathForWaveMap(name: waveMapReference.name))
             }
         }
     }
@@ -71,15 +80,15 @@ class FirebaseClient {
         }
     }
     
-    private func waveMapsIndex(completion: @escaping ([(String, JsonObject)]) -> Void) {
+    private func waveMapsIndex(completion: @escaping ([WaveMapReference]) -> Void) {
         Database.database().reference().child("wave_maps").observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
-            var configurations: [(String, JsonObject)] = []
+            var waveMapsReferences: [WaveMapReference] = []
             for waveMapSnapshot in snapshot.children.allObjects as! [DataSnapshot] {
                 let configuration = waveMapSnapshot.value as! [String: Any]
                 let name = waveMapSnapshot.key
-                configurations.append((name, configuration))
+                waveMapsReferences.append(WaveMapReference(name: name, configuration: configuration))
             }
-            completion(configurations)
+            completion(waveMapsReferences)
         }
     }
     

@@ -368,3 +368,9 @@ extension Map {
         return result
     }
 }
+
+extension WaveMap {
+    static func zeroConfiguration() -> [String: Any] {
+        return WaveMapStorage.waveMapConfiguration(WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: nil))
+    }
+}

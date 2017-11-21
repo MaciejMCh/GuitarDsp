@@ -10,7 +10,9 @@ import Foundation
 
 typealias FunctionVariableSetter = (FunctionVariable) -> Void
 
-public protocol FunctionVariable: Playing, WaveNode {}
+public protocol FunctionVariable: Playing, WaveNode {
+    func next(time: Int) -> Double
+}
 
 public class Constant: FunctionVariable, WaveNode {
     public let id: String

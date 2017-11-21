@@ -62,10 +62,28 @@ public struct WaveMapStorage {
         case "overdrive": return waveNodesFactory.makeOverdrive(id: json["id"] as! String)
         case "lpf": return waveNodesFactory.makeLpf(id: json["id"] as! String)
         case "saturation": return waveNodesFactory.makeSaturation(id: json["id"] as! String)
+        case "reverb": return reverbFromJson(json)
+        case "phaser": return phaserFromJson(json)
         default:
             debugPrint(json)
             return "" as! WaveNode
         }
+    }
+    
+    private static func reverbFromJson(_ json: JsonObject) -> ReverbWaveEffect {
+        let reverb = waveNodesFactory.makeReverb(id: json["id"] as! String)
+        reverb.freeverb.setdamp(json["damp"] as! Float)
+        reverb.freeverb.setroomsize(json["room_size"] as! Float)
+        return reverb
+    }
+    
+    private static func phaserFromJson(_ json: JsonObject) -> PhaserWaveEffect {
+        let phaser = waveNodesFactory.makePhaser(id: json["id"] as! String)
+        phaser.phaserEffect.updateRangeFmin(json["f_min"] as! Float, fMax: json["f_max"] as! Float)
+        phaser.phaserEffect.updateRate(json["rate"] as! Float)
+        phaser.phaserEffect.updateDepth(json["depth"] as! Float)
+        phaser.phaserEffect.updateFeedback(json["feedback"] as! Float)
+        return phaser
     }
     
     private static func cubicBezierFromJson(_ json: JsonObject) -> CubicBezier {
@@ -222,7 +240,25 @@ public struct WaveMapStorage {
                 "id": saturation.id
             ]
         }
-        
+        if let reverb = waveNode as? ReverbWaveEffect {
+            return [
+                "type": "reverb",
+                "id": reverb.id,
+                "room_size": reverb.freeverb.getroomsize(),
+                "damp": reverb.freeverb.getdamp()
+            ]
+        }
+        if let phaser = waveNode as? PhaserWaveEffect {
+            return [
+                "type": "phaser",
+                "id": phaser.id,
+                "depth": phaser.phaserEffect.depth,
+                "feedback": phaser.phaserEffect.feedback,
+                "rate": phaser.phaserEffect.rate,
+                "f_max": phaser.phaserEffect.rangeFmax,
+                "f_min": phaser.phaserEffect.rangeFmin
+            ]
+        }
         return "" as! JsonObject
     }
     
@@ -315,6 +351,14 @@ public struct WaveNodesFactory {
     
     func makeSaturation(id: String? = nil) -> SaturationWaveEffect {
         return SaturationWaveEffect(id: id)
+    }
+    
+    func makeReverb(id: String? = nil) -> ReverbWaveEffect {
+        return ReverbWaveEffect(id: id)
+    }
+    
+    func makePhaser(id: String? = nil) -> PhaserWaveEffect {
+        return PhaserWaveEffect(samplingSettings: samplingSettings, id: id)
     }
 }
 

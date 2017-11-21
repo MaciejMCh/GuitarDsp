@@ -123,8 +123,9 @@ public final class Map {
         switch state {
         case .willAdd(let node):
             addNode(node)
-            node.sprite.position = location
-            state = .dragging(origin: location, node: node)
+            let gridLocation = CGPoint(x: allignToGrid(location.x), y: allignToGrid(location.y))
+            node.sprite.position = gridLocation
+            state = .dragging(origin: gridLocation, node: node)
         case .selected(let nodes):
             for node in nodes {
                 if node.sprite.frame.contains(location) {
@@ -144,7 +145,7 @@ public final class Map {
             for node in nodes {
                 let nodeRect = node.frameForName().moved(by: node.sprite.position)
                 if nodeRect.contains(location) {
-                    state = .dragging(origin: location, node: node)
+                    state = .dragging(origin: CGPoint(x: allignToGrid(location.x), y: allignToGrid(location.y)), node: node)
                 }
             }
             
@@ -162,13 +163,16 @@ public final class Map {
         }
     }
     
-    let gridSize: CGFloat = 20
+    private func allignToGrid(_ float: CGFloat) -> CGFloat {
+        let gridSize: CGFloat = 20
+        return CGFloat(Int((float) / gridSize)) * gridSize
+    }
     
     private func drag(location: CGPoint) {
         switch state {
         case .draggingSelection(let origin, let nodes):
-            let dragDiffX = CGFloat(Int((location.x - origin.x) / gridSize)) * gridSize
-            let dragDiffY = CGFloat(Int((location.y - origin.y) / gridSize)) * gridSize
+            let dragDiffX = allignToGrid(location.x - origin.x)
+            let dragDiffY = allignToGrid(location.y - origin.y)
             
             guard abs(dragDiffX) + abs(dragDiffY) > 0 else {return}
             
@@ -193,8 +197,8 @@ public final class Map {
             selectionNode.xScale = selection.rect.size.width / 200
             selectionNode.yScale = selection.rect.size.height / 200
         case .dragging(let origin, let node):
-            let dragDiffX = CGFloat(Int((location.x - origin.x) / gridSize)) * gridSize
-            let dragDiffY = CGFloat(Int((location.y - origin.y) / gridSize)) * gridSize
+            let dragDiffX = allignToGrid(location.x - origin.x)
+            let dragDiffY = allignToGrid(location.y - origin.y)
             
             guard abs(dragDiffX) + abs(dragDiffY) > 0 else {return}
             

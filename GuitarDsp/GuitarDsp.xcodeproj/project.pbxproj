@@ -13,6 +13,8 @@
 		C2191B961EA23A8D00DF9451 /* PhaserEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C2191B941EA23A8D00DF9451 /* PhaserEffect.m */; };
 		C22F890E1E9FF1F8004D0BCB /* VibeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F890C1E9FF1F8004D0BCB /* VibeEffect.m */; };
 		C22F890F1E9FF1F8004D0BCB /* VibeEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C22F890D1E9FF1F8004D0BCB /* VibeEffect.h */; };
+		C282AC5B1FC4930F0050F127 /* PhaserEffect+Effect.h in Headers */ = {isa = PBXBuildFile; fileRef = C282AC5A1FC4930F0050F127 /* PhaserEffect+Effect.h */; };
+		C282AC5D1FC494620050F127 /* PhaserEffect+Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = C282AC5C1FC494620050F127 /* PhaserEffect+Effect.m */; };
 		C28B98B81E9BE70700309FA2 /* BitCrusherEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C28B98B61E9BE70700309FA2 /* BitCrusherEffect.h */; };
 		C28B98B91E9BE70700309FA2 /* BitCrusherEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C28B98B71E9BE70700309FA2 /* BitCrusherEffect.m */; };
 		C28B98BD1E9C014800309FA2 /* CompressorEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C28B98BB1E9C014800309FA2 /* CompressorEffect.h */; };
@@ -77,6 +79,8 @@
 		C2191B941EA23A8D00DF9451 /* PhaserEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhaserEffect.m; sourceTree = "<group>"; };
 		C22F890C1E9FF1F8004D0BCB /* VibeEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibeEffect.m; sourceTree = "<group>"; };
 		C22F890D1E9FF1F8004D0BCB /* VibeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibeEffect.h; sourceTree = "<group>"; };
+		C282AC5A1FC4930F0050F127 /* PhaserEffect+Effect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhaserEffect+Effect.h"; sourceTree = "<group>"; };
+		C282AC5C1FC494620050F127 /* PhaserEffect+Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PhaserEffect+Effect.m"; sourceTree = "<group>"; };
 		C28B98B61E9BE70700309FA2 /* BitCrusherEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitCrusherEffect.h; sourceTree = "<group>"; };
 		C28B98B71E9BE70700309FA2 /* BitCrusherEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitCrusherEffect.m; sourceTree = "<group>"; };
 		C28B98BA1E9BEEE700309FA2 /* mathUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mathUtilities.h; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				C2191B941EA23A8D00DF9451 /* PhaserEffect.m */,
 				C2A4D8931ECCD59D00967874 /* DistortionEffect.h */,
 				C2A4D8941ECCD59D00967874 /* DistortionEffect.m */,
+				C282AC5A1FC4930F0050F127 /* PhaserEffect+Effect.h */,
+				C282AC5C1FC494620050F127 /* PhaserEffect+Effect.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 				C2DF19F71E8AA65500106AE8 /* Sample.h in Headers */,
 				C2DF19E31E8AA65500106AE8 /* Effect.h in Headers */,
 				C2DF19F51E8AA65500106AE8 /* Freeverb.h in Headers */,
+				C282AC5B1FC4930F0050F127 /* PhaserEffect+Effect.h in Headers */,
 				C2DF19E01E8AA65500106AE8 /* DelayEffect.h in Headers */,
 				C28B98BD1E9C014800309FA2 /* CompressorEffect.h in Headers */,
 			);
@@ -551,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C282AC5D1FC494620050F127 /* PhaserEffect+Effect.m in Sources */,
 				C2DF19E11E8AA65500106AE8 /* DelayEffect.m in Sources */,
 				C2EFDE5D1E8DDA750063F2D7 /* AmpEffect.m in Sources */,
 				C2DF19E81E8AA65500106AE8 /* LooperEffect.m in Sources */,

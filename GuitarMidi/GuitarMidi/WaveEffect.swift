@@ -30,9 +30,7 @@ class FlipFlop {
     }
 }
 
-public protocol WaveNode: MidiPlayer, Indentificable {
-    func next(time: Int) -> Double
-}
+public protocol WaveNode: MidiPlayer, Indentificable {}
 
 public protocol Playing {
     func on()

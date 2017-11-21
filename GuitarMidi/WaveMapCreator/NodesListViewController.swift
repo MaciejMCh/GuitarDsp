@@ -27,6 +27,7 @@ class NodesListViewController: UITableViewController {
             LowpassFilterEffect(),
             SaturationWaveEffect(),
             ReverbWaveEffect(),
+            PhaserWaveEffect(samplingSettings: samplingSettings),
         ]
     }()
     
@@ -64,6 +65,7 @@ extension WaveNode {
         case is LowpassFilterEffect: return "lpf"
         case is SaturationWaveEffect: return "saturation"
         case is ReverbWaveEffect: return "reverb"
+        case is PhaserWaveEffect: return "phaser"
         default:
             assert(false)
             return "xd"
@@ -84,6 +86,7 @@ extension WaveNode {
         case is LowpassFilterEffect: return LowpassFilterEffect()
         case is SaturationWaveEffect: return SaturationWaveEffect()
         case is ReverbWaveEffect: return ReverbWaveEffect()
+        case is PhaserWaveEffect: return PhaserWaveEffect(samplingSettings: samplingSettings)
         default:
             return "xd" as! WaveNode
         }

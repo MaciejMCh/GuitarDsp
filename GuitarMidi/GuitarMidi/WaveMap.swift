@@ -162,6 +162,9 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
         if let reverb = waveNode as? ReverbWaveEffect {
             return WaveMap.nodeFromReverb(reverb)
         }
+        if let phaser = waveNode as? PhaserWaveEffect {
+            return WaveMap.nodeFromPhaser(phaser)
+        }
         
         return "" as! Node
     }
@@ -252,6 +255,13 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
                         Interface(name: "in", model: reverb.input),
                         Interface(name: "out", model: reverb.output)],
                     model: reverb)
+    }
+    fileprivate static func nodeFromPhaser(_ phaser: PhaserWaveEffect) -> Node {
+        return Node(name: "phaser",
+                    interfaces: [
+                        Interface(name: "in", model: phaser.input),
+                        Interface(name: "out", model: phaser.output)],
+                    model: phaser)
     }
 }
 

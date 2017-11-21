@@ -142,6 +142,11 @@ class MapCreatorViewController: UIViewController {
                 reverbController.reverbEffect = reverb
                 self?.showController(reverbController)
             }
+            if let phaser = node.model as? PhaserWaveEffect {
+                let phaserController = PhaserViewController.make()
+                phaserController.phaserWaveEffect = phaser
+                self?.showController(phaserController)
+            }
         }
         mapChange?(waveMap)
     }

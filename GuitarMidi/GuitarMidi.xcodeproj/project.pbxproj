@@ -56,6 +56,10 @@
 		C2791FD71FC0BB910015CC85 /* ValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2791FD61FC0BB910015CC85 /* ValuesView.swift */; };
 		C2791FD91FC0BE8A0015CC85 /* OutputMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2791FD81FC0BE8A0015CC85 /* OutputMonitorViewController.swift */; };
 		C2791FDB1FC0C3260015CC85 /* Monitor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2791FDA1FC0C3260015CC85 /* Monitor.storyboard */; };
+		C282AC5F1FC496820050F127 /* PhaserWaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282AC5E1FC496820050F127 /* PhaserWaveEffect.swift */; };
+		C282AC601FC496820050F127 /* PhaserWaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282AC5E1FC496820050F127 /* PhaserWaveEffect.swift */; };
+		C282AC621FC4A4DE0050F127 /* PhaserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282AC611FC4A4DE0050F127 /* PhaserViewController.swift */; };
+		C282AC641FC4A8FA0050F127 /* Phaser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C282AC631FC4A8FA0050F127 /* Phaser.storyboard */; };
 		C287159E1FA7A19F0098B257 /* VariableLabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287159D1FA7A19F0098B257 /* VariableLabelController.swift */; };
 		C28B24BA1FBF355F00E3015E /* WaveShaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28B24B91FBF355F00E3015E /* WaveShaperViewController.swift */; };
 		C28B24BC1FBF36B600E3015E /* WaveShaper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28B24BB1FBF36B600E3015E /* WaveShaper.storyboard */; };
@@ -231,6 +235,9 @@
 		C2791FD61FC0BB910015CC85 /* ValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesView.swift; sourceTree = "<group>"; };
 		C2791FD81FC0BE8A0015CC85 /* OutputMonitorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputMonitorViewController.swift; sourceTree = "<group>"; };
 		C2791FDA1FC0C3260015CC85 /* Monitor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monitor.storyboard; sourceTree = "<group>"; };
+		C282AC5E1FC496820050F127 /* PhaserWaveEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaserWaveEffect.swift; sourceTree = "<group>"; };
+		C282AC611FC4A4DE0050F127 /* PhaserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaserViewController.swift; sourceTree = "<group>"; };
+		C282AC631FC4A8FA0050F127 /* Phaser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Phaser.storyboard; sourceTree = "<group>"; };
 		C287159D1FA7A19F0098B257 /* VariableLabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableLabelController.swift; sourceTree = "<group>"; };
 		C28B24B91FBF355F00E3015E /* WaveShaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShaperViewController.swift; sourceTree = "<group>"; };
 		C28B24BB1FBF36B600E3015E /* WaveShaper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveShaper.storyboard; sourceTree = "<group>"; };
@@ -326,6 +333,7 @@
 		C29E51451F9A2E5D0039651C /* WaveMapCreator */ = {
 			isa = PBXGroup;
 			children = (
+				C282AC611FC4A4DE0050F127 /* PhaserViewController.swift */,
 				C20CAFBF1FBA6EE10015D88C /* 5s.wav */,
 				C210352C1FBA38FD0073F46C /* GoogleService-Info.plist */,
 				C2F0A61F1FBA276200BC8AA6 /* 440.wav */,
@@ -373,6 +381,7 @@
 				C22751EF1FC1B012009DE62F /* PadContainer.storyboard */,
 				C24844EA1FC48038008FD1AD /* ReverbViewController.swift */,
 				C24844EC1FC48452008FD1AD /* Reverb.storyboard */,
+				C282AC631FC4A8FA0050F127 /* Phaser.storyboard */,
 			);
 			path = WaveMapCreator;
 			sourceTree = "<group>";
@@ -464,6 +473,7 @@
 				C2B26BE41FBE0F2C002A18AF /* UserFeedback.swift */,
 				C26852911FC23846009AE28C /* SaturationWaveEffect.swift */,
 				C2938AD21FC45DE600F2A6DF /* ReverbWaveEffect.swift */,
+				C282AC5E1FC496820050F127 /* PhaserWaveEffect.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -579,6 +589,7 @@
 				C23F52ED1FA78F4A00127604 /* Oscilator.storyboard in Resources */,
 				C231401E1F9C96B700EA6027 /* WaveMapCreator.storyboard in Resources */,
 				C2FE27271FBB8909001CED37 /* Tree.storyboard in Resources */,
+				C282AC641FC4A8FA0050F127 /* Phaser.storyboard in Resources */,
 				C210352D1FBA38FE0073F46C /* GoogleService-Info.plist in Resources */,
 				C23F52F31FA797C000127604 /* Constant.storyboard in Resources */,
 				C23AEBE51FBCCE990022BD97 /* WaveMapPicker.storyboard in Resources */,
@@ -786,9 +797,11 @@
 				C2A8CCB71FA8B874002EE832 /* EnvelopeViewController.swift in Sources */,
 				C2744F2D1FB0F4CF0017BD86 /* GraphView.swift in Sources */,
 				C26C1FD31FBBBE6E00621EEA /* WaveMapStorage.swift in Sources */,
+				C282AC601FC496820050F127 /* PhaserWaveEffect.swift in Sources */,
 				C20035ED1F9E32AB00C21EF7 /* MidiOutputEffect.swift in Sources */,
 				C2CF79D11F9E17440087C6A1 /* WaveMap.swift in Sources */,
 				C24170701FA12184000E293F /* PadViewController.swift in Sources */,
+				C282AC621FC4A4DE0050F127 /* PhaserViewController.swift in Sources */,
 				C287159E1FA7A19F0098B257 /* VariableLabelController.swift in Sources */,
 				C2B26BE61FBE0F88002A18AF /* UserFeedback.swift in Sources */,
 				C20035F61F9E344A00C21EF7 /* SamplingSettingsUtils.swift in Sources */,
@@ -872,6 +885,7 @@
 				C2C19AAE1F7AFE5300FDE938 /* WaveEffect.swift in Sources */,
 				C2C19AA61F7AFE4400FDE938 /* FileBrowser.swift in Sources */,
 				C2C19A8A1F7AFE4400FDE938 /* MidiOutputEffect.swift in Sources */,
+				C282AC5F1FC496820050F127 /* PhaserWaveEffect.swift in Sources */,
 				C29547A01F7D9FC300D8EEF0 /* WaveDistortion.swift in Sources */,
 				C2C19AAB1F7AFE5300FDE938 /* FunctionVariable.swift in Sources */,
 				C2C19AAF1F7AFE5300FDE938 /* Oscilator.swift in Sources */,

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pvo-iP-smS">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Pvo-iP-smS">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -31,15 +31,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pad Inactive" translatesAutoresizingMaskIntoConstraints="NO" id="DOi-Ah-17V">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="5" y="5" width="40" height="40"/>
                                         </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="DOi-Ah-17V" firstAttribute="leading" secondItem="fJH-Ji-yIA" secondAttribute="leading" id="9QL-Bz-yn3"/>
-                                    <constraint firstAttribute="bottom" secondItem="DOi-Ah-17V" secondAttribute="bottom" id="AwJ-Zt-06S"/>
-                                    <constraint firstItem="DOi-Ah-17V" firstAttribute="top" secondItem="fJH-Ji-yIA" secondAttribute="top" id="bOt-gG-Pbc"/>
-                                    <constraint firstAttribute="trailing" secondItem="DOi-Ah-17V" secondAttribute="trailing" id="ciA-u7-Oks"/>
+                                    <constraint firstItem="DOi-Ah-17V" firstAttribute="leading" secondItem="fJH-Ji-yIA" secondAttribute="leading" constant="5" id="9QL-Bz-yn3"/>
+                                    <constraint firstAttribute="bottom" secondItem="DOi-Ah-17V" secondAttribute="bottom" constant="5" id="AwJ-Zt-06S"/>
+                                    <constraint firstItem="DOi-Ah-17V" firstAttribute="top" secondItem="fJH-Ji-yIA" secondAttribute="top" constant="5" id="bOt-gG-Pbc"/>
+                                    <constraint firstAttribute="trailing" secondItem="DOi-Ah-17V" secondAttribute="trailing" constant="5" id="ciA-u7-Oks"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="padImageView" destination="DOi-Ah-17V" id="Z5C-jD-FuX"/>

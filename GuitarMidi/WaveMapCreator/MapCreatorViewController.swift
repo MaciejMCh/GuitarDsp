@@ -42,9 +42,6 @@ class MapCreatorViewController: UIViewController {
                 self.waveMap.startAddingWaveNode($0)
             }
         }
-        if let padController = segue.destination as? PadViewController {
-            padController.padMidiOutput = padMidiOutput
-        }
     }
     
     @IBAction func selectAction(_ sender: Any?) {

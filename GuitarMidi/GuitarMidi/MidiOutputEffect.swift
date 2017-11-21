@@ -30,6 +30,12 @@ public class PadMidiOutput: MidiOutput {
         }
     }
     
+    public func slideToIndex(_ noteIndex: Int) {
+        if let note = try? Note(index: noteIndex) {
+            detectedEvents = [.frequency(note.frequency)]
+        }
+    }
+    
     public func off() {
         detectedEvents = [.off]
     }

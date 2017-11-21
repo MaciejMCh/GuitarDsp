@@ -23,6 +23,10 @@
                                     <segue destination="UT3-DJ-8fz" kind="embed" id="OeZ-qh-DYI"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="514-Q3-wet" customClass="TouchView" customModule="WaveMapCreator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxQ-O1-h2C">
                                 <rect key="frame" x="5" y="5" width="37" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,17 +42,24 @@
                         <constraints>
                             <constraint firstItem="BQv-Av-AhQ" firstAttribute="leading" secondItem="41x-DT-ekx" secondAttribute="leading" id="540-70-G0Z"/>
                             <constraint firstItem="NxQ-O1-h2C" firstAttribute="leading" secondItem="41x-DT-ekx" secondAttribute="leading" constant="5" id="5CH-Zd-htC"/>
+                            <constraint firstItem="514-Q3-wet" firstAttribute="top" secondItem="NiV-xx-e4L" secondAttribute="top" id="AwZ-G3-4tT"/>
+                            <constraint firstAttribute="bottom" secondItem="514-Q3-wet" secondAttribute="bottom" id="Gy0-8E-2ad"/>
+                            <constraint firstItem="514-Q3-wet" firstAttribute="leading" secondItem="NiV-xx-e4L" secondAttribute="leading" id="Quf-yw-ja4"/>
                             <constraint firstItem="41x-DT-ekx" firstAttribute="bottom" secondItem="BQv-Av-AhQ" secondAttribute="bottom" id="cPD-rG-g8J"/>
                             <constraint firstItem="41x-DT-ekx" firstAttribute="trailing" secondItem="BQv-Av-AhQ" secondAttribute="trailing" id="ezt-Wb-OQy"/>
                             <constraint firstItem="BQv-Av-AhQ" firstAttribute="top" secondItem="41x-DT-ekx" secondAttribute="top" id="g7U-6d-3jc"/>
                             <constraint firstItem="NxQ-O1-h2C" firstAttribute="top" secondItem="41x-DT-ekx" secondAttribute="top" constant="5" id="l9e-Rv-H9U"/>
+                            <constraint firstAttribute="trailing" secondItem="514-Q3-wet" secondAttribute="trailing" id="vlH-YM-Cc5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="41x-DT-ekx"/>
                     </view>
+                    <connections>
+                        <outlet property="touchesView" destination="514-Q3-wet" id="1F9-CK-joE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ch-8B-vIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="161"/>
+            <point key="canvasLocation" x="174.96251874062969" y="160.80000000000001"/>
         </scene>
         <!--Pad-->
         <scene sceneID="0SJ-bN-7qZ">

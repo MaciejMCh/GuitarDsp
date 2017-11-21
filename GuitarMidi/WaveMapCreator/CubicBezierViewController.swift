@@ -13,6 +13,18 @@ extension CGPoint {
     func adding(_ point: CGPoint) -> CGPoint {
         return CGPoint(x: x + point.x, y: y + point.y)
     }
+    
+    func distanceTo(_ point: CGPoint) -> CGFloat {
+        return CGFloat(sqrt(pow(x - point.x, 2) + pow(y - point.y, 2)))
+    }
+    
+    func closest(points: [CGPoint]) -> CGPoint? {
+        return points.map{($0, $0.distanceTo(self))}.sorted{$0.1 < $1.1}.first?.0
+    }
+    
+    func isSame(_ point: CGPoint) -> Bool {
+        return x == point.x && y == point.y
+    }
 }
 
 class CubicBezierViewController: UIViewController {

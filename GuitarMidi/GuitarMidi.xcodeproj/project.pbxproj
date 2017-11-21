@@ -44,6 +44,8 @@
 		C24170211FA11000000E293F /* NodesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24170201FA11000000E293F /* NodesListViewController.swift */; };
 		C24170701FA12184000E293F /* PadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C241706F1FA12184000E293F /* PadViewController.swift */; };
 		C24170721FA121AB000E293F /* Pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24170711FA121AB000E293F /* Pad.storyboard */; };
+		C24844EB1FC48038008FD1AD /* ReverbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24844EA1FC48038008FD1AD /* ReverbViewController.swift */; };
+		C24844ED1FC48452008FD1AD /* Reverb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24844EC1FC48452008FD1AD /* Reverb.storyboard */; };
 		C248D9D91FB115B4007BC866 /* EnvelopeClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248D9D81FB115B4007BC866 /* EnvelopeClone.swift */; };
 		C248D9DA1FB115BC007BC866 /* EnvelopeClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248D9D81FB115B4007BC866 /* EnvelopeClone.swift */; };
 		C26852921FC23846009AE28C /* SaturationWaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26852911FC23846009AE28C /* SaturationWaveEffect.swift */; };
@@ -57,6 +59,8 @@
 		C287159E1FA7A19F0098B257 /* VariableLabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287159D1FA7A19F0098B257 /* VariableLabelController.swift */; };
 		C28B24BA1FBF355F00E3015E /* WaveShaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28B24B91FBF355F00E3015E /* WaveShaperViewController.swift */; };
 		C28B24BC1FBF36B600E3015E /* WaveShaper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28B24BB1FBF36B600E3015E /* WaveShaper.storyboard */; };
+		C2938AD31FC45DE600F2A6DF /* ReverbWaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938AD21FC45DE600F2A6DF /* ReverbWaveEffect.swift */; };
+		C2938AD41FC45DE600F2A6DF /* ReverbWaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938AD21FC45DE600F2A6DF /* ReverbWaveEffect.swift */; };
 		C29547A01F7D9FC300D8EEF0 /* WaveDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */; };
 		C29547A21F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29547A11F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift */; };
 		C29547A41F7DA15000D8EEF0 /* Foldback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29547A31F7DA15000D8EEF0 /* Foldback.storyboard */; };
@@ -215,6 +219,8 @@
 		C24170201FA11000000E293F /* NodesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListViewController.swift; sourceTree = "<group>"; };
 		C241706F1FA12184000E293F /* PadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadViewController.swift; sourceTree = "<group>"; };
 		C24170711FA121AB000E293F /* Pad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pad.storyboard; sourceTree = "<group>"; };
+		C24844EA1FC48038008FD1AD /* ReverbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverbViewController.swift; sourceTree = "<group>"; };
+		C24844EC1FC48452008FD1AD /* Reverb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reverb.storyboard; sourceTree = "<group>"; };
 		C248D9D81FB115B4007BC866 /* EnvelopeClone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeClone.swift; sourceTree = "<group>"; };
 		C24FFF711F66E2C2007CBF57 /* MidiServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiServer.swift; sourceTree = "<group>"; };
 		C262CA601F5F10AA00411635 /* MidiOutputEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiOutputEffect.swift; sourceTree = "<group>"; };
@@ -229,6 +235,7 @@
 		C28B24B91FBF355F00E3015E /* WaveShaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShaperViewController.swift; sourceTree = "<group>"; };
 		C28B24BB1FBF36B600E3015E /* WaveShaper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveShaper.storyboard; sourceTree = "<group>"; };
 		C28CE3751F6094FF002B9567 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
+		C2938AD21FC45DE600F2A6DF /* ReverbWaveEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverbWaveEffect.swift; sourceTree = "<group>"; };
 		C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveDistortion.swift; sourceTree = "<group>"; };
 		C29547A11F7DA0D900D8EEF0 /* FoldbackEffectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldbackEffectViewController.swift; sourceTree = "<group>"; };
 		C29547A31F7DA15000D8EEF0 /* Foldback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Foldback.storyboard; sourceTree = "<group>"; };
@@ -364,6 +371,8 @@
 				C2791FD81FC0BE8A0015CC85 /* OutputMonitorViewController.swift */,
 				C2791FDA1FC0C3260015CC85 /* Monitor.storyboard */,
 				C22751EF1FC1B012009DE62F /* PadContainer.storyboard */,
+				C24844EA1FC48038008FD1AD /* ReverbViewController.swift */,
+				C24844EC1FC48452008FD1AD /* Reverb.storyboard */,
 			);
 			path = WaveMapCreator;
 			sourceTree = "<group>";
@@ -454,6 +463,7 @@
 				C2FDB8191FBD08E500509C82 /* FirebaseClient.swift */,
 				C2B26BE41FBE0F2C002A18AF /* UserFeedback.swift */,
 				C26852911FC23846009AE28C /* SaturationWaveEffect.swift */,
+				C2938AD21FC45DE600F2A6DF /* ReverbWaveEffect.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -564,6 +574,7 @@
 				C28B24BC1FBF36B600E3015E /* WaveShaper.storyboard in Resources */,
 				C2EE309A1FBE59B6000DD9CE /* Foldback.storyboard in Resources */,
 				C2A8CCB91FA8B8A9002EE832 /* Envelope.storyboard in Resources */,
+				C24844ED1FC48452008FD1AD /* Reverb.storyboard in Resources */,
 				C241701D1FA10FC7000E293F /* NodesList.storyboard in Resources */,
 				C23F52ED1FA78F4A00127604 /* Oscilator.storyboard in Resources */,
 				C231401E1F9C96B700EA6027 /* WaveMapCreator.storyboard in Resources */,
@@ -790,11 +801,13 @@
 				C28B24BA1FBF355F00E3015E /* WaveShaperViewController.swift in Sources */,
 				C20035F21F9E32D400C21EF7 /* StrokeDetector.swift in Sources */,
 				C231401A1F9C92E500EA6027 /* MapCreatorViewController.swift in Sources */,
+				C2938AD41FC45DE600F2A6DF /* ReverbWaveEffect.swift in Sources */,
 				C20035F51F9E344300C21EF7 /* MathUtils.swift in Sources */,
 				C29E51471F9A2E5D0039651C /* AppDelegate.swift in Sources */,
 				C2D5B7081FA8CE99006C44D1 /* CubicBezierViewController.swift in Sources */,
 				C248D9DA1FB115BC007BC866 /* EnvelopeClone.swift in Sources */,
 				C2FE27211FBB87B2001CED37 /* Tree.swift in Sources */,
+				C24844EB1FC48038008FD1AD /* ReverbViewController.swift in Sources */,
 				C20035EF1F9E32B900C21EF7 /* WaveShaper.swift in Sources */,
 				C2791FD91FC0BE8A0015CC85 /* OutputMonitorViewController.swift in Sources */,
 				C2CF79D41F9E17A00087C6A1 /* SoundNetwork.swift in Sources */,
@@ -829,6 +842,7 @@
 				C2C19AA41F7AFE4400FDE938 /* TreeViewController.swift in Sources */,
 				C2C19A8B1F7AFE4400FDE938 /* PitchDetector.swift in Sources */,
 				C26852921FC23846009AE28C /* SaturationWaveEffect.swift in Sources */,
+				C2938AD31FC45DE600F2A6DF /* ReverbWaveEffect.swift in Sources */,
 				C26C1FD21FBBBE6A00621EEA /* WaveMapStorage.swift in Sources */,
 				C2C19A8E1F7AFE4400FDE938 /* StrokeDetector.swift in Sources */,
 				C2FDB81A1FBD08E500509C82 /* FirebaseClient.swift in Sources */,

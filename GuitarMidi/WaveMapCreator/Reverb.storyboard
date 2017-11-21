@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MLJ-Av-FtW">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reverb View Controller-->
+        <scene sceneID="fUJ-Sm-rxR">
+            <objects>
+                <viewController id="MLJ-Av-FtW" customClass="ReverbViewController" customModule="WaveMapCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YAM-i5-MXI">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="room size" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2e-ov-g5R">
+                                <rect key="frame" x="0.0" y="177" width="333.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="damp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onD-nt-08h">
+                                <rect key="frame" x="333.5" y="177" width="333.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2A-7q-8To">
+                                <rect key="frame" x="450" y="208" width="100" height="100"/>
+                                <connections>
+                                    <segue destination="Hl7-A7-LSB" kind="embed" identifier="damp" id="n6v-Bt-oxA"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oL2-nv-eMs">
+                                <rect key="frame" x="116.5" y="208" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="WhY-C6-uqQ"/>
+                                    <constraint firstAttribute="height" constant="100" id="nsl-iX-y8O"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="Hl7-A7-LSB" kind="embed" identifier="roomSize" id="gIP-Sb-mpf"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VP-6M-u4U">
+                                <rect key="frame" x="5" y="5" width="37" height="30"/>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="MLJ-Av-FtW" eventType="touchUpInside" id="Gxs-Bi-nsS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P2A-7q-8To" firstAttribute="centerX" secondItem="onD-nt-08h" secondAttribute="centerX" id="11Q-13-e0R"/>
+                            <constraint firstItem="oL2-nv-eMs" firstAttribute="top" secondItem="b2e-ov-g5R" secondAttribute="bottom" constant="10" id="A49-Sz-wsA"/>
+                            <constraint firstItem="3VP-6M-u4U" firstAttribute="top" secondItem="J4g-GR-hV9" secondAttribute="top" constant="5" id="Bmg-ge-TCm"/>
+                            <constraint firstItem="J4g-GR-hV9" firstAttribute="trailing" secondItem="onD-nt-08h" secondAttribute="trailing" id="RMk-gh-aod"/>
+                            <constraint firstItem="b2e-ov-g5R" firstAttribute="centerY" secondItem="YAM-i5-MXI" secondAttribute="centerY" id="ROv-OS-GHf"/>
+                            <constraint firstItem="onD-nt-08h" firstAttribute="leading" secondItem="b2e-ov-g5R" secondAttribute="trailing" id="YAp-cd-RSY"/>
+                            <constraint firstItem="P2A-7q-8To" firstAttribute="bottom" secondItem="oL2-nv-eMs" secondAttribute="bottom" id="ftN-ws-T49"/>
+                            <constraint firstItem="oL2-nv-eMs" firstAttribute="centerX" secondItem="b2e-ov-g5R" secondAttribute="centerX" id="gGV-7x-WA3"/>
+                            <constraint firstItem="P2A-7q-8To" firstAttribute="width" secondItem="oL2-nv-eMs" secondAttribute="width" id="ihz-mj-2ew"/>
+                            <constraint firstItem="onD-nt-08h" firstAttribute="baseline" secondItem="b2e-ov-g5R" secondAttribute="baseline" id="kWi-Fx-leY"/>
+                            <constraint firstItem="P2A-7q-8To" firstAttribute="top" secondItem="oL2-nv-eMs" secondAttribute="top" id="rYT-pG-JlG"/>
+                            <constraint firstItem="b2e-ov-g5R" firstAttribute="leading" secondItem="J4g-GR-hV9" secondAttribute="leading" id="tQH-fk-ir9"/>
+                            <constraint firstItem="b2e-ov-g5R" firstAttribute="width" secondItem="onD-nt-08h" secondAttribute="width" id="xet-Ow-UCW"/>
+                            <constraint firstItem="3VP-6M-u4U" firstAttribute="leading" secondItem="J4g-GR-hV9" secondAttribute="leading" constant="5" id="zv3-QO-0Yf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J4g-GR-hV9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMz-ie-IOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18.440779610194905" y="132"/>
+        </scene>
+        <!--VariableLabel-->
+        <scene sceneID="TDS-6g-WK7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="VariableLabel" id="Hl7-A7-LSB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xs-Lc-oFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423" y="131"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gIP-Sb-mpf"/>
+    </inferredMetricsTieBreakers>
+</document>

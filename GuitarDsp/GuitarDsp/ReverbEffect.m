@@ -39,7 +39,7 @@
     self.bbb = malloc(sizeof(float) * 10000);
     bzero(self.bbb, sizeof(float) * 10000);
     
-    self.rev = [Revmodel new];
+    self.rev = [Freeverb new];
     [self.rev setdamp:0.7];
     [self.rev setroomsize:0.3];
     [self.rev setdry:1.0];

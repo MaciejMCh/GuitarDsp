@@ -6,10 +6,10 @@
 //
 //
 
-#import "Revmodel.h"
+#import "Freeverb.h"
 #include "tuning.h"
 
-@interface Revmodel () {
+@interface Freeverb () {
     
     float	bufcombL1[combtuningL1];
     float	bufcombR1[combtuningR1];
@@ -41,7 +41,7 @@
 
 @end
 
-@implementation Revmodel
+@implementation Freeverb
 
 - (instancetype)init {
     self = [super init];
@@ -142,7 +142,7 @@
         }
         
         // Calculate output MIXING with anything already there
-        *outputL += outL*wet1 + *inputL*dry;
+        *outputL += outL*wet + *inputL*dry;
         
         // Increment sample pointers, allowing for interleave (if any)
         inputL += skip;

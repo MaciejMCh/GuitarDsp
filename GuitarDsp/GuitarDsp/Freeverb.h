@@ -10,7 +10,7 @@
 #import "Comb.h"
 #include "Allpass.h"
 
-@interface Revmodel : NSObject {
+@interface Freeverb : NSObject {
     float	gain;
     float	roomsize,roomsize1;
     float	damp,damp1;

@@ -39,3 +39,4 @@ extension WaveShaperViewController: InterfaceBuilderInstance {static let interfa
 extension DecadeViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "Decade"}
 extension OutputMonitorViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "Monitor"}
 extension PadContainerViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "PadContainer"}
+extension ReverbViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "Reverb"}

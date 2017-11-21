@@ -159,6 +159,9 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
         if let saturation = waveNode as? SaturationWaveEffect {
             return WaveMap.nodeFromSaturation(saturation)
         }
+        if let reverb = waveNode as? ReverbWaveEffect {
+            return WaveMap.nodeFromReverb(reverb)
+        }
         
         return "" as! Node
     }
@@ -242,6 +245,13 @@ public class WaveMap: NSObject, Effect, MidiPlayer {
                         Interface(name: "out", model: saturation.output),
                         Interface(name: "level", model: saturation.levelSetter)],
                     model: saturation)
+    }
+    fileprivate static func nodeFromReverb(_ reverb: ReverbWaveEffect) -> Node {
+        return Node(name: "reverb",
+                    interfaces: [
+                        Interface(name: "in", model: reverb.input),
+                        Interface(name: "out", model: reverb.output)],
+                    model: reverb)
     }
 }
 

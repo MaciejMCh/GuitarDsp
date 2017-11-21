@@ -137,6 +137,11 @@ class MapCreatorViewController: UIViewController {
                 waveShaperViewController.waveShaper = waveShaper
                 self?.showController(waveShaperViewController)
             }
+            if let reverb = node.model as? ReverbWaveEffect {
+                let reverbController = ReverbViewController.make()
+                reverbController.reverbEffect = reverb
+                self?.showController(reverbController)
+            }
         }
         mapChange?(waveMap)
     }

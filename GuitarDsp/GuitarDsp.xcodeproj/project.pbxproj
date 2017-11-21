@@ -54,8 +54,8 @@
 		C2DF19F21E8AA65500106AE8 /* RawAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DF19CE1E8AA65500106AE8 /* RawAudioPlayer.m */; };
 		C2DF19F31E8AA65500106AE8 /* ReverbEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19CF1E8AA65500106AE8 /* ReverbEffect.h */; };
 		C2DF19F41E8AA65500106AE8 /* ReverbEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DF19D01E8AA65500106AE8 /* ReverbEffect.m */; };
-		C2DF19F51E8AA65500106AE8 /* Revmodel.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19D11E8AA65500106AE8 /* Revmodel.h */; };
-		C2DF19F61E8AA65500106AE8 /* Revmodel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DF19D21E8AA65500106AE8 /* Revmodel.m */; };
+		C2DF19F51E8AA65500106AE8 /* Freeverb.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19D11E8AA65500106AE8 /* Freeverb.h */; };
+		C2DF19F61E8AA65500106AE8 /* Freeverb.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DF19D21E8AA65500106AE8 /* Freeverb.m */; };
 		C2DF19F71E8AA65500106AE8 /* Sample.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19D31E8AA65500106AE8 /* Sample.h */; };
 		C2DF19F81E8AA65500106AE8 /* SamplingSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF19D41E8AA65500106AE8 /* SamplingSettings.h */; };
 		C2DF19F91E8AA65500106AE8 /* snare.raw in Resources */ = {isa = PBXBuildFile; fileRef = C2DF19D51E8AA65500106AE8 /* snare.raw */; };
@@ -118,8 +118,8 @@
 		C2DF19CE1E8AA65500106AE8 /* RawAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawAudioPlayer.m; sourceTree = "<group>"; };
 		C2DF19CF1E8AA65500106AE8 /* ReverbEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReverbEffect.h; sourceTree = "<group>"; };
 		C2DF19D01E8AA65500106AE8 /* ReverbEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReverbEffect.m; sourceTree = "<group>"; };
-		C2DF19D11E8AA65500106AE8 /* Revmodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Revmodel.h; sourceTree = "<group>"; };
-		C2DF19D21E8AA65500106AE8 /* Revmodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Revmodel.m; sourceTree = "<group>"; };
+		C2DF19D11E8AA65500106AE8 /* Freeverb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Freeverb.h; sourceTree = "<group>"; };
+		C2DF19D21E8AA65500106AE8 /* Freeverb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Freeverb.m; sourceTree = "<group>"; };
 		C2DF19D31E8AA65500106AE8 /* Sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample.h; sourceTree = "<group>"; };
 		C2DF19D41E8AA65500106AE8 /* SamplingSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplingSettings.h; sourceTree = "<group>"; };
 		C2DF19D51E8AA65500106AE8 /* snare.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = snare.raw; sourceTree = "<group>"; };
@@ -229,8 +229,8 @@
 			children = (
 				C2DF19B61E8AA65500106AE8 /* Allpass.h */,
 				C2DF19B71E8AA65500106AE8 /* Allpass.m */,
-				C2DF19D11E8AA65500106AE8 /* Revmodel.h */,
-				C2DF19D21E8AA65500106AE8 /* Revmodel.m */,
+				C2DF19D11E8AA65500106AE8 /* Freeverb.h */,
+				C2DF19D21E8AA65500106AE8 /* Freeverb.m */,
 				C2DF19D91E8AA65500106AE8 /* tuning.h */,
 				C2DF19BA1E8AA65500106AE8 /* Comb.h */,
 				C2DF19BB1E8AA65500106AE8 /* Comb.m */,
@@ -361,7 +361,7 @@
 				C2DF19FA1E8AA65500106AE8 /* Timing.h in Headers */,
 				C2DF19F71E8AA65500106AE8 /* Sample.h in Headers */,
 				C2DF19E31E8AA65500106AE8 /* Effect.h in Headers */,
-				C2DF19F51E8AA65500106AE8 /* Revmodel.h in Headers */,
+				C2DF19F51E8AA65500106AE8 /* Freeverb.h in Headers */,
 				C2DF19E01E8AA65500106AE8 /* DelayEffect.h in Headers */,
 				C28B98BD1E9C014800309FA2 /* CompressorEffect.h in Headers */,
 			);
@@ -554,7 +554,7 @@
 				C2DF19E11E8AA65500106AE8 /* DelayEffect.m in Sources */,
 				C2EFDE5D1E8DDA750063F2D7 /* AmpEffect.m in Sources */,
 				C2DF19E81E8AA65500106AE8 /* LooperEffect.m in Sources */,
-				C2DF19F61E8AA65500106AE8 /* Revmodel.m in Sources */,
+				C2DF19F61E8AA65500106AE8 /* Freeverb.m in Sources */,
 				C2DF19DF1E8AA65500106AE8 /* Comb.m in Sources */,
 				C2DF19EA1E8AA65500106AE8 /* MetronomeEffect.m in Sources */,
 				C2DF19F41E8AA65500106AE8 /* ReverbEffect.m in Sources */,

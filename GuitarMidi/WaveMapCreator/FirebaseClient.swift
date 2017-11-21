@@ -52,6 +52,8 @@ class FirebaseClient {
     func syncWaveMapConfigurations() {
         waveMapsIndex { [weak self] waveMapConfigurations in
             guard let wSelf = self else {return}
+            try! FileManager.default.removeItem(atPath: StorageConstants.waveMapsRootDirectory)
+            try! FileManager.default.createDirectory(atPath: StorageConstants.waveMapsRootDirectory, withIntermediateDirectories: true, attributes: nil)
             for waveMapConfiguration in waveMapConfigurations {
                 NSKeyedArchiver.archiveRootObject(waveMapConfiguration.1, toFile: wSelf.filePathForWaveMap(name: waveMapConfiguration.0))
             }

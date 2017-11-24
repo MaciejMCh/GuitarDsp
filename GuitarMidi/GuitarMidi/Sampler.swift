@@ -88,11 +88,11 @@ protocol SamplePlayer: MidiPlayer {
 }
 
 class SingleSamplePlayer: SamplePlayer {
-    private let audioFile: AudioFile
+    private let audioFilePlayer: AudioFilePlayer
     private var time: Int = 0
     
     init(audioFile: AudioFile) {
-        self.audioFile = audioFile
+        self.audioFilePlayer = AudioFilePlayer(audioFile: audioFile, strategy: .looped(range: 60000..<100000))
     }
     
     func nextSample() -> Double {
@@ -100,21 +100,19 @@ class SingleSamplePlayer: SamplePlayer {
             time += 1
         }
         
-        if time < audioFile.samples.count {
-            return Double(audioFile.samples[time])
-        } else {
-            return 0
-        }
+        return Double(audioFilePlayer.next(range: time..<time).first!)
     }
     
     func setFrequency(_ frequency: Double) {}
     
     var duration: Double {
-        return Double(audioFile.duration)
+        assert(false)
+        return 0
     }
     
     var samplesForView: [Float] {
-        return audioFile.samples
+        assert(false)
+        return []
     }
     
     func on() {
@@ -156,11 +154,20 @@ class AudioFilePlayer {
             }
             return zeros
         case .looped(let range):
-            assert(false)
-            return []
+            if requestedRange.lowerBound > audioFileLength {
+                return .init(repeating: 0, count: requestedRange.count)
+            }
+            if requestedRange.upperBound < audioFileLength {
+                var result: [Float] = []
+                for i in requestedRange.lowerBound % ..<requestedRange.upperBound {
+                    result.append(audioFile.samples[i])
+                }
+                return result
+            }
+            
+            //
+            return .init(repeating: 0, count: requestedRange.count)
         }
-        assert(false)
-        return []
     }
 }
 
@@ -183,7 +190,7 @@ class SampleSetPlayer: SamplePlayer {
 
     init(samplingSettings: SamplingSettings, audioFilesByNotes: [(Note, AudioFile)]) {
         self.samplingSettings = samplingSettings
-        audioFilesPlayersByNotes = audioFilesByNotes.map{($0.0, AudioFilePlayer(audioFile: $0.1, strategy: .whole))}
+        audioFilesPlayersByNotes = audioFilesByNotes.map{($0.0, AudioFilePlayer(audioFile: $0.1, strategy: .looped(range: 2000..<100000)))}
         
         finePitchBufferLength = Int(samplingSettings.framesPerPacket)
         

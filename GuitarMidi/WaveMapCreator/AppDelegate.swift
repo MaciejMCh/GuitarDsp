@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
         
-        waveMap = .fromPath("flute", midiOutput: Sequencer())
-//        waveMap = .fromPath("flute loop", midiOutput: Sequencer())
+//        waveMap = .fromPath("flute", midiOutput: Sequencer())
+        waveMap = .fromPath("flute loop", midiOutput: Sequencer())
 //        let sampler: Sampler = waveMap.waveNodes.first as! Sampler
 //        sampler.player
         

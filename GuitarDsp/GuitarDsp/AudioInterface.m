@@ -52,7 +52,6 @@
     samplingSettings.packetByteSize = sizeof(float) * samplingSettings.framesPerPacket;
     self.samplingSettings = samplingSettings;
     
-    
     [[EZMicrophone sharedMicrophone] startFetchingAudio];
     NSLog(@"Using input device: %@", [[EZMicrophone sharedMicrophone] device]);
     

@@ -94,10 +94,8 @@ extension JsonObjectRepresentable {
     }
     
     static func load(identity: Storage.Identity) -> Self? {
-        if let json = Storage(typeName: typeName).load(identity: identity), let model = Self.init(jsonObject: json) {
-            return model
-        } else {
-            return nil
-        }
+        guard let json = Storage(typeName: typeName).load(identity: identity) else {return nil}
+        guard let model = Self.init(jsonObject: json) else {return nil}
+        return model
     }
 }

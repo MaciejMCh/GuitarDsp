@@ -9,6 +9,7 @@
 import Cocoa
 import GuitarDsp
 import GuitarMidi
+import FirebaseCommunity
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -26,6 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        FirebaseApp.configure()
+        WaveMapStorage.waveNodesFactory = WaveNodesFactory(samplingSettings: AudioInterface.shared().samplingSettings)
         setupFileSystem()
         EffectPrototype.effectsFactory = EffectsFacory(samplingSettings: AudioInterface.shared().samplingSettings)
         NSApplication.shared().windows.first!.contentViewController = initialController()

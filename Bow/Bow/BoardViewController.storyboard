@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A322" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="wSh-cw-HqC">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="wSh-cw-HqC">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,10 +27,22 @@
                                             <segue destination="gBx-Rp-jZt" kind="embed" id="zRN-JT-J3b"/>
                                         </connections>
                                     </containerView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tEz-f5-Lqc">
+                                        <rect key="frame" x="3" y="3" width="51" height="18"/>
+                                        <buttonCell key="cell" type="check" title="sync" bezelStyle="regularSquare" imagePosition="left" inset="2" id="pE4-aj-BqU">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="syncAction:" target="wSh-cw-HqC" id="OSg-p0-cgQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="FC4-Tm-Z8B" secondAttribute="trailing" id="MkD-Au-R1d"/>
+                                    <constraint firstAttribute="bottom" secondItem="tEz-f5-Lqc" secondAttribute="bottom" constant="5" id="TQc-DW-d2E"/>
                                     <constraint firstAttribute="bottom" secondItem="FC4-Tm-Z8B" secondAttribute="bottom" id="caT-Fa-MRX"/>
+                                    <constraint firstItem="tEz-f5-Lqc" firstAttribute="leading" secondItem="eK5-Ry-BWx" secondAttribute="leading" constant="5" id="q3K-l9-W9I"/>
                                 </constraints>
                             </customView>
                         </subviews>

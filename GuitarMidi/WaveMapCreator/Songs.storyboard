@@ -49,13 +49,22 @@
                                     <outlet property="delegate" destination="oXf-AO-XrA" id="KFW-tM-xDn"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgO-pY-RBa">
+                                <rect key="frame" x="5" y="5" width="37" height="30"/>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="oXf-AO-XrA" eventType="touchUpInside" id="LO0-ZT-9Nn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xkQ-Li-ajY" firstAttribute="bottom" secondItem="KDk-WF-3G4" secondAttribute="bottom" id="6nG-LD-Oo1"/>
+                            <constraint firstItem="GgO-pY-RBa" firstAttribute="leading" secondItem="xkQ-Li-ajY" secondAttribute="leading" constant="5" id="9pl-kT-cj3"/>
                             <constraint firstItem="KDk-WF-3G4" firstAttribute="top" secondItem="xkQ-Li-ajY" secondAttribute="top" id="AnT-9r-BgB"/>
                             <constraint firstItem="XIc-vB-bl0" firstAttribute="width" secondItem="KDk-WF-3G4" secondAttribute="width" id="H3M-Q5-6ue"/>
                             <constraint firstItem="KDk-WF-3G4" firstAttribute="leading" secondItem="xkQ-Li-ajY" secondAttribute="leading" id="XcM-A5-K8C"/>
+                            <constraint firstItem="GgO-pY-RBa" firstAttribute="top" secondItem="xkQ-Li-ajY" secondAttribute="top" constant="5" id="lb6-Jb-iJ7"/>
                             <constraint firstItem="XIc-vB-bl0" firstAttribute="leading" secondItem="KDk-WF-3G4" secondAttribute="trailing" id="mTF-6V-4Yn"/>
                             <constraint firstItem="XIc-vB-bl0" firstAttribute="top" secondItem="xkQ-Li-ajY" secondAttribute="top" id="rKj-CK-jXF"/>
                             <constraint firstItem="xkQ-Li-ajY" firstAttribute="trailing" secondItem="XIc-vB-bl0" secondAttribute="trailing" id="zv7-nZ-cBg"/>

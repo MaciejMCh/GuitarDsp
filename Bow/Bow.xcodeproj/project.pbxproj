@@ -23,6 +23,7 @@
 		C260662F1E8D9C1800FD381D /* EffectsFacory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260662E1E8D9C1800FD381D /* EffectsFacory.swift */; };
 		C26066311E8D9DF100FD381D /* EffectsFactoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26066301E8D9DF100FD381D /* EffectsFactoryViewController.storyboard */; };
 		C26066331E8D9F7100FD381D /* EffectsFactoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26066321E8D9F7100FD381D /* EffectsFactoryViewController.swift */; };
+		C269A9381FC6D442008AA591 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C269A9371FC6D442008AA591 /* GoogleService-Info.plist */; };
 		C26AFDD81E8C7F8C00C72E63 /* EffectsOrderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26AFDD71E8C7F8C00C72E63 /* EffectsOrderViewController.storyboard */; };
 		C26AFDDA1E8C7FA000C72E63 /* EffectsOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26AFDD91E8C7FA000C72E63 /* EffectsOrderViewController.swift */; };
 		C26DED5D1E8AF81400E61B7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26DED5C1E8AF81400E61B7C /* AppDelegate.swift */; };
@@ -41,6 +42,9 @@
 		C29953B51E8E9BE900CDF481 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29953B41E8E9BE900CDF481 /* Storage.swift */; };
 		C2ADB8721E8C4031001B0EF3 /* SlidersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB8711E8C4031001B0EF3 /* SlidersFactory.swift */; };
 		C2ADB8741E8C47E1001B0EF3 /* EffectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADB8731E8C47E1001B0EF3 /* EffectViewModel.swift */; };
+		C2E3F5121FC6CD9C0074100E /* SetupClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3F5111FC6CD9C0074100E /* SetupClient.swift */; };
+		C2E708C81FC75CF900ED6EE2 /* 440.wav in Resources */ = {isa = PBXBuildFile; fileRef = C2E708C71FC75CF800ED6EE2 /* 440.wav */; };
+		C2E708CA1FC779B700ED6EE2 /* BoardsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E708C91FC779B700ED6EE2 /* BoardsClient.swift */; };
 		C2F10C3F1E8B166800B976FA /* ScrollDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +70,7 @@
 		C260662E1E8D9C1800FD381D /* EffectsFacory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsFacory.swift; sourceTree = "<group>"; };
 		C26066301E8D9DF100FD381D /* EffectsFactoryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EffectsFactoryViewController.storyboard; sourceTree = "<group>"; };
 		C26066321E8D9F7100FD381D /* EffectsFactoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsFactoryViewController.swift; sourceTree = "<group>"; };
+		C269A9371FC6D442008AA591 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GuitarMidi/WaveMapCreator/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C26AFDD71E8C7F8C00C72E63 /* EffectsOrderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EffectsOrderViewController.storyboard; sourceTree = "<group>"; };
 		C26AFDD91E8C7FA000C72E63 /* EffectsOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsOrderViewController.swift; sourceTree = "<group>"; };
 		C26DED591E8AF81400E61B7C /* Bow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +95,9 @@
 		C2ADB8731E8C47E1001B0EF3 /* EffectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectViewModel.swift; sourceTree = "<group>"; };
 		C2C2FA2F1F7AEAD400ED83AA /* GuitarMidiKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GuitarMidiKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/GuitarDsp-gboowxrazxsddgehsrbqoyrqehfs/Build/Products/Debug/GuitarMidiKit.framework"; sourceTree = "<group>"; };
 		C2C6180E1F7BE8B00084CAC4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		C2E3F5111FC6CD9C0074100E /* SetupClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupClient.swift; sourceTree = "<group>"; };
+		C2E708C71FC75CF800ED6EE2 /* 440.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 440.wav; path = ../../GuitarMidi/WaveMapCreator/440.wav; sourceTree = "<group>"; };
+		C2E708C91FC779B700ED6EE2 /* BoardsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardsClient.swift; sourceTree = "<group>"; };
 		C2F10C3E1E8B166800B976FA /* ScrollDetectingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDetectingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +145,8 @@
 		C26DED5B1E8AF81400E61B7C /* Bow */ = {
 			isa = PBXGroup;
 			children = (
+				C2E708C71FC75CF800ED6EE2 /* 440.wav */,
+				C269A9371FC6D442008AA591 /* GoogleService-Info.plist */,
 				C26DED5C1E8AF81400E61B7C /* AppDelegate.swift */,
 				C24751C21E94270B00718BDF /* Prototypes.swift */,
 				C26DED6B1E8AF83A00E61B7C /* BoardViewController.storyboard */,
@@ -173,6 +183,8 @@
 				C22F02951F7BB68600B146C3 /* WaveMapTile.storyboard */,
 				C22F02971F7BB69800B146C3 /* WaveMapTileController.swift */,
 				C2C6180E1F7BE8B00084CAC4 /* Test.swift */,
+				C2E3F5111FC6CD9C0074100E /* SetupClient.swift */,
+				C2E708C91FC779B700ED6EE2 /* BoardsClient.swift */,
 			);
 			path = Bow;
 			sourceTree = "<group>";
@@ -261,10 +273,12 @@
 				C26DED701E8AFCA200E61B7C /* EffectViewController.storyboard in Resources */,
 				C203174F1E928852008ACFCB /* SearchViewController.storyboard in Resources */,
 				C26066311E8D9DF100FD381D /* EffectsFactoryViewController.storyboard in Resources */,
+				C2E708C81FC75CF900ED6EE2 /* 440.wav in Resources */,
 				C26DED641E8AF81400E61B7C /* Main.storyboard in Resources */,
 				C28ABBEB1E97C2E70050D955 /* SetupViewController.storyboard in Resources */,
 				C28234FC1E94DC1C00990E9C /* LooperViewController.storyboard in Resources */,
 				C260662D1E8D768700FD381D /* EffectIdentityView.xib in Resources */,
+				C269A9381FC6D442008AA591 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +292,22 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bow/Pods-Bow-resources.sh",
-				"${PODS_ROOT}/../../NodesMap/NodesMap macOS/Map.storyboard",
-				"${PODS_ROOT}/../../NodesMap/NodesMap Shared/Scene.sks",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/Amp.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/Bass808.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/Constant.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/Envelope.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/Foldback.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/Oscilator.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/Sampler.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/SamplerNode.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/Test.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/TimeFunctionVariable.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/Tree.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/Variable.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/WaveMap.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/WaveShaper.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/WaveShaperNode.storyboard",
+				"${PODS_ROOT}/../../GuitarMidi/GuitarMidi/Assets.xcassets",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -367,6 +395,8 @@
 				C26DED721E8AFCB400E61B7C /* EffectViewController.swift in Sources */,
 				C26AFDDA1E8C7FA000C72E63 /* EffectsOrderViewController.swift in Sources */,
 				C26DED5D1E8AF81400E61B7C /* AppDelegate.swift in Sources */,
+				C2E3F5121FC6CD9C0074100E /* SetupClient.swift in Sources */,
+				C2E708CA1FC779B700ED6EE2 /* BoardsClient.swift in Sources */,
 				C26066331E8D9F7100FD381D /* EffectsFactoryViewController.swift in Sources */,
 				C28ABBE91E97C2CE0050D955 /* SetupViewController.swift in Sources */,
 				C28CAED31E8B252F001BADFE /* Wireframe.swift in Sources */,

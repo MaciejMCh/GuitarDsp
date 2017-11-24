@@ -20,10 +20,9 @@
 		C20035F41F9E33E000C21EF7 /* CubicBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7E2B41F715158007A9AF6 /* CubicBezier.swift */; };
 		C20035F51F9E344300C21EF7 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21AA3C31F8B90A400D6C490 /* MathUtils.swift */; };
 		C20035F61F9E344A00C21EF7 /* SamplingSettingsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211C0961F73014100999FE8 /* SamplingSettingsUtils.swift */; };
-		C2031E861FC4DC1400F3B0A9 /* WaveMapsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2031E851FC4DC1400F3B0A9 /* WaveMapsListViewController.swift */; };
-		C2031E881FC4DE4800F3B0A9 /* WaveMapsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2031E871FC4DE4800F3B0A9 /* WaveMapsList.storyboard */; };
+		C2031E861FC4DC1400F3B0A9 /* SetupsReferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2031E851FC4DC1400F3B0A9 /* SetupsReferencesViewController.swift */; };
+		C2031E881FC4DE4800F3B0A9 /* SetupsReferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2031E871FC4DE4800F3B0A9 /* SetupsReferences.storyboard */; };
 		C20CAFC01FBA6EE10015D88C /* 5s.wav in Resources */ = {isa = PBXBuildFile; fileRef = C20CAFBF1FBA6EE10015D88C /* 5s.wav */; };
-		C210352B1FBA34CD0073F46C /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C210352A1FBA34CD0073F46C /* FirebaseClient.swift */; };
 		C210352D1FBA38FE0073F46C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C210352C1FBA38FD0073F46C /* GoogleService-Info.plist */; };
 		C2159FFA1FBF4ACB009B487D /* OverdriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2159FF91FBF4ACB009B487D /* OverdriveViewController.swift */; };
 		C2159FFC1FBF4B22009B487D /* Overdrive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2159FFB1FBF4B22009B487D /* Overdrive.storyboard */; };
@@ -34,8 +33,11 @@
 		C2305C531F87E17900A89F63 /* WaveMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2305C521F87E17900A89F63 /* WaveMapController.swift */; };
 		C231401A1F9C92E500EA6027 /* MapCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23140191F9C92E500EA6027 /* MapCreatorViewController.swift */; };
 		C231401E1F9C96B700EA6027 /* WaveMapCreator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C231401D1F9C96B700EA6027 /* WaveMapCreator.storyboard */; };
+		C23A58A51FC8375700BFD25D /* WaveMapSyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23A58A41FC8375600BFD25D /* WaveMapSyncViewController.swift */; };
 		C23AEBE31FBCCE820022BD97 /* WaveMapPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AEBE21FBCCE820022BD97 /* WaveMapPickerController.swift */; };
 		C23AEBE51FBCCE990022BD97 /* WaveMapPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23AEBE41FBCCE990022BD97 /* WaveMapPicker.storyboard */; };
+		C23CA87B1FC5F359009795F7 /* FirebaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23CA87A1FC5F359009795F7 /* FirebaseModels.swift */; };
+		C23CA87C1FC5F359009795F7 /* FirebaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23CA87A1FC5F359009795F7 /* FirebaseModels.swift */; };
 		C23F52EB1FA78E9B00127604 /* OscilatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F52EA1FA78E9B00127604 /* OscilatorViewController.swift */; };
 		C23F52ED1FA78F4A00127604 /* Oscilator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23F52EC1FA78F4A00127604 /* Oscilator.storyboard */; };
 		C23F52F31FA797C000127604 /* Constant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23F52F21FA797C000127604 /* Constant.storyboard */; };
@@ -63,7 +65,6 @@
 		C282AC621FC4A4DE0050F127 /* PhaserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282AC611FC4A4DE0050F127 /* PhaserViewController.swift */; };
 		C282AC641FC4A8FA0050F127 /* Phaser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C282AC631FC4A8FA0050F127 /* Phaser.storyboard */; };
 		C282AC661FC4BCAA0050F127 /* SongsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282AC651FC4BCAA0050F127 /* SongsListViewController.swift */; };
-		C282AC691FC4BD810050F127 /* SongsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282AC671FC4BD240050F127 /* SongsClient.swift */; };
 		C287159E1FA7A19F0098B257 /* VariableLabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287159D1FA7A19F0098B257 /* VariableLabelController.swift */; };
 		C28B24BA1FBF355F00E3015E /* WaveShaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28B24B91FBF355F00E3015E /* WaveShaperViewController.swift */; };
 		C28B24BC1FBF36B600E3015E /* WaveShaper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28B24BB1FBF36B600E3015E /* WaveShaper.storyboard */; };
@@ -134,6 +135,8 @@
 		C2CF79D71F9E17D00087C6A1 /* WaveDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295479F1F7D9FC300D8EEF0 /* WaveDistortion.swift */; };
 		C2D5B7081FA8CE99006C44D1 /* CubicBezierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D5B7071FA8CE99006C44D1 /* CubicBezierViewController.swift */; };
 		C2D5B70A1FA8D1C0006C44D1 /* CubicBezier.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D5B7091FA8D1C0006C44D1 /* CubicBezier.storyboard */; };
+		C2E708CC1FC78C7600ED6EE2 /* SongsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E708CB1FC78C7600ED6EE2 /* SongsClient.swift */; };
+		C2E708CF1FC78CC200ED6EE2 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C210352A1FBA34CD0073F46C /* FirebaseClient.swift */; };
 		C2ECD25F1F7C20880037780F /* SamplerNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ECD25E1F7C20880037780F /* SamplerNodeViewController.swift */; };
 		C2ECD2611F7C223D0037780F /* SamplerNode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2ECD2601F7C223D0037780F /* SamplerNode.storyboard */; };
 		C2ED66DF1FBF33FF0002EBB7 /* InterfaceBuilderInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED66DE1FBF33FF0002EBB7 /* InterfaceBuilderInstance.swift */; };
@@ -180,8 +183,8 @@
 		5F1239878A4B320DB80C6464 /* Pods_GuitarMidi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuitarMidi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7909DABEEE7746610422A4C5 /* Pods-WaveMapCreator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaveMapCreator.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaveMapCreator/Pods-WaveMapCreator.release.xcconfig"; sourceTree = "<group>"; };
 		B5C633EA3563B6DEE0015953 /* Pods_GuitarMidiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuitarMidiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2031E851FC4DC1400F3B0A9 /* WaveMapsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMapsListViewController.swift; sourceTree = "<group>"; };
-		C2031E871FC4DE4800F3B0A9 /* WaveMapsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapsList.storyboard; sourceTree = "<group>"; };
+		C2031E851FC4DC1400F3B0A9 /* SetupsReferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupsReferencesViewController.swift; sourceTree = "<group>"; };
+		C2031E871FC4DE4800F3B0A9 /* SetupsReferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetupsReferences.storyboard; sourceTree = "<group>"; };
 		C20775E01F671E20009FD61A /* NoteIndexIntegrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteIndexIntegrator.swift; sourceTree = "<group>"; };
 		C20AE1C11F70566300AFFBCE /* Variable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Variable.storyboard; sourceTree = "<group>"; };
 		C20AE1C31F7057F500AFFBCE /* VariableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableViewController.swift; sourceTree = "<group>"; };
@@ -219,8 +222,10 @@
 		C23140191F9C92E500EA6027 /* MapCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCreatorViewController.swift; sourceTree = "<group>"; };
 		C231401D1F9C96B700EA6027 /* WaveMapCreator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapCreator.storyboard; sourceTree = "<group>"; };
 		C23508081F75340E0049754F /* Sampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
+		C23A58A41FC8375600BFD25D /* WaveMapSyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMapSyncViewController.swift; sourceTree = "<group>"; };
 		C23AEBE21FBCCE820022BD97 /* WaveMapPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMapPickerController.swift; sourceTree = "<group>"; };
 		C23AEBE41FBCCE990022BD97 /* WaveMapPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapPicker.storyboard; sourceTree = "<group>"; };
+		C23CA87A1FC5F359009795F7 /* FirebaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseModels.swift; path = GuitarMidi/FirebaseModels.swift; sourceTree = SOURCE_ROOT; };
 		C23F52EA1FA78E9B00127604 /* OscilatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscilatorViewController.swift; sourceTree = "<group>"; };
 		C23F52EC1FA78F4A00127604 /* Oscilator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Oscilator.storyboard; sourceTree = "<group>"; };
 		C23F52F21FA797C000127604 /* Constant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Constant.storyboard; sourceTree = "<group>"; };
@@ -246,7 +251,6 @@
 		C282AC611FC4A4DE0050F127 /* PhaserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaserViewController.swift; sourceTree = "<group>"; };
 		C282AC631FC4A8FA0050F127 /* Phaser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Phaser.storyboard; sourceTree = "<group>"; };
 		C282AC651FC4BCAA0050F127 /* SongsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListViewController.swift; sourceTree = "<group>"; };
-		C282AC671FC4BD240050F127 /* SongsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsClient.swift; sourceTree = "<group>"; };
 		C287159D1FA7A19F0098B257 /* VariableLabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableLabelController.swift; sourceTree = "<group>"; };
 		C28B24B91FBF355F00E3015E /* WaveShaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShaperViewController.swift; sourceTree = "<group>"; };
 		C28B24BB1FBF36B600E3015E /* WaveShaper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveShaper.storyboard; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 		C2CF79CF1F9E16FC0087C6A1 /* WaveMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMap.swift; sourceTree = "<group>"; };
 		C2D5B7071FA8CE99006C44D1 /* CubicBezierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicBezierViewController.swift; sourceTree = "<group>"; };
 		C2D5B7091FA8D1C0006C44D1 /* CubicBezier.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CubicBezier.storyboard; sourceTree = "<group>"; };
+		C2E708CB1FC78C7600ED6EE2 /* SongsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsClient.swift; sourceTree = "<group>"; };
 		C2E7E2B41F715158007A9AF6 /* CubicBezier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicBezier.swift; sourceTree = "<group>"; };
 		C2ECD25E1F7C20880037780F /* SamplerNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerNodeViewController.swift; sourceTree = "<group>"; };
 		C2ECD2601F7C223D0037780F /* SamplerNode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SamplerNode.storyboard; sourceTree = "<group>"; };
@@ -343,6 +348,7 @@
 		C29E51451F9A2E5D0039651C /* WaveMapCreator */ = {
 			isa = PBXGroup;
 			children = (
+				C2E708CB1FC78C7600ED6EE2 /* SongsClient.swift */,
 				C282AC611FC4A4DE0050F127 /* PhaserViewController.swift */,
 				C20CAFBF1FBA6EE10015D88C /* 5s.wav */,
 				C210352C1FBA38FD0073F46C /* GoogleService-Info.plist */,
@@ -394,8 +400,9 @@
 				C282AC631FC4A8FA0050F127 /* Phaser.storyboard */,
 				C282AC651FC4BCAA0050F127 /* SongsListViewController.swift */,
 				C2ABC4CE1FC4C57F00500475 /* Songs.storyboard */,
-				C2031E851FC4DC1400F3B0A9 /* WaveMapsListViewController.swift */,
-				C2031E871FC4DE4800F3B0A9 /* WaveMapsList.storyboard */,
+				C2031E851FC4DC1400F3B0A9 /* SetupsReferencesViewController.swift */,
+				C2031E871FC4DE4800F3B0A9 /* SetupsReferences.storyboard */,
+				C23A58A41FC8375600BFD25D /* WaveMapSyncViewController.swift */,
 			);
 			path = WaveMapCreator;
 			sourceTree = "<group>";
@@ -488,7 +495,7 @@
 				C26852911FC23846009AE28C /* SaturationWaveEffect.swift */,
 				C2938AD21FC45DE600F2A6DF /* ReverbWaveEffect.swift */,
 				C282AC5E1FC496820050F127 /* PhaserWaveEffect.swift */,
-				C282AC671FC4BD240050F127 /* SongsClient.swift */,
+				C23CA87A1FC5F359009795F7 /* FirebaseModels.swift */,
 			);
 			path = GuitarMidi;
 			sourceTree = "<group>";
@@ -617,7 +624,7 @@
 				C29E51571F9A2E5D0039651C /* LaunchScreen.storyboard in Resources */,
 				C2159FFE1FBF4C77009B487D /* Decade.storyboard in Resources */,
 				C22751F01FC1B012009DE62F /* PadContainer.storyboard in Resources */,
-				C2031E881FC4DE4800F3B0A9 /* WaveMapsList.storyboard in Resources */,
+				C2031E881FC4DE4800F3B0A9 /* SetupsReferences.storyboard in Resources */,
 				C2159FFC1FBF4B22009B487D /* Overdrive.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -832,11 +839,12 @@
 				C282AC661FC4BCAA0050F127 /* SongsListViewController.swift in Sources */,
 				C20035F21F9E32D400C21EF7 /* StrokeDetector.swift in Sources */,
 				C231401A1F9C92E500EA6027 /* MapCreatorViewController.swift in Sources */,
+				C2E708CC1FC78C7600ED6EE2 /* SongsClient.swift in Sources */,
 				C2938AD41FC45DE600F2A6DF /* ReverbWaveEffect.swift in Sources */,
 				C20035F51F9E344300C21EF7 /* MathUtils.swift in Sources */,
+				C2E708CF1FC78CC200ED6EE2 /* FirebaseClient.swift in Sources */,
 				C29E51471F9A2E5D0039651C /* AppDelegate.swift in Sources */,
 				C2D5B7081FA8CE99006C44D1 /* CubicBezierViewController.swift in Sources */,
-				C282AC691FC4BD810050F127 /* SongsClient.swift in Sources */,
 				C248D9DA1FB115BC007BC866 /* EnvelopeClone.swift in Sources */,
 				C2FE27211FBB87B2001CED37 /* Tree.swift in Sources */,
 				C24844EB1FC48038008FD1AD /* ReverbViewController.swift in Sources */,
@@ -854,12 +862,13 @@
 				C24170211FA11000000E293F /* NodesListViewController.swift in Sources */,
 				C2EE309C1FBE5A56000DD9CE /* FoldbackViewController.swift in Sources */,
 				C20035EC1F9E2F6400C21EF7 /* FunctionVariable.swift in Sources */,
-				C210352B1FBA34CD0073F46C /* FirebaseClient.swift in Sources */,
 				C20035F31F9E32DD00C21EF7 /* NoteIndexIntegrator.swift in Sources */,
 				C20035EB1F9E2F5F00C21EF7 /* Sampler.swift in Sources */,
 				C2CF79D21F9E17800087C6A1 /* ChannelPlayerEffect.swift in Sources */,
-				C2031E861FC4DC1400F3B0A9 /* WaveMapsListViewController.swift in Sources */,
+				C2031E861FC4DC1400F3B0A9 /* SetupsReferencesViewController.swift in Sources */,
 				C2FE27241FBB8819001CED37 /* TreeViewController.swift in Sources */,
+				C23CA87C1FC5F359009795F7 /* FirebaseModels.swift in Sources */,
+				C23A58A51FC8375700BFD25D /* WaveMapSyncViewController.swift in Sources */,
 				C2159FFA1FBF4ACB009B487D /* OverdriveViewController.swift in Sources */,
 				C23AEBE31FBCCE820022BD97 /* WaveMapPickerController.swift in Sources */,
 			);
@@ -915,6 +924,7 @@
 				C248D9D91FB115B4007BC866 /* EnvelopeClone.swift in Sources */,
 				C2CF79D01F9E16FC0087C6A1 /* WaveMap.swift in Sources */,
 				C2FC489B1FB36EBF008838F4 /* Sequencer.swift in Sources */,
+				C23CA87B1FC5F359009795F7 /* FirebaseModels.swift in Sources */,
 				C2C19A9B1F7AFE4400FDE938 /* AmpViewController.swift in Sources */,
 				C2C19AAD1F7AFE5300FDE938 /* CubicBezier.swift in Sources */,
 			);

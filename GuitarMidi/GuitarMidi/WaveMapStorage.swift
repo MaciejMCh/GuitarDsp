@@ -12,7 +12,7 @@ import GuitarDsp
 typealias JsonObject = [String: Any]
 
 public struct WaveMapStorage {
-    static var waveNodesFactory: WaveNodesFactory!
+    public static var waveNodesFactory: WaveNodesFactory!
     
     public static func configureWaveMap(_ waveMap: WaveMap, configuration: [String: Any]) {
         
@@ -21,7 +21,7 @@ public struct WaveMapStorage {
         
         waveMap.outputNode.sprite.position = CGPoint(x: outputX, y: outputY)
         
-        for nodeJsonObject in configuration["nodes"] as! [JsonObject] {
+        for nodeJsonObject in configuration["nodes"] as? [JsonObject] ?? [] {
             let waveNode = waveNodeFromJson(nodeJsonObject["model"] as! JsonObject)
             waveMap.addWaveNode(waveNode: waveNode)
             

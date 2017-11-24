@@ -82,26 +82,11 @@ public class GuitarDetectorMidiOutput: MidiOutput {
         let treshold = 0.006
         let margin = treshold * 0.2
         
-        let diff = amplitude / prev
-        prev = amplitude
-        
-        cooldown -= 1
-        
-        if diff > 2.5 {
-            if cooldown < 0 {
-//                debugPrint(diff)
+        if !isOn {
+            if amplitude > treshold {
                 events.append(.on)
                 isOn = true
-                cooldown = 6
             }
-        }
-//        debugPrint(diff)
-        
-        if !isOn {
-//            if amplitude > treshold {
-//                events.append(.on)
-//                isOn = true
-//            }
         } else {
             if amplitude < treshold - margin {
                 events.append(.off)

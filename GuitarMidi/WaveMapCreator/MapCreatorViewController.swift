@@ -44,6 +44,11 @@ class MapCreatorViewController: UIViewController {
         }
     }
     
+    @IBAction func songsAction(_ sender: Any?) {
+        let songsController = SongsListViewController.make()
+        showController(songsController)
+    }
+    
     @IBAction func selectAction(_ sender: Any?) {
         waveMap.map.startSelecting()
     }

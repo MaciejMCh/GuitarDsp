@@ -10,70 +10,15 @@ import Foundation
 import Firebase
 import JSONCodable
 
-enum SetupReference: JSONCodable {
-    case waveMap(name: String)
-    case board(name: String)
-    
-    init(object: JSONObject) throws {
-        let decoder = JSONDecoder(object: object)
-        switch try decoder.decode("type") as String {
-        case "wave_map": self = .waveMap(name: try decoder.decode("name"))
-        case "board": self = .board(name: try decoder.decode("name"))
-        default: throw NSError()
-        }
-    }
-    
-    func toJSON() throws -> Any {
-        switch self {
-        case .board(let name): return ["type": "board", "name": name]
-        case .waveMap(let name): return ["type": "wave_map", "name": name]
-        }
-    }
-    
-    static func ==(lhs: SetupReference, rhs: SetupReference) -> Bool {
-        switch (lhs, rhs) {
-        case (.waveMap(let lhsName), .waveMap(let rhsName)): return lhsName == rhsName
-        case (.board(let lhsName), .board(let rhsName)): return lhsName == rhsName
-        default: return false
-        }
-    }
-}
-
-struct Song: JSONCodable {
-    let name: String
-    let tempo: Double
-    let setups: [SetupReference]
-    
-    init(object: JSONObject) throws {
-        let decoder = JSONDecoder(object: object)
-        name = try decoder.decode("name")
-        tempo = try decoder.decode("tempo")
-        setups = try decoder.decode("setups")
-    }
-    
-    func toJSON() throws -> Any {
-        return ["name": name,
-                "tempo": tempo,
-                "setups": try setups.toJSON()]
-    }
-    
-    init(name: String, tempo: Double, setups: [SetupReference]) {
-        self.name = name
-        self.tempo = tempo
-        self.setups = setups
-    }
-    
-    static func new(name: String) -> Song {
-        return Song(name: name, tempo: 100, setups: [])
-    }
-}
-
 class SongsClient {
     private(set) var songs: [Song]?
     private(set) var waveMapsReferences: [WaveMapReference]?
+    private(set) var boardNames: [String]?
+    
     
     init() {
         observeWaveMaps()
+        observeBoards()
     }
     
     func connect(refresh: @escaping ([Song]) -> Void) {
@@ -109,6 +54,10 @@ class SongsClient {
         Database.database().reference(withPath: "songs").updateChildValues([newSong.name: try! newSong.toJSON()])
     }
     
+    func useSetup(_ setup: Setup) {
+        Database.database().reference().updateChildValues(["setup": try! setup.toJSON()])
+    }
+    
     private func observeWaveMaps() {
         Database.database().reference(withPath: "wave_maps").observe(.value) { [weak self] (snapshot: DataSnapshot) in
             var waveMapsReferences: [WaveMapReference] = []
@@ -118,6 +67,16 @@ class SongsClient {
                 waveMapsReferences.append(WaveMapReference(name: name, configuration: configuration))
             }
             self?.waveMapsReferences = waveMapsReferences
+        }
+    }
+    
+    private func observeBoards() {
+        Database.database().reference(withPath: "boards").observe(.value) {[weak self] (dataSnapshot: DataSnapshot) in
+            var boardNames: [String] = []
+            for boardJsonElement in dataSnapshot.value as! [String: JsonObject] {
+                boardNames.append(boardJsonElement.key)
+            }
+            self?.boardNames = boardNames
         }
     }
 }

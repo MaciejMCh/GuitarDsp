@@ -9,10 +9,10 @@
 import Foundation
 import Cocoa
 import GuitarDsp
+import GuitarMidi
 
 class SetupViewController: NSViewController {
     fileprivate var setup: Setup!
-    
     var looperEffectViewController: LooperEffectViewController!
     var boardViewController: BoardViewController!
     

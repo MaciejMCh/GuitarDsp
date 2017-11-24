@@ -10,15 +10,6 @@ import Foundation
 import FirebaseDatabase
 import FirebaseStorage
 
-struct WaveMapReference {
-    let name: String
-    let configuration: [String: Any]
-    
-    static func new(name: String) -> WaveMapReference {
-        return WaveMapReference(name: name, configuration: WaveMap.zeroConfiguration())
-    }
-}
-
 class FirebaseClient {
     init() {
         setupFileSystem()
@@ -123,9 +114,4 @@ class FirebaseClient {
             completion(firebaseSamples)
         }
     }
-}
-
-struct FirebaseSample {
-    let path: String
-    let url: URL
 }

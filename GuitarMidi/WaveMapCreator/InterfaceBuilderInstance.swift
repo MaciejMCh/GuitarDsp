@@ -42,4 +42,4 @@ extension PadContainerViewController: InterfaceBuilderInstance {static let inter
 extension ReverbViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "Reverb"}
 extension PhaserViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "Phaser"}
 extension SongsListViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "Songs"}
-extension WaveMapsListViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "WaveMapsList"}
+extension SetupsReferencesViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "SetupsReferences"}

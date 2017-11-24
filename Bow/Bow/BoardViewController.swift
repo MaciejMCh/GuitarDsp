@@ -10,11 +10,14 @@ import Foundation
 import Cocoa
 import GuitarDsp
 import GuitarMidi
+import FirebaseCommunity
 
 class BoardViewController: NSViewController {
     @IBOutlet weak var gridView: GridView!
     @IBOutlet weak var orderViewHeightConstraint: NSLayoutConstraint!
     
+    private let setupClient = SetupClient()
+    private var setupClientHandle: DatabaseHandle?
     private var setup: Setup!
     
     var boardPrototype: BoardPrototype {
@@ -64,6 +67,25 @@ class BoardViewController: NSViewController {
         if let effetcsOrderViewController = segue.destinationController as? EffectsOrderViewController {
             self.effectsOrderViewController = effetcsOrderViewController
             setupOrderChangeViewController()
+        }
+    }
+    
+    @IBAction func syncAction(_ button: NSButton) {
+        self.setupClientHandle = setupClient.sync {[weak self] setupInstance in
+            guard let wSelf = self else {return}
+            switch setupInstance {
+            case .waveMap(let waveMapReference):
+                let waveMap = wSelf.setup.effectsFactory.makeWaveMap()
+                WaveMapStorage.configureWaveMap(waveMap, configuration: waveMapReference.configuration)
+                let waveMapPrototype = EffectPrototype(effect: waveMap)
+                let boardPrototype = BoardPrototype(effectPrototypes: [waveMapPrototype])
+                let boardStorable = Storable(origin: .orphan, jsonRepresentable: boardPrototype)
+                wSelf.changeBoard(board: boardStorable)
+            case .board(let name):
+                let boardPrototype = BoardPrototype.load(identity: Storage.Identity(id: name))!
+                let boardStorable = Storable(origin: .orphan, jsonRepresentable: boardPrototype)
+                wSelf.changeBoard(board: boardStorable)
+            }
         }
     }
     

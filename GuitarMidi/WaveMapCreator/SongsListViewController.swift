@@ -36,8 +36,15 @@ class SongsListViewController: UIViewController, UITableViewDataSource, UITableV
         }, animated: true, completion: nil)
     }
     
+    @IBAction func closeAction(_ sender: Any?) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func newWaveMap(_ sender: Any?) {
-        guard let waveMapsReferences = songsClient.waveMapsReferences, let selectedSong = selectedSong else {return}
+        guard
+            let waveMapsReferences = songsClient.waveMapsReferences,
+            let selectedSong = selectedSong,
+            let boardsNames = songsClient.boardNames else {return}
         let containedWaveMapNames = selectedSong.setups.flatMap {
             if case .waveMap(let name) = $0 {
                 return name
@@ -45,10 +52,20 @@ class SongsListViewController: UIViewController, UITableViewDataSource, UITableV
                 return nil
             }
         }
+        let containedBoardsNames = selectedSong.setups.flatMap {
+            if case .board(let name) = $0 {
+                return name
+            } else {
+                return nil
+            }
+        }
         let foreignWaveMapReferences = waveMapsReferences.filter{!containedWaveMapNames.contains($0.name)}
-        let waveMapsListController = WaveMapsListViewController.make()
-        waveMapsListController.setup(waveMapsReferences: foreignWaveMapReferences, songsClient: songsClient) { [weak self] waveMapReference in
-            self?.songsClient.addSetupToSong(song: selectedSong, setup: .waveMap(name: waveMapReference.name))
+        let foreignBoardsNames = boardsNames.filter{!containedBoardsNames.contains($0)}
+        let waveMapsListController = SetupsReferencesViewController.make()
+        waveMapsListController.setup(waveMapsReferences: foreignWaveMapReferences,
+                                     boardsNames: foreignBoardsNames,
+                                     songsClient: songsClient) { [weak self] setupReference in
+            self?.songsClient.addSetupToSong(song: selectedSong, setup: setupReference)
             waveMapsListController.dismiss(animated: true, completion: nil)
         }
         present(waveMapsListController, animated: true, completion: nil)
@@ -83,8 +100,10 @@ class SongsListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     private func selectSetup(_ setup: SetupReference) {
+        let selectedSong: Song = self.selectedSong!
         selectedSetup = setup
         setupsTableView.reloadData()
+        songsClient.useSetup(Setup(tempo: Float(selectedSong.tempo), reference: setup))
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -115,7 +134,7 @@ class SongsListViewController: UIViewController, UITableViewDataSource, UITableV
             switch setup {
             case .board(let name):
                 cell.textLabel?.text = name
-                cell.backgroundColor = .white
+                cell.backgroundColor = .orange
             case .waveMap(let name):
                 cell.textLabel?.text = name
                 cell.backgroundColor = .green

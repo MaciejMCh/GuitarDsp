@@ -34,6 +34,10 @@
 		C231401A1F9C92E500EA6027 /* MapCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23140191F9C92E500EA6027 /* MapCreatorViewController.swift */; };
 		C231401E1F9C96B700EA6027 /* WaveMapCreator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C231401D1F9C96B700EA6027 /* WaveMapCreator.storyboard */; };
 		C23A58A51FC8375700BFD25D /* WaveMapSyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23A58A41FC8375600BFD25D /* WaveMapSyncViewController.swift */; };
+		C23A58A71FC838D000BFD25D /* WaveMapSync.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23A58A61FC838D000BFD25D /* WaveMapSync.storyboard */; };
+		C23A58A91FC8467100BFD25D /* WaveMapEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23A58A81FC8467100BFD25D /* WaveMapEditor.storyboard */; };
+		C23A58AB1FC846B500BFD25D /* WaveMapEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23A58AA1FC846B500BFD25D /* WaveMapEditorController.swift */; };
+		C23A58AD1FC857E400BFD25D /* WaveMapSyncClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23A58AC1FC857E400BFD25D /* WaveMapSyncClient.swift */; };
 		C23AEBE31FBCCE820022BD97 /* WaveMapPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AEBE21FBCCE820022BD97 /* WaveMapPickerController.swift */; };
 		C23AEBE51FBCCE990022BD97 /* WaveMapPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23AEBE41FBCCE990022BD97 /* WaveMapPicker.storyboard */; };
 		C23CA87B1FC5F359009795F7 /* FirebaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23CA87A1FC5F359009795F7 /* FirebaseModels.swift */; };
@@ -223,6 +227,10 @@
 		C231401D1F9C96B700EA6027 /* WaveMapCreator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapCreator.storyboard; sourceTree = "<group>"; };
 		C23508081F75340E0049754F /* Sampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
 		C23A58A41FC8375600BFD25D /* WaveMapSyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMapSyncViewController.swift; sourceTree = "<group>"; };
+		C23A58A61FC838D000BFD25D /* WaveMapSync.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapSync.storyboard; sourceTree = "<group>"; };
+		C23A58A81FC8467100BFD25D /* WaveMapEditor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapEditor.storyboard; sourceTree = "<group>"; };
+		C23A58AA1FC846B500BFD25D /* WaveMapEditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMapEditorController.swift; sourceTree = "<group>"; };
+		C23A58AC1FC857E400BFD25D /* WaveMapSyncClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMapSyncClient.swift; sourceTree = "<group>"; };
 		C23AEBE21FBCCE820022BD97 /* WaveMapPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMapPickerController.swift; sourceTree = "<group>"; };
 		C23AEBE41FBCCE990022BD97 /* WaveMapPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaveMapPicker.storyboard; sourceTree = "<group>"; };
 		C23CA87A1FC5F359009795F7 /* FirebaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseModels.swift; path = GuitarMidi/FirebaseModels.swift; sourceTree = SOURCE_ROOT; };
@@ -403,6 +411,10 @@
 				C2031E851FC4DC1400F3B0A9 /* SetupsReferencesViewController.swift */,
 				C2031E871FC4DE4800F3B0A9 /* SetupsReferences.storyboard */,
 				C23A58A41FC8375600BFD25D /* WaveMapSyncViewController.swift */,
+				C23A58A61FC838D000BFD25D /* WaveMapSync.storyboard */,
+				C23A58A81FC8467100BFD25D /* WaveMapEditor.storyboard */,
+				C23A58AA1FC846B500BFD25D /* WaveMapEditorController.swift */,
+				C23A58AC1FC857E400BFD25D /* WaveMapSyncClient.swift */,
 			);
 			path = WaveMapCreator;
 			sourceTree = "<group>";
@@ -617,7 +629,9 @@
 				C23F52F31FA797C000127604 /* Constant.storyboard in Resources */,
 				C23AEBE51FBCCE990022BD97 /* WaveMapPicker.storyboard in Resources */,
 				C29E51541F9A2E5D0039651C /* Assets.xcassets in Resources */,
+				C23A58A71FC838D000BFD25D /* WaveMapSync.storyboard in Resources */,
 				C2FE271D1FBB8589001CED37 /* Sampler.storyboard in Resources */,
+				C23A58A91FC8467100BFD25D /* WaveMapEditor.storyboard in Resources */,
 				C2C3F1971FA8B13300E9A4E9 /* VariableLabel.storyboard in Resources */,
 				C24170721FA121AB000E293F /* Pad.storyboard in Resources */,
 				C2F0A6201FBA276200BC8AA6 /* 440.wav in Resources */,
@@ -816,9 +830,11 @@
 				C20035F11F9E32CF00C21EF7 /* PitchDetector.swift in Sources */,
 				C20035F01F9E32BF00C21EF7 /* LowpassFilterEffect.swift in Sources */,
 				C2CF79D61F9E17BB0087C6A1 /* WaveGenerator.swift in Sources */,
+				C23A58AD1FC857E400BFD25D /* WaveMapSyncClient.swift in Sources */,
 				C2FE271B1FBB8564001CED37 /* SamplerViewController.swift in Sources */,
 				C2CF79D31F9E17940087C6A1 /* WaveEffect.swift in Sources */,
 				C2A8CCB71FA8B874002EE832 /* EnvelopeViewController.swift in Sources */,
+				C23A58AB1FC846B500BFD25D /* WaveMapEditorController.swift in Sources */,
 				C2744F2D1FB0F4CF0017BD86 /* GraphView.swift in Sources */,
 				C26C1FD31FBBBE6E00621EEA /* WaveMapStorage.swift in Sources */,
 				C282AC601FC496820050F127 /* PhaserWaveEffect.swift in Sources */,

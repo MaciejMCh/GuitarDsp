@@ -43,3 +43,5 @@ extension ReverbViewController: InterfaceBuilderInstance {static let interfaceBu
 extension PhaserViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "Phaser"}
 extension SongsListViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "Songs"}
 extension SetupsReferencesViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "SetupsReferences"}
+extension WaveMapSyncViewController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "WaveMapSync"}
+extension WaveMapEditorController: InterfaceBuilderInstance {static let interfaceBuilderFileName = "WaveMapSync"}

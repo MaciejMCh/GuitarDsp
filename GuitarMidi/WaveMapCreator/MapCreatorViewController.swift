@@ -17,44 +17,22 @@ enum WaveMapSource {
 }
 
 class MapCreatorViewController: UIViewController {
-    private weak var mapViewController: MapViewController!
-    @IBOutlet weak var feedbackLabel: UILabel!
+    weak var mapEditorViewController: WaveMapEditorController!
     
     var waveMapSource = WaveMapSource.orphan
     var waveMap: WaveMap!
-    var padMidiOutput: PadMidiOutput!
     var mapChange: ((WaveMap) -> Void)?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        UserFeedback.messageDisplay = { [weak self] in
-            self?.feedbackLabel.text = $0
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let mapController = segue.destination as? MapViewController {
-            self.mapViewController = mapController
-            updateWaveMap(waveMap)
-        }
-        if let addNodesController = segue.destination as? NodesListViewController {
-            addNodesController.addNode = {
-                self.waveMap.startAddingWaveNode($0)
-            }
+        if let mapEditorViewController = segue.destination as? WaveMapEditorController {
+            self.mapEditorViewController = mapEditorViewController
+            mapEditorViewController.waveMap = waveMap
         }
     }
     
     @IBAction func songsAction(_ sender: Any?) {
         let songsController = SongsListViewController.make()
-        showController(songsController)
-    }
-    
-    @IBAction func selectAction(_ sender: Any?) {
-        waveMap.map.startSelecting()
-    }
-    
-    @IBAction func deleteAction(_ sender: Any?) {
-        waveMap.map.startDeleting()
+        present(songsController, animated: true, completion: nil)
     }
     
     @IBAction func padAction(_ sender: Any?) {
@@ -65,13 +43,13 @@ class MapCreatorViewController: UIViewController {
             self?.waveMap.midiOutput = previousMidiOutput
         }
         waveMap.midiOutput = padMidiOutput
-        showController(padViewController)
+        present(padViewController, animated: true, completion: nil)
     }
     
     @IBAction func newAction(_ sender: Any?) {
         waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
         waveMapSource = .orphan
-        updateWaveMap(waveMap)
+        mapEditorViewController.updateWaveMap(waveMap)
     }
     
     @IBAction func loadAction(_ sender: Any?) {
@@ -79,7 +57,7 @@ class MapCreatorViewController: UIViewController {
         controller.pickWaveMap = {[weak self] (waveMap, name) in
             self?.waveMap = waveMap
             self?.waveMapSource = .assigned(name: name)
-            self?.updateWaveMap(waveMap)
+            self?.mapEditorViewController.updateWaveMap(waveMap)
         }
         present(controller, animated: true, completion: nil)
     }
@@ -107,56 +85,5 @@ class MapCreatorViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         case .assigned(let name): save(name, waveMapConfiguration)
         }
-    }
-    
-    private func updateWaveMap(_ waveMap: WaveMap) {
-        mapViewController.updateMap(waveMap.map)
-        waveMap.map.select = { [weak self] node in
-            if let constant = node.model as? Constant {
-                let constantViewController = UIStoryboard(name: "Constant", bundle: nil).instantiateInitialViewController() as! ConstantViewController
-                constantViewController.constantVariable = constant
-                self?.showController(constantViewController)
-            }
-            if let envelopeFunction = node.model as? EnvelopeFunction {
-                let envelopeViewController = UIStoryboard(name: "Envelope", bundle: nil).instantiateInitialViewController() as! EnvelopeViewController
-                envelopeViewController.envelopeFunction = envelopeFunction
-                self?.showController(envelopeViewController)
-            }
-            if let sampler = node.model as? Sampler {
-                let samplerViewController = UIStoryboard(name: "Sampler", bundle: nil).instantiateInitialViewController() as! SamplerViewController
-                samplerViewController.sampler = sampler
-                self?.showController(samplerViewController)
-            }
-            if let foldbackEffect = node.model as? FoldbackWaveEffect {
-                let foldbackViewController = UIStoryboard(name: "Foldback", bundle: nil).instantiateInitialViewController() as! FoldbackViewController
-                foldbackViewController.foldbackEffect = foldbackEffect
-                self?.showController(foldbackViewController)
-            }
-            if let oscilator = node.model as? Oscilator {
-                let oscilatorViewController = OscilatorViewController.make()
-                oscilatorViewController.oscilator = oscilator
-                self?.showController(oscilatorViewController)
-            }
-            if let waveShaper = node.model as? WaveShaper {
-                let waveShaperViewController = WaveShaperViewController.make()
-                waveShaperViewController.waveShaper = waveShaper
-                self?.showController(waveShaperViewController)
-            }
-            if let reverb = node.model as? ReverbWaveEffect {
-                let reverbController = ReverbViewController.make()
-                reverbController.reverbEffect = reverb
-                self?.showController(reverbController)
-            }
-            if let phaser = node.model as? PhaserWaveEffect {
-                let phaserController = PhaserViewController.make()
-                phaserController.phaserWaveEffect = phaser
-                self?.showController(phaserController)
-            }
-        }
-        mapChange?(waveMap)
-    }
-    
-    private func showController(_ controller: UIViewController) {
-        present(controller, animated: true, completion: nil)
     }
 }

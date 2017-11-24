@@ -23,12 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         firebaseClient.sync()
         
-        let padMidiOutput = PadMidiOutput()
         waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
 //        waveMap = .fromPath("fat808")
         let mapCreatorViewController = UIStoryboard(name: "WaveMapCreator", bundle: nil).instantiateInitialViewController() as! MapCreatorViewController
+        mapCreatorViewController.waveMapSource = .orphan
         mapCreatorViewController.waveMap = waveMap
-        mapCreatorViewController.padMidiOutput = padMidiOutput
         
         application.windows.first?.rootViewController = mapCreatorViewController
         application.windows.first?.makeKeyAndVisible()

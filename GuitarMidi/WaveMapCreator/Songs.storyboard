@@ -37,13 +37,36 @@
                                 <rect key="frame" x="333.5" y="0.0" width="333.5" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nMK-9l-8ZM">
-                                    <rect key="frame" x="0.0" y="0.0" width="333.5" height="44"/>
+                                    <rect key="frame" x="0.0" y="72" width="333.5" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="new"/>
                                     <connections>
                                         <action selector="newWaveMap:" destination="oXf-AO-XrA" eventType="touchUpInside" id="Eyq-BV-Odh"/>
                                     </connections>
                                 </button>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WaveMapCell" id="OKy-nH-gVH" customClass="WaveMapCell" customModule="WaveMapCreator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="333.5" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OKy-nH-gVH" id="9oj-4U-Gsn">
+                                            <rect key="frame" x="0.0" y="0.0" width="333.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkh-bD-7ar">
+                                                    <rect key="frame" x="298.5" y="7" width="30" height="30"/>
+                                                    <state key="normal" title="edit"/>
+                                                    <connections>
+                                                        <action selector="aditButtonAction:" destination="OKy-nH-gVH" eventType="touchUpInside" id="iJz-xA-0oj"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Nkh-bD-7ar" secondAttribute="trailing" constant="5" id="7Hf-av-SFt"/>
+                                                <constraint firstItem="Nkh-bD-7ar" firstAttribute="centerY" secondItem="9oj-4U-Gsn" secondAttribute="centerY" id="V3d-Jq-rM6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="oXf-AO-XrA" id="do6-nf-KMq"/>
                                     <outlet property="delegate" destination="oXf-AO-XrA" id="KFW-tM-xDn"/>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FVD-lK-rEE">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wave Map Editor Controller-->
+        <scene sceneID="dTW-w9-SQs">
+            <objects>
+                <viewController id="FVD-lK-rEE" customClass="WaveMapEditorController" customModule="WaveMapCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2xz-oD-WRo">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Qc-zi-JKi">
+                                <rect key="frame" x="100" y="0.0" width="567" height="375"/>
+                                <connections>
+                                    <segue destination="vlg-rU-zZh" kind="embed" id="tdT-P2-nKX"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xb-KU-Fsm">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="gFO-Pm-2hq"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="zSs-Iy-WQd" kind="embed" id="DlU-VX-SjQ"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK7-Pj-0EI">
+                                <rect key="frame" x="309" y="370" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIE-Fl-mz9">
+                                <rect key="frame" x="105" y="5" width="42" height="30"/>
+                                <state key="normal" title="select"/>
+                                <connections>
+                                    <action selector="selectAction:" destination="FVD-lK-rEE" eventType="touchUpInside" id="qL9-p6-8BU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypy-hI-jg7">
+                                <rect key="frame" x="182" y="5" width="43" height="30"/>
+                                <state key="normal" title="delete"/>
+                                <connections>
+                                    <action selector="deleteAction:" destination="FVD-lK-rEE" eventType="touchUpInside" id="elo-5a-bvE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ypy-hI-jg7" firstAttribute="leading" secondItem="vIE-Fl-mz9" secondAttribute="trailing" constant="35" id="1HN-DI-bUj"/>
+                            <constraint firstItem="5xb-KU-Fsm" firstAttribute="leading" secondItem="2xz-oD-WRo" secondAttribute="leading" id="1o6-8D-rhx"/>
+                            <constraint firstItem="5Qc-zi-JKi" firstAttribute="top" secondItem="Wl6-Fd-SGt" secondAttribute="top" id="9rq-nT-M1y"/>
+                            <constraint firstItem="Wl6-Fd-SGt" firstAttribute="trailing" secondItem="5Qc-zi-JKi" secondAttribute="trailing" id="FQs-h2-o7Q"/>
+                            <constraint firstItem="vIE-Fl-mz9" firstAttribute="leading" secondItem="5xb-KU-Fsm" secondAttribute="trailing" constant="5" id="H4r-zv-Hnx"/>
+                            <constraint firstItem="Wl6-Fd-SGt" firstAttribute="bottom" secondItem="5Qc-zi-JKi" secondAttribute="bottom" id="Iph-z3-FMM"/>
+                            <constraint firstItem="5Qc-zi-JKi" firstAttribute="leading" secondItem="5xb-KU-Fsm" secondAttribute="trailing" id="MdE-hI-IOH"/>
+                            <constraint firstItem="5xb-KU-Fsm" firstAttribute="top" secondItem="Wl6-Fd-SGt" secondAttribute="top" id="Z5V-ys-bXl"/>
+                            <constraint firstItem="ypy-hI-jg7" firstAttribute="baseline" secondItem="vIE-Fl-mz9" secondAttribute="baseline" id="bN2-Ky-cZB"/>
+                            <constraint firstItem="vIE-Fl-mz9" firstAttribute="top" secondItem="Wl6-Fd-SGt" secondAttribute="top" constant="5" id="hAS-26-Sbn"/>
+                            <constraint firstItem="Wl6-Fd-SGt" firstAttribute="bottom" secondItem="5xb-KU-Fsm" secondAttribute="bottom" id="hWx-Uv-wqB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wl6-Fd-SGt"/>
+                    </view>
+                    <connections>
+                        <outlet property="feedbackLabel" destination="sK7-Pj-0EI" id="dSn-Oq-KH5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8N1-5i-kwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14.842578710644679" y="176.80000000000001"/>
+        </scene>
+        <!--NodesList-->
+        <scene sceneID="wBb-N6-rol">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NodesList" id="zSs-Iy-WQd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o3g-s7-hyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28" y="768"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="xF3-hs-VXy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Map" bundleIdentifier="org.cocoapods.NodesMap" id="vlg-rU-zZh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RU1-AO-8AY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="768"/>
+        </scene>
+    </scenes>
+</document>

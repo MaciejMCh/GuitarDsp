@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UHE-Dx-7q0">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wave Map Sync View Controller-->
+        <scene sceneID="cy0-Aw-IBL">
+            <objects>
+                <viewController id="UHE-Dx-7q0" customClass="WaveMapSyncViewController" customModule="WaveMapCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P5O-r3-2n6">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cty-wq-n2l">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <connections>
+                                    <segue destination="1Qz-ns-xO3" kind="embed" id="4ek-KV-hXF"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGq-jQ-p1t">
+                                <rect key="frame" x="625" y="5" width="37" height="30"/>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="close:" destination="UHE-Dx-7q0" eventType="touchUpInside" id="nW4-26-ie9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZRB-Hg-S2c" firstAttribute="trailing" secondItem="yGq-jQ-p1t" secondAttribute="trailing" constant="5" id="YDE-Bs-12v"/>
+                            <constraint firstItem="Cty-wq-n2l" firstAttribute="leading" secondItem="ZRB-Hg-S2c" secondAttribute="leading" id="eBx-zC-Z21"/>
+                            <constraint firstItem="Cty-wq-n2l" firstAttribute="top" secondItem="ZRB-Hg-S2c" secondAttribute="top" id="kON-Od-jy8"/>
+                            <constraint firstItem="yGq-jQ-p1t" firstAttribute="top" secondItem="ZRB-Hg-S2c" secondAttribute="top" constant="5" id="ni7-45-BJz"/>
+                            <constraint firstItem="ZRB-Hg-S2c" firstAttribute="bottom" secondItem="Cty-wq-n2l" secondAttribute="bottom" id="pMI-t5-7Dm"/>
+                            <constraint firstItem="ZRB-Hg-S2c" firstAttribute="trailing" secondItem="Cty-wq-n2l" secondAttribute="trailing" id="rnP-8l-U9j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZRB-Hg-S2c"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aR0-gt-jlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-439" y="120"/>
+        </scene>
+        <!--WaveMapEditor-->
+        <scene sceneID="v3R-Vw-dgL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WaveMapEditor" id="1Qz-ns-xO3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Dy-vB-M1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15" y="118"/>
+        </scene>
+    </scenes>
+</document>

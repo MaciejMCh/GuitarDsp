@@ -16,11 +16,8 @@ public class MapViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = map.scene
-        
         // Present the scene
         let skView = self.view as! SKView
-        skView.presentScene(scene)
         
         skView.ignoresSiblingOrder = true
         
@@ -32,8 +29,6 @@ public class MapViewController: UIViewController {
         skView.addGestureRecognizer(panGestureRecognizer)
 
         skView.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(pichAction)))
-        
-        map.scene.camera = camera
     }
     
     public func updateMap(_ map: Map) {

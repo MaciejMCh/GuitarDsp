@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import GuitarDsp
 
 class SongsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var songsTableView: UITableView!
@@ -18,6 +19,8 @@ class SongsListViewController: UIViewController, UITableViewDataSource, UITableV
     private var setups: [SetupReference] = []
     private var selectedSong: Song?
     private var selectedSetup: SetupReference?
+    
+    var samplingSettings: SamplingSettings! = AudioInterface.shared().samplingSettings
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +109,17 @@ class SongsListViewController: UIViewController, UITableViewDataSource, UITableV
         songsClient.useSetup(Setup(tempo: Float(selectedSong.tempo), reference: setup))
     }
     
+    private func editWaveMap(name: String) {
+        for waveMapReference in songsClient.waveMapsReferences ?? [] {
+            if waveMapReference.name == name {
+                let mapSyncController = WaveMapSyncViewController.make()
+                mapSyncController.setup(.init(waveMapReference: waveMapReference, samplingSettings: samplingSettings))
+                present(mapSyncController, animated: true, completion: nil)
+                return
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case songsTableView: return songs.count
@@ -128,18 +142,24 @@ class SongsListViewController: UIViewController, UITableViewDataSource, UITableV
             return cell
         case setupsTableView:
             let setup = setups[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-            cell.selectionStyle = .none
-            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            
+            let cell: UITableViewCell
             switch setup {
             case .board(let name):
+                cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
                 cell.textLabel?.text = name
                 cell.backgroundColor = .orange
             case .waveMap(let name):
+                cell = tableView.dequeueReusableCell(withIdentifier: "WaveMapCell") as! WaveMapCell
                 cell.textLabel?.text = name
                 cell.backgroundColor = .green
+                (cell as! WaveMapCell).edit = { [weak self] in
+                    self?.editWaveMap(name: name)
+                }
             }
             
+            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            cell.selectionStyle = .none
             if let selectedSetup = selectedSetup, selectedSetup == setup {
                 cell.backgroundColor = .yellow
             }
@@ -161,6 +181,14 @@ class SongsListViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+}
+
+class WaveMapCell: UITableViewCell {
+    var edit: (() -> Void)?
+    
+    @IBAction func aditButtonAction(_ sender: Any?) {
+        edit?()
     }
 }
 

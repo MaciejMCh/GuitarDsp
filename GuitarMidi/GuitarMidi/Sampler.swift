@@ -122,10 +122,58 @@ class SingleSamplePlayer: SamplePlayer {
     }
 }
 
+class AudioFilePlayer {
+    let audioFile: AudioFile
+    let strategy: Strategy
+    
+    init(audioFile: AudioFile, strategy: Strategy) {
+        self.audioFile = audioFile
+        self.strategy = strategy
+    }
+    
+    func next(range requestedRange: Range<Int>) -> [Float] {
+        let audioFileLength = audioFile.samples.count
+        switch strategy {
+        case .whole:
+            if requestedRange.lowerBound > audioFileLength {
+                return .init(repeating: 0, count: requestedRange.count)
+            }
+            if requestedRange.upperBound < audioFileLength {
+                var result: [Float] = []
+                for i in requestedRange.lowerBound..<requestedRange.upperBound {
+                    result.append(audioFile.samples[i])
+                }
+                return result
+            }
+            
+            var zeros = Array<Float>.init(repeating: 0, count: requestedRange.count)
+            var ii = 0
+            for i in requestedRange.lowerBound..<audioFileLength {
+                defer {
+                    ii += 1
+                }
+                zeros[ii] = audioFile.samples[i]
+            }
+            return zeros
+        case .looped(let range):
+            assert(false)
+            return []
+        }
+        assert(false)
+        return []
+    }
+}
+
+extension AudioFilePlayer {
+    enum Strategy {
+        case whole
+        case looped(range: Range<Double>)
+    }
+}
+
 class SampleSetPlayer: SamplePlayer {
     private let samplingSettings: SamplingSettings
-    private let signalBuffersByNotes: [(Note, [Float])]
-    private let signalBufferLength: Int
+    private let audioFilesPlayersByNotes: [(Note, AudioFilePlayer)]
     private let frequencyDomainProcessing: FrequencyDomainProcessing
     private let fftFrameSize: Int
     private let finePitchBufferLength: Int
@@ -135,6 +183,8 @@ class SampleSetPlayer: SamplePlayer {
 
     init(samplingSettings: SamplingSettings, audioFilesByNotes: [(Note, AudioFile)]) {
         self.samplingSettings = samplingSettings
+        audioFilesPlayersByNotes = audioFilesByNotes.map{($0.0, AudioFilePlayer(audioFile: $0.1, strategy: .whole))}
+        
         finePitchBufferLength = Int(samplingSettings.framesPerPacket)
         
         if finePitchBufferLength < 1024 {
@@ -145,20 +195,6 @@ class SampleSetPlayer: SamplePlayer {
         
         frequencyDomainProcessing = FrequencyDomainProcessing(samplingSettings: samplingSettings, fftFrameSize: fftFrameSize, osamp: 32)
         finePitchBuffer = Array.init(repeating: 0, count: finePitchBufferLength)
-        
-        var signalBuffersByNotes: [(Note, [Float])] = []
-        let longestAudioFileLength = audioFilesByNotes.map{$0.1.samples.count}.sorted().last!
-        let signalBufferLength = Int(ceil(Double(longestAudioFileLength) / Double(fftFrameSize))) * fftFrameSize
-        for audioFileByNote in audioFilesByNotes {
-            var signalBuffer = Array<Float>(repeating: 0, count: signalBufferLength)
-            for i in 0..<audioFileByNote.1.samples.count {
-                signalBuffer[i] = audioFileByNote.1.samples[i]
-            }
-            signalBuffersByNotes.append((audioFileByNote.0, signalBuffer))
-        }
-        self.signalBuffersByNotes = signalBuffersByNotes
-        
-        self.signalBufferLength = signalBufferLength
     }
     
     func setFrequency(_ frequency: Double) {
@@ -178,10 +214,6 @@ class SampleSetPlayer: SamplePlayer {
             return 0
         }
         
-        if time >= signalBufferLength {
-            return 0
-        }
-        
         let finePitchBufferTime = time % finePitchBufferLength
         if finePitchBufferTime == 0 {
             refreshFinePitchBuffer()
@@ -190,18 +222,20 @@ class SampleSetPlayer: SamplePlayer {
     }
     
     private func refreshFinePitchBuffer() {
-        let closestSignalBuffer = signalBuffersByNotes.sorted{abs($0.0.frequency - self.frequency) < abs($1.0.frequency - self.frequency)}.first!
-        let pitchShift = frequency / closestSignalBuffer.0.frequency
-        var samplesToProcess = Array(closestSignalBuffer.1[time..<time + finePitchBufferLength])
+        let closestAudioFilePlayer = audioFilesPlayersByNotes.sorted{abs($0.0.frequency - self.frequency) < abs($1.0.frequency - self.frequency)}.first!
+        let pitchShift = frequency / closestAudioFilePlayer.0.frequency
+        var samplesToProcess = closestAudioFilePlayer.1.next(range: time..<time + finePitchBufferLength)
         frequencyDomainProcessing.pitchShift(&samplesToProcess, outdata: &finePitchBuffer, shift: Float(pitchShift))
     }
     
     var duration: Double {
+        assert(false)
         return 100
     }
     
     var samplesForView: [Float] {
-        return signalBuffersByNotes.first!.1
+        assert(false)
+        return []
     }
 }
 

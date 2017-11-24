@@ -12,7 +12,7 @@ class Sequencer: MidiOutput {
     private var events: [MidiEvent] = []
     
     init() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak self] _ in
             self?.events.append(.frequency(200))
             self?.events.append(.on)
         }

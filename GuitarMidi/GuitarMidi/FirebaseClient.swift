@@ -9,12 +9,12 @@
 import Foundation
 import FirebaseCommunity
 
-class FirebaseClient {
-    init() {
+public class FirebaseClient {
+    public init() {
         FirebaseApp.configure()
     }
     
-    func sync() {
+    public func sync() {
         syncSamples()
     }
     

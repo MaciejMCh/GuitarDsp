@@ -50,6 +50,7 @@ class MapCreatorViewController: UIViewController {
         waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
         waveMapSource = .orphan
         mapEditorViewController.updateWaveMap(waveMap)
+        mapChange?(waveMap)
     }
     
     @IBAction func loadAction(_ sender: Any?) {
@@ -58,6 +59,7 @@ class MapCreatorViewController: UIViewController {
             self?.waveMap = waveMap
             self?.waveMapSource = .assigned(name: name)
             self?.mapEditorViewController.updateWaveMap(waveMap)
+            self?.mapChange?(waveMap)
         }
         present(controller, animated: true, completion: nil)
     }

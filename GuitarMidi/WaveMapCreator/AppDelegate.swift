@@ -23,8 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         firebaseClient.sync()
         
-        waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
-//        waveMap = .fromPath("fat808")
+//        waveMap = WaveMap(samplingSettings: AudioInterface.shared().samplingSettings, midiOutput: Sequencer())
+        
+        waveMap = .fromPath("flute", midiOutput: Sequencer())
+//        waveMap = .fromPath("flute loop", midiOutput: Sequencer())
+//        let sampler: Sampler = waveMap.waveNodes.first as! Sampler
+//        sampler.player
+        
         let mapCreatorViewController = UIStoryboard(name: "WaveMapCreator", bundle: nil).instantiateInitialViewController() as! MapCreatorViewController
         mapCreatorViewController.waveMapSource = .orphan
         mapCreatorViewController.waveMap = waveMap

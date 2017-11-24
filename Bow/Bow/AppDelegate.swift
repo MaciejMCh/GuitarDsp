@@ -13,6 +13,8 @@ import FirebaseCommunity
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    let firebaseClient = FirebaseClient()
+    
     var allEffects: () -> [Effect] = {
         let samplingSettings = AudioInterface.shared().samplingSettings
         return [ReverbEffect(samplingSettings: samplingSettings),
@@ -27,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        FirebaseApp.configure()
+        firebaseClient.sync()
         WaveMapStorage.waveNodesFactory = WaveNodesFactory(samplingSettings: AudioInterface.shared().samplingSettings)
         setupFileSystem()
         EffectPrototype.effectsFactory = EffectsFacory(samplingSettings: AudioInterface.shared().samplingSettings)

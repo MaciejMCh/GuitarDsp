@@ -16,6 +16,6 @@ struct StorageConstants {
     #endif
     static let samplesRootDirectory: String = rootDirectory + "/samples"
     static let waveMapsRootDirectory: String = rootDirectory + "/wave_maps"
-    static let audioFileExtensions = ["wav"]
-    static let storableFileExtensions = ["wav", "json"]
+    static let audioFileExtensions = ["wav", "mp3"]
+    static let storableFileExtensions = ["wav", "json", "mp3"]
 }

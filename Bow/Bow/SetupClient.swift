@@ -19,14 +19,19 @@ enum SetupInstance {
 class SetupClient {
     private let boardsClient = BoardsClient()
     private var waveMapsReferences: [WaveMapReference] = []
+    private var syncingWaveMapReference: WaveMapReference?
     
     init() {
         syncWaveMaps()
         syncBoards()
     }
     
-    func sync(update: @escaping (SetupInstance) -> Void ) -> DatabaseHandle {
-        return Database.database().reference(withPath: "setup").observe(.value) { [weak self] (snapshot: DataSnapshot) in
+    func stopSyncing() {
+        Database.database().reference(withPath: "setup").removeAllObservers()
+    }
+    
+    func sync(update: @escaping (SetupInstance) -> Void ) {
+        Database.database().reference(withPath: "setup").observe(.value) { [weak self] (snapshot: DataSnapshot) in
             guard let wSelf = self else {return}
             let setup = try! Setup(object: snapshot.value as! JSONObject)
             switch setup.reference {
@@ -35,10 +40,21 @@ class SetupClient {
                 for waveMapReference in wSelf.waveMapsReferences {
                     if waveMapReference.name == name {
                         update(.waveMap(waveMapReference))
+                        wSelf.syncWaveMap(reference: waveMapReference, update: update)
                         return
                     }
                 }
             }
+        }
+    }
+    
+    private func syncWaveMap(reference: WaveMapReference, update: @escaping (SetupInstance) -> Void) {
+        if let syncingWaveMapReference = syncingWaveMapReference {
+            Database.database().reference(withPath: "wave_maps/\(syncingWaveMapReference.name)").removeAllObservers()
+        }
+        
+        Database.database().reference(withPath: "wave_maps/\(reference.name)").observe(.value) { [weak self ] (dataSnapshot: DataSnapshot) in
+            update(.waveMap(WaveMapReference(name: reference.name, configuration: dataSnapshot.value as! [String: Any])))
         }
     }
     

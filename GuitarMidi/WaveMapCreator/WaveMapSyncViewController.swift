@@ -31,6 +31,7 @@ class WaveMapSyncViewController: UIViewController {
     }
     
     @IBAction func close(_ sender: Any?) {
+        timer?.invalidate()
         dismiss(animated: true, completion: nil)
     }
     
@@ -39,11 +40,6 @@ class WaveMapSyncViewController: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             self?.sync()
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        timer?.invalidate()
     }
     
     private func sync() {
